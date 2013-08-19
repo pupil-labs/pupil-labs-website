@@ -1,6 +1,4 @@
-pupil-labs-website
+Pupil Labs Website
 ==================
 
-The Pupil Labs Website
-
-Using [Hyde-Bootstrap](https://github.com/auzigog/hyde-bootstrap)
+Pupil Labs is using [Hyde-Bootstrap](https://github.com/auzigog/hyde-bootstrap).
