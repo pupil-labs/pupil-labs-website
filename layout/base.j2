@@ -15,11 +15,15 @@
 
     {% block basecss %}
     <link href="{{ media_url('css/bootstrap.css') }}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,400|Roboto+Slab:300' rel='stylesheet' type='text/css'>
     <style type="text/css">
         body {
             padding-top: 60px;
             padding-bottom: 40px;
+            font-family: 'Roboto Slab', serif;
         }
+
+
         .sidebar-nav {
             padding: 9px 0;
         }
@@ -37,6 +41,18 @@
                 padding-right:
                 5px;
             }
+        }
+
+        h1 {
+            font-family: 'Josefin Slab', serif;
+            font-weight: 100;
+            font-size: 180px;
+            text-align: center;
+        }
+
+        h2.index {
+            font-family: 'Roboto Slab', serif;
+            /*font-size: 40;*/
         }
     </style>
 
@@ -73,7 +89,7 @@
       <hr>
       <footer>
         {% block footer %}
-        <p>Created by <a href="{{ author.url }}">{{ author.name }}</a></p>
+        <p style="text-align: center;">Created by <a href="{{ author_one.url }}">{{ author_one.name }}</a> and <a href="{{ author_two.url }}">{{ author_two.name }}</a></p>
         {% endblock footer %}
       </footer>
     </div> <!-- /container -->

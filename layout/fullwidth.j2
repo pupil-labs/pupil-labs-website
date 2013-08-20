@@ -4,15 +4,41 @@
 
 {% block container %}
 
-<div class="starter-template" style="padding: 40px 15px; text-align:center;">
-  {% filter markdown -%}
-    {% block headline %}{% endblock headline %}
-  {%- endfilter %}
+<div class="text-center" style="padding: 40px 15px;">
+    {% filter markdown -%}
+    # {{ resource.meta.title }}
+    {%- endfilter %}
   <div class="lead">
     {% filter markdown -%}
-      {% block leadtext %}{% endblock leadtext %}
+    {{ resource.meta.subtitle }}
     {%- endfilter %}
   </div>
 </div><!-- /.starter-template -->
+
+<div class="row">
+    <div class="col-lg-2">
+    &nbsp
+    </div>
+    <div class="col-lg-4">
+      <h2 class="index text-center">Pupil</h2>
+        <p>{% filter markdown -%}
+            {% block about_pupil %}{% endblock %}
+            {%- endfilter %}
+        </p>
+            <p class="text-center"><a href="{{ resource.meta.pupil_url }}" class="btn btn-default btn-lg">
+            {{ resource.meta.pupil_button }}
+            </a></p>
+    </div>
+    <div class="col-lg-4">
+      <h2 class="index text-center">About</h2>
+       <p>{% filter markdown -%}
+            {% block about_us %}{% endblock %}
+            {%- endfilter %}
+        </p>
+            <p class="text-center"><a href="{{ resource.meta.about_url }}" class="btn btn-default btn-lg">
+            {{ resource.meta.about_button }}
+            </a></p>
+    </div>
+</div>
 
 {% endblock container %}

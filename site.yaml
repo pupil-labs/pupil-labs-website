@@ -8,19 +8,18 @@ plugins:
     - hyde.ext.plugins.textlinks.TextlinksPlugin
 context:
     data:
-        site_title: Site Name
-        author:
-            name: Author Name
-            url: "http://example.com"
+        site_title: Pupil Labs
+        author_one:
+            name: Moritz Kassner
+            url: http://moritzkassner.de
+        author_two:
+            name: William Patera
+            url: http://willpatera.com
         google_analytics_id: UA-XXXXX-YY
         home_url: index.html
         menu:
-            - title: Starter Template
-              url: index.html
-            - title: Off Canvas
+            - title: Projects
               url: offcanvas.html
-            - title: Jumbotron
-              url: jumbo.html
 
         sidebar:
             - title: One

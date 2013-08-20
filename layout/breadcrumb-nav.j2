@@ -1,0 +1,17 @@
+{# Adds in the breadcrumb navigation #}
+
+{% extends "base.j2" %}
+
+{% block body %}
+  <div class="container">
+    <div class="breadcrumb">
+      <ul class="breadcrumb">
+        {% from "macros.j2" import render_main_menu with context %}
+        {{ render_main_menu() }}
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+
+{{ super() }} {# Use this to include the rest of the body block as it was originally defined #}
+
+{% endblock body %}
