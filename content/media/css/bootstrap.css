@@ -46,6 +46,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 
+
 body {
   margin: 0;
 }
@@ -326,6 +327,7 @@ textarea {
 a {
   color: #428bca;
   text-decoration: none;
+  -webkit-transition: color 0.5s;
 }
 
 a:hover,
@@ -375,7 +377,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px dotted #eeeeee;
 }
 
 .sr-only {
@@ -450,7 +452,11 @@ cite {
   text-align: center;
 }
 
-h1,
+h1 {
+  font-family: "Josefin Slab", serif;
+  font-weight: 100;
+  line-height: 1.1;
+}
 h2,
 h3,
 h4,
@@ -462,8 +468,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: "Roboto Slab", serif;
+  font-weight: 100;
   line-height: 1.1;
 }
 
@@ -479,7 +485,7 @@ h6 small,
 .h4 small,
 .h5 small,
 .h6 small {
-  font-weight: normal;
+  font-weight: 100;
   line-height: 1;
   color: #999999;
 }
@@ -500,7 +506,7 @@ h6 {
 
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 50px;
 }
 
 h2,

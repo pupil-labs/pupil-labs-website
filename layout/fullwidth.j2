@@ -6,9 +6,9 @@
 
 <div class="text-center" style="padding: 40px 15px;">
     {% filter markdown -%}
-    # {{ resource.meta.title }}
+    <h1 class="index">{{ resource.meta.title }}</h1>
     {%- endfilter %}
-  <div class="lead">
+  <div class="lead" style="border-bottom:1px dotted #eeeeee;">
     {% filter markdown -%}
     {{ resource.meta.subtitle }}
     {%- endfilter %}
@@ -16,10 +16,7 @@
 </div><!-- /.starter-template -->
 
 <div class="row">
-    <div class="col-lg-2">
-    &nbsp
-    </div>
-    <div class="col-lg-4">
+    <div class="col-md-4 col-md-offset-1">
       <h2 class="index text-center">Pupil</h2>
         <p>{% filter markdown -%}
             {% block about_pupil %}{% endblock %}
@@ -29,7 +26,7 @@
             {{ resource.meta.pupil_button }}
             </a></p>
     </div>
-    <div class="col-lg-4">
+    <div class="col-md-4 col-md-offset-2">
       <h2 class="index text-center">About</h2>
        <p>{% filter markdown -%}
             {% block about_us %}{% endblock %}

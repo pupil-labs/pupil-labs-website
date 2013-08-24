@@ -3,18 +3,7 @@
 {% extends "topbar.j2" %}
 
 
-
 {% block container %}
-
-<script>
-$(document).ready(function() {
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
-});
-</script>
-
-
  <div class="row row-offcanvas row-offcanvas-right">
   <div class="col-xs-12 col-sm-9">
     <p class="pull-right visible-xs">
@@ -29,55 +18,6 @@ $(document).ready(function() {
         </div><!-- /container -->
     </div><!-- /jumbotron -->
 
-    <div class="row">
-        <div class="col-lg-4">
-            {% filter markdown -%}
-                {% block column1 %}{% endblock %}
-            {%- endfilter %}
-            <p><a href="#" class="btn btn-default">
-            {% block button1 %}{% endblock %} &raquo;
-            </a></p>
-        </div>
-
-        <div class="col-lg-4">
-            {% filter markdown -%}
-                {% block column2 %}{% endblock %}
-            {%- endfilter %}
-            <p><a href="#" class="btn btn-default">
-            {% block button2 %}{% endblock %} &raquo;
-            </a></p>
-        </div>
-
-        <div class="col-lg-4">
-            {% filter markdown -%}
-                {% block column3 %}{% endblock %}
-            {%- endfilter %}
-            <p><a href="#" class="btn btn-default">
-            {% block button3 %}{% endblock %} &raquo;
-            </a></p>
-        </div>
-    </div><!-- /.row -->
-
-    <div class="row">
-        <div class="col-lg-6">
-            {% filter markdown -%}
-                {% block column4 %}{% endblock %}
-            {%- endfilter %}
-            <p><a href="#" class="btn btn-default">
-            {% block button4 %}{% endblock %} &raquo;
-            </a></p>
-        </div>
-
-        <div class="col-lg-6">
-            {% filter markdown -%}
-                {% block column5 %}{% endblock %}
-            {%- endfilter %}
-            <p><a href="#" class="btn btn-default">
-            {% block button5 %}{% endblock %} &raquo;
-            </a></p>
-        </div>
-
-    </div><!-- /.row -->
   </div>
 
   <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
@@ -86,9 +26,11 @@ $(document).ready(function() {
         {{ render_sidebar() }}
       </div>
     </div>
-</div>
+
+</div><!-- /.row -->
 
 {% endblock container %}
+
 
 
 

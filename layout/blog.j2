@@ -15,7 +15,7 @@
 {% if resource.meta.tags %}
 <div class="pull-right">
 {% for tag in resource.meta.tags %}
-    <span class="badge badge-inverse"><a href="{{ content_url('blog/tags/'~tag~'.html') }}">{{ tag }}</a></span>
+    <span class="badge"><a href="{{ content_url('blog/tags/'~tag~'.html') }}">{{ tag }}</a></span>
 {% endfor %}
 </div>
 {% endif %}
@@ -27,24 +27,28 @@
 {%- endfilter %}
 </article>
 
+
 <div class="btn-group">
-<a class="btn" href="{{ content_url(resource.node.url) }}">Back to list</a>
+<button type="button" class="btn btn-default">
+<a href="{{ content_url(resource.node.url) }}">
+Back to list</a>
+</button>
 
 {% if resource.prev_by_time %}
-<a class="btn"
-    title="{{ resource.prev_by_time.meta.title }}"
-    href="{{ content_url(resource.prev_by_time.url) }}">
-    Previous
+<button type="button" class="btn btn-default">
+<a href="{{ content_url(resource.prev_by_time.url) }}" title="{{ resource.prev_by_time.meta.title }}">
+Previous
 </a>
+</button>
 {% endif %}
 
 {% if resource.next_by_time %}
-<a class="btn"
-    title="{{ resource.next_by_time.meta.title }}"
-    href="{{ content_url(resource.next_by_time.url) }}">
-    Next
+<button type="button" class="btn btn-default">
+<a href="{{ content_url(resource.next_by_time.url) }}" title="{{ resource.next_by_time.meta.title }}">
+Next
 </a>
-</div>
+</button>
 {% endif %}
+</div>
 
 {%- endblock %}

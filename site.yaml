@@ -21,7 +21,7 @@ context:
         menu:
             - title: Projects
               type: page
-              url: offcanvas.html
+              url: projects.html
             - title: Blog
               type: node
               url: blog
