@@ -3,7 +3,7 @@
   <head>
     {% block starthead %}{% endblock starthead %}
     <meta charset="{{ resource.meta.charset }}">
-    <title>{% block title %}{{ resource.meta.title }}{% endblock %} | {{ site_title }}</title>
+    <title>{{ site_title }} | {% block title %}{{ resource.meta.title }}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ resource.meta.description }}">
     <meta name="author" content="{{ resource.meta.author }}">

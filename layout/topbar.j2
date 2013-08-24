@@ -9,11 +9,12 @@
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!-- This makes the dropdown button with 3 lines -->
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{ home_url }}">{{ site_title }}</a>
+      <a class="navbar-brand" href="{{ content_url(home_url) }}">{{ site_title }}</a>
     </div><!-- /.navbar-header -->
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
