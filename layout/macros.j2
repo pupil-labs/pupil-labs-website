@@ -46,3 +46,16 @@
 {{ post.excerpt|markdown|typogrify }}<a href="{{ content_url(res.url) }}">Read more&hellip;</a>
 </article>
 {% endmacro %}
+
+{% macro render_post(res, class=None) %}
+{% refer to res.relative_path as post %}
+<article {{'class='~class if class }}>
+<h3>{{ res.meta.title }}</h3>
+<p><small>
+  <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+  </time>
+</small></p>
+{{ post.body|markdown|typogrify }}
+</article>
+{% endmacro %}

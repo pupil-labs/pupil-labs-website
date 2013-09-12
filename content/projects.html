@@ -4,7 +4,7 @@ subtitle: Pupil Labs Project Page
 description:
 ---
 
-{% extends "columns.j2" %}
+{% extends "single-project.j2" %}
 
 {% block headline %}
 # Pupil
@@ -15,12 +15,71 @@ Pupil is in active, community driven development.
 {% endblock headline %}
 
 {% block history %}
-Our vision is to create tools for a diverse group of people interested in learning about eye tracking and conducting eye tracking research.
-
-The hardware is accessible and affordable. The software is open source and written in Python and C when speed is an issue.
-
+<h2 class="text-center">Get Pupil</h2>
 
 {% endblock %}
+
+{% block sample_table %}
+    <thead>
+    <tr>
+        <td></td>
+        <td><h3>Pupil Dev</h3></td>
+        <td><h3>Pupil Pro</h3></td>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr>
+        <td><b>User Group</b></td>
+        <td>Individuals <em>(Non-Commercial Use)</em></td>
+        <td>Companies, Universities <em>(Commercial Use)</em></td>
+    </tr>
+    <tr>
+        <td><strong>License</strong></td>
+        <td>Open-Source - Non-commercial use only <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/ ">CC BY-NC-SA license</a></td>
+        <td>Open-Source - Commercial use <strong>OK</strong></td>
+    </tr>
+    <tr>
+        <td><strong>Hardware</strong></td>
+        <td>Pupil Dev
+            <ul>
+                <li>720p wold cam</li>
+                <li>exposed cameras</li>
+                <li>simple IR filter</li>
+        </td>
+        <td>Pupil Pro
+            <ul>
+                <li>Encased cameras</li>
+                <li>Matched bandpass filter</li>
+                <li>Reduced cables</li>
+                <li>1080p world camera with pan, tilt, zoom, and 90 degree FOV</li>
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Software</strong></td>
+        <td>Free Open Source Tools Available on <a href="https://github.com/pupil-labs/pupil">github</a></td>
+        <td>Free tools + Pro tools - detection, analysis, and visualization</td
+    </tr>
+    <tr>
+        <td><strong>Hardware Cost</strong></td>
+        <td>280&euro;</td>
+        <td>1,250&euro; (800&euro; for edu)</td>
+    </tr>
+    <tr>
+        <td><strong>Software Cost</strong></td>
+        <td> - </td>
+        <td><a href="mailto:sales@pupil-labs.com">Contact us</a> for quotation</td>
+    </tr>
+   <tr>
+        <td><strong>Dedicated Support & Training</strong></td>
+        <td>No - Online Forum</td>
+        <td><a href="mailto:sales@pupil-labs.com">Contact us</a> for quotation</td>
+    </tr>
+
+    </tbody>
+
+{% endblock %}
+
 
 
 

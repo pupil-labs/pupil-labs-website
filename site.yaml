@@ -19,7 +19,7 @@ context:
         google_analytics_id: UA-XXXXX-YY
         home_url: index.html
         menu:
-            - title: Projects
+            - title: Pupil - Eye Tracking
               type: page
               url: projects.html
             - title: Blog
