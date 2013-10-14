@@ -1,7 +1,7 @@
 ---
 title: Projects
 subtitle: Pupil Labs Project Page
-description:
+description: Projects
 ---
 
 {% extends "single-project.j2" %}
@@ -9,77 +9,130 @@ description:
 {% block headline %}
 # Pupil
 
-Open source eye tracking hardware and software.
+Open source mobile eye tracking platform.
 
 Pupil is in active, community driven development.
 {% endblock headline %}
 
-{% block history %}
-<h2 class="text-center">Get Pupil</h2>
+{% block lead_description %}
+## Overview
+**Pupil** is a head mounted mobile eye tracking platform.  With **Pupil**, you will be able to record gaze positions. This means that you can view what someone else is looking at in real time, record gaze positions, and visualize results.  Pupil software is Open Source.  You can customize the software to your needs, build your own plugins, and contribute back to the community! 
 
-{% endblock %}
+## Software
+**Pupil** is a project in active, community driven development and distributed under an OpenSource license. The capture software runs on Linux, MacOS, and Windows. Currently we are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the app, plug in your Pupil Headset, and get started!  
 
-{% block sample_table %}
+[download button MacOS]    [download button Linux] 
+
+Much work went into making the software modular and accessible.  You can develop and extend to suit your needs.  We want **Pupil** software to serve as an experiment and development platform for **Pupil** developers. 
+
+[Fork us on Github] 
+
+You can install all dependencies and run **Pupil** directly from the Python source.
+[build_instructions MacOS] [build_instructions Ubuntu Linux] [build instructions Windows]
+
+## Headset
+Pupil headsets are 3D printed head mounts that you wear like a pair of glasses. Pupil headsets hold two cameras. One camera tracks and records your eye movements, and another camera records your field of view.  Pupil headsets are lightweight and compatible with most modern computers with 2 USB ports.  
+
+Pupil headsets currently comes in two flavors - **Pupil One** and **Pupil One +**.  
+{% endblock lead_description %}
+
+{% block price_table %}
     <thead>
     <tr>
         <td></td>
-        <td><h3>Pupil Dev</h3></td>
-        <td><h3>Pupil Pro</h3></td>
+        <td><h3>Pupil One</h3></td>
+        <td><h3>Pupil One +</h3></td>
     </tr>
     </thead>
 
     <tbody>
     <tr>
-        <td><b>User Group</b></td>
-        <td>Individuals <em>(Non-Commercial Use)</em></td>
-        <td>Companies, Universities <em>(Commercial Use)</em></td>
+        <td>Description</td>
+        <td>This is the standard version Pupil Headset. Pupil is under constant development, this means that you will always get the best and latest version of the hardware and access to continuous upgrades for the software.</td>
+        <td>Pupil One+ comes with an upgraded World Camera, improved cable management, fully enclosed cameras.</td>
     </tr>
     <tr>
-        <td><strong>License</strong></td>
-        <td>Open-Source - Non-commercial use only <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/ ">CC BY-NC-SA license</a></td>
-        <td>Open-Source - Commercial use <strong>OK</strong></td>
+    <tr>
+        <td><strong>Specifications</strong></td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
-        <td><strong>Hardware</strong></td>
-        <td>Pupil Dev
-            <ul>
-                <li>720p wold cam</li>
-                <li>exposed cameras</li>
-                <li>simple IR filter</li>
-        </td>
-        <td>Pupil Pro
-            <ul>
-                <li>Encased cameras</li>
-                <li>Matched bandpass filter</li>
-                <li>Reduced cables</li>
-                <li>1080p world camera with pan, tilt, zoom, and 90 degree FOV</li>
-        </td>
+        <td>Eye Camera</td>
+        <td>Maximum Resolution - 640x360 @ 30 fps</br>Infrared camera with basic IR-filter</td>
+        <td>Maximum Resolution - 640x360 @ 30fps</br>Infrared camera with custom bandpass IR-filter for improved tracking</td>
     </tr>
     <tr>
-        <td><strong>Software</strong></td>
-        <td>Free Open Source Tools Available on <a href="https://github.com/pupil-labs/pupil">github</a></td>
-        <td>Free tools + Pro tools - detection, analysis, and visualization</td
+        <td>World Camera</td>
+        <td>Maximum Resolution - 1280x720 @ 30fps</br>View Angle 68 degrees</td>
+        <td>Maximum Resolution - 1920x1080 @ 30 fps</br>Carl-Zeiss Optics</br>View Angle 90 degrees</td>
     </tr>
     <tr>
-        <td><strong>Hardware Cost</strong></td>
-        <td>280&euro;</td>
-        <td>1,250&euro; (800&euro; for edu)</td>
+        <td>Design</td>
+        <td>Exposed camera boards</td>
+        <td>Fully enclosed camera boards</td>
     </tr>
     <tr>
-        <td><strong>Software Cost</strong></td>
-        <td> - </td>
-        <td><a href="mailto:sales@pupil-labs.com">Contact us</a> for quotation</td>
+        <td>Connection</td>
+        <td>USB</td>
+        <td>USB with improved cable management</td>
     </tr>
-   <tr>
-        <td><strong>Dedicated Support & Training</strong></td>
-        <td>No - Online Forum</td>
-        <td><a href="mailto:sales@pupil-labs.com">Contact us</a> for quotation</td>
+    <tr>
+        <td>Material</td>
+        <td>PLA</td>
+        <td>PLA</td>
+    </tr>  
+    <tr>
+        <td>Weight</td>
+        <td>290 grams</td>
+        <td>350 grams</td>
     </tr>
+    <tr>
+        <td><strong>Price</strong></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Individual (Noncommercial)</td>
+        <td><strong>280&euro;</strong></td>
+        <td><strong>480&euro;</strong></td>
+    </tr>
+    <tr>
+        <td>Academic</td>
+        <td><strong>480&euro;</strong></td>
+        <td><strong>800&euro;</strong></td>
+    </tr>
+    <tr>
+        <td>Commercial Enterprise</td>
+        <td>Contact us for a quotation</td>
+        <td>Contact us for a quotation</td>
+    </tr>
+  
 
     </tbody>
+{% endblock price_table %}
 
-{% endblock %}
+{% block follow_description %}
+If you have any questions about the sales process or questions about Pupil, contact us at sales@pupil-labs.com.
 
+## Easy Setup
+All you have to do is download Pupil software, plug in the Pupil headset, calibrate, and hit record!            
+
+## Community & Documentation
+Check out documentation on our wiki. Feel free to contact us at info@pupil-labs.com
+
+Have a question - [check out our forum].    
+
+## License
+We want Pupil to proliferate! We want you to use Pupil to empower and inspire whatever you do. Be it academic research, teaching, art, assistive technologies or professional work.
+
+For noncommercial use, the software is open and the hardware is very accessible and modifiable. We consider you a member of the Pupil community rather than a customer of the Pupil product. We encourage the modification of software and hardware in accordance to the open source license.
+
+If you plan to use Pupil in a commercial context, you will receive a commercial use license with your purchase. We offer to work closely with you to integrate Pupil into your workflow.
+
+## Support
+We provide free support for Pupil users through our Forum, Wiki, and video tutorials.  If you require a higher support levels via email, video-call (Skype or Google Hangouts), or on-site setup and training, get a quote at sales@pupil-labs.com     
+{% endblock follow_description %}
 
 
 
