@@ -4,12 +4,11 @@
 
 
 {% block jumbotron %}
-<div class="jumbotron" style="margin-top: -50px;">
+<div class="jumbotron" style="margin-top: -50px; background-image: url('../../img/pupil_front_rev04b_web_jumbotron.png');">
     <div class="container">
         {% filter markdown -%}
             {% block headline %}{% endblock %}
         {%- endfilter %}
-        
     </div><!-- /container -->
 </div><!-- /jumbotron -->
 {% endblock jumbotron %}

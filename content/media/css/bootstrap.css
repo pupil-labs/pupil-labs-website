@@ -4929,7 +4929,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: inherit;
-  background-image: url("../../img/pupil_front_rev04b_web_jumbotron.png");
+  /*background-image: url("../../img/pupil_front_rev04b_web_jumbotron.png");*/
   background-position: top right;
   background-repeat: no-repeat;
   opacity: 1.0;
