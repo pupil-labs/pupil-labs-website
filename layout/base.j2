@@ -24,6 +24,7 @@
             padding-bottom: 40px;
             font-family: 'Roboto Slab', serif;
             font-weight: 300;
+            background-color: #3DF879;
         }
 
         strong{
@@ -96,7 +97,11 @@
       <hr>
       <footer>
         {% block footer %}
-        <p style="text-align: center;">Created by <a href="{{ author_one.url }}">{{ author_one.name }}</a> and <a href="{{ author_two.url }}">{{ author_two.name }}</a></p>
+        <p class="text-center">{{ copyright }}&copy;</p>
+        <p class="text-center">
+        <iframe src="http://ghbtns.com/github-btn.html?user=pupil-labs&repo=pupil&type=fork"
+        allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+        </p>
         {% endblock footer %}
       </footer>
     </div> <!-- /container -->

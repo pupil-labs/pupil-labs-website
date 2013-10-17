@@ -2,6 +2,8 @@
 title: Projects
 subtitle: Pupil Labs Project Page
 description: Projects
+download_mac_buton: Download for MacOS
+download_linux_button: Download for Linux
 ---
 
 {% extends "single-project.j2" %}
@@ -14,27 +16,17 @@ Open source mobile eye tracking platform.
 Pupil is in active, community driven development.
 {% endblock headline %}
 
-{% block lead_description %}
+{% block overview %}
 ## Overview
-**Pupil** is a head mounted mobile eye tracking platform.  With **Pupil**, you will be able to record gaze positions. This means that you can view what someone else is looking at in real time, record gaze positions, and visualize results.  Pupil software is Open Source.  You can customize the software to your needs, build your own plugins, and contribute back to the community! 
+**Pupil** is a head mounted mobile eye tracking platform.  With **Pupil**, you will be able to record gaze positions. This means that you can view what someone else is looking at in real time, record gaze positions, and visualize results.  Pupil software is Open Source.  You can customize the software to your needs, build your own plugins, and contribute back to the community!
+{% endblock %}
 
-## Software
-**Pupil** is a project in active, community driven development and distributed under an OpenSource license. The capture software runs on Linux, MacOS, and Windows. Currently we are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the app, plug in your Pupil Headset, and get started!  
-
-[download button MacOS]    [download button Linux] 
-
-Much work went into making the software modular and accessible.  You can develop and extend to suit your needs.  We want **Pupil** software to serve as an experiment and development platform for **Pupil** developers. 
-
-[Fork us on Github] 
-
-You can install all dependencies and run **Pupil** directly from the Python source.
-[build_instructions MacOS] [build_instructions Ubuntu Linux] [build instructions Windows]
-
-## Headset
+{% block hardware %}
+## Hardware
 Pupil headsets are 3D printed head mounts that you wear like a pair of glasses. Pupil headsets hold two cameras. One camera tracks and records your eye movements, and another camera records your field of view.  Pupil headsets are lightweight and compatible with most modern computers with 2 USB ports.  
 
 Pupil headsets currently comes in two flavors - **Pupil One** and **Pupil One +**.  
-{% endblock lead_description %}
+{% endblock %}
 
 {% block price_table %}
     <thead>
@@ -48,7 +40,9 @@ Pupil headsets currently comes in two flavors - **Pupil One** and **Pupil One +*
     <tbody>
     <tr>
         <td>Description</td>
-        <td>This is the standard version Pupil Headset. Pupil is under constant development, this means that you will always get the best and latest version of the hardware and access to continuous upgrades for the software.</td>
+        <td>This is the standard version Pupil Headset. Pupil is under constant development.
+        <br>This means that you will always get the latest version of the hardware and that you will have access to continuous upgrades for the software.</td>
+
         <td>Pupil One+ comes with an upgraded World Camera, improved cable management, fully enclosed cameras.</td>
     </tr>
     <tr>
@@ -94,45 +88,155 @@ Pupil headsets currently comes in two flavors - **Pupil One** and **Pupil One +*
     </tr>
     <tr>
         <td>Individual (Noncommercial)</td>
-        <td><strong>280&euro;</strong></td>
-        <td><strong>480&euro;</strong></td>
+        <td>
+            <form class="form-inline" role="form" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="SB2WEE5GAJ66L">
+                <div class="form-group">
+                    <select class="form-control input-sm" name="os0">
+                        <option value="Pupil One - Noncommercial (Shipping within Germany)">Pupil One Noncommercial - 290 &euro; (Shipping within Germany) 
+                        </option>
+                        
+                        <option value="Pupil One - Noncommercial (Shipping within EU)">Pupil One Noncommercial - 310 &euro; (Shipping within EU) 
+                        </option>
+                        
+                        <option value="Pupil One - Noncommercial (Shipping outside EU)">Pupil One Noncommercial - 350 &euro; (Shipping outside EU)
+                        </option>
+                    </select>
+                </div> <!-- /form-group -->
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn btn-primary btn-sm" name="submit" alt="PayPal - The safer, easier way to pay online!">Add to Cart
+                </button>
+            </form>
+        </td>
+        <td> <!-- Begin Pupil One+ NonCommercial -->
+            <form class="form-inline" role="form" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="8T4UGY3MX9R5G">
+                <div class="form-group">
+                    <select class="form-control input-xs" name="os0">
+                        <option value="Pupil One+ Noncommercial (Shipping within Germany)">
+                        Pupil One+ Noncommercial - 490 &euro; 
+                        </option>
+                        
+                        <option value="Pupil One+ Noncommercial (Shipping within EU)">
+                        Pupil One+ Noncommercial - 510 &euro; (Shipping within EU)
+                        </option>
+                        
+                        <option value="Pupil One+ Noncommercial (Shipping outside EU)">
+                        Pupil One+ Noncommercial - 540 &euro; (Shipping outside EU) 
+                        </option>
+
+                    </select>
+                </div> <!-- /form-group -->
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn btn-primary btn-sm" name="submit" alt="PayPal - The safer, easier way to pay online!">Add to Cart
+                </button>  
+            </form> 
+        </td>
     </tr>
+    
+
     <tr>
         <td>Academic</td>
-        <td><strong>480&euro;</strong></td>
-        <td><strong>800&euro;</strong></td>
+        <td>
+        <form class="form-inline" role="form" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="H6UW2YAPG5TFL">
+            <div class="form-group">
+                <select class="form-control input-sm" name="os0">
+                    <option value="Pupil One - Academic (Shipping within Germany)">Pupil One Academic - 490 &euro; (Shipping within Germany)</option>
+                    <option value="Pupil One - Academic (Shipping within EU)">Pupil One  Academic - 510 &euro; (Shipping within EU)</option>
+                    <option value="Pupil One - Academic (Shipping outside EU)">Pupil One Academic 540 &euro; (Shipping outside EU)</option>
+                </select>
+            </div> <!-- /form-group -->
+            <input type="hidden" name="currency_code" value="EUR">
+            <button type="submit" class="btn btn-primary btn-sm" name="submit" alt="PayPal - The safer, easier way to pay online!">Add to Cart
+            </button>
+        </form>
+        </td>
+
+        <td>
+          <form class="form-inline" role="form" target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="WQTBKQDD2ESDL">
+                <div class="form-group">
+                    <select class="form-control input-sm" name="os0">
+                        <option value="Pupil One+ Academic (Shipping within Germany)">Pupil One+ Academic (Shipping within Germany) €810,00 EUR</option>
+                        <option value="Pupil One+ Academic (Shipping within EU)">Pupil One+ Academic (Shipping within EU) €830,00 EUR</option>
+                        <option value="Pupil One+ Academic (Shipping outside EU)">Pupil One+ Academic (Shipping outside EU) €860 EUR</option>
+                    </select>
+                </div> <!-- /form-group -->
+                <input type="hidden" name="currency_code" value="EUR">
+                <button type="submit" class="btn btn-primary btn-sm" name="submit" alt="PayPal - The safer, easier way to pay online!">Add to Cart
+                </button>
+            </form>            
+
+
+        </td>
     </tr>
     <tr>
         <td>Commercial Enterprise</td>
-        <td>Contact us for a quotation</td>
-        <td>Contact us for a quotation</td>
+        <td><a href="mailto:sales@pupil-labs.com">Contact us for a quotation</a></td>
+        <td><a href="mailto:sales@pupil-labs.com">Contact us for a quotation</a></td>
     </tr>
-  
-
     </tbody>
+
 {% endblock price_table %}
 
-{% block follow_description %}
-If you have any questions about the sales process or questions about Pupil, contact us at sales@pupil-labs.com.
+{% block software %}
+## Software
+**Pupil** is a project in active, community driven development and distributed under an OpenSource license. The capture software runs on Linux, MacOS, and Windows. Currently we are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the app, plug in your Pupil Headset, and get started!  
 
-## Easy Setup
-All you have to do is download Pupil software, plug in the Pupil headset, calibrate, and hit record!            
+<p class="centered col-md-3 col-md-offset-2"><a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4" class="btn btn-default">Pupil for Linux</a></p>
 
-## Community & Documentation
-Check out documentation on our wiki. Feel free to contact us at info@pupil-labs.com
+<p class="centered col-md-3 col-md-offset-2"><a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4" class="btn btn-default">Pupil for MacOS</a></p>
+<br>
+{% endblock %}
 
-Have a question - [check out our forum].    
+{% block development %}   
+## Open Source Development 
+Much work went into making the software modular and accessible.  You can develop and extend to suit your needs.  We want **Pupil** software to serve as an experiment and development platform for **Pupil** developers. 
 
+Developers, &uuml;ber-nerds, and code explorers -- you can clone the repository and install all dependencies yourself to run **Pupil** directly from the Python source.  Follow build instructions for your platform of choice.
+
+<div class="btn-group">
+    <button class="btn btn-default">
+        <a href="https://github.com/pupil-labs/pupil/" style="text-decoration: none; color: #000000;">Pupil Code on Github</a>
+    </button>
+    <div class="btn-group">
+        <button class="btn btn-default dropdown-toggle pagination-centered" type="button" data-toggle="dropdown">
+            Build Instructions<span class="caret"></span>
+        </button>
+      <ul class="dropdown-menu">
+        <li><a href="https://code.google.com/p/pupil/wiki/Installation_MacOS">MacOS</a></li>
+        <li><a href="https://code.google.com/p/pupil/wiki/Installation_Linux">Linux (Ubuntu)</a></li>
+        <li><a href="https://code.google.com/p/pupil/wiki/Installation_Windows">Windows</a></li>
+      </ul>
+    </div><!--  /btn-group -->
+</div><!--  /btn-group -->
+{% endblock %} 
+
+{% block community %}
+## Community, Documentation, & Support
+Check out documentation on our [wiki](https://code.google.com/p/pupil/wiki/Headset_Intro?tm=6)
+
+We provide free support for Pupil users through the [Pupil Forum](http://groups.google.com/group/pupil-discuss), on our [wiki](https://code.google.com/p/pupil/wiki/Headset_Intro?tm=6), and video tutorials embedded on the wiki.  
+
+If you require a higher support levels via email, video-call (Skype or Google Hangouts), or on-site setup and training, get a quote at <sales@pupil-labs.com>
+
+Still have questions or want to chat? Contact us at <info@pupil-labs.com>.   
+{% endblock %}
+
+{% block license %}
 ## License
 We want Pupil to proliferate! We want you to use Pupil to empower and inspire whatever you do. Be it academic research, teaching, art, assistive technologies or professional work.
 
-For noncommercial use, the software is open and the hardware is very accessible and modifiable. We consider you a member of the Pupil community rather than a customer of the Pupil product. We encourage the modification of software and hardware in accordance to the open source license.
+For noncommercial use, the software is open and the hardware is very accessible and modifiable. We consider you a member of the Pupil community rather than a customer of the Pupil product. We encourage the modification of software and hardware in accordance to the [open source license](http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 If you plan to use Pupil in a commercial context, you will receive a commercial use license with your purchase. We offer to work closely with you to integrate Pupil into your workflow.
+{% endblock %}
 
-## Support
-We provide free support for Pupil users through our Forum, Wiki, and video tutorials.  If you require a higher support levels via email, video-call (Skype or Google Hangouts), or on-site setup and training, get a quote at sales@pupil-labs.com     
-{% endblock follow_description %}
 
 
 

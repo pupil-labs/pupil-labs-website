@@ -1,45 +1,69 @@
 {# Single-Project template #}
 
-{% extends "topbar.j2" %}
+{% extends "jumbotron.j2" %}
 
 
 {% block container %}
- <div class="row">
-  <div class="col-sm-12">
 
-    <div class="jumbotron">
-        <div class="container">
-            {% filter markdown -%}
-                {% block headline %}{% endblock %}
-            {%- endfilter %}
-        </div><!-- /container -->
-    </div><!-- /jumbotron -->
-  </div><!-- /row -->
-  </div><!-- /col-sm-12 -->
-
+  <div class="container">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 well well-lg">
       {% filter markdown -%}
-          {% block lead_description %}{% endblock %}
+          {% block overview %}{% endblock %}
       {%- endfilter %}
     </div><!-- /col -->
   </div><!-- /row -->
 
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-12 well well-lg">
+      {% filter markdown -%}
+          {% block hardware %}{% endblock %}
+      {%- endfilter %}
+    </div><!-- /col -->
+  </div><!-- /row -->
+
+  <div class="row">
+    <div class="col-sm-12 well well-lg" style="background: #FFFFFF;">
       <table class="table table-hover">
           {% block price_table %}{% endblock %}
       </table>
     </div><!-- /col -->
   </div><!-- /.row -->
 
- <div class="row">
-    <div class="col-sm-12">
+  <div class="row">
+    <div class="col-sm-12 well well-lg">
       {% filter markdown -%}
-          {% block follow_description %}{% endblock %}
+          {% block software %}{% endblock %}
       {%- endfilter %}
     </div><!-- /col -->
   </div><!-- /row -->
+
+  <div class="row">
+    <div class="col-sm-12 well well-lg">
+      {% filter markdown -%}
+          {% block development %}{% endblock %}
+      {%- endfilter %}
+    </div><!-- /col -->
+  </div><!-- /row -->
+
+   <div class="row">
+    <div class="col-sm-6">
+      {% filter markdown -%}
+          {% block community %}{% endblock %}
+      {%- endfilter %}
+    </div><!-- /col -->
+    <div class="col-sm-6">
+      {% filter markdown -%}
+          {% block license %}{% endblock %}
+      {%- endfilter %}
+    </div><!-- /col -->
+  </div><!-- /row -->
+
+    <div class="row">
+
+  </div><!-- /row -->
+
+  </div><!-- /container -->
 
 {% endblock container %}
 

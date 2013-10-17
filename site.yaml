@@ -16,6 +16,7 @@ context:
         author_two:
             name: William Patera
             url: http://willpatera.com
+        copyright: Pupil Labs 2013
         google_analytics_id: UA-XXXXX-YY
         home_url: index.html
         menu:
