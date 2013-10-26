@@ -47,15 +47,31 @@
 </article>
 {% endmacro %}
 
-{% macro render_post(res, class=None) %}
+{% macro render_post(res) %}
 {% refer to res.relative_path as post %}
-<article {{'class='~class if class }}>
-<h3>{{ res.meta.title }}</h3>
-<p><small>
-  <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
-    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
-  </time>
-</small></p>
-{{ post.body|markdown|typogrify }}
-</article>
+<div class="row">
+  <div class="panel panel-default">
+  <!-- <article {{'class='~class if class }}> -->
+  <div class="panel-heading">
+    <h1 class="panel-title">
+      <a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a>
+    </h1>
+    <p>
+    <small>
+      <time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+        Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+      </time>
+      </small>
+    </p>
+  </div><!--  /panel heading -->
+  <div class="panel-body">
+    {{ post.body|markdown|typogrify }}
+  </div><!-- /panel body -->
+  <div class="panel-footer">
+    <p><small>
+      Author: {{ res.meta.author }}
+    </small></p>
+  </div><!--  /panel footer -->
+  </div><!--  /panel -->
+</div><!--  /row -->
 {% endmacro %}

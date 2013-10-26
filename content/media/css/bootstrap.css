@@ -397,6 +397,7 @@ p {
 
 .lead {
   margin-bottom: 20px;
+  padding-top: 5px;
   font-size: 16.099999999999998px;
   font-weight: 200;
   line-height: 1.4;
@@ -5327,10 +5328,10 @@ a.list-group-item:focus {
 
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  background-color: none;
   border: 1px solid transparent;
   border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
@@ -5397,7 +5398,7 @@ a.list-group-item:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 63px;
 }
 
 .panel-title > a {
@@ -5406,8 +5407,8 @@ a.list-group-item:focus {
 
 .panel-footer {
   padding: 10px 15px;
-  background-color: #f5f5f5;
-  border-top: 1px solid #dddddd;
+  background-color: #FFFFFF;
+  border-top: 1px solid #FFFFFF;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
@@ -5439,21 +5440,21 @@ a.list-group-item:focus {
 }
 
 .panel-default {
-  border-color: #dddddd;
+  border-color: #FFFFFF;
 }
 
 .panel-default > .panel-heading {
   color: #333333;
-  background-color: #f5f5f5;
-  border-color: #dddddd;
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
 }
 
 .panel-default > .panel-heading + .panel-collapse .panel-body {
-  border-top-color: #dddddd;
+  border-top-color: #FFFFFF;
 }
 
 .panel-default > .panel-footer + .panel-collapse .panel-body {
-  border-bottom-color: #dddddd;
+  border-bottom-color: #FFFFFF;
 }
 
 .panel-primary {

@@ -7,6 +7,8 @@ plugins:
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
     - hyde.ext.plugins.meta.SorterPlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
+    - hyde.ext.plugins.structure.PaginatorPlugin
 context:
     data:
         site_title: Pupil Labs
@@ -24,7 +26,7 @@ context:
               type: page
               url: projects.html
             - title: Blog
-              type: node
+              type: page
               url: blog
         sidebar:
             - title: One
@@ -39,3 +41,10 @@ sorter:
         filters:
             source.kind: html
             meta.listable: true
+urlcleaner:
+    index_file_names:
+        - index.html
+    strip_extensions:
+        - html
+    append_slash: true
+

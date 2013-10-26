@@ -5,20 +5,17 @@
 
 {% block jumbotron %}
 <div class="jumbotron" style="margin-top: -50px;">
-    <div class="container">
- 
-	<div class="text-center" style="padding: 40px 15px;">
+    <div class="container text-center" style="padding: 40px 15px;">
 	    {% filter markdown -%}
 	    <h1 class="index">{{ resource.meta.title }}</h1>
 	    {%- endfilter %}
-	  <div class="lead" style="border-bottom:1px dotted #eeeeee;">
+	  <div class="lead" style="margin-botton: 0px;">
 	    {% filter markdown -%}
 	    {{ resource.meta.subtitle }}
 	    {%- endfilter %}
 	  </div>
-	</div><!-- /.starter-template -->
 
- 
+
     </div><!-- /container -->
 </div><!-- /jumbotron -->
 {% endblock jumbotron %}

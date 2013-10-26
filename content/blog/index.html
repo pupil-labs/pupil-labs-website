@@ -1,7 +1,10 @@
 ---
 title: Blog
 extends: listing.j2
-default_block: test
+default_block: blog
 listable: false
+paginator:
+    sorter: time
+    size: 3
 ---
 {% block page_title %}{% endblock %}
