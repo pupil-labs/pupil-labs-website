@@ -3,3 +3,6 @@ deploy
 *.hyde_deps
 *.DS_Store
 *.log
+.floo
+.flooignore
+.sublime-project

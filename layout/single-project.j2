@@ -16,15 +16,13 @@
 
   <div class="row">
     <div class="col-sm-12 well well-lg">
-      {% filter markdown -%}
-          {% block hardware %}{% endblock %}
-      {%- endfilter %}
+      {% block hardware %}{% endblock %}
     </div><!-- /col -->
   </div><!-- /row -->
 
   <div class="row">
     <div class="col-sm-12 well well-lg" style="background: #FFFFFF;">
-      <table class="table table-hover">
+      <table class="table table-hover" style="table-layout: fixed;">
           {% block price_table %}{% endblock %}
       </table>
     </div><!-- /col -->
