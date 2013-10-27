@@ -7,7 +7,7 @@
 
   <div class="container">
   <div class="row">
-    <div class="col-sm-12 well well-lg">
+    <div class="col-md-12 well well-lg">
       {% filter markdown -%}
           {% block overview %}{% endblock %}
       {%- endfilter %}
@@ -15,13 +15,13 @@
   </div><!-- /row -->
 
   <div class="row">
-    <div class="col-sm-12 well well-lg">
+    <div class="col-md-12 well well-lg">
       {% block hardware %}{% endblock %}
     </div><!-- /col -->
   </div><!-- /row -->
 
   <div class="row">
-    <div class="col-sm-12 well well-lg" style="background: #FCFCFC;">
+    <div class="col-md-12 well well-lg" style="background: #F1F1F1;">
       <table class="table table-hover" style="table-layout: fixed;">
           {% block price_table %}{% endblock %}
       </table>
@@ -29,7 +29,7 @@
   </div><!-- /.row -->
 
   <div class="row">
-    <div class="col-sm-12 well well-lg">
+    <div class="col-md-12 well well-lg">
       {% filter markdown -%}
           {% block software %}{% endblock %}
       {%- endfilter %}
@@ -37,7 +37,7 @@
   </div><!-- /row -->
 
   <div class="row">
-    <div class="col-sm-12 well well-lg">
+    <div class="col-md-12 well well-lg">
       {% filter markdown -%}
           {% block development %}{% endblock %}
       {%- endfilter %}
@@ -45,12 +45,12 @@
   </div><!-- /row -->
 
    <div class="row">
-    <div class="col-sm-6">
+    <div class="col-md-6">
       {% filter markdown -%}
           {% block community %}{% endblock %}
       {%- endfilter %}
     </div><!-- /col -->
-    <div class="col-sm-6">
+    <div class="col-md-6">
       {% filter markdown -%}
           {% block license %}{% endblock %}
       {%- endfilter %}

@@ -47,8 +47,7 @@ Pupil headsets currently comes in two flavors - <strong>Pupil One</strong> and <
         <td>Description</td>
         <td>This is the standard version Pupil Headset. Pupil is under constant development.
         <br>This means that you will always get the latest version of the hardware and that you will have access to continuous upgrades for the software.</td>
-
-        <td>Pupil One+ comes with an upgraded World Camera, improved cable management, fully enclosed cameras.</td>
+        <td>Pupil One+ enjoys all the features of Pupil One but comes with an upgraded World Camera, improved cable management and fully enclosed cameras.</td>
     </tr>
     <tr>
     <tr>
@@ -95,7 +94,7 @@ Pupil headsets currently comes in two flavors - <strong>Pupil One</strong> and <
         <td>Individual (Noncommercial)</td>
         <td><strong>280 &euro; + shipping</strong></td>
         <td> <!-- Begin Pupil One+ NonCommercial -->
-        <strong>480 &euro; + shipping</strong>
+        <strong>380 &euro; + shipping</strong>
         </td>
     </tr>
     
@@ -123,9 +122,14 @@ Pupil headsets currently comes in two flavors - <strong>Pupil One</strong> and <
 ## Software
 **Pupil** is a project in active, community driven development and distributed under an OpenSource license. The capture software runs on Linux, MacOS, and Windows. Currently we are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the app, plug in your Pupil Headset, and get started!  
 
-<p class="centered col-md-3 col-md-offset-2"><a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4" class="btn btn-default">Pupil for Linux</a></p>
-
-<p class="centered col-md-3 col-md-offset-2"><a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4" class="btn btn-default">Pupil for MacOS</a></p>
+<div class="btn-group btn-group-lg col-md-6 col-md-offset-3">
+    <a type="button" class="btn btn-default btn-default-pupil btn-lg" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4">
+        Download Pupil for Linux
+    </a>
+    <a type="button" class="btn btn-default btn-default-pupil btn-lg" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4">
+        Download Pupil for MacOS
+    </a>
+</div><!--  /btn-group -->
 <br>
 {% endblock %}
 
@@ -135,21 +139,22 @@ Much work went into making the software modular and accessible.  You can develop
 
 Developers, &uuml;ber-nerds, and code explorers -- you can clone the repository and install all dependencies yourself to run **Pupil** directly from the Python source.  Follow build instructions for your platform of choice.
 
-<div class="btn-group">
-    <button class="btn btn-default">
-        <a href="https://github.com/pupil-labs/pupil/" style="text-decoration: none; color: #000000;">Pupil Code on Github</a>
-    </button>
+<div class="btn-group btn-group-lg col-md-6 col-md-offset-3">
+    <a type="button" class="btn btn-default btn-default-pupil btn-lg" href="https://github.com/pupil-labs/pupil/">
+        Go to code on Github
+    </a>
     <div class="btn-group">
-        <button class="btn btn-default dropdown-toggle pagination-centered" type="button" data-toggle="dropdown">
-            Build Instructions<span class="caret"></span>
+        <button class="btn btn-default btn-default-pupil btn-lg dropdown-toggle pagination-centered" type="button" data-toggle="dropdown">
+            Go to build instructions<span class="caret"></span>
         </button>
-      <ul class="dropdown-menu">
-        <li><a href="https://code.google.com/p/pupil/wiki/Installation_MacOS">MacOS</a></li>
-        <li><a href="https://code.google.com/p/pupil/wiki/Installation_Linux">Linux (Ubuntu)</a></li>
-        <li><a href="https://code.google.com/p/pupil/wiki/Installation_Windows">Windows</a></li>
-      </ul>
+        <ul class="dropdown-menu">
+            <li><a href="https://code.google.com/p/pupil/wiki/Installation_MacOS">MacOS</a></li>
+            <li><a href="https://code.google.com/p/pupil/wiki/Installation_Linux">Linux (Ubuntu)</a></li>
+            <li><a href="https://code.google.com/p/pupil/wiki/Installation_Windows">Windows</a></li>
+        </ul>
     </div><!--  /btn-group -->
-</div><!--  /btn-group -->
+</div>
+<br>
 {% endblock %} 
 
 {% block community %}
