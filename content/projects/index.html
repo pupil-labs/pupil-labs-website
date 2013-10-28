@@ -121,16 +121,14 @@ Pupil headsets currently comes in two flavors - <strong>Pupil One</strong> and <
 {% block software %}
 ## Software
 **Pupil** is a project in active, community driven development and distributed under an OpenSource license. The capture software runs on Linux, MacOS, and Windows. Currently we are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the app, plug in your Pupil Headset, and get started!  
-
-<div class="btn-group btn-group-lg col-md-6 col-md-offset-3">
-    <a type="button" class="btn btn-default btn-default-pupil btn-lg" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4">
-        Download Pupil for Linux
-    </a>
-    <a type="button" class="btn btn-default btn-default-pupil btn-lg" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4">
-        Download Pupil for MacOS
-    </a>
-</div><!--  /btn-group -->
-<br>
+<div class="row row-buttons-pupil">
+<a type="button" class="btn btn-default btn-default-pupil btn-lg col-lg-12 btn-block" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4">
+    Download Pupil for Linux
+</a>
+<a type="button" class="btn btn-default btn-default-pupil btn-lg col-lg-12 btn-block" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.4">
+    Download Pupil for MacOS
+</a>
+</div>
 {% endblock %}
 
 {% block development %}   
@@ -138,23 +136,14 @@ Pupil headsets currently comes in two flavors - <strong>Pupil One</strong> and <
 Much work went into making the software modular and accessible.  You can develop and extend to suit your needs.  We want **Pupil** software to serve as an experiment and development platform for **Pupil** developers. 
 
 Developers, &uuml;ber-nerds, and code explorers -- you can clone the repository and install all dependencies yourself to run **Pupil** directly from the Python source.  Follow build instructions for your platform of choice.
-
-<div class="btn-group btn-group-lg col-md-6 col-md-offset-3">
-    <a type="button" class="btn btn-default btn-default-pupil btn-lg" href="https://github.com/pupil-labs/pupil/">
-        Go to code on Github
+<div class="row row-buttons-pupil">
+    <a type="button" class="btn btn-default btn-lg btn-default-pupil col-lg-12 btn-block" href="https://github.com/pupil-labs/pupil/">
+    Go to code on Github
     </a>
-    <div class="btn-group">
-        <button class="btn btn-default btn-default-pupil btn-lg dropdown-toggle pagination-centered" type="button" data-toggle="dropdown">
-            Go to build instructions<span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-            <li><a href="https://code.google.com/p/pupil/wiki/Installation_MacOS">MacOS</a></li>
-            <li><a href="https://code.google.com/p/pupil/wiki/Installation_Linux">Linux (Ubuntu)</a></li>
-            <li><a href="https://code.google.com/p/pupil/wiki/Installation_Windows">Windows</a></li>
-        </ul>
-    </div><!--  /btn-group -->
+    <a type="button" class="btn btn-default btn-lg btn-default-pupil col-lg-12 btn-block" href="https://code.google.com/p/pupil/wiki/Installing_Dependecies">
+    Go to build instructions
+    </a>    
 </div>
-<br>
 {% endblock %} 
 
 {% block community %}
