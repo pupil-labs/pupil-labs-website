@@ -19,12 +19,12 @@ context:
             name: William Patera
             url: http://willpatera.com
         copyright: Pupil Labs 2013
-        google_analytics_id: UA-XXXXX-YY
+        google_analytics_id: UA-40856943-1
         home_url: index.html
         menu:
             - title: Pupil - Eye Tracking
               type: page
-              url: projects.html
+              url: projects
             - title: Blog
               type: page
               url: blog
