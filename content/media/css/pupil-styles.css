@@ -79,7 +79,7 @@ strong{
     }
 }
 
-h1.h1-index {
+.jumbotron h1.h1-index {
     font-family: 'Josefin Slab', serif;
     font-weight: 100;
     font-size: 180px;
@@ -87,12 +87,13 @@ h1.h1-index {
     line-height: 1.04;
 }
 
-h1.h1-index small{
-	font-size:100px;
-}
-
-h2.h2-index {
+.jumbotron h2.h2-index {
     font-family: 'Roboto Slab', serif;
     /*font-size: 40;*/
 }
 
+@media screen and (max-width: 768px) {
+  .jumbotron h1.h1-index {
+    font-size: 140px;
+  }
+}
