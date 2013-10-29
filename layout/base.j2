@@ -16,7 +16,6 @@
     {% block basecss %}
     <link href="{{ media_url('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/pupil-styles.css') }}" rel="stylesheet">
-    <link href="{{ media_url('css/offcanvas.css') }}" rel="stylesheet">
 
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,400|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
     {% endblock basecss %}
@@ -27,9 +26,9 @@
     {% block favicons %}
     {# Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references #}
     <link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ media_url('img/apple-touch-icon.png') }}">
+<!--     <link rel="apple-touch-icon" href="{{ media_url('img/apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ media_url('img/appleimgim-touch-icon-72x72.png') }}">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ media_url('img/apple-touch-icon-114x114.png') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ media_url('img/apple-touch-icon-114x114.png') }}"> -->
     {% endblock favicons %}
 
     {% block headjs %}
@@ -86,7 +85,7 @@
 {#    <script src="{{ media_url('js/libs/tab.js') }}"></script>#}
 {#    <script src="{{ media_url('js/libs/tooltip.js') }}"></script>#}
 {#    <script src="{{ media_url('js/libs/transition.js') }}"></script>#}
-    <script src="{{ media_url('js/libs/offcanvas.js') }}"></script>
+{#    <script src="{{ media_url('js/libs/offcanvas.js') }}"></script> #}
     {% endblock bootstrap_scripts %}
 
     {% block scripts %}

@@ -7,7 +7,7 @@ Trying not to modify bootstrap.css anymore so that we can safely update in the f
 	color: #428bca;
 	background-color: #FCFCFC;
 	border-color: #F1F1F1;
-	margin: 5px;
+	margin-top: 5px;
 }
 
 .btn-default-pupil:hover {
@@ -16,18 +16,13 @@ Trying not to modify bootstrap.css anymore so that we can safely update in the f
 	border-color: #F1F1F1;
 }
 
-.btn-vert-pupil {
-	color: #428bca;
-	background-color: #FCFCFC;
-	border-color: #F1F1F1;
+.btn-group-pupil {
+  padding-left: 0px; 
 }
 
-.btn-vert-pupil:hover {
-	color: #428bca;
-	background-color: #DDD;
-	border-color: #F1F1F1;
+.dropdown-menu-pupil {
+    width: 80%;
 }
-
 
 .panel-pupil {
 	background-color: #F1F1F1;
@@ -96,4 +91,8 @@ strong{
   .jumbotron h1.h1-index {
     font-size: 140px;
   }
+}
+
+.td-overflow {
+    overflow: auto;
 }
