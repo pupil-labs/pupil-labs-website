@@ -4,12 +4,12 @@
 
 
 {% block jumbotron %}
-<div class="jumbotron" style="margin-top: -50px;">
-    <div class="container text-center" style="padding: 40px 15px;">
+<div class="jumbotron">
+    <div class="container text-center jumbotron-home-pupil">
 	    {% filter markdown -%}
 	    <h1 class="h1-index">{{ resource.meta.title }}</h1>
 	    {%- endfilter %}
-	  <div class="lead" style="margin-botton: 0px;">
+	  <div class="lead">
 	    {% filter markdown -%}
 	    {{ resource.meta.subtitle }}
 	    {%- endfilter %}

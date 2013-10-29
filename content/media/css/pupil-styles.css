@@ -3,6 +3,141 @@ Local extensions/modifications to bootstrap
 Trying not to modify bootstrap.css anymore so that we can safely update in the future
 */
 
+/*
+Begin Bootstrap v3.0.0 Overide
+Note: We do not modify the bootstrap css file
+this allows us to continually update bootstrap.css
+and minified bootstrap without breaking our layouts 
+*/
+
+/*Dotted line instead of default solid*/
+hr {
+  border-top: 1px dotted #eeeeee;
+}
+
+/*Give lead a bit more padding on top*/
+.lead {
+  padding-top: 5px;
+  margin-bottom: 0px;
+}
+
+/*Specify fonts and sizes*/
+h1 {
+  font-family: "Josefin Slab", serif;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Roboto Slab", serif;
+  font-weight: 100;
+  line-height: 1.1;
+}
+
+h1,
+.h1 {
+  font-size: 50px;
+}
+
+/*Modify font weight for small*/
+small {
+    font-weight: 100;
+}
+
+/*table custom coloring*/
+.table thead > tr > th,
+.table tbody > tr > th,
+.table tfoot > tr > th,
+.table thead > tr > td,
+.table tbody > tr > td,
+.table tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.428571429;
+  vertical-align: top;
+  border-top: 1px solid #FFFFFF;
+}
+
+/*navbar custom coloring*/
+.navbar-default {
+  background-color: #FCFCFC;
+  border-color: #f3f3f3;
+}
+
+/*Jumbotron overwriting - use background for image osition control*/
+.jumbotron {
+  padding: 30px;
+  margin-top: -50px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  /*background-image: url("../../img/pupil_front_rev04b_web_jumbotron.png");*/
+  /*background-position: top right;*/
+  /*background-repeat: no-repeat;*/
+  /*opacity: 1.0;*/
+  background-color: #F1F1F1;
+}
+
+.jumbotron h1 {
+  opacity: 1.0;
+}
+
+/*custom panel control*/
+.panel {
+  background-color: transparent;
+}
+
+.panel-title {
+  font-size: 40px;
+}
+
+.panel-footer {
+  background-color: #FFFFFF;
+  border-top: 1px solid #FFFFFF;
+}
+
+.panel-default {
+  border-color: #FFFFFF;
+}
+
+.panel-default > .panel-heading {
+  background-color: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.panel-default > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #FFFFFF;
+}
+
+.panel-default > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #FFFFFF;
+}
+
+.well {
+  background-color: transparent;
+  border: 1px solid #F1F1F1;
+}
+
+/*
+End Bootstrap v3.0.0 Override
+*/
+
+
+
+/*
+Begin custom Pupil styles
+*/
 .btn-default-pupil {
 	color: #428bca;
 	background-color: #FCFCFC;
@@ -74,6 +209,10 @@ strong{
     }
 }
 
+.jumbotron-home-pupil {
+  padding: 40px 15px;
+}
+
 .jumbotron h1.h1-index {
     font-family: 'Josefin Slab', serif;
     font-weight: 100;
@@ -95,4 +234,21 @@ strong{
 
 .td-overflow {
     overflow: auto;
+}
+
+/*fixed relative width product table*/
+.width-20 {
+  width: 20%;
+}
+
+.width-40 {
+  width: 40%;
+}
+
+.well-table-pupil {
+  background: #F1F1F1;
+}
+
+.table-product-pupil {
+  table-layout: fixed;
 }
