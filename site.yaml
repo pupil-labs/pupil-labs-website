@@ -1,4 +1,4 @@
-mode: development # Use "hyde publish -c prod.yaml to have this automatically switch to production
+mode: production # Use "hyde publish -c prod.yaml to have this automatically switch to production
 media_root: media # Relative path from content folder.
 media_url: /media # URL where the media files are served from.
 plugins:
@@ -50,9 +50,9 @@ urlcleaner:
 publisher:
     ssh:
         type: hyde.ext.publishers.ssh.SSH
-        username:
+        username: insert-username-.something
         server: collectivecreature.org
-        target: /domains/pupil-labs.com/html
+        target: /home/xxxxx/domains/pupil-labs.com/html
         command: rsync
-        opts: -r -e ssh
+        opts: -avz -e ssh
 
