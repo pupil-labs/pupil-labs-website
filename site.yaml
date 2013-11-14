@@ -47,4 +47,12 @@ urlcleaner:
     strip_extensions:
         - html
     append_slash: true
+publisher:
+    ssh:
+        type: hyde.ext.publishers.ssh.SSH
+        username:
+        server: collectivecreature.org
+        target: /domains/pupil-labs.com/html
+        command: rsync
+        opts: -r -e ssh
 
