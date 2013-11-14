@@ -12,8 +12,11 @@ author: Moritz & Will -- Pupil Team
 {% mark body -%}
 Another quick release of our recent development work on Pupil. Updates are recommended!
 
+<p><a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.5" class="btn btn-default btn-lg btn-default-pupil">Download v0.3.5</a></p>
+
 ## Improved Pupil Detection
 The new Pupil detector is more sophisticated and should preform much better. The False Positive rate (ghost pupils) has been dramatically reduced.
+
 We have used a load of eye recordings and can say that the new detector kill's our old version :-). Of course there is still lots left to improve and we have ideas to push pupil detection to new levels soon. But for now, here the release notes:
 
   * Pupil detection now pre-filters contours based on curvature properties.
@@ -41,25 +44,30 @@ If you want to install dependencies yourself (this means not using the bundle pa
 
 ### Mac
 
-```
+<code>
+<pre class="bash">
 pip install numexpr
-```
+</pre>
+</code>
 
 ### Linux
 Install new version on numpy, numexpr, scipy
-
-```
+<code>
+<pre class="bash">
 sudo pip install numpy
 sudo pip install scipy
 sudo pip install numexpr
 sudo pip install matplotlib
-```
+</pre>
+</code>
 
 Install OpenCV 2.4.6.1 and dependencies via script
 
-```
+<code>
+<pre class="bash">
 curl https://raw.github.com/jayrambhia/Install-OpenCV/master/Ubuntu/2.4/opencv2_4_6_1.sh | sh
-```
+</pre>
+</code>
 
 Please let us know what you think and let us know if you find any bugs via github issues or on the forum!
 
