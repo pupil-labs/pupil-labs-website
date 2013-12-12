@@ -50,8 +50,8 @@ urlcleaner:
 publisher:
     ssh:
         type: hyde.ext.publishers.ssh.SSH
-        username: username@something.com
-        server: collectivecreature.org
+        username: username.com
+        server: site.com
         target: /home/xxxxx/domains/pupil-labs.com/html
         command: rsync
         opts: -avz -e ssh
