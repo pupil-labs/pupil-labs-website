@@ -6,3 +6,4 @@ deploy
 .floo
 .flooignore
 .sublime-project
+prod.yaml
