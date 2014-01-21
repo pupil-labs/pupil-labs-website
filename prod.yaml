@@ -1,2 +1,59 @@
-extends: site.yaml
 mode: production
+media_root: media # Relative path from content folder.
+media_url: /media # URL where the media files are served from.
+plugins:
+    - hyde.ext.plugins.meta.MetaPlugin
+    - hyde.ext.plugins.auto_extend.AutoExtendPlugin
+    - hyde.ext.plugins.syntext.SyntextPlugin
+    - hyde.ext.plugins.textlinks.TextlinksPlugin
+    - hyde.ext.plugins.meta.SorterPlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
+    - hyde.ext.plugins.structure.PaginatorPlugin
+context:
+    data:
+        site_title: Pupil Labs
+        author_one:
+            name: Moritz Kassner
+            url: http://moritzkassner.de
+        author_two:
+            name: William Patera
+            url: http://willpatera.com
+        copyright: Pupil Labs 2014
+        google_analytics_id: UA-40856943-1
+        home_url: index.html
+        menu:
+            - title: Pupil - Eye Tracking
+              type: page
+              url: projects
+            - title: Blog
+              type: page
+              url: blog
+        sidebar:
+            - title: One
+              url: one.html
+            - title: Two
+              url: \#
+sorter:
+    time:
+        attr:
+            - meta.created
+        reverse: true
+        filters:
+            source.kind: html
+            meta.listable: true
+urlcleaner:
+    index_file_names:
+        - index.html
+    strip_extensions:
+        - html
+    append_slash: true
+
+
+publisher:
+    ssh:
+        type: hyde.ext.publishers.ssh.SSH
+        username: collectivecreature.org
+        server: collectivecreature.org
+        target: /home/29727/domains/pupil-labs.com/html
+        command: rsync
+        opts: -avz -e ssh
