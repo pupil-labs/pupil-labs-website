@@ -64,7 +64,7 @@ Pupil headsets currently come in two flavors - **Pupil** and **Pupil Pro**.
     <tr>
         <td class="td-overflow">Eye Camera</td>
         <td>Maximum Resolution - 640x360 @ 30fps</br>Infrared camera with IR Filter</td>
-        <td>Maximum Resolution - 640x480 @ 30fps</br>Infrared camera with IR Filter</br>Adjustable Camera Arm.</br><a class="btn btn-default btn-sm btn-default-pupil" data-toggle="modal" data-toggle="modal" data-target="#pupilProEyeCam">See detailed specs</a></td>
+        <td>Maximum Resolution - 640x480 @ 30fps</br>Infrared camera with IR Filter</br>Adjustable Camera Arm.</br><a class="btn btn-default btn-md btn-default-pupil" data-toggle="modal" data-toggle="modal" data-target="#pupilProEyeCam">Detailed Specs</a></td>
     </tr>
     <tr>
         <td class="td-overflow">World Camera</td>
@@ -122,10 +122,10 @@ Pupil headsets currently come in two flavors - **Pupil** and **Pupil Pro**.
 
 We are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the app, plug in your Pupil Headset, and get started!  
 <div class="row row-buttons-pupil">
-<a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-1 btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.5">
+<a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-1 btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.7">
     Download Pupil for Linux
 </a>
-<a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-2 btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.5">
+<a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-2 btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.7">
     Download Pupil for MacOS
 </a>
 </div>
@@ -146,9 +146,9 @@ Developers, &uuml;ber-nerds, and code explorers -- you can fork and clone the re
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu dropdown-menu-pupil" role="menu">
-            <li><a href="https://code.google.com/p/pupil/wiki/Installation_Linux">Linux (Ubuntu)</a></li>
-            <li><a href="https://code.google.com/p/pupil/wiki/Installation_MacOS">MacOS</a></li>
-            <li><a href="https://code.google.com/p/pupil/wiki/Installation_Windows">Windows</a></li>
+            <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-Linux">Linux (Ubuntu)</a></li>
+            <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-MacOS">MacOS</a></li>
+            <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-Windows">Windows</a></li>
         </ul>
     </div>
 <!--     <a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-2 btn-default-pupil" href="https://code.google.com/p/pupil/wiki/Installing_Dependecies">
@@ -180,24 +180,57 @@ If you plan to use Pupil in a commercial context, you will receive a commercial 
 
 <!-- Modal Popup Blocks -->
 {% block pupil_design_modal %}
-    <p>
-    A lot of work went into making the headset stable enough for eye-tracking, yet comfortable to wear and not overly obtrusive or cumbersome.  <strong>Pupil</strong> is 3D printed pre-tensioned.  
+    <h4>
+      <strong>Pupil</strong> is 3D printed pre-tensioned.
+    </h4>  
+    <h4>
+      When you put on the Pupil headset, it will transform into the shape we designed.
+    </h4>
+    <br>
+    <p>  
+    <iframe  style="width: 100%;" src="//player.vimeo.com/video/54518329?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff&amp;loop=1" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </p>
+    <br>
+    <h4>
+      <strong>Finite Element Analysis</strong>
+    </h4>
     <p>
-    When you put on the Pupil headset, it will transform into the shape we designed. Cameras will move into precise alignment.  In the video below, we visualize how we calculate the proper deformation using Fininte Element Analysis (FEA), enabling us to print a headset that fits tightly but is still slim, lightweight, and comfortable to wear.
+      The video is a visualization of the Fininte Element Analysis simulation that we use to compute the exact geometry of the headset.  We print the deformed geometry.  When you put the headset on your head, cameras come into alignment and the headset fits securely.   
     </p>
-    <div class="row">
-        <iframe  style="width: 100%;" src="//player.vimeo.com/video/54518329?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" height="250" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
+    <h4>
+      <strong>Features</strong>
+    </h4>
+    <p>
+      FEA simulations allow us to design a headset that not only performs well but is also
+      <ul>
+      <li>Thin</li>
+      <li>Lightweight</li>
+      <li>Stable - doesn't shift around while wearing</li>
+      <li>Comfortable to Wear</li>
+      </ul>
+    </p>
 {% endblock %}
 
 {% block pupil_pro_eye_cam_specs %}
-    The <em>new</em> <strong>Pupil Pro</strong> Eye Camera is smaller and adjustable. 
-    <ul>
-    <li> Small camera footprint makes the eye camera less obtrusive within your field of view. </li>
-    <li> Adjustable arm enables superior eye tracking performance and accommodates people with varying face geometries. </li> 
-    </ul>
+    <h4>
+    The new <strong>Pupil Pro</strong> Eye Camera is small and adjustable. 
+    </h4>
+    <br>
     <img src="../media/img/pupil-pro-eye-cam-adjustable-arm.png" class="img-responsive img-rounded" alt="Pupil Pro Eye Cam Mount">
+    <br>
+    <h4>
+      <strong>Smaller Camera Footprint</strong>
+    </h4>
+    <h5>
+      The Eye Camera is less visible within the field of view.
+    </h5>
+    <h4>
+      <strong>Adjustable Mount</strong> 
+    </h4>
+    <p>
+      The Eye Camera mount can orbit around a ball joint and be extended to enable superior eye tracking and to accommodate a wide range of facial geometries.
+    </p>
+
 {% endblock %}
 
 <!-- End Popup Blocks -->

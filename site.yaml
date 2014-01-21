@@ -24,7 +24,7 @@ context:
         menu:
             - title: Pupil - Eye Tracking
               type: page
-              url: projects
+              url: pupil
             - title: Blog
               type: page
               url: blog
