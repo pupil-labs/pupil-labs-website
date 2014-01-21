@@ -20,14 +20,18 @@ Pupil is in active, community driven development.
 ## Overview
 **Pupil** is a head mounted mobile eye tracking platform.  With **Pupil**, you will be able to record gaze positions. This means that you can view what someone else is looking at in real time, record gaze positions, and visualize results.  
 
-Pupil software is Open Source.  You can customize the software to your needs, build your own plugins, and contribute back to the community!
+Pupil software is [Open Source](http://github.com/pupil-labs/pupil "Pupil Github").  You can customize the software to your needs, build your own plugins, and contribute back to the community!
 {% endblock %}
 
 {% block hardware %}
-<h2>Hardware</h2>
-Pupil headsets are 3D printed head mounts that you wear like a pair of glasses. Pupil headsets hold two cameras. One camera tracks and records your eye movements, and another camera records your field of view.  Pupil headsets are lightweight and compatible with most modern computers with 2 USB ports.  
-<br>
-Pupil headsets currently come in two flavors - <strong>Pupil</strong> and <strong>Pupil Pro</strong>.  
+## Hardware
+Pupil headsets are 3D printed frames that you wear like a pair of glasses. A lot of design and engineering energy has gone into getting the ergonomics of the headset just right.
+
+Pupil headsets hold two cameras. One camera tracks and records your eye movements, and another camera records your field of view.  Pupil headsets are lightweight and compatible with most modern computers with 2 USB ports.  
+
+Pupil headsets currently come in two flavors - **Pupil** and **Pupil Pro**.
+
+<a class="btn btn-default btn-md btn-default-pupil" data-toggle="modal" data-toggle="modal" data-target="#pupilDesign">Learn More - Pupil Hardware Design and Engineering</a> 
 {% endblock %}
 
 {% block price_table %}
@@ -42,14 +46,14 @@ Pupil headsets currently come in two flavors - <strong>Pupil</strong> and <stron
     <tbody>
     <tr>
     <td></td>
-    <td><img src="../media/img/dev_front_crop.jpeg" class="img-responsive img-rounded" alt="Pupil Side"></td>
-    <td><img src="../media/img/pro_front_crop.jpeg" class="img-responsive img-rounded" alt="Pupil Pro Side"></td>
+    <td><img src="../media/img/dev_front_crop.jpeg" class="img-responsive img-rounded" alt="Pupil Front"></td>
+    <td><img src="../media/img/pro-front-r20-crop.png" class="img-responsive img-rounded" alt="Pupil Pro Front"></td>
     </tr>
     <tr>
         <td class="td-overflow">Description</td>
         <td>This is the standard version Pupil Headset. Pupil is under constant development.
         <br>This means that you will always get the latest version of the hardware and that you will have access to continuous upgrades for the software.</td>
-        <td>Pupil Pro enjoys all the features of Pupil and comes with an upgraded World Camera, improved cable management and fully enclosed cameras.</td>
+        <td>Pupil Pro is the next step up from Pupil. It has upgraded Eye and World Cameras, improved cable management, and fully enclosed cameras.</td>
     </tr>
     <tr>
     <tr>
@@ -59,8 +63,8 @@ Pupil headsets currently come in two flavors - <strong>Pupil</strong> and <stron
     </tr>
     <tr>
         <td class="td-overflow">Eye Camera</td>
-        <td>Maximum Resolution - 640x360 @ 30 fps</br>Infrared camera with basic IR-filter</td>
-        <td>Maximum Resolution - 640x360 @ 30fps</br>Infrared camera with custom bandpass IR-filter for improved tracking</td>
+        <td>Maximum Resolution - 640x360 @ 30fps</br>Infrared camera with IR Filter</td>
+        <td>Maximum Resolution - 640x480 @ 30fps</br>Infrared camera with IR Filter</br>Adjustable Camera Arm.</br><a class="btn btn-default btn-sm btn-default-pupil" data-toggle="modal" data-toggle="modal" data-target="#pupilProEyeCam">See detailed specs</a></td>
     </tr>
     <tr>
         <td class="td-overflow">World Camera</td>
@@ -155,11 +159,11 @@ Developers, &uuml;ber-nerds, and code explorers -- you can fork and clone the re
 
 {% block community %}
 ## Community, Documentation, & Support
-Check out documentation on the [wiki](https://code.google.com/p/pupil/wiki/Headset_Intro?tm=6)
+Check out documentation on the [wiki](http://github.com/pupil-labs/pupil/wiki)
 
-We provide free support for Pupil users through the [Pupil Forum](http://groups.google.com/group/pupil-discuss), on the [wiki](https://code.google.com/p/pupil/wiki/Headset_Intro?tm=6), and video tutorials embedded on the wiki.  
+We provide free support for Pupil users through the [Pupil Google Group](http://groups.google.com/group/pupil-discuss), on the [wiki](http://github.com/pupil-labs/pupil/wiki), and video tutorials embedded on the wiki.  
 
-If you require a higher level of support via email, video-call (Skype or Google Hangouts), or on-site setup and training, contact us to get a quote at <sales@pupil-labs.com>
+If you require a higher level of support via email, video-call (via Google Hangouts preferred), or on-site setup and training, contact us to get a quote at <sales@pupil-labs.com>
 
 Still have questions or want to chat?  Contact us at <info@pupil-labs.com>.   
 {% endblock %}
@@ -172,6 +176,31 @@ For noncommercial use, the software is free and Open Source, and the hardware is
 
 If you plan to use Pupil in a commercial context, you will receive a commercial use license with your purchase. We offer to work closely with you to integrate Pupil into your workflow.
 {% endblock %}
+
+
+<!-- Modal Popup Blocks -->
+{% block pupil_design_modal %}
+    <p>
+    A lot of work went into making the headset stable enough for eye-tracking, yet comfortable to wear and not overly obtrusive or cumbersome.  <strong>Pupil</strong> is 3D printed pre-tensioned.  
+    </p>
+    <p>
+    When you put on the Pupil headset, it will transform into the shape we designed. Cameras will move into precise alignment.  In the video below, we visualize how we calculate the proper deformation using Fininte Element Analysis (FEA), enabling us to print a headset that fits tightly but is still slim, lightweight, and comfortable to wear.
+    </p>
+    <iframe src="//player.vimeo.com/video/54518329?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="500" height="253" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{% endblock %}
+
+{% block pupil_pro_eye_cam_specs %}
+    The <em>new</em> <strong>Pupil Pro</strong> Eye Camera is smaller and adjustable. 
+    <ul>
+    <li> Small camera footprint makes the eye camera less obtrusive within your field of view. </li>
+    <li> Adjustable arm enables superior eye tracking performance and accommodates people with varying face geometries. </li> 
+    </ul>
+    <img src="../media/img/pupil-pro-eye-cam-adjustable-arm.png" class="img-responsive img-rounded" alt="Pupil Pro Eye Cam Mount">
+{% endblock %}
+
+<!-- End Popup Blocks -->
+
+
 
 
 

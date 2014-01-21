@@ -252,3 +252,17 @@ strong{
 .table-product-pupil {
   table-layout: fixed;
 }
+
+
+.modal-content {
+  background-color: #FCFCFC;
+  border-color: #f3f3f3;
+}
+
+.modal-body {
+  background-color: #F1F1F1;
+}
+
+.modal-footer {
+  margin-top: 0px;
+}
