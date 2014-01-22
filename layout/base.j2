@@ -52,7 +52,7 @@
       <hr>
       <footer>
         {% block footer %}
-        <p class="text-center">{{ copyright }}&copy;</p>
+        <p class="text-center">{{ copyright }}</p>
         <p class="text-center">
         <iframe src="http://ghbtns.com/github-btn.html?user=pupil-labs&repo=pupil&type=fork"
         allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
@@ -73,11 +73,11 @@
 
     {% block bootstrap_scripts %}
     <script async=true src="{{ media_url('js/libs/bootstrap.min.js') }}"></script>
-    <script src="{{ media_url('js/libs/highlight.pack.js') }}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
     {% endblock bootstrap_scripts %}
 
     {% block scripts %}
+    <script src="{{ media_url('js/libs/highlight.pack.js') }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     {% endblock scripts %}
 
 
