@@ -45,7 +45,7 @@ urlcleaner:
     index_file_names:
         - index.html
     strip_extensions:
-        - html
+        - .html
     append_slash: true
 
 
