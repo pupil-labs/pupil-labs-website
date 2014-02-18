@@ -266,3 +266,38 @@ strong{
 .modal-footer {
   margin-top: 0px;
 }
+
+body.modal-open,
+.modal-open .navbar-fixed-top,
+.modal-open .navbar-fixed-bottom {
+  margin-right: 0px;
+}
+
+.modal-backdrop {
+  background-color: #F1F1F1;
+}
+
+.modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.modal-backdrop.in {
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+}
+
+.alert {
+  width: 100%;
+  padding: 10px 15px 25px 15px;
+  margin-bottom: 0px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+}
+
+.alert-dismissable .close {
+  position: relative;
+  top: -2px;
+  right: 0px;
+  color: inherit;
+}
