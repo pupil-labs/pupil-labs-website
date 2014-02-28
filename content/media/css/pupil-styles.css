@@ -287,17 +287,6 @@ body.modal-open,
   filter: alpha(opacity=85);
 }
 
-.alert {
-  width: 100%;
-  padding: 10px 15px 25px 15px;
-  margin-bottom: 0px;
-  border: 1px solid transparent;
-  border-radius: 0px;
-}
-
-.alert-dismissable .close {
-  position: relative;
-  top: -2px;
-  right: 0px;
-  color: inherit;
-}
+.input-xs{
+  font-size: 12px;
+} 
