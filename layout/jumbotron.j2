@@ -15,32 +15,24 @@
 {% block container %}
 
 <div class="row">
-    <div class="col-lg-4">
+    <div class="col-md-4">
         {% filter markdown -%}
             {% block column1 %}{% endblock %}
         {%- endfilter %}
-        <p><a href="#" class="btn btn-default">
-        {% block button1 %}{% endblock %} &raquo;
-        </a></p>
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-md-4">
         {% filter markdown -%}
             {% block column2 %}{% endblock %}
         {%- endfilter %}
-        <p><a href="#" class="btn btn-default">
-        {% block button2 %}{% endblock %} &raquo;
-        </a></p>
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-md-4">
         {% filter markdown -%}
             {% block column3 %}{% endblock %}
         {%- endfilter %}
-        <p><a href="#" class="btn btn-default">
-        {% block button3 %}{% endblock %} &raquo;
-        </a></p>
     </div>
+
 </div><!-- /.row -->
 
 {% endblock container %}
