@@ -75,7 +75,7 @@ small {
 
 /*Jumbotron overwriting - use background for image osition control*/
 .jumbotron {
-  padding: 30px;
+  padding: 60px 30px 30px 30px;
   margin-top: -50px;
   margin-bottom: 30px;
   font-size: 21px;
@@ -290,3 +290,11 @@ body.modal-open,
 .input-xs{
   font-size: 12px;
 } 
+
+.label-xs{
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 1px;
+  padding-top: 1px;
+  display: none;
+}
