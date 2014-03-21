@@ -17,29 +17,69 @@ Pupil is in active, community driven development.
 {% endblock headline %}
 
 {% block overview %}
-## Overview
-**Pupil** is a head mounted mobile eye tracking platform.  With **Pupil**, you will be able to record gaze positions. This means that you can view what someone else is looking at in real time, record gaze positions, and visualize results.  
-
-Pupil software is [Open Source](http://github.com/pupil-labs/pupil "Pupil Github").  You can customize the software to your needs, build your own plugins, and contribute back to the community!
+<div class="well-header">
+  <div class='row text-center'>
+    <img src="{{ media_url('img/Pupil_Logo-150.png') }}">
+    <h2>Overview</h2>
+    <h4>
+      <p><strong>Pupil</strong> is a head mounted mobile eye tracking platform.</p>
+      <p>Using <strong>Pupil</strong> hardware and software, you will be able to see what someone is looking at in real time, record gaze positions, visualize data, and analyze results.</p>
+    </h4>
+  </div> <!-- /row -->
+  <br>
+  <hr class="dark">
+  <div class="row text-center">
+    <a data-scroll href="#hardware" class="btn btn-default btn-lg btn-default-pupil">Get Pupil Hardware</a>
+    <a data-scroll href="#software" class="btn btn-default btn-lg btn-default-pupil">Download Pupil Software</a>
+    <a data-scroll href="#user-guide-community" class="btn btn-default btn-lg btn-default-pupil">Read the User Guide</a>
+    <a data-scroll href="#user-guide-community" class="btn btn-default btn-lg btn-default-pupil">Get in Touch</a>    
+    <a data-scroll href="#contribute" class="btn btn-default btn-lg btn-default-pupil">Contribute to Open Source Code</a>
+  </div>
+  <br>
+</div> <!-- /well-header -->
 {% endblock %}
 
 {% block hardware %}
-## Hardware
-Pupil headsets are 3D printed frames that you wear like a pair of glasses. A lot of design and engineering energy has gone into getting the ergonomics of the headset just right.
-
-<a class="btn btn-default btn-md btn-default-pupil" data-toggle="modal" data-target="#pupilDesign">Learn More - Pupil Hardware Design</a> 
-
-Pupil headsets hold two cameras. One camera tracks and records your eye movements, and another camera records your field of view.  Pupil headsets are lightweight and compatible with most modern computers with 2 USB ports.  
-
-Pupil headsets currently come in two flavors - **Pupil** and **Pupil Pro**.
+<div class="well-header">
+  <div class="row text-center">
+    <img src="{{ media_url('img/Pupil_Icon_Website-01.png') }}">
+    <h2>Pupil Hardware</h2>
+    <h4>
+      <p>
+      <strong>Pupil headsets</strong> are 3D printed frames that you wear like a pair of glasses. 
+      </p>
+      <p>
+      A lot of design and engineering thought &amp; energy has gone into getting the ergonomics of the headset just right.
+      </p>
+    </h4>
+  </div>
+</div><!--  /well-header -->
+<div class="well-content">
+    <p>
+    Pupil headsets hold two cameras. One camera tracks and records your eye movements, and another camera records your field of view.  
+    Pupil headsets are lightweight and compatible with most modern computers with 2 USB ports.  
+    </p>
+    <p>
+    Pupil headsets currently come in two models - <strong>Pupil</strong> and <strong>Pupil Pro</strong>.
+    </p>
+    <hr>
+    <div class="row">
+      <div class="col-sm-6 text-center">
+        <a class="btn btn-default btn-lg btn-default-pupil" data-toggle="modal" data-target="#pupilDesign">Learn More about the Design</a>     
+      </div>
+      <div class="col-sm-6 text-center">
+        <a class="btn btn-default btn-lg btn-default-pupil" data-scroll href="#hardware-table">Compare Pupil &amp; Pupil Pro</a>     
+      </div>
+    </div>
+</div> <!-- /well-content -->
 {% endblock %}
 
 {% block price_table %}
     <thead>
     <tr>
         <th class="width-20"></th>
-        <th class="width-40"><h3>Pupil</h3></th>
-        <th class="width-40"><h3>Pupil Pro</h3></th>
+        <th class="width-40"><h2>Pupil</h2></th>
+        <th class="width-40"><h2>Pupil Pro</h2></th>
     </tr>
     </thead>
 
@@ -123,64 +163,151 @@ Pupil headsets currently come in two flavors - **Pupil** and **Pupil Pro**.
 {% endblock price_table %}
 
 {% block software %}
-## Software
-**Pupil** is a project in active, community driven development and distributed under an OpenSource license. The capture software runs on Linux, MacOS, and Windows. 
-
-We are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the app, plug in your Pupil Headset, and get started!  
-<div class="row row-buttons-pupil">
-<a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-1 btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/">
-    Download Pupil for Linux
-</a>
-<a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-2 btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/">
-    Download Pupil for MacOS
-</a>
-</div>
+<div class="well-header">
+  <div class='row text-center'>
+    <img src="{{ media_url('img/Pupil_Icon_Website-05.png') }}">
+    <h2>Software</h2>
+    <h4>
+      <p>
+      <strong>Pupil</strong> is a project in active, community driven development and distributed under an OpenSource license.
+      </p>
+      <p> 
+      <strong>Pupil Capture</strong> and <strong>Pupil Player</strong> software run on Linux, MacOS, and Windows. 
+      </p>
+    </h4>
+  </div>
+</div> <!-- /well-header -->
+<div class="well-content">
+  <p>
+  We are actively developing for Linux and MacOS.  Windows installations are supported by the Pupil community.  You can download the bundled app, plug in your Pupil Headset, and get started!  
+  </p>
+  <hr>  
+  <div class="row">
+    <div class="col-sm-6 text-center">
+      <a type="button" class="btn btn-default btn-lg btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/">
+      Download Pupil Software for Linux
+      </a>
+    </div>
+    <div class="col-sm-6 text-center">
+      <a type="button" class="btn btn-default btn-lg btn-default-pupil" href="https://github.com/pupil-labs/pupil/releases/">
+        Download Pupil Software for MacOS
+      </a>
+    </div>
+  </div>
+</div> <!-- /well-content -->
 {% endblock %}
 
-{% block development %}   
-## Open Source Development 
-Much work went into making the software modular and accessible.  You can develop and extend to suit your needs.  We want **Pupil** software to serve as an experiment and development platform for **Pupil** developers. 
-
-Developers, &uuml;ber-nerds, and code explorers -- you can fork and clone the repository and install all dependencies on your machine and run **Pupil** directly from the Python source.  Follow build instructions for your platform of choice.
-<div class="row row-buttons-pupil">
-    <a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-1 btn-default-pupil" href="https://github.com/pupil-labs/pupil/">
-    Go to code on Github
-    </a>
-    <div class="btn-group btn-group-pupil col-md-4 col-md-offset-2">
-        <button type="button" class="btn btn-default btn-lg btn-default-pupil">Go to Build Instructions</button>
-        <button type="button" class="btn btn-default btn-lg btn-default-pupil dropdown-toggle" data-toggle="dropdown">
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu dropdown-menu-pupil" role="menu">
-            <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-Linux">Linux (Ubuntu)</a></li>
-            <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-MacOS">MacOS</a></li>
-            <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-Windows">Windows</a></li>
-        </ul>
+{% block user_guide %}
+<div class="well-header">
+  <div class='row'>
+    <div class="col-sm-6 text-center">
+      <img src="{{ media_url('img/Pupil_Icon_Website-04.png') }}">
+      <h2>User Guide</h2>
+        <h4>
+        Want to know how to get started?
+        </h4>
+        <p>
+        Have questions about your setup?
+        </p>
+        <p>
+        Read about what you can do with <strong>Pupil</strong> on the wiki.
+        </p>
+      <a href="http://github.com/pupil-labs/pupil/wiki" class="btn btn-default btn-lg btn-default-pupil">Go to Pupil Wiki</a>
+      <br>
+      <br>
     </div>
-<!--     <a type="button" class="btn btn-default btn-lg col-md-4 col-md-offset-2 btn-default-pupil" href="https://code.google.com/p/pupil/wiki/Installing_Dependecies">
-    Go to build instructions
-    </a>     -->
+    <div class="col-sm-6 text-center">
+      <img src="{{ media_url('img/Pupil_Icon_Website-02.png') }}">
+      <h2>Get in Touch</h2>
+        <h4>
+        Become part of the Pupil Community. 
+        </h4>
+        <p>
+        Ask questions &amp; share work on the Pupil Google Group.
+        </p>
+        <p>
+        Need a higher level of support? Want to discuss custom setups? 
+        </p>
+      <a href="mailto:info@pupil-labs.com" class="btn btn-default btn-lg btn-default-pupil">Email Us</a>
+      <br>
+      <br>
+    </div>
+</div> <!-- /well-header -->
+{% endblock %}
+
+{% block contribute %}   
+<div class="well-header">
+  <div class='row text-center'>
+    <img src="{{ media_url('img/Pupil_Icon_Website-03.png') }}">
+    <h2>Contribute to an Open Source Project</h2>
+    <h4>
+      <p>
+      We've made a lot of exciting progress with <strong>Pupil Capture</strong> and <strong>Pupil Player</strong> &amp; there's always room for improvement!  
+      </p>
+    </h4>
+  </div>
+</div>
+<div class="well-content">
+  <p>
+  A lot of work went into making the software modular and accessible. You can develop and extend to suit your needs.  We want <strong>Pupil</strong> software to serve as an experiment and development platform for researchers and developers. 
+  </p>
+  <p>
+  Developers, &uuml;ber-nerds, and code explorers -- you can fork and clone the repository and install all dependencies on your machine and run <strong>Pupil</strong> software directly from the Python source. Follow build instructions for your platform of choice.  
+  </p>
+  <p>
+  Check out the developer guide on the wiki to see how to contribute. Make something awesome &amp; send a pull request!
+  </p>
+  <hr>  
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <a type="button" class="btn btn-default btn-lg btn-default-pupil" href="https://github.com/pupil-labs/pupil/">
+      Checkout Code on Github
+      </a>
+    </div>
+    <div class="col-sm-4 text-center">
+      <a type="button" class="btn btn-default btn-lg btn-default-pupil" href="https://github.com/pupil-labs/pupil/wiki/Developer-Guide">
+      Go to Developer Guide
+      </a>
+    </div>
+    <div class="col-sm-4 text-center">
+      <div class="btn-group btn-group-pupil">
+          <button type="button" class="btn btn-default btn-lg btn-default-pupil">Go to Build Instructions</button>
+          <button type="button" class="btn btn-default btn-lg btn-default-pupil dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-pupil" role="menu">
+              <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-Linux">Linux (Ubuntu)</a></li>
+              <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-MacOS">MacOS</a></li>
+              <li><a href="https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-Windows">Windows</a></li>
+          </ul>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %} 
 
-{% block community %}
-## Community, Documentation, & Support
-Check out documentation on the [wiki](http://github.com/pupil-labs/pupil/wiki)
-
-We provide free support for Pupil users through the [Pupil Google Group](http://groups.google.com/group/pupil-discuss), on the [wiki](http://github.com/pupil-labs/pupil/wiki), and video tutorials embedded on the wiki.  
-
-If you require a higher level of support via email, video-call (via Google Hangouts preferred), or on-site setup and training, contact us to get a quote at <sales@pupil-labs.com>
-
-Still have questions or want to chat?  Contact us at <info@pupil-labs.com>.   
-{% endblock %}
-
 {% block license %}
-## License
-We want Pupil to proliferate! We want you to use Pupil to empower and inspire whatever you do. Be it academic research, teaching, art, assistive technologies or professional work.
-
-For noncommercial use, the software is free and Open Source, and the hardware is very accessible and modifiable. We consider you a member of the Pupil community rather than a customer of the Pupil product or Pupil Labs. We encourage the modification of software and hardware in accordance to the [open source license](http://creativecommons.org/licenses/by-nc-sa/3.0/).
-
-If you plan to use Pupil in a commercial context, you will receive a commercial use license with your purchase. We offer to work closely with you to integrate Pupil into your workflow.
+<div class="well-header">
+  <div class="text-center">
+    <h2>License</h2>
+    <h4>
+    <p>
+    We want Pupil to proliferate &amp; we want you to use Pupil to empower and inspire whatever you do. 
+    </p>
+    <p>
+    Be it academic research, teaching, art, assistive technologies or professional work...
+    </p>
+    </h4>
+  </div>
+</div>
+<div class="well-content">
+  <p>
+  For noncommercial use, the software is free and Open Source, and the hardware is very accessible and modifiable. We consider you a member of the Pupil community rather than a customer of the Pupil product or Pupil Labs. We encourage the modification of software and hardware in accordance to the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">open source license</a>
+  </p>
+  <p>
+  If you plan to use Pupil in a commercial context, you will receive a commercial use license with your purchase. We offer to work closely with you to integrate Pupil into your workflow.
+  </p>
+</div>
 {% endblock %}
 
 

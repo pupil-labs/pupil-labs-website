@@ -4,58 +4,48 @@
 
 
 {% block container %}
-
   <div class="container">
-  <div class="row">
-    <div class="col-md-12 well well-lg">
-      {% filter markdown -%}
-          {% block overview %}{% endblock %}
-      {%- endfilter %}
+  <div id="intro" class="row">
+    <div class="col-sm-12 well well-lg">
+      {% block overview %}{% endblock %}
     </div><!-- /col -->
   </div><!-- /row -->
 
-  <div class="row">
-    <div class="col-md-12 well well-lg">
-      {% filter markdown -%}
-        {% block hardware %}{% endblock %}
-      {%- endfilter %}
+  <div id="hardware" class="row">
+    <div class="col-sm-12 well well-lg">
+      {% block hardware %}{% endblock %}
     </div><!-- /col -->
   </div><!-- /row -->
 
-  <div class="row">
-    <div class="col-md-12 well well-lg well-table-pupil">
+  <div id="hardware-table" class="row">
+    <div class="col-sm-12 well well-lg well-table-pupil">
       <table class="table table-hover table-product-pupil">
           {% block price_table %}{% endblock %}
       </table>
     </div><!-- /col -->
   </div><!-- /.row -->
 
-  <div class="row">
-    <div class="col-md-12 well well-lg">
-      {% filter markdown -%}
-          {% block software %}{% endblock %}
-      {%- endfilter %}
+  <div id="software" class="row">
+    <div class="col-sm-12 well well-lg">
+      {% block software %}{% endblock %}
     </div><!-- /col -->
   </div><!-- /row -->
 
-  <div class="row">
-    <div class="col-md-12 well well-lg">
-      {% filter markdown -%}
-          {% block development %}{% endblock %}
-      {%- endfilter %}
+  <div id="user-guide-community" class="row">
+    <div class="col-sm-12 well well-lg" style="background-color:transparent;">
+      {% block user_guide %}{% endblock %}
     </div><!-- /col -->
   </div><!-- /row -->
 
-   <div class="row">
-    <div class="col-md-6">
-      {% filter markdown -%}
-          {% block community %}{% endblock %}
-      {%- endfilter %}
+  <div id="contribute" class="row">
+    <div class="col-sm-12 well well-lg">
+      {% block contribute %}{% endblock %}
     </div><!-- /col -->
-    <div class="col-md-6">
-      {% filter markdown -%}
-          {% block license %}{% endblock %}
-      {%- endfilter %}
+  </div><!-- /row -->
+
+   <div id="license" class="row">
+    <div class="col-sm-12 well well-lg" style="background-color:transparent;">
+      {% block license %}{% endblock %}
     </div><!-- /col -->
   </div><!-- /row -->
 

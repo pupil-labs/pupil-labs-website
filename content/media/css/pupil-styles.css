@@ -11,8 +11,31 @@ and minified bootstrap without breaking our layouts
 */
 
 /*Dotted line instead of default solid*/
+a {
+  color: #428bca;
+  text-decoration: none;
+  background-color: none;
+  -o-transition:color .5s ease-in-out, background-color .6s ease-in-out;
+  -ms-transition:color .5s ease-in-out, background-color .6s ease-in-out;
+  -moz-transition:color .5s ease-in-out, background-color .6s ease-in-out;
+  -webkit-transition:color .5s ease-in-out, background-color .6s ease-in-out;
+  /* ...and now override with proper CSS property */
+  transition:color .5s ease-in-out, background-color .6s ease-in-out;
+}
+
+a:hover,
+a:focus{
+  color: #333;
+  text-decoration: none;
+  background-color: #FCFCFC;
+}
+
 hr {
   border-top: 1px dotted #eeeeee;
+}
+
+hr.dark {
+  border-top: 1px dotted #D6D6D6;
 }
 
 /*Give lead a bit more padding on top*/
@@ -125,10 +148,36 @@ small {
 }
 
 .well {
-  background-color: transparent;
-  border: 1px solid #F1F1F1;
+  background-color: #FCFCFC;
+  border: 2px solid #FCFCFC;
+  padding: 0px;
 }
 
+.well-content {
+  background-color: #3DF879;
+  padding: 15px 24px 24px 24px;
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.well-header {
+  padding: 15px 24px 10px 24px;
+}
+
+.well-header h1{
+  font-family: "Roboto Slab", serif;
+  line-height: 1.1;
+}
+
+.well-header h4{
+  line-height: 0.9;
+  color: #555;
+}
+
+.well-footer{
+  padding: 15px 24px 10px 24px;
+}
 /*
 End Bootstrap v3.0.0 Override
 */
@@ -258,6 +307,8 @@ strong{
   background-color: #FCFCFC;
   border-color: #f3f3f3;
 }
+
+
 
 .modal-body {
   background-color: #F1F1F1;
