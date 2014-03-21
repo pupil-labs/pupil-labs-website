@@ -194,6 +194,19 @@ Begin custom Pupil styles
 	margin-top: 5px;
 }
 
+.btn-default-pupil-success {
+  color: #FCFCFC;
+  background-color: #428bca;
+  border-color: #F1F1F1;
+  margin-top: 5px;
+}
+
+.btn-default-pupil-success:hover{
+  color: #FCFCFC;
+  background-color: #325E85;
+  border-color: #F1F1F1;
+}
+
 .btn-default-pupil:hover {
 	color: #428bca;
 	background-color: #DDD;
