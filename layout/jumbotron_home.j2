@@ -38,7 +38,7 @@
             {% block about_us %}{% endblock %}
             {%- endfilter %}
         </p>
-            <p class="text-center"><a href="mailto:{{ resource.meta.about_contact }}" class="btn btn-default btn-lg btn-default-pupil">
+            <p class="text-center"><a href="{{ resource.meta.about_url }}" class="btn btn-default btn-lg btn-default-pupil">
             {{ resource.meta.about_button }}
             </a></p>
     </div>
