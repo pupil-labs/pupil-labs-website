@@ -362,3 +362,8 @@ body.modal-open,
   padding-top: 1px;
   display: none;
 }
+
+.container-full{
+  margin: 0 auto;
+  width: 100%;
+}
