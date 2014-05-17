@@ -40,9 +40,11 @@
     return this;
   };
 
-  $.fn.reveal = function(target) {
+  $.fn.reveal = function(target,toDB) {
   	$(this).on('click', function(){
-  		$(target).collapse('show')
+  		console.log($(this).children('input').val());
+  		$(toDB).val($(this).children('input').val());
+  		$(target).collapse('show');
   	});
 
   		// $(this).addClass('.active');

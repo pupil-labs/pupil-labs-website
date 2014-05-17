@@ -17,6 +17,8 @@
     <link href="{{ media_url('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/pupil-styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/github.min.css">
+    <link rel="stylesheet" href="{{ media_url('css/bootstrap-combobox.css') }}"">
+
 
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,400|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
     {% endblock basecss %}
@@ -93,16 +95,21 @@
         });
     </script>
 
+    <script src="{{ media_url('js/libs/bootstrap-combobox.min.js') }}"></script>
 
     <script src="{{ media_url('js/order-form.js') }}"></script>
     <script>
       $(document).ready(function() {
-        $('label[data-id=order-type]').reveal("#contact-collapse")
+        $('label[data-id=order-type]').reveal("#contact-collapse","input[data-id=order-type]")
 
         $("#copyToShipping").copyForm("#billing", "#shipping");
-        $('button[data-toggle=popover]').popover();
+
         $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
         $("input[name='entry.1092253740']").updateButtonText('button[type=submit]');
+
+        $('button[data-toggle=popover]').popover();
+        $('span[data-toggle=tooltip]').tooltip();
+        $('.combobox').combobox();
 
       });
     </script>
