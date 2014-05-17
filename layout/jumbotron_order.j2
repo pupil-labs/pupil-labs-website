@@ -1,0 +1,111 @@
+{% extends "jumbotron.j2" %}
+
+{% block container %}
+		<div class="col-sm-12">
+			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted!='undefined'){window.location='{{ resource.meta.formRedirect }}';}"></iframe>
+	    <form class="form-horizontal" role="form" action="{{ resource.meta.formUrl }}" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
+	    
+	    <!-- order-row -->
+	    <div class="row">
+        
+		    <div class='form-group'>
+			    <div class="col-sm-12 text-center">
+				    <h3>{{ resource.meta.a }}</h3>
+				    <h4><strong>How many</strong> headsets would you like to order?</h4>
+			    </div>
+		    </div>
+
+         <div class="form-group">
+          <div class="col-sm-6 col-sm-offset-3">
+              <div class="input-group">
+                  <span class="input-group-addon">
+                  {{ resource.meta.a1 }}
+                  </span>
+                  <input type="number" class="form-control" id="inputPupilProQuantity" min="0" max="10" value="1" data-action="count" data-product="pupil-pro">
+              </div>
+            </div>
+          </div>
+
+         <div class="form-group">
+          <div class="col-sm-6 col-sm-offset-3">
+              <div class="input-group">
+                  <span class="input-group-addon">
+                  {{ resource.meta.a2 }}
+                  </span>
+                  <input type="number" class="form-control" id="inputPupilDevQuantity" min="0" max="10" value="0" data-action="count" data-product="pupil-dev">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="display: visible;">
+            <div class="col-sm-6 col-sm-offset-3">
+              <input type="text" class="form-control" data-id="orderSum" placeholder="" value="">
+            </div>
+          </div>
+
+
+		    <div class='form-group'>
+			    <div class="col-sm-12 text-center">
+			    <label>
+				    <h4>Placing an <strong>order</strong> or <strong>quotation</strong> request?</h4>
+				  </label>
+			    </div>
+		    </div>
+
+        <div class="form-group">
+	      	<div class="col-sm-12 text-center">
+	      	<div class="btn-group" data-toggle="buttons">
+	      		<label class="btn btn-default" name="order" data-id="order-type">
+		      		<input type="radio" name="order-type" value="order" id="option1">{{ resource.meta.a3 }}
+	      		</label>
+	      		<label class="btn btn-default" data-id="order-type" name="quote">
+		      		<input type="radio" name="order-type" value="Quotation" id="option2">{{ resource.meta.a4 }}
+	      		</label>
+	      	</div>
+	      	</div>
+      	</div>
+
+	    </div>
+	    <!-- /order-row -->
+
+	    <!-- contact-row -->
+	    <div id="contact-collapse" class="collapse">
+	    <div class="row">
+		    <div class='form-group'>
+			    <div class="col-sm-12 text-center">
+			    <label>
+				    <h3>{{ resource.meta.b }}</h3>
+				  </label>
+			    </div>
+		    </div>
+			</div>
+
+	    </div>
+	    <!-- /contact-row -->
+
+	    <!-- billing-row -->
+	    <div class="row">
+
+	    </div>
+	    <!-- /billing-row -->
+
+	    <!-- shipping-row -->
+	    <div class="row">
+
+	    </div>
+	    <!-- /shipping-row -->
+
+	    </form>
+	    <!--  /form -->
+		</div>
+		<!--  /col -->
+		</div>
+		<!-- /row -->
+
+		<div class="col-md-6">
+		  {% filter markdown -%}
+		      {% block imprint %}{% endblock %}
+		  {%- endfilter %}
+		</div><!-- /col -->
+	
+{% endblock container %}
