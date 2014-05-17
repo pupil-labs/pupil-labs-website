@@ -76,6 +76,7 @@
     {% block custom_scripts %}
     <script src="{{ media_url('js/libs/highlight.pack.js') }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    
     <script src="{{ media_url('js/libs/jquery.ajaxchimp.min.js') }}"></script>
     <script>
     $('#mc-form').ajaxChimp({
@@ -90,6 +91,20 @@
             updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
             offset: 52 // Integer. How far to offset the scrolling anchor location in pixels
         });
+    </script>
+
+
+    <script src="{{ media_url('js/order-form.js') }}"></script>
+    <script>
+      $(document).ready(function() {
+        $('label[data-id=order-type]').reveal("#contact-collapse")
+
+        $("#copyToShipping").copyForm("#billing", "#shipping");
+        $('button[data-toggle=popover]').popover();
+        $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
+        $("input[name='entry.1092253740']").updateButtonText('button[type=submit]');
+
+      });
     </script>
     {% endblock custom_scripts %}
 
