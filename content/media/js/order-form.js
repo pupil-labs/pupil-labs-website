@@ -55,4 +55,12 @@
 
   };
 
+  $.fn.revealShippingIntro = function(target) {
+    $(this).on('click', function(){
+      $(target).collapse('show');
+    });
+    return this;
+  };
+
+
 })( jQuery );
