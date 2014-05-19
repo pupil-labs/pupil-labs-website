@@ -1,18 +1,24 @@
 ;(function( $ ) {
 
   $.fn.copyForm = function(billing, shipping) {
-    this.click(function() {
-      if ($(this).is(':checked')) {
-        $(billing + " .form-control").each(function() {
-          $(shipping + " .form-control[data-id='" + $(this).attr('data-id') + "'").val($(this).val());
-        });
-      } else {
-        $(shipping + " .form-control").each(function() {
-          $(this).val($(this).attr('placeholder'));
-        });
-      }
-    });
-    return this;
+  	$(this).on('click', function(e) {
+  		if($(this).children('input').val() === 'use-other') {
+	  		$(shipping + " .form-control").each(function() {
+  				$(this).val("");
+  			});
+  			$(shipping).collapse('show');
+        $('#submit-collapse').collapse('show');
+  		} else {
+        if($(shipping).hasClass("in")) {
+          $(shipping).collapse('hide');
+        }
+	  		$(billing + " .form-control").each(function() {
+  				$(shipping + " .form-control[data-id=" + $(this).attr('data-id') + "]").val($(this).val());
+	  		});
+        $('#submit-collapse').collapse('show');
+  		};
+  	});
+  	return this;
   };
 
   $.fn.sumOrder = function(order_sum) {
@@ -33,23 +39,20 @@
 
   $.fn.updateButtonText = function(button) {
     $(button).text("Submit " + $(this).val() + " Request");
-
     $(this).change(function() {
       $(button).text("Submit " + $(this).val() + " Request");
     });
     return this;
   };
 
-  $.fn.reveal = function(target,toDB) {
+  $.fn.revealContact = function(target,toDB) {
   	$(this).on('click', function(){
-  		console.log($(this).children('input').val());
+  		$('button[data-id=submit-order]').text("Submit " + $(this).children('input').val() + " Request");
   		$(toDB).val($(this).children('input').val());
   		$(target).collapse('show');
   	});
+  	return this;
 
-  		// $(this).addClass('.active');
-  		// console.log($(this).children('input').val());
-  	// });
   };
 
 })( jQuery );

@@ -17,7 +17,7 @@
     <link href="{{ media_url('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/pupil-styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/github.min.css">
-    <link rel="stylesheet" href="{{ media_url('css/bootstrap-combobox.css') }}"">
+    <link rel="stylesheet" href="{{ media_url('css/bootstrap-combobox.css') }}">
 
 
     <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,400|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
@@ -100,12 +100,13 @@
     <script src="{{ media_url('js/order-form.js') }}"></script>
     <script>
       $(document).ready(function() {
-        $('label[data-id=order-type]').reveal("#contact-collapse","input[data-id=order-type]")
+        $('label[data-id=order-type]').revealContact("#contact-collapse","input[data-id=order-type]")
+        // reveal for data shipping
 
-        $("#copyToShipping").copyForm("#billing", "#shipping");
+        $("label[data-id=shipping-data]").copyForm("#contact-collapse", "#shipping-collapse");
 
         $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
-        $("input[name='entry.1092253740']").updateButtonText('button[type=submit]');
+        // $("input[name=order-type]").updateButtonText('button[data-id=submit-order]');
 
         $('button[data-toggle=popover]').popover();
         $('span[data-toggle=tooltip]').tooltip();
