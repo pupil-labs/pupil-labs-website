@@ -109,8 +109,8 @@
 	     <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">First Name</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="d0" placeholder="What's your first name?">
+		        <span class="input-group-addon">{{ resource.meta.b1 }}</span>
+		        <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.b1label }}">
 		      </div>
 		    </div>
 		  </div>
@@ -118,8 +118,8 @@
 		  <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">Last Name</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="d1" placeholder="What's your last name?">
+		        <span class="input-group-addon">{{ resource.meta.b2 }}</span>
+		        <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.b2label }}">
 		      </div>
 		    </div>
 		  </div>
@@ -127,8 +127,8 @@
 		  <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">Email</span>
-		        <input type="email" class="form-control" id="inputFirstName1" data-id="d2" placeholder="user@domain.com">
+		        <span class="input-group-addon">{{ resource.meta.b3 }}</span>
+		        <input type="email" class="form-control" id="inputFirstName1" data-id="b3" placeholder="{{ resource.meta.b3label }}">
 		      </div>
 		    </div>
 		  </div>
@@ -136,8 +136,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">Company</span>
-            <input type="text" class="form-control" id="" data-id="d3" placeholder="Company or University or Instution...">
+            <span class="input-group-addon">{{ resource.meta.b4 }}</span>
+            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.b4label }}">
           </div>
         </div>
       </div>
@@ -145,8 +145,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">VAT ID</span>
-            <input type="text" class="form-control" id="" data-id="d4" placeholder="EU VAT ID Number">
+            <span class="input-group-addon" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">{{ resource.meta.b5 }}</span>
+            <input type="text" class="form-control" id="" data-id="b5" placeholder="{{ resource.meta.b5label }}">
           </div>
         </div>
       </div>
@@ -154,8 +154,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">Phone</span>
-            <input type="tel" class="form-control" id="" data-id="d6" placeholder="Required info for shipping">
+            <span class="input-group-addon">{{ resource.meta.b6 }}</span>
+            <input type="tel" class="form-control" id="" data-id="b6" placeholder="{{ resource.meta.b6label }}">
           </div>
         </div>
       </div>  
@@ -163,8 +163,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">Address</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="d6" placeholder="This is the billing address that will appear on your invoice or quotation." rows="4" style="resize: vertical;"></textarea>
+            <span class="input-group-addon">{{ resource.meta.b7 }}</span>
+        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.b7label }}" rows="4" style="resize: vertical;"></textarea>
         </div>
       </div>
       </div>
@@ -172,7 +172,7 @@
       <div class="form-group">
       	<div class="col-sm-6 col-sm-offset-3">
 	        <select class="combobox form-control">
-           <option value="" selected="selected">Select Your Country</option>
+           <option value="" selected="selected">{{ resource.meta.b8 }}</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
             <option value="Andorra">Andorra</option>
@@ -444,8 +444,8 @@
 	     <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">First Name</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="d0" placeholder="What's your first name?">
+		        <span class="input-group-addon">{{ resource.meta.b1 }}</span>
+		        <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.b1label }}">
 		      </div>
 		    </div>
 		  </div>
@@ -453,8 +453,8 @@
 		  <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">Last Name</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="d1" placeholder="What's your last name?">
+		        <span class="input-group-addon">{{ resource.meta.b2 }}</span>
+		        <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.b2label }}">
 		      </div>
 		    </div>
 		  </div>
@@ -462,8 +462,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">Company</span>
-            <input type="text" class="form-control" id="" data-id="d3" placeholder="Company or University or Instution...">
+            <span class="input-group-addon">{{ resource.meta.b4 }}</span>
+            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.b4label }}">
           </div>
         </div>
       </div>
@@ -471,8 +471,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">Address</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="d6" placeholder="This is the address that will appear on your invoice or quotation." rows="4" style="resize: vertical;"></textarea>
+            <span class="input-group-addon">{{ resource.meta.b7 }}</span>
+        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.b7label }}" rows="4" style="resize: vertical;"></textarea>
         </div>
       </div>
       </div>
@@ -494,8 +494,8 @@
 
 	    <div class='form-group'>
 		    <div class="col-sm-12 text-center">
-			    <h3>Notes</h3>
-			    <h4>Have questions or notes that you'd like to include?</h4>
+			    <h3>{{ resource.meta.c }}</h3>
+			    <h4>{{ resource.meta.csub }}</h4>
 	    </div>
 	    </div>
 	    
@@ -503,7 +503,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">Notes</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="d6" placeholder="Please include any notes regarding your order, billing, or shipping here. Afterwards, hit submit and we'll send you an email confirmation" rows="4" style="resize: vertical;"></textarea>
+        <textarea class="form-control" id="inputBillingAddress" data-id="d6" placeholder="{{ resource.meta.clabel }}" rows="4" style="resize: vertical;"></textarea>
         </div>
       </div>
       </div>
@@ -517,7 +517,7 @@
 	    <div class='form-group'>
         <div class="col-sm-6 col-sm-offset-3">
 	          <div class="form-group">
-	            <a href=""><button type="submit" class="btn btn-default btn-lg btn-default-pupil-success btn-block" data-id="submit-order">Submit Order</button></a>
+	            <a href=""><button type="submit" class="btn btn-default btn-lg btn-default-pupil-success btn-block" data-id="submit-order">{{ resource.meta.d }}</button></a>
 	          </div>
 	        </div>
 	    </div>
