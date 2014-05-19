@@ -96,25 +96,10 @@
     </script>
 
     <script src="{{ media_url('js/libs/bootstrap-combobox.min.js') }}"></script>
-
-    <script src="{{ media_url('js/order-form.js') }}"></script>
-    <script>
-      $(document).ready(function() {
-        $('label[data-id=order-type]').revealContact("#contact-collapse","input[data-id=order-type]")
-        // reveal for data shipping
-
-        $("label[data-id=shipping-data]").copyForm("#contact-collapse", "#shipping-collapse");
-
-        $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
-        // $("input[name=order-type]").updateButtonText('button[data-id=submit-order]');
-
-        $('button[data-toggle=popover]').popover();
-        $('span[data-toggle=tooltip]').tooltip();
-        $('.combobox').combobox();
-
-      });
-    </script>
     {% endblock custom_scripts %}
+
+    {% block order_form_scripts %}
+    {% endblock order_form_scripts %}
 
     <!--[if lt IE 7 ]>
       <script src="{{ media_url('js/libs/dd_belatedpng.js') }}"></script>

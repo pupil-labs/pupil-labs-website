@@ -494,7 +494,7 @@
 
 	    <div class='form-group'>
 		    <div class="col-sm-12 text-center">
-			    <h3>Notes or Questions</h3>
+			    <h3>Notes</h3>
 			    <h4>Have questions or notes that you'd like to include?</h4>
 	    </div>
 	    </div>
@@ -517,7 +517,7 @@
 	    <div class='form-group'>
         <div class="col-sm-6 col-sm-offset-3">
 	          <div class="form-group">
-	            <a href=""><button type="submit" class="btn btn-default btn-lg btn-default-pupil btn-block" data-id="submit-order">Submit Order</button></a>
+	            <a href=""><button type="submit" class="btn btn-default btn-lg btn-default-pupil-success btn-block" data-id="submit-order">Submit Order</button></a>
 	          </div>
 	        </div>
 	    </div>
@@ -539,3 +539,18 @@
 		</div><!-- /col -->
 	
 {% endblock container %}
+
+
+{% block order_form_scripts %}
+<script src="{{ media_url('js/order-form.js') }}"></script>
+<script>
+$(document).ready(function() {
+  $('label[data-id=order-type]').revealContact("#contact-collapse","input[data-id=order-type]")
+  $("label[data-id=shipping-data]").copyForm("#contact-collapse", "#shipping-collapse");
+  $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
+  $('button[data-toggle=popover]').popover();
+  $('span[data-toggle=tooltip]').tooltip();
+  $('.combobox').combobox();
+});
+</script>
+{% endblock order_form_scripts %}
