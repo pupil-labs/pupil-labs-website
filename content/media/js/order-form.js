@@ -28,10 +28,12 @@
       e.preventDefault();
       if ($(this).hasClass('active')) {
         $('form .collapse').collapse('hide');
+        $(this).attr('data-original-title', 'Show all form fields.');
         $("a[id^=next").parent().parent().show();
         $(this).removeClass('active');
       } else {      
         $(this).addClass('active');
+        $(this).attr('data-original-title', 'Collapse all form fields.');
         $("a[id^=next").parent().parent().hide();
         $('form .collapse').collapse('show');
       }
