@@ -5,13 +5,42 @@
 			<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted!='undefined'){window.location='{{ resource.meta.formRedirect }}';}"></iframe>
 	    <form class="form-horizontal" role="form" action="{{ resource.meta.formUrl }}" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
 	    
-	    <!-- order-row -->
-	    <div class="row">
+
+      <!-- order or quotation question -->
+      <div class='form-group'>
+        <div class="col-sm-12 text-center">
+          <h3>{{ resource.meta.a }}</h3>
+          <h4>Would you like to place an <strong>order</strong> or request a <strong>quotation</strong>?</h4>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12 text-center">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default" name="order" data-id="order-type">
+            <input type="radio" name="order-type" value="Order" id="option1">{{ resource.meta.a3 }}
+          </label>
+          <label class="btn btn-default" data-id="order-type" name="quote">
+            <input type="radio" name="order-type" value="Quotation" id="option2">{{ resource.meta.a4 }}
+          </label>
+        </div>
+        </div>
+      </div>
+
+      <div class="form-group" style="display: none;">
+        <div class="col-sm-6 col-sm-offset-3">
+          <input type="text" class="form-control" data-id="order-type" placeholder="" value="">
+        </div>
+      </div>
+
+      <!-- /order or quotation question -->
+
+	    <!-- order -->
+	    <div id="order-collapse" class="collapse">
         
 		    <div class='form-group'>
 			    <div class="col-sm-12 text-center">
-				    <h3>{{ resource.meta.a }}</h3>
-				    <h4><strong>How many</strong> headsets would you like to order?</h4>
+				    <h4><strong>How many</strong> headsets do you want to order?</h4>
 			    </div>
 		    </div>
 
@@ -37,57 +66,27 @@
             </div>
           </div>
 
-          <div class="form-group" style="display: none;">
-            <div class="col-sm-6 col-sm-offset-3">
-              <input type="text" class="form-control" data-id="orderSum" placeholder="" value="">
-            </div>
-          </div>
-
-
-		    <!-- divider row -->
-		    <div class="form-group">
-			    <div class="col-sm-6 col-sm-offset-3">
-				    <hr>
-			    </div>
-		    </div>
-		    <!-- /divider row -->
-
-		    <div class='form-group'>
-			    <div class="col-sm-12 text-center">
-			    <label>
-				    <h4>Are you submitting an <strong>order</strong> or <strong>quotation</strong> request?</h4>
-				  </label>
-			    </div>
-		    </div>
-
-        <div class="form-group">
-	      	<div class="col-sm-12 text-center">
-	      	<div class="btn-group" data-toggle="buttons">
-	      		<label class="btn btn-default" name="order" data-id="order-type">
-		      		<input type="radio" name="order-type" value="Order" id="option1">{{ resource.meta.a3 }}
-	      		</label>
-	      		<label class="btn btn-default" data-id="order-type" name="quote">
-		      		<input type="radio" name="order-type" value="Quotation" id="option2">{{ resource.meta.a4 }}
-	      		</label>
-	      	</div>
-	      	</div>
-      	</div>
-
         <div class="form-group" style="display: none;">
           <div class="col-sm-6 col-sm-offset-3">
-            <input type="text" class="form-control" data-id="order-type" placeholder="" value="">
+            <input type="text" class="form-control" data-id="orderSum" placeholder="" value="">
           </div>
         </div>
 
 
+        <div class="form-group">
+          <div class="text-center">
+            <a id="next-0" href="#" class="btn btn-default btn-default-pupil btn-circle btn-lg"><i class="glyphicon glyphicon-chevron-down vertical-center"></i></a>
+          </div>
+        </div>
+
 	    </div>
-	    <!-- /order-row -->
+	    <!-- /order -->
 
 
-
-	    <!-- contact-row -->
-	    <div id="contact-collapse" class="collapse">
-	    <!-- divider row -->
+	    <!-- contact -->
+	    <div id="collapse-0" class="collapse">
+  	    
+        <!-- divider row -->
 		    <div class="form-group">
 			    <div class="col-sm-6 col-sm-offset-3">
 				    <hr>
@@ -95,49 +94,82 @@
 		    </div>
 		    <!-- /divider row -->
 
+        <div class='form-group'>
+          <div class="col-sm-12 text-center">
+            <h3>{{ resource.meta.b }}</h3>
+          </div>
+        </div>
 
-	    <div class="row">
-		    <div class='form-group'>
-			    <div class="col-sm-12 text-center">
-			    <label>
-				    <h3>{{ resource.meta.b }}</h3>
-				  </label>
-			    </div>
-		    </div>
-			</div>
+        <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="input-group">
+            <span class="input-group-addon">{{ resource.meta.b1 }}</span>
+            <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.b1label }}">
+          </div>
+        </div>
+        </div>
 
-	     <div class="form-group">
-		    <div class="col-sm-6 col-sm-offset-3">
-		      <div class="input-group">
-		        <span class="input-group-addon">{{ resource.meta.b1 }}</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.b1label }}">
-		      </div>
-		    </div>
-		  </div>
+        <div class="form-group">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="input-group">
+              <span class="input-group-addon">{{ resource.meta.b2 }}</span>
+              <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.b2label }}">
+            </div>
+          </div>
+        </div>
 
-		  <div class="form-group">
-		    <div class="col-sm-6 col-sm-offset-3">
-		      <div class="input-group">
-		        <span class="input-group-addon">{{ resource.meta.b2 }}</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.b2label }}">
-		      </div>
-		    </div>
-		  </div>
+        <div class="form-group">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="input-group">
+              <span class="input-group-addon">{{ resource.meta.b3 }}</span>
+              <input type="email" class="form-control" id="inputFirstName1" data-id="b3" placeholder="{{ resource.meta.b3label }}">
+            </div>
+          </div>
+        </div>
 
-		  <div class="form-group">
-		    <div class="col-sm-6 col-sm-offset-3">
-		      <div class="input-group">
-		        <span class="input-group-addon">{{ resource.meta.b3 }}</span>
-		        <input type="email" class="form-control" id="inputFirstName1" data-id="b3" placeholder="{{ resource.meta.b3label }}">
-		      </div>
-		    </div>
-		  </div>
+        <div class="form-group">
+          <div class="text-center">
+            <a id="next-1" href="#" class="btn btn-default btn-default-pupil btn-circle btn-lg"><i class="glyphicon glyphicon-chevron-down vertical-center"></i></a>
+          </div>
+        </div>
+
+    </div>
+    <!-- /collapse-0 -->
+    <!-- /contact -->
+
+
+    <!-- billing -->
+    <!-- collapse-1 -->
+    <div id="collapse-1" class="collapse">
+
+      <!-- divider row -->
+        <div class="form-group">
+          <div class="col-sm-6 col-sm-offset-3">
+            <hr>
+          </div>
+        </div>
+      <!-- /divider row -->
+
+      <div class='form-group'>
+        <div class="col-sm-12 text-center">
+          <h3>{{ resource.meta.c }}</h3>
+        </div>
+      </div>
+
+      <div class="form-group">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="input-group">
+          <span class="input-group-addon">{{ resource.meta.c1 }}</span>
+          <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.c1label }}">
+        </div>
+      </div>
+      </div>
 
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.b4 }}</span>
-            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.b4label }}">
+            <span class="input-group-addon">{{ resource.meta.c2 }}</span>
+            <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.c2label }}">
           </div>
         </div>
       </div>
@@ -145,8 +177,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">{{ resource.meta.b5 }}</span>
-            <input type="text" class="form-control" id="" data-id="b5" placeholder="{{ resource.meta.b5label }}">
+            <span class="input-group-addon">{{ resource.meta.c3 }}</span>
+            <input type="email" class="form-control" id="inputFirstName1" data-id="b3" placeholder="{{ resource.meta.c3label }}">
           </div>
         </div>
       </div>
@@ -154,8 +186,26 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.b6 }}</span>
-            <input type="tel" class="form-control" id="" data-id="b6" placeholder="{{ resource.meta.b6label }}">
+            <span class="input-group-addon">{{ resource.meta.c4 }}</span>
+            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.c4label }}">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="input-group">
+            <span class="input-group-addon" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">{{ resource.meta.c5 }}</span>
+            <input type="text" class="form-control" id="" data-id="b5" placeholder="{{ resource.meta.c5label }}">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="input-group">
+            <span class="input-group-addon">{{ resource.meta.c6 }}</span>
+            <input type="tel" class="form-control" id="" data-id="b6" placeholder="{{ resource.meta.c6label }}">
           </div>
         </div>
       </div>  
@@ -163,8 +213,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.b7 }}</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.b7label }}" rows="4" style="resize: vertical;"></textarea>
+            <span class="input-group-addon">{{ resource.meta.c7 }}</span>
+        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.c7label }}" rows="4" style="resize: vertical;"></textarea>
         </div>
       </div>
       </div>
@@ -172,7 +222,7 @@
       <div class="form-group">
       	<div class="col-sm-6 col-sm-offset-3">
 	        <select class="combobox form-control">
-           <option value="" selected="selected">{{ resource.meta.b8 }}</option>
+           <option value="" selected="selected">{{ resource.meta.c8 }}</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
             <option value="Andorra">Andorra</option>
@@ -380,93 +430,58 @@
       </div>
       </div>
 
+      <div class="form-group">
+        <div class="text-center">
+          <a id="next-2" href="#" class="btn btn-default btn-default-pupil btn-circle btn-lg"><i class="glyphicon glyphicon-chevron-down vertical-center"></i></a>
+        </div>
+      </div>
 
-		    <!-- divider row -->
-		    <div class="form-group">
-			    <div class="col-sm-6 col-sm-offset-3 text-center">
-				    <hr>
-			    </div>
-		    </div>
-		    <!-- /divider row -->
+    </div>
+    <!-- /billing -->
+    <!-- /collapse-1 -->
 
-		    <div class='form-group'>
-			    <div class="col-sm-12 text-center">
-				    <h3>{{ resource.meta.c }}</h3>
-				    <h4>{{ resource.meta.csub1 }}</h4>
-			    </div>
-		    </div>
+    <!-- shipping-row -->
+    <div id="collapse-2" class="collapse">
+	    
+      <!-- divider row -->
+      <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3">
+          <hr>
+        </div>
+      </div>
+      <!-- /divider row -->
 
-        <div class="form-group">
-	      	<div class="col-sm-12 text-center">
-	      	<div class="btn-group" data-toggle="buttons" id="payment-pref">
-	      		<label class="btn btn-default">
-		      		<input type="radio" value="pay-pal" id="option1">
-		      		{{ resource.meta.c1 }}
-	      		</label>
-	      		<label class="btn btn-default">
-		      		<input type="radio" value="bank-transfer" id="option2">
-		      		{{ resource.meta.c2 }}
-	      		</label>
-	      	</div>
-	      	</div>
-      	</div>
-
-	    </div><!--  /contact-collapse -->
-	    <!-- /contact-row -->
-
-	    <!-- billing-row -->
-	    <!-- This is all information that is not exposed to the user -->
-	    <!-- /billing-row -->
-
-	    <!-- shipping-row -->
-	    <div id="shipping-collapse-intro" class="collapse">
-	    <div class='form-group'>
+      <div class='form-group'>
 		    <div class="col-sm-12 text-center">
-			    <h4>{{ resource.meta.csub2 }}</h4>
+			    <h3>{{ resource.meta.d }}</h3>
+          <h4>{{ resource.meta.dsub }}</h4>
 		    </div>
 	    </div>
 
       <div class="form-group">
       	<div class="col-sm-12 text-center">
-      	<div class="btn-group" data-toggle="buttons">
-      		<label class="btn btn-default" data-id="shipping-data" name="copy">
-	      		<input type="radio" name="use-contact" value="use-contact" id="option1">
-	      		{{ resource.meta.c3 }}
-      		</label>
-      		<label class="btn btn-default" data-id="shipping-data" name="new">
-	      		<input type="radio" value="use-other" id="option2">
-	      		{{ resource.meta.c4 }}
-      		</label>
+        	<div class="btn-group" data-toggle="buttons">
+        		<label class="btn btn-default" data-id="shipping-data" name="copy">
+  	      		<input type="radio" name="use-contact" value="use-contact" id="option1">
+  	      		{{ resource.meta.d1 }}
+        		</label>
+        		<label class="btn btn-default" data-id="shipping-data" name="new">
+  	      		<input type="radio" value="use-other" id="option2">
+  	      		{{ resource.meta.d2 }}
+        		</label>
+          </div>
       	</div>
-      	</div>
-    	</div>
-    	</div>
+      </div>
+    	
+    </div>
 
-	    <div id="shipping-collapse" class="collapse">
-	 		
-	    <!-- divider row -->
-	    <div class="form-group">
-		    <div class="col-sm-6 col-sm-offset-3">
-			    <hr>
-		    </div>
-	    </div>
-	    <!-- /divider row -->
+    <div id="shipping-collapse" class="collapse">
 
-	    <div class="row">
-		    <div class='form-group'>
-			    <div class="col-sm-12 text-center">
-			    <label>
-				    <h3>{{ resource.meta.d }}</h3>
-				  </label>
-			    </div>
-		    </div>
-			</div>
-
-	     <div class="form-group">
+      <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">{{ resource.meta.b1 }}</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.b1label }}">
+		        <span class="input-group-addon">{{ resource.meta.c1 }}</span>
+		        <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.c1label }}">
 		      </div>
 		    </div>
 		  </div>
@@ -474,8 +489,8 @@
 		  <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">{{ resource.meta.b2 }}</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.b2label }}">
+		        <span class="input-group-addon">{{ resource.meta.c2 }}</span>
+		        <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.c2label }}">
 		      </div>
 		    </div>
 		  </div>
@@ -483,8 +498,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.b4 }}</span>
-            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.b4label }}">
+            <span class="input-group-addon">{{ resource.meta.c4 }}</span>
+            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.c4label }}">
           </div>
         </div>
       </div>
@@ -492,41 +507,70 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.b7 }}</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.b7label }}" rows="4" style="resize: vertical;"></textarea>
+            <span class="input-group-addon">{{ resource.meta.c7 }}</span>
+        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.c7label }}" rows="4" style="resize: vertical;"></textarea>
+          </div>
         </div>
       </div>
+
+      <div class="form-group">
+        <div class="text-center">
+          <a id="next-3" href="#" class="btn btn-default btn-default-pupil btn-circle btn-lg"><i class="glyphicon glyphicon-chevron-down vertical-center"></i></a>
+        </div>
       </div>
 
-	    </div>
-	    <!-- /shipping-row -->
+    </div>
+    <!-- /shipping-row -->
 
+    <!-- preferences -->
+    <div id="collapse-3" class="collapse">
+      
+      <!-- divider row -->
+      <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <hr>
+        </div>
+      </div>
+      <!-- /divider row -->
+
+      <div class='form-group'>
+        <div class="col-sm-12 text-center">
+          <h3>{{ resource.meta.e }}</h3>
+          <h4>{{ resource.meta.esub }}</h4>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12 text-center">
+        <div class="btn-group" data-toggle="buttons" id="payment-pref">
+          <label class="btn btn-default" data-id="payment-data">
+            <input type="radio" value="pay-pal">
+            {{ resource.meta.e1 }}
+          </label>
+          <label class="btn btn-default" data-id="payment-data">
+            <input type="radio" value="bank-transfer" id="option2">
+            {{ resource.meta.e2 }}
+          </label>
+        </div>
+        </div>
+      </div>
 
 	    <!-- Submit Row -->
 	    <div id="submit-collapse" class="collapse">
-
-
-	    <div class="form-group">
-		    <div class="col-sm-6 col-sm-offset-3">
-			    <hr>
-		    </div>
-	    </div>
-
-
-	    <div class='form-group'>
-		    <div class="col-sm-12 text-center">
-			    <h3>{{ resource.meta.e }}</h3>
-			    <h4>{{ resource.meta.esub }}</h4>
-	    </div>
-	    </div>
 	    
+      <div class='form-group'>
+        <div class="col-sm-12 text-center">
+          <h4>{{ resource.meta.fsub }}</h4>
+        </div>
+      </div>
+
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">Notes</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="d6" placeholder="{{ resource.meta.elabel }}" rows="4" style="resize: vertical;"></textarea>
+            <span class="input-group-addon">{{ resource.meta.f }}</span>
+            <textarea class="form-control" id="inputBillingAddress" data-id="d6" placeholder="{{ resource.meta.flabel }}" rows="4" style="resize: vertical;"></textarea>
+          </div>
         </div>
-      </div>
       </div>
 
 	    <div class="form-group">
@@ -538,41 +582,34 @@
 	    <div class='form-group'>
         <div class="col-sm-6 col-sm-offset-3">
 	          <div class="form-group">
-	            <a href=""><button type="submit" class="btn btn-default btn-lg btn-default-pupil btn-block" data-id="submit-order">{{ resource.meta.d }}</button></a>
+	            <button type="submit" class="btn btn-default btn-lg btn-default-pupil btn-block" data-id="submit-order">{{ resource.meta.g }}</button>
 	          </div>
 	        </div>
 	    </div>
 
 	    </div>
 	    <!-- /submit-row -->
+    </div><!--  /preferences -->
 
-	    </form>
-	    <!--  /form -->
-		</div>
-		<!--  /col -->
-		</div>
-		<!-- /row -->
+  <div class="col-sm-1">
+    <i id="toggle-all" class="glyphicon small-gray glyphicon-eye-close" data-toggle="tooltip" data-placement="top" title="Show or hide form fields"></i>
+  </div>
 
+  </form>
+  <!--  /form -->
+  </div>
+  <!--  /col -->
+		
+  <div class="row">
 		<div class="col-md-6">
 		  {% filter markdown -%}
 		      {% block imprint %}{% endblock %}
 		  {%- endfilter %}
 		</div><!-- /col -->
-	
+	</div>
 {% endblock container %}
 
 
 {% block order_form_scripts %}
 <script src="{{ media_url('js/order-form.js') }}"></script>
-<script>
-$(document).ready(function() {
-  $('label[data-id=order-type]').revealContact("#contact-collapse","input[data-id=order-type]")
-  $('#payment-pref').revealShippingIntro('#shipping-collapse-intro')
-  $("label[data-id=shipping-data]").copyForm("#contact-collapse", "#shipping-collapse");
-  $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
-  $('button[data-toggle=popover]').popover();
-  $('span[data-toggle=tooltip]').tooltip();
-  $('.combobox').combobox();
-});
-</script>
 {% endblock order_form_scripts %}
