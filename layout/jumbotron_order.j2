@@ -29,7 +29,7 @@
 
       <div class="form-group" style="display: none;">
         <div class="col-sm-6 col-sm-offset-3">
-          <input type="text" class="form-control" data-id="order-type" placeholder="" value="">
+          <input type="text" class="form-control" data-id="order-type" placeholder="" value="" name="{{ resource.meta.a5name }}" id="{{ resource.meta.a5id }}">
         </div>
       </div>
 
@@ -68,7 +68,7 @@
 
         <div class="form-group" style="display: none;">
           <div class="col-sm-6 col-sm-offset-3">
-            <input type="text" class="form-control" data-id="orderSum" placeholder="" value="">
+            <input type="text" class="form-control" data-id="orderSum" placeholder="" value="" name="{{ resource.meta.a6name }}" id="{{ resource.meta.a6id }}">
           </div>
         </div>
 
@@ -104,7 +104,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.b1 }}</span>
-            <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.b1label }}">
+            <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.b1label }}" name="{{ resource.meta.b1name }}" id="{{ resource.meta.b1id }}">
           </div>
         </div>
         </div>
@@ -113,7 +113,7 @@
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b2 }}</span>
-              <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.b2label }}">
+              <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.b2label }}" name="{{ resource.meta.b2name }}" id="{{ resource.meta.b2id }}">
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b3 }}</span>
-              <input type="email" class="form-control" id="inputFirstName1" data-id="b3" placeholder="{{ resource.meta.b3label }}">
+              <input type="email" class="form-control" data-id="b3" placeholder="{{ resource.meta.b3label }}" name="{{ resource.meta.b3name }}" id="{{ resource.meta.b3id }}">
             </div>
           </div>
         </div>
@@ -160,7 +160,7 @@
       <div class="col-sm-6 col-sm-offset-3">
         <div class="input-group">
           <span class="input-group-addon">{{ resource.meta.c1 }}</span>
-          <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.c1label }}">
+          <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.c1label }}" name="{{ resource.meta.c1name }}" id="{{ resource.meta.c1id }}">
         </div>
       </div>
       </div>
@@ -169,16 +169,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c2 }}</span>
-            <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.c2label }}">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <div class="col-sm-6 col-sm-offset-3">
-          <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.c3 }}</span>
-            <input type="email" class="form-control" id="inputFirstName1" data-id="b3" placeholder="{{ resource.meta.c3label }}">
+            <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.c2label }}"  name="{{ resource.meta.c2name }}" id="{{ resource.meta.c2id }}">
           </div>
         </div>
       </div>
@@ -187,7 +178,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c4 }}</span>
-            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.c4label }}">
+            <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.c4label }}" name="{{ resource.meta.c4name }}" id="{{ resource.meta.c4id }}">
           </div>
         </div>
       </div>
@@ -196,7 +187,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">{{ resource.meta.c5 }}</span>
-            <input type="text" class="form-control" id="" data-id="b5" placeholder="{{ resource.meta.c5label }}">
+            <input type="text" class="form-control" data-id="b5" placeholder="{{ resource.meta.c5label }}" name="{{ resource.meta.c5name }}" id="{{ resource.meta.c5id }}">
           </div>
         </div>
       </div>
@@ -205,7 +196,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c6 }}</span>
-            <input type="tel" class="form-control" id="" data-id="b6" placeholder="{{ resource.meta.c6label }}">
+            <input type="text" class="form-control" data-id="b6" placeholder="{{ resource.meta.c6label }}" name="{{ resource.meta.c6name }}" id="{{ resource.meta.c6id }}">
           </div>
         </div>
       </div>  
@@ -214,14 +205,14 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c7 }}</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.c7label }}" rows="4" style="resize: vertical;"></textarea>
+        <textarea class="form-control" data-id="b7" placeholder="{{ resource.meta.c7label }}" rows="4" style="resize: vertical;" name="{{ resource.meta.c7name }}" id="{{ resource.meta.c7id }}"></textarea>
         </div>
       </div>
       </div>
 
       <div class="form-group">
       	<div class="col-sm-6 col-sm-offset-3">
-	        <select class="combobox form-control">
+	        <select class="combobox form-control" name="{{ resource.meta.c8name }}" id="{{ resource.meta.c8id }}">
            <option value="" selected="selected">{{ resource.meta.c8 }}</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
@@ -463,11 +454,11 @@
         	<div class="btn-group" data-toggle="buttons">
         		<label class="btn btn-default" data-id="shipping-data" name="copy">
   	      		<input type="radio" name="use-contact" value="use-contact" id="option1">
-  	      		{{ resource.meta.d1 }}
+  	      		{{ resource.meta.da }}
         		</label>
         		<label class="btn btn-default" data-id="shipping-data" name="new">
   	      		<input type="radio" value="use-other" id="option2">
-  	      		{{ resource.meta.d2 }}
+  	      		{{ resource.meta.db }}
         		</label>
           </div>
       	</div>
@@ -480,8 +471,8 @@
       <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">{{ resource.meta.c1 }}</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="b1" placeholder="{{ resource.meta.c1label }}">
+		        <span class="input-group-addon">{{ resource.meta.d1 }}</span>
+		        <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.d1label }}" name="{{ resource.meta.d1name }}" id="{{ resource.meta.d1id }}">
 		      </div>
 		    </div>
 		  </div>
@@ -489,8 +480,8 @@
 		  <div class="form-group">
 		    <div class="col-sm-6 col-sm-offset-3">
 		      <div class="input-group">
-		        <span class="input-group-addon">{{ resource.meta.c2 }}</span>
-		        <input type="text" class="form-control" id="inputFirstName1" data-id="b2" placeholder="{{ resource.meta.c2label }}">
+		        <span class="input-group-addon">{{ resource.meta.d2 }}</span>
+		        <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.d2label }}" name="{{ resource.meta.d2name }}" id="{{ resource.meta.d2id }}">
 		      </div>
 		    </div>
 		  </div>
@@ -498,8 +489,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.c4 }}</span>
-            <input type="text" class="form-control" id="" data-id="b4" placeholder="{{ resource.meta.c4label }}">
+            <span class="input-group-addon">{{ resource.meta.d4 }}</span>
+            <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.d4label }}" name="{{ resource.meta.d4name }}" id="{{ resource.meta.d4id }}">
           </div>
         </div>
       </div>
@@ -507,8 +498,8 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.c7 }}</span>
-        <textarea class="form-control" id="inputBillingAddress" data-id="b7" placeholder="{{ resource.meta.c7label }}" rows="4" style="resize: vertical;"></textarea>
+            <span class="input-group-addon">{{ resource.meta.d7 }}</span>
+        <textarea class="form-control" data-id="b7" placeholder="{{ resource.meta.d7label }}" rows="4" style="resize: vertical;" name="{{ resource.meta.d7name }}" id="{{ resource.meta.d7id }}"></textarea>
           </div>
         </div>
       </div>
@@ -542,16 +533,22 @@
 
       <div class="form-group">
         <div class="col-sm-12 text-center">
-        <div class="btn-group" data-toggle="buttons" id="payment-pref">
-          <label class="btn btn-default" data-id="payment-data">
+        <div class="btn-group" data-toggle="buttons">
+          <label class="btn btn-default" data-id="payment-type">
             <input type="radio" value="pay-pal">
             {{ resource.meta.e1 }}
           </label>
-          <label class="btn btn-default" data-id="payment-data">
+          <label class="btn btn-default" data-id="payment-type">
             <input type="radio" value="bank-transfer" id="option2">
             {{ resource.meta.e2 }}
           </label>
         </div>
+        </div>
+      </div>
+
+      <div class="form-group" style="display: visible;">
+        <div class="col-sm-6 col-sm-offset-3">
+          <input type="text" class="form-control" data-id="payment-method" placeholder="" value="" name="{{ resource.meta.e3name }}" id="{{ resource.meta.e3id }}">
         </div>
       </div>
 
@@ -568,7 +565,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.f }}</span>
-            <textarea class="form-control" id="inputBillingAddress" data-id="d6" placeholder="{{ resource.meta.flabel }}" rows="4" style="resize: vertical;"></textarea>
+            <textarea class="form-control" data-id="d6" placeholder="{{ resource.meta.flabel }}" rows="4" style="resize: vertical;" name="{{ resource.meta.fname }}" id="{{ resource.meta.fid }}"></textarea>
           </div>
         </div>
       </div>
@@ -582,7 +579,7 @@
 	    <div class='form-group'>
         <div class="col-sm-6 col-sm-offset-3">
 	          <div class="form-group">
-	            <button type="submit" class="btn btn-default btn-lg btn-default-pupil btn-block" data-id="submit-order">{{ resource.meta.g }}</button>
+	            <button type="submit" id="ss-submit" class="btn btn-default btn-lg btn-default-pupil btn-block" data-id="submit-order">{{ resource.meta.g }}</button>
 	          </div>
 	        </div>
 	    </div>
@@ -592,7 +589,7 @@
     </div><!--  /preferences -->
 
   <div class="col-sm-1">
-    <i id="toggle-all" class="glyphicon small-gray glyphicon-eye-close" data-toggle="tooltip" data-placement="top" title="Show or hide form fields"></i>
+    <i id="toggle-all" class="glyphicon small-gray glyphicon-eye-close" data-toggle="tooltip" data-placement="top" title="Show all form fields"></i>
   </div>
 
   </form>

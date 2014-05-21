@@ -14,9 +14,8 @@
 
       targetId = "#" + target + "-" + $(this).attr('id').slice(-1);
       
-      parent = $(this).parent().parent();
       $(this).fadeOut("normal", function() {
-        $(parent).remove();
+        $(this).hide();
         $(targetId).collapse('show');
       }); 
     });
@@ -29,12 +28,12 @@
       if ($(this).hasClass('active')) {
         $('form .collapse').collapse('hide');
         $(this).attr('data-original-title', 'Show all form fields.');
-        $("a[id^=next").parent().parent().show();
+        $("a[id^=next").show();
         $(this).removeClass('active');
       } else {      
         $(this).addClass('active');
         $(this).attr('data-original-title', 'Collapse all form fields.');
-        $("a[id^=next").parent().parent().hide();
+        $("a[id^=next").hide();
         $('form .collapse').collapse('show');
       }
     });
@@ -105,15 +104,22 @@
   		$(target).collapse('show');
   	});
   	return this;
-
   };
 
+  $.fn.revealSubmit = function(target) {
+    $(this).on('click', function(){
+      $(this).reveal('#submit-collapse');
+      $(target).val($(this).children('input').val());
+    });
+    return this;
+  };
 
 
 })( jQuery );
 
 $(document).ready(function() {
-  $('label[data-id=order-type]').revealContact("#order-collapse","input[data-id=order-type]")
+  $('label[data-id=order-type]').revealContact("#order-collapse","input[data-id=order-type]");
+  $('label[data-id=payment-type]').revealSubmit("input[data-id=payment-method]");
 
 
   $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
@@ -125,7 +131,6 @@ $(document).ready(function() {
   $("label[data-id=shipping-data]").copyFields("#collapse-1", "#shipping-collapse");
   $('#collapse-0').updateFields('#collapse-1');
   $('#collapse-1').updateFields('#shipping-collapse');
-  $('label[data-id=payment-data]').reveal('#submit-collapse')
   $('#toggle-all').toggleAll();
 
 
