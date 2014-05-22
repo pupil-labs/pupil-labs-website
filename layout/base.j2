@@ -92,20 +92,6 @@
             offset: 52 // Integer. How far to offset the scrolling anchor location in pixels
         });
     </script>
-
-
-    <script src="{{ media_url('js/order-form.js') }}"></script>
-    <script>
-      $(document).ready(function() {
-        $('label[data-id=order-type]').reveal("#contact-collapse")
-
-        $("#copyToShipping").copyForm("#billing", "#shipping");
-        $('button[data-toggle=popover]').popover();
-        $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
-        $("input[name='entry.1092253740']").updateButtonText('button[type=submit]');
-
-      });
-    </script>
     {% endblock custom_scripts %}
 
     <!--[if lt IE 7 ]>
