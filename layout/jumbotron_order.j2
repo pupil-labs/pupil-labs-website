@@ -53,7 +53,7 @@
                   <input type="text" class="form-control" id="inputPupilProQuantity" min="0" max="10" value="" placeholder="Number of Pupil Pro Headsets" data-action="count" data-product="pupil-pro" data-name="orderPro">
               </div>
             </div>
-            <span class="col-sm-3 help-block" id="a1"></span>
+            <span class="col-sm-3 help-block" id="orderPro"></span>
           </div>
 
          <div class="form-group">
@@ -62,10 +62,10 @@
                   <span class="input-group-addon">
                   {{ resource.meta.a2 }}
                   </span>
-                  <input type="text" class="form-control" id="inputPupilDevQuantity" min="0" max="10" value="" placeholder="Number of Pupil Dev Headsets" data-action="count" data-product="pupil-dev" name='dev-test' data-name="orderDev">
+                  <input type="text" class="form-control" id="inputPupilDevQuantity" min="0" max="10" value="" placeholder="Number of Pupil Dev Headsets" data-action="count" data-product="pupil-dev" data-name="orderDev">
               </div>
             </div>
-            <span class="col-sm-3 help-block" id="a2"></span>
+            <span class="col-sm-3 help-block" id="orderDev"></span>
           </div>
 
         <div class="form-group" style="display: none;">
@@ -106,28 +106,30 @@
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b1 }}</span>
-              <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.b1label }}" id="{{ resource.meta.b1id }}" name="{{ resource.meta.b1name }}"data-name='first-name-contact'>
+              <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.b1label }}" id="{{ resource.meta.b1id }}" name="{{ resource.meta.b1name }}" data-name='firstNameContact'>
             </div>
           </div>
-          <span class="col-sm-3 help-block" id="first-name-contact"></span>
+          <span class="col-sm-3 help-block" id="firstNameContact"></span>
         </div>
 
         <div class="form-group">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b2 }}</span>
-              <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.b2label }}" name="{{ resource.meta.b2name }}" id="{{ resource.meta.b2id }}">
+              <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.b2label }}" name="{{ resource.meta.b2name }}" id="{{ resource.meta.b2id }}" data-name="lastNameContact">
             </div>
           </div>
+          <span class="col-sm-3 help-block" id="lastNameContact"></span>
         </div>
 
         <div class="form-group">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b3 }}</span>
-              <input type="email" class="form-control" data-id="b3" placeholder="{{ resource.meta.b3label }}" name="{{ resource.meta.b3name }}" id="{{ resource.meta.b3id }}">
+              <input type="email" class="form-control" data-id="b3" placeholder="{{ resource.meta.b3label }}" name="{{ resource.meta.b3name }}" id="{{ resource.meta.b3id }}" data-name="emailContact">
             </div>
           </div>
+          <span class="col-sm-3 help-block" id="emailContact"></span>
         </div>
 
         <div class="form-group">

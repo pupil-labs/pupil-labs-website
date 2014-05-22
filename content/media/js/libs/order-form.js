@@ -184,10 +184,10 @@ $(document).ready(function() {
         }
       },
       firstNameContact: {
-        selector: '[data-name="first-name-contact"]',
+        selector: '[data-name="firstNameContact"]',
         enabled: true,
         message: 'This value is not valid',
-        container: '#first-name-contact',
+        container: '#firstNameContact',
         trigger: null,
 
         validators: {
@@ -195,8 +195,37 @@ $(document).ready(function() {
             message: 'This field is required.'
           }
         }
-      } 
+      },
+      lastNameContact: {
+        selector: '[data-name="lastNameContact"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#lastNameContact',
+        trigger: null,
 
+        validators: {
+          notEmpty: {
+            message: 'This field is required.'
+          }
+        }
+      },       
+      emailContact: {
+        selector: '[data-name="emailContact"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#emailContact',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required.'
+          },
+          emailAddress: {
+            message: 'Please enter a valid email address'
+          }
+        }
+      }
+       
     } //fields
   });
 
