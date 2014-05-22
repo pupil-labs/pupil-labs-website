@@ -574,6 +574,7 @@
          * @returns {null|jQuery[]}
          */
         getFieldElements: function(field) {
+            console.log(field);
             if (!this._cacheFields[field]) {
                 this._cacheFields[field] = this.options.fields[field].selector
                                          ? $(this.options.fields[field].selector)

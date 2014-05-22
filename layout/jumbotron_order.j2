@@ -50,7 +50,7 @@
                   <span class="input-group-addon">
                   {{ resource.meta.a1 }}
                   </span>
-                  <input type="text" class="form-control" id="inputPupilProQuantity" min="0" max="10" value="" placeholder="Number of Pupil Pro Headsets" data-action="count" data-product="pupil-pro" name="a1">
+                  <input type="text" class="form-control" id="inputPupilProQuantity" min="0" max="10" value="" placeholder="Number of Pupil Pro Headsets" data-action="count" data-product="pupil-pro" data-name="orderPro">
               </div>
             </div>
             <span class="col-sm-3 help-block" id="a1"></span>
@@ -62,7 +62,7 @@
                   <span class="input-group-addon">
                   {{ resource.meta.a2 }}
                   </span>
-                  <input type="text" class="form-control" id="inputPupilDevQuantity" min="0" max="10" value="" placeholder="Number of Pupil Dev Headsets" data-action="count" data-product="pupil-dev" name='a2'>
+                  <input type="text" class="form-control" id="inputPupilDevQuantity" min="0" max="10" value="" placeholder="Number of Pupil Dev Headsets" data-action="count" data-product="pupil-dev" name='dev-test' data-name="orderDev">
               </div>
             </div>
             <span class="col-sm-3 help-block" id="a2"></span>
@@ -106,7 +106,7 @@
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b1 }}</span>
-              <input type="text" class="form-control" data-id="b1" data-name='first-name-contact' placeholder="{{ resource.meta.b1label }}" id="{{ resource.meta.b1id }}">
+              <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.b1label }}" id="{{ resource.meta.b1id }}" name="{{ resource.meta.b1name }}"data-name='first-name-contact'>
             </div>
           </div>
           <span class="col-sm-3 help-block" id="first-name-contact"></span>
@@ -614,6 +614,6 @@
 <link rel="stylesheet" href="{{ media_url('css/bootstrap-combobox.css') }}">
 <link rel="stylesheet" href="{{ media_url('css/bootstrapValidator.min.css') }}">
 <script src="{{ media_url('js/libs/bootstrap-combobox.min.js') }}"></script>
-<script src="{{ media_url('js/libs/bootstrapValidator.js') }}"></script>
+<script src="{{ media_url('js/libs/bootstrapValidatormod.js') }}"></script>
 <script src="{{ media_url('js/libs/order-form.js') }}"></script>
 {% endblock order_form_scripts %}

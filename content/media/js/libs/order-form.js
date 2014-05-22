@@ -135,23 +135,17 @@ $(document).ready(function() {
   $('#toggle-all').toggleAll();
 
   $('#ss-form').bootstrapValidator({
-    excluded: [':disabled', ':hidden', ':not(:visible)'],
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
         invalid: 'glyphicon glyphicon-remove',
         validating: 'glyphicon glyphicon-refresh'
     },
-    live: 'enabled',
-    message: 'This value is not valid',
-    submitButtons: 'button[type="submit"]',
-    submitHandler: null,
-    trigger: null,
     fields: {
-      a1: {
+      orderPro: {
         enabled: true,
         message: 'This value is not valid',
         container: '#a1',
-        selector: null,
+        selector: '[data-name=orderPro]',
         trigger: null,
 
         validators: {
@@ -168,11 +162,11 @@ $(document).ready(function() {
           }
         }
       },
-      a2: {
+      orderDev: {
         enabled: true,
         message: 'This value is not valid',
         container: '#a2',
-        selector: null,
+        selector: '[data-name=orderDev]',
         trigger: null,
 
         validators: {
@@ -189,19 +183,19 @@ $(document).ready(function() {
           }
         }
       },
-      // firstNameContact: {
-      //   selector: '[data-name="first-name-contact"]',
-      //   enabled: true,
-      //   message: 'This value is not valid',
-      //   container: '#first-name-contact',
-      //   trigger: null,
+      firstNameContact: {
+        selector: '[data-name="first-name-contact"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#first-name-contact',
+        trigger: null,
 
-      //   validators: {
-      //     notEmpty: {
-      //       message: 'A number, even if 0, is required.'
-      //     }
-      //   }
-      // } 
+        validators: {
+          notEmpty: {
+            message: 'This field is required.'
+          }
+        }
+      } 
 
     } //fields
   });
