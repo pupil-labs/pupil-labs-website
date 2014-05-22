@@ -50,9 +50,10 @@
                   <span class="input-group-addon">
                   {{ resource.meta.a1 }}
                   </span>
-                  <input type="number" class="form-control" id="inputPupilProQuantity" min="0" max="10" value="1" data-action="count" data-product="pupil-pro">
+                  <input type="text" class="form-control" id="inputPupilProQuantity" min="0" max="10" value="" placeholder="Number of Pupil Pro Headsets" data-action="count" data-product="pupil-pro" name="a1">
               </div>
             </div>
+            <span class="col-sm-3 help-block" id="a1"></span>
           </div>
 
          <div class="form-group">
@@ -61,9 +62,10 @@
                   <span class="input-group-addon">
                   {{ resource.meta.a2 }}
                   </span>
-                  <input type="number" class="form-control" id="inputPupilDevQuantity" min="0" max="10" value="0" data-action="count" data-product="pupil-dev">
+                  <input type="text" class="form-control" id="inputPupilDevQuantity" min="0" max="10" value="" placeholder="Number of Pupil Dev Headsets" data-action="count" data-product="pupil-dev" name='a2'>
               </div>
             </div>
+            <span class="col-sm-3 help-block" id="a2"></span>
           </div>
 
         <div class="form-group" style="display: none;">
@@ -101,12 +103,13 @@
         </div>
 
         <div class="form-group">
-        <div class="col-sm-6 col-sm-offset-3">
-          <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.b1 }}</span>
-            <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.b1label }}" name="{{ resource.meta.b1name }}" id="{{ resource.meta.b1id }}">
+          <div class="col-sm-6 col-sm-offset-3">
+            <div class="input-group">
+              <span class="input-group-addon">{{ resource.meta.b1 }}</span>
+              <input type="text" class="form-control" data-id="b1" data-name='first-name-contact' placeholder="{{ resource.meta.b1label }}" id="{{ resource.meta.b1id }}">
+            </div>
           </div>
-        </div>
+          <span class="col-sm-3 help-block" id="first-name-contact"></span>
         </div>
 
         <div class="form-group">
@@ -608,5 +611,9 @@
 
 
 {% block order_form_scripts %}
-<script src="{{ media_url('js/order-form.js') }}"></script>
+<link rel="stylesheet" href="{{ media_url('css/bootstrap-combobox.css') }}">
+<link rel="stylesheet" href="{{ media_url('css/bootstrapValidator.min.css') }}">
+<script src="{{ media_url('js/libs/bootstrap-combobox.min.js') }}"></script>
+<script src="{{ media_url('js/libs/bootstrapValidator.js') }}"></script>
+<script src="{{ media_url('js/libs/order-form.js') }}"></script>
 {% endblock order_form_scripts %}

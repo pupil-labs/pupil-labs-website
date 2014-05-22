@@ -118,6 +118,7 @@
 })( jQuery );
 
 $(document).ready(function() {
+
   $('label[data-id=order-type]').revealContact("#order-collapse","input[data-id=order-type]");
   $('label[data-id=payment-type]').revealSubmit("input[data-id=payment-method]");
 
@@ -132,6 +133,80 @@ $(document).ready(function() {
   $('#collapse-0').updateFields('#collapse-1');
   $('#collapse-1').updateFields('#shipping-collapse');
   $('#toggle-all').toggleAll();
+
+  $('#ss-form').bootstrapValidator({
+    excluded: [':disabled', ':hidden', ':not(:visible)'],
+    feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    live: 'enabled',
+    message: 'This value is not valid',
+    submitButtons: 'button[type="submit"]',
+    submitHandler: null,
+    trigger: null,
+    fields: {
+      a1: {
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#a1',
+        selector: null,
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'A number, even if 0, is required.'
+          },
+          numeric: {
+            message: "Value must be a number"
+          },
+          between: {
+            min: 0,
+            max: 10,
+            message: 'Value between 0 and 10 - email for more'
+          }
+        }
+      },
+      a2: {
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#a2',
+        selector: null,
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'A number, even if 0, is required.'
+          },
+          numeric: {
+            message: "Value must be a number"
+          },
+          between: {
+            min: 0,
+            max: 10,
+            message: 'Value between 0 and 10 - email for more'
+          }
+        }
+      },
+      // firstNameContact: {
+      //   selector: '[data-name="first-name-contact"]',
+      //   enabled: true,
+      //   message: 'This value is not valid',
+      //   container: '#first-name-contact',
+      //   trigger: null,
+
+      //   validators: {
+      //     notEmpty: {
+      //       message: 'A number, even if 0, is required.'
+      //     }
+      //   }
+      // } 
+
+    } //fields
+  });
+
+
 
 
 });

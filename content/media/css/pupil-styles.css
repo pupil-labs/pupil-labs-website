@@ -394,3 +394,11 @@ body.modal-open,
   margin: 0 auto;
   width: 100%;
 }
+
+
+/*form styles*/
+.help-block {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-left: 0px;
+}
