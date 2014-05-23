@@ -1,15 +1,9 @@
 ;(function( $ ) {
 
-  $.fn.reveal = function(target) {
-    $(this).on('click', function(e) {
-      e.preventDefault();
-
-      $(target).collapse('show');
-    });
-  };
 
   $.fn.revealNext = function(target) {
     $(this).on('click', function(e) {
+      $('#ss-form').data('bootstrapValidator').validate(); 
       e.preventDefault();
 
       targetId = "#" + target + "-" + $(this).attr('id').slice(-1);
@@ -17,7 +11,7 @@
       $(this).fadeOut("normal", function() {
         $(this).hide();
         $(targetId).collapse('show');
-      }); 
+      });
     });
     return this;
   };
@@ -35,6 +29,7 @@
         $(this).attr('data-original-title', 'Collapse all form fields.');
         $("a[id^=next").hide();
         $('form .collapse').collapse('show');
+        $('#ss-form').data('bootstrapValidator').validate();
       }
     });
   };
@@ -60,6 +55,7 @@
   				$(this).val("");
   			});
   			$(shipping).collapse('show');
+        $('#ss-form').data('bootstrapValidator').validate();
   		} else {
         // if($(shipping).hasClass("in")) {
         //   $(shipping).collapse('hide');
@@ -68,6 +64,7 @@
   				$(shipping + " .form-control[data-id=" + $(this).attr('data-id') + "]").val($(this).val());
 	  		});
         $(shipping).collapse('show');
+        $('#ss-form').data('bootstrapValidator').validate();
   		};
   	});
   	return this;
@@ -102,14 +99,16 @@
   		$('button[data-id=submit-order]').text("Submit " + $(this).children('input').val() + " Request");
   		$(toDB).val($(this).children('input').val());
   		$(target).collapse('show');
+      $('#ss-form').data('bootstrapValidator').validate();
   	});
   	return this;
   };
 
   $.fn.revealSubmit = function(target) {
     $(this).on('click', function(){
-      $(this).reveal('#submit-collapse');
+      $('#submit-collapse').collapse('show');
       $(target).val($(this).children('input').val());
+      console.log($('#ss-form').data('bootstrapValidator').isValid());
     });
     return this;
   };
@@ -135,6 +134,8 @@ $(document).ready(function() {
   $('#toggle-all').toggleAll();
 
   $('#ss-form').bootstrapValidator({
+    excluded: [':disabled'],
+    submitButtons: 'button[type="submit"]',
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
         invalid: 'glyphicon glyphicon-remove',
@@ -144,16 +145,19 @@ $(document).ready(function() {
       orderPro: {
         enabled: true,
         message: 'This value is not valid',
-        container: '#a1',
+        container: '#orderPro',
         selector: '[data-name=orderPro]',
         trigger: null,
 
         validators: {
           notEmpty: {
-            message: 'A number, even if 0, is required.'
+            message: 'A number, even if 0, is required'
           },
           numeric: {
             message: "Value must be a number"
+          },
+          integer: {
+            message: "Value must be an integer"
           },
           between: {
             min: 0,
@@ -165,17 +169,20 @@ $(document).ready(function() {
       orderDev: {
         enabled: true,
         message: 'This value is not valid',
-        container: '#a2',
+        container: '#orderDev',
         selector: '[data-name=orderDev]',
         trigger: null,
 
         validators: {
           notEmpty: {
-            message: 'A number, even if 0, is required.'
+            message: 'A number, even if 0, is required'
           },
           numeric: {
             message: "Value must be a number"
           },
+          integer: {
+            message: "Value must be an integer"
+          },          
           between: {
             min: 0,
             max: 10,
@@ -192,7 +199,7 @@ $(document).ready(function() {
 
         validators: {
           notEmpty: {
-            message: 'This field is required.'
+            message: 'This field is required'
           }
         }
       },
@@ -205,7 +212,7 @@ $(document).ready(function() {
 
         validators: {
           notEmpty: {
-            message: 'This field is required.'
+            message: 'This field is required'
           }
         }
       },       
@@ -218,18 +225,158 @@ $(document).ready(function() {
 
         validators: {
           notEmpty: {
-            message: 'This field is required.'
+            message: 'This field is required'
           },
           emailAddress: {
             message: 'Please enter a valid email address'
           }
         }
-      }
+      },
+      firstNameBilling: {
+        selector: '[data-name="firstNameBilling"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#firstNameBilling',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },
+      lastNameBilling: {
+        selector: '[data-name="lastNameBilling"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#lastNameBilling',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },   
+      companyBilling: {
+        selector: '[data-name="companyBilling"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#companyBilling',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },  
+      vatId: {
+        selector: '[data-name="vatId"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#vatId',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },  
+      phone: {
+        selector: '[data-name="phone"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#phone',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },   
+      addressBilling: {
+        selector: '[data-name="addressBilling"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#addressBilling',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },   
+      // country: {
+      //   selector: '[data-name="country"]',
+      //   enabled: true,
+      //   message: 'This value is not valid',
+      //   container: '#country',
+      //   trigger: null,
+
+      //   validators: {
+      //     notEmpty: {
+      //       message: 'This field is required'
+      //     }
+      //   }
+      // },  
+      firstNameShipping: {
+        selector: '[data-name="firstNameShipping"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#firstNameShipping',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },
+      lastNameShipping: {
+        selector: '[data-name="lastNameShipping"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#lastNameShipping',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },   
+      companyShipping: {
+        selector: '[data-name="companyShipping"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#companyShipping',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },    
+      addressShipping: {
+        selector: '[data-name="addressShipping"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#addressShipping',
+        trigger: null,
+
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },                                                       
        
     } //fields
   });
-
-
-
 
 });
