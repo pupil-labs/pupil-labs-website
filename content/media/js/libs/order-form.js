@@ -135,6 +135,7 @@ $(document).ready(function() {
 
   $('#ss-form').bootstrapValidator({
     excluded: [':disabled'],
+    live: 'enabled',
     submitButtons: 'button[type="submit"]',
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
