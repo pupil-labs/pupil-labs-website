@@ -3,7 +3,7 @@
 
   $.fn.revealNext = function(target) {
     $(this).on('click', function(e) {
-      $('#ss-form').data('bootstrapValidator').validate(); 
+      // $('#ss-form').data('bootstrapValidator').validate(); 
       e.preventDefault();
 
       targetId = "#" + target + "-" + $(this).attr('id').slice(-1);
@@ -12,6 +12,7 @@
         $(this).hide();
         $(targetId).collapse('show');
       });
+      $("#ss-form").data('bootstrapValidator').validate();
     });
     return this;
   };
@@ -29,7 +30,7 @@
         $(this).attr('data-original-title', 'Collapse all form fields.');
         $("a[id^=next").hide();
         $('form .collapse').collapse('show');
-        $('#ss-form').data('bootstrapValidator').validate();
+        // $('#ss-form').data('bootstrapValidator').validate();
       }
     });
   };
@@ -55,18 +56,19 @@
   				$(this).val("");
   			});
   			$(shipping).collapse('show');
-        $('#ss-form').data('bootstrapValidator').validate();
   		} else {
         // if($(shipping).hasClass("in")) {
         //   $(shipping).collapse('hide');
         // }
 	  		$(billing + " .form-control").each(function() {
   				$(shipping + " .form-control[data-id=" + $(this).attr('data-id') + "]").val($(this).val());
-	  		});
+          console.log($(this).attr('data-name'));
+          $('#ss-form').data('bootstrapValidator').validateField('firstNameShipping');
+        });
         $(shipping).collapse('show');
-        $('#ss-form').data('bootstrapValidator').validate();
+        //$('#ss-form').data('bootstrapValidator').validate();
   		};
-  	});
+    });
   	return this;
   };
 
@@ -99,7 +101,7 @@
   		$('button[data-id=submit-order]').text("Submit " + $(this).children('input').val() + " Request");
   		$(toDB).val($(this).children('input').val());
   		$(target).collapse('show');
-      $('#ss-form').data('bootstrapValidator').validate();
+      // $('#ss-form').data('bootstrapValidator').validate();
   	});
   	return this;
   };
