@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     {% block starthead %}{% endblock starthead %}
-    <meta charset="{{ resource.meta.charset }}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{{ site_title }} | {% block title %}{{ resource.meta.title }}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{ resource.meta.description }}">
@@ -53,54 +54,66 @@
         allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
         </p>
         {% endblock footer %}
+
+        {% block js %}
+
+        {# Javascript at the bottom for fast page loading #}
+
+        {% block jquery %}
+        {# Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary #}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{{ media_url('js/libs/jquery.js') }}">\x3C/script>')</script>
+        {% endblock jquery %}
+
+        {% block bootstrap_scripts %}
+        <script src="{{ media_url('js/libs/bootstrap.min.js') }}">
+        </script>
+        {% endblock bootstrap_scripts %}
+
+        {% block custom_scripts %}
+        <script src="{{ media_url('js/libs/highlight.pack.js') }}"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        
+        <script src="{{ media_url('js/libs/jquery.ajaxchimp.min.js') }}"></script>
+        <script>
+        $('#mc-form').ajaxChimp({
+            url: 'http://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&id=56698f0460'
+        });
+<<<<<<< HEAD
+    </script>
+    {% endblock custom_scripts %}
+=======
+        </script>
+        <script src="{{ media_url('js/libs/smooth-scroll.min.js') }}"></script>
+        <script>
+            smoothScroll.init({
+                speed: 800, // Integer. How fast to complete the scroll in milliseconds
+                easing: 'easeInOutCubic', // Easing pattern to use
+                updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
+                offset: 52 // Integer. How far to offset the scrolling anchor location in pixels
+            });
+        </script>
+        {% endblock custom_scripts %}
+
+        {% block order_form_scripts %}
+        {% endblock order_form_scripts %}
+
+        <!--[if lt IE 7 ]>
+          <script src="{{ media_url('js/libs/dd_belatedpng.js') }}"></script>
+          <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
+        <![endif]-->
+
+
+>>>>>>> order-form
+
+        {% endblock js %}
+
+
+
+        
       </footer>
     </div> <!-- /container -->
 
     {% endblock body %}
-
-    {% block js %}
-
-    {# Javascript at the bottom for fast page loading #}
-
-    {% block jquery %}
-    {# Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary #}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="{{ media_url('js/libs/jquery.js') }}">\x3C/script>')</script>
-    {% endblock jquery %}
-
-    {% block bootstrap_scripts %}
-    <script src="{{ media_url('js/libs/bootstrap.min.js') }}">
-    </script>
-    {% endblock bootstrap_scripts %}
-
-    {% block custom_scripts %}
-    <script src="{{ media_url('js/libs/highlight.pack.js') }}"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    
-    <script src="{{ media_url('js/libs/jquery.ajaxchimp.min.js') }}"></script>
-    <script>
-    $('#mc-form').ajaxChimp({
-        url: 'http://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&id=56698f0460'
-    });
-    </script>
-    <script src="{{ media_url('js/libs/smooth-scroll.min.js') }}"></script>
-    <script>
-        smoothScroll.init({
-            speed: 800, // Integer. How fast to complete the scroll in milliseconds
-            easing: 'easeInOutCubic', // Easing pattern to use
-            updateURL: true, // Boolean. Whether or not to update the URL with the anchor hash on scroll
-            offset: 52 // Integer. How far to offset the scrolling anchor location in pixels
-        });
-    </script>
-    {% endblock custom_scripts %}
-
-    <!--[if lt IE 7 ]>
-      <script src="{{ media_url('js/libs/dd_belatedpng.js') }}"></script>
-      <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-    <![endif]-->
-
-
-
-    {% endblock js %}
   </body>
 </html>
