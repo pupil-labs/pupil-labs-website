@@ -12,7 +12,7 @@
         $(this).hide();
         $(targetId).collapse('show');
       });
-      $("#ss-form").data('bootstrapValidator').validate();
+      // $("#ss-form").data('bootstrapValidator').validate();
     });
     return this;
   };
@@ -62,11 +62,8 @@
         // }
 	  		$(billing + " .form-control").each(function() {
   				$(shipping + " .form-control[data-id=" + $(this).attr('data-id') + "]").val($(this).val());
-          console.log($(this).attr('data-name'));
-          $('#ss-form').data('bootstrapValidator').validateField('firstNameShipping');
         });
         $(shipping).collapse('show');
-        //$('#ss-form').data('bootstrapValidator').validate();
   		};
     });
   	return this;
@@ -110,7 +107,6 @@
     $(this).on('click', function(){
       $('#submit-collapse').collapse('show');
       $(target).val($(this).children('input').val());
-      console.log($('#ss-form').data('bootstrapValidator').isValid());
     });
     return this;
   };
@@ -253,7 +249,7 @@ $(document).ready(function() {
         enabled: true,
         message: 'This value is not valid',
         container: '#lastNameBilling',
-        trigger: null,
+        trigger: 'change',
 
         validators: {
           notEmpty: {
@@ -261,32 +257,27 @@ $(document).ready(function() {
           }
         }
       },   
-      companyBilling: {
-        selector: '[data-name="companyBilling"]',
-        enabled: true,
-        message: 'This value is not valid',
-        container: '#companyBilling',
-        trigger: null,
+      // companyBilling: {
+      //   selector: '[data-name="companyBilling"]',
+      //   enabled: true,
+      //   message: 'This value is not valid',
+      //   container: '#companyBilling',
+      //   trigger: null,
 
-        validators: {
-          notEmpty: {
-            message: 'This field is required'
-          }
-        }
-      },  
-      vatId: {
-        selector: '[data-name="vatId"]',
-        enabled: true,
-        message: 'This value is not valid',
-        container: '#vatId',
-        trigger: null,
+      //   validators: {
+      //     notEmpty: {
+      //       message: 'This field is required'
+      //     }
+      //   }
+      // },  
+      // vatId: {
+      //   selector: '[data-name="vatId"]',
+      //   enabled: false,
+      //   message: 'This value is not valid',
+      //   container: '#vatId',
+      //   trigger: null,
 
-        validators: {
-          notEmpty: {
-            message: 'This field is required'
-          }
-        }
-      },  
+      // },  
       phone: {
         selector: '[data-name="phone"]',
         enabled: true,
@@ -352,19 +343,19 @@ $(document).ready(function() {
           }
         }
       },   
-      companyShipping: {
-        selector: '[data-name="companyShipping"]',
-        enabled: true,
-        message: 'This value is not valid',
-        container: '#companyShipping',
-        trigger: null,
+      // companyShipping: {
+      //   selector: '[data-name="companyShipping"]',
+      //   enabled: true,
+      //   message: 'This value is not valid',
+      //   container: '#companyShipping',
+      //   trigger: null,
 
-        validators: {
-          notEmpty: {
-            message: 'This field is required'
-          }
-        }
-      },    
+      //   validators: {
+      //     notEmpty: {
+      //       message: 'This field is required'
+      //     }
+      //   }
+      // },    
       addressShipping: {
         selector: '[data-name="addressShipping"]',
         enabled: true,
@@ -380,6 +371,10 @@ $(document).ready(function() {
       },                                                       
        
     } //fields
+  });
+
+  $('#ss-form').on('dp.change dp.show', function(e) {
+
   });
 
 });
