@@ -1,19 +1,32 @@
 ;(function( $ ) {
 
+  $.fn.revealNextValidate = function(button,target) {
+    // checks to see if an entire section's required input has-success / is valid
+    // if input is valid, then reveal the target section
+    // else display help block
+    var section = $(this);
+    $(button).on('click', function(e) {
+      e.preventDefault();
+      
+      var numFields = section.children('.form-group.has-feedback').length;
+      var validFields = section.children('.form-group.has-feedback.has-success').length;
+
+      if (numFields === validFields){
+        $(this).revealNext(target)
+      } else {
+       console.log("Error") 
+      }
+    });
+    return this
+  };
 
   $.fn.revealNext = function(target) {
-    $(this).on('click', function(e) {
-      // $('#ss-form').data('bootstrapValidator').validate(); 
-      e.preventDefault();
-
-      targetId = "#" + target + "-" + $(this).attr('id').slice(-1);
+      // targetId = "#" + target + "-" + $(this).attr('id').slice(-1);
       
       $(this).fadeOut("normal", function() {
         $(this).hide();
-        $(targetId).collapse('show');
+        $(target).collapse('show');
       });
-      // $("#ss-form").data('bootstrapValidator').validate();
-    });
     return this;
   };
 
@@ -120,12 +133,14 @@ $(document).ready(function() {
   $('label[data-id=payment-type]').revealSubmit("input[data-id=payment-method]");
 
 
-  $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
+  $("select[data-action=count]").sumOrder("input[data-id=orderSum]");
   $('.combobox').combobox();
   $('[data-toggle=tooltip]').tooltip();
 
+  $('#order-collapse').revealNextValidate('a[id=next-0]','#collapse-1');
+  $('#collapse-1').revealNextValidate('a[id=next-2]','#collapse-2');
 
-  $('a[id^=next]').revealNext('collapse'); //"div[id^=collapse-]"
+  // $('a[id^=next]').revealNext('collapse'); 
   $("label[data-id=shipping-data]").copyFields("#collapse-1", "#shipping-collapse");
   $('#collapse-0').updateFields('#collapse-1');
   $('#collapse-1').updateFields('#shipping-collapse');
@@ -151,17 +166,6 @@ $(document).ready(function() {
         validators: {
           notEmpty: {
             message: 'A number, even if 0, is required'
-          },
-          numeric: {
-            message: "Value must be a number"
-          },
-          integer: {
-            message: "Value must be an integer"
-          },
-          between: {
-            min: 0,
-            max: 10,
-            message: 'Value between 0 and 10 - email for more'
           }
         }
       },
@@ -175,17 +179,6 @@ $(document).ready(function() {
         validators: {
           notEmpty: {
             message: 'A number, even if 0, is required'
-          },
-          numeric: {
-            message: "Value must be a number"
-          },
-          integer: {
-            message: "Value must be an integer"
-          },          
-          between: {
-            min: 0,
-            max: 10,
-            message: 'Value between 0 and 10 - email for more'
           }
         }
       },
@@ -304,19 +297,19 @@ $(document).ready(function() {
           }
         }
       },   
-      // country: {
-      //   selector: '[data-name="country"]',
-      //   enabled: true,
-      //   message: 'This value is not valid',
-      //   container: '#country',
-      //   trigger: null,
+      country: {
+        selector: '[data-name="country"]',
+        enabled: true,
+        message: 'This value is not valid',
+        container: '#country',
+        trigger: null,
 
-      //   validators: {
-      //     notEmpty: {
-      //       message: 'This field is required'
-      //     }
-      //   }
-      // },  
+        validators: {
+          notEmpty: {
+            message: 'This field is required'
+          }
+        }
+      },  
       firstNameShipping: {
         selector: '[data-name="firstNameShipping"]',
         enabled: true,

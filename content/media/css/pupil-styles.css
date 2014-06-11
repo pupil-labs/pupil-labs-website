@@ -402,3 +402,31 @@ body.modal-open,
   margin-top: 0px;
   padding-left: 0px;
 }
+
+small.help-block{
+  padding-top: 10px;
+}
+
+.form-horizontal .control-label{
+  /*text-align:right; */
+  text-align:left;
+  /*color: #FCFCFC;*/
+  font-size: 16px;
+}
+
+.control-label-required{
+  text-decoration: underline;
+}
+
+.form-help-text{
+  color: #39A8C4;
+}
+
+.has-success .form-control-feedback,
+.has-success .control-label{
+  color: #428bca;
+}
+
+.form-horizontal .has-feedback .form-control-feedback{
+  right: -20px;
+}
