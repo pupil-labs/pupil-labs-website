@@ -131,11 +131,12 @@ $(document).ready(function() {
   $('label[data-id=payment-type]').revealSubmit("input[data-id=payment-method]");
 
 
-  $("select[data-action=count]").sumOrder("input[data-id=orderSum]");
+  $("input[data-action=count]").sumOrder("input[data-id=orderSum]");
   $('.combobox').combobox();
   $('[data-toggle=tooltip]').tooltip();
 
-  $('#order-collapse').revealNextValidate('a[id=next-0]','#collapse-1');
+  $('#order-collapse').revealNextValidate('a[id=next-0]','#collapse-0');
+  $('#collapse-0').revealNextValidate('a[id=next-1]','#collapse-1');
   $('#collapse-1').revealNextValidate('a[id=next-2]','#collapse-2');
   $('#shipping-collapse').revealNextValidate('a[id=next-3]','#collapse-3');
 
