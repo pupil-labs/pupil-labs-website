@@ -167,6 +167,17 @@ $(document).ready(function() {
         validators: {
           notEmpty: {
             message: 'A number, even if 0, is required'
+          },
+          numeric: {
+            message: "Value must be a number"
+          },
+          integer: {
+            message: "Value must be an integer"
+          },
+          between: {
+            min: 0,
+            max: 10,
+            message: 'Value between 0 and 10 - email for more'
           }
         }
       },
@@ -180,6 +191,17 @@ $(document).ready(function() {
         validators: {
           notEmpty: {
             message: 'A number, even if 0, is required'
+          },
+          numeric: {
+            message: "Value must be a number"
+          },
+          integer: {
+            message: "Value must be an integer"
+          },          
+          between: {
+            min: 0,
+            max: 10,
+            message: 'Value between 0 and 10 - email for more'
           }
         }
       },
