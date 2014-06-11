@@ -12,10 +12,8 @@
       var validFields = section.children('.form-group.has-feedback.has-success').length;
 
       if (numFields === validFields){
-        $(this).revealNext(target)
-      } else {
-       console.log("Error") 
-      }
+        $(this).revealNext(target);
+      } 
     });
     return this
   };
@@ -139,6 +137,8 @@ $(document).ready(function() {
 
   $('#order-collapse').revealNextValidate('a[id=next-0]','#collapse-1');
   $('#collapse-1').revealNextValidate('a[id=next-2]','#collapse-2');
+  $('#shipping-collapse').revealNextValidate('a[id=next-3]','#collapse-3');
+
 
   // $('a[id^=next]').revealNext('collapse'); 
   $("label[data-id=shipping-data]").copyFields("#collapse-1", "#shipping-collapse");
@@ -250,27 +250,6 @@ $(document).ready(function() {
           }
         }
       },   
-      // companyBilling: {
-      //   selector: '[data-name="companyBilling"]',
-      //   enabled: true,
-      //   message: 'This value is not valid',
-      //   container: '#companyBilling',
-      //   trigger: null,
-
-      //   validators: {
-      //     notEmpty: {
-      //       message: 'This field is required'
-      //     }
-      //   }
-      // },  
-      // vatId: {
-      //   selector: '[data-name="vatId"]',
-      //   enabled: false,
-      //   message: 'This value is not valid',
-      //   container: '#vatId',
-      //   trigger: null,
-
-      // },  
       phone: {
         selector: '[data-name="phone"]',
         enabled: true,
@@ -364,10 +343,6 @@ $(document).ready(function() {
       },                                                       
        
     } //fields
-  });
-
-  $('#ss-form').on('dp.change dp.show', function(e) {
-
   });
 
 });
