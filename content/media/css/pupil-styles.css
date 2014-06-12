@@ -423,10 +423,16 @@ small.help-block{
 }
 
 .has-success .form-control-feedback,
-.has-success .control-label{
+.has-success .control-label,
+.has-success .input-group-addon{
   color: #428bca;
 }
 
 .form-horizontal .has-feedback .form-control-feedback{
   right: -25px;
+}
+
+.input-group-optional{
+  color: #BEBEBE;
+  background-color: #FFF;
 }

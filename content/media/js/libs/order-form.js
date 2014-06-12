@@ -252,7 +252,7 @@ $(document).ready(function() {
         enabled: true,
         message: 'This value is not valid',
         container: '#firstNameBilling',
-        trigger: null,
+        trigger: 'blur',
 
         validators: {
           notEmpty: {
@@ -265,7 +265,7 @@ $(document).ready(function() {
         enabled: true,
         message: 'This value is not valid',
         container: '#lastNameBilling',
-        trigger: 'change',
+        trigger: 'blur',
 
         validators: {
           notEmpty: {
@@ -317,7 +317,7 @@ $(document).ready(function() {
         enabled: true,
         message: 'This value is not valid',
         container: '#firstNameShipping',
-        trigger: null,
+        trigger: 'blur',
 
         validators: {
           notEmpty: {
@@ -330,33 +330,20 @@ $(document).ready(function() {
         enabled: true,
         message: 'This value is not valid',
         container: '#lastNameShipping',
-        trigger: null,
+        trigger: 'blur',
 
         validators: {
           notEmpty: {
             message: 'This field is required'
           }
         }
-      },   
-      // companyShipping: {
-      //   selector: '[data-name="companyShipping"]',
-      //   enabled: true,
-      //   message: 'This value is not valid',
-      //   container: '#companyShipping',
-      //   trigger: null,
-
-      //   validators: {
-      //     notEmpty: {
-      //       message: 'This field is required'
-      //     }
-      //   }
-      // },    
+      },       
       addressShipping: {
         selector: '[data-name="addressShipping"]',
         enabled: true,
         message: 'This value is not valid',
         container: '#addressShipping',
-        trigger: null,
+        trigger: 'blur',
 
         validators: {
           notEmpty: {

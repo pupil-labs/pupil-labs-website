@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <div class="form-group" style="display: visible;">
+      <div class="form-group" style="display: none;">
         <div class="col-sm-6 col-sm-offset-3">
           <input type="text" class="form-control" data-id="order-type" placeholder="" value="" name="{{ resource.meta.a5name }}" id="{{ resource.meta.a5id }}">
         </div>
@@ -68,7 +68,7 @@
             <span class="col-sm-3 help-block" id="orderDev"></span>
           </div>
 
-        <div class="form-group" style="display: visible;">
+        <div class="form-group" style="display: none;">
           <div class="col-sm-6 col-sm-offset-3">
             <input type="text" class="form-control" data-id="orderSum" placeholder="" value="" name="{{ resource.meta.a6name }}" id="{{ resource.meta.a6id }}">
           </div>
@@ -184,7 +184,7 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.c4 }}</span>
+            <span class="input-group-addon input-group-optional">{{ resource.meta.c4 }}</span>
             <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.c4label }}" name="{{ resource.meta.c4name }}" id="{{ resource.meta.c4id }}" data-name="companyBilling">
           </div>
         </div>
@@ -194,7 +194,7 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">{{ resource.meta.c5 }}</span>
+            <span class="input-group-addon input-group-optional" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">{{ resource.meta.c5 }}</span>
             <input type="text" class="form-control" data-id="b5" placeholder="{{ resource.meta.c5label }}" name="{{ resource.meta.c5name }}" id="{{ resource.meta.c5id }}" data-name="vatId">
           </div>
         </div>
@@ -503,7 +503,7 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.d4 }}</span>
+            <span class="input-group-addon input-group-optional">{{ resource.meta.d4 }}</span>
             <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.d4label }}" name="{{ resource.meta.d4name }}" id="{{ resource.meta.d4id }}" data-name="companyShipping">
           </div>
         </div>
@@ -580,7 +580,7 @@
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
-            <span class="input-group-addon">{{ resource.meta.f }}</span>
+            <span class="input-group-addon input-group-optional">{{ resource.meta.f }}</span>
             <textarea class="form-control" data-id="d6" placeholder="{{ resource.meta.flabel }}" rows="4" style="resize: vertical;" name="{{ resource.meta.fname }}" id="{{ resource.meta.fid }}"></textarea>
           </div>
         </div>
