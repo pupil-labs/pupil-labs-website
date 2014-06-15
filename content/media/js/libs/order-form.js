@@ -7,13 +7,14 @@
     var section = $(this);
     $(button).on('click', function(e) {
       e.preventDefault();
-      
-      var numFields = section.children('.form-group.has-feedback').length;
-      var validFields = section.children('.form-group.has-feedback.has-success').length;
+      $(this).revealNext(target);
+            
+      // var numFields = section.children('.form-group.has-feedback').length;
+      // var validFields = section.children('.form-group.has-feedback.has-success').length;
 
-      if (numFields === validFields){
-        $(this).revealNext(target);
-      } 
+      // if (numFields === validFields){
+      //   $(this).revealNext(target);
+      // } 
     });
     return this
   };
