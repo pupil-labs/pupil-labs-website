@@ -48,7 +48,7 @@
   };
 
   $.fn.updateFields = function(target) {
-    $(this).on('input propertychange paste', function(e) {
+    $(this).on('input propertychange', function(e) {
       e.preventDefault();
 
       targetDataId = $(e.target).attr('data-id');
