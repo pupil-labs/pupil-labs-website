@@ -130,10 +130,10 @@
     var request;
     $(this).submit(function(event){
       // abort any pending request
-      // if (request) {
-      //   request.abort();
-      // }
-      console.log("existing requests: " + request)
+      if (typeof request != 'undefined') {
+        console.log("existing requests: " + request);
+        request.abort();
+      }
       // make local variables
       var $form = $(this);
       // get all fields of the form and cache them
@@ -163,6 +163,9 @@
       // callback handler if failure
       request.fail(function(jqXHR, textStatus, errorThrown) {
         // log error to the console
+        if (textStatus == "abort") {
+          console.warn("We aborted an existing undefined ajax request -- nothing to worry about here");
+        }
         console.error("The following error occurred: " +
                 textStatus, errorThrown);
       });
