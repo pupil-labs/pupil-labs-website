@@ -124,6 +124,62 @@
   };
 
 
+
+  $.fn.submitForm = function() {
+    // var to hold request
+    var request;
+    $(this).submit(function(event){
+      // abort any pending request
+      // if (request) {
+      //   request.abort();
+      // }
+      console.log("existing requests: " + request)
+      // make local variables
+      var $form = $(this);
+      // get all fields of the form and cache them
+      var $inputs = $form.find("input,select,button,textarea");
+      // serialize the data in the form
+      var serializedData = $form.serialize();
+
+      // disable inputs during ajax request
+      $inputs.prop("disabled",true);
+
+      // fire off requests to form
+      request = $.ajax({
+        url: "https://script.google.com/macros/s/AKfycbxrttWQYBfezhdVJbAszKcx4ZOi_4tSivPyREBrNPXnm0P9RkEG/exec",
+        type: "post",
+        data: serializedData
+      });
+
+      // callback handler when successful
+      request.done(function(response, textStatus, jqXHR){
+        // log message to the console and show on screen
+        // $("#result").html('<h4>Success!</h4>');
+        var url = '/pupil/order/success.html'
+        console.log("Excellent - we submitted something");
+        $(location).attr('href',url);
+      });
+
+      // callback handler if failure
+      request.fail(function(jqXHR, textStatus, errorThrown) {
+        // log error to the console
+        console.error("The following error occurred: " +
+                textStatus, errorThrown);
+      });
+
+      // callback handler that will be called regardless
+      // renables the inputs
+      request.always(function () {
+        $inputs.prop("disabled", false);
+      });
+
+      event.preventDefault();
+    });
+
+  };
+
+
+
 })( jQuery );
 
 $(document).ready(function() {
@@ -148,10 +204,10 @@ $(document).ready(function() {
   $('#collapse-1').updateFields('#shipping-collapse');
   $('#toggle-all').toggleAll();
 
-  $('#ss-form').bootstrapValidator({
+  $('#pupil-order-form').bootstrapValidator({
     excluded: [':disabled'],
     live: 'enabled',
-    submitButtons: 'button[type="submit"]',
+    submitButtons: '#order-submit',
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
         invalid: 'glyphicon glyphicon-remove',
@@ -354,6 +410,11 @@ $(document).ready(function() {
       },                                                       
        
     } //fields
-  });
+  })
+  .on('success.form.bv', function(e) {
+    e.preventDefault();
+    var $form     = $(e.target),validator = $form.data('bootstrapValidator');
+    //validator = $form.data('bootstrapValidator');
+  }).submitForm();
 
 });

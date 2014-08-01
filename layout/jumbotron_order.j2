@@ -2,8 +2,7 @@
 
 {% block container %}
     <div class="col-sm-12">
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(typeof submitted!='undefined'){window.location='{{ resource.meta.formRedirect }}';}"></iframe>
-      <form class="form-horizontal" role="form" action="{{ resource.meta.formUrl }}" method="POST" id="ss-form" target="hidden_iframe" onsubmit="submitted=true;">
+      <form class="form-horizontal" role="form" id="pupil-order-form">
       
 
       <!-- order or quotation question -->
@@ -27,9 +26,10 @@
         </div>
       </div>
 
+      <!-- Order Type -->
       <div class="form-group" style="display: none;">
         <div class="col-sm-6 col-sm-offset-3">
-          <input type="text" class="form-control" data-id="order-type" placeholder="" value="" name="{{ resource.meta.a5name }}" id="{{ resource.meta.a5id }}">
+          <input type="text" class="form-control" data-id="order-type" placeholder="" value="" name="{{ resource.meta.a5 }}">
         </div>
       </div>
 
@@ -67,10 +67,10 @@
             </div>
             <span class="col-sm-3 help-block" id="orderDev"></span>
           </div>
-
+        <!-- Order Type -->
         <div class="form-group" style="display: none;">
           <div class="col-sm-6 col-sm-offset-3">
-            <input type="text" class="form-control" data-id="orderSum" placeholder="" value="" name="{{ resource.meta.a6name }}" id="{{ resource.meta.a6id }}">
+            <input type="text" class="form-control" data-id="orderSum" placeholder="" value="" name="Order">
           </div>
         </div>
 
@@ -101,32 +101,32 @@
             <h3>{{ resource.meta.b }}</h3>
           </div>
         </div>
-
+      <!-- First Name : Contact -->
         <div class="form-group">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b1 }}</span>
-              <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.b1label }}" id="{{ resource.meta.b1id }}" name="{{ resource.meta.b1name }}" data-name='firstNameContact'>
+              <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.b1label }}" name="First Name : Contact" data-name='firstNameContact'>
             </div>
           </div>
           <span class="col-sm-3 help-block" id="firstNameContact"></span>
         </div>
-
+        <!-- Last Name : Contact -->
         <div class="form-group">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b2 }}</span>
-              <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.b2label }}" name="{{ resource.meta.b2name }}" id="{{ resource.meta.b2id }}" data-name="lastNameContact">
+              <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.b2label }}" name="Last Name : Contact" data-name="lastNameContact">
             </div>
           </div>
           <span class="col-sm-3 help-block" id="lastNameContact"></span>
         </div>
-
+        <!-- Email -->
         <div class="form-group">
           <div class="col-sm-6 col-sm-offset-3">
             <div class="input-group">
               <span class="input-group-addon">{{ resource.meta.b3 }}</span>
-              <input type="text" class="form-control" data-id="b3" placeholder="{{ resource.meta.b3label }}" name="{{ resource.meta.b3name }}" id="{{ resource.meta.b3id }}" data-name="emailContact">
+              <input type="text" class="form-control" data-id="b3" placeholder="{{ resource.meta.b3label }}" name="Email" data-name="emailContact">
             </div>
           </div>
           <span class="col-sm-3 help-block" id="emailContact"></span>
@@ -155,75 +155,76 @@
         </div>
       <!-- /divider row -->
 
+      <!-- Billing Info -->
       <div class='form-group'>
         <div class="col-sm-12 text-center">
           <h3>{{ resource.meta.c }}</h3>
         </div>
       </div>
-
+      <!-- First Name : Billing -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c1 }}</span>
-            <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.c1label }}" name="{{ resource.meta.c1name }}" id="{{ resource.meta.c1id }}" data-name="firstNameBilling">
+            <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.c1label }}" name="First Name : Billing" data-name="firstNameBilling">
           </div>
         </div>
         <span class="col-sm-3 help-block" id="firstNameBilling"></span>
       </div>
-
+      <!-- Last Name : Billing -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c2 }}</span>
-            <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.c2label }}"  name="{{ resource.meta.c2name }}" id="{{ resource.meta.c2id }}" data-name="lastNameBilling">
+            <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.c2label }}"  name="Last Name : Billing" data-name="lastNameBilling">
           </div>
         </div>
         <span class="col-sm-3 help-block" id="lastNameBilling"></span>
       </div>
-
+      <!-- Company : Billing -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon input-group-optional">{{ resource.meta.c4 }}</span>
-            <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.c4label }}" name="{{ resource.meta.c4name }}" id="{{ resource.meta.c4id }}" data-name="companyBilling">
+            <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.c4label }}" name="Company : Billing" data-name="companyBilling">
           </div>
         </div>
-        <span class="col-sm-3 help-block" id="companyBilling"></span>   
+        <span class="col-sm-3 help-block" id="companyBilling"></span>
       </div>
-
+      <!-- VAT ID -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon input-group-optional" data-toggle="tooltip" data-placement="right" title="If you are based in the EU and have a VAT ID, please enter it here.">{{ resource.meta.c5 }}</span>
-            <input type="text" class="form-control" data-id="b5" placeholder="{{ resource.meta.c5label }}" name="{{ resource.meta.c5name }}" id="{{ resource.meta.c5id }}" data-name="vatId">
+            <input type="text" class="form-control" data-id="b5" placeholder="{{ resource.meta.c5label }}" name="VAT ID" data-name="vatId">
           </div>
         </div>
         <span class="col-sm-3 help-block" id="vatId"></span>  
       </div>
-
+      <!-- Phone -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c6 }}</span>
-            <input type="text" class="form-control" data-id="b6" placeholder="{{ resource.meta.c6label }}" name="{{ resource.meta.c6name }}" id="{{ resource.meta.c6id }}" data-name="phone">
+            <input type="text" class="form-control" data-id="b6" placeholder="{{ resource.meta.c6label }}" name="Phone" data-name="phone">
           </div>
         </div>
         <span class="col-sm-3 help-block" id="phone"></span>  
       </div>  
-
+      <!-- Address : Billing -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.c7 }}</span>
-            <textarea class="form-control" data-id="b7" placeholder="{{ resource.meta.c7label }}" rows="4" style="resize: vertical;" name="{{ resource.meta.c7name }}" id="{{ resource.meta.c7id }}" data-name="addressBilling"></textarea>
+            <textarea class="form-control" data-id="b7" placeholder="{{ resource.meta.c7label }}" rows="4" style="resize: vertical;" name="Address : Billing" data-name="addressBilling"></textarea>
           </div>
         </div>
         <span class="col-sm-3 help-block" id="addressBilling"></span>     
       </div>
-
+      <!-- Country -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
-          <select class="combobox form-control" name="{{ resource.meta.c8name }}" id="{{ resource.meta.c8id }}" data-name="country">
+          <select class="combobox form-control" name="Country" data-name="country">
            <option value="" selected="selected">{{ resource.meta.c8 }}</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
@@ -453,7 +454,7 @@
         </div>
       </div>
       <!-- /divider row -->
-
+      <!-- Shipping Info -->
       <div class='form-group'>
         <div class="col-sm-12 text-center">
           <h3>{{ resource.meta.d }}</h3>
@@ -479,42 +480,42 @@
     </div>
 
     <div id="shipping-collapse" class="collapse">
-
+      <!-- First Name : Shipping -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.d1 }}</span>
-            <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.d1label }}" name="{{ resource.meta.d1name }}" id="{{ resource.meta.d1id }}" data-name="firstNameShipping">
+            <input type="text" class="form-control" data-id="b1" placeholder="{{ resource.meta.d1label }}" name="First Name : Shipping" data-name="firstNameShipping">
           </div>
         </div>
         <span class="col-sm-3 help-block" id="firstNameShipping"></span>  
       </div>
-
+      <!-- Last Name : Shipping -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.d2 }}</span>
-            <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.d2label }}" name="{{ resource.meta.d2name }}" id="{{ resource.meta.d2id }}" data-name="lastNameShipping">
+            <input type="text" class="form-control" data-id="b2" placeholder="{{ resource.meta.d2label }}" name="Last Name : Shipping" data-name="lastNameShipping">
           </div>
         </div>
         <span class="col-sm-3 help-block" id="lastNameShipping"></span>   
       </div>
-
+      <!-- Company : Shipping -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon input-group-optional">{{ resource.meta.d4 }}</span>
-            <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.d4label }}" name="{{ resource.meta.d4name }}" id="{{ resource.meta.d4id }}" data-name="companyShipping">
+            <input type="text" class="form-control" data-id="b4" placeholder="{{ resource.meta.d4label }}" name="Company : Shipping" data-name="companyShipping">
           </div>
         </div>
         <span class="col-sm-3 help-block" id="companyShipping"></span>        
       </div>
-
+      <!-- Address : Shipping -->
       <div class="form-group">
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon">{{ resource.meta.d7 }}</span>
-            <textarea class="form-control" data-id="b7" placeholder="{{ resource.meta.d7label }}" rows="4" style="resize: vertical;" name="{{ resource.meta.d7name }}" id="{{ resource.meta.d7id }}" data-name="addressShipping"></textarea>
+            <textarea class="form-control" data-id="b7" placeholder="{{ resource.meta.d7label }}" rows="4" style="resize: vertical;" name="Address : Shipping" data-name="addressShipping"></textarea>
           </div>
         </div>
         <span class="col-sm-3 help-block" id="addressShipping"></span>        
@@ -561,10 +562,10 @@
         </div>
         </div>
       </div>
-
+      <!-- Payment Method -->
       <div class="form-group" style="display: none;">
         <div class="col-sm-6 col-sm-offset-3">
-          <input type="text" class="form-control" data-id="payment-method" placeholder="" value="" name="{{ resource.meta.e3name }}" id="{{ resource.meta.e3id }}">
+          <input type="text" class="form-control" data-id="payment-method" placeholder="" value="" name="Payment Method">
         </div>
       </div>
 
@@ -581,7 +582,7 @@
         <div class="col-sm-6 col-sm-offset-3">
           <div class="input-group">
             <span class="input-group-addon input-group-optional">{{ resource.meta.f }}</span>
-            <textarea class="form-control" data-id="d6" placeholder="{{ resource.meta.flabel }}" rows="4" style="resize: vertical;" name="{{ resource.meta.fname }}" id="{{ resource.meta.fid }}"></textarea>
+            <textarea class="form-control" data-id="d6" placeholder="{{ resource.meta.flabel }}" rows="4" style="resize: vertical;" name="{{ resource.meta.fname }}"></textarea>
           </div>
         </div>
       </div>
@@ -595,7 +596,7 @@
       <div class='form-group'>
         <div class="col-sm-6 col-sm-offset-3">
             <div class="form-group">
-              <button type="submit" id="ss-submit" class="btn btn-default btn-lg btn-default-pupil btn-block" data-id="submit-order">{{ resource.meta.g }}</button>
+              <button type="submit" id="order-submit" class="btn btn-default btn-lg btn-default-pupil btn-block" data-id="submit-order">{{ resource.meta.g }}</button>
             </div>
           </div>
       </div>
@@ -628,5 +629,5 @@
 <link rel="stylesheet" href="{{ media_url('css/bootstrapValidator.min.css') }}">
 <script src="{{ media_url('js/libs/bootstrap-combobox.min.js') }}"></script>
 <script src="{{ media_url('js/libs/bootstrapValidator.js') }}"></script>
-<script src="{{ media_url('js/libs/order-form.js') }}"></script>
+<script data-cfasync="false" src="{{ media_url('js/libs/order-form.js') }}"></script>
 {% endblock order_form_scripts %}
