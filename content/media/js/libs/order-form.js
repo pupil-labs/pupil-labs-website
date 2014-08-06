@@ -148,58 +148,10 @@ $(document).ready(function() {
   $('#collapse-1').updateFields('#shipping-collapse');
   $('#toggle-all').toggleAll();
 
-  $('#pupil-order-form').bootstrapValidator({
+  $('#pupil-order-form').bootstrapValidator({ 
     excluded: [':disabled'],
-    live: 'enabled',
-    submitButtons: '#order-submit',
-    submitHandler: function(validator, form, submitButton) {
-       var request;
-        if (typeof request != 'undefined') {
-          console.log("existing requests: " + request);
-          request.abort();
-        }
-        // make local variables
-        // get all fields of the form and cache them
-        var $inputs = form.find("input,select,button,textarea");
-        // serialize the data in the form
-        var serializedData = form.serialize();
-
-        // disable inputs during ajax request
-        $inputs.prop("disabled",true);
-
-        // fire off requests to form
-        request = $.ajax({
-          url: "https://script.google.com/macros/s/AKfycbxC7zeD8Xb1HtzRMKVvPE0rXFHPmCsUlaEQ0KoSanXb1OZr2f0/exec",
-          type: "POST",
-          dataType: "json",
-          data: serializedData
-        });
-
-        // callback handler when successful
-        request.done(function(response, textStatus, jqXHR){
-          // log message to the console and show on screen
-          // $("#result").html('<h4>Success!</h4>');
-          var url = '/pupil/order/success.html'
-          console.log("Excellent - we submitted something");
-          $(location).attr('href',url);
-        });
-
-        // callback handler if failure
-        request.fail(function(jqXHR, textStatus, errorThrown) {
-          // log error to the console
-          if (textStatus == "abort") {
-            console.warn("We aborted an existing undefined ajax request -- nothing to worry about here");
-          }
-          console.error("The following error occurred: " +
-                  textStatus, errorThrown);
-        });
-
-        // callback handler that will be called regardless
-        // renables the inputs
-        request.always(function () {
-          $inputs.prop("disabled", false);
-        });
-    },
+    //live: 'enabled',
+    //submitButtons: '#postForm',
     feedbackIcons: {
         valid: 'glyphicon glyphicon-ok',
         invalid: 'glyphicon glyphicon-remove',
@@ -399,10 +351,34 @@ $(document).ready(function() {
             message: 'This field is required'
           }
         }
-      },                                                       
-       
+      }                                                       
     } //fields
-  }) // validator
+  })
+    .on('success.form.bv', function(e) {
+      // Prevent form submission
+      e.preventDefault();
 
+      // Get the form instance
+      var $form = $(e.target);
 
+      // Get the BootstrapValidator instance
+      var bv = $form.data('bootstrapValidator');
+
+      // Use Ajax to submit form data
+      var url = 'https://script.google.com/macros/s/AKfycbxC7zeD8Xb1HtzRMKVvPE0rXFHPmCsUlaEQ0KoSanXb1OZr2f0/exec';
+      var redirectUrl = 'success.html';
+      // add a loading spinner as feedback 
+      $('#postForm').prepend($('<span></span>').addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate'));      
+      var jqxhr = $.post(url, $form.serialize(), function(data) {
+          console.log("Success! Data: " + data.statusText);
+          $(location).attr('href',redirectUrl);
+      })
+        .fail(function(data) {
+            console.warn("Error! Data: " + data.statusText);
+            if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+                //alert("Browser is Safari -- we get an error, but the form still submits -- continue.");
+                $(location).attr('href',redirectUrl);                
+            }
+        });
+  }); // validator
 });
