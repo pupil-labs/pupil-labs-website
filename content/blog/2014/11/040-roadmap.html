@@ -25,14 +25,14 @@ Our development notes are notes below, and you can check out the [v0.4.0 milesto
 	+ Designed to be used with glfw but should also run with other window managers as well.
 	+ Requires OpenGL 1.1 with extensions for blending and framebufferobjects (FBO).
 	+ Uses [pyfontstash](https://github.com/pupil-labs/pyfontstash) for rendering text. Cython bindings we made for Mikko Mononen awesome [fontstash](https://github.com/memononen/fontstash) library.
-+ **Bilateral Support** - We're preparing everything for more generalized calibration and mapping, including volumetric mapping and billateral mapping. Also in order to support bilateral/binocular headsets Pupil Capture will load automatically in bilateral mode when two eye cameras are detected. Check out work in progress on the (billateral branch)[https://github.com/pupil-labs/pupil/tree/bilateral] 
++ **Bilateral Support** - We're preparing everything for more generalized calibration and mapping, including volumetric mapping and bilateral mapping. Also in order to support bilateral/binocular headsets Pupil Capture will load automatically in bilateral mode when two eye cameras are detected. Check out work in progress on the [bilateral branch](https://github.com/pupil-labs/pupil/tree/bilateral) 
 + Windows - We've had a lot of requests for a Windows bundles in the past. We already have community members running Pupil Capture on Windows from source. Now we're working on a proper bundle for Windows. 
 + Plugin Autoloader - Pupil Capture will remember which plugins were opened last, and reopen them the next time you start the software. 
 + Dependency loader - Automatically load a plugin if it is required by another plugin, or warn if it is not loaded. We already doing something like this in Pupil Player - this will allow for an even more modular codebase where plugins can specify their dependencies. 
 
 <div class="row">
 	<div class="col-sm-9 text-center">
-	<img src="../../../media/img/demo_screenshot_20141107.png" class='img-responsive' alt="pyglui screenshot on Nov 11, 2014">
+	<img src="../../../media/img/demo_screenshot_20141124.png" class='img-responsive' alt="pyglui screenshot on Nov 24, 2014">
 	<p>Development screenshot of pyglui... coming soon to Pupil!</p>
 	</div>
 </div>
