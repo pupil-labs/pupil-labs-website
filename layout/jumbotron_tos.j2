@@ -1,0 +1,18 @@
+{% extends "jumbotron.j2" %}
+
+{% block container %}
+<div class="container">
+
+	<div class="row">
+		<div class="col-sm-12">
+		  {% filter markdown -%}
+		      {% block tos %}{% endblock %}
+		  {%- endfilter %}
+		</div><!-- /col -->
+	</div><!-- /row -->
+
+
+</div><!-- /container -->
+
+
+{% endblock container %}
