@@ -28,6 +28,9 @@ context:
             - title: Blog
               type: page
               url: blog
+            - title: Jobs
+              type: page
+              url: jobs
         sidebar:
             - title: One
               url: one.html
