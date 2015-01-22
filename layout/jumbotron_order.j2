@@ -552,13 +552,17 @@
         <div class="col-sm-12 text-center">
         <div class="btn-group" data-toggle="buttons">
           <label class="btn btn-default" data-id="payment-type">
-            <input type="radio" value="pay-pal">
+            <input type="radio" value="transferwise" id="option1">
+            {{ resource.meta.e4 }}
+          </label>             
+          <label class="btn btn-default" data-id="payment-type">
+            <input type="radio" value="pay-pal" id="option2">
             {{ resource.meta.e1 }}
           </label>
           <label class="btn btn-default" data-id="payment-type">
-            <input type="radio" value="bank-transfer" id="option2">
+            <input type="radio" value="bank-transfer" id="option3">
             {{ resource.meta.e2 }}
-          </label>
+          </label>       
         </div>
         </div>
       </div>
