@@ -368,9 +368,10 @@ $(document).ready(function() {
       var url = 'https://script.google.com/macros/s/AKfycbxC7zeD8Xb1HtzRMKVvPE0rXFHPmCsUlaEQ0KoSanXb1OZr2f0/exec';
       var redirectUrl = 'success.html';
       // add a loading spinner as feedback 
-      $('#postForm').prepend($('<span></span>').addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate'));      
+      $('#postForm').prepend($('<span></span>').addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate')); 
+      $('#postForm').attr('disabled','disabled');     
       var jqxhr = $.post(url, $form.serialize(), function(data) {
-          console.log("Success! Data: " + data.statusText);
+          console.log("Success!");
           $(location).attr('href',redirectUrl);
       })
         .fail(function(data) {
