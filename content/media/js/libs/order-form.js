@@ -361,23 +361,23 @@ $(document).ready(function() {
       // Get the form instance
       var $form = $(e.target);
 
-      // Get the BootstrapValidator instance
-      var bv = $form.data('bootstrapValidator');
-
       // Use Ajax to submit form data
       var url = 'https://script.google.com/macros/s/AKfycbxC7zeD8Xb1HtzRMKVvPE0rXFHPmCsUlaEQ0KoSanXb1OZr2f0/exec';
       var redirectUrl = 'success.html';
       // add a loading spinner as feedback 
       $('#postForm').prepend($('<span></span>').addClass('glyphicon glyphicon-refresh glyphicon-refresh-animate')); 
-      $('#postForm').attr('disabled','disabled');     
-      var jqxhr = $.post(url, $form.serialize(), function(data) {
+      $('#postForm').attr('disabled','disabled');
+      var jqxhr = $.post(url, $form.serialize(), function(returnMsg) {
           console.log("Success!");
-          $(location).attr('href',redirectUrl);
       })
-        .fail(function(data) {
-            console.warn("Error! Data: " + data.statusText);
+        .done(function(returnMsg) {
+          $(location).attr('href',redirectUrl);
+        })
+        .fail(function(returnMsg) {
+            console.warn("Error! ReturnMsg: " + returnMsg.statusText);
             if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
                 //alert("Browser is Safari -- we get an error, but the form still submits -- continue.");
+                // Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
                 $(location).attr('href',redirectUrl);                
             }
         });
