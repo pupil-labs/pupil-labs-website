@@ -1,9 +1,8 @@
 import sys
 from datetime import datetime
 
-TEMPLATE = """
+BLOG_TEMPLATE = """
 Title: {title}
-Hashes: {hashes}
 Date: {year}-{month}-{day} {hour}:{minute:02d}
 Tags:
 Category:
@@ -13,20 +12,40 @@ Status: draft
 
 """
 
+PAGE_TEMPLATE = """
+Title: {title}
+Date: {year}-{month}-{day} {hour}:{minute:02d}
+Slug: {slug}
+
+"""
 
 def new_post(title):
     today = datetime.today()
     slug = title.lower().strip().replace(' ', '-')
     fname = "content/blog/{}-{:0>2}-{:0>2}-{}.md".format(
         today.year, today.month, today.day, slug)
-    t = TEMPLATE.strip().format(title=title,
-                                hashes='#' * len(title),
+    t = BLOG_TEMPLATE.strip().format(title=title,
                                 year=today.year,
                                 month=today.month,
                                 day=today.day,
                                 hour=today.hour,
                                 minute=today.minute,
                                 slug=slug)
-    with open(fname, 'w') as w:
-        w.write(t)
+    with open(fname, 'w') as f:
+        f.write(t)
+    return fname
+
+def new_page(title):
+    today = datetime.today()
+    slug = title.lower().strip().replace(' ', '-')
+    fname = "content/pages/{}.md".format(slug)
+    t = PAGE_TEMPLATE.strip().format(title=title,
+                                year=today.year,
+                                month=today.month,
+                                day=today.day,
+                                hour=today.hour,
+                                minute=today.minute,
+                                slug=slug)
+    with open(fname, 'w') as f:
+        f.write(t)
     return fname

@@ -76,10 +76,17 @@ def cf_upload():
           '-K {cloudfiles_api_key} '
           'upload -c {cloudfiles_container} .'.format(**env))
 
+# convenience functions for file creation with current date and slugs with no whitespace
 @task
 def new_post(title):
     fn = fabric_helpers.new_post(title)
-    print("File created: " + title)
+    sys.stderr.write("New blog article created: {}".format(title))
+
+@task
+def new_page(title):
+    fn = fabric_helpers.new_page(title)
+    sys.stderr.write("New page created: {}".format(title))
+
 
 @hosts(production)
 def publish():
