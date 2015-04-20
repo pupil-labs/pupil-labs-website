@@ -31,6 +31,7 @@ def clean():
     
     # remove .pyc files from the local dir    
     local('rm -rf *.pyc')
+    local('rm -rf /fabric_helpers/*.pyc')
 
 @task
 def build():
