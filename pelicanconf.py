@@ -7,8 +7,10 @@ SITENAME = u'Pupil Labs'
 SITEURL = ''
 
 PATH = 'content'
+PAGE_PATHS = ['pages']
+ARTICLE_PATHS = ['blog']
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'UTC'
 
 DEFAULT_LANG = u'en'
 
@@ -19,17 +21,16 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+# Links
+LINKS = (('Pupil Github', 'https://github.com/pupil-labs/pupil'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+# SOCIAL = (('You can add links in your config file', '#'),
+#           ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 4
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+IGNORE_FILES = ['_v1.0']
