@@ -28,6 +28,10 @@ def clean():
     if os.path.isdir(DEPLOY_PATH):
         local('rm -rf {deploy_path}'.format(**env))
         local('mkdir {deploy_path}'.format(**env))
+    
+    # remove .pyc files from the local dir    
+    local('rm -rf *.pyc')
+
 @task
 def build():
     local('pelican -s pelicanconf.py')
@@ -74,8 +78,8 @@ def cf_upload():
 
 @task
 def new_post(title):
-    fn = fabric_helpers.post_methods.new_post(title)
-    print("File created: " + fname)
+    fn = fabric_helpers.new_post(title)
+    print("File created: " + title)
 
 @hosts(production)
 def publish():
