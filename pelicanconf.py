@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 PAGE_PATHS = ['pages']
-ARTICLE_PATHS = ['blog']
+ARTICLE_PATHS = ['articles']
 
 TIMEZONE = 'UTC'
 
