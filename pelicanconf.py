@@ -8,7 +8,10 @@ SITEURL = ''
 
 PATH = 'content'
 PAGE_PATHS = ['pages']
+
 ARTICLE_PATHS = ['articles']
+ARTICLE_URL = 'blog/{date:%Y}-{date:%m}-{date:%d}-{slug}'
+ARTICLE_SAVE_AS = 'blog/{date:%Y}-{date:%m}-{date:%d}-{slug}/index.html'
 
 TIMEZONE = 'UTC'
 
