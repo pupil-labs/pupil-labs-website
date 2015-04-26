@@ -37,3 +37,6 @@ DEFAULT_PAGINATION = 4
 #RELATIVE_URLS = True
 
 IGNORE_FILES = ['_v1.0']
+
+#Themes
+THEME = "simple"
