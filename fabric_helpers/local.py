@@ -22,7 +22,7 @@ Slug: {slug}
 def new_post(title):
     today = datetime.today()
     slug = title.lower().strip().replace(' ', '-')
-    fname = "content/blog/{}-{:0>2}-{:0>2}-{}.md".format(
+    fname = "content/articles/{}-{:0>2}-{:0>2}-{}.md".format(
         today.year, today.month, today.day, slug)
     t = BLOG_TEMPLATE.strip().format(title=title,
                                 year=today.year,
