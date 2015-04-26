@@ -64,6 +64,11 @@ def reserve():
     build()
     serve()
 
+@task 
+def clean_reserve():
+    clean()
+    reserve()
+
 @task
 def preview():
     local('pelican -s publishconf.py')
