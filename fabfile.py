@@ -81,12 +81,12 @@ def cf_upload():
 @task
 def new_post(title):
     fn = fabric_helpers.new_post(title)
-    sys.stderr.write("New blog article created: {}".format(title))
+    sys.stdout.write("New blog article created: {}".format(title))
 
 @task
 def new_page(title):
     fn = fabric_helpers.new_page(title)
-    sys.stderr.write("New page created: {}".format(title))
+    sys.stdout.write("New page created: {}".format(title))
 
 
 @hosts(production)
