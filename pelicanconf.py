@@ -44,5 +44,5 @@ THEME = "simple"
 PLUGIN_PATHS = ["pelican-plugins"]
 
 #webassets 
-PLUGINS = ["assets"]
-ASSET_CONFIG = (('AUTOPREFIXER_BROWSERS', ['> 1%', 'last 2 versions'])
+PLUGINS = ['assets']
+ASSET_CONFIG = (('AUTOPREFIXER_BROWSERS', ['last 2 versions']),)
