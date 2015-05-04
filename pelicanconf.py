@@ -40,3 +40,9 @@ IGNORE_FILES = ['_v1.0']
 
 #Themes
 THEME = "simple"
+
+PLUGIN_PATHS = ["pelican-plugins"]
+
+#webassets 
+PLUGINS = ["assets"]
+ASSET_CONFIG = (('AUTOPREFIXER_BROWSERS', ['> 1%', 'last 2 versions'])
