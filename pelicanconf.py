@@ -39,10 +39,13 @@ DEFAULT_PAGINATION = 4
 IGNORE_FILES = ['_v1.0']
 
 #Themes
-THEME = "simple"
+THEME = "themes/pupil-labs-theme"
 
+#plugins
 PLUGIN_PATHS = ["pelican-plugins"]
-
-#webassets 
 PLUGINS = ['assets']
+
+#webassets settings
+# ASSET_BUNDLES = (('scss', ['colors.scss', 'main.scss'], {'filters': 'pyscss'}),) 
 ASSET_CONFIG = (('AUTOPREFIXER_BROWSERS', ['last 2 versions']),)
+# ASSET_SOURCE_PATHS = ('vendor/css','scss',)
