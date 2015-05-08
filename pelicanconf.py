@@ -46,6 +46,6 @@ PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = ['assets']
 
 #webassets settings
-# ASSET_BUNDLES = (('scss', ['colors.scss', 'main.scss'], {'filters': 'pyscss'}),) 
+ASSET_BUNDLES = (('styles', ['css/main.styl'], {'filters': ['stylus','cssmin'],'output': 'css/style.min.css'}),) 
 ASSET_CONFIG = (('AUTOPREFIXER_BROWSERS', ['last 2 versions']),)
 # ASSET_SOURCE_PATHS = ('vendor/css','scss',)
