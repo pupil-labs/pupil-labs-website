@@ -34,8 +34,11 @@ def clean():
     local('rm -rf /fabric_helpers/*.pyc')
 
 @task
-def build():
-    local('pelican -s pelicanconf.py')
+def build(verbose=False):
+    msg = ''
+    if verbose:
+        msg = '-v -D'
+    local('pelican %s -s pelicanconf.py' %(msg))
 
 @task
 def rebuild():
