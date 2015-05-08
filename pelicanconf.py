@@ -9,6 +9,9 @@ SITEURL = ''
 PATH = 'content'
 PAGE_PATHS = ['pages']
 
+# Replace blog index with static index
+INDEX_SAVE_AS = 'blog/index.html'
+
 ARTICLE_PATHS = ['articles']
 ARTICLE_URL = 'blog/{date:%Y}-{date:%m}-{date:%d}-{slug}'
 ARTICLE_SAVE_AS = 'blog/{date:%Y}-{date:%m}-{date:%d}-{slug}/index.html'
