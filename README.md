@@ -16,6 +16,8 @@ Some WebAssets pacakges require node libs - we will be working with `stylus` for
   + Install node - `brew install node` 
   + [Stylus](https://learnboost.github.io/stylus/) - `npm install -g stylus` 
   + [Autoprefixer](https://github.com/postcss/autoprefixer) - `npm install -g autoprefixer`
+  + [CoffeeScript](http://coffeescript.org/) - `npm install -g coffeescript`
+  + [UglifyJS](https://github.com/mishoo/UglifyJS) - `npm install -g uglifyjs`
 
 ## Build Instructions
   
