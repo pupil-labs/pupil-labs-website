@@ -38,14 +38,17 @@ DEFAULT_PAGINATION = 4
 
 IGNORE_FILES = ['_v1.0']
 
-#Themes
+# Theme
 THEME = "themes/pupil-labs-theme"
 
-#plugins
+# Plugins
 PLUGIN_PATHS = ["pelican-plugins"]
 PLUGINS = ['assets']
 
-#webassets settings
+# Webassets settings
 ASSET_BUNDLES = (('styles', ['css/main.styl'], {'filters': ['stylus','cssmin'],'output': 'css/style.min.css'}),) 
 ASSET_CONFIG = (('AUTOPREFIXER_BROWSERS', ['last 2 versions']),)
 # ASSET_SOURCE_PATHS = ('vendor/css','scss',)
+
+# Google Analytics ID
+GA_ID = u'UA-40856943-1'
