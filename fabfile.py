@@ -64,6 +64,7 @@ def serve(port=8000):
 
 @task
 def reserve():
+    clean()
     build()
     serve()
 
