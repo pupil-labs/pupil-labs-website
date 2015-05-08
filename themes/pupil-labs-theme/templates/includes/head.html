@@ -1,0 +1,20 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+  <meta name="description" content="{{ META_SITE_DESCRIPTION }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- favicon -->
+
+  <!-- stylesheets -->
+  <!-- compile stylus css and then minify save to style.min.css -->
+  {% assets "styles" %}
+  <link rel="stylesheet" href="{{ SITEURL }}/{{ ASSET_URL }}">
+  {% endassets %}
+
+  <!-- js modernizr -->
+  <script src=""></script>
+</head>
