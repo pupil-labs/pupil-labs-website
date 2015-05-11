@@ -5,4 +5,10 @@ Template: page-home
 Save_As: index.html
 
 
-# This is the index page content.
+<h1>Page Title</h1>
+<a href="http://www.google.com">Link</a>
+<ul>
+	<li>something</li>
+	<li>else</li>
+	<li>entirely</li>
+</ul>
