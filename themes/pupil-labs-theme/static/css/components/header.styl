@@ -1,0 +1,35 @@
+.Header
+	padding 1.75em 2em
+	background $navbar-bg
+	border-bottom 1px solid $navbar-border-color
+	display block
+	max-width 100%
+	width 100%
+	z-index $zindex-navbar
+	position relative
+	
+	&:after
+		clear both
+		display table
+		content ""
+	
+.Header-logo
+	text-decoration none
+	float left
+	position relative
+	display inline
+	margin 0 auto
+	// typography 
+	font-family $font-family-sans-serif
+	font-weight 700
+	
+.Header-nav
+	display block
+	float right
+	padding 0
+	
+	&:after
+		clear both
+		display table
+		content ""
+
