@@ -3,7 +3,21 @@
 // -------------------------------
 
 // Colors
+$color-default ?= 		#fff
+$color-primary ?= 		#ddd 
+$color-secondary ?= 	#ddd
 
+$color-success ?= 		#325E85
+$color-info ?= 			#5bc0de
+$color-danger ?= 		#d9534f
+
+// Color - gray gradient
+$gray-base ?=           #000
+$gray-darker ?=         lighten($gray-base, 13.5%) // #222
+$gray-dark ?=           lighten($gray-base, 20%)   // #333
+$gray ?=                lighten($gray-base, 33.5%) // #555
+$gray-light ?=          lighten($gray-base, 46.7%) // #777
+$gray-lighter ?=        lighten($gray-base, 93.5%) // #eee
 
 // Grids
 
@@ -11,7 +25,7 @@
 // Typography
 // the ?= is a conditional assignment - if the variable is already assigned it doesn't get overwritten
 // kind of overkill here but, interesting feature 
-$font-family-sans-serif ?= 	"Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family-sans-serif ?= 	'Quicksand', sans-serif
 $font-family-serif ?=		Georgia, "Times New Roman", Times, serif
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace ?=  	Menlo, Monaco, Consolas, "Courier New", monospace
@@ -49,8 +63,8 @@ $zindex-navbar ?= 			1000
 
 
 // Navbar
-$navbar-bg ?= 				#fff
-$navbar-border-color ?= 	#ddd  
+$navbar-bg ?= 				$color-default
+$navbar-border-color ?= 	$color-secondary
 
 // Navs
 
