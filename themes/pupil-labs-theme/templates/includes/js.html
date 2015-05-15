@@ -4,10 +4,10 @@
 
 <!-- load jquery plugins -->
 {% assets filters="coffeescript,uglifyjs", output="js/plugins.min.js", "js/plugins.coffee" %}
-    <script src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+    <script src="/{{ ASSET_URL }}"></script>
 {% endassets %}
 
 <!-- load and minify site javascript -->
 {% assets filters="coffeescript,uglifyjs", output="js/main.min.js", "js/main.coffee" %}
-    <script src="{{ SITEURL }}/{{ ASSET_URL }}"></script>
+    <script src="/{{ ASSET_URL }}"></script>
 {% endassets %}
