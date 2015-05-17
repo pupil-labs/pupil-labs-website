@@ -3,13 +3,27 @@
 	float left
 	list-style none
 	
+	@media all and (max-width: 48em)
+		border-right 1px solid #ddd
+		width 33.333%
+	
 .Nav-link
-	border-top none
+	border-top 1px solid #ddd
+	display block
 	text-decoration none
 	text-align center
-	margin 0
-	padding 1em 2em
+	padding 1.25em .75em
 	// typography 
 	font-family $font-family-sans-serif
 	font-weight 700
 	width 100%
+	
+	@media all and (max-width: 48em)
+		background-color #f7f7f7
+		letter-spacing .01em
+		text-align center
+		
+	@media all and (min-width: 48em)
+		border-top none
+		margin 0
+		padding 1em 1.75em	
