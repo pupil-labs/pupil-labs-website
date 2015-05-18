@@ -12,17 +12,21 @@
 	display block
 	text-decoration none
 	text-align center
-	padding 1.25em .75em
+	padding .5em .75em
 	// typography 
 	font-family $font-family-sans-serif
 	font-weight 700
 	width 100%
+	-webkit-transition:color .3s ease-in-out,background .3s ease-in-out;
+	transition:color .3s ease-in-out,background .3s ease-in-out;
 	
+	// small screen
 	@media all and (max-width: 48em)
 		background-color #f7f7f7
 		letter-spacing .01em
 		text-align center
 		
+	// large screen
 	@media all and (min-width: 48em)
 		border-top none
 		margin 0
