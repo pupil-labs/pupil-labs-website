@@ -6,8 +6,10 @@
   <div class="Site-container">
     {% include 'includes/header.html' %}
     
+    <main role="main" class="Site-fade-in">
     {% block main %}{% endblock main %}
-
+    </main>
+    
     {% include 'includes/footer.html' %}
   </div> <!-- Site-contentContainer -->
     {% include 'includes/js.html' %}
