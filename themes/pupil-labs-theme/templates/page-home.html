@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
 {% block main %}
-    {{ page.content }}
+  <div class="Home-flex-container">
+    <section class="Home-flex-item-full-width">
+      <h1 class="Home-item-h1">{{ page.pupil_title }}</h1>
+      <h2 class="Home-item-h2">{{ page.pupil_subtitle }}</h2>
+    </section>
+    <section class="Home-flex-item-half-width">
+      <h2 class="Home-item-h2">Pupil</h2>
+    </section>
+    <section class="Home-flex-item-half-width">
+      <h2 class="Home-item-h2">Pupil Description</h2>
+    </section>
+  </div>
 {% endblock main %}

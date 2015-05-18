@@ -1,0 +1,55 @@
+.Home-flex-container
+	// documentation on flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+	flexbox_container()
+	align-items stretch // fill the container	
+
+	// full width container
+	width 100%
+	
+.Home-flex-item-full-width
+	display flex
+	flex-direction column
+	align-items center
+	flex 0 0 auto
+	justify-content center
+
+	background linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(255,255,255,1))
+	// set up a min-height
+	min-height 60vh	
+	
+	overflow hidden
+	position relative
+	width 100% // items within the element container should be full width
+	padding 5em
+
+.Home-flex-item-half-width
+	display flex
+	flex-direction column
+	align-items center
+	flex 1 0 auto
+	justify-content center
+
+	background rgba(255,0,150,0.5)
+	// set up a min-height
+	min-height 60vh	
+	
+	overflow hidden
+	position relative
+	width 100% // items within the element container should be full width
+	padding 5em
+	
+.Home-item-h1
+	// align-items center
+	color #515151 
+	text-align center
+	position relative
+	text-shadow 0 1px 0 rgba(0,0,0,.1)
+	font-size 2.4em
+
+.Home-item-h2 
+	color #8A8A8A 
+	text-align center
+	position relative
+	text-shadow 0 1px 0 rgba(0,0,0,.1)
+	font-size 1.6em
+	
