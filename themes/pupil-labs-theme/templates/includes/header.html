@@ -1,17 +1,14 @@
 <header class="Header">
-  <a href="/" class="Header-logo">Pupil Labs</a>
+  <a href="{{ SITEURL }}" class="Header-logo">{{ SITENAME }}</a>
     <nav class="Header-nav">
       <ul>
-        <li class="Nav-list-item">
-          <a href="/pupil" class="Nav-link">Pupil</a>
-        </li>
-        <li class="Nav-list-item">
-          <a href="/blog"  class="Nav-link">Store</a>
-        </li>
-        <li class="Nav-list-item">
-          <a href="/jobs" class="Nav-link">Cart</a>
-        </li>
+      {% for title, link in MENUITEMS %}
+		<li class="Nav-list-item {% if title == active_page %}is-active{% endif %}">
+		  <a href="{{ SITEURL }}/{{ link }}" class="Nav-link">{{ title }}</a>
+		</li>
+	  {% endfor %}
       </ul>
     </nav>
   </div>
 </header>
+

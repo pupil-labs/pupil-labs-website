@@ -30,6 +30,10 @@ AUTHOR_FEED_RSS = None
 # Links
 LINKS = (('Pupil Github', 'https://github.com/pupil-labs/pupil'),)
 
+# Menu Items
+MENUITEMS = [('Pupil','pupil'),('Store','store'),('Cart','cart')]
+
+
 # Social widget
 # SOCIAL = (('You can add links in your config file', '#'),
 #           ('Another social link', '#'),)
