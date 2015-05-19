@@ -22,28 +22,79 @@
 	width 33.333%
 	padding-bottom 1.25em
 
-footer-social-headings(_color=#fff,_font-size=1.2em)
+footer-headings(_color=#fff,_font-size=1.2em)
 	text-align center
 	position relative
 	color _color
 	font-size _font-size
 
 .Footer-social-connect-h3
-	footer-social-headings()
+	footer-headings()
 
 .Footer-social-link
-	footer-social-headings(#fff,1em)
+	footer-headings(#fff,1em)
 	text-decoration $link-text-decoration
 	font-family $font-family-sans-serif
 	font-weight 700
 	transition color .4s ease
 	letter-spacing .01em	
 	
-.Footer-flex-container-navigation
+.Footer-flex-container-nav
 	flexbox_container(_flex=0 0 auto,_flex_wrap=wrap,_justify-content=center)
 	align-items stretch // fill the container
 	// flex-direction row // already default	
 
 	// full width container
 	width 100%
-	background linear-gradient(to-bottom, rgba(91,91,91,1))
+	background #3f3f3f
+	padding 2em 2em 1em 2em
+
+.Footer-flex-item-sitemap
+	display flex
+	align-items center
+	justify-content center
+	flex-direction column
+	flex 0 0 auto
+	
+	width 100% 
+	
+.Footer-nav-headings
+	footer-headings()
+	
+footer-links()
+	color #fff
+	font-family $font-family-sans-serif
+	font-weight 400
+	font-size 1em
+	letter-spacing -.05em
+	transition color .4s ease
+
+.Footer-nav-link
+	footer-links()
+	
+.Footer-nav-list
+	position relative
+	list-style none
+	text-align center
+	padding 1em
+
+	li
+		color #fff
+		font 400 1em $font-family-sans-serif
+		letter-spacing -.05em
+		display inline-block
+
+		&:after
+			content "\2014 \00a0" // em dash with trailing whitespace
+		
+		&:last-child:after
+			content ""
+		
+.Footer-post-link
+	footer-links()
+		
+.Footer-post-list
+	position relative
+	
+	li 
+		list-style none

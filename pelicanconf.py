@@ -28,11 +28,13 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Menu Items
-MENUITEMS = [('Pupil','pupil'),('Store','store'),('Cart','cart')]
+MENUITEMS = (('Pupil','pupil'),('Store','store'),('Cart','cart'))
 
 # Footer connect links
 CONNECTITEMS = (('Twitter', 'https://twitter.com/pupil_labs'),('Github', 'https://github.com/pupil-labs'),('Email','mailto:info@pupil-labs.com'))
 
+# All internal pages
+SITEMAP = (('Home',''),) + MENUITEMS + ((u'About & Imprint','about'),('Blog','blog'),('Jobs','jobs'),('Terms of sale','tos'))
 
 # Social widget
 # SOCIAL = (('You can add links in your config file', '#'),
