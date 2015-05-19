@@ -34,11 +34,9 @@ MENUITEMS = (('Pupil','pupil'),('Store','store'),('Cart','cart'))
 CONNECTITEMS = (('Twitter', 'https://twitter.com/pupil_labs'),('Github', 'https://github.com/pupil-labs'),('Email','mailto:info@pupil-labs.com'))
 
 # All internal pages
-SITEMAP = (('Home',''),) + MENUITEMS + ((u'About & Imprint','about'),('Blog','blog'),('Jobs','jobs'),('Terms of sale','tos'))
-
-# Social widget
-# SOCIAL = (('You can add links in your config file', '#'),
-#           ('Another social link', '#'),)
+FOOTERMENU_ONE = (('Home',''),) + MENUITEMS
+FOOTERMENU_TWO =  ((u'About & Imprint','about'),('Terms of sale','tos'),('Jobs','jobs'),('Blog','blog'))
+FOOTERMENU = FOOTERMENU_ONE + FOOTERMENU_TWO
 
 DEFAULT_PAGINATION = 4
 

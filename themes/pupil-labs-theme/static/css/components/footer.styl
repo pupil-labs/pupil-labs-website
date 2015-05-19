@@ -6,7 +6,7 @@
 
 	// full width container
 	width 100%
-	background rgba(91,91,91,1)
+	background rgba(0,0,0,.6)
 	
 
 .Footer-flex-item-social-full-width
@@ -31,70 +31,43 @@ footer-headings(_color=#fff,_font-size=1.2em)
 .Footer-social-connect-h3
 	footer-headings()
 
-.Footer-social-link
-	footer-headings(#fff,1em)
-	text-decoration $link-text-decoration
+// Footer navigation (site map)
+// 
+
+.Footer-nav
+	width 100%
+	background rgba(0,0,0,.3)
+	// padding 2em 2em 1em 2em
+	
+.Footer-flex-nav-container
+	flexbox_container(0 0 auto,nowrap,space-around)
+	align-items stretch
+	width 100%	
+	overflow hidden
+	padding-top 2em
+	padding-bottom 2em
+			
+	@media all and (max-width: 48em)
+		// small screen
+		flex-wrap wrap
+
+.Footer-flex-nav-item
+	display flex
+	justify-content center
+	padding .15em .75em
+
+.Footer-nav-link
+	color #fff
 	font-family $font-family-sans-serif
 	font-weight 700
 	transition color .4s ease
-	letter-spacing .01em	
+	letter-spacing .01em		
 	
-.Footer-flex-container-nav
-	flexbox_container(_flex=0 0 auto,_flex_wrap=wrap,_justify-content=center)
-	align-items stretch // fill the container
-	// flex-direction row // already default	
-
-	// full width container
-	width 100%
-	background #3f3f3f
-	padding 2em 2em 1em 2em
-
-.Footer-flex-item-sitemap
-	display flex
-	align-items center
-	justify-content center
-	flex-direction column
-	flex 0 0 auto
-	
-	width 100% 
-	
-.Footer-nav-headings
-	footer-headings()
-	
-footer-links()
-	color #fff
-	font-family $font-family-sans-serif
-	font-weight 400
-	font-size 1em
-	letter-spacing -.05em
-	transition color .4s ease
-
-.Footer-nav-link
-	footer-links()
-	
-.Footer-nav-list
-	position relative
-	list-style none
-	text-align center
-	padding 1em
-
-	li
-		color #fff
-		font 400 1em $font-family-sans-serif
-		letter-spacing -.05em
-		display inline-block
-
-		&:after
-			content "\2014 \00a0" // em dash with trailing whitespace
+	@media all and (min-width: 48em)
+		// big screen
+		font-size 1.1em 
 		
-		&:last-child:after
-			content ""
-		
-.Footer-post-link
-	footer-links()
-		
-.Footer-post-list
-	position relative
+	@media all and (max-width: 48em)
+		// small screen
+		font-size 1em
 	
-	li 
-		list-style none
