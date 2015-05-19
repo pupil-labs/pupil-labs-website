@@ -27,11 +27,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Links
-LINKS = (('Pupil Github', 'https://github.com/pupil-labs/pupil'),)
-
 # Menu Items
 MENUITEMS = [('Pupil','pupil'),('Store','store'),('Cart','cart')]
+
+# Footer connect links
+CONNECTITEMS = (('Twitter', 'https://twitter.com/pupil_labs'),('Github', 'https://github.com/pupil-labs'),('Email','mailto:info@pupil-labs.com'))
 
 
 # Social widget

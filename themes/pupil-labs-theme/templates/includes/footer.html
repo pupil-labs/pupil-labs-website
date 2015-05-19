@@ -1,3 +1,13 @@
 <footer>
-  <!-- content here -->
+  <section class="Footer-flex-container-social">
+    <div class="Footer-flex-item-social-full-width">
+      <h3 class="Footer-social-connect-h3">Connect</h3>
+    </div>
+    {% for title, link in CONNECTITEMS -%}
+    <div class="Footer-flex-item-social-one-third-width">
+      <a href="{{ link }}" target="_blank" class="Footer-social-link">{{ title }}</a>
+    </div>  
+    {%- endfor %}
+  </section>
 </footer>
+

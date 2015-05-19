@@ -1,0 +1,49 @@
+.Footer-flex-container-social
+	// documentation on flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+	flexbox_container(_flex=0 0 auto,_flex_wrap=wrap,_justify-content=center)
+	align-items stretch // fill the container
+	// flex-direction row // already default	
+
+	// full width container
+	width 100%
+	background rgba(91,91,91,1)
+	
+
+.Footer-flex-item-social-full-width
+	width 100%
+	padding 2em 2em 1em 2em
+	
+.Footer-flex-item-social-one-third-width
+	display flex
+	flex 1 0 auto
+	justify-content center
+	
+	overflow hidden
+	width 33.333%
+	padding-bottom 1.25em
+
+footer-social-headings(_color=#fff,_font-size=1.2em)
+	text-align center
+	position relative
+	color _color
+	font-size _font-size
+
+.Footer-social-connect-h3
+	footer-social-headings()
+
+.Footer-social-link
+	footer-social-headings(#fff,1em)
+	text-decoration $link-text-decoration
+	font-family $font-family-sans-serif
+	font-weight 700
+	transition color .4s ease
+	letter-spacing .01em	
+	
+.Footer-flex-container-navigation
+	flexbox_container(_flex=0 0 auto,_flex_wrap=wrap,_justify-content=center)
+	align-items stretch // fill the container
+	// flex-direction row // already default	
+
+	// full width container
+	width 100%
+	background linear-gradient(to-bottom, rgba(91,91,91,1))
