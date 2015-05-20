@@ -7,7 +7,7 @@
 	// padding 2em 2em 1em 2em
 	
 .Footer-flex-nav-container
-	flexbox_container(0 0 auto,nowrap,space-between)
+	flexbox_container(0 0 auto,nowrap,space-around)
 	align-items stretch
 	width 100%	
 	overflow hidden
@@ -17,7 +17,6 @@
 	@media all and (max-width: 48em)
 		// small screen
 		flex-wrap wrap
-		justify-content space-around
 
 .Footer-flex-nav-item
 	list-style none
@@ -84,7 +83,7 @@
 	width 100%
 
 .Footer-flex-copy-container
-	flexbox_container(0 0 auto,nowrap,space-around)
+	flexbox_container(0 0 auto,nowrap,center)
 	align-items stretch
 	width 100%	
 	background rgba(0,0,0,.8)
