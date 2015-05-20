@@ -1,36 +1,3 @@
-.Footer-flex-container-social
-	// documentation on flexbox: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
-	flexbox_container(_flex=0 0 auto,_flex_wrap=wrap,_justify-content=center)
-	align-items stretch // fill the container
-	// flex-direction row // already default	
-
-	// full width container
-	width 100%
-	background rgba(0,0,0,.6)
-	
-
-.Footer-flex-item-social-full-width
-	width 100%
-	padding 2em 2em 1em 2em
-	
-.Footer-flex-item-social-one-third-width
-	display flex
-	flex 1 0 auto
-	justify-content center
-	
-	overflow hidden
-	width 33.333%
-	padding-bottom 1.25em
-
-footer-headings(_color=#fff,_font-size=1.2em)
-	text-align center
-	position relative
-	color _color
-	font-size _font-size
-
-.Footer-social-connect-h3
-	footer-headings()
-
 // Footer navigation (site map)
 // 
 
@@ -71,3 +38,37 @@ footer-headings(_color=#fff,_font-size=1.2em)
 		// small screen
 		font-size 1em
 	
+// Footer social links
+// 
+
+.Footer-social
+	width 100%
+	
+.Footer-flex-social-container
+	flexbox_container(0 0 auto,nowrap,space-around)
+	align-items stretch
+	width 100%	
+	background rgba(0,0,0,.6)
+	overflow hidden
+	padding-top 2em
+	padding-bottom 2em	
+	
+.Footer-flex-social-item
+	display flex
+	justify-content center
+	padding .15em .75em
+
+.Footer-flex-social-link
+	color #fff
+	font-family $font-family-sans-serif
+	font-weight 700
+	transition color .4s ease
+	letter-spacing .01em		
+	
+	@media all and (min-width: 48em)
+		// big screen
+		font-size 1.1em 
+		
+	@media all and (max-width: 48em)
+		// small screen
+		font-size 1em	
