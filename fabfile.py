@@ -10,6 +10,8 @@ import fabric_helpers
 env.deploy_path = 'output'
 DEPLOY_PATH = env.deploy_path
 
+local_cwd = os.path.dirname(os.path.realpath(__file__))
+
 # setup fabric helper file location
 env.fab_helpers_path = 'fabric_helpers'
 FAB_HELPERS = env.fab_helpers_path
@@ -63,6 +65,29 @@ def serve(port=8000):
     server.serve_forever()
 
 @task
+def livereload(port=8000,liveport=35729):
+    try:
+        from livereload import Server
+    except ImportError:
+        print "You need to `pip install livereload` to use this tool"
+        return
+
+    # clean the output dir and rebuild so we are up to date
+    clean()
+    build()
+    cmd = 'pelican -s pelicanconf.py -o %s' %(env.deploy_path)
+
+    server = Server()
+    # server.watch('*.py', build())
+    server.watch('themes/pupil-labs-theme',build())
+    # server.watch('content/', rebuild())
+    server.watch('output/', build())
+
+    output = os.path.join(local_cwd,env.deploy_path)
+
+    server.serve(port=port,host='localhost',root=output,debug=True,open_url=False)
+
+@task
 def reserve():
     clean()
     build()
@@ -108,4 +133,3 @@ def publish():
         delete=True,
         extra_opts='-c',
     )
-

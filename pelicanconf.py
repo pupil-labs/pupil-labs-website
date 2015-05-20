@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = u'Pupil Labs Development Team'
 SITENAME = u'Pupil Labs'
 SITEURL = ''
+COPYYEAR = u'2015'
 
 PATH = 'content'
 PAGE_PATHS = ['pages']
