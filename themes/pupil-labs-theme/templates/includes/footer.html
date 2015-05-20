@@ -1,4 +1,4 @@
-<footer>
+<footer class="Footer-gradient">
   <section class="Footer-nav">
     <ul class="Footer-flex-nav-container">
     {% for title, link in FOOTERMENU -%}
@@ -14,6 +14,11 @@
       <a href="{{ link }}" target="_blank" class="Footer-flex-social-link">{{ title }}</a>
     </div>  
     {%- endfor %}
+  </section>
+  <section class="Footer-copy">
+    <div class="Footer-flex-copy-container">
+      <div class="Footer-flex-copy-item">Pupil Labs {{ COPYYEAR }}</div>
+    </div>
   </section>
 </footer>
 <!-- 
