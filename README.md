@@ -10,6 +10,7 @@ Check out the live site at [www.pupil-labs.com](http://pupil-labs.com)
   + [Fabric](http://www.fabfile.org/) - `pip install Fabric`
   + [WebAssets](https://github.com/miracle2k/webassets/) - `pip install webassets`
   + [cssmin](http://github.com/zacharyvoase/cssmin) - `pip install cssmin`
+  + [livereload](https://github.com/lepture/python-livereload) - `pip install livereload` *Optional* dependency, install if you want to use `fab live_reload`. Must be used with the `live reload` Chrome extension. 
 
 *Node*
 Some WebAssets pacakges require node libs - we will be working with `stylus` for css preprocessing and `autoprefixer` to acommodate older browsers. 
@@ -25,6 +26,7 @@ Some WebAssets pacakges require node libs - we will be working with `stylus` for
   + `fab serve`
     + Open browser and go to `localhost:8000`
     + If you want to serve on a different port you can pass the port as an argument e.g. `fab serve:3000` 
+  + `fab reserve` combines `clean` + `build` + `serve`
 
 ## Deployment Instructions
 ... coming soon
