@@ -15,14 +15,14 @@
       <h2 class="Home-item-h2-pupil">{{ page.pupil_description_2 }}</h2>
       <a href="{{ SITEURL }}/pupil" class="button-flex">Order Now</a>
     </section>
-    <section class="Home-flex-item-half-width">
+    <section class="Home-flex-item-half-width-stretch">
       <h2 class="Home-item-h1">Recent Blog Posts</h2>
       <ul class="Article-summary-list">
       {% for a in articles[:4] -%}
         <li class="Article-list-item">
           <article>
             <header>
-              <h2>{{ a.title }}</h2>
+              <h2 class="Article-title-h2">{{ a.title }}</h2>
               <p>
                 <time datetime="{{ a.date.strftime('%Y-%M-%d') }}" class="Article-time">{{ a.date.strftime('%Y %B %d') }}</time>
               </p>
@@ -30,13 +30,13 @@
               <p>
               {{ a.summary }}
               </p>
-            <a href="{{ a.url }}" class="Article-link">Read More &#9657;</a>
+            <a href="{{ a.url }}" class="Article-link">read more &#9657;</a>
           </article>
         </li>
       {%- endfor %}
       </ul>
     </section>
-    <section class="Home-flex-item-half-width">
+    <section class="Home-flex-item-half-width-stretch">
       <h2 class="Home-item-h1">About Us</h2>
       <article>
       </article>
@@ -44,14 +44,3 @@
   </div>
 {% endblock main %}
 
-<!-- 
-    <div class="Footer-flex-item-nav-half-width">
-      <h3 class="Footer-nav-headings">Recent Blog Posts</h3>
-      <ul class="Footer-post-list">
-      {% for a in articles[:5] -%}
-        <li>
-          <a href="{{ SITEURL }}/{{ a.slug }}" class="Footer-post-link">{{ a.title }}</a>
-        </li>
-      {%- endfor %}
-      </ul>
-    </div> -->
