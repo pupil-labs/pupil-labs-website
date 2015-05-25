@@ -12,6 +12,7 @@ a,address,article,aside,audio,blockquote,body,caption,cite,code,dd,div,dl,dt,em,
 }
 
 body 
+	font-family $font-family-sans-serif-alt
 	font-size 100%
 	
 // Reset the box-sizing
@@ -42,6 +43,7 @@ body
 a
 	color $link-color
 	text-decoration $link-text-decoration
+	transition color .4s ease
 	
 	&:hover
 		color $link-hover-color

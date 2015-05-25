@@ -4,7 +4,7 @@ Date: 2015-4-20 19:26
 Tags:
 Category:
 Slug: pupil-capture-v0.4
-Summary:
+Summary: Quick summary about Pupil Capture
 
 ## Title
 
