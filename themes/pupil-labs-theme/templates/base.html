@@ -2,7 +2,7 @@
 <html class="" lang="en">
 {% include 'includes/head.html' %}
 
-<body>
+<body class="Site">
   <div class="Site-container">
     {% include 'includes/header.html' %}
     
@@ -10,8 +10,9 @@
     {% block main %}{% endblock main %}
     </main>
     
-    {% include 'includes/footer.html' %}
   </div> <!-- Site-contentContainer -->
+    {% include 'includes/footer.html' %}
+
     {% include 'includes/js.html' %}
     <!-- {% include 'includes/ga.html' %} -->
     {% block scripts %}{% endblock scripts %}
