@@ -35,7 +35,8 @@ MENUITEMS = (('Pupil','pupil'),('Store','store'),('Cart','cart'))
 CONNECTITEMS = (('Twitter', 'https://twitter.com/pupil_labs'),('Github', 'https://github.com/pupil-labs'),('Email','mailto:info@pupil-labs.com'))
 
 # All internal pages
-FOOTERMENU_ONE = (('Home',''),) + MENUITEMS
+HOMEURL = (('Home','/'),)
+FOOTERMENU_ONE = HOMEURL + MENUITEMS
 FOOTERMENU_TWO =  ((u'About & Imprint','about'),('Terms of sale','tos'),('Jobs','jobs'),('Blog','blog'))
 FOOTERMENU = FOOTERMENU_ONE + FOOTERMENU_TWO
 
