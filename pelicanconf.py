@@ -36,7 +36,7 @@ CONNECTITEMS = (('Twitter', 'https://twitter.com/pupil_labs'),('Github', 'https:
 
 # All internal pages
 HOMEURL = (('Home','/'),)
-FOOTERMENU_ONE = HOMEURL + MENUITEMS
+FOOTERMENU_ONE = (('Home',SITEURL),) + MENUITEMS
 FOOTERMENU_TWO =  ((u'About & Imprint','about'),('Terms of sale','tos'),('Jobs','jobs'),('Blog','blog'))
 FOOTERMENU = FOOTERMENU_ONE + FOOTERMENU_TWO
 
