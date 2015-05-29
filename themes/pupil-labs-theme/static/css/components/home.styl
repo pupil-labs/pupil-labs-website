@@ -25,39 +25,12 @@
 	@media all and (min-width: 48em)
 		min-height 60vh
 
-Home_flex_item_half_width(_flex_direction= column, _align_items=center, _justify_content=center)
-	display flex
-	flex-direction _flex_direction
-	align-items _align_items
-	justify-content _justify_content
-
-	background rgba(255,255,255,0.5)
-	// set up a min-height
-	min-height 40vh	
-	
-	overflow hidden
-	position relative
-	padding 1.75em 1em
-	
-	@media all and (min-width: 48em)
-		// big screen
-		// two columns
-		flex 1 0 auto
-		width 50%
-		min-height 60vh
-		
-	@media all and (max-width: 48em)
-		// small screen
-		// single column
-		flex 0 0 auto
-		width 100%	
-	
 
 .Home-flex-item-half-width
-	Home_flex_item_half_width()
+	flex_item_half_width()
 	
 .Home-flex-item-half-width-stretch
-	Home_flex_item_half_width(column,stretch,center)
+	flex_item_half_width(column,stretch,center)
 
 home-item-heading(_text-align=center)
 	text-align _text-align
