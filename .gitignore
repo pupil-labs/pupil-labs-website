@@ -1,11 +1,5 @@
-layout/deploy
-deploy
-output
-*.hyde_deps
+build
+node_modules
+*.htaccess
 *.DS_Store
-*.log
 .sublime-project
-*.pid
-*.pyc
-cache
-prod.yaml

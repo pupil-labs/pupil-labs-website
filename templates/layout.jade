@@ -1,0 +1,14 @@
+doctype html
+html(class='' lang='en')
+  include  includes/head.jade
+
+  body(class='Site')
+    include includes/header.jade
+
+  main(role="main" class="Site-main-content")
+    block main
+
+  include includes/footer.jade
+  include includes/js.jade
+  block scripts
+    

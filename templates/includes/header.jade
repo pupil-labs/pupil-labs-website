@@ -1,0 +1,8 @@
+header(class="Header")
+  a(class="Header-logo" href=locals.url)= locals.name
+  nav(class="Header-nav")
+    ul
+      each url, title in contents.menu['header-nav.json'].metadata
+        - var navClass = (title === name ? "Nav-list-item active" : "Nav-list-item")
+        li(class=navClass)
+          a(href=url class="Nav-link")= title

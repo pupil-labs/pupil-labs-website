@@ -1,0 +1,14 @@
+footer.Footer-gradient
+  section.Footer-nav
+    ul.Footer-flex-nav-container
+      each url, title in contents.menu['footer-nav.json'].metadata
+        li.Footer-flex-nav-item
+          a(href=locals.url+url class="Footer-nav-link")= title
+  section.Footer-flex-social-container
+    each url, title in contents.menu['footer-connect.json'].metadata
+      div.Footer-flex-social-item
+        a(href=url target="_blank" class="Footer-flex-social-link")= title
+  section.Footer-copy
+    div.Footer-flex-copy-container
+      div(class="Footer-flex-copy-item") #{ locals.owner } #{ new Date().getFullYear() }
+
