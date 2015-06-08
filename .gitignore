@@ -3,3 +3,5 @@ node_modules
 *.htaccess
 *.DS_Store
 .sublime-project
+contents/css
+contents/js/main.js
