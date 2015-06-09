@@ -1,4 +1,3 @@
-
 extends layout
 
 block append vars
@@ -7,18 +6,10 @@ block append vars
 block prepend title
   | #{ page.title + " - "}
 
-block header
-  include author
-  h1= page.title
-  p.author
-    | #{ "Written by for with " }
-    mixin author(page.metadata.author)
+block main
 
-block content
   article.article
     section.content!= typogr(page.html).typogrify()
-
-block prepend footer
   div.nav
     a(href=contents.index.url) « Full blog
 
