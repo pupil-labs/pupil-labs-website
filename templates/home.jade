@@ -29,7 +29,7 @@ block main
             header
               h2.Article-title #{ article.title }
               p
-                time(datetime=moment.utc(article.date).format('YYYY MMM DD') class="Article-time")= moment.utc(article.date).format('YYYY MMM DD.')
+                time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
               p!= typogr(article.intro).typogrify()
               a(href=article.url class="Article-link") Read More 
 
