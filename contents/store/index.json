@@ -1,4 +1,5 @@
 {
   "template": "store.jade",
-  "title": "Store"
+  "title": "Store",
+  "subtitle": "pupil is modular - configure your hardware and add to the cart"
 }

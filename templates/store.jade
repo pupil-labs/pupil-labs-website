@@ -5,3 +5,23 @@ block main
     //- Title block
     - var intro = contents.store['index.json']
     include partials/title
+
+    section.Store-presets
+      ul.Store-flex-nav-container
+        each item in contents.store.products['presets.json'].metadata
+          li.Store-flex-nav-item 
+            a(href="#" class="Store-nav-link") #{ item.label } 
+
+    //- Configurator
+    div.Pupil-flex-row
+
+      //- Images
+      section.Pupil-flex-item-half-width
+        img(class="Pupil-item-image" src="http://placehold.it/800/333333")
+      
+      //- Controls
+      section.Pupil-flex-item-half-width
+        h1.Pupil-item-h1 Configurator
+
+    //- Grid of products
+    div.Pupil-flex-row

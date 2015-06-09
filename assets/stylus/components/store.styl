@@ -1,4 +1,33 @@
-.Store-flex-container
-	flexbox_container()
+.Store-presets
+	width 100%
+	background rgba(0,0,0,.3)
+
+.Store-flex-nav-container
+	flexbox_container(0 0 auto,nowrap,space-around)
 	align-items stretch
 	width 100%
+	overflow hidden
+	padding-top 1em
+	
+.Store-flex-nav-item
+	list-style none
+	padding .15em .75em
+	
+	@media all and (max-width: 48em)
+		border-right 1px solid #ddd
+	
+.Store-nav-link
+	color #fff
+	font-family $font-family-sans-serif
+	font-weight 700
+	transition color .4s ease
+	letter-spacing .01em		
+	
+	@media all and (min-width: 48em)
+		// big screen
+		font-size 1.1em 
+		
+	@media all and (max-width: 48em)
+		// small screen
+		font-size 1em
+	
