@@ -6,8 +6,12 @@
     "description": "Pupil Labs - accessible open source eye tracking platform"
   },
   "plugins": [
-    "./plugins/paginator.coffee"
+    "./plugins/paginator.coffee",
+    "./plugins/featured-articles.coffee"
   ],
+  "shared": {
+    "articles": "articles"
+  },
   "require": {
     "moment": "moment",
     "_": "underscore",

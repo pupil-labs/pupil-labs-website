@@ -17,5 +17,19 @@ block main
       a(href="/pupil" class="button-flex") #{ copy_txt.pupil_link_text }
 
     //- About
+    section.Home-flex-item-half-width
+      h2.Home-item-h1 About Us
 
     //- Recent Blog Posts
+    section.Home-flex-item-half-width-stretch
+      h2.Home-item-h1 Recent Blog Posts
+      each article in articles
+        li.Article-list-item
+          article
+            header
+              h2.Article-title #{ article.title }
+              p
+                time(datetime=moment.utc(article.date).format('YYYY MMM DD') class="Article-time")= moment.utc(article.date).format('YYYY MMM DD.')
+              p!= typogr(article.intro).typogrify()
+              a(href=article.url class="Article-link") Read More 
+
