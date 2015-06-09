@@ -8,7 +8,7 @@ block main
 
     section.Store-presets
       ul.Store-flex-nav-container
-        each item in contents.store.products['presets.json'].metadata
+        each item in contents.store.products['pupil-presets.json'].metadata
           li.Store-flex-nav-item 
             a(href="#" class="Store-nav-link") #{ item.label } 
 
@@ -24,4 +24,8 @@ block main
         h1.Pupil-item-h1 Configurator
 
     //- Grid of products
-    div.Pupil-flex-row
+    section.Grid
+      each item in contents.store.products['product-list.json'].metadata
+        div.Grid--1of3
+          img(class="Store-item-image" src=item.img)
+          h2(class="Store-item-h2")= item.label
