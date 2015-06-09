@@ -7,6 +7,7 @@ block main
     include partials/title
 
     section.Store-presets
+      h2 Presets
       ul.Store-flex-nav-container
         each item in contents.store.products['pupil-presets.json'].metadata
           li.Store-flex-nav-item 
@@ -23,6 +24,10 @@ block main
       section.Pupil-flex-item-half-width
         h1.Pupil-item-h1 Configurator
 
+    //- Other products
+    section.Grid
+      div.Grid-cell
+        h2 Additional Products
     //- Grid of products
     section.Grid
       each item in contents.store.products['product-list.json'].metadata
