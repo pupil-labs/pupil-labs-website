@@ -1,1 +1,8 @@
-//- nothing here just yet
+extends layout
+
+block main
+  div.Pupil-flex-container
+    //- Title block
+    - var intro = contents.about['index.json']
+    include partials/title
+      

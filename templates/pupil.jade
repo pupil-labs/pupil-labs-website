@@ -1,12 +1,10 @@
 extends layout
 
 block main
-  - var intro = contents.pupil['index.json'].metadata
   div.Pupil-flex-container
     //- Title block
-    section.Pupil-flex-item-full-width-title 
-      h1.Pupil-item-title #{ intro.title }
-      h2.Pupil-item-subtitle #{ intro.subtitle }
+    - var intro = contents.pupil['index.json']
+    include partials/title
 
     //- Features
     //- ====================================
