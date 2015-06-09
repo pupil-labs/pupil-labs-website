@@ -1,0 +1,42 @@
+[
+  {
+    "label":"none",
+    "spec_text":"no world camera",
+    "dimensions": "0",
+    "weight": 0,
+    "image_url": "#",
+    "video_url":"#",
+    "cost": 0,
+    "order": 1,
+  },
+  {
+    "label":"720p",
+    "spec_text":"720p camera with xx degrees diagonal field of view.",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "#",
+    "video_url":"#",
+    "cost": 0,
+    "order": 2,
+  },
+  {
+    "label":"1080p",
+    "spec_text":"1080p camera with xx degrees diagonal field of view and microphones",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "#",
+    "video_url":"#",
+    "cost": 0,
+    "order": 3
+  },
+  {
+    "label":"120hz",
+    "spec_text":"120hz high speed camera designed by Pupil Labs",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "#",
+    "video_url":"#",
+    "cost": 0,
+    "order": 4
+  }
+]
