@@ -1,0 +1,12 @@
+{
+  "title": "Pupil Labs",
+  "subtitle": "accessible open source eye tracking tools",
+  "template": "home.jade",
+  "filename": "index.html",
+  "pupil_image": "home/pupil_binocular_high_speed.png",
+  "pupil_image_alt": "Pupil Binocular",
+  "pupil_title": "Pupil",
+  "pupil_description_1": "Pupil is an open source mobile eye tracking platform, in active community driven development.",
+  "pupil_description_2": "Hardware is accessible, modular, and affordable. Software is written in Python.",
+  "pupil_link_text": "Order Now"
+}

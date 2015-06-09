@@ -1,0 +1,21 @@
+extends layout
+
+block main
+  - var copy_txt = contents.home['index.json'].metadata
+  div.Home-flex-container
+    section.Home-flex-item-full-width
+      h1.Home-item-title #{ copy_txt.title }
+      h2.Home-item-subtitle #{ copy_txt.subtitle }
+    
+    //- Pupil 
+    section.Home-flex-item-half-width
+      img(class="Home-item-image" src=copy_txt.pupil_image alt=copy_txt.pupil_image_alt)
+    section.Home-flex-item-half-width
+      h1.Home-item-h1 #{ copy_txt.pupil_title }
+      h2.Home-item-h2-pupil #{ copy_txt.pupil_description_1 }
+      h2.Home-item-h2-pupil #{ copy_txt.pupil_description_2 }
+      a(href="/pupil" class="button-flex") #{ copy_txt.pupil_link_text }
+
+    //- About
+
+    //- Recent Blog Posts
