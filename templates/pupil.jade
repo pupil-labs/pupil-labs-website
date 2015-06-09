@@ -1,20 +1,30 @@
 extends layout
 
 block main
+  - var intro = contents.pupil['index.json'].metadata
   div.Pupil-flex-container
     //- Title block
-    section.Pupil-flex-item-full-width-title
-      h1.Pupil-item-title
-      h2.Pupil-item-subtitle
+    section.Pupil-flex-item-full-width-title 
+      h1.Pupil-item-title #{ intro.title }
+      h2.Pupil-item-subtitle #{ intro.subtitle }
 
-    //- Selling points
+    //- Features
     //- ====================================
-    //- Configurable
-
-    //- Design features
-
-    //- Software
-
-    //- Modular & Hackable
-
-    
+    //- 1. Configurable
+    //- 2. Design
+    //- 3. Software
+    //- 4. Modular & Hackable
+    //- 5. OSS
+    //- 6. Community
+    //- 7. License
+    - var features = _.chain(contents.pupil['features']._.pages).sortBy(function(item) {
+    -   return item.metadata['order'];
+    - }).value()
+    each feature, i in features
+      - var rowType = (i%2 == 0 ? 'Pupil-flex-row' : 'Pupil-flex-row-reverse')
+      div(class=rowType) 
+        section.Pupil-flex-item-half-width
+          img(class="Pupil-item-image" src="http://placehold.it/800/333333")
+        section.Pupil-flex-item-half-width
+          h1.Pupil-item-h1 #{ feature.title }
+   
