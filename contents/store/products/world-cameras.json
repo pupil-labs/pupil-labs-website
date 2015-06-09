@@ -7,7 +7,7 @@
     "image_url": "#",
     "video_url":"#",
     "cost": 0,
-    "order": 1,
+    "order": 1
   },
   {
     "label":"720p",
@@ -17,7 +17,7 @@
     "image_url": "#",
     "video_url":"#",
     "cost": 0,
-    "order": 2,
+    "order": 2
   },
   {
     "label":"1080p",
