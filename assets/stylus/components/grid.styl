@@ -9,7 +9,6 @@
 	margin 0
 	padding 0
 	
-
 .Grid-cell
 	flex 1
 	
@@ -37,23 +36,26 @@
 	
 .Grid-cell--center
 	align-self center
-	
+
 .Grid-cell--autoSize
 	flex none
 	
+.Grid--rowReverse
+	flex-direction row-reverse
+
 .Grid--fit 
 	> .Grid-cell
 		flex 1
 
 .Grid--full
-	> .Grid--cell
+	> .Grid-cell
 		flex 0 0 100%
 		
 .Grid--1of2
-	> .Grid--cell
+	> .Grid-cell
 		flex 0 0 50%
-		
-		@media $break-lg
+			
+		@media $break-sm
 			flex 0 0 100%
 
 .Grid--1of3
@@ -70,6 +72,4 @@
 		
 		@media $break-sm
 			flex 0 0 100%
-
-		
 

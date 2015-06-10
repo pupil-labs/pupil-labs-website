@@ -3,7 +3,7 @@ extends layout
 block main
   div.Pupil-flex-container
     //- Title block
-    - var intro = contents.store['index.json']
+    - var page_data = contents.store['index.json']
     include partials/title
 
     section.Store-presets

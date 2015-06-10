@@ -1,5 +1,6 @@
-- var title = intro.metadata.title
-- var subtitle = intro.metadata.subtitle
-section.Pupil-flex-item-full-width-title 
-  h1.Pupil-item-title #{ title }
-  h2.Pupil-item-subtitle #{ subtitle }
+- var title = page_data.metadata.title
+- var subtitle = page_data.metadata.subtitle
+div.Banner-container.Banner--gradientBkg
+  div.Banner-item.u-textCenter
+    h1.Banner-title #{ title }
+    h2.Banner-subtitle #{ subtitle }

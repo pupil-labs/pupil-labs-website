@@ -1,17 +1,23 @@
-.Banner
-	padding 0
-	margin 0
-	min-height 40vh
-	padding 5em
+// Banner item is centered within the container
+// See Philip Walton's vertical centering post: http://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
 
-	@media $break-lg
-		min-height 60vh
+.Banner-container
+	display flex
+	align-items center
+	justify-content center
+	min-height 60vh
+	padding 5em
+	
+	@media $break-sm
+		min-height 40vh
+
+.Banner-item
+	flex none
 
 .Banner--gradientBkg
 	background linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(255,255,255,1))
 
 .Banner-title
-	text-align center!important
 	position relative
 	color #515151 // move to h1 styles or darken color
 	font-size 2.9em
@@ -20,7 +26,6 @@
 		font-size 4em	
 	
 .Banner-subtitle
-	text-align center!important
 	text-shadow 0 1px 0 rgba(0,0,0,.1)		
 	font-size 1.6em
 	
