@@ -8,9 +8,26 @@
 	list-style none
 	margin 0
 	padding 0
+
+.Grid-noWrap
+	display flex
+	flex-wrap nowrap
+	list-style none
+	margin 0
+	padding 0	
+	
+.Grid-noWrap--breakSmall
+	@media $break-sm
+		flex-wrap wrap
 	
 .Grid-cell
 	flex 1
+	
+.Grid-cell--noFlex
+	flex none
+
+.Grid-cell--auto
+	flex 0 0 auto
 	
 .Grid--flexCells 
 	> .Grid-cell
@@ -25,9 +42,15 @@
 .Grid--center
 	align-items center
 	
+.Grid--stretch
+	align-items stretch
+	
 .Grid--justifyCenter
 	justify-content center
 	
+.Grid--justifySpaceAround
+	justify-content space-around
+
 .Grid-cell--top
 	align-self flex-start
 	

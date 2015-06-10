@@ -1,14 +1,15 @@
-footer.Footer-gradient
+footer
   section.Footer-nav
-    ul.Footer-flex-nav-container
+    ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--stretch.Grid--justifySpaceAround
       each url, title in contents.menu['footer-nav.json'].metadata
-        li.Footer-flex-nav-item
+        li.Grid-cell--auto.Footer-nav-item
           a(href=locals.url+url class="Footer-nav-link")= title
-  section.Footer-flex-social-container
-    each url, title in contents.menu['footer-connect.json'].metadata
-      div.Footer-flex-social-item
-        a(href=url target="_blank" class="Footer-flex-social-link")= title
+  section.Footer-social
+    ul.Grid-noWrap.Grid--justifyCenter
+      each url, title in contents.menu['footer-connect.json'].metadata
+        li.Grid-cell--auto.Footer-social-item
+          a(href=url target="_blank" class="Footer-social-link")= title
   section.Footer-copy
-    div.Footer-flex-copy-container
-      div(class="Footer-flex-copy-item") #{ locals.owner } #{ new Date().getFullYear() }
-
+    div.Grid-noWrap.Grid--justifyCenter
+      div.Grid-cell--noFlex.Footer-copy-item
+        p.Footer-copy-text #{locals.owner} #{new Date().getFullYear()} 
