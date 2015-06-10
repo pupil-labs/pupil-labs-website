@@ -2,34 +2,34 @@ extends layout
 
 block main
   - var copy_txt = contents.home['index.json'].metadata
-  div.Home-flex-container
-    section.Home-flex-item-full-width
+  div.Grid.Grid--full.Grid--center
+    div.Grid-cell
       h1.Home-item-title #{ copy_txt.title }
       h2.Home-item-subtitle #{ copy_txt.subtitle }
     
-    //- Pupil 
-    section.Home-flex-item-half-width
-      img(class="Home-item-image" src=copy_txt.pupil_image alt=copy_txt.pupil_image_alt)
-    section.Home-flex-item-half-width
-      h1.Home-item-h1 #{ copy_txt.pupil_title }
-      h2.Home-item-h2-pupil #{ copy_txt.pupil_description_1 }
-      h2.Home-item-h2-pupil #{ copy_txt.pupil_description_2 }
-      a(href="/pupil" class="button-flex") #{ copy_txt.pupil_link_text }
+  //- Pupil 
+  section.Home-flex-item-half-width
+    img(class="Home-item-image" src=copy_txt.pupil_image alt=copy_txt.pupil_image_alt)
+  section.Home-flex-item-half-width
+    h1.Home-item-h1 #{ copy_txt.pupil_title }
+    h2.Home-item-h2-pupil #{ copy_txt.pupil_description_1 }
+    h2.Home-item-h2-pupil #{ copy_txt.pupil_description_2 }
+    a(href="/pupil" class="button-flex") #{ copy_txt.pupil_link_text }
 
-    //- About
-    section.Home-flex-item-half-width
-      h2.Home-item-h1 About Us
+  //- About
+  section.Home-flex-item-half-width
+    h2.Home-item-h1 About Us
 
-    //- Recent Blog Posts
-    section.Home-flex-item-half-width-stretch
-      h2.Home-item-h1 Recent Blog Posts
-      each article in articles
-        li.Article-list-item
-          article
-            header
-              h2.Article-title #{ article.title }
-              p
-                time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
-              p!= typogr(article.intro).typogrify()
-              a(href=article.url class="Article-link") Read More 
+  //- Recent Blog Posts
+  section.Home-flex-item-half-width-stretch
+    h2.Home-item-h1 Recent Blog Posts
+    each article in articles
+      li.Article-list-item
+        article
+          header
+            h2.Article-title #{ article.title }
+            p
+              time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
+            p!= typogr(article.intro).typogrify()
+            a(href=article.url class="Article-link") Read More 
 

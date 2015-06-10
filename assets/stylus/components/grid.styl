@@ -1,0 +1,72 @@
+// see Phillip Walton's post: http://philipwalton.github.io/solved-by-flexbox/demos/grids/
+// Grid 
+
+// Grid container full width
+.Grid
+	display flex
+	flex-wrap wrap
+	list-style none
+	margin 0
+	padding 0
+	
+
+.Grid-cell
+	flex 1
+	
+.Grid--flexCells 
+	> .Grid-cell
+		display flex
+		
+.Grid--top
+	align-items flex-start
+	
+.Grid--bottom
+	align-items flex-end
+	
+.Grid--center
+	align-items center
+	
+.Grid--justifyCenter
+	justify-content center
+	
+.Grid-cell--top
+	align-self flex-start
+	
+.Grid-cell--bottom
+	align-self flex-end
+	
+.Grid-cell--autoSize
+	flex none
+	
+.Grid--fit 
+	> .Grid-cell
+		flex 1
+
+.Grid--full
+	> .Grid--cell
+		flex 0 0 100%
+		
+.Grid--1of2
+	> .Grid--cell
+		flex 0 0 50%
+		
+		@media all and unquote($break-pt)
+			flex 0 0 100%
+
+.Grid--1of3
+	> .Grid-cell
+		flex 0 0 33.3333%
+		
+		@media all and unquote($break-pt)
+			flex 0 0 100%
+
+		
+.Grid--1of4
+	> .Grid-cell
+		flex 0 0 25%
+		
+		@media all and unquote($break-pt)
+			flex 0 0 100%
+
+		
+
