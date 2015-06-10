@@ -2,7 +2,9 @@
 	width 100%
 	background rgba(0,0,0,.3)
 
-.Store-flex-nav-container
+.Store-grid-nav
+	display flex
+	flex-wrap no
 	flexbox_container(0 0 auto,nowrap,space-around)
 	align-items stretch
 	width 100%
@@ -30,32 +32,3 @@
 	@media all and (max-width: 48em)
 		// small screen
 		font-size 1em
-
-.Grid
-	display flex
-	flex-wrap wrap
-	width 100%
-	overflow hidden
-	
-.Grid-cell
-	flex 1
-	
-.Grid--1of3
-	flex 0 0 33.333%
-	padding 1em
-
-.Store-flex-item-third-width
-	flex_item_third_width()
-	padding 0
-	
-.Store-item-image
-	width 100%
-	overflow hidden
-	z-index 5
-	
-.Store-item-h2
-	text-align center
-	position relative
-	color #515151 
-	font-size 1.6em
-	z-index 10

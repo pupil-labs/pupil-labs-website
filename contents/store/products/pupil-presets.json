@@ -21,13 +21,13 @@
     "label": "high speed eye",
     "world": "1080p",
     "eye": "120hz",
-    "order": 4
+    "order": 5
   }, 
   { 
     "label": "binocular",
     "world": "1080p",
     "eye": "120hz binocular",
-    "order": 5
+    "order": 4
   },
   {
     "label": "world only",

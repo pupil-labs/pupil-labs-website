@@ -1,36 +1,45 @@
 extends layout
 
 block main
-  div.Pupil-flex-container
-    //- Title block
-    - var page_data = contents.store['index.json']
-    include partials/title
+  //- Title block
+  - var page_data = contents.store['index.json']
+  include partials/title
 
-    section.Store-presets
-      h2 Presets
-      ul.Store-flex-nav-container
-        each item in contents.store.products['pupil-presets.json'].metadata
-          li.Store-flex-nav-item 
-            a(href="#" class="Store-nav-link") #{ item.label } 
+  //- Presets -- pulled from JSON
+  //- here we sort the data in pupil-presets by the order key
+  - var config_data = contents.store.products['pupil-presets.json'].metadata
+  - var config_presets = _.chain(config_data).sortBy(function(item){
+  -  return item['order']; 
+  - }).value()
+  section.Store-presets
+    h2.u-textCenter Pupil Presets
+    ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--justifySpaceAround
+      each item in config_presets.slice(0,4)
+        li.Store-flex-nav-item 
+          a(href="#" class="Store-nav-link") #{ item.label } 
 
-    //- Configurator
-    div.Pupil-flex-row
+  //- Configurator
+  section.Grid.Grid--1of2
+    //- Images
+    div.Grid-cell
+      div.Feature
+        figure.Feature-figure
+          img(class="Feature-image" src="http://placehold.it/800/333333")
+    //- Controls
+    div.Grid-cell
+      div.Feature.Feature--padded-1
+        h1.Feature-title--lg.u-textCenter Config
 
-      //- Images
-      section.Pupil-flex-item-half-width
-        img(class="Pupil-item-image" src="http://placehold.it/800/333333")
-      
-      //- Controls
-      section.Pupil-flex-item-half-width
-        h1.Pupil-item-h1 Configurator
-
-    //- Other products
-    section.Grid
+    //- Additional products
+    //- TODO - this grid should have a gutter between images and outsides
+    section.Grid.Grid--full
       div.Grid-cell
-        h2 Additional Products
-    //- Grid of products
-    section.Grid
-      each item in contents.store.products['product-list.json'].metadata
-        div.Grid--1of3
-          img(class="Store-item-image" src=item.img)
-          h2(class="Store-item-h2")= item.label
+        h2.Feature-subtitle--lg.u-textCenter Additional Products
+    section.Grid.Grid--1of3
+      - var additional_products = contents.store.products['product-list.json'].metadata
+      each item in additional_products
+        div.Grid-cell
+          div.Feature
+            div.Feature-figure
+              img(class="Feature-image" src="http://placehold.it/800/444444")
+              p #{ item.label }
