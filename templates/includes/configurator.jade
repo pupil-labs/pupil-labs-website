@@ -15,10 +15,10 @@ section.Grid.Grid--1of2
     div.Feature
       figure.Feature-figure.Feature-figure--config
         //- eye images in the bkg
-        img(id="World-cam" class="Feature-image Feature-image--configEye" src=config_imgs['pupil-config-eye-30hz.png'].url)
+        img(id="eye-img" class="Feature-image Feature-image--configEye" src=config_imgs['pupil-config-eye-30hz.png'].url)
         //- figure.Feature-figure.Feature-figure--config
         //- world images in the foreground
-        img(id="Eye-cam" class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-720p.png'].url)          
+        img(id="world-img" class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-720p.png'].url)          
   
   //- Controls
   div.Grid-cell
@@ -27,10 +27,10 @@ section.Grid.Grid--1of2
       ul.Grid-cell
       each world in world_cams
         li.Store-nav-item
-          a(href="#")= world.label 
+          a(class="option-world" id=world.id href=world.image_url)= world.label 
 
       h3 Eye Camera
       ul.Grid-cell
       each eye in eye_cams
         li.Store-nav-item
-          a(href="#")= eye.label
+          a(class="option-eye" id=eye.id href=eye.image_url)= eye.label

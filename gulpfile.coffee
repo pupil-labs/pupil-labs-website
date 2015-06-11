@@ -11,6 +11,7 @@ wintersmith = require "run-wintersmith"
 stylus = require "gulp-stylus"
 prefixer = require "gulp-autoprefixer"
 coffee = require "gulp-coffee"
+concat = require "gulp-concat"
 
 
 css = ()->
@@ -25,10 +26,11 @@ css = ()->
   .pipe livereload()
 
 js = ()->
-  gulp.src "assets/coffeescript/main.coffee"
+  gulp.src "assets/coffeescript/*.coffee"
   .pipe coffee(
     bare: false
     )
+  .pipe concat "main.js"
   .pipe gulp.dest "contents/js"
   .pipe livereload()
 
