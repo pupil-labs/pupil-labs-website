@@ -1,0 +1,36 @@
+- var config_imgs = contents.store.config_images
+
+- var world_cams = _.chain(contents.store.products['world-cameras.json'].metadata).sortBy(function(item){
+-  return item['order']; 
+- }).value()
+
+- var eye_cams = _.chain(contents.store.products['eye-cameras.json'].metadata).sortBy(function(item){
+-  return item['order']; 
+- }).value()
+
+section.Grid.Grid--1of2
+  
+  //- Images
+  div.Grid-cell
+    div.Feature
+      figure.Feature-figure.Feature-figure--config
+        //- eye images in the bkg
+        img(id="World-cam" class="Feature-image Feature-image--configEye" src=config_imgs['pupil-config-eye-30hz.png'].url)
+        //- figure.Feature-figure.Feature-figure--config
+        //- world images in the foreground
+        img(id="Eye-cam" class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-720p.png'].url)          
+  
+  //- Controls
+  div.Grid-cell
+    div.Feature.Feature--padded-1
+      h3 World Camera
+      ul.Grid-cell
+      each world in world_cams
+        li.Store-nav-item
+          a(href="#")= world.label 
+
+      h3 Eye Camera
+      ul.Grid-cell
+      each eye in eye_cams
+        li.Store-nav-item
+          a(href="#")= eye.label

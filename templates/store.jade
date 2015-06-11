@@ -3,8 +3,6 @@ extends layout
 block main
   //- Title block
   - var page_data = contents.store['index.json']
-  - var config_imgs = contents.store.config_images
-  //- include partials/title
 
   //- Presets -- pulled from JSON
   //- here we sort the data in pupil-presets by the order key
@@ -16,35 +14,22 @@ block main
     h2.u-textCenter Pupil Presets
     ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--justifySpaceAround
       each item in config_presets.slice(0,4)
-        li.Store-flex-nav-item 
+        li.Store-nav-item 
           a(href="#" class="Store-nav-link") #{ item.label } 
 
   //- Configurator
-  section.Grid.Grid--1of2
-    //- Images
-    div.Grid-cell
-      div.Feature
-        figure.Feature-figure.Feature-figure--config
-          //- eye images in the bkg
-          img(class="Feature-image Feature-image--configEye" src=config_imgs['pupil-config-eye-30hz.png'].url)
-          //- figure.Feature-figure.Feature-figure--config
-          //- world images in the foreground
-          img(class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-720p.png'].url)          
-    //- Controls
-    div.Grid-cell
-      div.Feature.Feature--padded-1
-        h1.Feature-title--lg.u-textCenter Config
+  include includes/configurator
 
-    //- Additional products
-    //- TODO - this grid should have a gutter between images and outsides
-    section.Grid.Grid--full
+  //- Additional products
+  //- TODO - this grid should have a gutter between images and outsides
+  section.Grid.Grid--full
+    div.Grid-cell
+      h2.Feature-subtitle--lg.u-textCenter Additional Products
+  section.Grid.Grid--1of3
+    - var additional_products = contents.store.products['product-list.json'].metadata
+    each item in additional_products
       div.Grid-cell
-        h2.Feature-subtitle--lg.u-textCenter Additional Products
-    section.Grid.Grid--1of3
-      - var additional_products = contents.store.products['product-list.json'].metadata
-      each item in additional_products
-        div.Grid-cell
-          div.Feature
-            div.Feature-figure
-              img(class="Feature-image" src="http://placehold.it/800/444444")
-              p #{ item.label }
+        div.Feature
+          div.Feature-figure
+            img(class="Feature-image" src="http://placehold.it/800/444444")
+            p #{ item.label }
