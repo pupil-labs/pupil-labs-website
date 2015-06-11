@@ -3,7 +3,8 @@ extends layout
 block main
   //- Title block
   - var page_data = contents.store['index.json']
-  include partials/title
+  - var config_imgs = contents.store.config_images
+  //- include partials/title
 
   //- Presets -- pulled from JSON
   //- here we sort the data in pupil-presets by the order key
@@ -23,8 +24,12 @@ block main
     //- Images
     div.Grid-cell
       div.Feature
-        figure.Feature-figure
-          img(class="Feature-image" src="http://placehold.it/800/333333")
+        figure.Feature-figure.Feature-figure--config
+          //- eye images in the bkg
+          img(class="Feature-image Feature-image--configEye" src=config_imgs['pupil-config-eye-30hz.png'].url)
+          //- figure.Feature-figure.Feature-figure--config
+          //- world images in the foreground
+          img(class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-720p.png'].url)          
     //- Controls
     div.Grid-cell
       div.Feature.Feature--padded-1
