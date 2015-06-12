@@ -1,15 +1,25 @@
 $ = jQuery
 
-$(document).ready ->
-	console.log "Ready to serve!"
 
-$(document).ready ->
-	link = "a[class^='option-']"
-	# worldLink = "a[id^='world-']" 
+swapImg = (link) ->
+	imgId = '#' + $(link).attr('id').split('-',1) + '-img'
+	imgSrc = $(link).attr("href")
+	$(imgId).attr("src", imgSrc).show()
+
+updateLinkState = (link) ->
+	# make the selector more specific
+	configType = 'StoreConfig-' + $(link).attr('id').split('-',1)
+	activeState = 'StoreConfig--state-active'
+	prevSelection = "a[class='#{ configType + " " + activeState }']"
+	$(prevSelection).removeClass(activeState)
+	$(link).addClass(activeState)
+
+updateConfig = () ->
+	link = "a[class^='StoreConfig-']"
 	$(link).click (event)->
 		event.preventDefault()
-		# see if it is eye or world
-		# console.log $(this).attr('id').split('-',1)
-		imgId = '#' + $(this).attr('id').split('-',1) + '-img'
-		imgSrc = $(this).attr("href")
-		$(imgId).attr("src", imgSrc).show()
+		updateLinkState($(this))
+		swapImg($(this))
+
+$(document).ready ->
+	updateConfig()
