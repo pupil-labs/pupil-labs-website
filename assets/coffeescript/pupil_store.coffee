@@ -2,7 +2,6 @@ $ = jQuery
 
 swapImg = (links) ->
 	for link in links
-		console.log link
 		imgId = '#' + $(link).attr('id').split('-',1) + '-img'
 		imgSrc = $(link).attr("href")
 		# use the href attribute of the link to update the img
@@ -50,7 +49,8 @@ selectPreset = () ->
 		updateSubTotal()
 
 $(document).ready ->
-	# call updateSubTotal on init to get cost of init items
-	updateSubTotal()
-	selectPreset()
-	updateConfig()
+	if $("#Store").length > 0
+		# only load scripts if we're in the store
+		updateSubTotal()
+		selectPreset()
+		updateConfig()

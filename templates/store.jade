@@ -2,34 +2,35 @@ extends layout
 
 block main
   //- Title block
-  - var page_data = contents.store['index.json']
+  div(id="Store")
+    - var page_data = contents.store['index.json']
 
-  //- Presets -- pulled from JSON
-  //- here we sort the data in pupil-presets by the order key
-  - var config_data = contents.store.products['pupil-presets.json'].metadata
-  - var config_presets = _.chain(config_data).sortBy(function(item){
-  -  return item['order']; 
-  - }).value()
-  section.Store-presets
-    h2.u-textCenter Pupil Presets
-    ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--justifySpaceAround
-      each item in config_presets.slice(0,4)
-        li.Store-nav-item 
-          a(href="#" class="Store-nav-link Store-nav-link--preset" data-preset=item.world+" "+item.eye) #{ item.label } 
+    //- Presets -- pulled from JSON
+    //- here we sort the data in pupil-presets by the order key
+    - var config_data = contents.store.products['pupil-presets.json'].metadata
+    - var config_presets = _.chain(config_data).sortBy(function(item){
+    -  return item['order']; 
+    - }).value()
+    section.Store-presets
+      h2.u-textCenter Pupil Presets
+      ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--justifySpaceAround
+        each item in config_presets.slice(0,4)
+          li.Store-nav-item 
+            a(role="button" href="#" class="Store-nav-link Store-nav-link--preset" data-preset=item.world+" "+item.eye) #{ item.label } 
 
-  //- Configurator
-  include includes/configurator
+    //- Configurator
+    include includes/configurator
 
-  //- Additional products
-  //- TODO - this grid should have a gutter between images and outsides
-  section.Grid.Grid--full
-    div.Grid-cell
-      h2.Feature-subtitle--lg.u-textCenter Additional Products
-  section.Grid.Grid--1of3
-    - var additional_products = contents.store.products['product-list.json'].metadata
-    each item in additional_products
+    //- Additional products
+    //- TODO - this grid should have a gutter between images and outsides
+    section.Grid.Grid--full
       div.Grid-cell
-        div.Feature
-          div.Feature-figure
-            img(class="Feature-image" src="http://placehold.it/800/444444")
-            p #{ item.label }
+        h2.Feature-subtitle--lg.u-textCenter Additional Products
+    section.Grid.Grid--1of3
+      - var additional_products = contents.store.products['product-list.json'].metadata
+      each item in additional_products
+        div.Grid-cell
+          div.Feature
+            div.Feature-figure
+              img(class="Feature-image" src="http://placehold.it/800/444444")
+              p #{ item.label }
