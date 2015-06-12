@@ -12,6 +12,7 @@ stylus = require "gulp-stylus"
 prefixer = require "gulp-autoprefixer"
 coffee = require "gulp-coffee"
 concat = require "gulp-concat"
+uglify = require "gulp-uglify"
 
 
 css = ()->
@@ -31,6 +32,7 @@ js = ()->
     bare: false
     )
   .pipe concat "main.js"
+  .pipe uglify()
   .pipe gulp.dest "contents/js"
   .pipe livereload()
 
