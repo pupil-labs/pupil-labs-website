@@ -29,10 +29,10 @@ css = ()->
 js = ()->
   gulp.src "assets/coffeescript/*.coffee"
   .pipe coffee(
-    bare: false
+    bare: true
     )
   .pipe concat "main.js"
-  .pipe uglify()
+  # .pipe uglify()
   .pipe gulp.dest "contents/js"
   .pipe livereload()
 
