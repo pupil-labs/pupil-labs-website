@@ -62,7 +62,7 @@ addToCart = () ->
     else
       counter = LocalStorage.length()
     LocalStorage.set counter, JSON.stringify([worldId, eyeId])
-    $(cartHeaderLink).html("Cart <sup style='color:red;'>#{ LocalStorage.length() }</sup>")
+    $(cartHeaderLink).html("Cart <sup class='Nav-cart-itemCount'>#{ LocalStorage.length() }</sup>")
 
 $(document).ready ->
   if $("#Store").length > 0
