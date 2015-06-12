@@ -15,7 +15,7 @@ block main
     ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--justifySpaceAround
       each item in config_presets.slice(0,4)
         li.Store-nav-item 
-          a(href="#" class="Store-nav-link") #{ item.label } 
+          a(href="#" class="Store-nav-link Store-nav-link--preset" data-preset=item.world+" "+item.eye) #{ item.label } 
 
   //- Configurator
   include includes/configurator

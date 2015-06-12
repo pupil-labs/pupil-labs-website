@@ -1,19 +1,21 @@
 $ = jQuery
 
+swapImg = (links) ->
+	for link in links
+		console.log link
+		imgId = '#' + $(link).attr('id').split('-',1) + '-img'
+		imgSrc = $(link).attr("href")
+		# use the href attribute of the link to update the img
+		$(imgId).attr("src", imgSrc).show()
 
-swapImg = (link) ->
-	imgId = '#' + $(link).attr('id').split('-',1) + '-img'
-	imgSrc = $(link).attr("href")
-	# use the href attribute of the link to update the img
-	$(imgId).attr("src", imgSrc).show()
-
-updateLinkState = (link) ->
-	configType = 'StoreConfig-' + $(link).attr('id').split('-',1)
-	activeState = 'StoreConfig--state-active'
-	prevSelection = "a[class='#{ configType + " " + activeState }']"
-	# remove previously active & add active class to clicked 
-	$(prevSelection).removeClass(activeState)
-	$(link).addClass(activeState)
+updateLinkState = (links) ->
+	for link in links
+		configType = 'StoreConfig-' + $(link).attr('id').split('-',1)
+		activeState = 'StoreConfig--state-active'
+		prevSelection = "a[class='#{ configType + " " + activeState }']"
+		# remove previously active & add active class to clicked 
+		$(prevSelection).removeClass(activeState)
+		$(link).addClass(activeState)
 
 updateSubTotal = () ->
 	# sum the cost of the active links
@@ -31,10 +33,24 @@ updateConfig = () ->
 	link = "a[class^='StoreConfig-']"
 	$(link).click (event)->
 		event.preventDefault()
-		updateLinkState($(this))
-		swapImg($(this))
+		updateLinkState([$(this)])
+		swapImg([$(this)])
+		updateSubTotal()
+
+selectPreset = () ->
+	link = "a[class='Store-nav-link Store-nav-link--preset']"
+	$(link).click (event)->
+		event.preventDefault()
+		# get the id of the preset from the data attribute
+		[worldId,eyeId] = $(this).data('preset').split(" ")
+		worldLink = "a[id='#{worldId}']"
+		eyeLink = "a[id='#{eyeId}']"
+		updateLinkState([worldLink, eyeLink])
+		swapImg([worldLink, eyeLink])
 		updateSubTotal()
 
 $(document).ready ->
+	# call updateSubTotal on init to get cost of init items
 	updateSubTotal()
+	selectPreset()
 	updateConfig()
