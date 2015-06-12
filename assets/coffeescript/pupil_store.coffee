@@ -52,12 +52,17 @@ selectPreset = () ->
 
 addToCart = () ->
   cartButton = "a[id='StoreConfig-addToCart']"
+  cartHeaderLink = "a[id='Nav-cart']"
   $(cartButton).click (event)->
     event.preventDefault()
     worldId = $("a[class='StoreConfig-world StoreConfig--state-active']").attr('id')
     eyeId = $("a[class='StoreConfig-eye StoreConfig--state-active']").attr('id')  
-    LocalStorage.set "order", [worldId, eyeId]
-    console.log LocalStorage.get "order"
+    if LocalStorage.length() is 0
+      counter = 0
+    else
+      counter = LocalStorage.length()
+    LocalStorage.set counter, JSON.stringify([worldId, eyeId])
+    $(cartHeaderLink).html("Cart <sup style='color:red;'>#{ LocalStorage.length() }</sup>")
 
 $(document).ready ->
   if $("#Store").length > 0

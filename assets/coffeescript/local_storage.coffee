@@ -41,6 +41,13 @@ LocalStorage = do ->
         value = localStorage[key]
         localStorage.removeItem(key)
         value
+
+      length: () ->
+        Object.keys(localStorage).length
+
+      values: ()->
+        values = (v for v,k in localStorage)
+        return values
     }
   else
     createCookie = (name, value, days) ->

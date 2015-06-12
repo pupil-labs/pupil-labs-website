@@ -4,5 +4,6 @@ header.Site-header.Header
     ul
       each url, title in contents.menu['header-nav.json'].metadata
         - var navClass = (title === name ? "Nav-list-item active" : "Nav-list-item")
+        - var navId = (title === "Cart" ? "Nav-cart" : "")
         li(class=navClass)
-          a(href=url class="Nav-link")= title
+          a(href=url id=navId class="Nav-link")= title
