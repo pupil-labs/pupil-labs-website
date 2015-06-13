@@ -52,7 +52,7 @@ selectPreset = () ->
 
 addToCart = () ->
   cartButton = "a[id='StoreConfig-addToCart']"
-  cartHeaderLink = "a[id='Nav-cart']"
+  cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
   $(cartButton).click (event)->
     event.preventDefault()
     worldId = $("a[class='StoreConfig-world StoreConfig--state-active']").attr('id')
@@ -62,9 +62,15 @@ addToCart = () ->
     else
       counter = LocalStorage.length()
     LocalStorage.set counter, JSON.stringify([worldId, eyeId])
-    $(cartHeaderLink).html("Cart <sup class='Nav-cart-itemCount'>#{ LocalStorage.length() }</sup>")
+    $(cartHeaderCounter).text("#{ LocalStorage.length() }")
+
+getNumItemsInCart = () ->
+  itemsInCart = if LocalStorage.length() > 0 then LocalStorage.length() else "" 
+  cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
+  $(cartHeaderCounter).text("#{ itemsInCart }")
 
 $(document).ready ->
+  getNumItemsInCart()
   if $("#Store").length > 0
     # only load scripts if we're in the store
     updateSubTotal()
