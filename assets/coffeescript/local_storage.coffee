@@ -46,8 +46,15 @@ LocalStorage = do ->
         Object.keys(localStorage).length
 
       values: ()->
-        values = (v for v,k in localStorage)
-        return values
+        vals = (v for k,v of localStorage)
+        return vals
+
+      keys: ()->
+        keys = (k for k,v of localStorage)
+        return keys
+
+      clear: ->
+        localStorage.clear()
     }
   else
     createCookie = (name, value, days) ->
@@ -78,5 +85,23 @@ LocalStorage = do ->
         value = LocalStorage.get key
         createCookie key, "", -1
         value
+
+      length: () ->
+        len = document.cookie.split(";").length
+        return len
+
+      values: ()->
+        vals = (v.split("=").pop() for v in document.cookie.split(';'))
+        return vals
+
+      keys: ()->
+        keys = (k.split("=",1) for k in document.cookie.split(';'))
+        return keys
+
+      clear: () ->
+        for cookie in document.cookie.split(';')
+          eqPos = cookie.indexOf('=')
+          name = if eqPos > -1 then cookie.substr(0,eqPos) else cookie
+          document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT"
     }
 
