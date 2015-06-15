@@ -73,6 +73,7 @@ addToCart = () ->
       "product" : "pupil"
       "specs": [worldId,eyeId]
       "price": price
+      "quantity": 1
     }
     order.push(item) 
     LocalStorage.set "order", JSON.stringify(order)
@@ -91,7 +92,7 @@ updateCart = ()->
   for i in JSON.parse(LocalStorage.get('order'))
     products = i['product']+" "+i['specs']
     console.log products
-    newRow = "<tr><td>#{ products }</td><td>1</td><td>#{ i['price'] }</td><td>X</td></tr>"
+    newRow = "<tr><td>#{ products }</td><td>#{ i['quantity'] }</td><td>#{ i['price'] }</td><td>X</td></tr>"
     $("#Cart-items tbody").append(newRow)
 
 $(document).ready ->
