@@ -51,17 +51,15 @@ selectPreset = () ->
     updateSubTotal()
 
 addToCart = () ->
+  # cart schema
+  # { "items": [ { "product": "pupil", "specs": ['world-720','eye-none'], "price": 5 } ] }
   cartButton = "a[id='StoreConfig-addToCart']"
   cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
   $(cartButton).click (event)->
     event.preventDefault()
     worldId = $("a[class='StoreConfig-world StoreConfig--state-active']").attr('id')
     eyeId = $("a[class='StoreConfig-eye StoreConfig--state-active']").attr('id')  
-    if LocalStorage.length() is 0
-      counter = 0
-    else
-      counter = LocalStorage.length()
-    LocalStorage.set counter, JSON.stringify([worldId, eyeId])
+    LocalStorage.set "product", JSON.stringify([worldId, eyeId])
     $(cartHeaderCounter).text("#{ LocalStorage.length() }")
 
 getNumItemsInCart = () ->
@@ -69,7 +67,17 @@ getNumItemsInCart = () ->
   cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
   $(cartHeaderCounter).text("#{ itemsInCart }")
 
+
+updateCart = ()->
+  # item | quantity | price | remove
+  for v,i in LocalStorage.values()
+    products = JSON.parse(v).toString()
+    console.log products
+    newRow = "<tr><td>#{ products }</td><td>#{ i }</td><td>Price</td><td>X</td></tr>"
+    $("#Cart-items tbody").append(newRow)
+
 $(document).ready ->
+  # update on every page
   getNumItemsInCart()
   if $("#Store").length > 0
     # only load scripts if we're in the store
@@ -77,3 +85,5 @@ $(document).ready ->
     selectPreset()
     updateConfig()
     addToCart()
+  if $("#Cart").length > 0
+    updateCart()

@@ -1,7 +1,20 @@
 extends layout
 
 block main
-  div.Pupil-flex-container
+  div(id="Cart")
     //- Title block
     - var page_data = contents.cart['index.json']
-    include includes/title
+    //- include includes/title
+    table(id="Cart-items")
+      thead
+        tr 
+          th(class="") Item
+          th(class="") Quantity
+          th(class="") Price
+          th(class="") Remove
+      tbody
+        tr
+        //- pull items from local storage
+ 
+
+
