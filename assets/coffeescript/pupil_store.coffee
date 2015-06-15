@@ -2,6 +2,45 @@
 
 $ = jQuery
 
+class PupilStore
+  constructor: (
+    @storeSelector = "Store" #Store class
+    @cartPage = "Cart" #Cart class
+    @orderPage = "Order" #Order form class
+
+    ) ->
+  
+  getItemInCart: (key)->
+    # check if local storage exists
+    try
+      return JSON.parse(LocalStorage.get(key))
+    catch e 
+      console.log "Nothing in the cart, can't get items."
+      return {}
+  
+  getValuesInCart: ()->
+    LocalStorage.values()
+
+  addToCart: (key,value)->
+    try
+      LocalStorage.set(key,JSON.stringify(orders))
+    catch e
+      console.log "Unable to add item to cart"
+    
+  emptyCart: (key)->
+    try 
+      LocalStorage.expire(key)
+    catch e
+      console.log "Nothing in the cart to be removed."
+
+  removeFromCart: (key,productId)->
+    LocalStorage.expire(key)
+
+  uniqueId: (len=6) ->
+    id = ""
+    id += Math.random().toString(36).substr(2) while id.length < len
+    id.substr 0, len
+
 swapImg = (links) ->
   for link in links
     imgId = '#' + $(link).attr('id').split('-',1) + '-img'
@@ -58,7 +97,9 @@ selectPreset = () ->
 
 addToCart = () ->
   # cart schema
-  # [{ "items": [ { "product": "pupil", "specs": ['world-720','eye-none'], "price": 5 } ] }]
+  # [{ "order": [ { "product": "pupil", "specs": ['world-720','eye-none'], "price": 5 } ] }]
+  # OR - a unique key for each order option (k="order-uid",v=[{}])
+  # { "order": [ { "product": "pupil", "specs": ['world-720','eye-none'], "price": 5 } ] }]
   cartButton = "a[id='StoreConfig-addToCart']"
   cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
   $(cartButton).click (event)->
@@ -68,23 +109,35 @@ addToCart = () ->
     worldId = $(worldSelector).attr('id')
     eyeId = $(eyeSelector).attr('id')
     price = calculateSubTotal([worldSelector,eyeSelector])
-    order = if LocalStorage.length() > 0 then JSON.parse(LocalStorage.get('order')) else []
+    # order = if LocalStorage.length() > 0 then JSON.parse(LocalStorage.get('order')) else []
     item = {
       "product" : "pupil"
       "specs": [worldId,eyeId]
       "price": price
       "quantity": 1
     }
-    order.push(item) 
-    LocalStorage.set "order", JSON.stringify(order)
-    $(cartHeaderCounter).text("#{ JSON.parse(LocalStorage.get('order')).length }")
-    console.log JSON.parse(LocalStorage.get('order')).length + " items: " + LocalStorage.get('order')
+    # order.push(item)
+    s = new PupilStore
+    uid = s.uniqueId()
+    uida = uid+'a' 
+
+    s.addToCart(uid,item)
+    console.log "Items in cart: " + s.getValuesInCart()
+    LocalStorage.set uida, JSON.stringify(item)
+    $(cartHeaderCounter).text("#{ LocalStorage.length() }")
+    console.log LocalStorage.length() + " items: " + LocalStorage.values()
+
+clearCart = ()->
+  clearCartButton = "a[id='StoreConfig-clearCart']"
+  $(clearCartButton).click (event)->
+    event.preventDefault()
+    LocalStorage.clear()
+    getNumItemsInCart()
 
 
 getNumItemsInCart = () ->
-  itemsInCart = if LocalStorage.length() > 0 then JSON.parse(LocalStorage.get('order')).length else "" 
   cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
-  $(cartHeaderCounter).text("#{ itemsInCart }")
+  $(cartHeaderCounter).text("#{ LocalStorage.length() }")
 
 
 updateCart = ()->
@@ -104,5 +157,6 @@ $(document).ready ->
     selectPreset()
     updateConfig()
     addToCart()
+    clearCart()
   if $("#Cart").length > 0
     updateCart()
