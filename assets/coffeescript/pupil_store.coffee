@@ -18,6 +18,12 @@ updateLinkState = (links) ->
     $(prevSelection).removeClass(activeState)
     $(link).addClass(activeState)
 
+calculateSubTotal = (productLinks)->
+  sum = 0
+  for link in productLinks
+    sum += $(link).data('cost')
+  return sum  
+
 updateSubTotal = () ->
   # sum the cost of the active links
   worldLink = "a[class='StoreConfig-world StoreConfig--state-active']"
@@ -52,28 +58,40 @@ selectPreset = () ->
 
 addToCart = () ->
   # cart schema
-  # { "items": [ { "product": "pupil", "specs": ['world-720','eye-none'], "price": 5 } ] }
+  # [{ "items": [ { "product": "pupil", "specs": ['world-720','eye-none'], "price": 5 } ] }]
   cartButton = "a[id='StoreConfig-addToCart']"
   cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
   $(cartButton).click (event)->
     event.preventDefault()
-    worldId = $("a[class='StoreConfig-world StoreConfig--state-active']").attr('id')
-    eyeId = $("a[class='StoreConfig-eye StoreConfig--state-active']").attr('id')  
-    LocalStorage.set "product", JSON.stringify([worldId, eyeId])
-    $(cartHeaderCounter).text("#{ LocalStorage.length() }")
+    worldSelector = "a[class='StoreConfig-world StoreConfig--state-active']" 
+    eyeSelector = "a[class='StoreConfig-eye StoreConfig--state-active']"
+    worldId = $(worldSelector).attr('id')
+    eyeId = $(eyeSelector).attr('id')
+    price = calculateSubTotal([worldSelector,eyeSelector])
+    order = if LocalStorage.length() > 0 then JSON.parse(LocalStorage.get('order')) else []
+    item = {
+      "product" : "pupil"
+      "specs": [worldId,eyeId]
+      "price": price
+    }
+    order.push(item) 
+    LocalStorage.set "order", JSON.stringify(order)
+    $(cartHeaderCounter).text("#{ JSON.parse(LocalStorage.get('order')).length }")
+    console.log JSON.parse(LocalStorage.get('order')).length + " items: " + LocalStorage.get('order')
+
 
 getNumItemsInCart = () ->
-  itemsInCart = if LocalStorage.length() > 0 then LocalStorage.length() else "" 
+  itemsInCart = if LocalStorage.length() > 0 then JSON.parse(LocalStorage.get('order')).length else "" 
   cartHeaderCounter = "sup[class='Nav-cart-itemCount']"
   $(cartHeaderCounter).text("#{ itemsInCart }")
 
 
 updateCart = ()->
   # item | quantity | price | remove
-  for v,i in LocalStorage.values()
-    products = JSON.parse(v).toString()
+  for i in JSON.parse(LocalStorage.get('order'))
+    products = i['product']+" "+i['specs']
     console.log products
-    newRow = "<tr><td>#{ products }</td><td>#{ i }</td><td>Price</td><td>X</td></tr>"
+    newRow = "<tr><td>#{ products }</td><td>1</td><td>#{ i['price'] }</td><td>X</td></tr>"
     $("#Cart-items tbody").append(newRow)
 
 $(document).ready ->
