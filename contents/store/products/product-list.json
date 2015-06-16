@@ -1,30 +1,38 @@
 [
   {
     "label": "wide angle lens",
-    "details": "some details about the lens",
+    "id": "lens-160d",
+    "specs": "some specs about the lens",
     "cost": 150,
     "img": "http://placehold.it/600/111111",
+    "product_type": "lens",
     "order": 1
   },
   {
     "label": "preconfigured surface pro",
-    "details": "preconfigured microsoft surface pro tablet",
+    "id": "surface-pro-3",
+    "specs": "preconfigured microsoft surface pro tablet",
     "cost": 950,
     "img": "http://placehold.it/600/333333",
+    "product_type": "computer",
     "order": 2
   },
   {
     "label": "6 month support contract",
-    "details": "6 month support contract. Email support and 4 video support sessions",
+    "id": "support-6mo",
+    "specs": "6 month support contract. Email support and 4 video support sessions",
     "cost": 1000,
     "img": "http://placehold.it/600/444444",    
+    "product_type": "support",    
     "order": 3
   },
   {
     "label": "12 month support contract",
-    "details": "12 month support contract. Email support and 8 video support sessions",
+    "id": "support-12mo",
+    "specs": "12 month support contract. Email support and 8 video support sessions",
     "cost": 2000,
     "img": "http://placehold.it/600/555555",
+    "product_type": "support",    
     "order": 4
   }
 ]

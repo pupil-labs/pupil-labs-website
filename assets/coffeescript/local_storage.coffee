@@ -53,7 +53,7 @@ LocalStorage = do ->
         keys = (k for k,v of localStorage)
         return keys
 
-      clear: ->
+      clear: ()->
         localStorage.clear()
     }
   else
@@ -99,6 +99,7 @@ LocalStorage = do ->
         return keys
 
       clear: () ->
+        # set the expiration of all cookies to the beginning of unix time (epoch)
         for cookie in document.cookie.split(';')
           eqPos = cookie.indexOf('=')
           name = if eqPos > -1 then cookie.substr(0,eqPos) else cookie

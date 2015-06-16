@@ -2,7 +2,7 @@
   {
     "label":"none",
     "id": "world-none",
-    "spec_text":"no world camera",
+    "specs":"no world camera",
     "dimensions": "0",
     "weight": 0,
     "image_url": "store/config_images/pupil-config-world-none.png",
@@ -13,7 +13,7 @@
   {
     "label":"720p",
     "id": "world-720p",
-    "spec_text":"720p camera with xx degrees diagonal field of view.",
+    "specs":"720p camera with xx degrees diagonal field of view.",
     "dimensions": "nn x nn",
     "weight": 0,
     "image_url": "store/config_images/pupil-config-world-720p.png",
@@ -24,7 +24,7 @@
   {
     "label":"1080p",
     "id": "world-1080p",    
-    "spec_text":"1080p camera with xx degrees diagonal field of view and microphones",
+    "specs":"1080p camera with xx degrees diagonal field of view and microphones",
     "dimensions": "nn x nn",
     "weight": 0,
     "image_url": "store/config_images/pupil-config-world-1080p.png",
@@ -35,7 +35,7 @@
   {
     "label":"120hz",
     "id": "world-120hz",    
-    "spec_text":"120hz high speed camera designed by Pupil Labs",
+    "specs":"120hz high speed camera designed by Pupil Labs",
     "dimensions": "nn x nn",
     "weight": 0,
     "image_url": "store/config_images/pupil-config-world-120hz.png",
