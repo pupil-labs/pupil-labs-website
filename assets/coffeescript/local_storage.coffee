@@ -35,7 +35,8 @@ LocalStorage = do ->
       set: safeSet
 
       get: (key) ->
-        localStorage[key]
+        value = localStorage.getItem(key)
+        return value
 
       expire: (key) ->
         value = localStorage[key]
@@ -43,14 +44,13 @@ LocalStorage = do ->
         value
 
       length: () ->
-        Object.keys(localStorage).length
-
-      values: ()->
-        vals = (JSON.parse(v) for k,v of localStorage)
-        return vals
+        return Object.keys(localStorage).length
 
       keys: ()->
-        keys = (k for k,v of localStorage)
+        keys = []
+        for i in [0...localStorage.length] 
+          k = localStorage.key(i)
+          keys.push(k)
         return keys
 
       clear: ()->
@@ -58,9 +58,11 @@ LocalStorage = do ->
 
       dict: ()->
         d = {}
-        for k,v of localStorage
-          d[k] = JSON.parse(v)
-        return d 
+        for i in [0...localStorage.length]
+          k = localStorage.key(i)
+          v = JSON.parse(localStorage.getItem(k))
+          d[localStorage.key(i)] = v
+        return d
     }
   else
     createCookie = (name, value, days) ->
@@ -95,10 +97,6 @@ LocalStorage = do ->
       length: () ->
         len = document.cookie.split(";").length
         return len
-
-      values: ()->
-        vals = (v.split("=").pop() for v in document.cookie.split(';'))
-        return vals
 
       keys: ()->
         keys = (k.split("=",1) for k in document.cookie.split(';'))

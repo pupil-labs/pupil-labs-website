@@ -40,7 +40,7 @@ class PupilStore
 
   saveToCart: (key,value)->
     try
-      LocalStorage.set(key, JSON.stringify(value))
+      LocalStorage.set(key, value)
     catch e
       console.log "Unable to add item to cart"
     
@@ -81,9 +81,8 @@ class PupilStore
           "quantity": 1
         }
         # save to local storage & update the nav counter
-        @saveToCart(JSON.stringify(key), item)
+        LocalStorage.set(key, JSON.stringify(item))
         @eventUpdateCartNavCounter()
-        console.log LocalStorage.raw()
 
   eventClearCart: ->
     @clearCartButton.click (event)=>
@@ -127,7 +126,7 @@ class PupilStore
         # product, id, specs, price, quantity
         newRow = "<tr id='#{ k }'><td><p>#{ v['product'] }</p><p>#{ v['specs'] }</p></td><td>#{ v['quantity'] }</td><td>#{ v['price'] }</td><td class='Cart-removeItem'>X</td></tr>"
         $("#Cart-items tbody").append(newRow).addClass("Cart-orderItem")
-      total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else ""
+      total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for k,v of LocalStorage.dict())) else ""
       $("td[id='CartSum--total']").text("#{ total }")
 
   eventRemoveCartItem: ->
@@ -143,7 +142,7 @@ class PupilStore
           $(tr).remove()
 
         # update total
-        total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else ""
+        total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for k,v of LocalStorage.dict())) else ""
         $("td[id='CartSum--total']").text("#{ total }")
      
         # update header
