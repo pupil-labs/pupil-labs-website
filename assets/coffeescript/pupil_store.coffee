@@ -8,7 +8,6 @@ class PupilStore
     @orderPage = "Order" #Order form class
     @storeConfigClass = "StoreConfig"
     @storeConfigSelector = "a[class^='#{ @storeConfigClass}-']"
-    @storeConfigSelectorJq = $("a[class^='StoreConfig-']")
     @storeConfigActiveClass = "StoreConfig--state-active"
     @addToCartClass = "a[class='AddToCart']"
     @clearCartClass = "a[id='StoreConfig-clearCart']"
@@ -18,7 +17,7 @@ class PupilStore
     @eyeConfigActiveClass = "a[class='StoreConfig-eye #{ @storeConfigActiveClass }']"
     @configSubTotalClass = "p[class='StoreConfig-subTotal']"
     @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
-    @activeLink = null
+    @storeConfigPresetClass = "a[class='Store-nav-link Store-nav-link--preset']"
     ) ->
       @eventAddToCart()
       @eventClearCart()
@@ -55,7 +54,6 @@ class PupilStore
     @addToCartButton.click (event)=>
       event.preventDefault()
       addToCartBtn = $(event.target)
-      console.log "addtocart event.target " + event.target
       productType = $(addToCartBtn).data('product')
       
       if productType is "pupil"
@@ -94,11 +92,12 @@ class PupilStore
 
 
   eventUpdateConfig: ->
-    @storeConfigSelectorJq.click (event)=>
+    $(@storeConfigSelector).click (event)=>
       event.preventDefault()
-      console.log "Event.target: " + event.target
-      console.log "Event.currentTarget: " + event.currentTarget
-
+      # typically we would use $(this) to refer to the jquery object
+      # within the scope of the `click` function
+      # but in coffeescript when we use the fat arrow (=>)
+      # we are referring to the class itself and not the jquery object 
       activeLinks = $(event.target)
       @_setActiveState(activeLinks)
       @_swapImg(activeLinks)
