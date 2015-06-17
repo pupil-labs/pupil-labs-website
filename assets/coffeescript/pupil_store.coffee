@@ -124,14 +124,24 @@ class PupilStore
     if $(@cartPage).length > 0
       for k,v of LocalStorage.dict()
         # product, id, specs, price, quantity
-        newRow = "<tr id='#{ k }'><td><p>#{ v['product'] }</p><p>#{ v['specs'] }</p></td><td>#{ v['quantity'] }</td><td>#{ v['price'] }</td><td class='Cart-removeItem'>X</td></tr>"
-        $("#Cart-items tbody").append(newRow).addClass("Cart-orderItem")
-      total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for k,v of LocalStorage.dict())) else ""
-      $("td[id='CartSum--total']").text("#{ total }")
+        newRow = "<tr class='Cart-orderItem' id='#{ k }'>
+                    <td rowspan='2'><p>#{ v['product'] }</p><p>#{ v['specs'] }</p></td>
+                    <td rowspan='2' class='u-textCenter'>#{ v['quantity'] }</td>
+                    <td class='u-textCenter'>+</td>
+                    <td rowspan='2' class='u-textCenter'>€ #{ v['price'] }</td>
+                    <td rowspan='2' class='Cart-removeItem u-textCenter'>X</td>
+                  </tr>
+                  <tr>
+                    <td class='u-textCenter'>-</td>
+                  </tr>"
+        $("#Cart-table tbody").append(newRow)
+      [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
+      $("td[class^='CartSum--total']").text("#{ totalPrice }")
+      $("td[class^='CartSum--label']").text("#{ label }")
 
   eventRemoveCartItem: ->
     if $(@cartPage).length > 0
-      $("td[class='Cart-removeItem']").click (event)=>
+      $("td[class^='Cart-removeItem']").click (event)=>
         event.preventDefault()
         item = $(event.target)
         tr = $(item).closest('tr')
@@ -142,9 +152,10 @@ class PupilStore
           $(tr).remove()
 
         # update total
-        total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for k,v of LocalStorage.dict())) else ""
-        $("td[id='CartSum--total']").text("#{ total }")
-     
+        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
+        $("td[class^='CartSum--total']").text("#{ totalPrice }")
+        $("td[class^='CartSum--label']").text("#{ label }")
+
         # update header
         @eventUpdateCartNavCounter()
 

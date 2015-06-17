@@ -5,21 +5,20 @@ block main
     //- Title block
     - var page_data = contents.cart['index.json']
     //- include includes/title
-    table(id="Cart-items")
+    table(id="Cart-table")
       thead
         tr 
-          th(class="") Item
-          th(class="") Quantity
-          th(class="") Price
-          th(class="") Remove
+          th(class="Cart-items--3of5") Item
+          th(class="Cart-items--1of5 u-textCenter" colspan='2') Quantity
+          th(class="Cart-items--1of5 u-textCenter") Price
+          th(class="Cart-items--1of5 u-textCenter") Remove
       tbody
-        tr
         //- pull items from local storage
-      tfoot(id="CartSum")
-        tr
+      tfoot
+        tr(class="CartSum")
+          td(class="CartSum--label u-textRight")
           td
-          td
-          td(id="CartSum--total") 
+          td(class="CartSum--total u-textCenter") 
  
 
 

@@ -20,9 +20,9 @@ css = ()->
   .pipe stylus
       compress: true
   .pipe prefixer
-      browsers: "last 2 versions"
+      browsers: ["last 2 versions"]
       cascade: true # prettify browser prefixes
-      remove: true # remove un-needed prefixes
+      remove: false # remove un-needed prefixes
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
