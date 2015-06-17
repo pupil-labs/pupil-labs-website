@@ -78,6 +78,8 @@
 .Grid--1of2
 	> .Grid-cell
 		flex 0 0 50%
+		// firefox fix below
+		max-width 50%
 			
 		@media $break-sm
 			flex 0 0 100%
@@ -85,6 +87,9 @@
 .Grid--1of3
 	> .Grid-cell
 		flex 0 0 33.3333%
+		// firefox fix below
+		max-width 33.3333%
+
 		
 		@media $break-sm
 			flex 0 0 100%
@@ -93,6 +98,7 @@
 .Grid--1of4
 	> .Grid-cell
 		flex 0 0 25%
+		max-width 25%
 		
 		@media $break-sm
 			flex 0 0 100%
