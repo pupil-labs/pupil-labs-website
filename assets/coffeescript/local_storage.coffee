@@ -46,7 +46,7 @@ LocalStorage = do ->
         Object.keys(localStorage).length
 
       values: ()->
-        vals = (v for k,v of localStorage)
+        vals = (JSON.parse(v) for k,v of localStorage)
         return vals
 
       keys: ()->

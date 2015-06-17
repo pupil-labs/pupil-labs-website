@@ -25,6 +25,7 @@ class PupilStore
       @eventUpdateConfig()
       @eventSelectPreset()
       @eventRenderCart()
+      @eventRemoveCartItem()
   
   getItemInCart: (key)->
     # check if local storage exists
@@ -116,15 +117,38 @@ class PupilStore
         eyeLink = "a[id='#{eyeId}']"
         @_setActiveState([worldLink, eyeLink])
         @_swapImg([worldLink, eyeLink])
-        @_updateConfigSubTotal()
-    
+        @_updateConfigSubTotal()    
 
   eventRenderCart: ->
     if $(@cartPage).length > 0
       for k,v of LocalStorage.dict()
         # product, id, specs, price, quantity
-        newRow = "<tr id='#{ k }'><td>#{ v['product'] }#{ v['specs'] }</td><td>#{ v['quantity'] }</td><td>#{ v['price'] }</td><td>X</td></tr>"
-        $("#Cart-items tbody").append(newRow)
+        newRow = "<tr id='#{ k }'><td><p>#{ v['product'] }</p><p>#{ v['specs'] }</p></td><td>#{ v['quantity'] }</td><td>#{ v['price'] }</td><td class='Cart-removeItem'>X</td></tr>"
+        $("#Cart-items tbody").append(newRow).addClass("Cart-orderItem")
+      total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else 0
+      $("td[id='CartSum--total'").text("#{ total }")
+
+  eventRemoveCartItem: ->
+    if $(@cartPage).length > 0
+      $("td[class='Cart-removeItem'").click (event)=>
+        event.preventDefault()
+        item = $(event.target)
+        tr = $(item).closest('tr')
+        LocalStorage.expire($(tr).attr('id'))
+        
+        # remove the row
+        $(tr).fadeOut 300, ->
+          $(tr).remove()
+
+        # update total
+        total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else 0
+        $("td[id='CartSum--total'").text("#{ total }")
+     
+        # update header
+        @eventUpdateCartNavCounter()
+
+  _sumAll: (vals)->
+    vals.reduce (a,b) -> a + b 
 
   _setActiveState: (links)->
     for link in links
