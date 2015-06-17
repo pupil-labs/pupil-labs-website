@@ -3,8 +3,8 @@ $ = jQuery
 
 class PupilStore
   constructor: (
-    @storeSelector = "Store" #Store class
-    @cartPage = "Cart" #Cart class
+    @storePage = "#Store" #Store class
+    @cartPage = "#Cart" #Cart class
     @orderPage = "Order" #Order form class
     @storeConfigClass = "StoreConfig"
     @storeConfigSelector = "a[class^='#{ @storeConfigClass}-']"
@@ -23,6 +23,8 @@ class PupilStore
       @eventClearCart()
       @eventUpdateCartNavCounter()
       @eventUpdateConfig()
+      @eventSelectPreset()
+      @eventRenderCart()
   
   getItemInCart: (key)->
     # check if local storage exists
@@ -51,35 +53,35 @@ class PupilStore
     LocalStorage.expire(key)
 
   eventAddToCart: ->
-    @addToCartButton.click (event)=>
-      event.preventDefault()
-      addToCartBtn = $(event.target)
-      productType = $(addToCartBtn).data('product')
-      
-      if productType is "pupil"
-        worldId = $(@worldConfigActiveClass).data('id')
-        eyeId = $(@eyeConfigActiveClass).data('id')
-        id = [worldId,eyeId]
-        price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass])
-        specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
-      else 
+    if $(@storePage).length > 0
+      @addToCartButton.click (event)=>
+        event.preventDefault()
+        addToCartBtn = $(event.target)
         productType = $(addToCartBtn).data('product')
-        id = $(addToCartBtn).data('id')
-        price = $(addToCartBtn).data('cost')
-        specs = $(addToCartBtn).data('specs')
-    
-      key = @_uniqueId()
-      item = {
-        "product" : productType
-        "id": id
-        "specs": specs
-        "price": price
-        "quantity": 1
-      }
 
-      # save to local storage & update the nav counter
-      @saveToCart(key, item)
-      @eventUpdateCartNavCounter()
+        if productType is "pupil"
+          worldId = $(@worldConfigActiveClass).data('id')
+          eyeId = $(@eyeConfigActiveClass).data('id')
+          id = [worldId,eyeId]
+          price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass])
+          specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
+        else 
+          productType = $(addToCartBtn).data('product')
+          id = [$(addToCartBtn).data('id')]
+          price = $(addToCartBtn).data('cost')
+          specs = $(addToCartBtn).data('specs')
+      
+        key = @_uniqueId()
+        item = {
+          "product" : productType
+          "id": id
+          "specs": specs
+          "price": price
+          "quantity": 1
+        }
+        # save to local storage & update the nav counter
+        @saveToCart(key, item)
+        @eventUpdateCartNavCounter()
 
   eventClearCart: ->
     @clearCartButton.click (event)=>
@@ -90,18 +92,39 @@ class PupilStore
   eventUpdateCartNavCounter: ->
     $(@cartNavCounter).text("#{ LocalStorage.length() }")
 
-
   eventUpdateConfig: ->
-    $(@storeConfigSelector).click (event)=>
-      event.preventDefault()
-      # typically we would use $(this) to refer to the jquery object
-      # within the scope of the `click` function
-      # but in coffeescript when we use the fat arrow (=>)
-      # we are referring to the class itself and not the jquery object 
-      activeLinks = $(event.target)
-      @_setActiveState(activeLinks)
-      @_swapImg(activeLinks)
-      @_updateConfigSubTotal()
+    if $("#Store").length > 0
+      $(@storeConfigSelector).click (event)=>
+        event.preventDefault()
+        # typically we would use $(this) to refer to the jquery object
+        # within the scope of the `click` function
+        # but in coffeescript when we use the fat arrow (=>)
+        # we are referring to the class itself and not the jquery object 
+        activeLinks = $(event.target)
+        @_setActiveState(activeLinks)
+        @_swapImg(activeLinks)
+        @_updateConfigSubTotal()
+
+
+  eventSelectPreset: ->
+    if $("#Store").length > 0
+      $(@storeConfigPresetClass).click (event)=>
+        event.preventDefault()
+        activeLink = $(event.target)
+        [worldId,eyeId] = $(activeLink).data('preset').split(" ")
+        worldLink = "a[id='#{worldId}']"
+        eyeLink = "a[id='#{eyeId}']"
+        @_setActiveState([worldLink, eyeLink])
+        @_swapImg([worldLink, eyeLink])
+        @_updateConfigSubTotal()
+    
+
+  eventRenderCart: ->
+    if $(@cartPage).length > 0
+      for k,v of LocalStorage.dict()
+        # product, id, specs, price, quantity
+        newRow = "<tr id='#{ k }'><td>#{ v['product'] }#{ v['specs'] }</td><td>#{ v['quantity'] }</td><td>#{ v['price'] }</td><td>X</td></tr>"
+        $("#Cart-items tbody").append(newRow)
 
   _setActiveState: (links)->
     for link in links
@@ -136,6 +159,4 @@ class PupilStore
 
 
 $(document).ready ->
-  # update
-  # if $("#Store").length > 0
   s = new PupilStore
