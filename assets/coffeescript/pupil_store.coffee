@@ -81,8 +81,9 @@ class PupilStore
           "quantity": 1
         }
         # save to local storage & update the nav counter
-        @saveToCart(key, item)
+        @saveToCart(JSON.stringify(key), item)
         @eventUpdateCartNavCounter()
+        console.log LocalStorage.raw()
 
   eventClearCart: ->
     @clearCartButton.click (event)=>
@@ -91,7 +92,8 @@ class PupilStore
       @eventUpdateCartNavCounter()
 
   eventUpdateCartNavCounter: ->
-    $(@cartNavCounter).text("#{ LocalStorage.length() }")
+    counter = if LocalStorage.length() > 0 then LocalStorage.length() else ""
+    $(@cartNavCounter).text("#{ counter }")
 
   eventUpdateConfig: ->
     if $("#Store").length > 0
@@ -125,12 +127,12 @@ class PupilStore
         # product, id, specs, price, quantity
         newRow = "<tr id='#{ k }'><td><p>#{ v['product'] }</p><p>#{ v['specs'] }</p></td><td>#{ v['quantity'] }</td><td>#{ v['price'] }</td><td class='Cart-removeItem'>X</td></tr>"
         $("#Cart-items tbody").append(newRow).addClass("Cart-orderItem")
-      total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else 0
-      $("td[id='CartSum--total'").text("#{ total }")
+      total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else ""
+      $("td[id='CartSum--total']").text("#{ total }")
 
   eventRemoveCartItem: ->
     if $(@cartPage).length > 0
-      $("td[class='Cart-removeItem'").click (event)=>
+      $("td[class='Cart-removeItem']").click (event)=>
         event.preventDefault()
         item = $(event.target)
         tr = $(item).closest('tr')
@@ -141,8 +143,8 @@ class PupilStore
           $(tr).remove()
 
         # update total
-        total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else 0
-        $("td[id='CartSum--total'").text("#{ total }")
+        total = if LocalStorage.length() > 0 then @_sumAll((v['price'] for v in LocalStorage.values())) else ""
+        $("td[id='CartSum--total']").text("#{ total }")
      
         # update header
         @eventUpdateCartNavCounter()
