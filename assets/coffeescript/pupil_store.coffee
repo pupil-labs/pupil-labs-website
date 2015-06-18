@@ -156,7 +156,7 @@ class PupilStore
         LocalStorage.expire($(row).attr('id'))
         
         # remove the row
-        $(container).fadeOut 500, ->
+        $(container).slideUp 400, ->
           $(container).remove()
 
         # update total
@@ -230,7 +230,6 @@ class PupilStore
     id += Math.random().toString(36).substr(2) while id.length < len
     id.substr 0, len
     return id
-
 
 
 $(document).ready ->
