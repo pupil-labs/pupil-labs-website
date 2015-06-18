@@ -5,19 +5,6 @@ block main
   div(id="Store")
     - var page_data = contents.store['index.json']
 
-    //- Presets -- pulled from JSON
-    //- here we sort the data in pupil-presets by the order key
-    - var config_data = contents.store.products['pupil-presets.json'].metadata
-    - var config_presets = _.chain(config_data).sortBy(function(item){
-    -  return item['order']; 
-    - }).value()
-    section.Store-presets
-      h2.u-textCenter Pupil Presets
-      ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--justifySpaceAround
-        each item in config_presets.slice(0,4)
-          li.Store-nav-item 
-            a(role="button" href="#" class="Store-nav-link Store-nav-link--preset" data-preset=item.world+" "+item.eye) #{ item.label } 
-
     //- Configurator
     include includes/configurator
 
@@ -34,5 +21,5 @@ block main
             div.Feature-figure
               img(class="Feature-image" src="http://placehold.it/800/444444")
               p #{ item.label }
-              a(role="button" class="AddToCart" href="#" data-cost=item.cost data-id=item.id data-specs=item.specs data-product=item.product_type) Add to cart
+              a(role="button" class="AddToCart button-flex" href="#" data-cost=item.cost data-id=item.id data-specs=item.specs data-product=item.product_type) Add to cart
 

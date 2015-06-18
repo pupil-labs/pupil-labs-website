@@ -9,7 +9,7 @@ class PupilStore
     @storeConfigClass = "StoreConfig"
     @storeConfigSelector = "a[class^='#{ @storeConfigClass}-']"
     @storeConfigActiveClass = "StoreConfig--state-active"
-    @addToCartClass = "a[class='AddToCart']"
+    @addToCartClass = "a[class^='AddToCart']"
     @clearCartClass = "a[id='StoreConfig-clearCart']"
     @addToCartButton = $(@addToCartClass)
     @clearCartButton = $(@clearCartClass)
