@@ -1,12 +1,15 @@
 #Cart
 	// nothing here - placeholder for jQuery
+	padding 1em 1.75em
 		
-table#Cart-table
+#Cart-table
 	width 100%
-	padding 1.5em
-	border-spacing 0
-	
+	// padding 1.5em	
 
+.Cart-container
+	margin-bottom .8em
+	border-bottom 1px solid gray
+	
 .Cart-items--3of5
 	width (3/5)*100%
 	text-align left
@@ -15,11 +18,11 @@ table#Cart-table
 	width (1/5)*100%
 	text-align left
 
-.CartSum
+#CartSum
 	// nothing here - placeholder for jQuery
 
-.CartSum--total
-.CartSum--label
+#CartSum--total
+#CartSum--label
 	font-weight 700
 	padding-top 1.5em
 	
@@ -27,14 +30,11 @@ tr.Cart-orderItem td
 	border-bottom 1px solid black
 	
 .Cart-removeItem
-	background white
-	transition background .3s ease-in-out
+	transition color .3s ease-in-out
 
 	&:hover
-		background red
 		cursor pointer
-		color white
-		border-bottom 1px solid black
+		color red
 
 .Cart-containerTriangle
 	position relative
@@ -55,3 +55,6 @@ tr.Cart-orderItem td
 	border-style solid
 	border-width 10px 10px 0px 10px
 	border-color #000000 transparent transparent transparent
+	
+#Cart-empty
+	// nothing here

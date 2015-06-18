@@ -122,42 +122,64 @@ class PupilStore
 
   eventRenderCart: ->
     if $(@cartPage).length > 0
-      for k,v of LocalStorage.dict()
-        # product, id, specs, price, quantity
-        newRow = "<tr class='Cart-orderItem' id='#{ k }'>
-                    <td rowspan='2'><p>#{ v['product'] }</p><p>#{ v['specs'] }</p></td>
-                    <td rowspan='2' class='u-textCenter'>#{ v['quantity'] }</td>
-                    <td class='u-textCenter'>+</td>
-                    <td rowspan='2' class='u-textCenter'>€ #{ v['price'] }</td>
-                    <td rowspan='2' class='Cart-removeItem u-textCenter'>X</td>
-                  </tr>
-                  <tr>
-                    <td class='u-textCenter'>-</td>
-                  </tr>"
-        $("#Cart-table tbody").append(newRow)
-      [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
-      $("td[class^='CartSum--total']").text("#{ totalPrice }")
-      $("td[class^='CartSum--label']").text("#{ label }")
+      if LocalStorage.length() > 0
+        # remove empty cart text
+        $("#Cart-empty").hide()
+        $("#Cart-table").show()
+        for k,v of LocalStorage.dict()
+          # product, id, specs, price, quantity
+          newRow = "<div class='Cart-container'>
+                    <div class='Grid Grid--center' id='#{ k }'>
+                        <div class='Grid-cell--5of8'>
+                          <p>#{ v['product'] }</p>
+                          <p>#{ v['specs'] }</p>
+                        </div>
+                        <div class='Grid-cell--1of8 u-textCenter'>
+                          <p>#{ v['quantity'] }</p>
+                        </div>
+                        <div class='Grid-cell--1of8 u-textCenter'>
+                          <p>#{ v['price'] }</p>
+                        </div>  
+                        <div class='Cart-removeItem Grid-cell--1of8 u-textCenter'>
+                          <p>X</p>
+                        </div>  
+                      </div>
+                      </div>"
+          $("#Cart-table").after(newRow)
+          # $("#Cart-table tbody").append(newRow)
+        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
+        $("div[id='CartSum--label']").text("#{ label }")
+        $("div[id='CartSum--total']").text("#{ totalPrice }")
+      else
+        # hide cart table
+        # display message with link back to the store
+        $("#Cart-empty").show()
+        $("#Cart-table").hide()
 
   eventRemoveCartItem: ->
     if $(@cartPage).length > 0
-      $("td[class^='Cart-removeItem']").click (event)=>
+      $("div[class~='Cart-removeItem']").click (event)=>
         event.preventDefault()
         item = $(event.target)
-        tr = $(item).closest('tr')
-        LocalStorage.expire($(tr).attr('id'))
+        row = $(item).closest('.Grid')
+        container = $(row).closest('.Cart-container')
+        LocalStorage.expire($(row).attr('id'))
         
         # remove the row
-        $(tr).fadeOut 300, ->
-          $(tr).remove()
+        $(container).fadeOut 500, ->
+          $(container).remove()
 
         # update total
         [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
-        $("td[class^='CartSum--total']").text("#{ totalPrice }")
-        $("td[class^='CartSum--label']").text("#{ label }")
+        $("div[id='CartSum--label']").text("#{ label }")
+        $("div[id='CartSum--total']").text("#{ totalPrice }")
 
         # update header
         @eventUpdateCartNavCounter()
+        if LocalStorage.length() < 1
+          # remove empty cart text
+          $("#Cart-table").hide()
+          $("#Cart-empty").show()
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
