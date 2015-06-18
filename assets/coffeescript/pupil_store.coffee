@@ -128,6 +128,14 @@ class PupilStore
         $("#Cart-table").show()
         for k,v of LocalStorage.dict()
           # product, id, specs, price, quantity
+          # grid
+          #   gridcell--1of8
+          #     grid
+          #       gridcell--1of2
+          #       gridcell--1of2
+          #         grid
+          #           gridcell-column
+          #           gridcell-column
           newRow = "<div class='Cart-container'>
                     <div class='Grid Grid--center' id='#{ k }'>
                         <div class='Grid-cell--5of8'>
@@ -135,10 +143,20 @@ class PupilStore
                           <p>#{ v['specs'] }</p>
                         </div>
                         <div class='Grid-cell--1of8 u-textCenter'>
-                          <p>#{ v['quantity'] }</p>
+                          <div class='Grid Grid--center'>
+                            <div class='Grid-cell--1of2'>
+                              <p>#{ v['quantity'] }</p>
+                            </div>
+                            <div class='Grid-cell--1of2'>
+                              <div class='Grid Grid-column'>
+                                <div class='Grid-cell Cart-plusQuant'><p class='Cart--upTriangle'></p></div>
+                                <div class='Grid-cell Cart-minusQuant'><p class='Cart--downTriangle'></p></div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                         <div class='Grid-cell--1of8 u-textCenter'>
-                          <p>#{ v['price'] }</p>
+                          <p>€ #{ v['price'] }</p>
                         </div>  
                         <div class='Cart-removeItem Grid-cell--1of8 u-textCenter'>
                           <p>X</p>

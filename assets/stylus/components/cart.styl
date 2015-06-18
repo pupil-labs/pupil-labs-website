@@ -46,7 +46,11 @@ tr.Cart-orderItem td
 	height 0
 	border-style solid
 	border-width 0px 10px 10px 10px
-	border-color transparent transparent #000000 transparent
+	border-color transparent transparent rgba(0,0,0,.6) transparent
+	margin 0.25em
+	
+	@media $break-sm
+		border-width 0px 5px 5px 5px
 	
 	
 .Cart--downTriangle
@@ -54,7 +58,11 @@ tr.Cart-orderItem td
 	height 0
 	border-style solid
 	border-width 10px 10px 0px 10px
-	border-color #000000 transparent transparent transparent
+	border-color rgba(0,0,0,.6) transparent transparent transparent
+	margin 0.25em
+	
+	@media $break-sm
+		border-width 5px 5px 0px 5px
 	
 #Cart-empty
 	// nothing here
