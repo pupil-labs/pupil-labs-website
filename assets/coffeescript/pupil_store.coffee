@@ -153,7 +153,7 @@ class PupilStore
       else
         # hide cart table
         # display message with link back to the store
-        $("#Cart-empty").show()
+        # $("#Cart-empty").show()
         $("#Cart-table").hide()
 
   eventRemoveCartItem: ->
@@ -178,8 +178,8 @@ class PupilStore
         @eventUpdateCartNavCounter()
         if LocalStorage.length() < 1
           # remove empty cart text
-          $("#Cart-table").hide()
-          $("#Cart-empty").show()
+          $("#Cart-table").hide 600, ->
+            $("#Cart-empty").fadeIn(1000)
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
