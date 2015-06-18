@@ -40,8 +40,8 @@ section.Grid.Grid--1of2
         li.Store-nav-item
           a(role="button" class=itemClass id=eye.id href=eye.image_url data-id=eye.id data-specs=eye.specs data-cost=eye.cost)= eye.label
       hr
-      h3 Sub Total
-      p(class="StoreConfig-subTotal")
+      div
+        h3 Configuration Cost = #[p(class="StoreConfig-subTotal" style="display: inline;")]
       a(role="button" class="AddToCart" href="#" data-product="pupil") Add to cart
       br
       a(role="button" id="StoreConfig-clearCart" href="#") Clear Cart

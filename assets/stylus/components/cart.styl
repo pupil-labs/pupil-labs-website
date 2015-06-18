@@ -6,6 +6,9 @@
 	width 100%
 	// padding 1.5em	
 
+.Cart-row
+	// nothing here - placeholder for JQuery
+
 .Cart-container
 	margin-bottom .8em
 	border-bottom 1px solid gray
@@ -41,28 +44,41 @@ tr.Cart-orderItem td
 	height 100%
 	display block
 
-.Cart--upTriangle
+.Cart--triangle-up
 	width 0
 	height 0
 	border-style solid
 	border-width 0px 10px 10px 10px
 	border-color transparent transparent rgba(0,0,0,.6) transparent
 	margin 0.25em
+	transition border-color .3s ease-in-out
 	
 	@media $break-sm
 		border-width 0px 5px 5px 5px
 	
 	
-.Cart--downTriangle
+.Cart--triangle-down
 	width 0
 	height 0
 	border-style solid
 	border-width 10px 10px 0px 10px
 	border-color rgba(0,0,0,.6) transparent transparent transparent
 	margin 0.25em
+	transition border-color .3s ease-in-out
 	
 	@media $break-sm
 		border-width 5px 5px 0px 5px
 	
 #Cart-empty
 	// nothing here
+		
+.Cart-itemQuant--increment
+
+	&:hover
+		cursor pointer
+		>p.Cart--triangle-up
+			border-color transparent transparent rgba(255,0,0,1) transparent
+		>p.Cart--triangle-down
+			border-color rgba(255,0,0,1) transparent transparent transparent
+
+

@@ -19,6 +19,7 @@ class PupilStore
     @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
     @storeConfigPresetClass = "a[class='Store-nav-link Store-nav-link--preset']"
     ) ->
+      @eventStorePageInit()
       @eventAddToCart()
       @eventClearCart()
       @eventUpdateCartNavCounter()
@@ -26,32 +27,11 @@ class PupilStore
       @eventSelectPreset()
       @eventRenderCart()
       @eventRemoveCartItem()
+      @eventUpdateCartQuantity()
   
-  getItemInCart: (key)->
-    # check if local storage exists
-    try
-      return JSON.parse(LocalStorage.get(key))
-    catch e 
-      console.log "Nothing in the cart, can't get items."
-      return {}
-  
-  getValuesInCart: ->
-    LocalStorage.values()
-
-  saveToCart: (key,value)->
-    try
-      LocalStorage.set(key, value)
-    catch e
-      console.log "Unable to add item to cart"
-    
-  emptyCart: (key)->
-    try 
-      LocalStorage.expire(key)
-    catch e
-      console.log "Nothing in the cart to be removed."
-
-  removeFromCart: (key,productId)->
-    LocalStorage.expire(key)
+  eventStorePageInit: ->
+    if $(@storePage).length > 0
+      @_updateConfigSubTotal()
 
   eventAddToCart: ->
     if $(@storePage).length > 0
@@ -128,16 +108,8 @@ class PupilStore
         $("#Cart-table").show()
         for k,v of LocalStorage.dict()
           # product, id, specs, price, quantity
-          # grid
-          #   gridcell--1of8
-          #     grid
-          #       gridcell--1of2
-          #       gridcell--1of2
-          #         grid
-          #           gridcell-column
-          #           gridcell-column
           newRow = "<div class='Cart-container'>
-                    <div class='Grid Grid--center' id='#{ k }'>
+                    <div class='Grid Grid--center Cart-row' id='#{ k }'>
                         <div class='Grid-cell--5of8'>
                           <p>#{ v['product'] }</p>
                           <p>#{ v['specs'] }</p>
@@ -145,12 +117,12 @@ class PupilStore
                         <div class='Grid-cell--1of8 u-textCenter'>
                           <div class='Grid Grid--center'>
                             <div class='Grid-cell--1of2'>
-                              <p>#{ v['quantity'] }</p>
+                              <p class='Cart-itemQuant'>#{ v['quantity'] }</p>
                             </div>
                             <div class='Grid-cell--1of2'>
                               <div class='Grid Grid-column'>
-                                <div class='Grid-cell Cart-plusQuant'><p class='Cart--upTriangle'></p></div>
-                                <div class='Grid-cell Cart-minusQuant'><p class='Cart--downTriangle'></p></div>
+                                <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
+                                <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
                               </div>
                             </div>
                           </div>
@@ -165,7 +137,7 @@ class PupilStore
                       </div>"
           $("#Cart-table").after(newRow)
           # $("#Cart-table tbody").append(newRow)
-        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
+        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
         $("div[id='CartSum--label']").text("#{ label }")
         $("div[id='CartSum--total']").text("#{ totalPrice }")
       else
@@ -178,8 +150,8 @@ class PupilStore
     if $(@cartPage).length > 0
       $("div[class~='Cart-removeItem']").click (event)=>
         event.preventDefault()
-        item = $(event.target)
-        row = $(item).closest('.Grid')
+        item = $(event.currentTarget)
+        row = $(item).closest('.Cart-row')
         container = $(row).closest('.Cart-container')
         LocalStorage.expire($(row).attr('id'))
         
@@ -188,7 +160,7 @@ class PupilStore
           $(container).remove()
 
         # update total
-        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
+        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
         $("div[id='CartSum--label']").text("#{ label }")
         $("div[id='CartSum--total']").text("#{ totalPrice }")
 
@@ -198,6 +170,32 @@ class PupilStore
           # remove empty cart text
           $("#Cart-table").hide 600, ->
             $("#Cart-empty").fadeIn(1000)
+
+  eventUpdateCartQuantity: ->
+    if $(@cartPage).length > 0
+      $("div[class~='Cart-itemQuant--increment']").click (event)=>
+        event.preventDefault()
+        item = $(event.currentTarget)
+        sign = $(item).attr('class').split(' ').pop().split('-').pop()
+
+        row = $(item).closest('.Cart-row')
+        numDisplay = $(row).find('.Cart-itemQuant')
+        key = $(row).attr('id')
+
+        # get object from local storage
+        order = JSON.parse(LocalStorage.get(key))
+        # update quantity 
+        order['quantity'] = if sign is 'plus' then order['quantity'] += 1 else if order['quantity'] > 1 then order['quantity'] -= 1 else 1
+
+        # write quantity back to storage
+        LocalStorage.set(key,JSON.stringify(order))
+
+        # update the display text
+        $(numDisplay).text("#{ order['quantity'] }")
+
+        # update subtotal 
+        totalPrice = if LocalStorage.length() > 0 then "€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())) else ""
+        $("div[id='CartSum--total']").text("#{ totalPrice }")
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
@@ -224,6 +222,7 @@ class PupilStore
 
   _updateConfigSubTotal: ->
     subTotal = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass])
+    console.log subTotal
     $(@configSubTotalClass).text("€ " + subTotal)
 
   _uniqueId: (len=6)->
