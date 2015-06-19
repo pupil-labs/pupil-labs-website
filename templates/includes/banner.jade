@@ -1,0 +1,6 @@
+- var d = bannerData
+div.Banner-container
+  div.Banner-item.u-textCenter
+    each v,k in d
+      - var bannerItem = (k == 'title' ? "<h1 class='Banner-title'>"+v+"</h1>" : "<h2 class='Banner-subtitle'>"+v+"</h2>")
+      | !{ bannerItem }

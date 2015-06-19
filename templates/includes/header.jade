@@ -3,8 +3,12 @@ header.Site-header.Header
   nav(class="Header-nav")
     ul
       each url, title in contents.menu['header-nav.json'].metadata
-        - var navClass = (title === name ? "Nav-list-item active" : "Nav-list-item")
+        - var pageTitle = "none"
+        - if (typeof(page) !== 'undefined'){
+        -   pageTitle = page.title
+        - }
+        - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Nav-link")
         - var navId = (title === "Cart" ? "Nav-cart" : "")
         - var supTag = (title === "Cart" ? "<sup class=Nav-cart-itemCount></sup>" : "<sup></sup>")
-        li(class=navClass)
-          a(href=url id=navId class="Nav-link") #{ title } !{supTag}
+        li.Nav-list-item
+          a(href=url id=navId class=navState) #{ title } !{supTag}

@@ -3,30 +3,30 @@ extends layout
 block main
   div(id="Cart")
     //- Title block
-    - var page_data = contents.cart['index.json']
-    //- include includes/title
+    //- - var page_data = contents.cart['index.json']
 
     //- |---------Item---------|---Quantity---|---Price---|---Remove---|
     //- | Pupil description    |   ##  | +/-  |   xx EUR  |      X     |
     //-            3/5                 1/5          1/5         1/5
-    div(id="Cart-empty")
-      h1.u-textCenter It looks like your cart is empty...
-      h2.u-textCenter Go to the #[a(class="u-linkAttention" href="/store") store] to add items.  
-    div(class="Grid" id="Cart-table")
-      div.Grid-cell--5of8.u-textCenter 
-        h3.Grid-cell--header Item
-      div.Grid-cell--1of8.u-textCenter 
-        h3.Grid-cell--header Quantity
-      div.Grid-cell--1of8.u-textCenter
-        h3.Grid-cell--header Price
-      div.Grid-cell--1of8.u-textCenter 
-        h3.Grid-cell--header Remove
-    //- div(class="Grid" data-id="cart-row")
-      //- jquery will fill this in
-    div(id="CartSum" class="Grid")
-      div(class="Grid-cell--5of8" id="CartSum--label")
-      div(class="Grid-cell--1of8")
-      div(class="Grid-cell--1of8 u-textCenter" id="CartSum--total")
+    div(class="Banner-container Banner--gradientBkg" id="Cart-empty")
+      div.Banner-item.u-textCenter
+        h1.Banner-title Your cart is empty...
+        h2.Banner-subtitle Go to the #[a(class="u-linkAttention" href="/store") store] to add items.  
+    div.Cart-container
+      div(class="Grid" id="Cart-table")
+        div.Grid-cell--5of8.u-textCenter 
+          h3.Grid-cell--header Item
+        div.Grid-cell--1of8.u-textCenter 
+          h3.Grid-cell--header Quantity
+        div.Grid-cell--1of8.u-textCenter
+          h3.Grid-cell--header Price
+        div.Grid-cell--1of8.u-textCenter 
+          h3.Grid-cell--header Remove
+        //- jquery will fill this in
+      div(id="CartSum" class="Grid")
+        div(class="Grid-cell--5of8" id="CartSum--label")
+        div(class="Grid-cell--1of8")
+        div(class="Grid-cell--1of8 u-textCenter" id="CartSum--total")
 
 
 

@@ -4,15 +4,19 @@ block main
   //- Title block
   div(id="Store")
     - var page_data = contents.store['index.json']
+    include includes/title
 
     //- Configurator
     include includes/configurator
 
     //- Additional products
     //- TODO - this grid should have a gutter between images and outsides
-    section.Grid.Grid--full
-      div.Grid-cell
-        h2.Feature-subtitle--lg.u-textCenter Additional Products
+    //- section.Grid.Grid--full
+    //-   div.Grid-cell
+    //-     h2.Feature-subtitle--lg.u-textCenter Additional Products
+    - var bannerData = {'title': 'Additional Products','subtitle': "support packages, lenses, computers, and more"}
+    include includes/banner
+
     section.Grid.Grid--1of3
       - var additional_products = contents.store.products['product-list.json'].metadata
       each item in additional_products

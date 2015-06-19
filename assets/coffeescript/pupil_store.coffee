@@ -109,7 +109,7 @@ class PupilStore
         $("#Cart-table").show()
         for k,v of LocalStorage.dict()
           # product, id, specs, price, quantity
-          newRow = "<div class='Cart-container'>
+          newRow = "<div class='Cart-rowContainer'>
                     <div class='Grid Grid--center Cart-row' id='#{ k }'>
                         <div class='Grid-cell--5of8'>
                           <p>#{ v['product'] }</p>

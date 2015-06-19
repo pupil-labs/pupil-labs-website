@@ -1,8 +1,8 @@
 {
-  "title": "Pupil Labs",
-  "subtitle": "accessible open source eye tracking tools",
   "template": "home.jade",
   "filename": "index.html",
+  "title": "Pupil Labs",
+  "subtitle": "accessible open source eye tracking tools",
   "pupil_image": "home/pupil_binocular_high_speed.png",
   "pupil_image_alt": "Pupil Binocular",
   "pupil_title": "Pupil",
