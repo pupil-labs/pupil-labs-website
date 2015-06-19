@@ -17,7 +17,7 @@ class PupilStore
     @eyeConfigActiveClass = "a[class='StoreConfig-eye #{ @storeConfigActiveClass }']"
     @configSubTotalClass = "p[class='StoreConfig-subTotal']"
     @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
-    @storeConfigPresetClass = "a[class='Store-nav-link Store-nav-link--preset']"
+    @storeConfigPresetClass = "a[class='Store-navPreset']"
     ) ->
       @eventStorePageInit()
       @eventAddToCart()
@@ -89,10 +89,11 @@ class PupilStore
 
 
   eventSelectPreset: ->
-    if $("#Store").length > 0
+    if $(@storePage).length > 0
       $(@storeConfigPresetClass).click (event)=>
         event.preventDefault()
         activeLink = $(event.target)
+        console.log activeLink
         [worldId,eyeId] = $(activeLink).data('preset').split(" ")
         worldLink = "a[id='#{worldId}']"
         eyeLink = "a[id='#{eyeId}']"
@@ -202,6 +203,7 @@ class PupilStore
 
   _setActiveState: (links)->
     for link in links
+      console.log link
       # see if it is 'eye' or 'world' or maybe in the future 'other'
       configType = @storeConfigClass + "-" + $(link).attr('id').split('-',1)
       prevSelection = "a[class='#{ configType + " " }#{ @storeConfigActiveClass}']"
@@ -222,7 +224,6 @@ class PupilStore
 
   _updateConfigSubTotal: ->
     subTotal = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass])
-    console.log subTotal
     $(@configSubTotalClass).text("€ " + subTotal)
 
   _uniqueId: (len=6)->

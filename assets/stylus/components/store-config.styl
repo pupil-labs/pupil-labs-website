@@ -1,14 +1,57 @@
+storeConfig-button()
+	display flex
+	flex-wrap nowrap
+	align-items center
+	justify-content center
+	// border-radius 5px
+	border-top 1px solid #ddd
+	border-bottom 1px solid #ddd
+	border-right 1px solid #ddd
+	background transparent
+	padding .5em
+	transition color .3s ease-in-out, background .3s ease-in-out
+	font-family $font-family-sans-serif
+	font-weight 700
+	font-size .9em
+
+	&:hover
+		background #ddd
+		color black
+
+	&:first-child
+		border-left 1px solid #ddd
+
+
 .StoreConfig-world
-	// nothing here yet
-		
+	storeConfig-button()
+
 .StoreConfig-eye
-	// nothing here yet
+	storeConfig-button()			
+
+.Store-navPreset
+	storeConfig-button()
 		
 .StoreConfig--state-active
-	color green
-	
+	background $link-hover-color
+	color #fff
+
 .StoreConfig-subTotal
 	// nothing here yet
 		
 #StoreConfig-addToCart
 	// nothing here yet
+		
+.StoreConfig-rowContainer
+	padding 1em 1em 0  
+	
+.StoreConfig-rowContainer--presets
+	background rgba(255,255,255,1)
+	
+.StoreConfig-rowContainer--world
+	// border-top 1px solid black
+
+
+.StoreConfig-rowContainer--eye
+	// border-top 1px solid black
+	// border-bottom 1px solid black
+
