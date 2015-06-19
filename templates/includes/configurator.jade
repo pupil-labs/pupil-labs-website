@@ -31,7 +31,7 @@ section.Grid.Grid--1of2
       div.StoreConfig-rowContainer.StoreConfig-rowContainer--presets
         div.Grid
           div.Grid-cell.u-textCenter
-            h2 Preset Configurations
+            h3 Preset Configurations
         ul.Grid.Grid--justifyCenter
           each item in config_presets.slice(0,4)
             li.Grid-cell.u-textCenter
@@ -41,7 +41,7 @@ section.Grid.Grid--1of2
       div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--world
         div.Grid
           div.Grid-cell.u-textCenter
-            h2 World Camera
+            h3 World Camera
         ul.Grid.Grid--justifyCenter
           each world in world_cams
             //- 120fps is active by default
@@ -53,7 +53,7 @@ section.Grid.Grid--1of2
       div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--eye
         div.Grid
           div.Grid-cell.u-textCenter
-            h2 Eye Camera
+            h3 Eye Camera
         ul.Grid.Grid--justifyCenter
           each eye in eye_cams
             //- 120fps is active by default
@@ -62,12 +62,12 @@ section.Grid.Grid--1of2
               a(role="button" class=itemClass id=eye.id href=eye.image_url data-id=eye.id data-specs=eye.specs data-cost=eye.cost)= eye.label 
 
     div.Grid
-      div.Grid-cell
-        h3 Configuration Cost = #[p(class="StoreConfig-subTotal" style="display: inline;")]
-    div.Grid
-      div.Grid-cell
-        a(role="button" class="AddToCart button-flex" href="#" data-product="pupil") Add to cart
-      div.Grid-cell
-        a(role="button" id="StoreConfig-clearCart" class="button-flex" href="#") Clear Cart
+      div.Grid-cell.u-textCenter.StoreConfig-rowContainer--cost
+        h4 Configuration Cost: &nbsp;#[p(class="StoreConfig-subTotal" style="display: inline;")]
+    div.Grid.Grid--1of2
+      div.Grid-cell.StoreConfig-rowContainer--cartBtns
+        a(role="button" class="AddToCart Button" href="#" data-product="pupil") Add to cart
+      div.Grid-cell.StoreConfig-rowContainer--cartBtns
+        a(role="button" id="StoreConfig-clearCart" class="Button" href="#") Clear Cart
 
 

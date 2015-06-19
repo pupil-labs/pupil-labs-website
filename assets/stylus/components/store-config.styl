@@ -1,12 +1,12 @@
-storeConfig-button()
+storeConfig-button($stroke=1px)
 	display flex
 	flex-wrap nowrap
 	align-items center
 	justify-content center
-	// border-radius 5px
-	border-top 1px solid #ddd
-	border-bottom 1px solid #ddd
-	border-right 1px solid #ddd
+	border-radius 3px
+	// border-top $stroke solid #ddd
+	// border-bottom $stroke solid #ddd
+	border-right $stroke solid #ddd
 	background transparent
 	padding .5em
 	transition color .3s ease-in-out, background .3s ease-in-out
@@ -18,8 +18,8 @@ storeConfig-button()
 		background #ddd
 		color black
 
-	&:first-child
-		border-left 1px solid #ddd
+	&:last-child
+		border-right 0px solid #ddd
 
 
 .StoreConfig-world
@@ -29,7 +29,7 @@ storeConfig-button()
 	storeConfig-button()			
 
 .Store-navPreset
-	storeConfig-button()
+	storeConfig-button(0px)
 		
 .StoreConfig--state-active
 	background $link-hover-color
@@ -50,8 +50,13 @@ storeConfig-button()
 .StoreConfig-rowContainer--world
 	// border-top 1px solid black
 
+.StoreConfig-rowContainer--cost
+	background darken(rgba(255,255,255,1),10%)
+	padding 1em
 
 .StoreConfig-rowContainer--eye
 	// border-top 1px solid black
-	// border-bottom 1px solid black
+	border-bottom 1px solid #ddd
 
+.StoreConfig-rowContainer--cartBtns
+	padding 1em
