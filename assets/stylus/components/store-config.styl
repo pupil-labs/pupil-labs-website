@@ -48,15 +48,34 @@ storeConfig-button($stroke=1px)
 	background rgba(255,255,255,1)
 	
 .StoreConfig-rowContainer--world
+	border-top 1px solid #ddd
+
+.StoreConfig-rowContainer--eye
 	// border-top 1px solid black
+	border-top 1px solid #ddd
 
 .StoreConfig-rowContainer--cost
 	background darken(rgba(255,255,255,1),10%)
 	padding 1em
 
-.StoreConfig-rowContainer--eye
-	// border-top 1px solid black
-	border-bottom 1px solid #ddd
-
 .StoreConfig-rowContainer--cartBtns
-	padding 1em
+	padding .5em
+	
+.StoreConfig-header
+	padding-bottom .5em
+	
+.TechSpecs
+	text-transform lowercase
+	font-variant small-caps
+
+.TechSpecs--active
+	// jquery only
+
+.TechSpecs-txt--eye
+	text-transform lowercase
+	font-size .8em
+		
+.TechSpecs-txt--world
+	text-transform lowercase
+	font-size .8em
+

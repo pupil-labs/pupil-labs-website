@@ -28,6 +28,7 @@ class PupilStore
       @eventRenderCart()
       @eventRemoveCartItem()
       @eventUpdateCartQuantity()
+      @eventShowTechSpecs()
   
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -93,7 +94,6 @@ class PupilStore
       $(@storeConfigPresetClass).click (event)=>
         event.preventDefault()
         activeLink = $(event.target)
-        console.log activeLink
         [worldId,eyeId] = $(activeLink).data('preset').split(" ")
         worldLink = "a[id='#{worldId}']"
         eyeLink = "a[id='#{eyeId}']"
@@ -198,17 +198,51 @@ class PupilStore
         totalPrice = if LocalStorage.length() > 0 then "€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())) else ""
         $("div[id='CartSum--total']").text("#{ totalPrice }")
 
+  eventShowTechSpecs: ->
+    if $(@storePage).length > 0
+      $("a[class='TechSpecs']").click (event)=>
+        event.preventDefault()
+        button = $(event.target)
+        # eye or world from 'id'
+        type = $(button).attr('id').split('-').pop() 
+
+        selection = "a[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
+        specTxt = $(selection).data('specs').toLowerCase()
+        # make append active class to container 
+        element = "p[class='TechSpecs-txt--#{ type }']"       
+
+        if $(button).hasClass("TechSpecs--active")
+          $(element).fadeOut(400)
+          $(button).removeClass("TechSpecs--active")
+          $(button).text("show technical specs")
+        else
+          $(button).addClass("TechSpecs--active")
+          @_updateSpecTxt(type,specTxt)
+          $(element).fadeIn(400)
+          $(button).text("hide technical specs")
+
+
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
 
   _setActiveState: (links)->
     for link in links
-      console.log link
       # see if it is 'eye' or 'world' or maybe in the future 'other'
-      configType = @storeConfigClass + "-" + $(link).attr('id').split('-',1)
+      type = $(link).attr('id').split('-',1)
+      configType = @storeConfigClass + "-" + type
       prevSelection = "a[class='#{ configType + " " }#{ @storeConfigActiveClass}']"
       $(prevSelection).removeClass("#{ @storeConfigActiveClass }")
       $(link).addClass("#{ @storeConfigActiveClass }")
+      @_updateSpecTxt(type,$(link).data('specs'))
+
+  _updateSpecTxt: (type,txt)->
+    button = ".TechSpecs"
+    selector = "p[class='TechSpecs-txt--#{ type }']"
+    if $(button).hasClass("TechSpecs--active")
+      console.log "active class"
+      $(selector).text("#{ txt }")
+    else
+      $(selector).text("#{ txt }").hide()
 
   _swapImg: (links)->
     for link in links

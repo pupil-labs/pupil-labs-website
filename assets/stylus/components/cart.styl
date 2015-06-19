@@ -40,7 +40,7 @@ tr.Cart-orderItem td
 
 	&:hover
 		cursor pointer
-		color red
+		color complement($link-hover-color)
 
 .Cart-containerTriangle
 	position relative
@@ -81,8 +81,8 @@ tr.Cart-orderItem td
 	&:hover
 		cursor pointer
 		>p.Cart--triangle-up
-			border-color transparent transparent rgba(255,0,0,1) transparent
+			border-color transparent transparent complement($link-hover-color) transparent
 		>p.Cart--triangle-down
-			border-color rgba(255,0,0,1) transparent transparent transparent
+			border-color complement($link-hover-color) transparent transparent transparent
 
 
