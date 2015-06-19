@@ -153,7 +153,7 @@ class PupilStore
         event.preventDefault()
         item = $(event.currentTarget)
         row = $(item).closest('.Cart-row')
-        container = $(row).closest('.Cart-container')
+        container = $(row).closest('.Cart-rowContainer')
         LocalStorage.expire($(row).attr('id'))
         
         # remove the row
