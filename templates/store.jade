@@ -17,13 +17,14 @@ block main
     - var bannerData = {'title': 'Additional Products','subtitle': "support packages, lenses, computers, and more"}
     include includes/banner
 
-    section.Grid.Grid--1of3
-      - var additional_products = contents.store.products['product-list.json'].metadata
-      each item in additional_products
-        div.Grid-cell
-          div.Feature
-            div.Feature-figure
-              img(class="Feature-image" src="http://placehold.it/800/444444")
-              p #{ item.label }
-              a(role="button" class="AddToCart button-flex" href="#" data-cost=item.cost data-id=item.id data-specs=item.specs data-product=item.product_type) Add to cart
+    section.Store-wrapper
+      div.Grid.Grid--gutters.Grid--1of3
+        - var additional_products = contents.store.products['product-list.json'].metadata
+        each item in additional_products
+          div.Grid-cell
+            div.Feature
+              div.Feature-figure
+                img(class="Feature-image" src="http://placehold.it/800/444444")
+                p #{ item.label }
+                a(role="button" class="AddToCart button-flex" href="#" data-cost=item.cost data-id=item.id data-specs=item.specs data-product=item.product_type) Add to cart
 
