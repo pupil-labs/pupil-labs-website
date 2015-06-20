@@ -45,12 +45,15 @@ a
 	text-decoration $link-text-decoration
 	transition color .4s ease
 	
+	&:focus
+		tab-focus()
+
+
+.no-touch a	
 	&:hover
 		color $link-hover-color
 		text-decoration $link-hover-decoration
-	
-	&:focus
-		tab-focus()
+
 		
 // Images
 

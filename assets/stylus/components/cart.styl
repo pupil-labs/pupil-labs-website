@@ -38,9 +38,16 @@ tr.Cart-orderItem td
 	user-select none
 	transition color .3s ease-in-out
 
-	&:hover
+	&:active
 		cursor pointer
 		color complement($link-hover-color)
+
+.no-touch
+	.Cart-removeItem
+		&:hover
+			cursor pointer
+			color complement($link-hover-color)
+
 
 .Cart-containerTriangle
 	position relative
@@ -78,11 +85,20 @@ tr.Cart-orderItem td
 .Cart-itemQuant--increment
 	user-select none
 
-	&:hover
+	&:active
 		cursor pointer
 		>p.Cart--triangle-up
 			border-color transparent transparent complement($link-hover-color) transparent
 		>p.Cart--triangle-down
 			border-color complement($link-hover-color) transparent transparent transparent
 
+
+.no-touch
+	.Cart-itemQuant--increment
+		&:hover
+			cursor pointer
+			>p.Cart--triangle-up
+				border-color transparent transparent complement($link-hover-color) transparent
+			>p.Cart--triangle-down
+				border-color complement($link-hover-color) transparent transparent transparent
 

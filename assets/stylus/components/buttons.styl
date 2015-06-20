@@ -15,10 +15,10 @@
 	font-size 1em
 	
 	margin-top 1.5em
+	
+	&:active
+		background complement($link-hover-color)
 
-	&:hover
-		background $link-hover-color
-		color #fff
 		
 .Button
 	display flex
@@ -34,18 +34,19 @@
 	font-size 1em
 	padding 1em .1em
 	
-	&:active
-		background $link-hover-color
-		color #fff
 
 	
 .Button--cart
 	border-color #fff
 	background rgba(255,255,255,.8)
 
-	&:hover
-		background $link-hover-color
-		color #fff	
 	&:active
 		background complement($link-hover-color)
 
+.no-touch
+	.button-flex
+	.Button
+	.Button--cart
+		&:hover
+			background $link-hover-color
+			color #fff

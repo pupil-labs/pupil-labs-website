@@ -14,13 +14,9 @@ storeConfig-button($stroke=1px)
 	font-weight 700
 	font-size .9em
 
-	&:hover
-		background #ddd
-		color black
-
 	&:last-child
 		border-right 0px solid #ddd
-
+		
 
 .StoreConfig-world
 	storeConfig-button()
@@ -34,6 +30,14 @@ storeConfig-button($stroke=1px)
 .StoreConfig--state-active
 	background $link-hover-color
 	color #fff
+
+.no-touch
+	.StoreConfig-world
+	.StoreConfig-eye
+	.Store-navPreset
+		&:hover
+			background #ddd
+			color black
 
 .StoreConfig-subTotal
 	// nothing here yet
@@ -74,6 +78,7 @@ storeConfig-button($stroke=1px)
 .TechSpecs-txt--eye
 	text-transform lowercase
 	font-size .8em
+	padding 0em
 		
 .TechSpecs-txt--world
 	text-transform lowercase
