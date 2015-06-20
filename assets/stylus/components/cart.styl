@@ -1,3 +1,7 @@
+$w = 8px
+$smw = $w*.75
+$scale = 1.2
+
 #Cart
 	// nothing here - placeholder for jQuery
 	// padding 1em 1.75em
@@ -36,48 +40,50 @@ tr.Cart-orderItem td
 	
 .Cart-removeItem
 	user-select none
-	transition color .3s ease-in-out
+	transition color .3s ease-in-out, font-size .35s ease-in-out
 
 	&:active
 		cursor pointer
 		color complement($link-hover-color)
+		font-size $font-size-base*$scale
 
 .no-touch
 	.Cart-removeItem
 		&:hover
 			cursor pointer
 			color complement($link-hover-color)
-
+			font-size $font-size-base*$scale
+				
 
 .Cart-containerTriangle
 	position relative
 	height 100%
 	display block
 
+
 .Cart--triangle-up
 	width 0
 	height 0
 	border-style solid
-	border-width 0px 10px 10px 10px
+	border-width 0px $w $w $w
 	border-color transparent transparent rgba(0,0,0,.6) transparent
 	margin 0.25em
-	transition border-color .3s ease-in-out
+	transition border-color .3s ease-in-out, transform .35s ease-in-out
 	
 	@media $break-sm
-		border-width 0px 5px 5px 5px
-	
+		border-width 0px $smw $smw $smw
 	
 .Cart--triangle-down
 	width 0
 	height 0
 	border-style solid
-	border-width 10px 10px 0px 10px
+	border-width $w $w 0px $w
 	border-color rgba(0,0,0,.6) transparent transparent transparent
 	margin 0.25em
-	transition border-color .3s ease-in-out
+	transition border-color .3s ease-in-out, transform .35s ease-in-out
 	
 	@media $break-sm
-		border-width 5px 5px 0px 5px
+		border-width $smw $smw 0px $smw
 	
 #Cart-empty
 	// nothing here
@@ -88,17 +94,29 @@ tr.Cart-orderItem td
 	&:active
 		cursor pointer
 		>p.Cart--triangle-up
+			transform scale($scale)
 			border-color transparent transparent complement($link-hover-color) transparent
 		>p.Cart--triangle-down
+			transform scale($scale)
 			border-color complement($link-hover-color) transparent transparent transparent
-
 
 .no-touch
 	.Cart-itemQuant--increment
-		&:hover
+		&:active
 			cursor pointer
 			>p.Cart--triangle-up
 				border-color transparent transparent complement($link-hover-color) transparent
 			>p.Cart--triangle-down
 				border-color complement($link-hover-color) transparent transparent transparent
+
+
+		&:hover
+			cursor pointer
+			>p.Cart--triangle-up
+				transform scale($scale)
+				border-color transparent transparent $link-hover-color transparent
+			>p.Cart--triangle-down
+				transform scale($scale)
+				border-color $link-hover-color transparent transparent transparent
+
 
