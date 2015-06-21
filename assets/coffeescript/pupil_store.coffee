@@ -108,7 +108,7 @@ class PupilStore
       if LocalStorage.length() > 0
         # remove empty cart text
         $("#Cart-empty").hide()
-        $("#Cart-table").show()
+        $(".Cart-container").show()
         for k,v of LocalStorage.dict()
           # product, id, specs, price, quantity
           newRow = "<div class='Cart-rowContainer'>
@@ -147,7 +147,7 @@ class PupilStore
         # hide cart table
         # display message with link back to the store
         # $("#Cart-empty").show()
-        $("#Cart-table").hide()
+        $(".Cart-container").hide()
 
   eventRemoveCartItem: ->
     if $(@cartPage).length > 0
