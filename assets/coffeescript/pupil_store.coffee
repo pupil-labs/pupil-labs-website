@@ -69,6 +69,8 @@ class PupilStore
     @clearCartButton.click (event)=>
       event.preventDefault()
       LocalStorage.clear()
+      $(".Cart-container").hide 800, ->
+        $("#Cart-empty").fadeIn(1000)
       @eventUpdateCartNavCounter()
 
   eventUpdateCartNavCounter: ->
@@ -169,7 +171,7 @@ class PupilStore
         @eventUpdateCartNavCounter()
         if LocalStorage.length() < 1
           # remove empty cart text
-          $("#Cart-table").hide 600, ->
+          $(".Cart-container").hide 600, ->
             $("#Cart-empty").fadeIn(1000)
 
   eventUpdateCartQuantity: ->
