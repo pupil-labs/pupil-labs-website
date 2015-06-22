@@ -10,7 +10,7 @@ class PupilStore
     @storeConfigSelector = "a[class^='#{ @storeConfigClass}-']"
     @storeConfigActiveClass = "StoreConfig--state-active"
     @addToCartClass = "a[class^='AddToCart']"
-    @clearCartClass = "a[id='StoreConfig-clearCart']"
+    @clearCartClass = "a[id='Cart-clearCart']"
     @addToCartButton = $(@addToCartClass)
     @clearCartButton = $(@clearCartClass)
     @addToCartConfig = $("a[id='AddToCart-config']")
@@ -35,6 +35,7 @@ class PupilStore
       @eventRemoveCartItem()
       @eventUpdateCartQuantity()
       @eventShowTechSpecs()
+      @eventShowOrderForm()
   
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -253,6 +254,12 @@ class PupilStore
           $(element).fadeIn(400)
           $(button).text("hide technical specs")
 
+  eventShowOrderForm: ->
+    if $(@cartPage).length > 0
+      $("#CheckOut").click (event)=>
+        event.preventDefault()
+        button = $(event.target)
+        $(".Cart-orderForm-container").slideDown()
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 

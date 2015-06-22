@@ -13,25 +13,27 @@ block main
         h1.Banner-title Your cart is empty...
         h2.Banner-subtitle Go to the #[a(class="u-linkAttention" href="/store") store] to add items.  
     div.Cart-container
-      div(class="Grid" id="Cart-table")
-        div.Grid-cell--5of8.u-textCenter 
-          h3.Grid-cell--header Item
-        div.Grid-cell--1of8.u-textCenter 
-          h3.Grid-cell--header Quantity
-        div.Grid-cell--1of8.u-textCenter
-          h3.Grid-cell--header €
-        div.Grid-cell--1of8.u-textCenter 
-          h3.Grid-cell--header Remove
-        //- jquery will fill this in
-      div(id="CartSum" class="Grid")
-        div(class="Grid-cell--5of8" id="CartSum--label")
-        div(class="Grid-cell--1of8")
-        div(class="Grid-cell--1of8 u-textCenter" id="CartSum--total")
-        div(class="Grid-cell--1of8 u-textCenter")
-          a(href="#" id='StoreConfig-clearCart' class="Button") Clear Cart
+      div.Cart-table-container
+        div(class="Grid" id="Cart-table")
+          div.Grid-cell--5of8.u-textCenter 
+            h3.Grid-cell--header Item
+          div.Grid-cell--1of8.u-textCenter 
+            h3.Grid-cell--header Quantity
+          div.Grid-cell--1of8.u-textCenter
+            h3.Grid-cell--header €
+          div.Grid-cell--1of8.u-textCenter 
+            h3.Grid-cell--header #[a(href="#" id="Cart-clearCart") Remove]
+          //- jquery will fill this in
+        div(id="CartSum" class="Grid")
+          div(class="Grid-cell--5of8" id="CartSum--label")
+          div(class="Grid-cell--1of8")
+          div(class="Grid-cell--1of8 u-textCenter" id="CartSum--total")
+          div(class="Grid-cell--1of8 u-textCenter")
       div.Cart-checkout
         div(class="Grid" id="Cart-checkout--buttons")
-
- 
+          div.Grid-cell
+            a(href="#" id="CheckOut" class="Button") Place Order
+        div.Cart-orderForm-container
+          include includes/order-form   
 
 
