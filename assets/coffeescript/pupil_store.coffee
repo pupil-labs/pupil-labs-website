@@ -13,6 +13,7 @@ class PupilStore
     @clearCartClass = "a[id='StoreConfig-clearCart']"
     @addToCartButton = $(@addToCartClass)
     @clearCartButton = $(@clearCartClass)
+    @addToCartConfig = $("a[id='AddToCart-config']")
     @worldConfigActiveClass = "a[class='StoreConfig-world #{ @storeConfigActiveClass }']"
     @eyeConfigActiveClass = "a[class='StoreConfig-eye #{ @storeConfigActiveClass }']"
     @licenseConfigClass = 'Store-license'
@@ -42,39 +43,40 @@ class PupilStore
   eventAddToCart: ->
     if $(@storePage).length > 0
       @addToCartButton.click (event)=>
-        if not $(@addToCartButton).hasClass('Button--state-inactive')
           event.preventDefault()
           addToCartBtn = $(event.target)
-          productType = $(addToCartBtn).data('product')
+          if not $(@addToCartBtn).hasClass('Button--state-inactive')
 
-          if productType is "pupil"
-            worldId = $(@worldConfigActiveClass).data('id')
-            eyeId = $(@eyeConfigActiveClass).data('id')
-            id = [worldId,eyeId]
-            price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
-            specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
-            license = $(@licenseConfigActiveClass).data('id')
-          else 
             productType = $(addToCartBtn).data('product')
-            id = [$(addToCartBtn).data('id')]
-            price = $(addToCartBtn).data('cost')
-            specs = $(addToCartBtn).data('specs')
-            license = "not applicable"
-        
-          key = @_uniqueId()
-          item = {
-            "product" : productType
-            "id": id
-            "specs": specs
-            "price": price
-            "quantity": 1
-            "license": license
-          }
-          # save to local storage & update the nav counter
-          LocalStorage.set(key, JSON.stringify(item))
-          @eventUpdateCartNavCounter()
-        else
-          return false
+
+            if productType is "pupil"
+              worldId = $(@worldConfigActiveClass).data('id')
+              eyeId = $(@eyeConfigActiveClass).data('id')
+              id = [worldId,eyeId]
+              price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
+              specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
+              license = $(@licenseConfigActiveClass).data('id')
+            else 
+              productType = $(addToCartBtn).data('product')
+              id = [$(addToCartBtn).data('id')]
+              price = $(addToCartBtn).data('cost')
+              specs = $(addToCartBtn).data('specs')
+              license = "not applicable"
+          
+            key = @_uniqueId()
+            item = {
+              "product" : productType
+              "id": id
+              "specs": specs
+              "price": price
+              "quantity": 1
+              "license": license
+            }
+            # save to local storage & update the nav counter
+            LocalStorage.set(key, JSON.stringify(item))
+            @eventUpdateCartNavCounter()
+          else
+            return false
 
   eventClearCart: ->
     @clearCartButton.click (event)=>
@@ -102,10 +104,10 @@ class PupilStore
         @_updateConfigSubTotal()
 
         if $(@worldConfigActiveClass).data('id') is "world-none" and $(@eyeConfigActiveClass).data('id') is "eye-none"
-          @addToCartButton.addClass('Button--state-inactive')
+          @addToCartConfig.addClass('Button--state-inactive')
         else
-          if @addToCartButton.hasClass('Button--state-inactive')
-            @addToCartButton.removeClass('Button--state-inactive') 
+          if @addToCartConfig.hasClass('Button--state-inactive')
+            @addToCartConfig.removeClass('Button--state-inactive') 
 
 
   eventSelectPreset: ->
