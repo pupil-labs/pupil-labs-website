@@ -26,5 +26,7 @@ block main
               div.Feature-figure
                 img(class="Feature-image" src="http://placehold.it/800/444444")
                 p #{ item.label }
+                p #{ item.specs }
+                p € #{ item.cost }
                 a(role="button" class="AddToCart button-flex" href="#" data-cost=item.cost data-id=item.id data-specs=item.specs data-product=item.product_type) Add to cart
 

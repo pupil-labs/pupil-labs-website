@@ -26,18 +26,27 @@ storeConfig-button($stroke=1px)
 
 .Store-navPreset
 	storeConfig-button(0px)
+	
+.StoreConfig-license
+	storeConfig-button(0px)
 		
 .StoreConfig--state-active
 	background $link-hover-color
 	color #fff
 
+.StoreConfig--state-active--alt
+	background #ddd
+	color black
+
 .no-touch
 	.StoreConfig-world
 	.StoreConfig-eye
 	.Store-navPreset
+	.StoreConfig-license
 		&:hover
 			background #ddd
 			color black
+
 
 .StoreConfig-subTotal
 	// nothing here yet
@@ -49,7 +58,7 @@ storeConfig-button($stroke=1px)
 	padding 1em 1em 0  
 	
 .StoreConfig-rowContainer--presets
-	background rgba(255,255,255,1)
+	background rgba(0,0,0,.025)
 	
 .StoreConfig-rowContainer--world
 	border-top 1px solid #ddd
@@ -58,8 +67,14 @@ storeConfig-button($stroke=1px)
 	// border-top 1px solid black
 	border-top 1px solid #ddd
 
+.StoreConfig-rowContainer--license
+	// background darken(rgba(255,255,255,1),2%)
+	border-top 1px solid #ddd
+	background rgba(0,0,0,.025)
+
 .StoreConfig-rowContainer--cost
 	background darken(rgba(255,255,255,1),10%)
+	border-top 1px solid #ddd
 	padding 1em
 
 .StoreConfig-rowContainer--cartBtns

@@ -71,6 +71,18 @@ section.Grid.Grid--1of2
           div.Grid-cell.TechSpecs--eye
             p.TechSpecs-txt--eye 
 
+      //- Commercial use license
+      div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--license
+        div.Grid
+          div.Grid-cell.u-textCenter 
+            h3.StoreConfig-header License
+        div.Grid
+          div.Grid-cell.Grid-cell--1of2.u-textCenter
+            //- input(type="checkbox" checked="false" id="license-option" value="academic" data-cost='590')
+            a(href="#" role="button" class="StoreConfig-license StoreConfig--state-active--alt") academic use
+          div.Grid-cell.Grid-cell--1of2.u-textCenter
+            a(href="#" role="button" class="StoreConfig-license") commercial use
+
     div.Grid.Grid--1of2.Grid--center.StoreConfig-rowContainer--cost
       div.Grid-cell.u-textCenter
         h4 Configuration Price: &nbsp;#[p(class="StoreConfig-subTotal" style="display: inline;")]

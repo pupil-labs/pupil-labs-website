@@ -139,14 +139,10 @@ class PupilStore
                       </div>
                       </div>"
           $("#Cart-table").after(newRow)
-          # $("#Cart-table tbody").append(newRow)
         [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
         $("div[id='CartSum--label']").text("#{ label }")
         $("div[id='CartSum--total']").text("#{ totalPrice }")
       else
-        # hide cart table
-        # display message with link back to the store
-        # $("#Cart-empty").show()
         $(".Cart-container").hide()
 
   eventRemoveCartItem: ->
