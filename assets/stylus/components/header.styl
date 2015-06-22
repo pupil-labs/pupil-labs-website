@@ -6,13 +6,16 @@
 	max-width 100%
 	width 100%
 	z-index $zindex-navbar
-	position relative
-	// top 0px
-	padding 0.75em 0 0
+	position fixed
+	top 0
+	left 0
+	// height 6.75rem
+	padding 0.5em 0 0
 
 	@media $break-lg
-		padding 1.25em 1.5em
-
+		background linear-gradient(to bottom, rgba(255,255,255,.975), rgba(255,255,255,1))
+		padding .7em 1.5em
+		// height 5rem
 
 	@extend .clearfix
 	

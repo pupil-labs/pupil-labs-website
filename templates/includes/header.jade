@@ -9,6 +9,6 @@ header.Site-header.Header
         - }
         - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Nav-link")
         - var navId = (title === "Cart" ? "Nav-cart" : "")
-        - var supTag = (title === "Cart" ? "<sup class=Nav-cart-itemCount></sup>" : "<sup></sup>")
+        - var supTag = (title === "Cart" ? "<sup class=Nav-cart-itemCount></sup>" : "<sup> </sup>")
         li.Nav-list-item
           a(href=url id=navId class=navState) #{ title } !{supTag}
