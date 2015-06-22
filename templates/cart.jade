@@ -30,10 +30,12 @@ block main
           div(class="Grid-cell--1of8 u-textCenter" id="CartSum--total")
           div(class="Grid-cell--1of8 u-textCenter")
       div.Cart-checkout
-        div(class="Grid" id="Cart-checkout--buttons")
+        div(class="Grid Grid--1of2 Grid--gutters" id="Cart-checkout--buttons")
           div.Grid-cell
-            a(href="#" id="CheckOut" class="Button") Place Order
-        div.Cart-orderForm-container
-          include includes/order-form   
+            a(href="#" id="CheckOut" class="Button Button-checkout") Place Order
+          div.Grid-cell
+            a(href="#" id="CheckOut" class="Button Button-checkout") Request Quote
+      div.Cart-orderForm-container
+        include includes/order-form   
 
 

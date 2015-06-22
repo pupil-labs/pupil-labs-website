@@ -35,14 +35,16 @@
 	padding 1em .1em
 	
 
-	
-.Button--cart
+action_button()
 	border-color transparent
 	background rgba(255,255,255,.8)
 	font-size 1.2em
 
 	&:active
-		background complement($link-hover-color)
+		background complement($link-hover-color)	
+
+.Button--cart
+	action_button()
 
 .Button--state-inactive
 	background darken(rgba(255,255,255,.8),50%)
@@ -52,6 +54,13 @@
 	&:hover
 		transition none
 		hover none
+
+.Button-submit 
+	action_button()
+	width 100%	
+	
+.Button-checkout
+	action_button()
 
 .no-touch
 	.button-flex
