@@ -44,6 +44,16 @@
 	&:active
 		background complement($link-hover-color)
 
+.Button--state-inactive
+	color darken(currentColor,20%)
+	background darken(rgba(255,255,255,.8),50%)
+	pointer-events none
+    cursor default
+   
+	&:hover
+		transition none
+		hover none
+
 .no-touch
 	.button-flex
 	.Button

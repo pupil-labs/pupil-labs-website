@@ -42,36 +42,39 @@ class PupilStore
   eventAddToCart: ->
     if $(@storePage).length > 0
       @addToCartButton.click (event)=>
-        event.preventDefault()
-        addToCartBtn = $(event.target)
-        productType = $(addToCartBtn).data('product')
-
-        if productType is "pupil"
-          worldId = $(@worldConfigActiveClass).data('id')
-          eyeId = $(@eyeConfigActiveClass).data('id')
-          id = [worldId,eyeId]
-          price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
-          specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
-          license = $(@licenseConfigActiveClass).data('id')
-        else 
+        if not $(@addToCartButton).hasClass('Button--state-inactive')
+          event.preventDefault()
+          addToCartBtn = $(event.target)
           productType = $(addToCartBtn).data('product')
-          id = [$(addToCartBtn).data('id')]
-          price = $(addToCartBtn).data('cost')
-          specs = $(addToCartBtn).data('specs')
-          license = "not applicable"
-      
-        key = @_uniqueId()
-        item = {
-          "product" : productType
-          "id": id
-          "specs": specs
-          "price": price
-          "quantity": 1
-          "license": license
-        }
-        # save to local storage & update the nav counter
-        LocalStorage.set(key, JSON.stringify(item))
-        @eventUpdateCartNavCounter()
+
+          if productType is "pupil"
+            worldId = $(@worldConfigActiveClass).data('id')
+            eyeId = $(@eyeConfigActiveClass).data('id')
+            id = [worldId,eyeId]
+            price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
+            specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
+            license = $(@licenseConfigActiveClass).data('id')
+          else 
+            productType = $(addToCartBtn).data('product')
+            id = [$(addToCartBtn).data('id')]
+            price = $(addToCartBtn).data('cost')
+            specs = $(addToCartBtn).data('specs')
+            license = "not applicable"
+        
+          key = @_uniqueId()
+          item = {
+            "product" : productType
+            "id": id
+            "specs": specs
+            "price": price
+            "quantity": 1
+            "license": license
+          }
+          # save to local storage & update the nav counter
+          LocalStorage.set(key, JSON.stringify(item))
+          @eventUpdateCartNavCounter()
+        else
+          return false
 
   eventClearCart: ->
     @clearCartButton.click (event)=>
@@ -98,6 +101,12 @@ class PupilStore
         @_swapImg(activeLinks)
         @_updateConfigSubTotal()
 
+        if $(@worldConfigActiveClass).data('id') is "world-none" and $(@eyeConfigActiveClass).data('id') is "eye-none"
+          @addToCartButton.addClass('Button--state-inactive')
+        else
+          if @addToCartButton.hasClass('Button--state-inactive')
+            @addToCartButton.removeClass('Button--state-inactive') 
+
 
   eventSelectPreset: ->
     if $(@storePage).length > 0
@@ -120,7 +129,6 @@ class PupilStore
         if not $(link).hasClass("#{ @licenseConfigActive }") 
           # remove the active class from the other link
           # add active to self 
-          console.log "i'm here"
           $(@licenseConfigActiveClass).removeClass("#{ @licenseConfigActive }")
           $(link).addClass("#{ @licenseConfigActive }")
           $("p[class='LicenseSpecs-txt']").text($(link).data('specs'))
@@ -279,8 +287,10 @@ class PupilStore
     return sum  
 
   _updateConfigSubTotal: ->
-    subTotal = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
-    $(@configSubTotalClass).text("€ " + subTotal)
+    subTotal = "€ " + @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
+    if $(@worldConfigActiveClass).data('id') is "world-none" and $(@eyeConfigActiveClass).data('id') is "eye-none"
+      subTotal = "Not for sale"  
+    $(@configSubTotalClass).text(subTotal)
 
   _uniqueId: (len=6)->
     id = ""
