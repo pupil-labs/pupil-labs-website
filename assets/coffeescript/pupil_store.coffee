@@ -15,6 +15,10 @@ class PupilStore
     @clearCartButton = $(@clearCartClass)
     @worldConfigActiveClass = "a[class='StoreConfig-world #{ @storeConfigActiveClass }']"
     @eyeConfigActiveClass = "a[class='StoreConfig-eye #{ @storeConfigActiveClass }']"
+    @licenseConfigClass = 'Store-license'
+    @licenseConfigActive = 'StoreConfig--state-active--license'
+    @licenseConfigSelector = "a[class^='#{ @licenseConfigClass }']"
+    @licenseConfigActiveClass = "a[class='#{ @licenseConfigClass } #{ @licenseConfigActive }']"
     @configSubTotalClass = "p[class='StoreConfig-subTotal']"
     @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
     @storeConfigPresetClass = "a[class='Store-navPreset']"
@@ -25,6 +29,7 @@ class PupilStore
       @eventUpdateCartNavCounter()
       @eventUpdateConfig()
       @eventSelectPreset()
+      @eventSelectLicense()
       @eventRenderCart()
       @eventRemoveCartItem()
       @eventUpdateCartQuantity()
@@ -45,13 +50,15 @@ class PupilStore
           worldId = $(@worldConfigActiveClass).data('id')
           eyeId = $(@eyeConfigActiveClass).data('id')
           id = [worldId,eyeId]
-          price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass])
+          price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
           specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
+          license = $(@licenseConfigActiveClass).data('id')
         else 
           productType = $(addToCartBtn).data('product')
           id = [$(addToCartBtn).data('id')]
           price = $(addToCartBtn).data('cost')
           specs = $(addToCartBtn).data('specs')
+          license = "not applicable"
       
         key = @_uniqueId()
         item = {
@@ -60,6 +67,7 @@ class PupilStore
           "specs": specs
           "price": price
           "quantity": 1
+          "license": license
         }
         # save to local storage & update the nav counter
         LocalStorage.set(key, JSON.stringify(item))
@@ -95,13 +103,28 @@ class PupilStore
     if $(@storePage).length > 0
       $(@storeConfigPresetClass).click (event)=>
         event.preventDefault()
-        activeLink = $(event.target)
+        activeLink = $(event.currentTarget)
         [worldId,eyeId] = $(activeLink).data('preset').split(" ")
         worldLink = "a[id='#{worldId}']"
         eyeLink = "a[id='#{eyeId}']"
         @_setActiveState([worldLink, eyeLink])
         @_swapImg([worldLink, eyeLink])
         @_updateConfigSubTotal()    
+
+  eventSelectLicense: ->
+    if $(@storePage).length > 0
+      $("p[class='LicenseSpecs-txt']").text($(@licenseConfigActiveClass).data('specs'))
+      $(@licenseConfigSelector).click (event)=>
+        event.preventDefault()
+        link = $(event.target)
+        if not $(link).hasClass("#{ @licenseConfigActive }") 
+          # remove the active class from the other link
+          # add active to self 
+          console.log "i'm here"
+          $(@licenseConfigActiveClass).removeClass("#{ @licenseConfigActive }")
+          $(link).addClass("#{ @licenseConfigActive }")
+          $("p[class='LicenseSpecs-txt']").text($(link).data('specs'))
+          @_updateConfigSubTotal()
 
   eventRenderCart: ->
     if $(@cartPage).length > 0
@@ -116,6 +139,7 @@ class PupilStore
                         <div class='Grid-cell--5of8'>
                           <p>#{ v['product'] }</p>
                           <p>#{ v['specs'] }</p>
+                          <p>License : #{ v['license'] }</p>
                         </div>
                         <div class='Grid-cell--1of8 u-textCenter'>
                           <div class='Grid Grid--center'>
@@ -255,7 +279,7 @@ class PupilStore
     return sum  
 
   _updateConfigSubTotal: ->
-    subTotal = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass])
+    subTotal = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
     $(@configSubTotalClass).text("€ " + subTotal)
 
   _uniqueId: (len=6)->

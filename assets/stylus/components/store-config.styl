@@ -27,14 +27,14 @@ storeConfig-button($stroke=1px)
 .Store-navPreset
 	storeConfig-button(0px)
 	
-.StoreConfig-license
+.Store-license
 	storeConfig-button(0px)
 		
 .StoreConfig--state-active
 	background $link-hover-color
 	color #fff
 
-.StoreConfig--state-active--alt
+.StoreConfig--state-active--license
 	background #ddd
 	color black
 
@@ -47,9 +47,16 @@ storeConfig-button($stroke=1px)
 			background #ddd
 			color black
 
+.StoreConfig-SubTotal--label
+	color #fff
+	
+	@media $break-sm
+		padding-top 1em 
+		padding-bottom 1em
+
 
 .StoreConfig-subTotal
-	// nothing here yet
+	display inline
 		
 #StoreConfig-addToCart
 	// nothing here yet
@@ -73,9 +80,8 @@ storeConfig-button($stroke=1px)
 	background rgba(0,0,0,.025)
 
 .StoreConfig-rowContainer--cost
-	background darken(rgba(255,255,255,1),10%)
+	background darken(rgba(255,255,255,1),60%)
 	border-top 1px solid #ddd
-	padding 1em
 
 .StoreConfig-rowContainer--cartBtns
 	padding .5em
@@ -83,19 +89,29 @@ storeConfig-button($stroke=1px)
 .StoreConfig-header
 	padding-bottom .5em
 	
-.TechSpecs
+spec_header()
 	text-transform lowercase
 	font-variant small-caps
+
+.TechSpecs
+	spec_header()
+
+.LicenseSpecs
+	spec_header()
 
 .TechSpecs--active
 	// jquery only
 
-.TechSpecs-txt--eye
+spec_txt()
 	text-transform lowercase
 	font-size .8em
 	padding 0em
+
+.TechSpecs-txt--eye
+	spec_txt()
 		
 .TechSpecs-txt--world
-	text-transform lowercase
-	font-size .8em
-
+	spec_txt()
+	
+.LicenseSpecs-txt
+	spec_txt()
