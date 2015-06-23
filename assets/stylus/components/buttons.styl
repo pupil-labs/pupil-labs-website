@@ -20,20 +20,30 @@
 		background complement($link-hover-color)
 
 		
-.Button
+button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
 	display flex
 	align-items center
-	border-radius 5px
-	border 1px solid #ddd
+	border-radius borderRadius
+	border border
 	color currentColor
-	background transparent
+	background bkg
 	justify-content center	
 	transition color .3s ease-in-out,background .3s ease-in-out
 	font-family $font-family-sans-serif
-	font-weight 700
-	font-size 1em
-	padding 1em .1em
+	font-weight fontWeight
+	font-size fontSize
+	padding pad
 	
+
+.Button
+	button()
+	
+.Button-sm
+	cursor pointer
+	button(rgba(255,255,255,.8),.5em,400,.5em .1em,0px,0px)
+
+.Button--state-active
+	background $link-hover-color
 
 action_button()
 	border-color transparent
@@ -58,6 +68,7 @@ action_button()
 
 .Button-submit 
 	action_button()
+	margin-top .75em
 	width 100%	
 	
 .Button-checkout
@@ -66,6 +77,7 @@ action_button()
 .no-touch
 	.button-flex
 	.Button
+	.Button-sm
 	.Button--cart
 		&:hover
 			background $link-hover-color
