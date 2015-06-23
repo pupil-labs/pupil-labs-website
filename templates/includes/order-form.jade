@@ -2,85 +2,86 @@
 - var countryObj = contents.cart['country_list.json'].metadata
 - var countryList = countryObj['countries']
 //- contact
-form
-  div.Grid
-    div.Grid-cell
-      h3 Contact Info
-  div.Grid.Grid--1of3
-    div.Grid-cell
-      label(for="c-email") Contact Email 
-      input(id="c-email" type="email" placeholder="you@domain.com")
-    div.Grid-cell
-      label(for="c-name-first") First Name
-      input(id="c-name-first" type="text" placeholder="First Name")
-    div.Grid-cell
-      label(for="c-name-last") Last Name
-      input(id="c-name-last" type="text" placeholder="Last Name")
-  //- billing
-  div.Grid
-    div.Grid-cell
-      h3 Billing Info
-  div.Grid.Grid--1of3
-    div.Grid-cell
-      label(for="b-name-first") First Name 
-      input(id="b-name-first" type="text" placeholder="First Name")
-    div.Grid-cell
-      label(for="b-name-last") Last Name
-      input(id="b-name-last" type="text" placeholder="Last Name")
-    div.Grid-cell
-      label(for="b-phone") Phone
-      input(id="b-phone" type="text" placeholder="Your phone number")
-  div.Grid.Grid--1of4
-    div.Grid-cell
-      label(for="b-company") Company
-      input(id="b-company" type="text" placeholder="Company or Institution")
-    div.Grid-cell
-      label(for="b-vat-id") EU VAT ID
-      input(id="b-vat-id" type="text" placeholder="EU VAT ID")
-    div.Grid-cell
-      label(for="b-address") Address
-      textarea(id="b-address" placeholder="Your billing address")
-    div.Grid-cell
-      label(for="b-country") Country
-      input(id="b-country" name="country-name" list="country")
-      datalist(id="country")
-        each country in countryList
-          option(value=country['countryName'])
+div.Cart-orderForm-container
+  form
+    div.Grid
+      div.Grid-cell
+        h3 Contact Info
+    div.Grid.Grid--1of3
+      div.Grid-cell
+        //- label(for="c-email") Contact Email 
+        input(class="Form-input Form-input--text" id="c-email" type="email" placeholder="you@domain.com")
+      div.Grid-cell
+        //- label(for="c-name-first") First Name
+        input(class="Form-input Form-input--text" id="c-name-first" type="text" placeholder="First Name")
+      div.Grid-cell
+        //- label(for="c-name-last") Last Name
+        input(class="Form-input Form-input--text" id="c-name-last" type="text" placeholder="Last Name")
+    //- billing
+    div.Grid
+      div.Grid-cell
+        h3 Billing Info
+    div.Grid.Grid--1of3
+      div.Grid-cell
+        //- label(for="b-name-first") First Name 
+        input(class="Form-input Form-input--text" id="b-name-first" type="text" placeholder="First Name")
+      div.Grid-cell
+        //- label(for="b-name-last") Last Name
+        input(class="Form-input Form-input--text" id="b-name-last" type="text" placeholder="Last Name")
+      div.Grid-cell
+        //- label(for="b-phone") Phone
+        input(class="Form-input Form-input--text" id="b-phone" type="text" placeholder="Your phone number")
+    div.Grid.Grid--1of4
+      div.Grid-cell
+        //- label(for="b-company") Company
+        input(class="Form-input Form-input--text" id="b-company" type="text" placeholder="Company or Institution")
+      div.Grid-cell
+        //- label(for="b-vat-id") EU VAT ID
+        input(class="Form-input Form-input--text" id="b-vat-id" type="text" placeholder="EU VAT ID")
+      div.Grid-cell
+        //- label(for="b-address") Address
+        textarea(id="b-address" placeholder="Your billing address")
+      div.Grid-cell
+        //- label(for="b-country") Country
+        input(class="Form-input Form-input--text" id="b-country" name="country-name" list="country")
+        datalist(id="country")
+          each country in countryList
+            option(value=country['countryName'])
 
-  //- billing
-  div.Grid
-    div.Grid-cell
-      h3 Shipping Info
-  div.Grid.Grid--1of2
-    div.Grid-cell
-      a(href='#') Use Billing
-    div.Grid-cell
-      a(href='#') Use Other Address
-    //- the rest is populated by jquery
+    //- billing
+    div.Grid
+      div.Grid-cell
+        h3 Shipping Info
+    div.Grid.Grid--1of2
+      div.Grid-cell
+        a(href='#') Use Billing
+      div.Grid-cell
+        a(href='#') Use Other Address
+      //- the rest is populated by jquery
 
-  //- payment method
-  div.Grid
-    div.Grid-cell
-      h3 Payment Method
-  div.Grid.Grid--1of3
-    div.Grid-cell
-      a(href='#') PayPal & Credit Card
-    div.Grid-cell
-      a(href='#') Transferwise
-    div.Grid-cell
-      a(href='#') Bank Transfer
+    //- payment method
+    div.Grid
+      div.Grid-cell
+        h3 Payment Method
+    div.Grid.Grid--1of3
+      div.Grid-cell
+        a(href='#') PayPal & Credit Card
+      div.Grid-cell
+        a(href='#') Transferwise
+      div.Grid-cell
+        a(href='#') Bank Transfer
 
-  //- notes & submit
-  div.Grid
-    div.Grid-cell
-      h3 Notes
-  div.Grid
-    div.Grid-cell
-      label(for='notes') Additional Notes
-      textarea(id='notes' placeholder="Any additional notes and questions")
-  div.Grid
-    div.Grid-cell.Grid-cell--full.u-textCenter
-      button(type='submit' id="form-submit" class="Button Button--cart Button-submit") Submit
+    //- notes & submit
+    div.Grid
+      div.Grid-cell
+        h3 Notes
+    div.Grid
+      div.Grid-cell
+        //- label(for='notes') Additional Notes
+        textarea(id='notes' placeholder="Any additional notes and questions")
+    div.Grid
+      div.Grid-cell.Grid-cell--full.u-textCenter
+        button(type='submit' id="form-submit" class="Button Button--cart Button-submit") Submit
 
 
 
