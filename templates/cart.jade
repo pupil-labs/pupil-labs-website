@@ -29,12 +29,16 @@ block main
           div(class="Grid-cell--1of8")
           div(class="Grid-cell--1of8 u-textCenter" id="CartSum--total")
           div(class="Grid-cell--1of8 u-textCenter")
-    div.Cart-checkout
-      div(class="Grid Grid--1of2 Grid--gutters" id="Cart-checkout--buttons")
-        div.Grid-cell
-          a(href="#" id="CheckOut" class="Button Button-checkout") Place Order
-        div.Grid-cell
-          a(href="#" id="CheckOut" class="Button Button-checkout") Request Quote
-      include includes/order-form   
+      div.Cart-checkout
+        div(class="Grid" id="Cart-checkout--buttons")
+          div.Grid-cell.Grid-cell--1of2
+            input(id="CheckOut" class="Form-input--radio" type="radio")
+            label(for="CheckOut" class="Button-radio--lg Button--state-active Form-input--radioLabel--lg" id="CheckOut-label") Place Order
+            //- a(href="#" id="CheckOut" class="Button Button-checkout") Place Order
+          div.Grid-cell.Grid-cell--1of2
+            input(id="GetQuote" class="Form-input--radio" type="radio")
+            label(for="GetQuote" class="Button-radio--lg Form-input--radioLabel--lg" id="GetQuote-label") Get Quote
+            //- a(href="#" id="CheckOut" class="Button Button-checkout") Request Quote
+        include includes/order-form   
 
 
