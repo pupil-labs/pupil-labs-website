@@ -23,30 +23,26 @@ div.Cart-orderForm-container
         div.Grid
           div.Grid-cell.Form-header
             h3 Billing Info
-        div.Grid.Grid--gutters.Grid--1of2
-          div.Grid-cell
-            //- label(for="b-name-first") First Name 
-            input(class="Form-input Form-input--text" id="b-name" type="text" placeholder="name")
-          div.Grid-cell
-            //- label(for="b-phone") Phone
-            input(class="Form-input Form-input--text" id="b-phone" type="text" placeholder="phone number")
-        div.Grid.Grid--gutters.Grid--1of2
-          div.Grid-cell
-            //- label(for="b-company") Company
-            input(class="Form-input Form-input--text" id="b-company" type="text" placeholder="company or institution")
-          div.Grid-cell
-            //- label(for="b-vat-id") EU VAT ID
-            input(class="Form-input Form-input--text" id="b-vat-id" type="text" placeholder="EU VAT ID")
-        div.Grid.Grid--gutters.Grid--1of2
-          div.Grid-cell
-            //- label(for="b-address") Address
-            textarea(class="Form-input Form-input--text Form-input--textarea" id="b-address" placeholder="billing address")
-          div.Grid-cell
-            //- label(for="b-country") Country
-            input(class="Form-input Form-input--text" id="b-country" name="country-name" placeholder='country' list="country")
-            datalist(id="country")
-              each country in countryList
-                option(value=country['countryName'])
+        //- wrapper for billing inputs
+        div.Form-billing-container
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b-name" type="text" placeholder="name")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b-phone" type="text" placeholder="phone number")
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b-company" type="text" placeholder="company or institution")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b-vat-id" type="text" placeholder="EU VAT ID")
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="b-address" placeholder="billing address")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b-country" name="country-name" placeholder='country' list="country")
+              datalist(id="country")
+                each country in countryList
+                  option(value=country['countryName'])
 
       //- shipping
       div.Grid-cell
@@ -75,7 +71,7 @@ div.Cart-orderForm-container
               //- input(class="Form-input Form-input--text" id="s-vat-id" type="text" placeholder="EU VAT ID")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              textarea(class="Form-input Form-input--text Form-input--textarea" id="s-address" placeholder="billing address")
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="s-address" placeholder="shipping address")
             div.Grid-cell
               //- input(class="Form-input Form-input--text" id="s-country" name="country-name" placeholder='country' list="country")
               //- datalist(id="country")

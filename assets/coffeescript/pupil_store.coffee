@@ -36,6 +36,7 @@ class PupilStore
       @eventUpdateCartQuantity()
       @eventShowTechSpecs()
       @eventShowOrderForm()
+      @eventCopyBillingToShipping()
       @eventToggleShippingInfo()
   
   eventStorePageInit: ->
@@ -272,6 +273,21 @@ class PupilStore
             $("."+orderFormContainer).slideDown()
             $("."+orderFormContainer).addClass(orderFormActive)
           $('button[id="form-submit"]').text(submitTxt)            
+
+  eventCopyBillingToShipping: ->
+    if $(@cartPage).length > 0
+      $("[id^='b-']").change (event)=>
+        event.preventDefault()
+        field = $(event.target)
+        fieldId = $(field).attr('id')
+        bFieldVal = $(field).val()
+        type = fieldId.split('-').pop()
+        try
+          sField = "s-"+type
+          $("[id=#{ sField }]").val(bFieldVal)
+        catch e
+          console.log "No matching field in shipping"
+
 
   eventToggleShippingInfo: ->
     if $(@cartPage).length > 0
