@@ -256,11 +256,21 @@ class PupilStore
 
   eventShowOrderForm: ->
     if $(@cartPage).length > 0
-      $("#CheckOut").click (event)=>
+      $(".Form-input--radio.Form-checkout").click (event)=>
         event.preventDefault()
         button = $(event.target)
-        $(".Cart-orderForm-container").slideDown()
-        # this should also work for get quote
+        id = $(button).attr('id')
+        submitTxt = if id is "Order" then "Submit Order" else "Request Quote"
+        labelId = '#'+id+"-label"
+        orderFormContainer = "Cart-orderForm-container"
+        orderFormActive = "Cart-orderForm--state-active" 
+        if not $(labelId).hasClass("Button--state-active")
+          $("label[class^='Button-radio--lg Form-input--radioLabel--lg']").removeClass('Button--state-active') 
+          $(labelId).addClass("Button--state-active")
+          if not $(orderFormContainer).hasClass(orderFormActive)
+            $("."+orderFormContainer).slideDown()
+            $("."+orderFormContainer).addClass(orderFormActive)
+          $('button[id="form-submit"]').text(submitTxt)            
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
