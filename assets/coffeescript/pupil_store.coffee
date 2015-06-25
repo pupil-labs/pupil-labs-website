@@ -36,6 +36,7 @@ class PupilStore
       @eventUpdateCartQuantity()
       @eventShowTechSpecs()
       @eventShowOrderForm()
+      @eventToggleShippingInfo()
   
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -271,6 +272,24 @@ class PupilStore
             $("."+orderFormContainer).slideDown()
             $("."+orderFormContainer).addClass(orderFormActive)
           $('button[id="form-submit"]').text(submitTxt)            
+
+  eventToggleShippingInfo: ->
+    if $(@cartPage).length > 0
+      $("input[id^='s-toggle-']").click (event)=>
+        event.preventDefault()
+        button = $(event.target)
+        buttonId = $(button).attr('id') 
+        type = buttonId.split("-").pop()
+        if type is "alt"
+          # clear all the values of the inputs        
+          $("label[for='#{ buttonId }']").addClass('Button--state-active')
+          $("label[for='s-toggle-copy']").removeClass('Button--state-active')
+          $(".Form-shipping-container").fadeIn()
+        else
+          $("label[for='#{ buttonId }']").addClass('Button--state-active')
+          $("label[for='s-toggle-alt']").removeClass('Button--state-active')
+          $(".Form-shipping-container").fadeOut()
+
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
