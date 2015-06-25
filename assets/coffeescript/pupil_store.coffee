@@ -38,7 +38,10 @@ class PupilStore
       @eventShowOrderForm()
       @eventCopyBillingToShipping()
       @eventToggleShippingInfo()
-  
+      @eventTogglePaymentType()
+      @eventUpdateFormValues()
+      @eventSubmitForm()
+
   eventStorePageInit: ->
     if $(@storePage).length > 0
       @_updateConfigSubTotal()
@@ -274,6 +277,14 @@ class PupilStore
             $("."+orderFormContainer).addClass(orderFormActive)
           $('button[id="form-submit"]').text(submitTxt)            
 
+  eventUpdateFormValues: ->
+    if $(@cartPage).length > 0
+      $("input, textarea").change (event)=>
+        event.preventDefault()
+        field = $(event.target)
+        $(field).val($(field).val())
+        console.log $(field).val()
+
   eventCopyBillingToShipping: ->
     if $(@cartPage).length > 0
       $("[id^='b-']").change (event)=>
@@ -287,7 +298,6 @@ class PupilStore
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
           console.log "No matching field in shipping"
-
 
   eventToggleShippingInfo: ->
     if $(@cartPage).length > 0
@@ -306,6 +316,34 @@ class PupilStore
           $("label[for='s-toggle-alt']").removeClass('Button--state-active')
           $(".Form-shipping-container").fadeOut()
 
+  eventTogglePaymentType: ->
+    if $(@cartPage).length > 0
+      inputPaymentClass = "input[class='Form-input--radio Form-payment-type']"
+      $(inputPaymentClass).click (event)=>
+        event.preventDefault()
+        button = $(event.target)
+        $(button).attr("checked")
+        
+        buttonId = $(button).attr('id') 
+        label = "label[for='#{ buttonId }']"
+        $("label[for^='p-']").not($(label)).removeClass('Button--state-active')
+        $(label).toggleClass("Button--state-active")
+        event.stopPropagation()
+
+  eventValidateForm: ->
+    # something here
+    console.log "something"
+
+  eventSubmitForm: ->
+    if $(@cartPage).length > 0
+      $("#order-form").on "submit", (event)=>
+        event.preventDefault()
+        $("input, textarea").each (i,element)=>
+          # console.log $(element).val()
+          # $(element).val($(element).val())
+          # console.log $(element).val()
+        formData = $(event.target)
+        console.log formData.serialize()
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
