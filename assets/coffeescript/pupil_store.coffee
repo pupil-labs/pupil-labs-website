@@ -260,6 +260,7 @@ class PupilStore
         event.preventDefault()
         button = $(event.target)
         $(".Cart-orderForm-container").slideDown()
+        # this should also work for get quote
 
   _sumAll: (vals)->
     vals.reduce (a,b) -> a + b 
