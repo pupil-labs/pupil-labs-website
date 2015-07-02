@@ -26,6 +26,7 @@ css = ()->
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
+
 js = ()->
   gulp.src "assets/coffeescript/*.coffee"
   .pipe coffee(
@@ -56,6 +57,9 @@ gulp.task 'watch', ['css', 'js', 'preview'], ->
     css()
     console.log "Stylus file changed. Compiling and reloading..."
 
+  gulp.watch "contents/store/products/products.json", ->
+    copyProductJSON()
+    console.log "Product list changed. Copying file to coffeescript asset."
   # gulp.watch "templates/**", ->
   #   jade()
   #   console.log "Template file changed. Compiling and reloading..."

@@ -1,22 +1,20 @@
-# here we use node's file system to read our product json object
-# this allows us to keep all product information in one place
-fs = require 'fs'
+#import "product_list.json"
 
-productJSON = '../../contents/store/products/products.json'
+_products = productList
 
-jsonToCoffeeObj = (file)->
-  parsedJSON = JSON.parse(fs.readFileSync file, 'utf8')
-  return parsedJSON
+# jsonToCoffeeObj = (file)->
+#   parsedJSON = JSON.parse(file)
+#   return parsedJSON
 
-objectify = (json)->
-  obj = {}
-  for k,v of json
-    obj[k] = v
-  return obj
+# objectify = (json)->
+#   obj = {}
+#   for k,v of json
+#     obj[k] = v
+#   return obj
 
 # construct this once
 # list of js objects
-_products = jsonToCoffeeObj(productJSON)
+# _products = jsonToCoffeeObj(productJSON)
 
 getProducts = ->
   return _products
@@ -44,8 +42,7 @@ sortBy = (key, a, b, r=false) ->
   return +1*r if a[key] < b[key]
   return 0
 
-# console.log getProductsFiltered('eye','cost',true)
+console.log getProductsFiltered('eye','cost',true)
 # console.log getProductSum(['world_hs','eye_30hz','license_academic'],2)
-
 
 

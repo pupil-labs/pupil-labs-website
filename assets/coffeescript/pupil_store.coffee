@@ -1,4 +1,5 @@
 #import "local_storage.coffee"
+#import "products.coffee"
 $ = jQuery
 
 class PupilStore
@@ -42,8 +43,24 @@ class PupilStore
       @eventUpdateFormValues()
       @eventSubmitForm()
 
+
   eventStorePageInit: ->
     if $(@storePage).length > 0
+      # ConfigOptions--world
+      # getProductsFiltered('world')
+      for w in getProductsFiltered('world')
+        klass = if w.id is "world_hs" then "StoreConfig-world StoreConfig--state-active" else "StoreConfig-world"
+        html = "<li class='Grid-cell u-textCenter'>
+                 <a role='button' class='#{ klass }' id='#{ w.id }' href='#{ w.img }'>#{w.label}</a> 
+                 </li>"
+        $("ul[class='Grid Grid--justifyCenter ConfigOptions--world']").append(html)
+      for e in getProductsFiltered('eye')
+        klass = if e.id is "eye_30hz" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
+        html = "<li class='Grid-cell u-textCenter'>
+                 <a role='button' class='#{ klass }'' id='#{ e.id }' href='#{ e.img }'>#{e.label}</a> 
+                 </li>"
+        $("ul[class~='ConfigOptions--eye'").append(html)
+
       @_updateConfigSubTotal()
 
   eventAddToCart: ->
