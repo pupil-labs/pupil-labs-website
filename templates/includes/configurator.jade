@@ -62,7 +62,7 @@ section.Grid.Grid--1of2
         ul.Grid.Grid--justifyCenter
           each eye in eye_cams
             //- 120fps is active by default
-            - var itemClass = (eye.id === 'eye-120hz' ? 'StoreConfig-eye StoreConfig--state-active' : 'StoreConfig-eye')
+            - var itemClass = (eye.id === 'eye-30hz' ? 'StoreConfig-eye StoreConfig--state-active' : 'StoreConfig-eye')
             li.Grid-cell.u-textCenter
               a(role="button" class=itemClass id=eye.id href=eye.image_url data-id=eye.id data-specs=eye.specs data-cost=eye.cost)= eye.label 
         div.Grid.Grid--full

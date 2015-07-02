@@ -11,36 +11,25 @@
     "order": 1
   },
   {
-    "label":"720p",
-    "id": "world-720p",
-    "specs":"720p camera with xx degrees diagonal field of view.",
-    "dimensions": "nn x nn",
-    "weight": 0,
-    "image_url": "store/config_images/pupil-config-world-720p.png",
-    "video_url":"#",
-    "cost": 50,
-    "order": 2
-  },
-  {
-    "label":"1080p",
+    "label":"high resolution",
     "id": "world-1080p",    
     "specs":"1080p camera with xx degrees diagonal field of view and microphones",
     "dimensions": "nn x nn",
     "weight": 0,
     "image_url": "store/config_images/pupil-config-world-1080p.png",
     "video_url":"#",
-    "cost": 300,
-    "order": 3
+    "cost": 250,
+    "order": 2
   },
   {
-    "label":"120hz",
+    "label":"high speed",
     "id": "world-120hz",    
     "specs":"120hz high speed camera designed by Pupil Labs",
     "dimensions": "nn x nn",
     "weight": 0,
     "image_url": "store/config_images/pupil-config-world-120hz.png",
     "video_url":"#",
-    "cost": 410,
-    "order": 4
+    "cost": 250,
+    "order": 3
   }
 ]

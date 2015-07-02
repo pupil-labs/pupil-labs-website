@@ -179,9 +179,10 @@ class PupilStore
                       </div>
                       </div>"
           $("#Cart-table").after(newRow)
-        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
+        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())),"Sub Total"] else ["",""]
         $("div[id='CartSum--label']").text("#{ label }")
         $("div[id='CartSum--total']").text("#{ totalPrice }")
+        $("div[id='CartSum--label']").append("<p class='LicenseSpecs-txt' style='font-weight:400;'>(additional shipping and VAT may apply)</p>")
       else
         $(".Cart-container").hide()
 
@@ -275,7 +276,7 @@ class PupilStore
           if not $(orderFormContainer).hasClass(orderFormActive)
             $("."+orderFormContainer).slideDown()
             $("."+orderFormContainer).addClass(orderFormActive)
-          $('button[id="form-submit"]').text(submitTxt)            
+          $('label[id="form-submit"]').text(submitTxt)            
 
   eventUpdateFormValues: ->
     if $(@cartPage).length > 0

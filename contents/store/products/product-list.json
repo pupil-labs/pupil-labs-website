@@ -1,4 +1,13 @@
 [
+ {
+    "label": "wide angle lens",
+    "id": "lens-160d",
+    "specs": "some specs about the lens",
+    "cost": 150,
+    "img": "http://placehold.it/600/111111",
+    "product_type": "lens",
+    "order": 1
+  }, 
   {
     "label": "wide angle lens",
     "id": "lens-160d",
