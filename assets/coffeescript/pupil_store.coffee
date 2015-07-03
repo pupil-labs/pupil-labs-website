@@ -60,6 +60,19 @@ class PupilStore
                  <a role='button' class='#{ klass }'' id='#{ e.id }' href='#{ e.img }'>#{e.label}</a> 
                  </li>"
         $("ul[class~='ConfigOptions--eye'").append(html)
+      for p in getProductsFiltered('product')
+        html = "<div class='Grid-cell'>
+                  <div class='Feature'>
+                    <div class='Feature-figure'>
+                      <img class='Feature-image' src=#{ p.img }>
+                      <p> #{ p.label } </p>
+                      <p> #{ p.specs } </p>
+                      <p>€ #{ p.cost } </p>
+                      <a role='button' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
+                    </div>
+                  </div>
+                </div>"
+        $("div[class~='Additional-products']").append(html)
 
       @_updateConfigSubTotal()
 
