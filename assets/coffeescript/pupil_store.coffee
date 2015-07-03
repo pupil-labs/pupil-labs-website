@@ -384,9 +384,9 @@ class PupilStore
 
   _swapImg: (links)->
     for link in links
-      imgId = '#' + $(link).attr('id').split('-',1) + '-img'
-      imgSrc = $(link).attr("href")
-      $(imgId).attr("src", imgSrc).show()
+      imgUrl = getProductById($(link).attr('id')).img
+      imgId = '#' + $(link).attr('id').split('_',1) + '-img'
+      $(imgId).attr("src", imgUrl).show()
 
   _calcConfigSubTotal: (links)->
     sum = 0

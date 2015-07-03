@@ -56,7 +56,7 @@ productList = [
     specs: "A custom made camera that will resolve a wider range of eye movement motifs. IR camera with IR illumination (dark pupil tracking). 640x480 @120fps."
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-eye-none.png"
+    img: "store/config_images/pupil-config-eye-120hz.png"
     video: "#"
     order: 3
   }, {
@@ -66,7 +66,7 @@ productList = [
     specs: "Binocular frame with high speed cameras for binocular eye detection. Custom made cameras that will resolve a wider range of eye movement motifs. IR camera with IR illumination (dark pupil tracking). 640x480 @120fps."
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-eye-none.png"
+    img: "store/config_images/pupil-config-eye-120hz-binocular.png"
     video: "#"
     order: 4
   }, {

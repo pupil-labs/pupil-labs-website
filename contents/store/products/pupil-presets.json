@@ -1,44 +1,44 @@
 [
   {
     "label": "entry", 
-    "world": "world-720p",
-    "eye": "eye-30hz",
+    "world": "world_hs",
+    "eye": "eye_30hz",
     "order": 1
   },
   {
-    "label": "pro", 
-    "world": "world-1080p",
-    "eye": "eye-30hz",
+    "label": "high res", 
+    "world": "world_hr",
+    "eye": "eye_30hz",
     "order": 2
   },
   {
     "label": "high speed",
-    "world": "world-120hz",
-    "eye": "eye-120hz",
+    "world": "world_hs",
+    "eye": "eye_120hz",
     "order": 3
   },
   {
     "label": "high speed eye",
-    "world": "world-1080p",
-    "eye": "eye-120hz",
-    "order": 5
+    "world": "world_hr",
+    "eye": "eye_120hz",
+    "order": 7
   }, 
   { 
     "label": "binocular",
-    "world": "world-1080p",
-    "eye": "eye-120hz-binocular",
+    "world": "world_hs",
+    "eye": "eye_120hz_binocular",
     "order": 4
   },
   {
     "label": "world only",
-    "world": "world-120hz",
-    "eye": "eye-none",
+    "world": "world_hs",
+    "eye": "eye_none",
     "order": 6
   },
   {
     "label": "eye only",
-    "world": "world-none",
-    "eye": "eye-120hz",
-    "order": 7
+    "world": "world_none",
+    "eye": "eye_120hz",
+    "order": 5
   }
 ]
