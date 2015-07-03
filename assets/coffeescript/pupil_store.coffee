@@ -68,7 +68,7 @@ class PupilStore
                       <p> #{ p.label } </p>
                       <p> #{ p.specs } </p>
                       <p>€ #{ p.cost } </p>
-                      <a role='button' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
+                      <a role='button' id='#{ p.id }' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
                     </div>
                   </div>
                 </div>"
@@ -78,7 +78,7 @@ class PupilStore
 
   eventAddToCart: ->
     if $(@storePage).length > 0
-      @addToCartButton.click (event)=>
+      $(@addToCartClass).click (event)=>
           event.preventDefault()
           addToCartBtn = $(event.target)
           if not $(@addToCartBtn).hasClass('Button--state-inactive')
@@ -86,30 +86,39 @@ class PupilStore
             productType = $(addToCartBtn).data('product')
 
             if productType is "pupil"
-              worldId = $(@worldConfigActiveClass).data('id')
-              eyeId = $(@eyeConfigActiveClass).data('id')
-              id = [worldId,eyeId]
-              price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
-              specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
-              license = $(@licenseConfigActiveClass).data('id')
+              worldId = $(@worldConfigActiveClass).attr('id')
+              eyeId = $(@eyeConfigActiveClass).attr('id')
+              licenseId = $(@licenseConfigActiveClass).attr('id')
+              orderItems = [worldId,eyeId,licenseId]
+              # id = [worldId,eyeId]
+              # price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
+              # specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
+              # license = $(@licenseConfigActiveClass).data('id')
             else 
-              productType = $(addToCartBtn).data('product')
-              id = [$(addToCartBtn).data('id')]
-              price = $(addToCartBtn).data('cost')
-              specs = $(addToCartBtn).data('specs')
-              license = "not applicable"
+              orderItems = [$(addToCartBtn).attr('id')]
+              # id = [$(addToCartBtn).data('id')]
+              # price = $(addToCartBtn).data('cost')
+              # specs = $(addToCartBtn).data('specs')
+              # license = "not applicable"
           
-            key = @_uniqueId()
-            item = {
-              "product" : productType
-              "id": id
-              "specs": specs
-              "price": price
-              "quantity": 1
-              "license": license
-            }
-            # save to local storage & update the nav counter
-            LocalStorage.set(key, JSON.stringify(item))
+            # check if the order already exists in the cart
+            # if so, then increment the quantity of that order in the cart
+            existingOrderKey = @_compareOrders(orderItems)
+            console.log existingOrderKey
+            if existingOrderKey
+              existingOrder = JSON.parse(LocalStorage.get(existingOrderKey))
+              existingOrder.qty += 1
+              LocalStorage.set(existingOrderKey,JSON.stringify(existingOrder))
+            else
+              # add new key
+              key = @_uniqueId()
+              item = {
+                "order" : orderItems
+                "qty"   : 1
+              }
+              LocalStorage.set(key, JSON.stringify(item))
+  
+            # update the nav counter          
             @eventUpdateCartNavCounter()
           else
             return false
@@ -123,7 +132,9 @@ class PupilStore
       @eventUpdateCartNavCounter()
 
   eventUpdateCartNavCounter: ->
-    counter = if LocalStorage.length() > 0 then LocalStorage.length() else ""
+    qty = [v.qty for k,v of LocalStorage.dict()]
+    qtySum = qty[0].reduce (a,b) -> a + b
+    counter = if LocalStorage.length() > 0 then qtySum else ""
     $(@cartNavCounter).text("#{ counter }")
 
   eventUpdateConfig: ->
@@ -422,6 +433,18 @@ class PupilStore
     id += Math.random().toString(36).substr(2) while id.length < len
     id.substr 0, len
     return id
+
+  _arrayEqual: (a, b) ->
+    # a.length is b.length and 
+    a.every (elem, i) -> elem is b[i]
+
+  _compareOrders: (orderItems)->
+    if LocalStorage.length() > 0
+      for k,v of LocalStorage.dict()
+        console.log v.order
+        console.log orderItems
+        if @_arrayEqual(v.order,orderItems)
+          return k
 
 
 $(document).ready ->
