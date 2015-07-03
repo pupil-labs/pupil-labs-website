@@ -117,16 +117,13 @@ class PupilStore
     if $("#Store").length > 0
       $(@storeConfigSelector).click (event)=>
         event.preventDefault()
-        # typically we would use $(this) to refer to the jquery object
-        # within the scope of the `click` function
-        # but in coffeescript when we use the fat arrow (=>)
-        # we are referring to the class itself and not the jquery object 
+
         activeLinks = $(event.target)
         @_setActiveState(activeLinks)
         @_swapImg(activeLinks)
         @_updateConfigSubTotal()
 
-        if $(@worldConfigActiveClass).data('id') is "world-none" and $(@eyeConfigActiveClass).data('id') is "eye-none"
+        if $(@worldConfigActiveClass).attr('id') is "world_none" and $(@eyeConfigActiveClass).attr('id') is "eye_none"
           @addToCartConfig.addClass('Button--state-inactive')
         else
           if @addToCartConfig.hasClass('Button--state-inactive')
@@ -147,7 +144,7 @@ class PupilStore
 
   eventSelectLicense: ->
     if $(@storePage).length > 0
-      $("p[class='LicenseSpecs-txt']").text($(@licenseConfigActiveClass).data('specs'))
+      $("p[class='LicenseSpecs-txt']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
       $(@licenseConfigSelector).click (event)=>
         event.preventDefault()
         link = $(event.target)
@@ -156,7 +153,7 @@ class PupilStore
           # add active to self 
           $(@licenseConfigActiveClass).removeClass("#{ @licenseConfigActive }")
           $(link).addClass("#{ @licenseConfigActive }")
-          $("p[class='LicenseSpecs-txt']").text($(link).data('specs'))
+          $("p[class='LicenseSpecs-txt']").text(getProductById($(link).attr('id')).specs)
           @_updateConfigSubTotal()
 
   eventRenderCart: ->
@@ -263,7 +260,7 @@ class PupilStore
         type = $(button).attr('id').split('-').pop() 
 
         selection = "a[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
-        specTxt = $(selection).data('specs').toLowerCase()
+        id = $(selection).attr('id')
         # make append active class to container 
         element = "p[class='TechSpecs-txt--#{ type }']"       
 
@@ -273,7 +270,7 @@ class PupilStore
           $(button).text("show technical specs")
         else
           $(button).addClass("TechSpecs--active")
-          @_updateSpecTxt(type,specTxt)
+          @_updateSpecTxt(type,id)
           $(element).fadeIn(400)
           $(button).text("hide technical specs")
 
@@ -369,18 +366,18 @@ class PupilStore
   _setActiveState: (links)->
     for link in links
       # see if it is 'eye' or 'world' or maybe in the future 'other'
-      type = $(link).attr('id').split('-',1)
+      type = $(link).attr('id').split('_',1)
       configType = @storeConfigClass + "-" + type
       prevSelection = "a[class='#{ configType + " " }#{ @storeConfigActiveClass}']"
       $(prevSelection).removeClass("#{ @storeConfigActiveClass }")
       $(link).addClass("#{ @storeConfigActiveClass }")
-      @_updateSpecTxt(type,$(link).data('specs'))
+      @_updateSpecTxt(type,$(link).attr('id'))
 
-  _updateSpecTxt: (type,txt)->
+  _updateSpecTxt: (type,id)->
     button = ".TechSpecs"
+    txt = getProductById(id).specs
     selector = "p[class='TechSpecs-txt--#{ type }']"
     if $(button).hasClass("TechSpecs--active")
-      console.log "active class"
       $(selector).text("#{ txt }")
     else
       $(selector).text("#{ txt }").hide()
@@ -398,8 +395,12 @@ class PupilStore
     return sum  
 
   _updateConfigSubTotal: ->
-    subTotal = "€ " + @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
-    if $(@worldConfigActiveClass).data('id') is "world-none" and $(@eyeConfigActiveClass).data('id') is "eye-none"
+    activeWorldId = $(@worldConfigActiveClass).attr('id')
+    activeEyeId = $(@eyeConfigActiveClass).attr('id')
+    activeLicenseId = $(@licenseConfigActiveClass).attr('id')
+    # subTotal = "€ " + @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
+    subTotal = "€ " + getProductsSum([activeWorldId,activeEyeId,activeLicenseId])
+    if activeWorldId is "world_none" and activeEyeId is "eye_none"
       subTotal = "Not for sale"  
     $(@configSubTotalClass).text(subTotal)
 
