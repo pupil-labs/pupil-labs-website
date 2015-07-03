@@ -366,17 +366,22 @@ class PupilStore
 
   eventTogglePaymentType: ->
     if $(@cartPage).length > 0
+      radios = "input[name='p-type']:radio"
       inputPaymentClass = "input[class='Form-input--radio Form-payment-type']"
       $(inputPaymentClass).click (event)=>
         event.preventDefault()
         button = $(event.target)
-        $(button).attr("checked")
-        
         buttonId = $(button).attr('id') 
         label = "label[for='#{ buttonId }']"
-        $("label[for^='p-']").not($(label)).removeClass('Button--state-active')
+        $("label[for^='p-']").not($(buttonId)).removeClass('Button--state-active')
         $(label).toggleClass("Button--state-active")
-        event.stopPropagation()
+
+        $(button).prop("checked",true)
+        # the checked state is not saved for form submission why? 
+
+  resetActivePaymentRadio: ->
+    activeId = "#"+$("label[class='Button-radio--sm Form-input--radioLabel Button--state-active'][for^='p-']").attr('for')
+    $(activeId).prop('checked',true)
 
   eventValidateForm: ->
     # something here
@@ -385,9 +390,16 @@ class PupilStore
     if $(@cartPage).length > 0
       $("#order-form").on "submit", (event)=>
         event.preventDefault()
-        $("input, textarea").each (i,element)=>
-          # $(element).val($(element).val())
-        formData = $(event.target)
+        form = $(event.target)
+
+        @resetActivePaymentRadio()
+        # add order object to a hidden form text area
+        orders = JSON.stringify(LocalStorage.dict())
+        $("textarea[class='Form-input--cart'").val(orders)
+        formData = $(form).serialize()
+        # serializeArray
+        # formData.push(orders)
+        console.log formData
 
   _setActiveState: (links)->
     for link in links
