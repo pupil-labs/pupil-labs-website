@@ -15,12 +15,14 @@ block main
     div.Cart-container
       div.Cart-table-container
         div(class="Grid" id="Cart-table")
-          div.Grid-cell--5of8.u-textCenter 
+          div.Grid-cell--1of2.u-textCenter 
             h3.Grid-cell--header Item
           div.Grid-cell--1of8.u-textCenter 
             h3.Grid-cell--header Quantity
           div.Grid-cell--1of8.u-textCenter
-            h3.Grid-cell--header Cost
+            h3.Grid-cell--header Unit Cost
+          div.Grid-cell--1of8.u-textCenter
+            h3.Grid-cell--header Sum Cost
           div.Grid-cell--1of8.u-textCenter 
             h3.Grid-cell--header #[a(href="#" id="Cart-clearCart") Remove]
           //- jquery will fill this in

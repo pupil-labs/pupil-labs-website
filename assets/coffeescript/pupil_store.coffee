@@ -104,7 +104,6 @@ class PupilStore
             # check if the order already exists in the cart
             # if so, then increment the quantity of that order in the cart
             existingOrderKey = @_compareOrders(orderItems)
-            console.log existingOrderKey
             if existingOrderKey
               existingOrder = JSON.parse(LocalStorage.get(existingOrderKey))
               existingOrder.qty += 1
@@ -133,7 +132,8 @@ class PupilStore
 
   eventUpdateCartNavCounter: ->
     qty = [v.qty for k,v of LocalStorage.dict()]
-    qtySum = qty[0].reduce (a,b) -> a + b
+    if qty[0].length > 0
+      qtySum = qty[0].reduce (a,b) -> a + b
     counter = if LocalStorage.length() > 0 then qtySum else ""
     $(@cartNavCounter).text("#{ counter }")
 
@@ -171,7 +171,7 @@ class PupilStore
       $("p[class='LicenseSpecs-txt']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
       $(@licenseConfigSelector).click (event)=>
         event.preventDefault()
-        link = $(event.target)
+        link = $(event.currentTarget)
         if not $(link).hasClass("#{ @licenseConfigActive }") 
           # remove the active class from the other link
           # add active to self 
@@ -190,15 +190,13 @@ class PupilStore
           # product, id, specs, price, quantity
           newRow = "<div class='Cart-rowContainer'>
                     <div class='Grid Grid--center Cart-row' id='#{ k }'>
-                        <div class='Grid-cell--5of8'>
-                          <p>#{ v['product'] }</p>
-                          <p>#{ v['specs'] }</p>
-                          <p>License : #{ v['license'] }</p>
+                        <div class='Grid-cell--1of2'>
+                          #{ getOrderSpecTxt(v.order) }
                         </div>
                         <div class='Grid-cell--1of8 u-textCenter'>
                           <div class='Grid Grid--center'>
                             <div class='Grid-cell--1of2'>
-                              <p class='Cart-itemQuant'>#{ v['quantity'] }</p>
+                              <p class='Cart-itemQuant'>#{ v.qty }</p>
                             </div>
                             <div class='Grid-cell--1of2'>
                               <div class='Grid Grid-column'>
@@ -209,7 +207,10 @@ class PupilStore
                           </div>
                         </div>
                         <div class='Grid-cell--1of8 u-textCenter'>
-                          <p>€ #{ v['price'] }</p>
+                          <p>€ #{ getProductsSum(v.order,1) }</p>
+                        </div>  
+                        <div class='Grid-cell--1of8 u-textCenter'>
+                          <p class='Cart--sumRow'>€ #{ getProductsSum(v.order,v.qty) }</p>
                         </div>  
                         <div class='Cart-removeItem Grid-cell--1of8 u-textCenter'>
                           <p>X</p>
@@ -217,7 +218,8 @@ class PupilStore
                       </div>
                       </div>"
           $("#Cart-table").after(newRow)
-        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())),"Sub Total"] else ["",""]
+        [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Sub Total"] else ["",""]
+        totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
         $("div[id='CartSum--label']").text("#{ label }")
         $("div[id='CartSum--total']").text("#{ totalPrice }")
         $("div[id='CartSum--label']").append("<p class='LicenseSpecs-txt' style='font-weight:400;'>(additional shipping and VAT may apply)</p>")
@@ -238,7 +240,9 @@ class PupilStore
           $(container).remove()
 
         # update total
-        [totalPrice,label] = if LocalStorage.length() > 0 then ["€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())),"Total"] else ["",""]
+        [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Total"] else ["",""]
+        totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
+
         $("div[id='CartSum--label']").text("#{ label }")
         $("div[id='CartSum--total']").text("#{ totalPrice }")
 
@@ -261,19 +265,26 @@ class PupilStore
         key = $(row).attr('id')
 
         # get object from local storage
-        order = JSON.parse(LocalStorage.get(key))
+        item = JSON.parse(LocalStorage.get(key))
         # update quantity 
-        order['quantity'] = if sign is 'plus' then order['quantity'] += 1 else if order['quantity'] > 1 then order['quantity'] -= 1 else 1
+        item.qty = if sign is 'plus' then item.qty += 1 else if item.qty > 1 then item.qty -= 1 else 1
 
         # write quantity back to storage
-        LocalStorage.set(key,JSON.stringify(order))
+        LocalStorage.set(key,JSON.stringify(item))
 
         # update the display text
-        $(numDisplay).text("#{ order['quantity'] }")
+        $(numDisplay).text("#{ item.qty }")
 
-        # update subtotal 
-        totalPrice = if LocalStorage.length() > 0 then "€ " + @_sumAll((v['price']*v['quantity'] for k,v of LocalStorage.dict())) else ""
+        # update row sum
+        $(row).find("p[class='Cart--sumRow']").text("€ " + "#{ getProductsSum(item.order,item.qty) }")
+
+        # update cart subtotal 
+        totalPrice = if LocalStorage.length() > 0 then getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict() else ""
+        totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
         $("div[id='CartSum--total']").text("#{ totalPrice }")
+
+        @eventUpdateCartNavCounter()
+
 
   eventShowTechSpecs: ->
     if $(@storePage).length > 0
@@ -322,7 +333,6 @@ class PupilStore
         event.preventDefault()
         field = $(event.target)
         $(field).val($(field).val())
-        console.log $(field).val()
 
   eventCopyBillingToShipping: ->
     if $(@cartPage).length > 0
@@ -336,7 +346,6 @@ class PupilStore
           sField = "s-"+type
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
-          console.log "No matching field in shipping"
 
   eventToggleShippingInfo: ->
     if $(@cartPage).length > 0
@@ -371,21 +380,14 @@ class PupilStore
 
   eventValidateForm: ->
     # something here
-    console.log "something"
 
   eventSubmitForm: ->
     if $(@cartPage).length > 0
       $("#order-form").on "submit", (event)=>
         event.preventDefault()
         $("input, textarea").each (i,element)=>
-          # console.log $(element).val()
           # $(element).val($(element).val())
-          # console.log $(element).val()
         formData = $(event.target)
-        console.log formData.serialize()
-
-  _sumAll: (vals)->
-    vals.reduce (a,b) -> a + b 
 
   _setActiveState: (links)->
     for link in links
@@ -441,8 +443,6 @@ class PupilStore
   _compareOrders: (orderItems)->
     if LocalStorage.length() > 0
       for k,v of LocalStorage.dict()
-        console.log v.order
-        console.log orderItems
         if @_arrayEqual(v.order,orderItems)
           return k
 

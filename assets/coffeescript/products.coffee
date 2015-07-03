@@ -35,6 +35,15 @@ getProductsFiltered = (type="world",sortKey="order",sortReverse=false)->
       sortBy(sortKey,a,b,sortReverse)
   return res
 
+getOrderSpecTxt = (orderItems)->
+  specs = []
+  for i in orderItems
+    prod = getProductById(i)
+    specs.push("<h4>"+prod.cartlabel+"</h4>")
+    specs.push("<p class='LicenseSpecs-txt'>"+prod.specs+"</p>")
+  html = specs.join(" ")
+  return html
+
 getProductById = (uid)->
   prod = i for i in getProducts() when i.id is uid
   return prod
