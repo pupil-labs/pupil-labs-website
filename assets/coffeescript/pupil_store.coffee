@@ -314,10 +314,9 @@ class PupilStore
       $("input[class='Form-input--radio Form-checkout']").click (event)=>
         event.preventDefault()
         button = $(event.target)
-        console.log "changed order/quote"
         id = $(button).attr('id')
-        submitTxt = if id is "Order" then "Submit Order" else "Request Quote"
-        labelId = '#'+id+"-label"
+        submitTxt = if id is "order" then "Submit Order" else "Request Quote"
+        labelId = '#OrderType-'+id
         orderFormContainer = "Cart-orderForm-container"
         orderFormActive = "Cart-orderForm--state-active" 
         if not $(labelId).hasClass("Button--state-active")
@@ -394,6 +393,7 @@ class PupilStore
         form = $(event.target)
 
         @resetActivePaymentRadio()
+        @_setOrderType()
         # add order object to a hidden form text area
         orders = []
         for k,v of LocalStorage.dict()
@@ -412,6 +412,10 @@ class PupilStore
             console.log "AJAX Error: #{textStatus}"
           success: (data, textStatus, jqXHR) ->
             console.log "Successful AJAX call: #{textStatus}"
+
+  _setOrderType: ->
+    activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()
+    $("input[class='Form-input--orderType']").val(activeId.toLowerCase())
 
   _setActiveState: (links)->
     for link in links

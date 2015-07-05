@@ -34,12 +34,12 @@ block main
       div.Cart-checkout
         div(class="Grid" id="Cart-checkout--buttons")
           div.Grid-cell.Grid-cell--1of2
-            input(id="Order" class="Form-input--radio Form-checkout" type="radio")
-            label(for="Order" id="Order-label" class="Button-radio--lg Form-input--radioLabel--lg") Place Order
+            input(id="order" class="Form-input--radio Form-checkout" type="radio")
+            label(for="order" id="OrderType-order" class="Button-radio--lg Form-input--radioLabel--lg") Place Order
             //- a(href="#" id="CheckOut" class="Button Button-checkout") Place Order
           div.Grid-cell.Grid-cell--1of2
-            input(id="Quote" class="Form-input--radio Form-checkout" type="radio")
-            label(for="Quote" class="Button-radio--lg Form-input--radioLabel--lg" id="Quote-label") Get Quote
+            input(id="quote" class="Form-input--radio Form-checkout" type="radio")
+            label(for="quote" class="Button-radio--lg Form-input--radioLabel--lg" id="OrderType-quote") Get Quote
             //- a(href="#" id="CheckOut" class="Button Button-checkout") Request Quote
         include includes/order-form   
 
