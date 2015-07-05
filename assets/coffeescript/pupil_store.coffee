@@ -59,7 +59,7 @@ class PupilStore
         html = "<li class='Grid-cell u-textCenter'>
                  <a role='button' class='#{ klass }'' id='#{ e.id }' href='#{ e.img }'>#{e.label}</a> 
                  </li>"
-        $("ul[class~='ConfigOptions--eye'").append(html)
+        $("ul[class~='ConfigOptions--eye']").append(html)
       for p in getProductsFiltered('product')
         html = "<div class='Grid-cell'>
                   <div class='Feature'>
@@ -398,9 +398,8 @@ class PupilStore
         orders = []
         for k,v of LocalStorage.dict()
           orders.push v
-        $("textarea[class='Form-input--cart'").val(JSON.stringify(orders))
+        $("textarea[class='Form-input--cart']").val(JSON.stringify(orders))
         formData = $(form).serialize()
-        console.log formData
         url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
         $.ajax
           type: 'POST'
@@ -409,7 +408,12 @@ class PupilStore
           dataType: "json"
           data: formData
           error: (jqXHR, textStatus, errorThrown) ->
-            console.log "AJAX Error: #{textStatus}"
+            # console.warn "AJAX Error: #{textStatus}"
+            if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
+                # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
+                # We continue anyways to the success page.
+                console.log "Successful AJAX call with Safari."
+                # $(location).attr('href',redirectUrl);
           success: (data, textStatus, jqXHR) ->
             console.log "Successful AJAX call: #{textStatus}"
 
