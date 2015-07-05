@@ -311,9 +311,10 @@ class PupilStore
 
   eventShowOrderForm: ->
     if $(@cartPage).length > 0
-      $(".Form-input--radio.Form-checkout").click (event)=>
+      $("input[class='Form-input--radio Form-checkout']").click (event)=>
         event.preventDefault()
         button = $(event.target)
+        console.log "changed order/quote"
         id = $(button).attr('id')
         submitTxt = if id is "Order" then "Submit Order" else "Request Quote"
         labelId = '#'+id+"-label"
@@ -325,7 +326,7 @@ class PupilStore
           if not $(orderFormContainer).hasClass(orderFormActive)
             $("."+orderFormContainer).slideDown()
             $("."+orderFormContainer).addClass(orderFormActive)
-          $('label[id="form-submit"]').text(submitTxt)            
+          $('label[for="form-submit"]').text(submitTxt)            
 
   eventUpdateFormValues: ->
     if $(@cartPage).length > 0
@@ -394,12 +395,23 @@ class PupilStore
 
         @resetActivePaymentRadio()
         # add order object to a hidden form text area
-        orders = JSON.stringify(LocalStorage.dict())
-        $("textarea[class='Form-input--cart'").val(orders)
+        orders = []
+        for k,v of LocalStorage.dict()
+          orders.push v
+        $("textarea[class='Form-input--cart'").val(JSON.stringify(orders))
         formData = $(form).serialize()
-        # serializeArray
-        # formData.push(orders)
         console.log formData
+        url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
+        $.ajax
+          type: 'POST'
+          crossDomain: true
+          url: url
+          dataType: "json"
+          data: formData
+          error: (jqXHR, textStatus, errorThrown) ->
+            console.log "AJAX Error: #{textStatus}"
+          success: (data, textStatus, jqXHR) ->
+            console.log "Successful AJAX call: #{textStatus}"
 
   _setActiveState: (links)->
     for link in links
