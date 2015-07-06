@@ -192,13 +192,16 @@ class PupilStore
           # product, id, specs, price, quantity
           newRow = "<div class='Cart-rowContainer'>
                     <div class='Grid Grid--center Cart-row' id='#{ k }'>
-                        <div class='Grid-cell--1of2'>
+                        <div class='Grid-cell--2of3 Grid-cell--2of3-padright'>
                           #{ getOrderSpecTxt(v.order) }
                         </div>
-                        <div class='Grid-cell--1of8 u-textCenter'>
+                        <div class='Grid-cell--1of18 u-textCenter'>
                           <p>€ #{ getProductsSum(v.order,1) }</p>
-                        </div>  
-                        <div class='Grid-cell--1of8 u-textCenter'>
+                        </div> 
+                        <div class='Grid-cell--1of22 u-textCenter'>
+                          <p>*</p>
+                        </div>                           
+                        <div class='Grid-cell--1of18 u-textCenter'>
                           <div class='Grid Grid--center'>
                             <div class='Grid-cell--1of2'>
                               <p class='Cart-itemQuant'>#{ v.qty }</p>
@@ -211,10 +214,13 @@ class PupilStore
                             </div>
                           </div>
                         </div>
-                        <div class='Grid-cell--1of8 u-textCenter'>
+                        <div class='Grid-cell--1of22 u-textCenter'>
+                          <p>=</p>
+                        </div>                                                   
+                        <div class='Grid-cell--1of18 u-textCenter'>
                           <p class='Cart--sumRow'>€ #{ getProductsSum(v.order,v.qty) }</p>
                         </div>  
-                        <div class='Cart-removeItem Grid-cell--1of8 u-textCenter'>
+                        <div class='Cart-removeItem Grid-cell--1of18 u-textCenter'>
                           <p>X</p>
                         </div>  
                       </div>
