@@ -3,18 +3,19 @@
 - var countryList = countryObj['countries']
 //- contact
 div.Cart-orderForm-container
-  form(id="order-form")
+  form(id="order-form" data-parsley-validate data-parsley-focus="first")
     div.Grid
       div.Grid-cell
         h3 Contact Info
     div.Grid.Grid--1of2.Grid--gutters
       div.Grid-cell
         //- label(for="c-email") Contact Email 
-        input(class="Form-input Form-input--text" id="c-email" type="email" placeholder="email address" name="c-email")
+        input(class="Form-input Form-input--text" id="c-email" type="email" placeholder="email address" name="c-email" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-email--error")
+        p(class="Form-error--text" id="c-email--error")
       div.Grid-cell
         //- label(for="c-name-first") First Name
-        input(class="Form-input Form-input--text" id="c-name" type="text" placeholder="name" name="c-name")
-
+        input(class="Form-input Form-input--text" id="c-name" type="text" placeholder="name" name="c-name" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-name--error")
+        p(class="Form-error--text" id="c-name--error")
     //- billing & shipping is in the same row
     //- |=== Billing ===|=== Shipping ===|
     div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
@@ -27,19 +28,24 @@ div.Cart-orderForm-container
         div.Form-billing-container
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              input(class="Form-input Form-input--text" id="b-name" type="text" placeholder="name" name="b-name")
+              input(class="Form-input Form-input--text" id="b-name" type="text" placeholder="name" name="b-name" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-name--error")
+              p(class="Form-error--text" id="b-name--error")
             div.Grid-cell
-              input(class="Form-input Form-input--text" id="b-phone" type="text" placeholder="phone number" name="b-phone")
+              input(class="Form-input Form-input--text" id="b-phone" type="text" placeholder="phone number" name="b-phone" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-phone--error")
+              p(class="Form-error--text" id="b-phone--error")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
               input(class="Form-input Form-input--text" id="b-company" type="text" placeholder="company or institution" name="b-company")
             div.Grid-cell
               input(class="Form-input Form-input--text" id="b-vatId" type="text" placeholder="EU VAT ID" name="b-vatId")
+              p(class="Form-error--text" id="b-vatId--error")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              textarea(class="Form-input Form-input--text Form-input--textarea" id="b-address" placeholder="billing address" name="b-address")
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="b-address" placeholder="billing address" name="b-address" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
+              p(class="Form-error--text" id="b-address--error")
             div.Grid-cell
-              input(class="Form-input Form-input--text" id="b-country" name="b-country" placeholder='country' list="country")
+              input(class="Form-input Form-input--text" id="b-country" name="b-country" placeholder='country' list="country" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error")
+              p(class="Form-error--text" id="b-country--error")
               datalist(id="country")
                 each country in countryList
                   option(value=country['countryName'])
@@ -61,9 +67,11 @@ div.Cart-orderForm-container
         div.Form-shipping-container
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              input(class="Form-input Form-input--text" id="s-name" type="text" placeholder="name" name="s-name")
+              input(class="Form-input Form-input--text" id="s-name" type="text" placeholder="name" name="s-name" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-name--error")
+              p(class="Form-error--text" id="s-name--error")
             div.Grid-cell
-              input(class="Form-input Form-input--text" id="s-phone" type="text" placeholder="phone number" name="s-phone")
+              input(class="Form-input Form-input--text" id="s-phone" type="text" placeholder="phone number" name="s-phone" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-phone--error")
+              p(class="Form-error--text" id="s-phone--error")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
               input(class="Form-input Form-input--text" id="s-company" type="text" placeholder="company or institution" name="s-company")
@@ -71,7 +79,8 @@ div.Cart-orderForm-container
               //- input(class="Form-input Form-input--text" id="s-vat-id" type="text" placeholder="EU VAT ID")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              textarea(class="Form-input Form-input--text Form-input--textarea" id="s-address" placeholder="shipping address" name="s-address")
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="s-address" placeholder="shipping address" name="s-address" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-address--error")
+              p(class="Form-error--text" id="s-address--error")
             div.Grid-cell
 
 
