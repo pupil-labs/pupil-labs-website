@@ -391,6 +391,11 @@ class PupilStore
         form = $(event.target)
 
         if $(form).parsley().isValid()
+          $('label[for="form-submit"]').addClass("Button--state-inactive")  
+          $('label[for="form-submit"]').text("Submitting Request")    
+          $('label[for="form-submit"]').attr('disabled',true)     
+          # disable the submit button to prevent double submits
+          $("#form-submit").attr('disabled',true)
           @resetActivePaymentRadio()
           @_setOrderType()
           # add order object to a hidden form text area
@@ -412,9 +417,12 @@ class PupilStore
                   # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
                   # We continue anyways to the success page.
                   console.log "Successful AJAX call with Safari."
-                  # $(location).attr('href',redirectUrl);
+                  $(location).attr('href',"order_success")
             success: (data, textStatus, jqXHR) ->
               console.log "Successful AJAX call: #{textStatus}"
+              $(location).attr('href',"order_success")
+              LocalStorage.clear()
+
 
   _setOrderType: ->
     activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()
