@@ -43,6 +43,7 @@ class PupilStore
       @eventUpdateFormValues()
       @eventSubmitForm()
       @eventGenerateOrderLink()
+      @eventFillCartFromQueryString()
 
 
   eventStorePageInit: ->
@@ -429,16 +430,35 @@ class PupilStore
       $("#Nav-cart").click (event)=>
         event.preventDefault()
         link = $(event.target)
-        document.location = "?"+$.param(LocalStorage.dict())
+        data = []
+        for key,value of LocalStorage.dict()
+          orderKey = key
+          data.push({"name":"key","value":"#{orderKey}"})
+          for _k,v of value
+            name = "#{orderKey}"+"#{_k}"
+            data.push({"name":name,"value":v})
+        document.location = "?"+ $.param(data)
 
-  # eventParseURL: ->
-  #   if $(@cartPage).length > 0
-  #     query = window.location.search.substring(1)
-  #     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]")
-  #     regex = new RegExp("[\\?&]" + name + "=([^&#]*)")
-  #       results = regex.exec(location.search);
-  #   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-
+  eventFillCartFromQueryString: ->
+    query = window.location.search.substring(1)
+    if query.length > 0
+      # cart?key=3grtmbgyuui8uxr&3grtmbgyuui8uxrorder=world_hs%2Ceye_30hz%2Clicense_academic&3grtmbgyuui8uxrqty=1&key=7ksn968mbj7cik9&7ksn968mbj7cik9order=world_hs%2Ceye_120hz_binocular%2Clicense_academic&7ksn968mbj7cik9qty=1&key=riv0r6jj5vu0udi&riv0r6jj5vu0udiorder=product_support_12&riv0r6jj5vu0udiqty=1
+      existingCartorderqty = LocalStorage.length() 
+      LocalStorage.clear()
+      pairs = query.split('&')
+      while pairs.length > 0
+        key = pairs.shift().split("=").pop()        
+        orderItems = decodeURIComponent(pairs.shift().split("=").pop()).split(',')
+        qty = parseInt(pairs.shift().split("=").pop())
+        item = {
+          "order" : orderItems
+          "qty"   : qty
+        }
+        LocalStorage.set(key, JSON.stringify(item))
+      if existingCartorderqty < 1
+        @eventRenderCart()
+      @eventUpdateCartNavCounter()
+      
 
   _setOrderType: ->
     activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()
