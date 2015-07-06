@@ -32,6 +32,7 @@ class PupilStore
       @eventUpdateConfig()
       @eventSelectPreset()
       @eventSelectLicense()
+      @eventFillCartFromQueryString()
       @eventRenderCart()
       @eventRemoveCartItem()
       @eventUpdateCartQuantity()
@@ -43,7 +44,6 @@ class PupilStore
       @eventUpdateFormValues()
       @eventSubmitForm()
       @eventGenerateOrderLink()
-      @eventFillCartFromQueryString()
 
 
   eventStorePageInit: ->
@@ -449,7 +449,6 @@ class PupilStore
     query = window.location.search.substring(1)
     if query.length > 0
       # cart?key=3grtmbgyuui8uxr&3grtmbgyuui8uxrorder=world_hs%2Ceye_30hz%2Clicense_academic&3grtmbgyuui8uxrqty=1&key=7ksn968mbj7cik9&7ksn968mbj7cik9order=world_hs%2Ceye_120hz_binocular%2Clicense_academic&7ksn968mbj7cik9qty=1&key=riv0r6jj5vu0udi&riv0r6jj5vu0udiorder=product_support_12&riv0r6jj5vu0udiqty=1
-      existingCartorderqty = LocalStorage.length() 
       LocalStorage.clear()
       pairs = query.split('&')
       while pairs.length > 0
@@ -461,8 +460,6 @@ class PupilStore
           "qty"   : qty
         }
         LocalStorage.set(key, JSON.stringify(item))
-      if existingCartorderqty < 1
-        @eventRenderCart()
       @eventUpdateCartNavCounter()
       
 
