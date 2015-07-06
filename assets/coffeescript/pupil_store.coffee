@@ -42,6 +42,7 @@ class PupilStore
       @eventTogglePaymentType()
       @eventUpdateFormValues()
       @eventSubmitForm()
+      @eventGenerateOrderLink()
 
 
   eventStorePageInit: ->
@@ -194,6 +195,9 @@ class PupilStore
                           #{ getOrderSpecTxt(v.order) }
                         </div>
                         <div class='Grid-cell--1of8 u-textCenter'>
+                          <p>€ #{ getProductsSum(v.order,1) }</p>
+                        </div>  
+                        <div class='Grid-cell--1of8 u-textCenter'>
                           <div class='Grid Grid--center'>
                             <div class='Grid-cell--1of2'>
                               <p class='Cart-itemQuant'>#{ v.qty }</p>
@@ -206,9 +210,6 @@ class PupilStore
                             </div>
                           </div>
                         </div>
-                        <div class='Grid-cell--1of8 u-textCenter'>
-                          <p>€ #{ getProductsSum(v.order,1) }</p>
-                        </div>  
                         <div class='Grid-cell--1of8 u-textCenter'>
                           <p class='Cart--sumRow'>€ #{ getProductsSum(v.order,v.qty) }</p>
                         </div>  
@@ -422,6 +423,21 @@ class PupilStore
               console.log "Successful AJAX call: #{textStatus}"
               $(location).attr('href',"order_success")
               LocalStorage.clear()
+
+  eventGenerateOrderLink: ->
+    if $(@cartPage).length > 0 
+      $("#Nav-cart").click (event)=>
+        event.preventDefault()
+        link = $(event.target)
+        document.location = "?"+$.param(LocalStorage.dict())
+
+  # eventParseURL: ->
+  #   if $(@cartPage).length > 0
+  #     query = window.location.search.substring(1)
+  #     name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]")
+  #     regex = new RegExp("[\\?&]" + name + "=([^&#]*)")
+  #       results = regex.exec(location.search);
+  #   return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 
 
   _setOrderType: ->
