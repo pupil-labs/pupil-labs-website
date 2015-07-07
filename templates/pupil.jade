@@ -3,6 +3,8 @@ extends layout
 block main
   //- Title block
   - var page_data = contents.pupil['index.json']
+  - var page_meta = page_data.metadata
+  - var titleData = {'title':page_meta.title,'s1':page_meta.s1}    
   include includes/title
 
   //- Features

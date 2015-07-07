@@ -1,8 +1,8 @@
-- var title = page_data.metadata.title
-- var subtitle = page_data.metadata.subtitle
+- var td = titleData;
 div.Banner-container.Banner--gradientBkg
   div.Banner-item.u-textCenter
-    h1.Banner-title #{ title }
-    h2.Banner-subtitle #{ subtitle }
+    each v,k in td
+      - var titleItem = (k == 'title' ? "<h1 class='Banner-title'>"+v+"</h1>" : "<h2 class='Banner-subtitle'>"+v+"</h2>")
+        | !{ titleItem }
 
 

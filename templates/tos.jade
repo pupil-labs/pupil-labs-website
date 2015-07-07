@@ -4,5 +4,7 @@ block main
   div.Pupil-flex-container
     //- Title block
     - var page_data = contents.tos['index.json']
+    - var page_meta = page_data.metadata
+    - var titleData = {'title':page_meta.title}    
     include includes/title
       

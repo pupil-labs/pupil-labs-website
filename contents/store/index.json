@@ -1,5 +1,6 @@
 {
   "template": "store.jade",
   "title": "Store",
-  "subtitle": "pupil is modular - configure your headset, and add it to the cart"
+  "s1": "pupil is modular",
+  "s2": "configure your hardware to suit your needs"
 }

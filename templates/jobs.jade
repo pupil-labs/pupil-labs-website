@@ -3,5 +3,7 @@ extends layout
 block main
   //- Title block
   - var page_data = contents.jobs['index.json']
+  - var page_meta = page_data.metadata
+  - var titleData = {'title':page_meta.title}    
   include includes/title
       
