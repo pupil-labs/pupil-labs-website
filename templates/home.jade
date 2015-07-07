@@ -2,8 +2,9 @@ extends layout
 
 block main
   - var page_data = contents.home['index.json']
-  - var page_meta = page_data.metadata
-  include includes/title
+  - var page_meta = page_data.metadata    
+  - var bannerData = {'title':page_meta.title,'s1':page_meta.s1, 's2':page_meta.s2}    
+  include includes/banner
       
   //- Pupil 
   div.Grid.Grid--1of2
@@ -16,17 +17,22 @@ block main
         h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
         h2.Feature-subtitle--lg #{ page_meta.pupil_description_1 }
         h2.Feature-subtitle--lg #{ page_meta.pupil_description_2 }
+        h2.Feature-subtitle--lg!= typogr(page_meta.pupil_description_3).typogrify()
         a(href="/store" class="button-flex") #{ page_meta.pupil_link_text }
 
   div.Grid.Grid--1of2
     //- About
-    div.Grid-cell.u-textCenter
+    div.Grid-cell
       div.Feature.Feature--padded-1
-        h2.Feature-title About Us
+        h2.Feature-title.u-textCenter #{ page_meta.about_title }
+        h2.Feature-subtitle--lg #{ page_meta.about_description_1 }
+        h2.Feature-subtitle--lg #{ page_meta.about_description_2 }
+        h2.Feature-subtitle--lg #{ page_meta.about_description_3 }
+        h2.Feature-subtitle--lg #{ page_meta.about_description_4 }
     //- Recent Blog Posts
     div.Grid-cell
       div.Feature.Feature--padded-1
-        h2.Feature-title.u-textCenter Recent Blog Posts
+        h2.Feature-title.u-textCenter #{ page_meta.activity_title }
         each article in articles
           li.Article-list-item
             article

@@ -16,14 +16,37 @@ block main
   //- 7. License
   - var features = _.chain(contents.pupil['features']._.pages).sortBy(function(item) {
   -   return item.metadata['order'];
-  - }).value()
+  - }).value()     
   each feature, i in features
     - var rowType = (i%2 == 0 ? 'Grid Grid--1of2' : 'Grid Grid--1of2 Grid--rowReverse')
-    div(class=rowType)
-      div.Grid-cell
-        div.Feature
-          figure.Feature-figure
-            img(class="Feature-image" src="http://placehold.it/800/"+i*111111)
-      div.Grid-cell.Grid-cell--center
-        div.Feature.Feature--padded-1
-          h1.Feature-title--lg.u-textCenter #{ feature.title }
+    if feature.title === "Software"
+      - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
+      include includes/banner     
+    else if feature.title === "record-play"
+      - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
+      div.Grid.Grid--1of2
+        each f in group 
+          div.Grid-cell.Grid-cell--center
+            div.Feature.Feature--padded-1
+              h1.Feature-title--lg.u-textCenter= f.title
+              h2.Feature-subtitle--lg!= f.html
+    else if feature.title === "community-license"
+      - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
+      div.Grid.Grid--1of2.Grid--top
+        each f in group 
+          div.Grid-cell
+            div.Feature.Feature--padded-1
+              h1.Feature-title--lg.u-textCenter= f.title
+              h2.Feature-subtitle--lg!= f.html
+    else
+      div(class=rowType)
+        div.Grid-cell
+          div.Feature
+            figure.Feature-figure
+              img(class="Feature-image" src="http://placehold.it/800/"+i*111111)
+        div.Grid-cell.Grid-cell--center
+          div.Feature.Feature--padded-1
+            h1.Feature-title--lg.u-textCenter= feature.title 
+            h2.Feature-subtitle--lg!= feature.html 
+
+
