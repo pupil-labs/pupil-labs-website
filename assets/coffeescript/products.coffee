@@ -37,8 +37,6 @@ getProductsFiltered = (type="world",sortKey="order",sortReverse=false)->
 
 getOrderSpecTxt = (orderItems)->
   specs = []
-  console.log JSON.stringify(LocalStorage.dict())
-  console.log orderItems
   for i in orderItems
     prod = getProductById(i)
     specs.push("<h4>"+prod.cartlabel+"</h4>")

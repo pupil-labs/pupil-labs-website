@@ -114,8 +114,9 @@ class PupilStore
               # add new key
               key = 0
               if LocalStorage.length() > 0
-                keys = [k for k,v of LocalStorage.dict()]
-                key = Math.max(keys) + 1
+                keys = ([parseInt(k)] for k,v of LocalStorage.dict())
+                key = Math.max.apply @,keys
+                key += 1
               item = {
                 "order" : orderItems
                 "qty"   : 1
