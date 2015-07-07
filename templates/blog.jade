@@ -1,27 +1,28 @@
 extends layout
 
 block main
-  include author
-  each article in articles
-    article.article.intro
-      header
-        p.date
-          span= moment.utc(article.date).format('DD. MMMM YYYY')
-        h2
-          a(href=article.url)= article.title
-      section.content
-        if article.intro.length > 0
-          != typogr(article.intro).typogrify()
-        if article.hasMore
-          p.more
-            a(href=article.url) more
-  div.nav
-    if prevPage
-      a(href=prevPage.url) « Newer
-    else
-      a(href='/archive.html') « Archives
-    if nextPage
-      a(href=nextPage.url) Next page »
+  div(id="Blog")
+    include author
+    each article in articles
+      article.Blog-article
+        header
+          h2
+            a(class="Blog-article-heading" href=article.url)= article.title
+          p.Blog-date
+            span= moment.utc(article.date).format('YYYY MMM Do.')
+        section.content
+          if article.intro.length > 0
+            != typogr(article.html).typogrify()
+          //- if article.hasMore
+          //-   p.more
+          //-     a(href=article.url) more
+    div.nav
+      if prevPage
+        a(href=prevPage.url) « Newer
+      else
+        a(href='/archive.html') « Archives
+      if nextPage
+        a(href=nextPage.url) Next page »
 
 
 

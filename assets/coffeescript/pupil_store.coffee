@@ -71,8 +71,11 @@ class PupilStore
                       <p> #{ p.label } </p>
                       <p> #{ p.specs } </p>
                       <p>€ #{ p.cost } </p>
-                      <a role='button' id='#{ p.id }' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
                     </div>
+                  </div>
+
+                  <div class='Grid-cell Grid-cell--bottom'>
+                    <a role='button' id='#{ p.id }' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
                   </div>
                 </div>"
         $("div[class~='Additional-products']").append(html)

@@ -31,4 +31,11 @@ block main
         //-         p #{ item.specs }
         //-         p € #{ item.cost }
         //-         a(role="button" class="AddToCart button-flex" href="#" data-cost=item.cost data-id=item.id data-specs=item.specs data-product=item.product_type) Add to cart
+    
+    - var bannerData = {'title': 'Pupil DIY'}
+    include includes/banner
+
+    section.Store-wrapper
+        div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
 
