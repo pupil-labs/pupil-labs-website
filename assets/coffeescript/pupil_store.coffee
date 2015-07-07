@@ -44,6 +44,7 @@ class PupilStore
       @eventUpdateFormValues()
       @eventSubmitForm()
       @eventGenerateOrderLink()
+      @eventOrderLinkSuccessPage()
 
 
   eventStorePageInit: ->
@@ -436,25 +437,20 @@ class PupilStore
               $(location).attr('href',"order_success")
               LocalStorage.clear()
 
+
+
   eventGenerateOrderLink: ->
     if $(@cartPage).length > 0 
       $("#Nav-cart").click (event)=>
         event.preventDefault()
         link = $(event.target)
-        data = []
-        i = 0
-        for key,value of LocalStorage.dict()
-          # data.push({"name":"key","value":"#{orderKey}"})
-          for _k,v of value
-            name = "#{i}"+"_#{_k}"
-            data.push({"name":name,"value":v})
-          i += 1
+        data = @_getOrderPermalink()
         document.location = "?"+ $.param(data)
 
   eventFillCartFromQueryString: ->
     query = window.location.search.substring(1)
     if query.length > 0
-      # cart?key=3grtmbgyuui8uxr&3grtmbgyuui8uxrorder=world_hs%2Ceye_30hz%2Clicense_academic&3grtmbgyuui8uxrqty=1&key=7ksn968mbj7cik9&7ksn968mbj7cik9order=world_hs%2Ceye_120hz_binocular%2Clicense_academic&7ksn968mbj7cik9qty=1&key=riv0r6jj5vu0udi&riv0r6jj5vu0udiorder=product_support_12&riv0r6jj5vu0udiqty=1
+      # ?0_order=world_none%2Ceye_120hz_binocular%2Clicense_commercial&0_qty=3&1_order=world_hr%2Ceye_120hz_binocular%2Clicense_commercial&1_qty=2&2_order=product_support_6&2_qty=1
       LocalStorage.clear()
       pairs = query.split('&')
       # while pairs.length > 0
@@ -469,7 +465,26 @@ class PupilStore
         LocalStorage.set(j, JSON.stringify(item))
         j += 1
       @eventUpdateCartNavCounter()
-      
+    
+  eventOrderLinkSuccessPage: =>
+    if $("#Success").length > 0
+      data = @_getOrderPermalink()
+      url = window.location.origin + "/cart?" + $.param(data)
+      link = "<a class='u-linkAttention' href='#{url}'>permalink</a>"
+      html = "<h2 class='Banner-subtitle'>You can always revisit your order with this #{link}.</h2>"
+      $(".Banner-item.u-textCenter").append(html)
+
+
+  _getOrderPermalink: ->
+    data = []
+    i = 0
+    for key,value of LocalStorage.dict()
+      # data.push({"name":"key","value":"#{orderKey}"})
+      for _k,v of value
+        name = "#{i}"+"_#{_k}"
+        data.push({"name":name,"value":v})
+      i += 1
+    return data
 
   _setOrderType: ->
     activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()

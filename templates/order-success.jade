@@ -1,5 +1,6 @@
 extends layout
 
 block main
-  - var bannerData = { "title": "Success", "s1": "Thanks for submitting your request, we will be in touch shortly via email."}
-  include includes/banner
+  div(id="Success")
+    - var bannerData = { "title": "Success", "s1": "Thanks for submitting your request, we will be in touch shortly via email."}
+    include includes/banner
