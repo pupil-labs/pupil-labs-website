@@ -112,7 +112,10 @@ class PupilStore
               LocalStorage.set(existingOrderKey,JSON.stringify(existingOrder))
             else
               # add new key
-              key = @_uniqueId()
+              key = 0
+              if LocalStorage.length() > 0
+                keys = [k for k,v of LocalStorage.dict()]
+                key = Math.max(keys) + 1
               item = {
                 "order" : orderItems
                 "qty"   : 1
@@ -408,6 +411,7 @@ class PupilStore
           @_setOrderType()
           # add order object to a hidden form text area
           orders = []
+          keys = [k for k,v in LocalStorage.dict()]
           for k,v of LocalStorage.dict()
             orders.push v
           $("textarea[class='Form-input--cart']").val(JSON.stringify(orders))
@@ -437,12 +441,13 @@ class PupilStore
         event.preventDefault()
         link = $(event.target)
         data = []
+        i = 0
         for key,value of LocalStorage.dict()
-          orderKey = key
-          data.push({"name":"key","value":"#{orderKey}"})
+          # data.push({"name":"key","value":"#{orderKey}"})
           for _k,v of value
-            name = "#{orderKey}"+"#{_k}"
+            name = "#{i}"+"_#{_k}"
             data.push({"name":name,"value":v})
+          i += 1
         document.location = "?"+ $.param(data)
 
   eventFillCartFromQueryString: ->
@@ -451,15 +456,17 @@ class PupilStore
       # cart?key=3grtmbgyuui8uxr&3grtmbgyuui8uxrorder=world_hs%2Ceye_30hz%2Clicense_academic&3grtmbgyuui8uxrqty=1&key=7ksn968mbj7cik9&7ksn968mbj7cik9order=world_hs%2Ceye_120hz_binocular%2Clicense_academic&7ksn968mbj7cik9qty=1&key=riv0r6jj5vu0udi&riv0r6jj5vu0udiorder=product_support_12&riv0r6jj5vu0udiqty=1
       LocalStorage.clear()
       pairs = query.split('&')
-      while pairs.length > 0
-        key = pairs.shift().split("=").pop()        
+      # while pairs.length > 0
+      j = 0
+      for p,i in pairs by 2
         orderItems = decodeURIComponent(pairs.shift().split("=").pop()).split(',')
         qty = parseInt(pairs.shift().split("=").pop())
         item = {
           "order" : orderItems
           "qty"   : qty
         }
-        LocalStorage.set(key, JSON.stringify(item))
+        LocalStorage.set(j, JSON.stringify(item))
+        j += 1
       @eventUpdateCartNavCounter()
       
 
@@ -508,11 +515,11 @@ class PupilStore
       subTotal = "Not for sale"  
     $(@configSubTotalClass).text(subTotal)
 
-  _uniqueId: (len=6)->
-    id = ""
-    id += Math.random().toString(36).substr(2) while id.length < len
-    id.substr 0, len
-    return id
+  # _uniqueId: (len=6)->
+  #   id = ""
+  #   id += Math.random().toString(36).substr(2) while id.length < len
+  #   id.substr 0, len
+  #   return id
 
   _arrayEqual: (a, b) ->
     # a.length is b.length and 
