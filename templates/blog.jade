@@ -4,18 +4,19 @@ block main
   div(id="Blog")
     include author
     each article in articles
-      article.Blog-article
-        header
-          h2
-            a(class="Blog-article-heading" href=article.url)= article.title
-          p.Blog-date
-            span= moment.utc(article.date).format('YYYY MMM Do.')
-        section.content
-          if article.intro.length > 0
-            != typogr(article.html).typogrify()
-          //- if article.hasMore
-          //-   p.more
-          //-     a(href=article.url) more
+      article.Grid.Grid--gutters
+        div.Grid-cell
+          header
+            h2
+              a(class="Blog-article-heading" href=article.url)= article.title
+            p.Blog-article-date
+              span= moment.utc(article.date).format('YYYY MMM Do.')
+          section.Blog-content
+            if article.intro.length > 0
+              != typogr(article.html).typogrify()
+            //- if article.hasMore
+            //-   p.more
+            //-     a(href=article.url) more
     div.nav
       if prevPage
         a(href=prevPage.url) « Newer

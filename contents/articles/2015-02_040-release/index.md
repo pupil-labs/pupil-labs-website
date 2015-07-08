@@ -11,7 +11,6 @@ We are very excited to release our latest set of improvements to the Pupil proje
 	  <a href="https://github.com/pupil-labs/pupil/releases/tag/v0.4.0"  class="Button"target="_blank">Download Pupil v0.4.0</a>
 	</div>
 </div>
-<br>
 
 We want to thank everyone who contributed to the source code, raised issues, commented on code, and sent feedback! The Pupil project is getting better every day!
 

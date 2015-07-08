@@ -31,13 +31,15 @@ block main
           //-   h3.Grid-cell--header #[a(href="#" id="Cart-clearCart") Remove]
           //- jquery will fill this in
         div(id="CartSum" class="Grid")
-          div(class="Grid-cell--2of3" id="CartSum--label")
+          div(class="Grid-cell--2of3" id="CartSum-label--container")
+            h3(id=id="CartSum--label")
           div(class="Grid-cell--1of18")
           div(class="Grid-cell--1of22")
           div(class="Grid-cell--1of18")
           div(class="Grid-cell--1of22")
-          div(class="Grid-cell--1of18 u-textCenter" id="CartSum--total")
-          div(class="Grid-cell--1of18 u-textCenter")
+          div(class="Grid-cell--1of9")
+            h3(id="CartSum--total")
+          //- div(class="Grid-cell--1of18 u-textCenter")
       div.Cart-checkout
         div(class="Grid" id="Cart-checkout--buttons")
           div.Grid-cell.Grid-cell--1of2
