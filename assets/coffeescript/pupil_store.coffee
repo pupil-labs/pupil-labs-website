@@ -235,9 +235,9 @@ class PupilStore
           $("#Cart-table").after(newRow)
         [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Sub Total"] else ["",""]
         totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
-        $("div[id='CartSum--label']").text("#{ label }")
-        $("div[id='CartSum--total']").text("#{ totalPrice }")
-        $("div[id='CartSum--label']").append("<p class='LicenseSpecs-txt' style='font-weight:400;'>(additional shipping and VAT may apply)</p>")
+        $("h3[id='CartSum--label']").text("#{ label }")
+        $("h3[id='CartSum--total']").text("#{ totalPrice }")
+        $("div[id='CartSum-label--container']").append("<p class='CartSum--total-disclaimer'>(additional shipping and VAT may apply)</p>")
       else
         $(".Cart-container").hide()
 
@@ -437,7 +437,6 @@ class PupilStore
             success: (data, textStatus, jqXHR) ->
               console.log "Successful AJAX call: #{textStatus}"
               $(location).attr('href',"order_success")
-              LocalStorage.clear()
 
 
 
@@ -475,6 +474,9 @@ class PupilStore
       link = "<a class='u-linkAttention' href='#{url}'>permalink</a>"
       html = "<h2 class='Banner-subtitle'>You can always revisit your order with this #{link}.</h2>"
       $(".Banner-item.u-textCenter").append(html)
+      # very important - clear LocalStorage after setting the link
+      LocalStorage.clear()      
+
 
 
   _getOrderPermalink: ->
