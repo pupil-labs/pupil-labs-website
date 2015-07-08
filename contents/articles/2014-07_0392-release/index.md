@@ -1,7 +1,7 @@
 ---
 title: Pupil Player - Incremental Release v0.3.9.2
 author: Pupil Dev Team
-date: 2013-07-10
+date: 2014-07-10
 ---
 
 We have been doing a lot of work recently on the back-end of Pupil Capture and Player, which will allow for much greater control in the way video and audio are captured, encoded, and decoded. While back-end changes are not yet available for use, we just wanted to say that we're working on it and hope to release changes within the next few weeks.
@@ -26,7 +26,7 @@ Here is an overview of new features:
 
 <div class="row">
 	<div class="col-sm-12 text-center">
-		<img src="../../../media/img/box_demo_v0392.png" class='img-responsive' alt="Pupil Player v0392 Box Demo">
+		<img src="../../media/images/box_demo_v0392.png" class='img-responsive' alt="Pupil Player v0392 Box Demo">
 	</div>
 </div>
 

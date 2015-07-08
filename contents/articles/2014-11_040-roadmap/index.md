@@ -25,7 +25,7 @@ Our development notes are notes below, and you can check out the [v0.4.0 milesto
 
 <div class="row">
 	<div class="col-sm-9 text-center">
-	<img src="../../../media/img/demo_screenshot_20141124.png" class='img-responsive' alt="pyglui screenshot on Nov 24, 2014">
+	<img src="../../media/images/demo_screenshot_20141124.png" class='img-responsive' alt="pyglui screenshot on Nov 24, 2014">
 	<p>Development screenshot of pyglui... coming soon to Pupil!</p>
 	</div>
 </div>

@@ -25,7 +25,7 @@ We are happy to announce the release of new bundles for Pupil Capture & Pupil Pl
 + Pupil Server to OSC bridge script. After getting a lot of requests for OSC streams, we made a small script to allow Pupil to interface with OSC devices. Script can be found in [this gist](https://gist.github.com/mkassner/9682161#file-zmq_osc_bridge-py "ZMQ OSC Bridge Script"). 
 
 <div class="text-center">
-	<img src="../../../media/img/pupil_accuracy_test.png" class="img-responsive img-rounded" alt="Pupil Accuracy Test">
+	<img src="../../media/images/pupil_accuracy_test.png" class="img-responsive img-rounded" alt="Pupil Accuracy Test">
 </div>
 
 ## Performance improvements for Pupil Capture
