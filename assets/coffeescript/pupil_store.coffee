@@ -64,18 +64,17 @@ class PupilStore
                  </li>"
         $("ul[class~='ConfigOptions--eye']").append(html)
       for p in getProductsFiltered('product')
-        html = "<div class='Grid-cell'>
-                  <div class='Feature'>
-                    <div class='Feature-figure'>
-                      <img class='Feature-image' src=#{ p.img }>
+        html = "<div class='Aligner-item'>
+                  <div class='Aligner-item--column'>
+                    <img class='Feature-image' src=#{ p.img }>
+                    <div class='Aligner-item--stretchHeight'>
                       <p> #{ p.label } </p>
                       <p> #{ p.specs } </p>
                       <p>€ #{ p.cost } </p>
                     </div>
-                  </div>
 
-                  <div class='Grid-cell Grid-cell--bottom'>
-                    <a role='button' id='#{ p.id }' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
+                  <a role='button' id='#{ p.id }' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
+                
                   </div>
                 </div>"
         $("div[class~='Additional-products']").append(html)

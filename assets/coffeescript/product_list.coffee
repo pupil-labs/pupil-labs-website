@@ -84,7 +84,7 @@ productList = [
     specs: "Upgrade to 120hz camera. A custom made camera that will resolve a wider range of eye movement motifs. IR camera with IR illumination (dark pupil tracking). 640x480 @120fps."
     dimensions: 0
     weight: 0
-    img: "http://placehold.it/800x300/444444"
+    img: "http://placehold.it/800x500/444444"
     video: "#"
     order: 1
   }, {
@@ -95,7 +95,7 @@ productList = [
     specs: "Alternate lenses for 110hz world camera. Wide angle."
     dimensions: 0
     weight: 0
-    img: "http://placehold.it/800x300/444444"
+    img: "http://placehold.it/800x500/444444"
     order: 2
   }, {
     id: "product_support_6"
@@ -103,7 +103,7 @@ productList = [
     label: "6 month support contract"
     cartlabel: "Support contract"            
     specs: "6 month support contract. Email support and 4 video support sessions"
-    img: "http://placehold.it/800x300/444444"
+    img: "http://placehold.it/800x500/444444"
     order: 3
   }, {
     id: "product_support_12"
@@ -111,7 +111,7 @@ productList = [
     label: "12 month support contract"
     cartlabel: "Support contract"            
     specs: "12 month support contract. Email support and 8 video support sessions"
-    img: "http://placehold.it/800x300/444444"
+    img: "http://placehold.it/800x500/444444"
     order: 4
   }, {
     id: "license_academic"
