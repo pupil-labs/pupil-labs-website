@@ -197,69 +197,69 @@ class PupilStore
         $(".Cart-container").show()
         for k,v of LocalStorage.dict()
           # product, id, specs, price, quantity
-          newRow = "<div class='Cart-rowContainer'>
-                      <div class='Grid Grid--center Cart-row' id='#{ k }'>
-                          
-                          <div class='Grid-cell--2of3 Grid-cell--2of3-padright'>
-                            #{ getOrderSpecTxt(v.order) }
-                          </div>
-                          
-                          <!-- begin cost calc cell  -->
-                          <div class='Grid-cell'>
-                            
-                            <!-- begin grid for formulas  -->                          
-                            <div class='Grid Grid--center'>
+          specTxtHtml = "<div class='Grid-cell--2of3 Grid-cell--2of3-padright'>
+                          #{ getOrderSpecTxt(v.order) }
+                        </div>"
 
-                              <div class='Grid-cell Grid-cell--cartFormula'>
+          costFormulaHtml = "<div class='Grid-cell Grid-cell--cartFormula'>
                                 <div class='Grid Grid--cartFormula-break'>
 
-                                <div id='CartItem-unitCost' class='Grid-cell'>
-                                  <p class='Cart-costCalc'>€ #{ getProductsSum(v.order,1) }</p>
-                                </div>              
+                                  <div id='CartItem-unitCost' class='Grid-cell'>
+                                    <p class='Cart-costCalc'>€ #{ getProductsSum(v.order,1) }</p>
+                                  </div>              
                                 
-                                <div class='Grid-cell'>
-                                  <div class='Grid Grid--center'>
-                                    <div class='Grid-cell'>
-                                      <p class='Cart-costCalc'>x</p>
-                                    </div>
-                                    <div id='CartItem-unitQuant' class='Grid-cell'>
-                                      <p class='Cart-itemQuant Cart-costCalc'>#{ v.qty }</p>
-                                    </div>
-                                    <div class='Grid-cell'>
-                                      <div class='Grid Grid-column'>
-                                        <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
-                                        <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
+                                  <div class='Grid-cell'>
+                                    <div class='Grid Grid--center'>
+                                      <div class='Grid-cell'>
+                                        <p class='Cart-costCalc'>x</p>
+                                      </div>
+                                      <div id='CartItem-unitQuant' class='Grid-cell'>
+                                        <p class='Cart-itemQuant Cart-costCalc'>#{ v.qty }</p>
+                                      </div>
+                                      <div class='Grid-cell'>
+                                        <div class='Grid Grid-column'>
+                                          <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
+                                          <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div>
 
-                                </div>
-                              </div><!-- /end multiplication cell  -->
-                              
+                            </div>
+                          </div>"
 
-                              <!-- begin sum grid cell --> 
-                              <div class='Grid-cell Grid-cell--cartSum'>
-                                <div class='Grid Grid--center'>
+          costSumHtml = "<div class='Grid-cell Grid-cell--cartSum'>
+                          <div class='Grid Grid--center'>
 
-                                <div id='CartItem-equalSign' class='Grid-cell'>
-                                  <p class='Cart-costCalc'>=</p>
-                                </div>                                                   
+                            <div id='CartItem-equalSign' class='Grid-cell'>
+                              <p class='Cart-costCalc'>=</p>
+                            </div>                                                   
                                 
-                                <div class='Grid-cell u-textCenter'>
-                                  <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ getProductsSum(v.order,v.qty) }</p>
-                                </div>  
+                            <div class='Grid-cell u-textCenter'>
+                              <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ getProductsSum(v.order,v.qty) }</p>
+                            </div>  
                                 
-                                <div class='Cart-removeItem Grid-cell u-textRight'>
-                                  <p>(remove)</p>
-                                </div>
+                            <div class='Cart-removeItem Grid-cell u-textRight'>
+                              <p>(remove)</p>
+                            </div>
 
-                              </div>
-                            </div><!-- /end sum cell  -->
-                          </div><!-- /end cost calc cell -->
+                          </div>
+                        </div>"
 
-                      </div><!-- end grid -->
-                    </div>"
+          newRow = "<div class='Cart-rowContainer'>
+                      <div class='Grid Grid--center Cart-row' id='#{ k }'>" +
+                        
+                        specTxtHtml +
+                        "<div class='Grid-cell'>" +
+                          "<div class='Grid Grid--center'>" +
+                            costFormulaHtml +
+                            costSumHtml +
+                          "</div>" +
+                        "</div>" +
+
+                      "</div>" +
+                    "</div>"
+
           $("#Cart-table").after(newRow)
         [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Sub Total"] else ["",""]
         totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
