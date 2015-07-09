@@ -198,40 +198,68 @@ class PupilStore
         for k,v of LocalStorage.dict()
           # product, id, specs, price, quantity
           newRow = "<div class='Cart-rowContainer'>
-                    <div class='Grid Grid--center Cart-row' id='#{ k }'>
-                        <div class='Grid-cell--2of3 Grid-cell--2of3-padright'>
-                          #{ getOrderSpecTxt(v.order) }
-                        </div>
-                        <div class='Grid-cell--1of18 u-textCenter'>
-                          <p>€ #{ getProductsSum(v.order,1) }</p>
-                        </div> 
-                        <div class='Grid-cell--1of22 u-textCenter'>
-                          <p>*</p>
-                        </div>                           
-                        <div class='Grid-cell--1of18 u-textCenter'>
-                          <div class='Grid Grid--center'>
-                            <div class='Grid-cell--1of2'>
-                              <p class='Cart-itemQuant'>#{ v.qty }</p>
-                            </div>
-                            <div class='Grid-cell--1of2'>
-                              <div class='Grid Grid-column'>
-                                <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
-                                <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
-                              </div>
-                            </div>
+                      <div class='Grid Grid--center Cart-row' id='#{ k }'>
+                          
+                          <div class='Grid-cell--2of3 Grid-cell--2of3-padright'>
+                            #{ getOrderSpecTxt(v.order) }
                           </div>
-                        </div>
-                        <div class='Grid-cell--1of22 u-textCenter'>
-                          <p>=</p>
-                        </div>                                                   
-                        <div class='Grid-cell--1of18 u-textCenter'>
-                          <p class='Cart--sumRow'>€ #{ getProductsSum(v.order,v.qty) }</p>
-                        </div>  
-                        <div class='Cart-removeItem Grid-cell--1of18 u-textCenter'>
-                          <p>X</p>
-                        </div>  
+                          
+                          <!-- begin cost calc cell  -->
+                          <div class='Grid-cell'>
+                            
+                            <!-- begin grid for formulas  -->                          
+                            <div class='Grid Grid--1of2'>
+
+                              <div class='Grid-cell'>
+                                <div class='Grid'>
+
+                                <div class='Grid-cell u-textCenter'>
+                                  <p class='Cart-costCalc'>€ #{ getProductsSum(v.order,1) }</p>
+                                </div> 
+                                
+                                <div class='Grid-cell u-textCenter'>
+                                  <p class='Cart-costCalc'>x</p>
+                                </div>                           
+                                
+                                <div class='Grid-cell u-textCenter'>
+                                  <div class='Grid Grid--center'>
+                                    <div class='Grid-cell--1of2'>
+                                      <p class='Cart-itemQuant Cart-costCalc'>#{ v.qty }</p>
+                                    </div>
+                                    <div class='Grid-cell--1of2'>
+                                      <div class='Grid Grid-column'>
+                                        <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
+                                        <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                </div>
+                              </div><!-- /end multiplication grid  -->
+                              
+                              <!-- begin sum grid  --> 
+                              <div class='Grid-cell'>
+                                <div class='Grid'>
+
+                                <div class='Grid-cell u-textCenter'>
+                                  <p class='Cart-costCalc'>=</p>
+                                </div>                                                   
+                                
+                                <div class='Grid-cell u-textCenter'>
+                                  <p class='Cart--sumRow Cart-costCalc'>€ #{ getProductsSum(v.order,v.qty) }</p>
+                                </div>  
+                                
+                                <div class='Cart-removeItem Grid-cell'>
+                                  <p>(remove)</p>
+                                </div>
+                                  
+                              </div>
+                            </div><!-- /end sum grid  -->
+                          </div><!-- /end cost calc cell 1of3 -->
+
                       </div>
-                      </div>"
+                    </div>"
           $("#Cart-table").after(newRow)
         [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Sub Total"] else ["",""]
         totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
@@ -276,7 +304,7 @@ class PupilStore
         sign = $(item).attr('class').split(' ').pop().split('-').pop()
 
         row = $(item).closest('.Cart-row')
-        numDisplay = $(row).find('.Cart-itemQuant')
+        numDisplay = $(row).find('.Cart-itemQuant.Cart-costCalc')
         key = $(row).attr('id')
 
         # get object from local storage
@@ -291,7 +319,7 @@ class PupilStore
         $(numDisplay).text("#{ item.qty }")
 
         # update row sum
-        $(row).find("p[class='Cart--sumRow']").text("€ " + "#{ getProductsSum(item.order,item.qty) }")
+        $(row).find("p[class='Cart--sumRow Cart-costCalc]").text("€ " + "#{ getProductsSum(item.order,item.qty) }")
 
         # update cart subtotal 
         totalPrice = if LocalStorage.length() > 0 then getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict() else ""

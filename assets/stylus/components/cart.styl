@@ -1,6 +1,9 @@
 $w = 8px
 $smw = $w*.75
 $scale = 1.2
+$scaleRemove = 1.05
+$removeSize = .75em
+
 
 #Cart
 	// nothing here - placeholder for jQuery
@@ -35,6 +38,7 @@ $scale = 1.2
 	text-transform lowercase
 	font-size .8em
 	font-style italic
+	
 
 #CartSum--total
 	color $link-hover-color
@@ -73,19 +77,25 @@ tr.Cart-orderItem td
 
 .Cart-removeItem
 	user-select none
-	transition color .3s ease-in-out, font-size .35s ease-in-out
+	font-size $removeSize
+	font-variant small-caps
+	// transition color .3s ease-in-out, font-size .35s ease-in-out
+	transition color .3s ease-in-out, transform .35s ease-in-out
 
 	&:active
 		cursor pointer
 		color complement($link-hover-color)
-		font-size $font-size-base*$scale
+		// font-size $removeSize*$scaleRemove
+		transform scale($scaleRemove)
 
 .no-touch
 	.Cart-removeItem
 		&:hover
 			cursor pointer
 			color complement($link-hover-color)
-			font-size $font-size-base*$scale
+			// font-size $removeSize*$scaleRemove
+			transform scale($scaleRemove)
+				
 				
 
 .Cart-containerTriangle
@@ -152,4 +162,6 @@ tr.Cart-orderItem td
 				transform scale($scale)
 				border-color $link-hover-color transparent transparent transparent
 
-
+.Cart-costCalc	
+	@media $break-sm
+		font-size .8em
