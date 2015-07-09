@@ -208,25 +208,24 @@ class PupilStore
                           <div class='Grid-cell'>
                             
                             <!-- begin grid for formulas  -->                          
-                            <div class='Grid Grid--1of2'>
+                            <div class='Grid Grid--center'>
 
-                              <div class='Grid-cell'>
-                                <div class='Grid'>
+                              <div class='Grid-cell Grid-cell--cartFormula'>
+                                <div class='Grid Grid--cartFormula-break'>
 
-                                <div class='Grid-cell u-textCenter'>
+                                <div id='CartItem-unitCost' class='Grid-cell'>
                                   <p class='Cart-costCalc'>€ #{ getProductsSum(v.order,1) }</p>
-                                </div> 
+                                </div>              
                                 
-                                <div class='Grid-cell u-textCenter'>
-                                  <p class='Cart-costCalc'>x</p>
-                                </div>                           
-                                
-                                <div class='Grid-cell u-textCenter'>
+                                <div class='Grid-cell'>
                                   <div class='Grid Grid--center'>
-                                    <div class='Grid-cell--1of2'>
+                                    <div class='Grid-cell'>
+                                      <p class='Cart-costCalc'>x</p>
+                                    </div>
+                                    <div id='CartItem-unitQuant' class='Grid-cell'>
                                       <p class='Cart-itemQuant Cart-costCalc'>#{ v.qty }</p>
                                     </div>
-                                    <div class='Grid-cell--1of2'>
+                                    <div class='Grid-cell'>
                                       <div class='Grid Grid-column'>
                                         <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
                                         <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
@@ -236,29 +235,30 @@ class PupilStore
                                 </div>
 
                                 </div>
-                              </div><!-- /end multiplication grid  -->
+                              </div><!-- /end multiplication cell  -->
                               
-                              <!-- begin sum grid  --> 
-                              <div class='Grid-cell'>
-                                <div class='Grid'>
 
-                                <div class='Grid-cell u-textCenter'>
+                              <!-- begin sum grid cell --> 
+                              <div class='Grid-cell Grid-cell--cartSum'>
+                                <div class='Grid Grid--center'>
+
+                                <div id='CartItem-equalSign' class='Grid-cell'>
                                   <p class='Cart-costCalc'>=</p>
                                 </div>                                                   
                                 
                                 <div class='Grid-cell u-textCenter'>
-                                  <p class='Cart--sumRow Cart-costCalc'>€ #{ getProductsSum(v.order,v.qty) }</p>
+                                  <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ getProductsSum(v.order,v.qty) }</p>
                                 </div>  
                                 
-                                <div class='Cart-removeItem Grid-cell'>
+                                <div class='Cart-removeItem Grid-cell u-textRight'>
                                   <p>(remove)</p>
                                 </div>
-                                  
-                              </div>
-                            </div><!-- /end sum grid  -->
-                          </div><!-- /end cost calc cell 1of3 -->
 
-                      </div>
+                              </div>
+                            </div><!-- /end sum cell  -->
+                          </div><!-- /end cost calc cell -->
+
+                      </div><!-- end grid -->
                     </div>"
           $("#Cart-table").after(newRow)
         [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Sub Total"] else ["",""]
@@ -319,12 +319,12 @@ class PupilStore
         $(numDisplay).text("#{ item.qty }")
 
         # update row sum
-        $(row).find("p[class='Cart--sumRow Cart-costCalc]").text("€ " + "#{ getProductsSum(item.order,item.qty) }")
+        $(row).find("p[class='Cart--sumRow Cart-costCalc--subTotal']").text("€ " + "#{ getProductsSum(item.order,item.qty) }")
 
         # update cart subtotal 
         totalPrice = if LocalStorage.length() > 0 then getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict() else ""
         totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
-        $("div[id='CartSum--total']").text("#{ totalPrice }")
+        $("#CartSum--total").text("#{ totalPrice }")
 
         @eventUpdateCartNavCounter()
 

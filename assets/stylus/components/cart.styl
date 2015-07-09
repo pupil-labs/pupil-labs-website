@@ -2,12 +2,14 @@ $w = 8px
 $smw = $w*.75
 $scale = 1.2
 $scaleRemove = 1.05
-$removeSize = .75em
+$removeSize = .65em
 
 
 #Cart
 	// nothing here - placeholder for jQuery
 	// padding 1em 1.75em
+	@media $break-sm
+		padding-top 4em
 		
 #Cart-table
 	width 100%
@@ -88,6 +90,9 @@ tr.Cart-orderItem td
 		// font-size $removeSize*$scaleRemove
 		transform scale($scaleRemove)
 
+	@media $break-cart
+		margin-right .5em
+
 .no-touch
 	.Cart-removeItem
 		&:hover
@@ -96,6 +101,7 @@ tr.Cart-orderItem td
 			// font-size $removeSize*$scaleRemove
 			transform scale($scaleRemove)
 				
+
 				
 
 .Cart-containerTriangle
@@ -143,6 +149,10 @@ tr.Cart-orderItem td
 			transform scale($scale)
 			border-color complement($link-hover-color) transparent transparent transparent
 
+	@media $break-cart
+		margin-left .5em
+
+
 .no-touch
 	.Cart-itemQuant--increment
 		&:active
@@ -163,5 +173,30 @@ tr.Cart-orderItem td
 				border-color $link-hover-color transparent transparent transparent
 
 .Cart-costCalc	
-	@media $break-sm
-		font-size .8em
+	@media $break-cart
+		font-size .9em
+		
+.Cart-costCalc--subTotal
+	font-weight 700
+	
+	@media $break-cart
+		font-size .9em
+		text-align right
+
+
+#CartItem-unitCost
+	@media $break-cart
+		flex 0 0 (2/3)*100%
+		max-width (2/3)*100%
+		text-align right
+
+#CartItem-equalSign
+	text-align center
+	
+	@media $break-cart
+		text-align left
+	
+#CartItem-unitQuant
+	@media $break-cart
+
+		text-align right
