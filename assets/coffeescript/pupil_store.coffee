@@ -265,7 +265,7 @@ class PupilStore
         totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
         $("h3[id='CartSum--label']").text("#{ label }")
         $("h3[id='CartSum--total']").text("#{ totalPrice }")
-        $("div[id='CartSum-label--container']").append("<p class='CartSum--total-disclaimer'>(additional shipping and VAT may apply)</p>")
+        $("div[id='CartSum-label--container']").append("<p class='Cart-disclaimerTxt'>(additional shipping and VAT may apply)</p>")
       else
         $(".Cart-container").hide()
 
