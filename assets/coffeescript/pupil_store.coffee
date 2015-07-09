@@ -534,10 +534,13 @@ class PupilStore
 
   _updateSpecTxt: (type,id)->
     button = ".TechSpecs"
-    txt = getProductById(id).specs
+    product = getProductById(id) 
+    txt = product.specs
+    videoLink = "<p><a href='#{ product.video }'>Download Video Sample</a></p>"
     selector = "p[class='TechSpecs-txt--#{ type }']"
     if $(button).hasClass("TechSpecs--active")
       $(selector).text("#{ txt }")
+      $(selector).append("#{ videoLink }")
     else
       $(selector).text("#{ txt }").hide()
 
