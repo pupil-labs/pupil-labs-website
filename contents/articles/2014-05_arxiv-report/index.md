@@ -13,7 +13,7 @@ If you're new to Pupil, we think that the paper would be a good introduction and
 
 <div class="row">
 	<div class="col-sm-12 text-center">
-		<a href="http://arxiv.org/abs/1405.0006" target="_blank"><img src="../../media/images/pupil-technical-report-1.png" class='img-responsive' alt="Pupil Technical Report"></a>
+		<a href="http://arxiv.org/abs/1405.0006" target="_blank"><img src="../../../media/images/pupil-technical-report-1.png" class='img-responsive' alt="Pupil Technical Report"></a>
 	</div>
 </div>
 

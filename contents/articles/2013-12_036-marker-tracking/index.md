@@ -22,7 +22,7 @@ Here's what you can currently do with the marker tracking plugin.
   + Define surfaces within your environment using fiducial markers.  Surfaces can be defined with one or more markers.  
   + Markers - We use a 5x5 square marker.  This is not the same marker that is used by ArUco (they use 7x7). This gives us 64 unique markers. This allows us to make smaller markers that can still be detected.  Markers can be printed on paper, or displayed on the screen.   
   + You can [generate markers with this script](https://gist.github.com/willpatera/7908319#file-make_square_markers-py "Generate square marker script"). Here is a .png of all 64 markers 
-  <img alt="All 64 Markers" src="../../media/images/all_markers.png" width="100%">
+  <img alt="All 64 Markers" src="../../../media/images/all_markers.png" width="100%">
   + Within the plugin, you can register surfaces, name them, and edit them.  
   + Registered surfaces are saved automatically, so the next time you run Pupil capture, your surfaces (if they can be seen) will appear when you start the marker tracking plugin.
   + Surfaces defined with more than 2 markers are detected even if some markers go outside the field of vision or are obscured. 

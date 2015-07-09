@@ -23,11 +23,11 @@ Check out the new Pupil Pro and update to Pupil Capture 0.3.7, and let us know w
 ## **Pupil Pro** - Mobile Eye Tracking Headset
 <div class="row">
   <div class="col-md-6">
-    <img src="../../media/images/pro-front-r20-crop.png" class="img-responsive img-circle" alt="Pupil Pro front">
+    <img src="../../../media/images/pro-front-r20-crop.png" class="img-responsive img-circle" alt="Pupil Pro front">
   </div>
   <br>
   <div class="col-md-6">
-   <img src="../../media/images/pupil-pro-eye-cam-adjustable-arm.png" class="img-responsive img-rounded" alt="Pupil Pro adjustable Eye Camera arm">
+   <img src="../../../media/images/pupil-pro-eye-cam-adjustable-arm.png" class="img-responsive img-rounded" alt="Pupil Pro adjustable Eye Camera arm">
   </div>
 </div>
 
@@ -49,10 +49,10 @@ For those who haven't used manual marker calibration - check out the [calibratio
 
 <div class="row">
   <div class="col-md-6">
-    <img src="../../media/images/manual_calibration_marker-01.png" class="img-responsive img-circle" alt="Pupil Pro front">
+    <img src="../../../media/images/manual_calibration_marker-01.png" class="img-responsive img-circle" alt="Pupil Pro front">
   </div>
   <div class="col-md-6">
-   <img src="../../media/images/manual_calibration_marker-02.png" class="img-responsive img-circle" alt="Pupil Pro adjustable Eye Camera arm">
+   <img src="../../../media/images/manual_calibration_marker-02.png" class="img-responsive img-circle" alt="Pupil Pro adjustable Eye Camera arm">
   </div>
 </div>
 

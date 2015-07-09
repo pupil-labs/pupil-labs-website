@@ -33,13 +33,13 @@ block main
     div.Grid-cell
       div.Feature.Feature--padded-1
         h2.Feature-title.u-textCenter #{ page_meta.activity_title }
-        each article in articles
-          li.Article-list-item
-            article
-              header
-                h2.Article-title #{ article.title }
-                p
-                  time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
-                p!= typogr(article.intro).typogrify()
-                a(href=article.url class="Article-link") Read More 
+        //- each article in articles
+        //-   li.Article-list-item
+        //-     article
+        //-       header
+        //-         h2.Article-title #{ article.title }
+        //-         p
+        //-           time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
+        //-         p!= typogr(article.intro).typogrify()
+        //-         a(href=article.url class="Article-link") Read More 
 

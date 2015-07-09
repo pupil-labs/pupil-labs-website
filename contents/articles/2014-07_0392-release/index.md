@@ -27,7 +27,7 @@ Here is an overview of new features:
 
 <div class="row">
 	<div class="col-sm-12 text-center">
-		<img src="../../media/images/box_demo_v0392.png" class='img-responsive' alt="Pupil Player v0392 Box Demo">
+		<img src="../../../media/images/box_demo_v0392.png" class='img-responsive' alt="Pupil Player v0392 Box Demo">
 	</div>
 </div>
 

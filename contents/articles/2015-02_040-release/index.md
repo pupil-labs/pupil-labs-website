@@ -32,7 +32,7 @@ So we created [pyglui](http://github.com/pupil-labs/pyglui) -- an Open Source  O
 
 <div class="row text-center">
 	<div class="col-sm-12">
-		<img src="../../media/images/v04_world_eye_composite_screenshot.png" class='img-responsive' alt="Pupil Capture World and Eye window screenshots v0.4.0">
+		<img src="../../../../media/images/v04_world_eye_composite_screenshot.png" class='img-responsive' alt="Pupil Capture World and Eye window screenshots v0.4.0">
 	</div>
 </div>
 
