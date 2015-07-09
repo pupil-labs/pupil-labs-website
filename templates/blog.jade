@@ -2,28 +2,47 @@ extends layout
 
 block main
   div(id="Blog")
-    include author
+    //- include author
+    - var titleData = {'title':"Blog",'s1':"news and development updates"}    
+    include includes/title
+    
+    div.Grid
     each article in articles
-      article.Grid.Grid--gutters
-        div.Grid-cell
-          header
-            h2
-              a(class="Blog-article-heading" href=article.url)= article.title
-            p.Blog-article-date
-              span= moment.utc(article.date).format('YYYY MMM Do.')
-          section.Blog-content
-            if article.intro.length > 0
-              != typogr(article.html).typogrify()
+      div.Grid-item.Blog-article
+        header
+          h2.Blog-article-title.u-textCenter= article.title
+          p.Blog-article-date.u-textCenter= moment.utc(article.date).format('YYYY MMM DD')      
+
+          if article.metadata.subtitle
+            h3.Blog-article-subtitle.u-textCenter= article.metadata.subtitle
+          a(href=article.url)
+            h3.u-textCenter read more
+      //- article.Grid.Grid--gutters
+      //-   div.Grid-cell
+      //-     header.Blog-article-header
+      //-       h2.Blog-article-title
+      //-         a(href=article.url)= article.title
+      //-       p.Blog-article-date
+      //-         span= moment.utc(article.date).format('YYYY MMM DD')
+      //-     section.Blog-content
+      //-       //- if article.intro.length > 0
+      //-       != typogr(article.html).typogrify()
             //- if article.hasMore
             //-   p.more
             //-     a(href=article.url) more
-    div.nav
+    div.Grid.Grid--justifyCenter
       if prevPage
-        a(href=prevPage.url) « Newer
+        a(href=prevPage.url class="Blog-nav-link")
+          div.Grid-cell--auto.Blog-nav
+            p newer
       else
-        a(href='/archive.html') « Archives
+        a(href='/archive.html' class="Blog-nav-link")
+          div.Grid-cell--auto.Blog-nav
+            p archives
       if nextPage
-        a(href=nextPage.url) Next page »
+        a(href=nextPage.url class="Blog-nav-link")
+          div.Grid-cell--auto.Blog-nav
+            p older
 
 
 

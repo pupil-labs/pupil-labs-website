@@ -1,15 +1,25 @@
 #Blog
-  background rgba(0,0,0,.75)
-  padding 2em
+  background linear-gradient(to top, rgba(0,0,0,0.45), rgba(255,255,255,0.0001))
+
   
-.Blog-article
+.Blog-articleLink
   // 
 
-.Blog-article-heading
-  color darken(#fff,5%)
-     
+.Blog-article
+  padding 5em
+  
+
+.Blog-article-header
+  padding 1.5em 0em
+
+.Blog-article-title
+  color $gray-darker
+  font-size 2.4em
+  
+
+
 .Blog-article-date
-  color darken(#fff,15%)
+  color $text-color
   
 .Blog-content *  
     color invert($text-color)
@@ -17,3 +27,20 @@
 .Blog-content h2
   color darken(#fff,5%)
   
+.Blog-nav
+  padding 3em 3em
+  
+.Blog-nav-link
+  font-family $font-family-sans-serif
+  font-weight 700
+  transition color .4s ease
+  letter-spacing .01em  
+  text-align center 
+  
+  @media $break-lg
+    // big screen
+    font-size 1.25em 
+    
+  @media $break-sm
+    // small screen
+    font-size 1.1em 

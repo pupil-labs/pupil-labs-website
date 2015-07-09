@@ -2,6 +2,7 @@
 title: New Pupil Pro Headset + Capture Software 0.3.7
 author: Pupil Dev Team
 date: 2014-01-22
+subtitle: We're starting the new year with a lot of energy and some big updates here at Pupil Labs...
 ---
 
 We're starting the new year with a lot of energy and some big updates here at Pupil Labs. 

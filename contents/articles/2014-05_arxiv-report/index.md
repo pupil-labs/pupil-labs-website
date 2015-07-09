@@ -2,6 +2,7 @@
 title: Pupil Technical Report on arxiv.org
 author: Pupil Dev Team
 date: 2014-05-12
+subtitle: We just completed a draft of a technical report on Pupil titled -- Pupil - An Open Source Platform for Pervasive Eye Tracking and Mobile Gaze-based Interaction -- have released it on arxiv.org...
 ---
 
 We just completed a draft of a technical report on Pupil titled - *Pupil: An Open Source Platform for Pervasive Eye Tracking and Mobile Gaze-based Interaction* - have released it on arxiv.org. 

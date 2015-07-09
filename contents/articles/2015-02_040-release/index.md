@@ -2,6 +2,7 @@
 title: Pupil 0.4.0 Release
 author: Pupil Dev Team
 date: 2015-02-25
+subtitle: We are very excited to release our latest set of improvements to the Pupil project. This is the biggest release so far. We have created 5 new libraries and made over 300 commits to the Pupil source...
 ---
 
 We are very excited to release our latest set of improvements to the Pupil project. This is the biggest release so far. We have created 5 new libraries and made over 300 commits to the Pupil source.  
