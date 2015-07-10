@@ -89,6 +89,14 @@
 .Grid-cell--2of3-padright
 	padding-right 2em
 	
+.Grid-cell--sidebar
+	flex 0 0 20%
+	max-width 20%
+	
+	@media $break-sm
+		flex 0 0 5%
+		max-width 5%
+
 .Grid-cell--1of2:first-child .Button-radio--lg
 	border-left 0
 	
@@ -193,6 +201,10 @@
 	> .Grid-cell
 		padding 1em 0 0 1em
 		
+.Grid--gutters-lg
+	> .Grid-cell
+		padding 2em 0 0 2em
+
 .Aligner
 	display flex
 	flex-wrap wrap

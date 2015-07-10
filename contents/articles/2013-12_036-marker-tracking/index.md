@@ -7,13 +7,12 @@ subtitle: We've been busy working on a lot of improvements in the last few weeks
 
 We've been busy working on a lot of improvements in the last few weeks both on the hardware and software fronts. We're pleased to announce that we've completed a **Marker Tracking** plugin.  This is something that has been on our list for a long time, so we're pretty excited to have it up and running!  Update to v0.3.6, and let us know what you think!
 
-<p><a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.6" class="Button">Download v0.3.6</a></p>
+<a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.6" class="Button">Download v0.3.6</a>
 
 ## Marker Tracking
 We have implemented a marker tracking plugin so that you can define surfaces within your environment and track surfaces in **realtime**.  We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26 "aruco").  We rolled our own flavor of the ArUco style marker tracking and build upon those ideas to improve performance.  Check out the [square marker detection code](https://github.com/pupil-labs/pupil/blob/marker_tracking/pupil_src/shared_modules/square_marker_detect.py "square marker detect"), it's open source Python and contained all within one file.      
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen></iframe>
-</br>
+<iframe width="640" height="360" src="//www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen class="Feature-image"></iframe>
 
 This plugin currently enables realtime user interaction.  Many people in the Pupil community have been asking about how to control a mouse with your eyes.  Some members Pupil community have [already made lots of progress in this area](http://youtu.be/cIsK4wj8yh4 "Ignacio Pupil Dasher demo"), and we thought we'd build upon that!   
 
@@ -31,7 +30,7 @@ Here's what you can currently do with the marker tracking plugin.
   + Check out [marker detector plugin code on github](https://github.com/pupil-labs/pupil/blob/marker_tracking/pupil_src/capture/marker_detector.py "Marker detector code on github").
 
 Check out this cool demo video below where we use our gaze to navigate through a 3D environment!
-<iframe width="640" height="360" src="//www.youtube.com/embed/qHmfMxGST7A?rel=0" frameborder="0" allowfullscreen></iframe>    
+<iframe width="640" height="360" src="//www.youtube.com/embed/qHmfMxGST7A?rel=0" frameborder="0" class="Feature-image" allowfullscreen></iframe>    
 
 ## Coming Soon
 In the near future, defined surfaces can also be used after capture for visualization and analysis.  Think heatmaps or videos that show gaze when it is within a defined surface like different windows on a screen, areas of a website, areas of a newspaper, poster, or magazine.  We are working on a browser that will enable one to visualize captured data and load plugins like marker tracking to analyze results.       

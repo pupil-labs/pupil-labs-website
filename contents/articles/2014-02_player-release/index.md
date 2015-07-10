@@ -8,9 +8,8 @@ subtitle: We would like to introduce a new app for Pupil - Pupil Player - With t
 We would like to introduce a new app for Pupil - **Pupil Player** - With this application we've finally added the crucial missing part of the toolchain. You can now visualize Pupil Capture recordings after the fact using the app with GUI. 
 
 Take a look at the demo screencast.
-<br>
-<br>
-<iframe width="640" height="480" src="//www.youtube.com/embed/Bm_CdoFyWNE" frameborder="0" allowfullscreen></iframe>
+
+<iframe width="640" height="480" src="//www.youtube.com/embed/Bm_CdoFyWNE" frameborder="0" class="Feature-image" allowfullscreen></iframe>
 
 ### Features
 Currently implemented:

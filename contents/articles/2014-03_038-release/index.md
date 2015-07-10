@@ -7,11 +7,8 @@ subtitle: We are happy to announce the release of new bundles for Pupil Capture 
 
 We are happy to announce the release of new bundles for Pupil Capture & Pupil Player (v0.3.8). Bundles contain all the work that has been done in the last month. We have been working on many small but hopefully useful improvements.
 
-<div class="row">
-	<div class="col-sm-12 text-center">
-	  <a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.8" class="Button" target="_blank">Download v0.3.8</a>
-	</div>
-</div>
+
+<a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.8" class="Button" target="_blank">Download v0.3.8</a>
 
 ##  New features for Pupil Capture
 
@@ -25,9 +22,7 @@ We are happy to announce the release of new bundles for Pupil Capture & Pupil Pl
 + Retina screens are now supported.  The mouse cursor is no longer offset.
 + Pupil Server to OSC bridge script. After getting a lot of requests for OSC streams, we made a small script to allow Pupil to interface with OSC devices. Script can be found in [this gist](https://gist.github.com/mkassner/9682161#file-zmq_osc_bridge-py "ZMQ OSC Bridge Script"). 
 
-<div class="text-center">
-	<img src="../../../media/images/pupil_accuracy_test.png" class="img-responsive img-rounded" alt="Pupil Accuracy Test">
-</div>
+<img src="../../../media/images/pupil_accuracy_test.png" class="Feature-image" alt="Pupil Accuracy Test">
 
 ## Performance improvements for Pupil Capture
 Various small improvements have been made as we are trying to make pupil capture run on smaller and cheaper laptops. Using Ubuntu 13.10 we are now able to make recordings with Pupil Capture on a [2010 11inch Macbook Air](http://www.everymac.com/systems/apple/macbook-air/specs/macbook-air-core-2-duo-1.4-11-late-2010-specs.html "2010 11inch MBAir"). When disabling screen updates we are no longer dropping frames. The CPU of our test machine is a [Intel Core2Duo SU9400](http://cpuboss.com/cpu/Intel-Core2-Duo-SU9400 "Intel Core2 Duo SU9400") -- this means that Pupil should run on any "i" type intel processor now.

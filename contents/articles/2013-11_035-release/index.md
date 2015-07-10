@@ -7,7 +7,7 @@ subtitle: Another quick release of our recent development work on Pupil. Updates
 
 Another quick release of our recent development work on Pupil. Updates are recommended!
 
-<p><a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.5" class="Button">Download v0.3.5</a></p>
+<a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.5" class="Button">Download v0.3.5</a>
 
 ## Improved Pupil Detection
 The new Pupil detector is more sophisticated and should preform much better. The False Positive rate (ghost pupils) has been dramatically reduced.

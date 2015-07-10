@@ -24,12 +24,9 @@ Our development notes are notes below, and you can check out the [v0.4.0 milesto
 + Plugin Autoloader - Pupil Capture will remember which plugins were opened last, and reopen them the next time you start the software. 
 + Dependency loader - Automatically load a plugin if it is required by another plugin, or warn if it is not loaded. We already doing something like this in Pupil Player - this will allow for an even more modular codebase where plugins can specify their dependencies. 
 
-<div class="row">
-	<div class="col-sm-9 text-center">
-	<img src="../../../media/images/demo_screenshot_20141124.png" class='img-responsive' alt="pyglui screenshot on Nov 24, 2014">
-	<p>Development screenshot of pyglui... coming soon to Pupil!</p>
-	</div>
-</div>
+<img src="../../../media/images/demo_screenshot_20141124.png" class='Feature-image' alt="pyglui screenshot on Nov 24, 2014">
+
+*Development screenshot of pyglui... coming soon to Pupil!*
 
 ## Hardware
 We've continued to make a lot of minor changes to Pupil headsets like improved cable routing for Pupil Pro, and changes to nose bridge geometry to accommodate more users. But we're really excited to announce that we're going to be able to offer high speed eye cameras with frame-rates up to 120 frames per second. Higher frame rate eye capture will not only improve the pupil detection and therefore eye tracking performance, but also may allows us to detect more eye movement motifs! The high speed cameras should be available before the end of the year, and can be a drop in replacement/additional camera for existing Pupil Pro headsets.    

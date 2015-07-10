@@ -7,11 +7,8 @@ subtitle: We are very excited to release our latest set of improvements to the P
 
 We are very excited to release our latest set of improvements to the Pupil project. This is the biggest release so far. We have created 5 new libraries and made over 300 commits to the Pupil source.  
 
-<div class="row">
-	<div class="col-sm-12 text-center">
-	  <a href="https://github.com/pupil-labs/pupil/releases/tag/v0.4.0"  class="Button"target="_blank">Download Pupil v0.4.0</a>
-	</div>
-</div>
+<a href="https://github.com/pupil-labs/pupil/releases/tag/v0.4.0"  class="Button"target="_blank">Download Pupil v0.4.0</a>
+
 
 We want to thank everyone who contributed to the source code, raised issues, commented on code, and sent feedback! The Pupil project is getting better every day!
 
@@ -30,11 +27,8 @@ Not wanting to reinvent the wheel, we searched for an existing graphical user in
 
 So we created [pyglui](http://github.com/pupil-labs/pyglui) -- an Open Source  OpenGL UI library for python projects. We use it for both Pupil Capture and Pupil Player. Pyglui is written in [cython](http://cython.org), giving it the perfect blend of python integration and typing and C speed. This was a lot of work and we are very happy it all came together.
 
-<div class="row text-center">
-	<div class="col-sm-12">
-		<img src="../../../../media/images/v04_world_eye_composite_screenshot.png" class='img-responsive' alt="Pupil Capture World and Eye window screenshots v0.4.0">
-	</div>
-</div>
+
+<img src="../../../../media/images/v04_world_eye_composite_screenshot.png" class='Feature-image' alt="Pupil Capture World and Eye window screenshots v0.4.0">
 
 While making pyglui we also had to deal with OpenGL font rendering for Python and fast GL calls for Python. So we wrote [pyfontstash](http://github.com/pupil-labs/pyfontstash) -- a Python binding for [fontstash](https://github.com/memononen/fontstash) (developed by Mikko Mononen). And we wrote [cygl](http://github.com/pupil-labs/cygl) -- a cython OpenGL library that uses GLEW. Cygl is used throughout Pupil Capture and Player alongside pyglui to speed up GL function calls.
 

@@ -7,11 +7,7 @@ subtitle: We are pleased to announce another release of Pupil Player and Pupil C
 
 We are pleased to announce another release of **Pupil Player** and **Pupil Capture** software. We usually aim to push new features every month, but we had been working on our [Technical Report](http://arxiv.org/abs/1405.0006 "Pervasive Eye Tracking and Mobile Gaze-based Interaction") and improved Pupil Pro Headsets -- available soon! Therefore we skipped one release cycle. Here's the list of new features and fixes:
 
-<div class="row">
-	<div class="col-sm-12 text-center">
-	  <a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.9" class="Button" target="_blank">Download v0.3.9</a>
-	</div>
-</div>
+<a href="https://github.com/pupil-labs/pupil/releases/tag/v0.3.9" class="Button" target="_blank">Download v0.3.9</a>
 
 ## Pupil Capture
 
@@ -29,16 +25,12 @@ We are pleased to announce another release of **Pupil Player** and **Pupil Captu
 + Settings files and recording data are now cross platform compatible. 
 
 Check out the offline marker tracking demo video.
-<br>
-<br>
-<div class="img-responsive">
-<iframe width="640" height="480" src="//www.youtube.com/embed/71S858DPu8w" frameborder="0" allowfullscreen></iframe>
-</div>
+
+<iframe width="640" height="480" src="//www.youtube.com/embed/71S858DPu8w" frameborder="0" class="Feature-image" allowfullscreen></iframe>
 
 ## Bundles
 
 + Now supporting Ubuntu 14.04
 + MacOS bundles still have some issues with older hardware. 2012+ MacBooks appear to be fine.
 
-<br>
 Have fun with it and please report bugs you find them. Let us know how it goes on the [Pupil Google Group](https://groups.google.com/forum/#!forum/pupil-discuss "Pupil Google Group").

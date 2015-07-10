@@ -11,11 +11,8 @@ You can download the paper from arxiv.org at the permalink: [http://arxiv.org/ab
 
 If you're new to Pupil, we think that the paper would be a good introduction and the place to start. If you are already using Pupil, and want to gain insight into some of our hardware and software design decisions, software structure and key functions, and performance evaluation - please take a look at the paper.  
 
-<div class="row">
-	<div class="col-sm-12 text-center">
-		<a href="http://arxiv.org/abs/1405.0006" target="_blank"><img src="../../../media/images/pupil-technical-report-1.png" class='img-responsive' alt="Pupil Technical Report"></a>
-	</div>
-</div>
+
+<a href="http://arxiv.org/abs/1405.0006" target="_blank"><img src="../../../media/images/pupil-technical-report-1.png" class='Feature-image' alt="Pupil Technical Report"></a>
 
 ## Abstract
 
