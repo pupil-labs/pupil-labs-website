@@ -34,7 +34,7 @@
 .Grid--flexCells 
 	> .Grid-cell
 		display flex
-		
+	
 .Grid--top
 	align-items flex-start
 	
@@ -140,6 +140,17 @@
 		@media $break-sm
 			flex 0 0 100%
 			max-width 100%
+
+.Grid--1of2--breakConfig
+	> .Grid-cell
+		flex 0 0 50%
+		// firefox fix below
+		max-width 50%
+			
+		@media $break-md-lg
+			flex 0 0 100%
+			max-width 100%
+
 
 
 .Grid--1of3

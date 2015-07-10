@@ -4,6 +4,8 @@ block append title
   | #{ " - " + page.title}
 
 block main
+  div(id="Article")
+
 
   article.article
     section.content!= typogr(page.html).typogrify()
