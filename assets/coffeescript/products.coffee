@@ -40,7 +40,7 @@ getOrderSpecTxt = (orderItems)->
   for i in orderItems
     prod = getProductById(i)
     specs.push("<h4>"+prod.cartlabel+"</h4>")
-    specs.push("<p class='LicenseSpecs-txt'>"+prod.specs+"</p>")
+    specs.push("<p class='LicenseSpecs-txt'>"+prod.cartSpecs+"</p>")
   html = specs.join(" ")
   return html
 
