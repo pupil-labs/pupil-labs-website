@@ -15,9 +15,9 @@ block main
     div.Grid-cell.Grid-cell--center
       div.Feature.Feature--padded-1
         h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
-        h2.Feature-subtitle--lg #{ page_meta.pupil_description_1 }
-        h2.Feature-subtitle--lg #{ page_meta.pupil_description_2 }
-        h2.Feature-subtitle--lg!= typogr(page_meta.pupil_description_3).typogrify()
+        h2.Feature-subtitle #{ page_meta.pupil_description_1 }
+        h2.Feature-subtitle #{ page_meta.pupil_description_2 }
+        h2.Feature-subtitle!= typogr(page_meta.pupil_description_3).typogrify()
         a(href="/store" class="button-flex") #{ page_meta.pupil_link_text }
 
   div.Grid.Grid--1of2
@@ -25,9 +25,9 @@ block main
     div.Grid-cell
       div.Feature.Feature--padded-1
         h2.Feature-title--lg.u-textCenter #{ page_meta.about_title }
-        h2.Feature-subtitle--lg #{ page_meta.about_description_1 }
-        h2.Feature-subtitle--lg #{ page_meta.about_description_2 + " " + page_meta.about_description_3 }
-        h2.Feature-subtitle--lg #{ page_meta.about_description_4 }
+        h2.Feature-subtitle #{ page_meta.about_description_1 }
+        h2.Feature-subtitle #{ page_meta.about_description_2 + " " + page_meta.about_description_3 }
+        h2.Feature-subtitle #{ page_meta.about_description_4 }
     //- Recent Blog Posts
     div.Grid-cell
       div.Feature.Feature--padded-1
