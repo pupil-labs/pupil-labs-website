@@ -1,13 +1,19 @@
 #Blog
-  background linear-gradient(to top, rgba(0,0,0,0.45), rgba(255,255,255,0.0001))
+  background linear-gradient(to bottom, rgba(255,255,255,1) 5%, rgba(255,255,255,.0001), rgba(0,0,0,.35))
 
+.Blog-pageTitle
+  background #fff
   
 .Blog-articleLink
   // 
 
 .Blog-article
   padding 5em
+  background transparent
+  transition color .4s ease-in-out, background .4s ease-in-out
   
+  &:active
+    background $link-hover-color  
 
 .Blog-article-header
   padding 1.5em 0em
@@ -15,7 +21,25 @@
 .Blog-article-title
   color $gray-darker
   font-size 2.4em
+
+.Blog-article-subtitle
+  color $gray
   
+    
+.no-touch
+  .Blog-article
+    &:hover
+      background rgba(0,0,0,.5)
+      
+      .Blog-article-title      
+        color lighten($gray-darker,90%)
+      .Blog-article-subtitle
+        color lighten($gray,70%)
+      .Blog-article-date
+        color lighten($text-color,70%)
+    &:active
+      transition none
+      background darken($link-hover-color,25%)  
 
 
 .Blog-article-date
