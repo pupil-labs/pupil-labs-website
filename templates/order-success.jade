@@ -1,5 +1,8 @@
 extends layout
 
+block append title
+  | #{ " - Order Success!"}
+
 block main
   div(id="Success")
     - var bannerData = { "title": "Success", "s1": "Thanks for submitting your request, we will be in touch shortly via email."}

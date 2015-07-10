@@ -1,5 +1,8 @@
 extends layout
 
+block append title
+  | #{ " - " + page.title}
+
 block main
   //- Title block
   - var page_data = contents.pupil['index.json']
