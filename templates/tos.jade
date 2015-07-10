@@ -11,7 +11,8 @@ block main
     - var titleData = {'title':page_meta.title}
     - var tosContent =  contents.tos['tos_terms.md']
     include includes/title
-    div.Grid-cell.Grid-cell--sidebar
+    div.Grid.Article
+      div.Grid-cell.Grid-cell--sidebar
       div.Grid-cell
         section.content!= typogr(tosContent.html).typogrify()
       div.Grid-cell.Grid-cell--sidebar
