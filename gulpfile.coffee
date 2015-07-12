@@ -3,6 +3,12 @@ gulp = require "gulp"
 gutil = require "gulp-util"
 # add delete util
 
+# node filesystem 
+fs = require('fs')
+
+# parse command line args
+minimist = require('minimist') 
+
 # plugins - server 
 livereload = require "gulp-livereload"
 
@@ -36,6 +42,22 @@ js = ()->
   # .pipe uglify()
   .pipe gulp.dest "contents/js"
   .pipe livereload()
+
+gulp.task "newPost", ->
+  date = new Date()
+  y = date.getFullYear()
+  m = date.getMonth()+1 # yes...js months are 0 based
+  folderDate =  y + "-" + ("0" + m).slice(-2)
+  opts = minimist process.argv.slice(2) 
+  postTitle = folderDate + "_" + opts.title 
+
+  postDir = "contents/articles/" + "#{ postTitle }" 
+  fs.mkdir postDir
+  postHeader = "---\n
+                title: #{ opts.title }\n
+                date: #{ date }\n
+                ---"
+  fs.writeFile postDir+"/index.md", postHeader      
 
 gulp.task "preview", ->
     wintersmith.preview()
