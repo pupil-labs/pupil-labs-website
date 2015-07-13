@@ -48,16 +48,30 @@ gulp.task "newPost", ->
   y = date.getFullYear()
   m = date.getMonth()+1 # yes...js months are 0 based
   folderDate =  y + "-" + ("0" + m).slice(-2)
-  opts = minimist process.argv.slice(2) 
-  postTitle = folderDate + "_" + opts.title 
+  knownOpts = 
+    string: 'title'
+    defaults: folderDate
+  opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'title':null}
+  fileTitle = if opts.title then "_"+opts.title.replace(/\s+/g, '-').toLowerCase() else ""
+  humanTitle = opts.title
+  postTitle = folderDate + fileTitle
 
   postDir = "contents/articles/" + "#{ postTitle }" 
-  fs.mkdir postDir
+  try
+    fs.mkdirSync postDir 
+  catch e
+    if e.code == 'EEXIST'
+      gutil.log gutil.colors.white.bgRed("Warning: "), "Directory already exists at path:", gutil.colors.white.bgRed("#{ e.path }"),  "\nTry an alternate title with gulp newPost --title 'my post title'"
+    return
+
   postHeader = "---\n
-                title: #{ opts.title }\n
+                title: #{ humanTitle }\n
                 date: #{ date }\n
+                author: Pupil Dev Team\n
                 ---"
-  fs.writeFile postDir+"/index.md", postHeader      
+  fs.writeFile postDir+"/index.md", postHeader 
+  gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
+
 
 gulp.task "preview", ->
     wintersmith.preview()
@@ -73,16 +87,13 @@ gulp.task 'watch', ['css', 'js', 'preview'], ->
 
   gulp.watch "assets/coffeescript/**", ->
     js()
-    console.log "Coffeescript file changed. Compiling and reloading..."
+    gutil.log gutil.colors.white.bgBlue("Coffeescript file changed."), "Compiling and reloading..."
 
   gulp.watch "assets/stylus/**", ->
     css()
-    console.log "Stylus file changed. Compiling and reloading..."
+    gutil.log gutil.colors.white.bgBlue("Stylus file changed."), "Compiling and reloading..."
 
-  gulp.watch "contents/store/products/products.json", ->
-    copyProductJSON()
-    console.log "Product list changed. Copying file to coffeescript asset."
   # gulp.watch "templates/**", ->
   #   jade()
-  #   console.log "Template file changed. Compiling and reloading..."
+  #   gutil.log "Template file changed. Compiling and reloading..."
 
