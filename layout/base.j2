@@ -11,15 +11,15 @@
 
     {# Le HTML5 shim, for IE6-8 support of HTML elements #}
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
     {% block basecss %}
     <link href="{{ media_url('css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ media_url('css/pupil-styles.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.4/styles/github.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.6/styles/github.min.css">
 
-    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:100,400|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Josefin+Slab:100,400|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
     {% endblock basecss %}
     {% block css %}{% endblock css %}
 
@@ -50,7 +50,7 @@
         <p class="text-center">{{ copyright }}</p>
         <p class="text-center"><a href="/about.html">About Us &amp; Imprint</a></p>
         <p class="text-center">
-        <iframe src="http://ghbtns.com/github-btn.html?user=pupil-labs&repo=pupil&type=fork"
+        <iframe src="//ghbtns.com/github-btn.html?user=pupil-labs&repo=pupil&type=fork"
         allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
         </p>
         {% endblock footer %}
@@ -77,7 +77,7 @@
         <script src="{{ media_url('js/libs/jquery.ajaxchimp.min.js') }}"></script>
         <script>
         $('#mc-form').ajaxChimp({
-            url: 'http://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&id=56698f0460'
+            url: 'https://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&id=56698f0460'
         });
         </script>
         <script src="{{ media_url('js/libs/smooth-scroll.min.js') }}"></script>
