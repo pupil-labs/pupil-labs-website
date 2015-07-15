@@ -18,6 +18,7 @@ after_success:
 - mv DEPLOY_KEY ~/.ssh/id_rsa
 - chmod 700 ~/.ssh
 - chmod 600 ~/.ssh/*
+- ls -al ~/.ssh 
 - echo 'Pushing to server'
 - gulp push
 - echo 'Done :-)'
