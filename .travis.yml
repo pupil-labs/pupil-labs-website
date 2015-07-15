@@ -19,7 +19,7 @@ after_success:
 - chmod 600 DEPLOY_KEY
 - mv DEPLOY_KEY ~/.ssh/id_rsa
 - echo 'Pushing to server'
-- gulp push --dest SERVER_DEV
+- gulp push
 - echo 'Done :-)'
 env:
   global:

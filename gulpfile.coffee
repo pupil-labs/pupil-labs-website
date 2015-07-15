@@ -107,21 +107,17 @@ gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
   gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
 gulp.task "push", ->
-  knownOpts = 
-    string: 'dest'
-    defaults: ""
-  opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dest':null}
-  gutil.log "dest: " + opts.dest 
-  if opts.dest
-    rsync
-      ssh: true
-      src: 'build/'
-      dest: opts.dest
-      recursive: true
-      (error,stdout,stderr,cmd)->
-        if error
-          gutil.log error.message
-        gutil.log stdout 
+  dest_env = process.env.SERVER_DEV
+  rsync
+  ssh: true
+  src: 'build/'
+  dest: dest_env
+  recursive: true
+  (error,stdout,stderr,cmd)->
+    if error
+      gutil.log error.message
+    gutil.log stdout 
+  gutil.log "Dest_env: " + dest_env
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
