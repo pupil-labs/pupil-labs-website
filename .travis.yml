@@ -15,17 +15,19 @@ script:
 - echo 'Done building'
 after_success:
 - echo 'Setting up deployment keys'
-- mv DEPLOY_KEY ~/.ssh/id_rsa
+- mv $DEPLOY_KEY ~/.ssh/id_rsa
 - chmod 700 ~/.ssh
 - chmod 600 ~/.ssh/*
+- eval `ssh-agent s`
+- ssh-add ~/.ssh/id_rsa
 - echo 'Pushing to server'
-- rsync -azhv build/ SERVER_DEV 
+- rsync -azhv build/ $SERVER_DEV 
 env:
   global:
   - secure: QDZJJX/CHH5i8pyZ7hnxse9l4xmlSxTIdIv184Nn1cU2UsgBYgu9tmGWYrDmCTJvzqDPWHxcUQ2z7NolXkcHp/d/XtB/BYElvMDyjLR5SZPOjRiwv1oc1TODPhMG8gJJlj2xifNXr8jFmgdSYcDzKyf+46OIR1KIFcjsoA+Tfrhucsw0uxKJD2T2uIbT1u9cXBeWH+KR3Cmud4VWfeNSUwKlMBgo01e5Ov2BodeosajgY/O4O6ba/Q4ejFgERDEWYH/w7zJCRLUWXj4hCBrloGyQ+UMwKXyhIc4IpSlGQ2IlDhaYSfRljJIuibNtal4b4bfHhxcIfWgLBBkKuB5c0Guz2kxf95RF8fa6VtQlJ1Qp0yhV8zdnFElG9PkBIhf22w0PkU4VuVzCNnuTSRpuyxBO1IyJNo+m+KrUk8R9Tgie3Ena/bobGxumETuq2xM86JM3aFAJYCF97J2svuehn7x0wxb86W2FMgBY1WvMYix9dxJVae75qIq/TFqJZJLn+h/ZwgnVNc+is5V2JYhDKhVAJAvPWWPjMtTiIV4qPbZyZCPjLmQmFUm25JNtke3dBrz/ufLmbtqm2pnF8/tYH52qKZO4OPmpu1lsCfsZS6bjfAOsNFeCTIxmyN6F3j6KkV0j5d7+l/afMAbLK9skqB1tDRzh6knHQJ3nQLt4oDs=
   - secure: Bvt0XPhR45KBFVgLWVhUqk4m+geqYNrWbWbEQdbNB5yhsjTZOvBi6eb25zp5g7o7mbvB/SYeoAcEVRFndBi26MKjvoqUMWHjYBEPxKX5WHI2rCWK6GGXAmgE72MQebJn8XQJdy3/tPSrqKcaIRzgBWj6Zi9EU45EN9CWPBLaC344CIv3HXDw/lCDuO0Jm0CuR6CFDJTWvkoTm3/FXLfswTZWH6T/MiN4dZIinBG6t/gm3CxTrEsZBK17eBcndE27W60t4J6J8k16RPq/1um9nv31Ef0irOoIpcv2fTDy4TqAM5fhYVeH8tdrRKKAzgozVjOQz+vPukMb0x4PO2JftsN2jXqDx89PEKTAoHtSwS8gwLUcAshTA4pZly75BSKDM2nvdsM1lVcO7eeXpPL9N/fhDimLWXG6lYOKP7bmQpdS/pm7gzf63gZzxDFh3lUqogsxSlO6CmF2WRfw2i1IyTs37MQJHQkbEoJUQ3DCk4LwwKmrp1FyfoM7RUkRxnjzT5WJv8rwQ/CttdtjH9rjP7rmbktL8mHl07q9vNxrm2Yc4oIkqQg79kkPdqqX8P64+MBzsefhEeLPk46CMu0cT0iYkpt2rNRY5knRfaJRb2CFGCjHOse62kRcd0E/EP4nd09HNUgdmZaJsVoFCWKlAn9KOOBVgSoPzP387CylJYU=
 before_install:
-- echo -e DOMAIN_CONFIG >> ~/.ssh/config
+- echo -e $DOMAIN_CONFIG >> ~/.ssh/config
 - openssl aes-256-cbc -K $encrypted_72cb34722471_key -iv $encrypted_72cb34722471_iv
   -in DEPLOY_KEY.enc -out DEPLOY_KEY -d
 cache:
