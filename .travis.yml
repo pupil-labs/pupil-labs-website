@@ -15,10 +15,11 @@ script:
 - echo 'Done building'
 after_success:
 - echo 'Setting up deployment keys'
-- mv $DEPLOY_KEY ~/.ssh/id_rsa
+- ls -al ~/.ssh/
+- mv DEPLOY_KEY ~/.ssh/id_rsa
 - chmod 700 ~/.ssh
 - chmod 600 ~/.ssh/*
-- eval `ssh-agent s`
+- eval `ssh-agent -s`
 - ssh-add ~/.ssh/id_rsa
 - echo 'Pushing to server'
 - rsync -azhv build/ $SERVER_DEV
