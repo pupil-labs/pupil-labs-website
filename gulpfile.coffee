@@ -111,6 +111,7 @@ gulp.task "push", ->
     string: 'dest'
     defaults: ""
   opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dest':null}
+  gutil.log "dest: " + opts.dest 
   if opts.dest
     rsync
       ssh: true
