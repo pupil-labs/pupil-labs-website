@@ -22,7 +22,6 @@
     "gulp-util": "^3.0.5",
     "imagemin-pngquant": "^4.1.2",
     "minimist": "^1.1.1",
-    "rsyncwrapper": "^0.4.3",
     "run-wintersmith": "0.0.3"
   },
   "license": "CC-BY-NC-SA-4.0"

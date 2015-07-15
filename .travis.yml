@@ -12,6 +12,7 @@ script:
 - gulp css
 - gulp js
 - gulp build_wintersmith
+- gulp image_min 
 - echo 'Done building'
 after_success:
 - echo 'Setting up deployment keys'
