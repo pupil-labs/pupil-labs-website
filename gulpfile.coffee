@@ -48,22 +48,6 @@ js = ()->
   .pipe gulp.dest "contents/js"
   .pipe livereload()
 
-rsync_ssh = ->
-  knownOpts = 
-    string: 'dest'
-    defaults: ""
-  opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dest':null}
-  if opts.dest
-    rsync
-      ssh: true
-      src: 'build/'
-      dest: opts.dest
-      recursive: true
-      (error,stdout,stderr,cmd)->
-        if error
-          gutil.log error.message
-        gutil.log stdout 
-
 gulp.task "newPost", ->
   date = new Date()
   y = date.getFullYear()
@@ -123,7 +107,20 @@ gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
   gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
 gulp.task "push", ->
-  rsync_ssh()
+  knownOpts = 
+    string: 'dest'
+    defaults: ""
+  opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dest':null}
+  if opts.dest
+    rsync
+      ssh: true
+      src: 'build/'
+      dest: opts.dest
+      recursive: true
+      (error,stdout,stderr,cmd)->
+        if error
+          gutil.log error.message
+        gutil.log stdout 
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
