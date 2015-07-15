@@ -109,15 +109,15 @@ gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
 gulp.task "push", ->
   dest_env = process.env.SERVER_DEV
   rsync
-  ssh: true
-  src: 'build/'
-  dest: dest_env
-  recursive: true
-  (error,stdout,stderr,cmd)->
-    if error
-      gutil.log error.message
-    if stderr then gutil.log stdout
-    if stdout then gutil.log stderr
+    ssh: true
+    src: 'build/'
+    dest: dest_env
+    recursive: true
+    (error,stdout,stderr,cmd)->
+      if error
+        gutil.log error.message
+      if stderr then gutil.log stdout
+      if stdout then gutil.log stderr
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
