@@ -117,8 +117,8 @@ gulp.task "push", ->
   (error,stdout,stderr,cmd)->
     if error
       gutil.log error.message
-    gutil.log stdout
-  gutil.log stderr
+    if stderr then gutil.log stdout
+    if stdout then gutil.log stderr
   gutil.log "This completed, but was data pushed to server?" 
 
 # watch tasks watch folders and call functions defined above on change
