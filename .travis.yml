@@ -12,6 +12,7 @@ script:
 - gulp css
 - gulp js
 - gulp build_wintersmith
+- ls -al build
 - echo 'Done building'
 after_success:
 - echo 'Setting up deployment keys'
@@ -19,6 +20,7 @@ after_success:
 - mv DEPLOY_KEY ~/.ssh/id_rsa
 - chmod 700 ~/.ssh
 - chmod 600 ~/.ssh/*
+- ls -la ~/.ssh
 - echo 'Pushing to server'
 - gulp push
 env:
