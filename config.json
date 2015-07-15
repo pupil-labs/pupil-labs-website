@@ -1,6 +1,6 @@
 {
   "locals": {
-    "url": "http://localhost:3000",
+    "url": "",
     "name": "Pupil Labs",
     "owner": "Pupil Labs",
     "description": "Pupil Labs - accessible open source eye tracking platform"

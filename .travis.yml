@@ -1,0 +1,26 @@
+branches:
+  only:
+  - v2.0_restruct_js
+language: node_js
+node_js:
+- '0.12'
+install:
+- npm install -g wintersmith
+- npm install
+script:
+- echo 'Building Site'
+- gulp build
+- echo 'Done building'
+after_success:
+- echo 'Setting up deployment keys'
+- chmod 600 DEPLOY_KEY
+- mv DEPLOY_KEY ~/.ssh/id_rsa
+- echo 'Pushing to server'
+- gulp push --dest SERVER_DEV
+- echo 'Done :-)'
+env:
+  global:
+    secure: ExMAsNKF9PMD8/FI6pLNj1hcdOFnHNxZ6BquZyWRUECij9r3ls6i9EO73voMw5iOWoUrYUMelJvrpTCbavN1l+/mL+wNbKgVAA1ARPNi6mFN1Xs9wI/E7zLy+105ea0N13X9nQjQ2Ihe8xHcPQXk6m1nGiRZM5hEXz1EQ2qGVGWMdj99DRl47g1lXOquUcNq62GiFmYddlOYNnjV9oFFTEGsvPE+gE2dp5zgOAy80vCuu5i5tHNYLAQdVwuo2joMzKuslGy4/aBbZdLO/nDc/ij0shxnUIJacG1Q5u/0k3DfQK4V8dNz9o2OWxmBPzdQ1gU8JMGk6CNsMn+wyRbxo2MpxoqW4l9/eq1RxXiu7O1WtyKBhWhzNJVBG+NR4QscapOjDSXJjlR9xJ8h+lByGxUTzN+SGzAt22Mz6d10+cfBKm2zYkQIxrEBlIsVyDvXP0s/qpX9XmKgWxag+mxQ/NfK5F1FTQXb/h6igOBE4u24JF6lWvs/Pkg7XX8mpH68Ctav1MuhNpdXtfAGZGs6rM5NTCdmLLXhqxP4GBfYxlBXns6i3ZqhLb94hSEC7nsNxdQgFFpCulC3BAXGMLtt/cg2ppEq+DTy5FAAVzTF7FBXxL/uMXhNBDua71QeexIZfc8VZhRcWDyuIk4j1WYvY6/+XwLqmafuUjfVNe8mwpU=
+before_install:
+- openssl aes-256-cbc -K $encrypted_72cb34722471_key -iv $encrypted_72cb34722471_iv
+  -in DEPLOY_KEY.enc -out DEPLOY_KEY -d
