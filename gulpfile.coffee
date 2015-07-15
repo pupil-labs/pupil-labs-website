@@ -117,7 +117,6 @@ gulp.task "push", ->
     if error
       gutil.log error.message
     gutil.log stdout 
-  gutil.log "Dest_env: " + dest_env
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
