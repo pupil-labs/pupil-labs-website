@@ -108,6 +108,7 @@ gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
 
 gulp.task "push", ->
   dest_env = process.env.SERVER_DEV
+  gutil.log dest_env
   rsync
   ssh: true
   src: 'build/'
@@ -116,7 +117,9 @@ gulp.task "push", ->
   (error,stdout,stderr,cmd)->
     if error
       gutil.log error.message
-    gutil.log stdout 
+    gutil.log stdout
+  gutil.log stderr
+  gutil.log "This completed, but was data pushed to server?" 
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->

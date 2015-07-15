@@ -463,10 +463,10 @@ class PupilStore
                   # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
                   # We continue anyways to the success page.
                   console.log "Successful AJAX call with Safari."
-                  $(location).attr('href',"order_success")
+                  $(location).attr('href',location.origin + "/order_success")
             success: (data, textStatus, jqXHR) ->
               console.log "Successful AJAX call: #{textStatus}"
-              $(location).attr('href',"order_success")
+              $(location).attr('href',location.origin + "/order_success")
 
 
 
