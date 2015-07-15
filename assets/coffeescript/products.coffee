@@ -1,5 +1,3 @@
-#import "product_list.json"
-
 _products = productList
 
 # jsonToCoffeeObj = (file)->

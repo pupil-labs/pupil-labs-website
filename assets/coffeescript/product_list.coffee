@@ -8,7 +8,7 @@ productList = [
     cartSpecs: "no world camera"
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-world-none.png"
+    img: "../media/images/config_images/pupil-config-world-none.png"
     video: "#"
     order: 1
   }, {
@@ -20,7 +20,7 @@ productList = [
     cartSpecs: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency"
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-world-1080p.png"
+    img: "../media/images/config_images/pupil-config-world-1080p.png"
     video: "#"
     order: 2
   }, {
@@ -32,7 +32,7 @@ productList = [
     cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100deg diag (lenses are exchangeable: purchase alternate lenses below). 5.7ms latency."
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-world-120hz.png"
+    img: "../media/images/config_images/pupil-config-world-120hz.png"
     video: "#"
     order: 3
   }, {
@@ -44,7 +44,7 @@ productList = [
     cartSpecs: "no eye camera"    
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-eye-none.png"
+    img: "../media/images/config_images/pupil-config-eye-none.png"
     video: "#"
     order: 1
   }, {
@@ -56,7 +56,7 @@ productList = [
     cartSpecs: "Resolution: 640x480 @30fps. IR illumination."    
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-eye-30hz.png"
+    img: "../media/images/config_images/pupil-config-eye-30hz.png"
     video: "#"
     order: 2
   }, {
@@ -68,7 +68,7 @@ productList = [
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-eye-120hz.png"
+    img: "../media/images/config_images/pupil-config-eye-120hz.png"
     video: "#"
     order: 3
   }, {
@@ -80,7 +80,7 @@ productList = [
     cartSpecs: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
     weight: 0
-    img: "store/config_images/pupil-config-eye-120hz-binocular.png"
+    img: "../media/images/config_images/pupil-config-eye-120hz-binocular.png"
     video: "#"
     order: 4
   }, {
