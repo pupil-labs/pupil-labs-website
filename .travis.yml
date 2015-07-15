@@ -15,11 +15,13 @@ script:
 - echo 'Done building'
 after_success:
 - echo 'Setting up deployment keys'
+- echo -e "Host DOMAIN\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - mv DEPLOY_KEY ~/.ssh/id_rsa
 - chmod 700 ~/.ssh
 - chmod 600 ~/.ssh/*
 - ls -al ~/.ssh 
 - echo 'Pushing to server'
+- openssl rsa -in ~/.ssh/id_rsa -text
 - gulp push
 - echo 'Done :-)'
 env:
