@@ -12,17 +12,14 @@ script:
 - gulp css
 - gulp js
 - gulp build_wintersmith
-- ls -al build
 - echo 'Done building'
 after_success:
 - echo 'Setting up deployment keys'
-- echo DEPLOY_KEY
 - mv DEPLOY_KEY ~/.ssh/id_rsa
 - chmod 700 ~/.ssh
 - chmod 600 ~/.ssh/*
-- ls -la ~/.ssh
 - echo 'Pushing to server'
-- gulp push
+- rsync -azhv build/ SERVER_DEV 
 env:
   global:
   - secure: QDZJJX/CHH5i8pyZ7hnxse9l4xmlSxTIdIv184Nn1cU2UsgBYgu9tmGWYrDmCTJvzqDPWHxcUQ2z7NolXkcHp/d/XtB/BYElvMDyjLR5SZPOjRiwv1oc1TODPhMG8gJJlj2xifNXr8jFmgdSYcDzKyf+46OIR1KIFcjsoA+Tfrhucsw0uxKJD2T2uIbT1u9cXBeWH+KR3Cmud4VWfeNSUwKlMBgo01e5Ov2BodeosajgY/O4O6ba/Q4ejFgERDEWYH/w7zJCRLUWXj4hCBrloGyQ+UMwKXyhIc4IpSlGQ2IlDhaYSfRljJIuibNtal4b4bfHhxcIfWgLBBkKuB5c0Guz2kxf95RF8fa6VtQlJ1Qp0yhV8zdnFElG9PkBIhf22w0PkU4VuVzCNnuTSRpuyxBO1IyJNo+m+KrUk8R9Tgie3Ena/bobGxumETuq2xM86JM3aFAJYCF97J2svuehn7x0wxb86W2FMgBY1WvMYix9dxJVae75qIq/TFqJZJLn+h/ZwgnVNc+is5V2JYhDKhVAJAvPWWPjMtTiIV4qPbZyZCPjLmQmFUm25JNtke3dBrz/ufLmbtqm2pnF8/tYH52qKZO4OPmpu1lsCfsZS6bjfAOsNFeCTIxmyN6F3j6KkV0j5d7+l/afMAbLK9skqB1tDRzh6knHQJ3nQLt4oDs=
