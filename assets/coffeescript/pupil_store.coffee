@@ -26,6 +26,7 @@ class PupilStore
     @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
     @storeConfigPresetClass = "a[class='Store-navPreset']"
     ) ->
+      @_preloadConfigImages()
       @eventStorePageInit()
       @eventAddToCart()
       @eventClearCart()
@@ -507,7 +508,6 @@ class PupilStore
       LocalStorage.clear()      
 
 
-
   _getOrderPermalink: ->
     data = []
     i = 0
@@ -551,6 +551,12 @@ class PupilStore
       imgId = '#' + $(link).attr('id').split('_',1) + '-img'
       $(imgId).attr("src", imgUrl).show()
 
+  _preloadConfigImages: ()->
+    if $("#Store").length > 0
+      imageUrls = getConfigImageUrls()
+      for url in imageUrls
+        (new Image()).src = url
+
   _calcConfigSubTotal: (links)->
     sum = 0
     for link in links
@@ -586,6 +592,6 @@ class PupilStore
 
 $(document).ready ->
   s = new PupilStore
-  getGithubRepoEvents()
-  getGithubOrgEvents()
-  getGithubOrgInfo()
+  # getGithubRepoEvents()
+  # getGithubOrgEvents()
+  # getGithubOrgInfo()
