@@ -1,6 +1,5 @@
 #import "local_storage.coffee"
 #import "products.coffee"
-#import "recent_activity.coffee"
 $ = jQuery
 
 class PupilStore
@@ -615,6 +614,4 @@ class PupilStore
 
 $(document).ready ->
   s = new PupilStore
-  # getGithubRepoEvents()
-  # getGithubOrgEvents()
-  # getGithubOrgInfo()
+

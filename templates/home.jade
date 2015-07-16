@@ -1,44 +1,46 @@
 extends layout
 
 block main
-  - var page_data = contents.home['index.json']
-  - var page_meta = page_data.metadata    
-  - var titleData = {'title':page_meta.title,'s1':page_meta.s1, 's2':page_meta.s2}    
-  include includes/title
-      
-  //- Pupil 
-  div.Grid.Grid--1of2
-    div.Grid-cell
-      div.Feature
-        figure.Feature-figure
-          img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
-    div.Grid-cell.Grid-cell--center
-      div.Feature.Feature--padded-1
-        h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
-        h2.Feature-subtitle #{ page_meta.pupil_description_1 }
-        h2.Feature-subtitle #{ page_meta.pupil_description_2 }
-        h2.Feature-subtitle!= typogr(page_meta.pupil_description_3).typogrify()
-        a(href="/store" class="button-flex") #{ page_meta.pupil_link_text }
+  div(id="Home")
 
-  div.Grid.Grid--1of2
-    //- About
-    div.Grid-cell
-      div.Feature.Feature--padded-1
-        h2.Feature-title--lg.u-textCenter #{ page_meta.about_title }
-        h2.Feature-subtitle #{ page_meta.about_description_1 }
-        h2.Feature-subtitle #{ page_meta.about_description_2 + " " + page_meta.about_description_3 }
-        h2.Feature-subtitle #{ page_meta.about_description_4 }
-    //- Recent Blog Posts
-    div.Grid-cell
-      div(id="Home-activity" class="Feature Feature--padded-1")
-        h2.Feature-title--lg.u-textCenter #{ page_meta.activity_title }
-        //- each article in articles
-        //-   li.Article-list-item
-        //-     article
-        //-       header
-        //-         h2.Article-title #{ article.title }
-        //-         p
-        //-           time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
-        //-         p!= typogr(article.intro).typogrify()
-        //-         a(href=article.url class="Article-link") Read More 
+    - var page_data = contents.home['index.json']
+    - var page_meta = page_data.metadata    
+    - var titleData = {'title':page_meta.title,'s1':page_meta.s1, 's2':page_meta.s2}    
+    include includes/title
+        
+    //- Pupil 
+    div.Grid.Grid--1of2
+      div.Grid-cell
+        div.Feature
+          figure.Feature-figure
+            img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
+      div.Grid-cell.Grid-cell--center
+        div.Feature.Feature--padded-1
+          h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
+          h2.Feature-subtitle #{ page_meta.pupil_description_1 }
+          h2.Feature-subtitle #{ page_meta.pupil_description_2 }
+          h2.Feature-subtitle!= typogr(page_meta.pupil_description_3).typogrify()
+          a(href="/store" class="button-flex") #{ page_meta.pupil_link_text }
+
+    div.Grid.Grid--1of2
+      //- About
+      div.Grid-cell
+        div.Feature.Feature--padded-1
+          h2.Feature-title--lg.u-textCenter #{ page_meta.about_title }
+          h2.Feature-subtitle #{ page_meta.about_description_1 }
+          h2.Feature-subtitle #{ page_meta.about_description_2 + " " + page_meta.about_description_3 }
+          h2.Feature-subtitle #{ page_meta.about_description_4 }
+      //- Recent Blog Posts
+      div.Grid-cell
+        div(id="Home-activity" class="Feature Feature--padded-1")
+          h2.Feature-title--lg.u-textCenter #{ page_meta.activity_title }
+          //- each article in articles
+          //-   li.Article-list-item
+          //-     article
+          //-       header
+          //-         h2.Article-title #{ article.title }
+          //-         p
+          //-           time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
+          //-         p!= typogr(article.intro).typogrify()
+          //-         a(href=article.url class="Article-link") Read More 
 
