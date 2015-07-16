@@ -1,7 +1,6 @@
 # load all required libraries
 gulp = require "gulp"
 gutil = require "gulp-util"
-gulpif = require "gulp-if" 
 
 # node filesystem 
 fs = require('fs')
@@ -104,14 +103,6 @@ gulp.task "build_wintersmith", ->
     wintersmith.settings.configFile = 'config_production.json'
     wintersmith.build ->
     gutil.log "Successfully built wintersmith for production."
-
-
-  # wintersmith.build ->
-  #   gutil.log "Successful wintersmith build"
-
-gulp.task "clean", ->
-  fs.rmdir "build", (error)->
-    gutil.log error
 
 gulp.task "css", ->
   css()
