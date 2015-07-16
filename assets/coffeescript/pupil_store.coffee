@@ -348,7 +348,7 @@ class PupilStore
         selection = "a[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
         id = $(selection).attr('id')
         # make append active class to container 
-        element = "table[class='TechSpecs-table TechSpecs-txt--#{ type }']"       
+        element = "div[class='Grid-cell TechSpecs--#{ type }']"       
 
         if $(button).hasClass("TechSpecs--active")
           $(element).fadeOut(400)
@@ -542,17 +542,25 @@ class PupilStore
   _updateSpecTxt: (type,id)->
     button = ".TechSpecs"
     product = getProductById(id) 
-    txt = ""
-    for k,v of product.specs
-      txt += "<tr><td><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
-    videoLink = "<tr><td><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
-    selector = "table[class='TechSpecs-table TechSpecs-txt--#{ type }']"
+    tableRows = ""
+    infoTxt = ""
+    videoLink = ""
+    for k,v of product.specs 
+      if k is 'info'
+        infoTxt = "<p class='TechSpecs-txt'>#{ v }</p>"
+      else if k is 'video'
+        videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
+      else
+        tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
+    
+    selector = "div[class='Grid-cell TechSpecs--#{ type }']"
     if $(button).hasClass("TechSpecs--active")
       $(selector).empty()
-      $(selector).append("#{ txt }")
-      $(selector).append("#{ videoLink }")
+      $(selector).append("#{ infoTxt }")
+      $(selector).append("<table class='TechSpecs-table TechSpecs-txt--#{ type}'><tbody>"+"#{ tableRows }"+"#{ videoLink }"+"</tbody></table>")
     else
       $(selector).empty()
+
 
   _swapImg: (links)->
     for link in links

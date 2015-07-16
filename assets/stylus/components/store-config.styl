@@ -119,9 +119,12 @@ spec_header()
     vertical-align top
     padding .5em
     
-  tr:nth-child(odd)
-    background rgba(0,0,0,.05)
-  
+  // tr:nth-child(odd)
+  //   background rgba(0,0,0,.05)
+
+.TechSpecs-table--column  
+  // background rgba(0,0,0,.05)
+  border-right 1px solid #ddd
 
 spec_txt()
   text-transform lowercase
@@ -134,6 +137,10 @@ spec_txt()
 .TechSpecs-txt--world
   spec_txt()
   
+.TechSpecs-txt
+  spec_txt()
+  padding-bottom .5em
+
 .LicenseSpecs-txt
   spec_txt()
   
