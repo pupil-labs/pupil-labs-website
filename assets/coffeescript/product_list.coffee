@@ -20,7 +20,7 @@ productList = [
         info: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed." 
         sensor: "1910x1080 @30fps" 
         fov: "90 degrees diagonal with auto focus lens." 
-        latency: "120ms"
+        latency: "127.7ms"
     cartlabel: "World camera: high resolution"
     cartSpecs: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency"
     dimensions: 0
@@ -36,7 +36,7 @@ productList = [
         info: "World camera custom built by Pupil Labs. The fastest,smallest, lightest, and most versatile. We recommend this option for most use cases." 
         sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
         fov: "100 degrees diagonal (lenses are exchangeable: purchase alternate lenses below)"
-        latency: "5.7ms."
+        latency: "5.7ms"
     cartlabel: "World camera: high speed"
     cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100deg diag (lenses are exchangeable: purchase alternate lenses below). 5.7ms latency."
     dimensions: 0
@@ -65,6 +65,7 @@ productList = [
         info: "Eye camera with the smallest dimensions. Good for fixation detection." 
         sensor: "640x480 @30fps"
         illumination: "IR camera with IR illumination (dark pupil tracking)"
+        latency: "35.6ms"
     cartlabel: "Eye camera: 30hz eye camera"    
     cartSpecs: "Resolution: 640x480 @30fps. IR illumination."    
     dimensions: 0
@@ -80,6 +81,7 @@ productList = [
         info: "Eye camera custom built by Pupil Labs that will resolve a wider range of eye movement motifs"
         sensor: "640x480 @120fps"
         illumination: "IR camera with IR illumination (dark pupil tracking)" 
+        latency: "5.7ms"
     cartlabel: "Eye camera: 120hz eye camera"    
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
@@ -95,6 +97,7 @@ productList = [
         info: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that will resolve a wider range of eye movement motifs" 
         sensor: "640x480 @120fps"
         illumination: "IR camera with IR illumination (dark pupil tracking)"
+        latency: "5.7ms"
     cartlabel: "Eye cameras: 120hz binocular eye cameras"    
     cartSpecs: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
