@@ -507,7 +507,7 @@ class PupilStore
     if $("#Success").length > 0
       data = @_getOrderPermalink()
       url = window.location.origin + "/cart?" + $.param(data)
-      link = "<a class='u-linkAttention' href='#{url}'>permalink</a>"
+      link = "<a href='#{url}'>permalink</a>"
       html = "<h2 class='Banner-subtitle'>You can always revisit your order with this #{link}.</h2>"
       $(".Banner-item.u-textCenter").append(html)
       # very important - clear LocalStorage after setting the link
