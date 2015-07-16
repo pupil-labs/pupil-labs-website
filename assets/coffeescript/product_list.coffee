@@ -8,7 +8,7 @@ productList = [
     cartlabel: "World camera: no world camera"
     cartSpecs: "no world camera"
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "../media/images/config_images/pupil-config-world-none.jpg"
     video: "#"
     order: 1
@@ -24,7 +24,7 @@ productList = [
     cartlabel: "World camera: high resolution"
     cartSpecs: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency"
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "../media/images/config_images/pupil-config-world-1080p.jpg"
     video: "#"
     order: 2
@@ -40,7 +40,7 @@ productList = [
     cartlabel: "World camera: high speed"
     cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100deg diag (lenses are exchangeable: purchase alternate lenses below). 5.7ms latency."
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "../media/images/config_images/pupil-config-world-120hz.jpg"
     video: "#"
     order: 3
@@ -53,7 +53,7 @@ productList = [
     cartlabel: "Eye camera: no eye camera"    
     cartSpecs: "no eye camera"    
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "../media/images/config_images/pupil-config-eye-none.jpg"
     video: "#"
     order: 1
@@ -68,7 +68,7 @@ productList = [
     cartlabel: "Eye camera: 30hz eye camera"    
     cartSpecs: "Resolution: 640x480 @30fps. IR illumination."    
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "../media/images/config_images/pupil-config-eye-30hz.jpg"
     video: "#"
     order: 2
@@ -83,7 +83,7 @@ productList = [
     cartlabel: "Eye camera: 120hz eye camera"    
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "../media/images/config_images/pupil-config-eye-120hz.jpg"
     video: "#"
     order: 3
@@ -98,7 +98,7 @@ productList = [
     cartlabel: "Eye cameras: 120hz binocular eye cameras"    
     cartSpecs: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "../media/images/config_images/pupil-config-eye-120hz-binocular.jpg"
     video: "#"
     order: 4
@@ -110,7 +110,7 @@ productList = [
     cartlabel: "Camera upgrade: 120hz eye camera upgrade"   
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."                     
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "http://placehold.it/800x500/444444"
     video: "#"
     order: 1
@@ -122,7 +122,7 @@ productList = [
     cartlabel: "Lens Kit"            
     cartSpecs: "Lens specs"    
     dimensions: 0
-    weight: 0
+    weight: 300
     img: "http://placehold.it/800x500/444444"
     order: 2
   }, {

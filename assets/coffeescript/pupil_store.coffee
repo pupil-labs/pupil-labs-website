@@ -578,9 +578,15 @@ class PupilStore
     activeLicenseId = $(@licenseConfigActiveClass).attr('id')
     # subTotal = "€ " + @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
     subTotal = "€ " + getProductsSum([activeWorldId,activeEyeId,activeLicenseId])
+    weight = "configuration weight: " + getProductWeight([activeWorldId,activeEyeId]) + " grams"
     if activeWorldId is "world_none" and activeEyeId is "eye_none"
       subTotal = "Not for sale"  
+      weight = ""
     $(@configSubTotalClass).text(subTotal)
+    $("#StoreConfig-weight").text(weight)
+
+  _updateConfigWeight: ->
+
 
   # _uniqueId: (len=6)->
   #   id = ""

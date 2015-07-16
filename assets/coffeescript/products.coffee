@@ -23,6 +23,11 @@ getProductsSum = (ids,qty=1)->
   vals *= qty
   vals
 
+getProductWeight = (ids)->
+  vals = (i.weight for i in getProducts() when i.id in ids)
+  vals = _sumAll(vals)
+  vals
+
 _sumAll = (vals)->
   vals.reduce (a,b) -> a + b
 
