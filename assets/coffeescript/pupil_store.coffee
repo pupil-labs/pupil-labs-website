@@ -199,7 +199,13 @@ class PupilStore
         $(".Cart-container").show()
         for k,v of LocalStorage.dict()
           # product, id, specs, price, quantity
-          specTxtHtml = "<div class='Grid-cell--2of3 Grid-cell--2of3-padright'>
+          productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
+                          <div class='Feature-figure Feature-figure--config'>
+                            #{ getConfigImagesByIds(v.order) }
+                          </div>
+                        </div>"
+
+          specTxtHtml = "<div class='Grid-cell--1of2 Grid-cell--padright2'>
                           #{ getOrderSpecTxt(v.order) }
                         </div>"
 
@@ -250,7 +256,7 @@ class PupilStore
 
           newRow = "<div class='Cart-rowContainer'>
                       <div class='Grid Grid--center Cart-row' id='#{ k }'>" +
-                        
+                        productImg +
                         specTxtHtml +
                         "<div class='Grid-cell'>" +
                           "<div class='Grid Grid--center'>" +

@@ -1,7 +1,7 @@
 # load all required libraries
 gulp = require "gulp"
 gutil = require "gulp-util"
-# add delete util
+gulpif = require "gulp-if" 
 
 # node filesystem 
 fs = require('fs')

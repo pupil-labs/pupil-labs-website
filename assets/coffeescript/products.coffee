@@ -46,6 +46,31 @@ getConfigImageUrls = ->
   urls = (i.img for i in getProducts() when i.id.split("_")[0] is 'world' or i.id.split("_")[0] is 'eye') 
   return urls
 
+getConfigImagesByIds = (orderItems)->
+  if orderItems.length > 1
+    # it is pupil config item
+    eye_img = null
+    world_img = null
+    for i in orderItems
+      prod = getProductById(i)
+      try
+        prodId = prod.id.split('_')[0]
+      catch e
+        console.log e
+      
+      if prodId is 'eye'
+        eye_img = "<img src='#{ prod.img }'class='Feature-image Feature-image--configEye'>"
+      
+      if prodId is 'world'
+        world_img = "<img src='#{ prod.img }'class='Feature-image Feature-image--configWorld'>"
+    return eye_img + world_img
+  else
+    # it is a simple product
+    console.log getProductById(orderItems[0]).img
+    productImg = "<img src='#{ getProductById(orderItems[0]).img }' class='Feature-image Feature-image--configEye'>"
+    return productImg
+
+
 getProductById = (uid)->
   prod = i for i in getProducts() when i.id is uid
   return prod
