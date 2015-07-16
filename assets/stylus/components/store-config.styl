@@ -1,119 +1,133 @@
 storeConfig-button($stroke=1px)
-	display flex
-	flex-wrap nowrap
-	align-items center
-	justify-content center
-	border-radius 3px
-	// border-top $stroke solid #ddd
-	// border-bottom $stroke solid #ddd
-	border-right $stroke solid #ddd
-	background transparent
-	padding .5em
-	color $text-color
-	transition color .3s ease-in-out, background .3s ease-in-out
-	font-family $font-family-sans-serif
-	font-weight 700
-	font-size .9em
+  display flex
+  flex-wrap nowrap
+  align-items center
+  justify-content center
+  border-radius 3px
+  // border-top $stroke solid #ddd
+  // border-bottom $stroke solid #ddd
+  border-right $stroke solid #ddd
+  background transparent
+  padding .5em
+  color $text-color
+  transition color .3s ease-in-out, background .3s ease-in-out
+  font-family $font-family-sans-serif
+  font-weight 700
+  font-size .9em
 
-	&:last-child
-		border-right 0px solid #ddd
-		
+  &:last-child
+    border-right 0px solid #ddd
+    
 
 .StoreConfig-world
-	storeConfig-button()
+  storeConfig-button()
 
 .StoreConfig-eye
-	storeConfig-button()			
+  storeConfig-button()      
 
 .Store-navPreset
-	storeConfig-button(0px)
-	
+  storeConfig-button(0px)
+  
 .Store-license
-	storeConfig-button(0px)
-		
+  storeConfig-button(0px)
+    
 .StoreConfig--state-active
-	background $link-hover-color
-	color #fff
+  background $link-hover-color
+  color #fff
 
 .StoreConfig--state-active--license
-	background #ddd
-	color black
+  background #ddd
+  color black
 
 .no-touch
-	.StoreConfig-world
-	.StoreConfig-eye
-	.Store-navPreset
-	.StoreConfig-license
-		&:hover
-			background #ddd
-			color black
+  .StoreConfig-world
+  .StoreConfig-eye
+  .Store-navPreset
+  .StoreConfig-license
+    &:hover
+      background #ddd
+      color black
 
 .StoreConfig-SubTotal--label
-	color #fff
-	
-	@media $break-sm
-		padding-top 1em 
-		padding-bottom 1em
+  color #fff
+  
+  @media $break-sm
+    padding-top 1em 
+    padding-bottom 1em
 
 
 .StoreConfig-subTotal
-	display inline
-	color $link-hover-color
-		
+  display inline
+  color $link-hover-color
+    
 #StoreConfig-addToCart
-	// nothing here yet
-		
+  // nothing here yet
+    
 .StoreConfig-rowContainer
-	padding 1em 1em 0  
-	
+  padding 1em 1em 0  
+  
 .StoreConfig-rowContainer--presets
-	background rgba(0,0,0,.025)
-	
+  background rgba(0,0,0,.025)
+  
 .StoreConfig-rowContainer--world
-	border-top 1px solid #ddd
+  border-top 1px solid #ddd
 
 .StoreConfig-rowContainer--eye
-	// border-top 1px solid black
-	border-top 1px solid #ddd
+  // border-top 1px solid black
+  border-top 1px solid #ddd
 
 .StoreConfig-rowContainer--license
-	// background darken(rgba(255,255,255,1),2%)
-	border-top 1px solid #ddd
-	background rgba(0,0,0,.025)
+  // background darken(rgba(255,255,255,1),2%)
+  border-top 1px solid #ddd
+  background rgba(0,0,0,.025)
 
 .StoreConfig-rowContainer--cost
-	background darken(rgba(255,255,255,1),60%)
-	border-top 1px solid #ddd
+  background darken(rgba(255,255,255,1),60%)
+  border-top 1px solid #ddd
 
 .StoreConfig-rowContainer--cartBtns
-	padding .5em
-	
+  padding .5em
+  
 .StoreConfig-header
-	padding-bottom .5em
-	
+  padding-bottom .5em
+  
 spec_header()
-	text-transform lowercase
-	font-variant small-caps
+  text-transform lowercase
+  font-variant small-caps
 
 .TechSpecs
-	spec_header()
+  spec_header()
 
 .LicenseSpecs
-	spec_header()
+  spec_header()
 
 .TechSpecs--active
-	// jquery only
+  // jquery only
+
+.TechSpecs-table
+  width 100%
+  display table
+  border none
+  border-spacing 0
+  
+  td
+    vertical-align top
+    padding .5em
+    
+  tr:nth-child(odd)
+    background rgba(0,0,0,.05)
+  
 
 spec_txt()
-	text-transform lowercase
-	font-size .8em
-	padding 0em
+  text-transform lowercase
+  font-size .8em
+  padding 0em
 
 .TechSpecs-txt--eye
-	spec_txt()
-		
+  spec_txt()
+    
 .TechSpecs-txt--world
-	spec_txt()
-	
+  spec_txt()
+  
 .LicenseSpecs-txt
-	spec_txt()
+  spec_txt()

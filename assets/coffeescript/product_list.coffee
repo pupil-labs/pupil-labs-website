@@ -3,7 +3,8 @@ productList = [
     id: "world_none"
     cost: 0
     label: "none"
-    specs: "No World camera"
+    specs:
+        info: "No World camera"
     cartlabel: "World camera: no world camera"
     cartSpecs: "no world camera"
     dimensions: 0
@@ -15,7 +16,11 @@ productList = [
     id: "world_hr"
     cost: 250
     label: "high resolution"
-    specs: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed. Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency."
+    specs: 
+        info: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed." 
+        sensor: "1910x1080 @30fps" 
+        fov: "90 degrees diagonal with auto focus lens." 
+        latency: "120ms"
     cartlabel: "World camera: high resolution"
     cartSpecs: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency"
     dimensions: 0
@@ -27,7 +32,11 @@ productList = [
     id: "world_hs"
     cost: 250
     label: "high speed"
-    specs: "World camera custom built by Pupil Labs. The fastest,smallest, lightest, and most versatile. We recommend this option for most use cases. 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100deg diag (lenses are exchangeable: purchase alternate lenses below). 5.7ms latency."
+    specs: 
+        info: "World camera custom built by Pupil Labs. The fastest,smallest, lightest, and most versatile. We recommend this option for most use cases." 
+        sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
+        fov: "100 degrees diagonal (lenses are exchangeable: purchase alternate lenses below)"
+        latency: "5.7ms."
     cartlabel: "World camera: high speed"
     cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100deg diag (lenses are exchangeable: purchase alternate lenses below). 5.7ms latency."
     dimensions: 0
@@ -39,7 +48,8 @@ productList = [
     id: "eye_none"
     cost: 150,
     label: "none"
-    specs: "No eye camera"
+    specs: 
+        info: "No eye camera"
     cartlabel: "Eye camera: no eye camera"    
     cartSpecs: "no eye camera"    
     dimensions: 0
@@ -51,7 +61,10 @@ productList = [
     id: "eye_30hz"
     cost: 550
     label: "30hz"
-    specs: "Eye camera with the smallest dimensions. Good for fixation detection. IR camera with IR illumination (dark pupil tracking). 640x480 @30fps."
+    specs: 
+        info: "Eye camera with the smallest dimensions. Good for fixation detection." 
+        sensor: "640x480 @30fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)"
     cartlabel: "Eye camera: 30hz eye camera"    
     cartSpecs: "Resolution: 640x480 @30fps. IR illumination."    
     dimensions: 0
@@ -63,7 +76,10 @@ productList = [
     id: "eye_120hz"
     cost: 800
     label: "120hz"
-    specs: "Eye camera custom built by Pupil Labs that will resolve a wider range of eye movement motifs. IR camera with IR illumination (dark pupil tracking). 640x480 @120fps."
+    specs: 
+        info: "Eye camera custom built by Pupil Labs that will resolve a wider range of eye movement motifs"
+        sensor: "640x480 @120fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)" 
     cartlabel: "Eye camera: 120hz eye camera"    
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
@@ -75,7 +91,10 @@ productList = [
     id: "eye_120hz_binocular"
     cost: 1500
     label: "120hz binocular"
-    specs: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that will resolve a wider range of eye movement motifs. IR camera with IR illumination (dark pupil tracking). 640x480 @120fps."
+    specs: 
+        info: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that will resolve a wider range of eye movement motifs" 
+        sensor: "640x480 @120fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)"
     cartlabel: "Eye cameras: 120hz binocular eye cameras"    
     cartSpecs: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0

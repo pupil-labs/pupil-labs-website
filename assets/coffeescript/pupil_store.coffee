@@ -348,7 +348,7 @@ class PupilStore
         selection = "a[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
         id = $(selection).attr('id')
         # make append active class to container 
-        element = "p[class='TechSpecs-txt--#{ type }']"       
+        element = "table[class='TechSpecs-table TechSpecs-txt--#{ type }']"       
 
         if $(button).hasClass("TechSpecs--active")
           $(element).fadeOut(400)
@@ -542,14 +542,17 @@ class PupilStore
   _updateSpecTxt: (type,id)->
     button = ".TechSpecs"
     product = getProductById(id) 
-    txt = product.specs
-    videoLink = "<p><a href='#{ product.video }'>Download Video Sample</a></p>"
-    selector = "p[class='TechSpecs-txt--#{ type }']"
+    txt = ""
+    for k,v of product.specs
+      txt += "<tr><td><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
+    videoLink = "<tr><td><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
+    selector = "table[class='TechSpecs-table TechSpecs-txt--#{ type }']"
     if $(button).hasClass("TechSpecs--active")
-      $(selector).text("#{ txt }")
+      $(selector).empty()
+      $(selector).append("#{ txt }")
       $(selector).append("#{ videoLink }")
     else
-      $(selector).text("#{ txt }").hide()
+      $(selector).empty()
 
   _swapImg: (links)->
     for link in links
