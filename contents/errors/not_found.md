@@ -1,7 +1,7 @@
 ---
 title: Page not found
 template: page.jade
-filename: 404.html
+filename: not_found.html
 id: 404
 ---
 
