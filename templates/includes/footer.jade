@@ -3,7 +3,7 @@ footer
     ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--stretch.Grid--justifySpaceAround
       each url, title in contents.menu['footer-nav.json'].metadata
         li.Grid-cell--auto.Footer-nav-item
-          a(href=locals.url+url class="Footer-nav-link")= title
+          a(href=url class="Footer-nav-link")= title
   section.Footer-social
     ul.Grid-noWrap.Grid--justifyCenter
       each url, title in contents.menu['footer-connect.json'].metadata

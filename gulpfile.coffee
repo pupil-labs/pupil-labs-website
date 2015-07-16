@@ -84,11 +84,30 @@ gulp.task "image_min", ->
   .pipe gulp.dest('build/media/images')
 
 gulp.task "preview", ->
+    wintersmith.settings.configFile = 'config.json'
     wintersmith.preview()
 
 gulp.task "build_wintersmith", ->
-  wintersmith.build ->
-    gutil.log "Successful wintersmith build"
+  knownOpts = 
+    boolean: ['dev','staging','production']
+  # opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dev':true}
+  opts = minimist process.argv.slice(2), knownOpts
+  if opts.dev
+    wintersmith.settings.configFile = 'config.json'
+    wintersmith.build ->
+      gutil.log "Successfully built wintersmith for local dev."
+  if opts.staging
+    wintersmith.settings.configFile = 'config_staging.json'
+    wintersmith.build ->
+      gutil.log "Successfully built wintersmith for staging."
+  if opts.production 
+    wintersmith.settings.configFile = 'config_production.json'
+    wintersmith.build ->
+    gutil.log "Successfully built wintersmith for production."
+
+
+  # wintersmith.build ->
+  #   gutil.log "Successful wintersmith build"
 
 gulp.task "clean", ->
   fs.rmdir "build", (error)->
