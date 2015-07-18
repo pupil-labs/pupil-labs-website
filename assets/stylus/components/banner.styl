@@ -2,34 +2,53 @@
 // See Philip Walton's vertical centering post: http://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
 
 .Banner-container
-	display flex
-	flex-wrap wrap
-	align-items center
-	justify-content center
-	margin 0
-	min-height 55vh
-	padding 5em
-	
-	@media $break-sm
-		min-height 45vh
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  margin 0
+  min-height 55vh
+  padding 5em
+  
+  @media $break-sm
+    min-height 45vh
 
 .Banner-item
-	flex 1
+  flex 1
 
 .Banner--gradientBkg
-	background linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(255,255,255,0.0001))
+  background linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(255,255,255,0.0001))
+
+.Banner--gradientBkg--reverse
+  background linear-gradient(to bottom, rgba(255,255,255,0.0001),rgba(0,0,0,0.1))
+  
 
 .Banner-title
-	color #515151 // move to h1 styles or darken color
-	font-size 2.2em
-	
-	@media $break-lg
-		font-size 2.4em	
-	
+  color #515151 // move to h1 styles or darken color
+  font-size 2.2em
+  
+  @media $break-lg
+    font-size 2.4em 
+  
 .Banner-subtitle
-	text-shadow 0 1px 0 rgba(0,0,0,.1)		
-	font-size 1.4em
-	 
+  text-shadow 0 1px 0 rgba(0,0,0,.1)    
+  font-size 1.4em
+   
 .Banner-extendedText
-	p
-		padding-bottom 1em
+  p
+    padding-bottom 1em
+    
+.Banner-bkg--gray-lighter
+  background $gray-lighter
+
+.Banner-bkg--green
+    background darken($link-hover-color,30%)
+    
+.Banner-bkg--gray-darker
+  background $gray-darker
+  h1
+    color #A2A2A2
+  h2 
+    color #757575
+    
+  

@@ -15,32 +15,45 @@ block main
           figure.Feature-figure
             img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
       div.Grid-cell.Grid-cell--center
-        div.Feature.Feature--padded-1
+        div.Feature.Feature--padded3
           h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
           h2.Feature-subtitle #{ page_meta.pupil_description_1 }
           h2.Feature-subtitle #{ page_meta.pupil_description_2 }
           h2.Feature-subtitle!= typogr(page_meta.pupil_description_3).typogrify()
-          a(href="/store" class="button-flex") #{ page_meta.pupil_link_text }
+          a(href="/store" class="Button") #{ page_meta.pupil_link_text }
 
-    div.Grid.Grid--1of2
-      //- About
-      div.Grid-cell
-        div.Feature.Feature--padded-1
-          h2.Feature-title--lg.u-textCenter #{ page_meta.about_title }
-          h2.Feature-subtitle #{ page_meta.about_description_1 }
-          h2.Feature-subtitle #{ page_meta.about_description_2 + " " + page_meta.about_description_3 }
-          h2.Feature-subtitle #{ page_meta.about_description_4 }
-      //- Recent Blog Posts
-      div.Grid-cell
-        div(id="Home-activity" class="Feature Feature--padded-1")
-          h2.Feature-title--lg.u-textCenter #{ page_meta.activity_title }
-          //- each article in articles
-          //-   li.Article-list-item
-          //-     article
-          //-       header
-          //-         h2.Article-title #{ article.title }
-          //-         p
-          //-           time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. Do')
-          //-         p!= typogr(article.intro).typogrify()
-          //-         a(href=article.url class="Article-link") Read More 
+    //- Recent Activity
+    - var bannerData = {'title': page_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
+    - var bannerBkg = "Banner--gradientBkg--reverse"
+    include includes/banner
+    div.Feature-container--activityHome
+      div.Grid.Grid--gutters-noMargin
+        div.Grid-cell
+          h2.u-textCenter Recent Blog Posts 
+          div.Feature.Feature--padded3
+            ul
+            each article,i in articles
+              - var opacity = "opacity:"+String(1-(i*(1/articles.length)))+";"
+              li(class="Article-list-item" style=opacity)
+                article
+                  header
+                    h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
+                    p= article.metadata.subtitle
+                    a(href=article.url class="Article-link") Read More 
+
+        div.Grid-cell
+          h2.u-textCenter Development Feed 
+          div(id="Home-activity" class="Feature Feature--padded3")
+
+      div.Grid
+        div.Grid-cell
+          h3.Feature-title.u-textCenter Latest Pupil Software Release 
+          div(id="Home-activity" class="Feature Feature--padded3")
+            a(href="https://github.com/pupil-labs/pupil/releases/latest" role="button" class="Button Button--whiteBorder") Download Pupil
+
+
+      - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_description_1, 's2': page_meta.about_description_2 + " " + page_meta.about_description_3, 's3': page_meta.about_description_4}
+      - var bannerBkg = "Banner-bkg--gray-darker"
+      include includes/banner
+
 

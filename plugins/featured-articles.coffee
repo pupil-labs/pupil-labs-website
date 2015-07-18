@@ -12,7 +12,7 @@ module.exports = (env, callback) ->
 
     # There's already a `paginator.perPage`. We don't need another
     # `home.articlesPerPage`, since the former represents the latter exactly.
-    articlesPerPage: 3
+    articlesPerPage: 4
 
   options = env.config.home or {}
   for key, value of defaults

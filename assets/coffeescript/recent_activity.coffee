@@ -13,33 +13,33 @@ processGithubRepoData = (data) ->
   
 
 processGithubEvents = (recentEvents)->
-  console.log recentEvents.data
   events = []
-  for e in recentEvents.data 
+  selectedEvents = ["PushEvent","ReleaseEvent","IssuesEvent"]
+  filteredEvents = (e for e in recentEvents.data when e.type in selectedEvents)
+  for e,i in filteredEvents 
     date = new Date(e.created_at)
     dateStr = [date.getFullYear(),date.getMonth()+1,date.getDate()].join('-')
-    
+    opacity = "style='opacity:"+String(1-(i*(1/filteredEvents.length)))+";'" 
+
     if e.type is "PushEvent"
-      # console.log e.actor.login if e.type is "PushEvent"
       repoName = e.repo.name.split('/').pop()
       "#{ e.type + ' - ' + dateStr + ' - ' + repoName + ' - ' + e.payload.head }"
       commitLink = "https://github.com/#{ e.repo.name }/commit/#{ e.payload.head }" 
-      events.push("<li>#{ dateStr + ' - ' }commit to <a href='#{ commitLink }' target='_blank'>#{ repoName }</a></li>")
+      events.push("<li #{ opacity }>#{ dateStr + ' - ' }commit to <a href='#{ commitLink }' target='_blank'>#{ repoName }</a></li>")
     
     if e.type is "ReleaseEvent"
       repoName = e.repository.name
       tagName = e.release.tag_name
       releaseLink = e.release.html_url
-      events.push("<li>#{ dateStr + ' - ' }new release - <a href='#{ releaseLink }' target='_blank'>#{repoName + ' - ' + tagName}</a></li>")
+      events.push("<li #{ opacity }>#{ dateStr + ' - ' }new release - <a href='#{ releaseLink }' target='_blank'>#{repoName + ' - ' + tagName}</a></li>")
 
     if e.type is "IssuesEvent"
       actionType = e.payload.action
       issueLink = e.payload.issue.html_url
       issueNumber = e.payload.issue.number
       repoName = e.repo.name.split('/').pop()
-      events.push("<li>#{ dateStr + ' - ' }issue #{ actionType } - <a href='#{ issueLink }' target='_blank'>#{ repoName + ' issue # ' + issueNumber }</a></li>")
+      events.push("<li #{ opacity }>#{ dateStr + ' - ' }issue #{ actionType } - <a href='#{ issueLink }' target='_blank'>#{ repoName + ' issue # ' + issueNumber }</a></li>")
 
-      
   eventString = events.join('')
   $("#Home-activity").append("<ul>#{ eventString }</ul>")
 

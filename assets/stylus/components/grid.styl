@@ -202,10 +202,18 @@
 	
 .Grid--gutters
 	margin -1em 0 1em -1em
+
+.Grid--gutters-noMargin
+	margin 0
 	
 .Grid--gutters
+.Grid--gutters-noMargin
 	> .Grid-cell
 		padding 1em 0 0 1em
+		
+		@media $break-sm
+			flex 0 0 100%
+			max-width 100%
 		
 .Grid--gutters-lg
 	> .Grid-cell

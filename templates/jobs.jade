@@ -26,11 +26,11 @@ block main
   - var positions = _.chain(positions_folder._.pages).sortBy(function(item) {
   -   return item.metadata['order'];
   - }).value()
-  h2.Feature--padded-1.Feature-grayBkg.u-textCenter Current Opportunities     
+  h2.Feature--padded-1.Feature-greenBkg.u-textCenter Current Opportunities     
   div.Grid-gutters.Aligner
     each p in positions
       div.Aligner-item--1of2.Aligner-item--column
         h2.Feature-title--lg.u-textCenter= p.title
         div.Article.Aligner-item--stretchHeight!= typogr(p.html).typogrify()
-        a(href="mailto:jobs@pupil-labs.com" target="_blank" role="button" class="Button") email us to apply
+        a(href="mailto:jobs@pupil-labs.com" target="_blank" role="button" class="Button Button--whiteBorder") email us to apply
         p.Cart-disclaimerTxt.u-textCenter (please include your cv and links to relevant work)
