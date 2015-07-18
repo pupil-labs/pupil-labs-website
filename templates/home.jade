@@ -32,8 +32,10 @@ block main
           h2.u-textCenter Recent Blog Posts 
           div.Feature.Feature--padded3
             ul
-            each article,i in articles
-              - var opacity = "opacity:"+String(1-(i*(1/articles.length)))+";"
+            - var articles = env.helpers.getArticles(contents)
+            - var articleLimit = 3
+            each article,i in articles.slice(0,articleLimit)
+              - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
               li(class="Article-list-item" style=opacity)
                 article
                   header

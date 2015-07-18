@@ -1,14 +1,15 @@
 {
   "locals": {
     "url": "localhost:3000",
+    "port": "3000",
     "name": "Pupil Labs",
     "owner": "Pupil Labs",
     "description": "Pupil Labs - accessible open source eye tracking platform"
   },
   "plugins": [
     "./plugins/paginator.coffee",
-    "./plugins/featured-articles.coffee",
     "./plugins/blog.coffee",
+    "./plugins/featured-articles.coffee",    
     "./node_modules/wintersmith-contents",
     "./node_modules/wintersmith-sitemap"
   ],
@@ -32,5 +33,8 @@
     "template": "blog.jade",
     "first": "blog/index.html",
     "filename": "blog/%d/index.html"
-  }
+  },
+  "ignore": [
+    "**/.DS_Store"
+  ]
 }

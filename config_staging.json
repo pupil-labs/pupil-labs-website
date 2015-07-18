@@ -32,5 +32,8 @@
     "template": "blog.jade",
     "first": "blog/index.html",
     "filename": "blog/%d/index.html"
-  }
+  },
+  "ignore": [
+    "**/.DS_Store"
+  ]
 }
