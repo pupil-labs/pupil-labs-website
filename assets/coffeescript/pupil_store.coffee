@@ -74,7 +74,7 @@ class PupilStore
                       <p>€ #{ p.cost } </p>
                     </div>
 
-                  <a role='button' id='#{ p.id }' class='AddToCart button-flex' href='#' data-product='product'>Add to Cart</a>
+                  <a role='button' id='#{ p.id }' class='AddToCart Button Button--whiteBorder' href='#' data-product='product'>Add to Cart</a>
                 
                   </div>
                 </div>"

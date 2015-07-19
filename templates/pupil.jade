@@ -32,7 +32,7 @@ block main
       div.Grid.Grid--1of2
         each f in group 
           div.Grid-cell.Grid-cell--center
-            div.Feature.Feature--padded-1
+            div.Feature.Feature-padded2
               h1.Feature-title--lg.u-textCenter= f.title
               h2.Feature-subtitle!= f.html
     else if feature.title === "community-license"
@@ -40,7 +40,7 @@ block main
       div.Grid.Grid--1of2.Grid--top
         each f in group 
           div.Grid-cell
-            div.Feature.Feature--padded-1
+            div.Feature.Feature-padded2
               h1.Feature-title--lg.u-textCenter= f.title
               h2.Feature-subtitle!= f.html
     else
@@ -50,7 +50,7 @@ block main
             figure.Feature-figure
               img(class="Feature-image" src="http://placehold.it/1000x800/"+i*111111)
         div.Grid-cell.Grid-cell--center
-          div.Feature.Feature--padded-1
+          div.Feature.Feature--padded2
             h1.Feature-title--lg.u-textCenter= feature.title 
             h2.Feature-subtitle!= feature.html 
 
