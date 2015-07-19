@@ -543,15 +543,14 @@ class PupilStore
     product = getProductById(id) 
     tableRows = ""
     infoTxt = ""
-    videoLink = ""
     for k,v of product.specs 
       if k is 'info'
         infoTxt = "<p class='TechSpecs-txt'>#{ v }</p>"
-      else if k is 'video'
-        videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
       else
         tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
-    
+
+    videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
+
     selector = "div[class='Grid-cell TechSpecs--#{ type }']"
     if $(button).hasClass("TechSpecs--active")
       $(selector).empty()
@@ -585,7 +584,7 @@ class PupilStore
     activeLicenseId = $(@licenseConfigActiveClass).attr('id')
     # subTotal = "€ " + @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
     subTotal = "€ " + getProductsSum([activeWorldId,activeEyeId,activeLicenseId])
-    weight = "configuration weight: " + getProductWeight([activeWorldId,activeEyeId]) + " grams"
+    weight = "weight: " + getProductWeight([activeWorldId,activeEyeId]) + " grams"
     if activeWorldId is "world_none" and activeEyeId is "eye_none"
       subTotal = "Not for sale"  
       weight = ""

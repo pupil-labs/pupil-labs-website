@@ -118,19 +118,20 @@ spec_header()
   
   td
     vertical-align top
-    padding .2em .5em
+    padding .2em .5em .2em .5em
+    
+  .TechSpecs-table--column
+    padding-left 0em
     
   // tr:nth-child(odd)
   //   background rgba(0,0,0,.05)
 
 .TechSpecs-table--column  
-  // background rgba(0,0,0,.05)
   border-right 1px solid #ddd
-
+  width 20%
+  
 spec_txt()
-  text-transform lowercase
   font-size .8em
-  // padding 0em
 
 .TechSpecs-txt--eye
   spec_txt()
