@@ -24,7 +24,7 @@ block main
 
     //- Recent Activity
     - var bannerData = {'title': page_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
-    - var bannerBkg = "Banner--gradientBkg--reverse"
+    - var bannerBkg = "Banner-container--sm Banner--gradientBkg--reverse"
     include includes/banner
     div.Feature-container--activityHome
       div.Grid.Grid--gutters-noMargin
@@ -49,7 +49,7 @@ block main
 
 
       - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_description_1, 's2': page_meta.about_description_2 + " " + page_meta.about_description_3, 's3': page_meta.about_description_4}
-      - var bannerBkg = "Banner-bkg--gray-darker"
+      - var bannerBkg = "Banner-container Banner-bkg--gray-darker"
       include includes/banner
 
 

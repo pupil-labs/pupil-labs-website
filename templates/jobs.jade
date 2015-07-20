@@ -17,20 +17,25 @@ block main
   -var positions_folder = contents.jobs['positions']
 
   - var missionData = contents.jobs['pupil_mission.md']
-  div.Banner-container
-    div.Banner-item
-      h2.Banner-title.u-textCenter= missionData.title
-      h3.Banner-subtitle.u-textCenter= missionData.metadata.subtitle
-      div.Article.u-textJustified.u-padTop--1!= typogr(missionData.html).typogrify()
+  
+  div.Feature--padded2
+    div.Grid.Article
+      div.Grid-cell.Grid-cell--sidebar-sm
+      div.Grid-cell
+        h2.Banner-title.u-textCenter= missionData.title
+        h3.Banner-subtitle.u-textCenter= missionData.metadata.subtitle
+        div.u-textJustified.u-padTop--1!= typogr(missionData.html).typogrify()
+      div.Grid-cell.Grid-cell--sidebar-sm
 
   - var positions = _.chain(positions_folder._.pages).sortBy(function(item) {
   -   return item.metadata['order'];
   - }).value()
-  h2.Feature--padded-1.Feature-greenBkg.u-textCenter Current Opportunities     
-  div.Grid-gutters.Aligner
+  div.Feature--padded3.Banner-bkg--gray-darker.u-textCenter 
+    h2 Current Opportunities     
+  div.Grid--gutters-noMargin.Aligner
     each p in positions
       div.Aligner-item--1of2.Aligner-item--column
-        h2.Feature-title--lg.u-textCenter= p.title
+        h2.Feature-title.u-textCenter.u-padBottom--1.u-padTop--1= p.title
         div.Article.Aligner-item--stretchHeight!= typogr(p.html).typogrify()
         a(href="mailto:jobs@pupil-labs.com" target="_blank" role="button" class="Button Button--whiteBorder") email us to apply
-        p.Cart-disclaimerTxt.u-textCenter (please include your cv and links to relevant work)
+        p.Cart-disclaimerTxt.u-textCenter.u-padBottom--4 (please include your cv and links to relevant work)

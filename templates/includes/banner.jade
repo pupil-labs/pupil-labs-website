@@ -1,5 +1,5 @@
 - var d = bannerData
-- var bannerClass = (typeof(bannerBkg) !== 'undefined'? "Banner-container "+bannerBkg: "Banner-container" )
+- var bannerClass = (typeof(bannerBkg) !== 'undefined'? bannerBkg : "Banner-container" )
 div(class=bannerClass)
   div.Banner-item.u-textCenter
     each v,k in d

@@ -103,6 +103,15 @@
 		flex 0 0 5%
 		max-width 5%
 
+.Grid-cell--sidebar-sm
+	flex 0 0 8%
+	max-width 8%
+	
+	@media $break-sm
+		flex 0 0 5%
+		max-width 5%
+
+
 .Grid-cell--1of2:first-child .Button-radio--lg
 	border-left 0
 	
@@ -201,11 +210,11 @@
 	border-bottom 1px solid black
 	
 .Grid--gutters
-	// margin -1em 0 1em -1em
-	padding 2em 0em
+	margin -1em 0 0em -1em
+	// padding 2em 0em
 
 .Grid--gutters-noMargin
-	margin 0
+	margin 0 1em
 	
 .Grid--gutters
 .Grid--gutters-noMargin
@@ -258,4 +267,3 @@
 .Aligner-item--bottom
 	display flex
 	align-self flex-end
-

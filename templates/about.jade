@@ -14,8 +14,9 @@ block main
     - var items = _.chain(contents.about['info']._.pages).sortBy(function(item) {
     -   return item.metadata['order'];
     - }).value()    
-    div.Grid.Grid--1of2
-      each i in items
-        div.Grid-cell
-          h2.Feature-title--lg.u-textCenter= i.title
-          div.Article!= typogr(i.html).typogrify()
+    div.u-padBottom--5
+      div.Grid.Grid--1of2
+        each i in items
+          div.Grid-cell
+            h2.Feature-title.u-textCenter.u-padBottom--1= i.title
+            div.Article!= typogr(i.html).typogrify()

@@ -1,17 +1,23 @@
 // Banner item is centered within the container
 // See Philip Walton's vertical centering post: http://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
 
-.Banner-container
+banner_container(min_h=55vh,padding=5em 5em 5em 5em)
   display flex
   flex-wrap wrap
   align-items center
   justify-content center
   margin 0
-  min-height 55vh
-  padding 5em
+  min-height min_h
+  padding padding
   
   @media $break-sm
-    min-height 45vh
+    min-height min_h - 10
+
+.Banner-container
+  banner_container()
+
+.Banner-container--sm
+  banner_container(min_h=35vh,padding=2em 2em 2em 2em)
 
 .Banner-item
   flex 1

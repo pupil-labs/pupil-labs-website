@@ -4,18 +4,20 @@
 //- contact
 div.Cart-orderForm-container
   form(id="order-form" data-parsley-validate data-parsley-focus="first")
-    div.Grid
-      div.Grid-cell
-        h3 Contact Info
-    div.Grid.Grid--1of2.Grid--gutters
-      div.Grid-cell
-        //- label(for="c-email") Contact Email 
-        input(class="Form-input Form-input--text" id="c-email" type="email" placeholder="email address" name="c-email" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-email--error")
-        p(class="Form-error--text" id="c-email--error")
-      div.Grid-cell
-        //- label(for="c-name-first") First Name
-        input(class="Form-input Form-input--text" id="c-name" type="text" placeholder="name" name="c-name" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-name--error")
-        p(class="Form-error--text" id="c-name--error")
+    
+    div.u-padBottom--1
+      div.Grid
+        div.Grid-cell
+          h4 Contact Info
+      div.Grid.Grid--1of2.Grid--gutters
+        div.Grid-cell
+          //- label(for="c-email") Contact Email 
+          input(class="Form-input Form-input--text" id="c-email" type="email" placeholder="email address" name="c-email" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-email--error")
+          p(class="Form-error--text" id="c-email--error")
+        div.Grid-cell
+          //- label(for="c-name-first") First Name
+          input(class="Form-input Form-input--text" id="c-name" type="text" placeholder="name" name="c-name" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-name--error")
+          p(class="Form-error--text" id="c-name--error")
     //- billing & shipping is in the same row
     //- |=== Billing ===|=== Shipping ===|
     div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
@@ -23,7 +25,7 @@ div.Cart-orderForm-container
       div.Grid-cell
         div.Grid
           div.Grid-cell.Form-header
-            h3 Billing Info
+            h4 Billing Info
         //- wrapper for billing inputs
         div.Form-billing-container
           div.Grid.Grid--gutters.Grid--1of2
@@ -54,7 +56,7 @@ div.Cart-orderForm-container
       div.Grid-cell
         div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
           div.Grid-cell
-            h3 Shipping Info
+            h4 Shipping Info
           div.Grid-cell
             div.Grid.Grid--1of2
               div.Grid-cell
@@ -85,39 +87,40 @@ div.Cart-orderForm-container
 
 
     //- payment | notes
-    div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
-      
-      //- payment method
-      div.Grid-cell
-        div.Grid
-          div.Grid-cell
-            h3 Payment Method
-        div.Grid.Grid--1of3
-          div.Grid-cell
-            input(id="p-paypal" class="Form-input--radio Form-payment-type" type="radio" name="p-type" value="paypal")
-            label(for="p-paypal" class="Button-radio--sm Form-input--radioLabel Button--state-active" id="Form-input--p-paypal") Paypal & Credit Card
-          div.Grid-cell
-            input(id="p-transferwise" class="Form-input--radio Form-payment-type" type="radio" name="p-type" value="transferwise")
-            label(for="p-transferwise" class="Button-radio--sm Form-input--radioLabel" id="Form-input--p-transferwise") Transferwise
-          div.Grid-cell
-            input(id="p-banktransfer" class="Form-input--radio Form-payment-type" type="radio" name="p-type" value="bankTransfer")
-            label(for="p-banktransfer" class="Button-radio--sm Form-input--radioLabel" id="Form-input--p-banktransfer") Bank Transfer
-      
-      //- notes
-      div.Grid-cell 
-        div.Grid
-          div.Grid-cell
-            h3 Notes
-        div.Grid
-          div.Grid-cell
-            //- label(for='notes') Additional Notes
-            textarea(class="Form-input Form-input--text Form-input--textarea" id='notes' placeholder="If you have any questions or notes, please write them here." name="x-notes")
+    div.u-padTop--1
+      div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
+        
+        //- payment method
+        div.Grid-cell
+          div.Grid
+            div.Grid-cell
+              h4 Payment Method
+          div.Grid.Grid--1of3
+            div.Grid-cell
+              input(id="p-paypal" class="Form-input--radio Form-payment-type" type="radio" name="p-type" value="paypal")
+              label(for="p-paypal" class="Button-radio--sm Form-input--radioLabel Button--state-active" id="Form-input--p-paypal") Paypal & Credit Card
+            div.Grid-cell
+              input(id="p-transferwise" class="Form-input--radio Form-payment-type" type="radio" name="p-type" value="transferwise")
+              label(for="p-transferwise" class="Button-radio--sm Form-input--radioLabel" id="Form-input--p-transferwise") Transferwise
+            div.Grid-cell
+              input(id="p-banktransfer" class="Form-input--radio Form-payment-type" type="radio" name="p-type" value="bankTransfer")
+              label(for="p-banktransfer" class="Button-radio--sm Form-input--radioLabel" id="Form-input--p-banktransfer") Bank Transfer
+        
+        //- notes
+        div.Grid-cell 
+          div.Grid
+            div.Grid-cell
+              h4 Notes
+          div.Grid
+            div.Grid-cell
+              //- label(for='notes') Additional Notes
+              textarea(class="Form-input Form-input--text Form-input--textarea" id='notes' placeholder="If you have any questions or notes, please write them here." name="x-notes")
 
     input(type="text" class="Form-input--orderType" name="o-type")
     textarea(class="Form-input--cart" name="cart")
     //- submit
     div.Grid
-      div.Grid-cell.Grid-cell--full.u-textCenter
+      div.Grid-cell.Grid-cell--full.u-textCenter.u-padTop--2
         input(type='submit' value="submit" id="form-submit" class="Form-input--submit")
         label(for="form-submit" class="Button Button--cart Button-submit") Submit
     div.Grid

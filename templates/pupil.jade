@@ -26,21 +26,22 @@ block main
     - var rowType = (i%2 == 0 ? 'Grid Grid--1of2' : 'Grid Grid--1of2 Grid--rowReverse')
     if feature.title === "Software"
       - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
+      - var bannerBkg = 'Banner-container--sm Banner-bkg--gray-darker'
       include includes/banner     
     else if feature.title === "record-play"
       - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
       div.Grid.Grid--1of2
         each f in group 
-          div.Grid-cell.Grid-cell--center
-            div.Feature.Feature-padded2
+          div.Grid-cell.Grid-cell--center.Banner-bkg--gray-darker
+            div.Feature.Feature--padded2
               h1.Feature-title--lg.u-textCenter= f.title
               h2.Feature-subtitle!= f.html
     else if feature.title === "community-license"
       - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
-      div.Grid.Grid--1of2.Grid--top
+      div.Grid.Grid--1of2.Grid--top.Banner-bkg--gray-darker
         each f in group 
-          div.Grid-cell
-            div.Feature.Feature-padded2
+          div.Grid-cell.u-padBottom--5
+            div.Feature.Feature--padded2
               h1.Feature-title--lg.u-textCenter= f.title
               h2.Feature-subtitle!= f.html
     else
