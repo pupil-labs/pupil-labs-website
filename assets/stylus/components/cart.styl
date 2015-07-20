@@ -202,14 +202,13 @@ tr.Cart-orderItem td
     text-align right
     
 .loading 
-  // 
+  font-size 1em 
 
-.loading:after 
+.loading:after
+.loading:before
   overflow hidden
   display inline-block
-  vertical-align bottom
-  -webkit-animation ellipsis steps(4,end) 900ms infinite      
-  animation ellipsis steps(4,end) 900ms infinite
-  content "\2026" /* ascii code for the ellipsis character */
-  width 0px
+  vertical-align center
+  animation loading steps(12,end) 1500ms infinite
+  content "."
 
