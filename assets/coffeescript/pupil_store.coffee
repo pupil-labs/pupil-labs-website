@@ -455,6 +455,7 @@ class PupilStore
 
   eventSubmitForm: ->
     if $(@cartPage).length > 0
+
       $("#order-form").on "submit", (event)=>
         event.preventDefault()
         form = $(event.target)
@@ -463,6 +464,9 @@ class PupilStore
           $('label[for="form-submit"]').addClass("Button--state-inactive")  
           $('label[for="form-submit"]').text("Submitting Request")    
           $('label[for="form-submit"]').attr('disabled',true)     
+          # add loading animation
+          $('label[for="form-submit"]').addClass("loading")    
+
           # disable the submit button to prevent double submits
           $("#form-submit").attr('disabled',true)
           @resetActivePaymentRadio()
@@ -475,6 +479,7 @@ class PupilStore
           $("textarea[class='Form-input--cart']").val(JSON.stringify(orders))
           formData = $(form).serialize()
           url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
+
           $.ajax
             type: 'POST'
             crossDomain: true
@@ -491,8 +496,8 @@ class PupilStore
             success: (data, textStatus, jqXHR) ->
               console.log "Successful AJAX call: #{textStatus}"
               $(location).attr('href',location.origin + "/order_success")
-
-
+            complete: (jqXHR,textStatus) ->
+              $('label[for="form-submit"]').removeClass("loading")    
 
   eventGenerateOrderLink: ->
     if $(@cartPage).length > 0 
@@ -530,7 +535,6 @@ class PupilStore
       $(".Banner-item.u-textCenter").append(html)
       # very important - clear LocalStorage after setting the link
       LocalStorage.clear()      
-
 
   _getOrderPermalink: ->
     data = []
