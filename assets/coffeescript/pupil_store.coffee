@@ -33,6 +33,7 @@ class PupilStore
       @eventUpdateConfig()
       @eventSelectPreset()
       @eventSelectLicense()
+      @eventShowLicenseSpecs()
       @eventFillCartFromQueryString()
       @eventRenderCart()
       @eventRemoveCartItem()
@@ -175,20 +176,6 @@ class PupilStore
         @_setActiveState([worldLink, eyeLink])
         @_swapImg([worldLink, eyeLink])
         @_updateConfigSubTotal()    
-
-  eventSelectLicense: ->
-    if $(@storePage).length > 0
-      $("p[class='LicenseSpecs-txt']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
-      $(@licenseConfigSelector).click (event)=>
-        event.preventDefault()
-        link = $(event.currentTarget)
-        if not $(link).hasClass("#{ @licenseConfigActive }") 
-          # remove the active class from the other link
-          # add active to self 
-          $(@licenseConfigActiveClass).removeClass("#{ @licenseConfigActive }")
-          $(link).addClass("#{ @licenseConfigActive }")
-          $("p[class='LicenseSpecs-txt']").text(getProductById($(link).attr('id')).specs)
-          @_updateConfigSubTotal()
 
   eventRenderCart: ->
     if $(@cartPage).length > 0
@@ -334,6 +321,38 @@ class PupilStore
         $("#CartSum--total").text("#{ totalPrice }")
 
         @eventUpdateCartNavCounter()
+
+  eventSelectLicense: ->
+    if $(@storePage).length > 0
+      # $("p[class='LicenseSpecs-text']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
+      $(@licenseConfigSelector).click (event)=>
+        event.preventDefault()
+        link = $(event.currentTarget)
+        if not $(link).hasClass("#{ @licenseConfigActive }") 
+          # remove the active class from the other link
+          # add active to self 
+          $(@licenseConfigActiveClass).removeClass("#{ @licenseConfigActive }")
+          $(link).addClass("#{ @licenseConfigActive }")
+          $("p[class='LicenseSpecs-text']").text(getProductById($(link).attr('id')).specs)
+          @_updateConfigSubTotal()
+
+  eventShowLicenseSpecs: ->
+    if $(@storePage).length > 0
+      $("a[id='specs-license']").click (event)=>
+        event.preventDefault()
+        button = $(event.target)
+        
+        element = "div[class='Grid-cell LicenseSpecs-container']"
+
+        if $(button).hasClass("LicenseSpecs--active")    
+          $(element).fadeOut(400)
+          $(button).removeClass("LicenseSpecs--active")
+          $(button).text("show license info")
+        else
+          $(button).addClass("LicenseSpecs--active")
+          $("p[class='LicenseSpecs-text']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
+          $(element).fadeIn(400)
+          $(button).text("hide license info")
 
 
   eventShowTechSpecs: ->

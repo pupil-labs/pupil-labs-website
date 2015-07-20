@@ -85,14 +85,14 @@ section.Grid.Grid--1of2--breakConfig
             a(href="#" role="button" class="Store-license" id="license_commercial") commercial use
         div.Grid.Grid--full
           div.Grid-cell.u-textCenter
-            p(id="specs-license" class="LicenseSpecs") license info
-          div.Grid-cell
-            p.LicenseSpecs-txt 
+            a(href="#" id="specs-license" class="LicenseSpecs") show license info
+          div.Grid-cell.LicenseSpecs-container
+            p.LicenseSpecs-text
 
     div.Grid.Grid--1of2.Grid--center.StoreConfig-rowContainer--cost
       div(id="Config-sum" class="Grid-cell u-textCenter")
         h3.StoreConfig-SubTotal--label Price: &nbsp;#[p(class="StoreConfig-subTotal")]
-        p#StoreConfig-weight
+        p(id="StoreConfig-weight")
       div.Grid-cell.StoreConfig-rowContainer--cartBtns
         a(role="button" id="AddToCart-config" class="AddToCart Button Button--cart" href="#" data-product="pupil") Add to cart
 
