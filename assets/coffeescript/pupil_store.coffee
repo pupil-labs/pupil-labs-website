@@ -29,6 +29,7 @@ class PupilStore
       @eventStorePageInit()
       @eventAddToCart()
       @eventClearCart()
+      @eventOrderLinkSuccessPage()
       @eventUpdateCartNavCounter()
       @eventUpdateConfig()
       @eventSelectPreset()
@@ -333,7 +334,8 @@ class PupilStore
           # add active to self 
           $(@licenseConfigActiveClass).removeClass("#{ @licenseConfigActive }")
           $(link).addClass("#{ @licenseConfigActive }")
-          $("p[class='LicenseSpecs-text']").text(getProductById($(link).attr('id')).specs)
+          if $("a[id='specs-license']").hasClass("LicenseSpecs--active")
+            $("p[class='LicenseSpecs-text']").text(getProductById($(link).attr('id')).specs)
           @_updateConfigSubTotal()
 
   eventShowLicenseSpecs: ->
@@ -534,7 +536,10 @@ class PupilStore
       html = "<h2 class='Banner-subtitle'>You can always revisit your order with this #{link}.</h2>"
       $(".Banner-item.u-textCenter").append(html)
       # very important - clear LocalStorage after setting the link
-      LocalStorage.clear()      
+      LocalStorage.clear()  
+      @eventUpdateCartNavCounter()
+    
+
 
   _getOrderPermalink: ->
     data = []
