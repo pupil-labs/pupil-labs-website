@@ -20,6 +20,11 @@ timeSince = (date)->
     when Math.floor(seconds/MI) > 1 then Math.floor(seconds/MI) + " minutes ago"
     else Math.floor(seconds) + " seconds ago"
 
+String::truncate = (n,useWordBoundary)->
+  overflow = @.length > n
+  s = if overflow then @.substr(0,n-1) else @ 
+  s = if useWordBoundary and overflow then s.substr(0,s.lastIndexOf(' ')) + '&hellip;' else @
+  return s
 
 processGithubRepoData = (data) ->
   forks = data.forks_count
@@ -35,6 +40,7 @@ processGithubRepoData = (data) ->
   
 
 processGithubEvents = (recentEvents)->
+  console.log recentEvents.data
   events = []
   selectedEvents = ["PushEvent","ReleaseEvent","IssuesEvent"]
   filteredEvents = (e for e in recentEvents.data when e.type in selectedEvents)
@@ -47,25 +53,26 @@ processGithubEvents = (recentEvents)->
 
     if e.type is "PushEvent"
       repoName = e.repo.name.split('/').pop()
-      "#{ e.type + ' - ' + dateStr + ' - ' + repoName + ' - ' + e.payload.head }"
-      commitLink = "https://github.com/#{ e.repo.name }/commit/#{ e.payload.head }" 
-      events.push("<li #{ opacity }>#{ dateStr + ' - ' }commit to <a href='#{ commitLink }' target='_blank'>#{ repoName }</a></li>")
+      numCommits = if e.payload.distinct_size > 1 then e.payload.distinct_size + " commits" else e.payload.distinct_size + " commit" 
+      commitLink = "https://github.com/#{ e.repo.name }/commit/#{ e.payload.head }"
+      authorLink = "<a href='#{ 'https://github.com/' + e.actor.login }' target='_blank'>#{ e.actor.login }</a>" 
+      events.push("<li #{ opacity }>#{ dateStr}<p>#{ authorLink } pushed <a href='#{ commitLink }' target='_blank'>#{ numCommits }</a> to <strong>#{ repoName }/#{ e.payload.ref.split('/').pop() }</strong></p></li>")
     
     if e.type is "ReleaseEvent"
       repoName = e.repository.name
       tagName = e.release.tag_name
       releaseLink = e.release.html_url
-      events.push("<li #{ opacity }>#{ dateStr + ' - ' }new release - <a href='#{ releaseLink }' target='_blank'>#{repoName + ' - ' + tagName}</a></li>")
+      events.push("<li #{ opacity }>#{ dateStr }<p class='Activity-releaseEvent'><strong>new release </strong> for <strong>#{ repoName } - <a class='Activity-releaseEvent--tag' href='#{ releaseLink }' target='_blank'>#{tagName}</a></p></li>")
 
     if e.type is "IssuesEvent"
       actionType = e.payload.action
       issueLink = e.payload.issue.html_url
       issueNumber = e.payload.issue.number
       repoName = e.repo.name.split('/').pop()
-      events.push("<li #{ opacity }>#{ dateStr + ' - ' }issue #{ actionType } - <a href='#{ issueLink }' target='_blank'>#{ repoName + ' issue # ' + issueNumber }</a></li>")
+      events.push("<li #{ opacity }>#{ dateStr }<p>issue #{ actionType } at <a href='#{ issueLink }' target='_blank'>#{ repoName + '/#' + issueNumber}</a> - #{ e.payload.issue.title.truncate(60,true) }</p></li>")
 
   eventString = events.join('')
-  $("#Home-activity").append("<ul>#{ eventString }</ul>")
+  $("#Home-activity-list").html("#{ eventString }")
 
 processGithubRepos = (repos)->
   repos = []
@@ -81,10 +88,11 @@ getGithubRepoEvents = (org = "pupil-labs",repo = "pupil")->
       # sessionStorage.set("github_repo_activity")
       processGithubRepoData(data.data)
       
-getGithubOrgEvents = (org = "pupil-labs",pages = 1)->
+getGithubOrgEvents = (org = "pupil-labs",pages = 1,per_page = 30)->
+  urlQuery = "https://api.github.com/orgs/#{ org }/events?pages=#{ pages }&per_page=#{ per_page }" 
   $.ajax
     type: 'GET'
-    url: "https://api.github.com/orgs/#{ org }/events?pages=#{ pages }"
+    url: urlQuery
     dataType: "jsonp"
     success: (data,textStatus,jqXHR)->
       # sessionStorage.set("github_org_events",data)

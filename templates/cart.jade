@@ -1,5 +1,10 @@
 extends layout
 
+block vars
+  - var bodyClass = "Site"
+  - var mainClass = "Site-content Site-cart"
+
+
 block append title
   | #{ " - " + page.title}
 
@@ -14,7 +19,7 @@ block main
     div(class="Banner-container Banner--gradientBkg" id="Cart-empty")
       div.Banner-item.u-textCenter
         h1.Banner-title Your cart is empty...
-        h2.Banner-subtitle Go to the #[a(class="u-linkAttention" href="/store") store] to add items.  
+        h2.Banner-subtitle Go to the #[a(href="/store") store] to add items.  
     div.Cart-container
       div.Cart-table-container
         div(class="Grid" id="Cart-table")
