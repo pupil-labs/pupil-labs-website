@@ -1,3 +1,25 @@
+timeSince = (date)->
+  seconds = Math.floor((new Date().getTime() - date)/1000)
+  # Y,M,D,H,M,S in milliseconds
+  Y = 31536000
+  MO = 2592000
+  D = 86400
+  H = 3600
+  MI = 60
+  
+  switch
+    when Math.floor(seconds/Y) is 1 then Math.floor(seconds/Y) + " year ago"  
+    when Math.floor(seconds/Y) > 1 then Math.floor(seconds/Y) + " years ago"  
+    when Math.floor(seconds/MO) is 1 then Math.floor(seconds/MO) + " month ago"  
+    when Math.floor(seconds/MO) > 1 then Math.floor(seconds/MO) + " months ago"  
+    when Math.floor(seconds/D) is 1 then Math.floor(seconds/D) + " day ago"  
+    when Math.floor(seconds/D) > 1 then Math.floor(seconds/D) + " days ago"
+    when Math.floor(seconds/H) is 1 then Math.floor(seconds/H) + " hour ago"  
+    when Math.floor(seconds/H) > 1 then Math.floor(seconds/H) + " hours ago"
+    when Math.floor(seconds/MI) is 1 then Math.floor(seconds/MI) + " minute ago"  
+    when Math.floor(seconds/MI) > 1 then Math.floor(seconds/MI) + " minutes ago"
+    else Math.floor(seconds) + " seconds ago"
+
 
 processGithubRepoData = (data) ->
   forks = data.forks_count
@@ -18,7 +40,9 @@ processGithubEvents = (recentEvents)->
   filteredEvents = (e for e in recentEvents.data when e.type in selectedEvents)
   for e,i in filteredEvents 
     date = new Date(e.created_at)
-    dateStr = [date.getFullYear(),date.getMonth()+1,date.getDate()].join('-')
+    date = timeSince(date)
+    # dateStr = [date.getFullYear(),date.getMonth()+1,date.getDate()].join('-')
+    dateStr = date
     opacity = "style='opacity:"+String(1-(i*(1/filteredEvents.length)))+";'" 
 
     if e.type is "PushEvent"
