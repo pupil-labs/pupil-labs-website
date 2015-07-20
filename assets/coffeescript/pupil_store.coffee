@@ -293,8 +293,8 @@ class PupilStore
         [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Total"] else ["",""]
         totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
 
-        $("div[id='CartSum--label']").text("#{ label }")
-        $("div[id='CartSum--total']").text("#{ totalPrice }")
+        $("h3[id='CartSum--label']").text("#{ label }")
+        $("h3[id='CartSum--total']").text("#{ totalPrice }")
 
         # update header
         @eventUpdateCartNavCounter()

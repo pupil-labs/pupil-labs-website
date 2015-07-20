@@ -40,7 +40,6 @@ processGithubRepoData = (data) ->
   
 
 processGithubEvents = (recentEvents)->
-  console.log recentEvents.data
   events = []
   selectedEvents = ["PushEvent","ReleaseEvent","IssuesEvent"]
   filteredEvents = (e for e in recentEvents.data when e.type in selectedEvents)
