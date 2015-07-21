@@ -29,7 +29,6 @@ class PupilStore
       @eventStorePageInit()
       @eventAddToCart()
       @eventClearCart()
-      @eventOrderLinkSuccessPage()
       @eventUpdateCartNavCounter()
       @eventUpdateConfig()
       @eventSelectPreset()
