@@ -1,7 +1,8 @@
 - var d = bannerData
 - var bannerClass = (typeof(bannerBkg) !== 'undefined'? bannerBkg : "Banner-container" )
+- var bannerSubtitleClass = (typeof(bannerSubClass) !== 'undefined'? bannerSubClass : "Banner-subtitle")
 div(class=bannerClass)
   div.Banner-item.u-textCenter
     each v,k in d
-      - var bannerItem = (k == 'title' ? "<h1 class='Banner-title'>"+v+"</h1>" : "<h2 class='Banner-subtitle'>"+v+"</h2>")
+      - var bannerItem = (k == 'title' ? "<h1 class='Banner-title'>"+v+"</h1>" : "<h2 class='"+bannerSubtitleClass+"'>"+v+"</h2>")
       | !{ bannerItem }

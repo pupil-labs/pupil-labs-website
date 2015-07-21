@@ -15,9 +15,15 @@
 
 .Feature--padded2
   padding 2em
+  
+  @media $break-sm
+    padding 3em .8em 3em .8em 
         
 .Feature--padded3
   padding 3em 
+  
+  @media $break-sm
+    padding 3em .8em 3em .8em 
     
 .Feature-image
   display block
@@ -36,6 +42,8 @@
   padding .5em 1em
   color darken(#8A8A8A, 20%)
   font-size 1.1em
+  text-align justify
+  text-justify inter-word
   
   @media $break-lg
       font-size 1.15em
