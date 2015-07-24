@@ -406,14 +406,14 @@ class PupilStore
 
   eventCopyBillingToShipping: ->
     if $(@cartPage).length > 0
-      $("[id^='b-']").change (event)=>
+      $("[id^='b_']").change (event)=>
         event.preventDefault()
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('-').pop()
+        type = fieldId.split('_').pop()
         try
-          sField = "s-"+type
+          sField = "s_"+type
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
