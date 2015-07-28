@@ -58,9 +58,9 @@ processGithubEvents = (recentEvents)->
       events.push("<li #{ opacity }>#{ dateStr}<p>#{ authorLink } pushed <a href='#{ commitLink }' target='_blank'>#{ numCommits }</a> to <strong>#{ repoName }/#{ e.payload.ref.split('/').pop() }</strong></p></li>")
     
     if e.type is "ReleaseEvent"
-      repoName = e.repository.name
-      tagName = e.release.tag_name
-      releaseLink = e.release.html_url
+      repoName = e.repo.name
+      tagName = e.payload.release.tag_name
+      releaseLink = e.payload.release.html_url
       events.push("<li #{ opacity }>#{ dateStr }<p class='Activity-releaseEvent'><strong>new release </strong> for <strong>#{ repoName } - <a class='Activity-releaseEvent--tag' href='#{ releaseLink }' target='_blank'>#{tagName}</a></p></li>")
 
     if e.type is "IssuesEvent"
