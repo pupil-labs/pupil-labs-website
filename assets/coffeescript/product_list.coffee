@@ -53,7 +53,7 @@ productList = [
     cartlabel: "Eye camera: no eye camera"    
     cartSpecs: "no eye camera"    
     dimensions: 0
-    weight: 27 # 12 headset frame, 7 harness cable, 8 cable clip weight
+    weight: 26 # 12 headset frame, 2 harness cable, 12 cable clip weight
     img: "../media/images/config_images/pupil-config-eye-none.jpg"
     video: "#"
     order: 1
@@ -68,7 +68,7 @@ productList = [
         latency: "35.6ms"
     cartlabel: "Eye camera: 30hz eye camera"    
     cartSpecs: "Resolution: 640x480 @30fps. IR illumination."    
-    dimensions: 30 # 12 headset frame, 7 harness cable, 8 cable clip weight, 3 eye camera
+    dimensions: 30 # 12 headset frame, 2 harness cable, 12 cable clip weight, 3 eye camera (add 1g for just in case)
     weight: 300
     img: "../media/images/config_images/pupil-config-eye-30hz.jpg"
     video: "#"
@@ -85,7 +85,7 @@ productList = [
     cartlabel: "Eye camera: 120hz eye camera"    
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
-    weight: 31 # 12 headset frame, 7 harness cable, 8 cable clip weight, 4 eye camera
+    weight: 31 # 12 headset frame, 2 harness cable, 12 cable clip weight, 4 eye camera (add 1g for just in case)
     img: "../media/images/config_images/pupil-config-eye-120hz.jpg"
     video: "#"
     order: 3
@@ -101,7 +101,7 @@ productList = [
     cartlabel: "Eye cameras: 120hz binocular eye cameras"    
     cartSpecs: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
-    weight: 40 # 16 headset frame, 8 harness cable ESTIMATE, 10 cable clip weight, 2x3 eye camera
+    weight: 40 # 16 headset frame, 2 harness cable, 16 cable clip weight, 2x3 eye camera
     img: "../media/images/config_images/pupil-config-eye-120hz-binocular.jpg"
     video: "#"
     order: 4
