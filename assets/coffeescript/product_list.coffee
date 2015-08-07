@@ -101,7 +101,7 @@ productList = [
     cartlabel: "Eye cameras: 120hz binocular eye cameras"    
     cartSpecs: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
-    weight: 40 # 16 headset frame, 2 harness cable, 16 cable clip weight, 2x3 eye camera
+    weight: 43 # 16 headset frame, 2 harness cable, 19 cable clip weight, 2x3 eye camera
     img: "../media/images/config_images/pupil-config-eye-120hz-binocular.jpg"
     video: "#"
     order: 4
