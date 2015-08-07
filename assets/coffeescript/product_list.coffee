@@ -24,7 +24,7 @@ productList = [
     cartlabel: "World camera: high resolution"
     cartSpecs: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency"
     dimensions: 0
-    weight: 5
+    weight: 17 # logitec c930e camera
     img: "../media/images/config_images/pupil-config-world-1080p.jpg"
     video: "#"
     order: 2
@@ -40,7 +40,7 @@ productList = [
     cartlabel: "World camera: high speed"
     cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100deg diag (lenses are exchangeable: purchase alternate lenses below). 5.7ms latency."
     dimensions: 0
-    weight: 5
+    weight: 5 # 120hz eye camera world, new 
     img: "../media/images/config_images/pupil-config-world-120hz.jpg"
     video: "#"
     order: 3
@@ -113,7 +113,7 @@ productList = [
     cartlabel: "Camera upgrade: 120hz eye camera upgrade"   
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."                     
     dimensions: 0
-    weight: 31 # 12 headset frame, 7 harness cable, 8 cable clip weight, 4 eye camera
+    weight: 4 #this is an upgrade to 120hz eye camera, weight is only for new 120hz eye camera
     img: "http://placehold.it/800x500/444444"
     video: "#"
     order: 1
