@@ -29,5 +29,11 @@ configImgs = [
   }, {
     ids: ["world_hs","eye_120hz_binocular"]
     img: "../media/images/config_images/web/hs_hsb.jpg"
+  }, {
+    ids: ["world_hr","eye_120hz_binocular"]
+    img: "../media/images/config_images/web/_.jpg"
+  }, {
+    ids: ["world_none","eye_none"]
+    img: "../media/images/config_images/web/_.jpg"
   }
 ]
