@@ -25,7 +25,7 @@ class PupilStore
     @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
     @storeConfigPresetClass = "a[class='Store-navPreset']"
     ) ->
-      @_preloadConfigImages()
+      # @_preloadConfigImages()
       @eventStorePageInit()
       @eventAddToCart()
       @eventClearCart()
@@ -155,7 +155,7 @@ class PupilStore
 
         activeLinks = $(event.target)
         @_setActiveState(activeLinks)
-        @_swapImg(activeLinks)
+        @_swapImg($("a[class~='StoreConfig--state-active']"))
         @_updateConfigSubTotal()
 
         if $(@worldConfigActiveClass).attr('id') is "world_none" and $(@eyeConfigActiveClass).attr('id') is "eye_none"
@@ -187,9 +187,9 @@ class PupilStore
           # product, id, specs, price, quantity
           productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
                           <div class='Feature-figure Feature-figure--config'>
-                            #{ getConfigImagesByIds(v.order) }
+                            #{ getImagesForOrder(v.order) }
                           </div>
-                        </div>"
+                        </div>"  
 
           specTxtHtml = "<div class='Grid-cell--1of2 Grid-cell--padright2'>
                           #{ getOrderSpecTxt(v.order) }
@@ -588,10 +588,9 @@ class PupilStore
 
 
   _swapImg: (links)->
-    for link in links
-      imgUrl = getProductById($(link).attr('id')).img
-      imgId = '#' + $(link).attr('id').split('_',1) + '-img'
-      $(imgId).attr("src", imgUrl).show()
+    ids = ($(link).attr('id') for link in links)
+    imgSrc = getConfigImgByIds(ids)
+    $("#pupil-config-img").attr("src", imgSrc).show()
 
   _preloadConfigImages: ()->
     if $("#Store").length > 0

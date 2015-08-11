@@ -1,4 +1,4 @@
-- var config_imgs = contents.media.images.config_images
+- var config_imgs = contents.media.images.config_images.web
 
 - var world_cams = _.chain(contents.store.products['world-cameras.json'].metadata).sortBy(function(item){
 -  return item['order']; 
@@ -16,9 +16,9 @@ section.Grid.Grid--1of2--breakConfig
     div.Feature
       figure.Feature-figure.Feature-figure--config
         //- init eye image with 120fps
-        img(id="eye-img" class="Feature-image Feature-image--configEye" src=config_imgs['pupil-config-eye-120hz.jpg'].url)
+        img(id="pupil-config-img" class="Feature-image Feature-image--configEye" src=config_imgs['hs_hsm.jpg'].url)
         //- init world image with 120fps
-        img(id="world-img" class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-120hz.jpg'].url)          
+        //- img(id="world-img" class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-120hz.jpg'].url)          
   
   //- Controls
   div.Grid-cell
