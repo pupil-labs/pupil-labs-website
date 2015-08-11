@@ -25,7 +25,7 @@ class PupilStore
     @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
     @storeConfigPresetClass = "a[class='Store-navPreset']"
     ) ->
-      # @_preloadConfigImages()
+      @_preloadConfigImages()
       @eventStorePageInit()
       @eventAddToCart()
       @eventClearCart()
@@ -595,6 +595,7 @@ class PupilStore
   _preloadConfigImages: ()->
     if $("#Store").length > 0
       imageUrls = getConfigImageUrls()
+      console.log imageUrls
       for url in imageUrls
         (new Image()).src = url
 
