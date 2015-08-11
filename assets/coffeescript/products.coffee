@@ -60,7 +60,7 @@ getOrderSpecTxt = (orderItems)->
   return html
 
 getConfigImageUrls = ->
-  urls = (i.img for i in getProducts() when i.id.split("_")[0] is 'world' or i.id.split("_")[0] is 'eye') 
+  urls = (i.img for i in getConfigImgList()) 
   return urls
 
 getImagesForOrder = (orderItems)->
