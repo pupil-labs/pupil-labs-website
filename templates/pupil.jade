@@ -52,7 +52,8 @@ block main
         div.Grid-cell
           div.Feature
             figure.Feature-figure
-              img(class="Feature-image" src="http://placehold.it/1000x800/"+i*111111)
+              - var imgSrc = (feature.metadata.image.length > 10 ? feature.metadata.image : "http://placehold.it/1000x800/")
+              img(class="Feature-image" src=imgSrc)
         div.Grid-cell.Grid-cell--center
           div.Feature.Feature--padded2
             h1.Feature-title--lg.u-textCenter= feature.title 

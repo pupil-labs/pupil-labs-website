@@ -1,6 +1,6 @@
 ---
 title: Design
-image: images/
+image: media/images/pupil_page/frame_flex.jpg
 order: 2
 ---
 
