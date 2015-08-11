@@ -25,18 +25,18 @@ section.Grid.Grid--1of2--breakConfig
     div.Grid.Grid-column
       //- Presets -- pulled from JSON
       //- here we sort the data in pupil-presets by the order key
-      - var config_data = contents.store.products['pupil-presets.json'].metadata
-      - var config_presets = _.chain(config_data).sortBy(function(item){
-      -  return item['order']; 
-      - }).value()
-      div.StoreConfig-rowContainer.StoreConfig-rowContainer--presets
-        div.Grid
-          div.Grid-cell.u-textCenter
-            h3.StoreConfig-header Preset Configurations
-        ul.Grid.Grid--justifyCenter
-          each item in config_presets.slice(1,6)
-            li.Grid-cell.u-textCenter
-              a(role="button" href="#" class="Store-navPreset" data-preset=item.world+" "+item.eye) #{ item.label } 
+      //- - var config_data = contents.store.products['pupil-presets.json'].metadata
+      //- - var config_presets = _.chain(config_data).sortBy(function(item){
+      //- -  return item['order']; 
+      //- - }).value()
+      //- div.StoreConfig-rowContainer.StoreConfig-rowContainer--presets
+      //-   div.Grid
+      //-     div.Grid-cell.u-textCenter
+      //-       h3.StoreConfig-header Preset Configurations
+      //-   ul.Grid.Grid--justifyCenter
+      //-     each item in config_presets.slice(1,6)
+      //-       li.Grid-cell.u-textCenter
+      //-         a(role="button" href="#" class="Store-navPreset" data-preset=item.world+" "+item.eye) #{ item.label } 
 
       //- World options
       div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--world

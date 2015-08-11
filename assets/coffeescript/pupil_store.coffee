@@ -595,7 +595,6 @@ class PupilStore
   _preloadConfigImages: ()->
     if $("#Store").length > 0
       imageUrls = getConfigImageUrls()
-      console.log imageUrls
       for url in imageUrls
         (new Image()).src = url
 
