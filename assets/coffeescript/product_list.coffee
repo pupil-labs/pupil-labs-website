@@ -118,16 +118,16 @@ productList = [
     video: "#"
     order: 1
   }, {
-    id: "product_lens_kit"
-    cost: 200
-    label: "lens kit"
-    specs: "Alternate lenses for 120hz world camera. Wide angle."
-    cartlabel: "Lens Kit"            
-    cartSpecs: "Lens specs"    
+    id: "product_pupil_dev"
+    cost: 380
+    label: "Pupil Dev"
+    specs: "Pupil Dev Headset. An entry headset for eye tracking on a budget. Exposed camera boards. Eye camera is not adjustable."
+    cartlabel: "Pupil Dev"            
+    cartSpecs: "Pupil Dev Headset - an entry headset for eye tracking on a budget."    
     dimensions: 0
-    weight: 300
+    weight: 100
     img: "http://placehold.it/800x500/444444"
-    order: 2
+    order: 0
   }, {
     id: "product_support_6"
     cost: 1000
@@ -150,16 +150,16 @@ productList = [
     id: "license_academic"
     cost: 0
     label: "academic use"
-    specs: "for use within an academic (non-commercial) context."
-    cartlabel: "Academic Use License" 
-    cartSpecs: "Permits use within academic (non-commercial) context. Use license bound to headset."               
+    specs: "Discount is granted with valid academic institution billing and/or shipping address, or proof of current academic affiliation."
+    cartlabel: "Academic Discount" 
+    cartSpecs: "For use within an academic (non-commercial) context."               
   }, {
     id: "license_commercial"
     cost: 590
     label: "commercial use"
-    specs: "commercial license is required if use is not academic."
-    cartlabel: "Commercial Use License"                
-    cartSpecs: "Permits use within a context. Use license bound to headset."               
+    specs: "No discount for applies for Pupil hardware purchased outside of an academic institution."
+    cartlabel: "Non-academic Use"                
+    cartSpecs: "Use permitted within a commercial context."               
     order: 1
   }
 ]

@@ -70,9 +70,9 @@ class PupilStore
                   <div class='Aligner-item--column'>
                     <img class='Feature-image' src=#{ p.img }>
                     <div class='Aligner-item--stretchHeight'>
-                      <p> #{ p.label } </p>
+                      <p><strong> #{ p.label } </strong></p>
                       <p> #{ p.specs } </p>
-                      <p>€ #{ p.cost } </p>
+                      <p><strong>€ #{ p.cost } </strong></p>
                     </div>
 
                     <a role='button' id='#{ p.id }' class='AddToCart Button Button--whiteBorder' href='#' data-product='product'>Add to Cart</a>
@@ -353,7 +353,7 @@ class PupilStore
           $(button).addClass("LicenseSpecs--active")
           $("p[class='LicenseSpecs-text']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
           $(element).fadeIn(400)
-          $(button).text("hide license info")
+          $(button).text("hide discount details")
 
 
   eventShowTechSpecs: ->
