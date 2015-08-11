@@ -68,8 +68,8 @@ productList = [
         latency: "35.6ms"
     cartlabel: "Eye camera: 30hz eye camera"    
     cartSpecs: "Resolution: 640x480 @30fps. IR illumination."    
-    dimensions: 30 # 12 headset frame, 2 harness cable, 12 cable clip weight, 3 eye camera (add 1g for just in case)
-    weight: 300
+    dimensions: 0 # 12 headset frame, 2 harness cable, 12 cable clip weight, 3 eye camera (add 1g for just in case)
+    weight: 30
     img: "../media/images/config_images/pupil-config-eye-30hz.jpg"
     video: "#"
     order: 2
