@@ -6,7 +6,7 @@ productList = [
     specs:
         info: "No World camera"
     cartlabel: "World camera: no world camera"
-    cartSpecs: "no world camera"
+    cartSpecs: "No world camera"
     dimensions: 0
     weight: 0
     img: "../media/images/config_images/pupil-config-world-none.jpg"

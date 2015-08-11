@@ -1,4 +1,5 @@
 _products = productList
+_configImgs = configImgs
 
 # jsonToCoffeeObj = (file)->
 #   parsedJSON = JSON.parse(file)
@@ -13,6 +14,14 @@ _products = productList
 # construct this once
 # list of js objects
 # _products = jsonToCoffeeObj(productJSON)
+
+
+getConfigImgList = ->
+  return _configImgs
+
+getConfigImgByIds = (ids)->
+  src = (i.img for i in getConfigImgList() when i.ids is ids)
+  return src
 
 getProducts = ->
   return _products
