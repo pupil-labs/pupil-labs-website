@@ -160,6 +160,9 @@ class PupilStore
 
         if $(@worldConfigActiveClass).attr('id') is "world_none" and $(@eyeConfigActiveClass).attr('id') is "eye_none"
           @addToCartConfig.addClass('Button--state-inactive')
+
+        else if $(@worldConfigActiveClass).attr('id') is "world_hr" and $(@eyeConfigActiveClass).attr('id') is "eye_120hz_binocular"
+          @addToCartConfig.addClass('Button--state-inactive')
         else
           if @addToCartConfig.hasClass('Button--state-inactive')
             @addToCartConfig.removeClass('Button--state-inactive') 
@@ -614,11 +617,11 @@ class PupilStore
     if activeWorldId is "world_none" and activeEyeId is "eye_none"
       subTotal = "Not for sale"  
       weight = ""
+    if activeWorldId is "world_hr" and activeEyeId is "eye_120hz_binocular"
+      subTotal = "Not for sale"  
+      weight = ""
     $(@configSubTotalClass).text(subTotal)
     $("#StoreConfig-weight").text(weight)
-
-  _updateConfigWeight: ->
-
 
   # _uniqueId: (len=6)->
   #   id = ""
