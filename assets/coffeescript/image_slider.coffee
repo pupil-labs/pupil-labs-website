@@ -4,7 +4,6 @@ cycleImages = (counter,imgSrcs)->
 
 $(document).ready ->
   if $("#Pupil").length > 0
-    console.log "I'm on the pupil page..."
     # do something
     counter = 0
     path = "../media/images/config_images/web/"
@@ -13,7 +12,6 @@ $(document).ready ->
 
     timer = ->
       setInterval ->
-        console.log "cycling"
         cycleImages(counter, imgSrcs)
         counter = (if counter > imgSrcs.length then 0 else counter + 1)
       , 3500
