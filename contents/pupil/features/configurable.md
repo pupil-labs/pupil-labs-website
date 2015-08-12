@@ -1,6 +1,6 @@
 ---
 title: Configurable
-image: images/
+image: ../media/images/config_images/web/_.jpg
 order: 1
 ---
 
