@@ -158,15 +158,20 @@ class PupilStore
         @_swapImg($("a[class~='StoreConfig--state-active']"))
         @_updateConfigSubTotal()
 
-        if $(@worldConfigActiveClass).attr('id') is "world_none" and $(@eyeConfigActiveClass).attr('id') is "eye_none"
-          @addToCartConfig.addClass('Button--state-inactive')
+        $("#world_hr").removeClass("StoreConfig--state-inactive")
+        $("#eye_120hz_binocular").removeClass("StoreConfig--state-inactive")
+        $("#eye_none").removeClass("StoreConfig--state-inactive")
+        $("#world_none").removeClass("StoreConfig--state-inactive")   
 
-        else if $(@worldConfigActiveClass).attr('id') is "world_hr" and $(@eyeConfigActiveClass).attr('id') is "eye_120hz_binocular"
-          @addToCartConfig.addClass('Button--state-inactive')
-        else
-          if @addToCartConfig.hasClass('Button--state-inactive')
-            @addToCartConfig.removeClass('Button--state-inactive') 
+        if $(@worldConfigActiveClass).attr('id') is "world_none"
+          $("#eye_none").addClass("StoreConfig--state-inactive")
+        if $(@eyeConfigActiveClass).attr('id') is "eye_none"
+          $("#world_none").addClass("StoreConfig--state-inactive")
 
+        if $(@worldConfigActiveClass).attr('id') is "world_hr"
+          $("#eye_120hz_binocular").addClass("StoreConfig--state-inactive")
+        if $(@eyeConfigActiveClass).attr('id') is "eye_120hz_binocular"
+          $("#world_hr").addClass("StoreConfig--state-inactive")
 
   eventSelectPreset: ->
     if $(@storePage).length > 0

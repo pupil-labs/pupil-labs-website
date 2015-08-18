@@ -35,6 +35,13 @@ storeConfig-button($stroke=1px)
   background $link-hover-color
   color #fff
 
+.StoreConfig--state-inactive
+  background transparent
+  color #B5B3B3
+  pointer-events none
+  cursor default
+  
+
 .StoreConfig--state-active--license
   background #ddd
   color black
@@ -99,6 +106,9 @@ storeConfig-button($stroke=1px)
 spec_header()
   text-transform lowercase
   font-variant small-caps
+
+.TechSpecs-container
+  padding-top 1.4em
 
 .TechSpecs
   spec_header()
