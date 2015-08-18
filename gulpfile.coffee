@@ -77,7 +77,7 @@ gulp.task "image_min", ->
   gulp.src('build/media/images/**/*')
   .pipe(
     imagemin
-      optimizationLevel: 4
+      optimizationLevel: 2
       progressive: true
       use: [pngquant()])
   .pipe gulp.dest('build/media/images')
