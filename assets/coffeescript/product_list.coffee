@@ -126,7 +126,7 @@ productList = [
     cartSpecs: "Pupil Dev Headset - an entry eye tracking headset."    
     dimensions: 0
     weight: 100
-    img: "../media/images/additional_products/web/dev_iso.png"
+    img: "../media/images/additional_products/web/dev_iso.jpg"
     order: 0
   }, {
     id: "product_support_6"
