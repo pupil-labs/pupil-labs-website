@@ -584,7 +584,9 @@ class PupilStore
       else
         tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
 
-    videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
+    videoLink = ""
+    if typeof(product.video) isnt 'undefined'
+      videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
 
     selector = "div[class='Grid-cell TechSpecs--#{ type }']"
     if $(button).hasClass("TechSpecs--active")

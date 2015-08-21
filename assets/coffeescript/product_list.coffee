@@ -10,7 +10,6 @@ productList = [
     dimensions: 0
     weight: 0
     img: "../media/images/config_images/pupil-config-world-none.jpg"
-    video: "#"
     order: 1
   }, {
     id: "world_hr"
@@ -55,7 +54,6 @@ productList = [
     dimensions: 0
     weight: 26 # 12 headset frame, 2 harness cable, 12 cable clip weight
     img: "../media/images/config_images/pupil-config-eye-none.jpg"
-    video: "#"
     order: 1
   }, {
     id: "eye_30hz"
