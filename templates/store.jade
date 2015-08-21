@@ -25,19 +25,24 @@ block main
 
     //- Pupil DIY    
     div.Banner-bkg--gray-darker
-        - var bannerData = {'title': 'Pupil DIY','s1': 'If you are excited about SMD soldering and hacking','s2': 'you can buy the parts, modify cameras, and assemble a Pupil DEV headset'}
-        - var bannerBkg = "Banner-container--sm"
-        include includes/banner
+        //- - var bannerData = {'title': 'Pupil DIY','s1': 'If you are excited about SMD soldering and hacking','s2': 'you can buy the parts, modify cameras, and assemble a Pupil DEV headset'}
+        //- - var bannerBkg = "Banner-container--sm"
+        //- include includes/banner
 
-        section.Store-wrapper--diy
-            div.Grid
+        section.Store-wrapper--dev-diy
+            div.Grid.Grid--1of2
                 div.Grid-cell.u-textCenter
+                    h1.Banner-title Pupil DEV
+                div.Grid-cell.u-textCenter
+                    h1.Banner-title Pupil DIY
+                    h2.Banner-subtitle If you're excited about SMD soldering and hacking,
+                    h2.Banner-subtitle you can buy the parts, modify cameras, and assemble a Pupil DEV headset
                     h3.Store-diy We have made a guide and a shopping list for you. The total cost for all parts is approximately € 300.  
-            div.Grid.Grid--gutters-noMargin.Grid--1of3
-                div.Grid-cell
-                    a(href="https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide" class="Button-inverse" target="_blank") DIY Guide
-                div.Grid-cell
-                    a(href="https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html" class="Button-inverse" target="_blank") BOM
-                div.Grid-cell
-                    a(href="https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset" class="Button-inverse" target="_blank") DIY Frame
+                    div.Grid.Grid--gutters-noMargin.Grid--1of3
+                        div.Grid-cell
+                            a(href="https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide" class="Button-inverse" target="_blank") DIY Guide
+                        div.Grid-cell
+                            a(href="https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html" class="Button-inverse" target="_blank") BOM
+                        div.Grid-cell
+                            a(href="https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset" class="Button-inverse" target="_blank") DIY Frame
 
