@@ -107,7 +107,7 @@ productList = [
     id: "product_eye_120hz"
     cost: 450
     label: "120hz eye camera"
-    specs: "Upgrade to 120hz camera. A custom made camera that will resolve a wider range of eye movement motifs. IR camera with IR illumination (dark pupil tracking). 640x480 @120fps."
+    specs: "Upgrade any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
     cartlabel: "Camera upgrade: 120hz eye camera upgrade"   
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."                     
     dimensions: 0

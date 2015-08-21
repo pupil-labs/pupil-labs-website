@@ -71,7 +71,7 @@ class PupilStore
                     <div class='Aligner-item--stretchHeight'>
                       <p><strong> #{ p.label } </strong></p>
                       <p> #{ p.specs } </p>
-                      <p><strong>€ #{ p.cost } </strong></p>
+                      <p class='u-padBottom--2'><strong>€ #{ p.cost } </strong></p>
                     </div>
 
                     <a role='button' id='#{ p.id }' class='AddToCart Button Button--whiteBorder' href='#' data-product='product'>Add to Cart</a>
