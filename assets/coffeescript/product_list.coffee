@@ -135,7 +135,7 @@ productList = [
     specs: "6 month support contract. Email support and 4 video support sessions."
     cartlabel: "Support contract"                
     cartSpecs: "6 month support contract. Email support and 4 video support sessions."
-    img: "http://placehold.it/800x500/444444"
+    img: "../media/graphics/web/support_graphic-6mo.svg"
     order: 3
   }, {
     id: "product_support_12"
@@ -144,7 +144,7 @@ productList = [
     specs: "12 month support contract. Email support and 8 video support sessions"
     cartlabel: "Support contract"            
     cartSpecs: "12 month support contract. Email support and 8 video support sessions"
-    img: "http://placehold.it/800x500/444444"
+    img: "../media/graphics/web/support_graphic-12mo.svg"
     order: 4
   }, {
     id: "license_academic"
