@@ -114,7 +114,7 @@ productList = [
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."                     
     dimensions: 0
     weight: 4 #this is an upgrade to 120hz eye camera, weight is only for new 120hz eye camera
-    img: "http://placehold.it/800x500/444444"
+    img: "../media/images/additional_products/web/hs_cam.jpg"
     video: "#"
     order: 1
   }, {
