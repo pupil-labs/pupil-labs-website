@@ -23,30 +23,37 @@ block main
         section.Store-wrapper
           div.Grid--gutters.Aligner.Additional-products
 
-    //- Pupil DIY    
-    section.Store-wrapper--dev-diy
-        div.Grid.Grid--1of3
-            div.Grid-cell.Store-dev-feature
-                div.Feature.u-padTop--1
-                  figure.Feature-figure.Feature-figure--dev
-                    img(id="pupil-config-img" class="Feature-image Feature-image--configEye" src="../media/images/additional_products/web/dev_iso.jpg")                            
-            div.Grid-cell.Store-dev-feature
-                h2.Banner-title.u-textCenter.u-padBottom--1 Pupil DEV
-                p Pupil Dev is an entry level eye tracking headset with exposed camera boards. The eye camera is not adjustable.
-                p.u-padBottom--5
-                    strong € 380 
-                a(role='button' id='product_pupil_dev' class='AddToCart Button Button--whiteBorder' href='#' data-product='product') Add to Cart
+    //- Pupil DIY  
+    div.Banner-bkg--gray-dark.u-padBottom--2
+        - var bannerData = {'title': 'Pupil DEV'}
+        - var bannerBkg = "Banner-container--sm"
+        include includes/banner  
 
-            div.Grid-cell.u-textCenter.Store-diy-feature
-                h2.Store-diy-title.u-padBottom--1 Pupil DIY
-                p.Store-diy If you're excited about SMD soldering and hacking,
-                p.Store-diy.u-padBottom--2 you can buy the parts, modify cameras, and assemble a Pupil DEV headset
-                p.Store-diy.u-padBottom--2 We have made a guide and a shopping list for you. The total cost for all parts is approximately € 300.  
-                div.Grid.Grid--gutters.Grid--1of3
-                    div.Grid-cell
-                        a(href="https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide" class="Button-inverse" target="_blank") DIY Guide
-                    div.Grid-cell
-                        a(href="https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html" class="Button-inverse" target="_blank") BOM
-                    div.Grid-cell
-                        a(href="https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset" class="Button-inverse" target="_blank") DIY Frame
+        div.Grid--gutters.Aligner.Store-wrapper--dev-diy
+            div.Aligner-item--1of2
+                div.Aligner-item--column
+                    div.Aligner-item--stretchHeight
+                        div.Feature.u-padTop--21
+                          figure.Feature-figure.Feature-figure--dev
+                            img(id="pupil-config-img" class="Feature-image Feature-image--configEye" src="../media/images/additional_products/web/dev_iso.jpg")                            
+                        p.u-padTop--21 
+                            strong Pupil DEV
+                        p Pupil Dev is an entry level eye tracking headset with exposed camera boards. The eye camera is not adjustable.
+                        p
+                            strong € 380 
+                    a(role='button' id='product_pupil_dev' class='AddToCart Button Button-inverse' href='#' data-product='product') Add to Cart
+
+            div.Aligner-item--1of2
+                div.Aligner-item--column
+                    h2.Store-diy-title.u-padBottom--1 Pupil DIY
+                    p.Store-diy If you're excited about SMD soldering and hacking,
+                    p.Store-diy.u-padBottom--2 you can buy the parts, modify cameras, and assemble a Pupil DEV headset
+                    p.Store-diy.u-padBottom--2 We have made a guide and a shopping list for you. The total cost for all parts is approximately € 300.  
+                    div.Grid.Grid--gutters.Grid--1of3
+                        div.Grid-cell
+                            a(href="https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide" class="Button-inverse" target="_blank") DIY Guide
+                        div.Grid-cell
+                            a(href="https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html" class="Button-inverse" target="_blank") BOM
+                        div.Grid-cell
+                            a(href="https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset" class="Button-inverse" target="_blank") DIY Frame
 
