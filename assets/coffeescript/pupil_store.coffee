@@ -65,7 +65,7 @@ class PupilStore
                  <a role='button' class='#{ klass }'' id='#{ e.id }' href='#{ e.img }'>#{e.label}</a> 
                  </li>"
         $("ul[class~='ConfigOptions--eye']").append(html)
-      for p in getProductsFiltered('product')
+      for p in getProductsFiltered('product').slice(1) #remove first item
         html = "<div class='Aligner-item'>
                   <div class='Aligner-item--column'>
                     <img class='Feature-image' src=#{ p.img }>
