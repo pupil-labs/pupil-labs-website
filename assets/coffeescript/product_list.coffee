@@ -121,9 +121,9 @@ productList = [
     id: "product_pupil_dev"
     cost: 380
     label: "Pupil Dev"
-    specs: "Pupil Dev Headset. An entry eyetracking headset. Exposed camera boards. Eye camera is not adjustable."
+    specs: "Pupil Dev Headset. Entry level eye tracking headset. Exposed camera boards. Eye camera is not adjustable."
     cartlabel: "Pupil Dev"            
-    cartSpecs: "Pupil Dev Headset - an entry eye tracking headset."    
+    cartSpecs: "Entry level eye tracking headset."    
     dimensions: 0
     weight: 100
     img: "../media/images/additional_products/web/dev_iso.jpg"
