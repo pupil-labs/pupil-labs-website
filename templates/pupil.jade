@@ -38,7 +38,8 @@ block main
               div.Feature.Feature--padded2.Aligner-item--column
                 div.Aligner-item--stretchHeight
                   h1.Feature-title--lg.u-textCenter= f.title
-                  img(src=f.metadata.image)
+                  figure.Feature-figure
+                    img(src=f.metadata.image class="Feature-image--capturePlayerIcons")
                   h2.Feature-subtitle!= f.html
                 
                 a(href=f.metadata.link class="Button-inverse")= f.metadata.linkTxt

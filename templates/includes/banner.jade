@@ -8,4 +8,6 @@ div(class=bannerClass)
       - var bannerItem = (k == 'title' ? "<h1 class='Banner-title'>"+v+"</h1>" : "<h2 class='"+bannerSubtitleClass+"'>"+v+"</h2>")
       | !{ bannerItem }
     if typeof(bannerImg) !== 'undefined'
-      img(src=bannerImg)
+      div.Feature
+        figure.Feature-figure
+          img(src=bannerImg class="Feature-image")
