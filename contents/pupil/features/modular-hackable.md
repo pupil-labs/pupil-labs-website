@@ -1,6 +1,6 @@
 ---
 title: Modular & Hackable
-image: images/
+image: ../media/images/pupil_page/web/dev_explo.jpg
 order: 5
 ---
 
