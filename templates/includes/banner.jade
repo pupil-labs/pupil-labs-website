@@ -2,6 +2,7 @@
 - var bannerClass = (typeof(bannerBkg) !== 'undefined'? bannerBkg : "Banner-container" )
 - var bannerSubtitleClass = (typeof(bannerSubClass) !== 'undefined'? bannerSubClass : "Banner-subtitle")
 - var bannerImg = bannerImg
+- var bannerImgClass = (typeof(bannerImgClass) !== 'undefined' ? bannerImgClass : "Feature-image")
 div(class=bannerClass)
   div.Banner-item.u-textCenter
     each v,k in d
@@ -10,4 +11,4 @@ div(class=bannerClass)
     if typeof(bannerImg) !== 'undefined'
       div.Feature
         figure.Feature-figure
-          img(src=bannerImg class="Feature-image")
+          img(src=bannerImg class=bannerImgClass)

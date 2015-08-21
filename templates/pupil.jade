@@ -27,8 +27,9 @@ block main
       - var rowType = (i%2 == 0 ? 'Grid Grid--1of2 Grid--center' : 'Grid Grid--1of2 Grid--center Grid--rowReverse')
       if feature.title === "Software"
         - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
-        - var bannerBkg = 'Banner-container--sm Banner-bkg--gray-darker'
+        - var bannerBkg = 'Banner-container--software Banner-bkg--gray-darker'
         - var bannerImg = feature.metadata.image
+        - var bannerImgClass = "Feature-image--software"
         include includes/banner     
       else if feature.title === "record-play"
         - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
@@ -38,8 +39,6 @@ block main
               div.Feature.Feature--padded2.Aligner-item--column
                 div.Aligner-item--stretchHeight
                   h1.Feature-title--lg.u-textCenter= f.title
-                  figure.Feature-figure
-                    img(src=f.metadata.image class="Feature-image--capturePlayerIcons")
                   h2.Feature-subtitle!= f.html
                 
                 a(href=f.metadata.link class="Button-inverse")= f.metadata.linkTxt
