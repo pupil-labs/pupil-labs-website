@@ -1,6 +1,6 @@
 ---
 title: Record
-image: images/
+image: ../media/graphics/web/pupil_capture.svg
 order: 1
 linkTxt: Download Pupil Capture
 link: https://github.com/pupil-labs/pupil/releases/latest

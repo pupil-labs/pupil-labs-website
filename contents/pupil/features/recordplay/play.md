@@ -1,6 +1,6 @@
 ---
 title: Play
-image: images/
+image: ../media/graphics/web/pupil_player.svg
 order: 2
 linkTxt: Download Pupil Player
 link: https://github.com/pupil-labs/pupil/releases/latest
