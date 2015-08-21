@@ -33,7 +33,6 @@ class PupilStore
       @eventUpdateConfig()
       @eventSelectPreset()
       @eventSelectLicense()
-      @eventShowLicenseSpecs()
       @eventFillCartFromQueryString()
       @eventRenderCart()
       @eventRemoveCartItem()
@@ -95,8 +94,12 @@ class PupilStore
             if productType is "pupil"
               worldId = $(@worldConfigActiveClass).attr('id')
               eyeId = $(@eyeConfigActiveClass).attr('id')
-              licenseId = $(@licenseConfigActiveClass).attr('id')
-              orderItems = [worldId,eyeId,licenseId]
+              if $("#license").hasClass(@licenseConfigActive)
+                licenseId = "license_academic"
+                orderItems = [worldId,eyeId,licenseId]
+              else
+                orderItems = [worldId,eyeId]
+              
               # id = [worldId,eyeId]
               # price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
               # specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
@@ -332,37 +335,11 @@ class PupilStore
 
   eventSelectLicense: ->
     if $(@storePage).length > 0
-      # $("p[class='LicenseSpecs-text']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
       $(@licenseConfigSelector).click (event)=>
         event.preventDefault()
         link = $(event.currentTarget)
-        if not $(link).hasClass("#{ @licenseConfigActive }") 
-          # remove the active class from the other link
-          # add active to self 
-          $(@licenseConfigActiveClass).removeClass("#{ @licenseConfigActive }")
-          $(link).addClass("#{ @licenseConfigActive }")
-          if $("a[id='specs-license']").hasClass("LicenseSpecs--active")
-            $("p[class='LicenseSpecs-text']").text(getProductById($(link).attr('id')).specs)
-          @_updateConfigSubTotal()
-
-  eventShowLicenseSpecs: ->
-    if $(@storePage).length > 0
-      $("a[id='specs-license']").click (event)=>
-        event.preventDefault()
-        button = $(event.target)
-        
-        element = "div[class='Grid-cell LicenseSpecs-container']"
-
-        if $(button).hasClass("LicenseSpecs--active")    
-          $(element).fadeOut(400)
-          $(button).removeClass("LicenseSpecs--active")
-          $(button).text("show license info")
-        else
-          $(button).addClass("LicenseSpecs--active")
-          $("p[class='LicenseSpecs-text']").text(getProductById($(@licenseConfigActiveClass).attr('id')).specs)
-          $(element).fadeIn(400)
-          $(button).text("hide discount details")
-
+        $(link).toggleClass("#{ @licenseConfigActive }")
+        @_updateConfigSubTotal()
 
   eventShowTechSpecs: ->
     if $(@storePage).length > 0
@@ -617,7 +594,7 @@ class PupilStore
   _updateConfigSubTotal: ->
     activeWorldId = $(@worldConfigActiveClass).attr('id')
     activeEyeId = $(@eyeConfigActiveClass).attr('id')
-    activeLicenseId = $(@licenseConfigActiveClass).attr('id')
+    activeLicenseId = if $("#license").hasClass(@licenseConfigActive) then "license_academic" else null
     # subTotal = "€ " + @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
     subTotal = "€ " + getProductsSum([activeWorldId,activeEyeId,activeLicenseId])
     weight = "weight: " + getProductWeight([activeWorldId,activeEyeId]) + " grams"

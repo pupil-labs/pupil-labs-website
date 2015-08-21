@@ -1,9 +1,9 @@
-storeConfig-button($stroke=1px)
+storeConfig-button($stroke=1px,$stroke_color=#ddd)
   display flex
   flex-wrap nowrap
   align-items center
   justify-content center
-  border-radius 3px
+  border-radius 3px 
   // border-top $stroke solid #ddd
   // border-bottom $stroke solid #ddd
   border-right $stroke solid #ddd
@@ -26,10 +26,11 @@ storeConfig-button($stroke=1px)
   storeConfig-button()      
 
 .Store-navPreset
-  storeConfig-button(0px)
+  storeConfig-button(0px,#ddd)
   
 .Store-license
-  storeConfig-button(0px)
+  storeConfig-button()
+  border 1px solid #ddd
     
 .StoreConfig--state-active
   background $link-hover-color

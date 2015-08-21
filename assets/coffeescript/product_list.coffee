@@ -45,7 +45,7 @@ productList = [
     order: 3
   }, {
     id: "eye_none"
-    cost: 150,
+    cost: 740,
     label: "none"
     specs: 
         info: "No eye camera"
@@ -57,7 +57,7 @@ productList = [
     order: 1
   }, {
     id: "eye_30hz"
-    cost: 550
+    cost: 1140
     label: "30hz"
     specs: 
         info: "Eye camera with the smallest dimensions. Good for fixation detection." 
@@ -73,7 +73,7 @@ productList = [
     order: 2
   }, {
     id: "eye_120hz"
-    cost: 800
+    cost: 1390 
     label: "120hz"
     specs: 
         info: "Eye camera custom built by Pupil Labs that will resolve a wider range of eye movement motifs"
@@ -89,7 +89,7 @@ productList = [
     order: 3
   }, {
     id: "eye_120hz_binocular"
-    cost: 1500
+    cost: 2090 # incl license 1500+590 = 
     label: "120hz binocular"
     specs: 
         info: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that will resolve a wider range of eye movement motifs" 
@@ -146,18 +146,10 @@ productList = [
     order: 4
   }, {
     id: "license_academic"
-    cost: 0
+    cost: -590
     label: "academic use"
     specs: "Discount is granted with valid academic institution billing and/or shipping address, or proof of current academic affiliation."
     cartlabel: "Academic Discount" 
     cartSpecs: "For use within an academic (non-commercial) context."               
-  }, {
-    id: "license_commercial"
-    cost: 590
-    label: "commercial use"
-    specs: "No discount for applies for Pupil hardware purchased outside of an academic institution."
-    cartlabel: "Non-academic Use"                
-    cartSpecs: "Use permitted within a commercial context."               
-    order: 1
   }
 ]
