@@ -3,7 +3,7 @@ title: Terms & Conditions of Sale
 subtitle: Pupil Labs UG (haftungsbeschränkt)
 ---
 
-####**1. General**
+#### **1. General**
     
   1.1 All offers, sales contracts, deliveries and services made on the basis of any orders by our customers (each, a “**Customer**”) through our website www.pupil-labs.com (the “**Website**”) shall be governed by these general terms and conditions of sale (the “**Terms and Conditions**”).
 
@@ -13,7 +13,7 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   1.4 Standard business conditions of the Customer do not apply, regardless of whether or not we expressly object to them in a particular case.
 
-####**2. Conclusion of Contract**
+#### **2. Conclusion of Contract**
 
   2.1 Offerings on the Website are non-binding.
 
@@ -21,7 +21,7 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   2.3 Without undue delay upon receipt of the order, we will send to the Customer by e-mail a confirmation of receipt, which shall not constitute an acceptance of the order. The order shall be deemed to be accepted by us either upon subsequent (e-mail) acceptance of the order or by dispatching the product. The sales contract with the Customer shall not become effective until our acceptance.
 
-####**3. Prices and Payment**
+#### **3. Prices and Payment**
 
   3.1 Our prices listed on the Website exclude statutory VAT and are net of shipping costs. Any customs duties and similar public charges shall be borne by the Customer. The shipping costs depend on the size and the weight of the ordered product(s), the shipping mode, and the country of delivery.
   
@@ -29,7 +29,7 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   3.3 Payments are being settled by use of credit cards, PayPal, by advanced payment. We reserve the right to allow payment post delivery on a case to case bases.
 
-####**4. Dispatch of the Product**
+#### **4. Dispatch of the Product**
 
   4.1 Any date of dispatch communicated by us shall be only approximate, except if a fixed date of dispatch has been agreed upon.
 
@@ -37,7 +37,7 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   4.3 The date of dispatch shall be such day on which the product is handed over by us to the carrier.
 
-####**5. Shipment, Insurance, and Passing of Risk**
+#### **5. Shipment, Insurance, and Passing of Risk**
 
   5.1 Unless expressly otherwise agreed upon, we shall be free to determine the appropriate mode of shipment and to select the carrier at our reasonable discretion.
 
@@ -45,11 +45,11 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   5.3 The risk of accidental destruction, damage or loss of the delivered product shall pass to the Customer upon delivery of the product by us to the carrier.
 
-####**6. Retention of title**
+#### **6. Retention of title**
 
   6.1 We retain legal title to any product supplied by us until the purchase price (including VAT and shipping costs) for such product has been fully paid.
 
-####**7. Warranty**
+#### **7. Warranty**
 
   7.1 In the event of a defect of the delivered product, we shall have the right to choose to repair the product or to supply another product (as ordered) at our discretion, provided that such choice shall be made by us by written notice (in “text form”, including by telefax or by e-mail) within a period of five business days following receipt of the Customer’s notice of the defect. 
 
@@ -57,13 +57,13 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   7.3 The Customer shall inspect the product with due care promptly upon delivery. The delivered product shall be deemed to be approved by the Customer unless the defect is notified to us (i) in case of any obvious defects within a period of five business days upon delivery or (ii) otherwise within five business days from the day when the defect has been identified.
 
-####**8. License for commercial use**
+#### **8. License for commercial use**
 
   8.1. Subject to the Customers continuous compliance with this agreement, we grant the Customer a limited non-exclusive license to install and make use of the product including the software with the right to modify the software for the Customers commercial use provided that the software, whether modified by the Customer or not, will only be sold and/or transferred along with our product (hardware) to third parties (the “Commercial License”). The Commercial License granted to Customer will automatically terminate without prior notice if the Customer breaches any terms of this Agreement, especially this Section 8.
 
   8.2 Our license for non-commercial use as set out on the Website remains unaffected.
 
-####**9. Liability**
+#### **9. Liability**
 
   9.1 We are unrestrictedly liable for damages that have been caused by deliberate intention or by gross negligence by us, our legal representatives or senior executives and for damages that have been caused by deliberate intention by other assistance in performance; in respect of gross negligence of other assistants in performance our liability shall be as set forth in the provisions for slight negligence.
 
@@ -75,7 +75,7 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   9.5 The aforementioned restrictions of liability do not apply to cases of damages to life, body, or health, to cases of warranting for the condition of a product, and to cases of fraudulent concealment of defects by us, our legal representatives or assistants in performance or under the German Product Liability Act.
 
-####**10. Applicable Law and Competent Courts**
+#### **10. Applicable Law and Competent Courts**
 
   10.1 Any contracts entered into between us and the Customer shall be governed by the laws of the Federal Republic of Germany under exclusion of the UN Convention on the International Sale of Goods (CISG), without prejudice to any mandatory conflict of laws provisions.
 
