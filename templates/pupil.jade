@@ -24,10 +24,11 @@ block main
     -   return item.metadata['order'];
     - }).value()     
     each feature, i in features
-      - var rowType = (i%2 == 0 ? 'Grid Grid--1of2' : 'Grid Grid--1of2 Grid--rowReverse')
+      - var rowType = (i%2 == 0 ? 'Grid Grid--1of2 Grid--center' : 'Grid Grid--1of2 Grid--center Grid--rowReverse')
       if feature.title === "Software"
         - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
         - var bannerBkg = 'Banner-container--sm Banner-bkg--gray-darker'
+        - var bannerImg = feature.metadata.image
         include includes/banner     
       else if feature.title === "record-play"
         - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
