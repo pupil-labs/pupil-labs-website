@@ -228,7 +228,15 @@
 .Grid--gutters-lg
 	> .Grid-cell
 		padding 2em 2em 2em 2em
-	
+		
+	> .Aligner-item
+		padding 2em 4em 4em 4em
+		
+		@media $break-sm
+			padding 2em 2.4em 4em 2.4em
+			
+	> .Aligner-item--1of2
+		padding 2em 3em 2em 3em
 
 .Aligner
 	display flex
@@ -250,7 +258,7 @@
 	max-width 33.33333%
 	padding 4em 1.4em 2em 1.4em
 
-	@media $break-sm
+	@media $break-md
 		flex 0 0 100%
 		max-width 100%
 		
