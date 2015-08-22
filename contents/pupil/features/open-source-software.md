@@ -1,6 +1,6 @@
 ---
 title: Open Source Software
-image: ../media/images/pupil_page/web/pupil_source_code.jpg
+image: ../media/images/pupil_page/web/pupil_source_code.png
 order: 6
 ---
 
