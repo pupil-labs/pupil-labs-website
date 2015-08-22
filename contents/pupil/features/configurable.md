@@ -1,6 +1,6 @@
 ---
 title: Configurable
-image: ../media/images/config_images/web/_.jpg
+image: ../media/images/config_images/web/hs_30m.jpg
 order: 1
 ---
 
