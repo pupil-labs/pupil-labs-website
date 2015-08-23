@@ -124,7 +124,7 @@ productList = [
     cartSpecs: "Entry level eye tracking headset."    
     dimensions: 0
     weight: 100
-    img: "../media/images/additional_products/web/dev_iso.jpg"
+    img: "../media/images/additional_products/web/dev_iso.png"
     order: 0
   }, {
     id: "product_support_6"
