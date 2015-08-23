@@ -130,7 +130,7 @@ productList = [
     id: "product_support_6"
     cost: 1000
     label: "6 month support contract"
-    specs: "6 month support contract. Email support and 4 video support sessions."
+    specs: "Receive dedicated support and training via email and 4 video support sessions."
     cartlabel: "Support contract"                
     cartSpecs: "6 month support contract. Email support and 4 video support sessions."
     img: "../media/graphics/web/support_graphic_6mo.svg"
@@ -139,9 +139,9 @@ productList = [
     id: "product_support_12"
     cost: 2000
     label: "12 month support contract"
-    specs: "12 month support contract. Email support and 8 video support sessions"
+    specs: "Receive dedicated support and training via email and 8 video support sessions."
     cartlabel: "Support contract"            
-    cartSpecs: "12 month support contract. Email support and 8 video support sessions"
+    cartSpecs: "12 month support contract. Email support and 8 video support sessions."
     img: "../media/graphics/web/support_graphic_12mo.svg"
     order: 4
   }, {
