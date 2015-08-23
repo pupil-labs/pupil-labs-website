@@ -496,7 +496,6 @@ class PupilStore
 
   eventFillCartFromQueryString: ->
     query = window.location.search.substring(1)
-    console.log query
     if query.length > 0
       # ?0_order=world_none%2Ceye_120hz_binocular%2Clicense_commercial&0_qty=3&1_order=world_hr%2Ceye_120hz_binocular%2Clicense_commercial&1_qty=2&2_order=product_support_6&2_qty=1
       LocalStorage.clear()
@@ -517,8 +516,7 @@ class PupilStore
   eventOrderLinkSuccessPage: =>
     if $("#Success").length > 0
       data = @_getOrderPermalink()
-      console.log data
-      url = window.location.origin + "/cart?" + $.param(data)
+      url = window.location.origin + "/cart/?" + $.param(data)
       link = "<a href='#{url}'>permalink</a>"
       html = "<h2 class='Banner-subtitle'>You can always revisit your order with this #{link}.</h2>"
       $(".Banner-item.u-textCenter").append(html)
