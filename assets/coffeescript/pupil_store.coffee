@@ -464,7 +464,8 @@ class PupilStore
             orders.push v
           $("textarea[class='Form-input--cart']").val(JSON.stringify(orders))
           formData = $(form).serialize()
-          url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
+          # sandbox_url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
+          url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
 
           $.ajax
             type: 'POST'
