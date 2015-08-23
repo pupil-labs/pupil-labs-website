@@ -34,10 +34,10 @@ productList = [
     specs: 
         info: "World camera custom built by Pupil Labs. The fastest,smallest, lightest, and most versatile. We recommend this option for most use cases." 
         sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
-        fov: "100 degrees diagonal (lenses are exchangeable: purchase alternate lenses below)"
+        fov: "100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses."
         latency: "5.7ms"
     cartlabel: "World camera: high speed"
-    cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100deg diag (lenses are exchangeable: purchase alternate lenses below). 5.7ms latency."
+    cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses. 5.7ms latency."
     dimensions: 0
     weight: 5 # 120hz eye camera world, new 
     img: "../media/images/config_images/pupil-config-world-120hz.jpg"
