@@ -496,10 +496,12 @@ class PupilStore
 
   eventFillCartFromQueryString: ->
     query = window.location.search.substring(1)
+    console.log query
     if query.length > 0
       # ?0_order=world_none%2Ceye_120hz_binocular%2Clicense_commercial&0_qty=3&1_order=world_hr%2Ceye_120hz_binocular%2Clicense_commercial&1_qty=2&2_order=product_support_6&2_qty=1
       LocalStorage.clear()
       pairs = query.split('&')
+      console.log pairs
       # while pairs.length > 0
       j = 0
       for p,i in pairs by 2
