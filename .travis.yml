@@ -9,7 +9,6 @@ install:
 - npm install
 script:
 - echo 'Building Site'
-- echo SERVER_DEV
 - gulp css
 - gulp js
 - gulp build_wintersmith --staging
@@ -24,6 +23,7 @@ after_success:
 - eval `ssh-agent -s`
 - ssh-add ~/.ssh/id_rsa
 - echo 'Pushing to server'
+- echo $SERVER_DEV
 - rsync -azhv --exclude "*.DS_Store" --exclude "*.git" --exclude "*.gitignore" build/ $SERVER_DEV
 env:
   global:
