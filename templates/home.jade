@@ -22,7 +22,8 @@ block main
           h2.Feature-subtitle!= typogr(page_meta.pupil_description_3).typogrify()
           a(href="/store" class="Button") #{ page_meta.pupil_link_text }
 
-    - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_description_1, 's2': page_meta.about_description_2 + " " + page_meta.about_description_3, 's3': page_meta.about_description_4}
+    - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_subtitle}
+    - var bannerParagraphs = [page_meta.about_description_1,page_meta.about_description_2]
     - var bannerBkg = "Banner-container"
     - var bannerSubClass = "Banner-subtitle Banner-subtitle--pad" 
     include includes/banner
@@ -30,6 +31,7 @@ block main
     //- Recent Activity
     - var bannerData = {'title': page_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
     - var bannerBkg = "Banner-container--sm Banner--gradientBkg--reverse"
+    - var bannerParagraphs = ""
     include includes/banner
     div.Feature-container--activityHome
       div.Grid.Grid--gutters-noMargin
