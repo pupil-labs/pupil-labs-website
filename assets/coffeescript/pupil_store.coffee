@@ -266,7 +266,7 @@ class PupilStore
                     "</div>"
 
           $("#Cart-table").after(newRow)
-        [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Sub Total"] else ["",""]
+        [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Subtotal"] else ["",""]
         totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
         $("h3[id='CartSum--label']").text("#{ label }")
         $("h3[id='CartSum--total']").text("#{ totalPrice }")
