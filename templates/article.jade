@@ -1,0 +1,19 @@
+extends layout
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  div(id="Article")
+    - var titleData = {'title': page.title,'s1': moment.utc(page.date).format('YYYY MMM DD')}
+    include includes/title 
+    article.Grid.Article
+      div.Grid-cell.Grid-cell--sidebar
+      div.Grid-cell
+        section.content!= typogr(page.html).typogrify()
+      div.Grid-cell.Grid-cell--sidebar
+    a(href="/blog")
+      div.Blog-nav.u-textCenter
+        p.Blog-nav-link back to blog index
+      
+

@@ -1,0 +1,63 @@
+flexbox_container(_flex=0 0 auto,_flex_wrap=wrap,_justify-content=flex-start)
+	display flex
+	flex _flex
+	flex-wrap _flex_wrap
+	justify-content _justify-content
+	
+	
+flex_item()
+	flex arguments
+	
+flex_item_half_width(_flex_direction=column,_align_items=center,_justify_content=center)
+	display flex
+	flex-direction _flex_direction
+	align-items _align_items
+	justify-content _justify_content
+
+	background rgba(255,255,255,0.5)
+	// set up a min-height
+	min-height 40vh	
+	
+	overflow hidden
+	position relative
+	padding 1.75em 1em
+	
+	@media all and (min-width: 48em)
+		// big screen
+		// two columns
+		flex 1 0 auto
+		width 50%
+		min-height 60vh
+		
+	@media all and (max-width: 48em)
+		// small screen
+		// single column
+		flex 0 0 auto
+		width 100%	
+
+flex_item_third_width(_flex_direction=column,_align_items=center,_justify_content=center)
+	display flex
+	flex-direction _flex_direction
+	align-items _align_items
+	justify-content _justify_content
+
+	background rgba(255,255,255,0.5)
+	// set up a min-height
+	min-height 20vh	
+	
+	overflow hidden
+	position relative
+	padding 1.75em 1em
+	
+	@media all and (min-width: 48em)
+		// big screen
+		// two columns
+		flex 1 0 auto
+		width 33.333%
+		min-height 30vh
+		
+	@media all and (max-width: 48em)
+		// small screen
+		// single column
+		flex 0 0 auto
+		width 100%	

@@ -1,0 +1,46 @@
+[
+  {
+    "label":"none",
+    "id": "eye-none",
+    "specs":"no eye camera",
+    "dimensions": "0",
+    "weight": 0,
+    "image_url": "store/config_images/pupil-config-eye-none.png",
+    "video_url":"#",
+    "cost": 150,
+    "order": 1
+  },
+  {
+    "label":"30hz",
+    "id": "eye-30hz",
+    "specs":"30hz camera with xx degrees diagonal field of view.",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "store/config_images/pupil-config-eye-30hz.png",
+    "video_url":"#",
+    "cost": 550,
+    "order": 2
+  },
+  {
+    "label":"120hz",
+    "id": "eye-120hz",
+    "specs":"120hz high speed camera designed by Pupil Labs with xx degrees field of view.",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "store/config_images/pupil-config-eye-120hz.png",
+    "video_url":"#",
+    "cost": 800,
+    "order": 3
+  },
+  {
+    "label":"120hz binocular",
+    "id": "eye-120hz-binocular",
+    "specs":"Binocular frame with 2 x 120hz high speed cameras designed by Pupil Labs with xx degrees field of view.",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "store/config_images/pupil-config-eye-120hz-binocular.png",
+    "video_url":"#",
+    "cost": 1500,
+    "order": 4
+  }
+]

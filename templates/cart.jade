@@ -1,0 +1,59 @@
+extends layout
+
+block vars
+  - var bodyClass = "Site"
+  - var mainClass = "Site-content Site-cart"
+
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  div(id="Cart")
+    //- Title block
+    //- - var page_data = contents.cart['index.json']
+
+    //- |---------Item---------|---Quantity---|---Price---|---Remove---|
+    //- | Pupil description    |   ##  | +/-  |   xx EUR  |      X     |
+    //-            3/5                 1/5          1/5         1/5
+    div(class="Banner-container Banner--gradientBkg" id="Cart-empty")
+      div.Banner-item.u-textCenter
+        h1.Banner-title Your cart is empty...
+        h2.Banner-subtitle Go to the #[a(href="/store") store] to add items.  
+    div.Cart-container
+      div.Cart-table-container
+        div(class="Grid" id="Cart-table")
+          //- div.Grid-cell--2of3.u-textCenter 
+          //-   h3.Grid-cell--header Item
+          //- div.Grid-cell--1of18.u-textCenter 
+          //-   h3.Grid-cell--header Unit Cost
+          //- div.Grid-cell--1of22.u-textCenter
+          //-   h3.Grid-cell--header 
+          //- div.Grid-cell--1of18.u-textCenter
+          //-   h3.Grid-cell--header Quantity
+          //- div.Grid-cell--1of22.u-textCenter
+          //-   h3.Grid-cell--header 
+          //- div.Grid-cell--1of18.u-textCenter
+          //-   h3.Grid-cell--header Sum Cost
+          //- div.Grid-cell--1of18.u-textCenter 
+          //-   h3.Grid-cell--header #[a(href="#" id="Cart-clearCart") Remove]
+          //- jquery will fill this in
+        div(id="CartSum" class="Grid")
+          div(class="Grid-cell--2of3" id="CartSum-label--container")
+            h3(id=id="CartSum--label")
+          div(class="Grid-cell--1of3 u-textCenter")
+            h3(id="CartSum--total")
+          //- div(class="Grid-cell--1of18 u-textCenter")
+      div.Cart-checkout
+        div(class="Grid" id="Cart-checkout--buttons")
+          div.Grid-cell.Grid-cell--1of2
+            input(id="order" class="Form-input--radio Form-checkout" type="radio")
+            label(for="order" id="OrderType-order" class="Button-radio--lg Form-input--radioLabel--lg") Place Order
+            //- a(href="#" id="CheckOut" class="Button Button-checkout") Place Order
+          div.Grid-cell.Grid-cell--1of2
+            input(id="quote" class="Form-input--radio Form-checkout" type="radio")
+            label(for="quote" class="Button-radio--lg Form-input--radioLabel--lg" id="OrderType-quote") Get Quote
+            //- a(href="#" id="CheckOut" class="Button Button-checkout") Request Quote
+        include includes/order-form   
+
+

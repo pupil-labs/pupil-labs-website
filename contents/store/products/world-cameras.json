@@ -1,0 +1,35 @@
+[
+  {
+    "label":"none",
+    "id": "world-none",
+    "specs":"no world camera",
+    "dimensions": "0",
+    "weight": 0,
+    "image_url": "store/config_images/pupil-config-world-none.png",
+    "video_url":"#",
+    "cost": 0,
+    "order": 1
+  },
+  {
+    "label":"high resolution",
+    "id": "world-1080p",    
+    "specs":"1080p camera with xx degrees diagonal field of view and microphones",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "store/config_images/pupil-config-world-1080p.png",
+    "video_url":"#",
+    "cost": 250,
+    "order": 2
+  },
+  {
+    "label":"high speed",
+    "id": "world-120hz",    
+    "specs":"120hz high speed camera designed by Pupil Labs",
+    "dimensions": "nn x nn",
+    "weight": 0,
+    "image_url": "store/config_images/pupil-config-world-120hz.png",
+    "video_url":"#",
+    "cost": 250,
+    "order": 3
+  }
+]

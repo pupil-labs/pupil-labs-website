@@ -1,0 +1,60 @@
+#Store
+	// no style - just use for jquery
+
+.Store-presets
+	width 100%
+	background rgba(0,0,0,.3)
+
+.Store-grid-nav
+	display flex
+	flex-wrap no
+	flexbox_container(0 0 auto,nowrap,space-around)
+	align-items stretch
+	width 100%
+	overflow hidden
+	padding-top 1em
+	
+.Store-nav-item
+	list-style none
+	padding .15em .75em
+		
+.Store-nav-link
+	color #fff
+	font-family $font-family-sans-serif
+	font-weight 700
+	transition color .4s ease
+	letter-spacing .01em		
+	
+	@media all and (min-width: 48em)
+		// big screen
+		font-size 1.1em 
+		
+	@media all and (max-width: 48em)
+		// small screen
+		font-size 1em
+
+.Store-nav-link--preset
+	// 
+		
+
+.Store-wrapper
+	padding 0em 1em
+
+.Store-dev-feature
+	background #f2f2f2
+	padding 2em 2em 4em 2em
+	
+.Store-diy-feature
+	background $gray-darker
+	padding 2em 2em 4em 2em
+
+.Store-wrapper--dev-diy
+	padding 0em 2em 2em 2em
+
+.Store-diy-title
+	font-size 2.2em
+	color lighten(#757575,25%)
+	
+.Store-diy
+	color #757575
+	

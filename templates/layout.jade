@@ -1,0 +1,18 @@
+doctype html
+html(class='' lang='en')
+  include  includes/head.jade
+
+  block vars
+    - var bodyClass = 'Site'
+    - var mainClass = 'Site-content'
+  
+  body(class=bodyClass)
+    include includes/header.jade
+
+  main(role="main" class=mainClass)
+    block main
+
+  include includes/footer.jade
+  include includes/js.jade
+  block scripts
+    

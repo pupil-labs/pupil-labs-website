@@ -1,0 +1,53 @@
+.Header
+	background $navbar-bg
+	border-bottom 1px solid $navbar-border-color
+	display block
+	margin 0 auto
+	max-width 100%
+	width 100%
+	z-index $zindex-navbar
+	position fixed
+	top 0
+	left 0
+	// height 6.75rem
+	padding 0.5em 0 0
+
+	@media $break-lg
+		background linear-gradient(to bottom, rgba(255,255,255,.975), rgba(255,255,255,1))
+		padding .7em 1.5em
+		// height 5rem
+
+	@extend .clearfix
+	
+.Header-logo
+	text-decoration none
+	position relative
+	display block
+	margin 0 auto
+	// typography 
+	font-family $font-family-sans-serif
+	font-weight 700
+	text-align center
+	font-size $font-size-base + 0.3
+	color $text-color
+	transition color .3s ease-in-out
+	
+	@media $break-lg
+		float left
+		padding-top 1em - 0.3
+		
+	@media $break-sm
+		padding-top 0
+
+	
+.Header-nav
+	padding-top 0
+		
+	@media all and (min-width: 48em)
+		float right
+		
+	@media all and (max-width: 48em)
+		padding-top 0.5em
+		
+	@extend .clearfix
+

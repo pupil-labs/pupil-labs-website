@@ -1,0 +1,66 @@
+extends layout
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  //- Title block
+  div(id="Pupil")
+    - var page_data = contents.pupil['index.json']
+    - var page_meta = page_data.metadata
+    - var titleData = {'title':page_meta.title,'s1':page_meta.s1}    
+    include includes/title
+
+    //- Features
+    //- ====================================
+    //- 1. Configurable
+    //- 2. Design
+    //- 3. Software
+    //- 4. Modular & Hackable
+    //- 5. OSS
+    //- 6. Community
+    //- 7. License
+    - var features = _.chain(contents.pupil['features']._.pages).sortBy(function(item) {
+    -   return item.metadata['order'];
+    - }).value()     
+    each feature, i in features
+      - var rowType = (i%2 == 0 ? 'Grid Grid--1of2 Grid--center' : 'Grid Grid--1of2 Grid--center Grid--rowReverse')
+      if feature.title === "Software"
+        - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
+        - var bannerBkg = 'Banner-container'
+        - var bannerImg = feature.metadata.image
+        - var bannerImgClass = "Feature-image--software"
+        include includes/banner     
+      else if feature.title === "record-play"
+        - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
+        div.Grid.Grid--1of2.Aligner
+          each f in group 
+            div.Grid-cell.Aligner-item
+              div.Feature.Feature--padded2.Aligner-item--column
+                div.Aligner-item--stretchHeight
+                  h1.Feature-title--lg.u-textCenter= f.title
+                  h2.Feature-subtitle!= f.html
+                
+                a(href=f.metadata.link class="Button")= f.metadata.linkTxt
+      else if feature.title === "community-license"
+        - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
+        div.Grid.Grid--1of2.Grid--top
+          each f in group 
+            div.Grid-cell.u-padBottom--5
+              div.Feature.Feature--padded2
+                h1.Feature-title--lg.u-textCenter= f.title
+                h2.Feature-subtitle!= f.html
+      else
+        div(class=rowType)
+          div.Grid-cell
+            div.Feature
+              figure.Feature-figure
+                - var imgSrc = (feature.metadata.image.length > 10 ? feature.metadata.image : "http://placehold.it/1000x800/")
+                - var imgId = "Feature-image--"+feature.title.toLowerCase().replace(/[^A-Z0-9]+/ig, "_")
+                img(id=imgId class="Feature-image" src=imgSrc)
+          div.Grid-cell.Grid-cell--center
+            div.Feature.Feature--padded2
+              h1.Feature-title--lg.u-textCenter= feature.title 
+              h2.Feature-subtitle!= feature.html 
+
+

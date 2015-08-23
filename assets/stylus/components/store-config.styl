@@ -1,0 +1,168 @@
+storeConfig-button($stroke=1px,$stroke_color=#ddd)
+  display flex
+  flex-wrap nowrap
+  align-items center
+  justify-content center
+  border-radius 3px 
+  // border-top $stroke solid #ddd
+  // border-bottom $stroke solid #ddd
+  border-right $stroke solid #ddd
+  background transparent
+  padding .5em
+  color $text-color
+  transition color .3s ease-in-out, background .3s ease-in-out
+  font-family $font-family-sans-serif
+  font-weight 700
+  font-size .9em
+
+  &:last-child
+    border-right 0px solid #ddd
+    
+
+.StoreConfig-world
+  storeConfig-button()
+
+.StoreConfig-eye
+  storeConfig-button()      
+
+.Store-navPreset
+  storeConfig-button(0px,#ddd)
+  
+.Store-license
+  storeConfig-button()
+  border 1px solid #ddd
+  border-right 1px solid #ddd !important
+
+.StoreConfig--state-active
+  background $link-hover-color
+  color #fff
+
+.StoreConfig--state-inactive
+  background transparent
+  color #B5B3B3
+  pointer-events none
+  cursor default
+  
+.StoreConfig--state-active--license
+  background $link-hover-color
+  color #fff
+
+.no-touch
+  .StoreConfig-world
+  .StoreConfig-eye
+  .Store-navPreset
+  .Store-license
+    &:hover
+      background #ddd
+      color black
+
+.StoreConfig-SubTotal--label
+  color #fff
+  
+  @media $break-sm
+    padding-top 1em 
+    padding-bottom 1em
+
+
+.StoreConfig-subTotal
+  display inline
+  color $link-hover-color
+    
+#StoreConfig-addToCart
+  // nothing here yet
+    
+.StoreConfig-rowContainer
+  padding 1em 1em 0  
+  
+.StoreConfig-rowContainer--presets
+  background rgba(0,0,0,.025)
+  
+.StoreConfig-rowContainer--world
+  border-top 1px solid #ddd
+
+.StoreConfig-rowContainer--eye
+  // border-top 1px solid black
+  border-top 1px solid #ddd
+
+.StoreConfig-rowContainer--license
+  // background darken(rgba(255,255,255,1),2%)
+  border-top 1px solid #ddd
+  background rgba(0,0,0,.025)
+
+.StoreConfig-rowContainer--cost
+  background darken(rgba(255,255,255,1),60%)
+  border-top 1px solid #ddd
+
+.StoreConfig-rowContainer--cartBtns
+  padding .5em
+  
+.StoreConfig-header
+  padding-bottom .5em
+  
+#StoreConfig-weight
+  spec_txt()
+  color #B5B3B3
+  font-style italic
+
+spec_header()
+  text-transform lowercase
+  font-variant small-caps
+
+.TechSpecs-container
+  padding-top 1.4em
+
+.TechSpecs
+  spec_header()
+
+.LicenseSpecs
+  spec_header()
+
+.TechSpecs--active
+  // jquery only
+
+.LicenseSpecs--active
+  // jquery only
+
+.TechSpecs-table
+  width 100%
+  display table
+  border none
+  border-spacing 0
+  padding-bottom .5em
+  
+  td
+    vertical-align top
+    padding .2em .5em .2em .5em
+    
+  .TechSpecs-table--column
+    padding-left 0em
+    
+  // tr:nth-child(odd)
+  //   background rgba(0,0,0,.05)
+
+.TechSpecs-table--column  
+  border-right 1px solid #ddd
+  width 20%
+  
+spec_txt()
+  font-size .8em
+
+.TechSpecs-txt--eye
+  spec_txt()
+    
+.TechSpecs-txt--world
+  spec_txt()
+  
+.TechSpecs-txt
+  spec_txt()
+  padding-bottom .5em
+
+.LicenseSpecs-txt
+  spec_txt()
+  
+.LicenseSpecs-text
+  spec_txt()
+  
+.LicenseSpecs-container
+  // jquery
+

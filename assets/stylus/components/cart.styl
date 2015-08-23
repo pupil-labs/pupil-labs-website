@@ -1,0 +1,214 @@
+$w = 8px
+$smw = $w*.75
+$scale = 1.2
+$scaleRemove = 1.05
+$removeSize = .65em
+
+
+#Cart
+  // nothing here - placeholder for jQuery
+
+    
+#Cart-table
+  width 100%
+  
+  padding-top 2em
+
+.Cart-row
+  // nothing here - placeholder for JQuery
+
+.Cart-container
+  // nothing here - placeholder for Jquery
+
+.Cart-rowContainer
+  margin-bottom .8em
+  border-bottom 1px solid gray
+  
+.Cart-items--3of5
+  width (3/5)*100%
+  text-align left
+  
+.Cart-items--1of5
+  width (1/5)*100%
+  text-align left
+
+#CartSum
+  // nothing here - placeholder for jQuery
+    
+.Cart-disclaimerTxt
+  padding-top .5em
+  font-weight 400
+  text-transform lowercase
+  font-size .8em
+  font-style italic
+  
+
+#CartSum--total
+  color $link-hover-color
+
+#CartSum--total
+#CartSum--label
+#Cart-clearCart
+  font-weight 700
+  padding-top 1.5em
+  
+
+
+tr.Cart-orderItem td
+  border-bottom 1px solid black
+  
+
+.Cart-checkout
+  // height 100%
+  // margin 0
+  // background darken(rgba(255,255,255,1),10%)
+
+
+.Cart-table-container
+  padding 1em 1.75em 5em 1.75em
+  background #fff
+
+.Cart-orderForm-container
+  display none
+  padding 1.5em 1.75em 5em
+  background darken(rgba(255,255,255,1),5%)
+  // margin-bottom 1em
+  
+.Cart-orderForm--state-active
+  // this is for JQuery  
+
+.Cart-removeItem
+  user-select none
+  font-size $removeSize
+  font-variant small-caps
+  // transition color .3s ease-in-out, font-size .35s ease-in-out
+  transition color .3s ease-in-out, transform .35s ease-in-out
+
+  &:active
+    cursor pointer
+    color complement($link-hover-color)
+    // font-size $removeSize*$scaleRemove
+    transform scale($scaleRemove)
+
+  @media $break-md
+    margin-right .5em
+
+.no-touch
+  .Cart-removeItem
+    &:hover
+      cursor pointer
+      color complement($link-hover-color)
+      // font-size $removeSize*$scaleRemove
+      transform scale($scaleRemove)
+        
+
+        
+
+.Cart-containerTriangle
+  position relative
+  height 100%
+  display block
+
+
+.Cart--triangle-up
+  width 0
+  height 0
+  border-style solid
+  border-width 0px $w $w $w
+  border-color transparent transparent rgba(0,0,0,.6) transparent
+  margin 0.25em
+  transition border-color .3s ease-in-out, transform .35s ease-in-out
+  
+  @media $break-sm
+    border-width 0px $smw $smw $smw
+  
+.Cart--triangle-down
+  width 0
+  height 0
+  border-style solid
+  border-width $w $w 0px $w
+  border-color rgba(0,0,0,.6) transparent transparent transparent
+  margin 0.25em
+  transition border-color .3s ease-in-out, transform .35s ease-in-out
+  
+  @media $break-sm
+    border-width $smw $smw 0px $smw
+  
+#Cart-empty
+  // nothing here
+    
+.Cart-itemQuant--increment
+  user-select none
+
+  &:active
+    cursor pointer
+    >p.Cart--triangle-up
+      transform scale($scale)
+      border-color transparent transparent complement($link-hover-color) transparent
+    >p.Cart--triangle-down
+      transform scale($scale)
+      border-color complement($link-hover-color) transparent transparent transparent
+
+  @media $break-md
+    margin-left .5em
+
+
+.no-touch
+  .Cart-itemQuant--increment
+    &:active
+      cursor pointer
+      >p.Cart--triangle-up
+        border-color transparent transparent complement($link-hover-color) transparent
+      >p.Cart--triangle-down
+        border-color complement($link-hover-color) transparent transparent transparent
+
+
+    &:hover
+      cursor pointer
+      >p.Cart--triangle-up
+        transform scale($scale)
+        border-color transparent transparent $link-hover-color transparent
+      >p.Cart--triangle-down
+        transform scale($scale)
+        border-color $link-hover-color transparent transparent transparent
+
+.Cart-costCalc  
+  @media $break-md
+    font-size .9em
+    
+.Cart-costCalc--subTotal
+  font-weight 700
+  
+  @media $break-md
+    font-size .9em
+    text-align right
+
+
+#CartItem-unitCost
+  @media $break-md
+    // flex 0 0 (2/3)*100%
+    max-width (2/3)*100%
+    text-align right
+
+#CartItem-equalSign
+  text-align center
+  
+  @media $break-md
+    text-align left
+  
+#CartItem-unitQuant
+  @media $break-md
+
+    text-align right
+    
+.loading 
+  // keep font size 
+    
+.loading:after
+.loading:before
+  overflow hidden
+  display inline-block
+  vertical-align center
+  animation loading steps(12,end) 1500ms infinite
+  content "."
+

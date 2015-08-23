@@ -1,0 +1,106 @@
+// 
+// Scaffolding
+// - Defines highest level structural elements
+// ---------------------------------------
+
+
+// Base settings for elements
+// - no default margins or padding for html elements 
+a,address,article,aside,audio,blockquote,body,caption,cite,code,dd,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,img,label,legend,li,nav,ol,p,pre,section,small,span,strong,sup,time,ul,video
+	margin 0
+	padding 0
+
+h1 
+	font-size 2em 
+
+h2
+	font-size 1.6em 
+	
+h3 
+	font-size 1.4em
+	
+h4
+	font-size 1.1em
+// Reset the box-sizing
+
+*
+	box-sizing border-box
+*:before,
+*:after
+	box-sizing border-box
+	
+
+html
+	height 100%
+	-webkit-tap-highlight-color rgba(0, 0, 0, 0)
+
+body
+	font-size 100%
+	font-family $font-family-sans-serif-alt
+	font-size $font-size-base
+	line-height $line-height-base
+	color $text-color
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+	text-rendering optimizeLegibility
+
+// Links
+input 
+	font-size .75em
+	font-family $font-family-sans-serif-alt
+	
+textarea
+	font-size .75em
+	font-family $font-family-sans-serif-alt
+	
+
+a
+	color $link-color
+	text-decoration $link-text-decoration
+	transition color .4s ease
+	
+	&:focus
+		tab-focus()
+
+
+.no-touch a	
+	&:hover
+		color $link-hover-color
+		text-decoration $link-hover-decoration
+
+		
+// Images
+
+.img-rounded
+	border-radius 5px
+	
+// Circular image
+.img-circle
+	vertical-align middle
+	border-radius 50%
+	
+// table
+table
+	display block
+	overflow auto 
+	text-overflow ellipsis
+
+	@media $break-md 
+		font-size .85em	
+// lists
+ul
+	list-style-type none
+
+// Horizontal rules
+hr 
+	
+	
+// iOS "clickable elements" fix for role="button"
+//
+// Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
+// for traditionally non-focusable elements with role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+// Upstream patch for normalize.css submitted: https://github.com/necolas/normalize.css/pull/379 - remove this fix once that is merged
+
+[role="button"]
+	cursor pointer

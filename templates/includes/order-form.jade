@@ -1,0 +1,131 @@
+//- see http://peric.github.io/GetCountries/
+- var countryObj = contents.cart['country_list.json'].metadata
+- var countryList = countryObj['countries']
+//- contact
+div.Cart-orderForm-container
+  form(id="order-form" data-parsley-validate data-parsley-focus="first")
+    
+    div.u-padBottom--1
+      div.Grid
+        div.Grid-cell
+          h4 Contact Info
+      div.Grid.Grid--1of2.Grid--gutters
+        div.Grid-cell
+          //- label(for="c-email") Contact Email 
+          input(class="Form-input Form-input--text" id="c_email" type="email" placeholder="email address" name="c_email" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-email--error")
+          p(class="Form-error--text" id="c-email--error")
+        div.Grid-cell
+          //- label(for="c-name-first") First Name
+          input(class="Form-input Form-input--text" id="c_name" type="text" placeholder="name" name="c_name" required data-parsley-trigger="focusout" data-parsley-errors-container="#c-name--error")
+          p(class="Form-error--text" id="c-name--error")
+    //- billing & shipping is in the same row
+    //- |=== Billing ===|=== Shipping ===|
+    div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
+      
+      div.Grid-cell
+        div.Grid
+          div.Grid-cell.Form-header
+            h4 Billing Info
+        //- wrapper for billing inputs
+        div.Form-billing-container
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b_name" type="text" placeholder="name" name="b_name" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-name--error")
+              p(class="Form-error--text" id="b-name--error")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b_phone" type="text" placeholder="phone number" name="b_phone" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-phone--error")
+              p(class="Form-error--text" id="b-phone--error")
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b_company" type="text" placeholder="(optional) company or institution" name="b_company")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b_vatid" type="text" placeholder="(optional - EU only) VAT ID " name="b_vatid")
+              p(class="Form-error--text" id="b-vatId--error")
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="b_address" placeholder="billing address" name="b_address" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
+              p(class="Form-error--text" id="b-address--error")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b_country" name="b_country" placeholder='country' list="country" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error")
+              p(class="Form-error--text" id="b-country--error")
+              datalist(id="country")
+                each country in countryList
+                  option(value=country['countryName'])
+
+      //- shipping
+      div.Grid-cell
+        div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
+          div.Grid-cell
+            h4 Shipping Info
+          div.Grid-cell
+            div.Grid.Grid--1of2
+              div.Grid-cell
+                input(id="s-toggle-copy" class="Form-input--radio" type="radio")
+                label(for="s-toggle-copy" class="Button-radio--sm Button--state-active Form-input--radioLabel" id="Form-input--s-toggle-copy") Use Billing
+              div.Grid-cell
+                input(id="s-toggle-alt" class="Form-input--radio" type="radio")
+                label(for="s-toggle-alt" class="Button-radio--sm Form-input--radioLabel" id="Form-input--s-toggle-alt") Enter Other 
+        //- This part is shown/hidden based on the toggle
+        div.Form-shipping-container
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="s_name" type="text" placeholder="name" name="s_name" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-name--error")
+              p(class="Form-error--text" id="s-name--error")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="s_phone" type="text" placeholder="phone number" name="s_phone" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-phone--error")
+              p(class="Form-error--text" id="s-phone--error")
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="s_company" type="text" placeholder="company or institution" name="s_company")
+            div.Grid-cell
+
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="s_address" placeholder="shipping address" name="s_address" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-address--error")
+              p(class="Form-error--text" id="s-address--error")
+            div.Grid-cell
+
+
+    //- payment | notes
+    div.u-padTop--1
+      div.Grid.Grid--1of2.Grid--gutters.Grid--justifyCenter
+        
+        //- payment method
+        div.Grid-cell
+          div.Grid
+            div.Grid-cell
+              h4 Payment Method
+          div.Grid.Grid--1of3
+            div.Grid-cell
+              input(id="p-paypal" class="Form-input--radio Form-payment-type" type="radio" name="p_type" value="paypal")
+              label(for="p-paypal" class="Button-radio--sm Form-input--radioLabel Button--state-active" id="Form-input--p-paypal") Paypal & Credit Card
+            div.Grid-cell
+              input(id="p-transferwise" class="Form-input--radio Form-payment-type" type="radio" name="p_type" value="transferwise")
+              label(for="p-transferwise" class="Button-radio--sm Form-input--radioLabel" id="Form-input--p-transferwise") Transferwise
+            div.Grid-cell
+              input(id="p-banktransfer" class="Form-input--radio Form-payment-type" type="radio" name="p_type" value="bankTransfer")
+              label(for="p-banktransfer" class="Button-radio--sm Form-input--radioLabel" id="Form-input--p-banktransfer") Bank Transfer
+        
+        //- notes
+        div.Grid-cell 
+          div.Grid
+            div.Grid-cell
+              h4 Notes
+          div.Grid
+            div.Grid-cell
+              //- label(for='notes') Additional Notes
+              textarea(class="Form-input Form-input--text Form-input--textarea" id='notes' placeholder="If you have any questions or notes, please write them here." name="x_notes")
+
+    input(type="text" class="Form-input--orderType" name="o_type")
+    textarea(class="Form-input--cart" name="cart")
+    //- submit
+    div.Grid
+      div.Grid-cell.Grid-cell--full.u-textCenter.u-padTop--3
+        input(type='submit' value="submit" id="form-submit" class="Form-input--submit")
+        label(for="form-submit" class="Button Button--cart Button-submit") Submit
+    div.Grid
+      div.Grid-cell.Grid-cell--full.u-textCenter
+        p.Cart-disclaimerTxt by submitting the form, you agree to our #[a(href='/tos') terms and conditions of sale]
+
+
+

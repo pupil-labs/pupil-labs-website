@@ -1,0 +1,18 @@
+extends layout
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  div(id="TOS")
+    //- Title block
+    - var page_data = contents.tos['index.json']
+    - var page_meta = page_data.metadata
+    - var titleData = {'title':page_meta.title}
+    - var tosContent =  contents.tos['tos_terms.md']
+    include includes/title
+    div.Grid.Article
+      div.Grid-cell.Grid-cell--sidebar
+      div.Grid-cell.u-padBottom--5
+        section.content!= typogr(tosContent.html).typogrify()
+      div.Grid-cell.Grid-cell--sidebar

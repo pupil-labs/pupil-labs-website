@@ -1,9 +1,7 @@
-layout/deploy
-deploy
-*.hyde_deps
+build
+node_modules
+*.htaccess
 *.DS_Store
-*.log
-.floo
-.flooignore
 .sublime-project
-prod.yaml
+contents/css
+contents/js/main.js

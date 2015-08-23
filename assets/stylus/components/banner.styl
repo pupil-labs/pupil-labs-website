@@ -1,0 +1,76 @@
+// Banner item is centered within the container
+// See Philip Walton's vertical centering post: http://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+
+banner_container(min_h=55vh,padding=5em 5em 5em 5em)
+  display flex
+  flex-wrap wrap
+  align-items center
+  justify-content center
+  margin 0
+  min-height min_h
+  padding padding
+  
+  @media $break-sm
+    min-height min_h - 10
+    padding padding[0] .8em padding[2] .8em
+
+.Banner-container
+  banner_container()
+
+.Banner-container--sm
+  banner_container(35vh,2em 2em 2em 2em)
+  
+.Banner-container--software
+  banner_container(35vh,2em 2em 0em 2em)
+
+.Banner-item
+  flex 1
+
+.Banner--gradientBkg
+  background linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(255,255,255,0.0001))
+
+.Banner--gradientBkg--reverse
+  background linear-gradient(to bottom, rgba(255,255,255,0.0001),rgba(0,0,0,0.1))
+  
+
+.Banner-title
+  color #515151 // move to h1 styles or darken color
+  font-size 2.2em
+  
+  @media $break-lg
+    font-size 2.4em 
+  
+.Banner-subtitle
+  text-shadow 0 1px 0 rgba(0,0,0,.1)    
+  font-size 1.4em
+
+.Banner-subtitle--pad
+  padding-bottom .85em 
+   
+.Banner-extendedText
+  p
+    padding-bottom 1em
+    
+.Banner-bkg--gray-lighter
+  background $gray-lighter
+
+.Banner-bkg--green
+    background darken($link-hover-color,30%)
+    
+.Banner-bkg--gray-darker
+  background $gray-darker
+  h1
+    color #A2A2A2
+  h2 
+    color #757575
+    
+.Banner-bkg--gray-dark
+  background $gray-dark
+  h1
+    color darken(#ffffff,10%)
+  h2 
+    color darken(#ffffff,25%)
+    
+  p
+    color darken(#ffffff,30%)
+  
