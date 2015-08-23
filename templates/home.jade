@@ -22,6 +22,11 @@ block main
           h2.Feature-subtitle!= typogr(page_meta.pupil_description_3).typogrify()
           a(href="/store" class="Button") #{ page_meta.pupil_link_text }
 
+    - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_description_1, 's2': page_meta.about_description_2 + " " + page_meta.about_description_3, 's3': page_meta.about_description_4}
+    - var bannerBkg = "Banner-container"
+    - var bannerSubClass = "Banner-subtitle Banner-subtitle--pad" 
+    include includes/banner
+
     //- Recent Activity
     - var bannerData = {'title': page_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
     - var bannerBkg = "Banner-container--sm Banner--gradientBkg--reverse"
@@ -33,7 +38,7 @@ block main
           div.Feature.Feature--padded3
             ul
             - var articles = env.helpers.getArticles(contents)
-            - var articleLimit = 4
+            - var articleLimit = 3
             each article,i in articles.slice(0,articleLimit)
               - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
               li(class="Article-list-item" style=opacity)
@@ -48,9 +53,6 @@ block main
           div(id="Home-activity" class="Feature Feature--padded3")
             ul(id="Home-activity-list" class="Activity")
 
-      - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_description_1, 's2': page_meta.about_description_2 + " " + page_meta.about_description_3, 's3': page_meta.about_description_4}
-      - var bannerBkg = "Banner-container Banner-bkg--gray-darker"
-      - var bannerSubClass = "Banner-subtitle Banner-subtitle--pad" 
-      include includes/banner
+
 
 
