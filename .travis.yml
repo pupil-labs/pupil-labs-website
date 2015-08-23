@@ -9,7 +9,7 @@ install:
 - npm install
 script:
 - echo 'Building Site'
-- echo $SERVER_DEV
+- echo SERVER_DEV
 - gulp css
 - gulp js
 - gulp build_wintersmith --staging
