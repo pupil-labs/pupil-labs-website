@@ -563,8 +563,14 @@ class PupilStore
         tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
 
     videoLink = ""
-    if typeof(product.video) isnt 'undefined'
-      videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video</strong></td><td><a href='#{ product.video }'>Download Video</a></td></p>"
+    if typeof(product.videos) isnt 'undefined'
+      links = ""
+      for video,i in product.videos
+        links += "<a href=#{ video.link } target='_blank'>#{ video.title }</a>"
+        if i isnt product.videos.length-1
+          links += "  |  "
+        
+      videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video(s)</strong></td><td>#{ links }</td></p>"
 
     selector = "div[class='Grid-cell TechSpecs--#{ type }']"
     if $(button).hasClass("TechSpecs--active")

@@ -4,7 +4,7 @@ productList = [
     cost: 0
     label: "none"
     specs:
-        info: "No World camera"
+      info: "No World camera"
     cartlabel: "World camera: no world camera"
     cartSpecs: "No world camera"
     dimensions: 0
@@ -16,39 +16,73 @@ productList = [
     cost: 250
     label: "high resolution"
     specs: 
-        info: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed." 
-        sensor: "1910x1080 @30fps" 
-        fov: "90 degrees diagonal with auto focus lens." 
-        latency: "127.7ms"
+      info: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed." 
+      sensor: "1910x1080 @30fps" 
+      fov: "90 degrees diagonal with auto focus lens." 
+      latency: "127.7ms"
     cartlabel: "World camera: high resolution"
     cartSpecs: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency"
     dimensions: 0
     weight: 17 # logitec c930e camera
     img: "../media/images/config_images/pupil-config-world-1080p.jpg"
-    video: "#"
+    videos: [
+      {
+        title: "90 deg. lens - 1080p @30fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfSEdEQU1GdTNlR00/view?usp=sharing"
+      },
+      {
+        title: "90 deg. lens - 720p @30fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfY2FDRFJNYVFLUXc/view?usp=sharing"
+      }
+    ]
     order: 2
   }, {
     id: "world_hs"
     cost: 250
     label: "high speed"
     specs: 
-        info: "World camera custom built by Pupil Labs. The fastest,smallest, lightest, and most versatile. We recommend this option for most use cases." 
-        sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
-        fov: "100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses."
-        latency: "5.7ms"
+      info: "World camera custom built by Pupil Labs. The fastest,smallest, lightest, and most versatile. We recommend this option for most use cases." 
+      sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
+      fov: "100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses."
+      latency: "5.7ms"
     cartlabel: "World camera: high speed"
     cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses. 5.7ms latency."
     dimensions: 0
     weight: 5 # 120hz eye camera world, new 
     img: "../media/images/config_images/pupil-config-world-120hz.jpg"
-    video: "#"
+    videos: [
+      {
+        title: "110 deg. lens - VGA @120fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfUkcxQU1GSGk3NDA/view?usp=sharing"
+      },
+      {
+        title: "60 deg. lens - VGA @120fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfRDZBaENVNldLR3M/view?usp=sharing"
+      },
+      {
+        title: "110 deg. lens - 720p @60fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfYUhNWkxYSW1FLWs/view?usp=sharing"
+      },      
+      {
+        title: "60 deg. lens - 720p @60fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfSWp6TTZKNTFfSGM/view?usp=sharing"
+      },           
+      {
+        title: "110 deg. lens - 1080p @30fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfRi11YnpITHk2ZUU/view?usp=sharing"
+      },
+      {
+        title: "60 deg. lens - 1080p @30fps",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfaTNQVmRfUEZhZFE/view?usp=sharing"
+      }
+    ]
     order: 3
   }, {
     id: "eye_none"
     cost: 740,
     label: "none"
     specs: 
-        info: "No eye camera"
+      info: "No eye camera"
     cartlabel: "Eye camera: no eye camera"    
     cartSpecs: "no eye camera"    
     dimensions: 0
@@ -60,48 +94,63 @@ productList = [
     cost: 1140
     label: "30hz"
     specs: 
-        info: "Eye camera with the smallest dimensions. Good for fixation detection." 
-        sensor: "640x480 @30fps"
-        illumination: "IR camera with IR illumination (dark pupil tracking)"
-        latency: "35.6ms"
+      info: "Eye camera with the smallest dimensions. Good for fixation detection." 
+      sensor: "640x480 @30fps"
+      illumination: "IR camera with IR illumination (dark pupil tracking)"
+      latency: "35.6ms"
     cartlabel: "Eye camera: 30hz eye camera"    
     cartSpecs: "Resolution: 640x480 @30fps. IR illumination."    
     dimensions: 0 # 12 headset frame, 2 harness cable, 12 cable clip weight, 3 eye camera (add 1g for just in case)
     weight: 30
     img: "../media/images/config_images/pupil-config-eye-30hz.jpg"
-    video: "#"
+    videos: [
+      {
+        title: "eye cam - VGA @30hz",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfWUVEZWpNTDlXcHM/view?usp=sharing"
+      }
+    ]
     order: 2
   }, {
     id: "eye_120hz"
     cost: 1390 
     label: "120hz"
     specs: 
-        info: "Eye camera custom built by Pupil Labs that will resolve a wider range of eye movement motifs"
-        sensor: "640x480 @120fps"
-        illumination: "IR camera with IR illumination (dark pupil tracking)" 
-        latency: "5.7ms"
+      info: "Eye camera custom built by Pupil Labs that will resolve a wider range of eye movement motifs"
+      sensor: "640x480 @120fps"
+      illumination: "IR camera with IR illumination (dark pupil tracking)" 
+      latency: "5.7ms"
     cartlabel: "Eye camera: 120hz eye camera"    
     cartSpecs: "Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
     weight: 31 # 12 headset frame, 2 harness cable, 12 cable clip weight, 4 eye camera (add 1g for just in case)
     img: "../media/images/config_images/pupil-config-eye-120hz.jpg"
-    video: "#"
+    videos: [
+      {
+        title: "pupil eye cam - VGA @120hz",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfbTIxTFhPQ0NOeVU/view?usp=sharing"
+      }
+    ]      
     order: 3
   }, {
     id: "eye_120hz_binocular"
     cost: 2090 # incl license 1500+590 = 
     label: "120hz binocular"
     specs: 
-        info: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that will resolve a wider range of eye movement motifs" 
-        sensor: "640x480 @120fps"
-        illumination: "IR camera with IR illumination (dark pupil tracking)"
-        latency: "5.7ms"
+      info: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that will resolve a wider range of eye movement motifs" 
+      sensor: "640x480 @120fps"
+      illumination: "IR camera with IR illumination (dark pupil tracking)"
+      latency: "5.7ms"
     cartlabel: "Eye cameras: 120hz binocular eye cameras"    
     cartSpecs: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."        
     dimensions: 0
     weight: 43 # 16 headset frame, 2 harness cable, 19 cable clip weight, 2x3 eye camera
     img: "../media/images/config_images/pupil-config-eye-120hz-binocular.jpg"
-    video: "#"
+    videos: [
+      {
+        title: "pupil eye cam - VGA @120hz",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfbTIxTFhPQ0NOeVU/view?usp=sharing"
+      }
+    ]  
     order: 4
   }, {
     id: "product_eye_120hz"
@@ -113,7 +162,12 @@ productList = [
     dimensions: 0
     weight: 4 #this is an upgrade to 120hz eye camera, weight is only for new 120hz eye camera
     img: "../media/images/additional_products/web/hs_cam.png"
-    video: "#"
+    videos: [
+      {
+        title: "pupil eye cam - VGA @120hz",
+        link: "https://drive.google.com/file/d/0Byap58sXjMVfbTIxTFhPQ0NOeVU/view?usp=sharing"
+      }
+    ]  
     order: 1
   }, {
     id: "product_pupil_dev"
@@ -130,18 +184,18 @@ productList = [
     id: "product_support_6"
     cost: 1000
     label: "6 month support contract"
-    specs: "Receive dedicated support and training via email and 4 video support sessions."
+    specs: "Receive dedicated support and training via email and 4 videos support sessions."
     cartlabel: "Support contract"                
-    cartSpecs: "6 month support contract. Email support and 4 video support sessions."
+    cartSpecs: "6 month support contract. Email support and 4 videos support sessions."
     img: "../media/graphics/web/support_graphic_6mo_alt.svg"
     order: 3
   }, {
     id: "product_support_12"
     cost: 2000
     label: "12 month support contract"
-    specs: "Receive dedicated support and training via email and 8 video support sessions."
+    specs: "Receive dedicated support and training via email and 8 videos support sessions."
     cartlabel: "Support contract"            
-    cartSpecs: "12 month support contract. Email support and 8 video support sessions."
+    cartSpecs: "12 month support contract. Email support and 8 videos support sessions."
     img: "../media/graphics/web/support_graphic_12mo_alt.svg"
     order: 4
   }, {
