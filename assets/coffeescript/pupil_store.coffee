@@ -516,6 +516,7 @@ class PupilStore
   eventOrderLinkSuccessPage: =>
     if $("#Success").length > 0
       data = @_getOrderPermalink()
+      console.log data
       url = window.location.origin + "/cart?" + $.param(data)
       link = "<a href='#{url}'>permalink</a>"
       html = "<h2 class='Banner-subtitle'>You can always revisit your order with this #{link}.</h2>"
