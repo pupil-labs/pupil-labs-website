@@ -133,7 +133,7 @@ productList = [
     specs: "Receive dedicated support and training via email and 4 video support sessions."
     cartlabel: "Support contract"                
     cartSpecs: "6 month support contract. Email support and 4 video support sessions."
-    img: "../media/graphics/web/support_graphic_6mo.svg"
+    img: "../media/graphics/web/support_graphic_6mo_alt.svg"
     order: 3
   }, {
     id: "product_support_12"
@@ -142,7 +142,7 @@ productList = [
     specs: "Receive dedicated support and training via email and 8 video support sessions."
     cartlabel: "Support contract"            
     cartSpecs: "12 month support contract. Email support and 8 video support sessions."
-    img: "../media/graphics/web/support_graphic_12mo.svg"
+    img: "../media/graphics/web/support_graphic_12mo_alt.svg"
     order: 4
   }, {
     id: "license_academic"
