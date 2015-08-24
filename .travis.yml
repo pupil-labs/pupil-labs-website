@@ -13,6 +13,7 @@ script:
 - gulp js
 - gulp build_wintersmith --production
 - gulp image_min
+- gulp generate_sitemap
 - echo 'Done building'
 after_success:
 - echo 'Setting up deployment keys'
