@@ -20,6 +20,7 @@ concat = require "gulp-concat"
 uglify = require "gulp-uglify"
 imagemin = require "gulp-imagemin"
 pngquant = require "imagemin-pngquant"
+sitemap = require "gulp-sitemap"
 
 
 css = ()->
@@ -81,6 +82,13 @@ gulp.task "image_min", ->
       progressive: true
       use: [pngquant()])
   .pipe gulp.dest('build/media/images')
+
+gulp.task "generate_sitemap", ->
+  gulp.src('build/**/*.html')
+  .pipe(
+    sitemap
+      siteUrl: 'https://pupil-labs.com')
+  .pipe gulp.dest('./build')
 
 gulp.task "preview", ->
     wintersmith.settings.configFile = 'config.json'
