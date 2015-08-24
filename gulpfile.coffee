@@ -88,7 +88,7 @@ gulp.task "generate_sitemap", ->
   .pipe(
     sitemap
       siteUrl: 'https://pupil-labs.com')
-  .pipe gulp.dest('./build')
+  .pipe gulp.dest('build')
 
 gulp.task "preview", ->
     wintersmith.settings.configFile = 'config.json'
