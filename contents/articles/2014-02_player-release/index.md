@@ -9,7 +9,9 @@ We would like to introduce a new app for Pupil - **Pupil Player** - With this ap
 
 Take a look at the demo screencast.
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/Bm_CdoFyWNE" frameborder="0" class="Feature-image" allowfullscreen></iframe>
+<div class="Feature-video-container-4by3">
+	<iframe src="//www.youtube.com/embed/Bm_CdoFyWNE" frameborder="0" class="Feature-video" allowfullscreen></iframe>
+</div>
 
 ### Features
 Currently implemented:

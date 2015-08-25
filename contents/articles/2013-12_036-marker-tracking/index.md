@@ -12,7 +12,9 @@ We've been busy working on a lot of improvements in the last few weeks both on t
 ## Marker Tracking
 We have implemented a marker tracking plugin so that you can define surfaces within your environment and track surfaces in **realtime**.  We were greatly inspired by the [ArUco marker tracking library](http://www.uco.es/investiga/grupos/ava/node/26 "aruco").  We rolled our own flavor of the ArUco style marker tracking and build upon those ideas to improve performance.  Check out the [square marker detection code](https://github.com/pupil-labs/pupil/blob/marker_tracking/pupil_src/shared_modules/square_marker_detect.py "square marker detect"), it's open source Python and contained all within one file.      
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen class="Feature-image"></iframe>
+<div class="Feature-video-container-4by3">
+  <iframe src="//www.youtube.com/embed/bmqDGE6a9kc?rel=0" frameborder="0" allowfullscreen class="Feature-video"></iframe>
+</div>
 
 This plugin currently enables realtime user interaction.  Many people in the Pupil community have been asking about how to control a mouse with your eyes.  Some members Pupil community have [already made lots of progress in this area](http://youtu.be/cIsK4wj8yh4 "Ignacio Pupil Dasher demo"), and we thought we'd build upon that!   
 

@@ -26,7 +26,9 @@ We are pleased to announce another release of **Pupil Player** and **Pupil Captu
 
 Check out the offline marker tracking demo video.
 
-<iframe width="640" height="480" src="//www.youtube.com/embed/71S858DPu8w" frameborder="0" class="Feature-image" allowfullscreen></iframe>
+<div class="Feature-video-container-16by9">
+	<iframe class="Feature-video" src="//www.youtube.com/embed/71S858DPu8w" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ## Bundles
 
