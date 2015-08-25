@@ -27,12 +27,8 @@ productList = [
     img: "../media/images/config_images/pupil-config-world-1080p.jpg"
     videos: [
       {
-        title: "90 deg. lens - 1080p @30fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfSEdEQU1GdTNlR00/view?usp=sharing"
-      },
-      {
-        title: "90 deg. lens - 720p @30fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfY2FDRFJNYVFLUXc/view?usp=sharing"
+        title: "Download sample videos",
+        link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-QW1ncXpkdS02R1k/view?usp=sharing"
       }
     ]
     order: 2
@@ -52,28 +48,8 @@ productList = [
     img: "../media/images/config_images/pupil-config-world-120hz.jpg"
     videos: [
       {
-        title: "110 deg. lens - VGA @120fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfUkcxQU1GSGk3NDA/view?usp=sharing"
-      },
-      {
-        title: "60 deg. lens - VGA @120fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfRDZBaENVNldLR3M/view?usp=sharing"
-      },
-      {
-        title: "110 deg. lens - 720p @60fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfYUhNWkxYSW1FLWs/view?usp=sharing"
-      },      
-      {
-        title: "60 deg. lens - 720p @60fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfSWp6TTZKNTFfSGM/view?usp=sharing"
-      },           
-      {
-        title: "110 deg. lens - 1080p @30fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfRi11YnpITHk2ZUU/view?usp=sharing"
-      },
-      {
-        title: "60 deg. lens - 1080p @30fps",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfaTNQVmRfUEZhZFE/view?usp=sharing"
+        title: "Download sample videos",
+        link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-TmJvSFhFeWp1NEk/view?usp=sharing"
       }
     ]
     order: 3
@@ -105,8 +81,8 @@ productList = [
     img: "../media/images/config_images/pupil-config-eye-30hz.jpg"
     videos: [
       {
-        title: "eye cam - VGA @30hz",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfWUVEZWpNTDlXcHM/view?usp=sharing"
+        title: "Download sample video",
+        link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-N1FOOWVVVHUtVUE/view?usp=sharing"
       }
     ]
     order: 2
@@ -126,8 +102,8 @@ productList = [
     img: "../media/images/config_images/pupil-config-eye-120hz.jpg"
     videos: [
       {
-        title: "pupil eye cam - VGA @120hz",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfbTIxTFhPQ0NOeVU/view?usp=sharing"
+        title: "Download sample video",
+        link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
       }
     ]      
     order: 3
@@ -147,8 +123,8 @@ productList = [
     img: "../media/images/config_images/pupil-config-eye-120hz-binocular.jpg"
     videos: [
       {
-        title: "pupil eye cam - VGA @120hz",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfbTIxTFhPQ0NOeVU/view?usp=sharing"
+        title: "Download sample video",
+        link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
       }
     ]  
     order: 4
@@ -164,8 +140,8 @@ productList = [
     img: "../media/images/additional_products/web/hs_cam.png"
     videos: [
       {
-        title: "pupil eye cam - VGA @120hz",
-        link: "https://drive.google.com/file/d/0Byap58sXjMVfbTIxTFhPQ0NOeVU/view?usp=sharing"
+        title: "Download sample video",
+        link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
       }
     ]  
     order: 1
