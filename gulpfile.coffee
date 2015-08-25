@@ -21,6 +21,7 @@ uglify = require "gulp-uglify"
 imagemin = require "gulp-imagemin"
 pngquant = require "imagemin-pngquant"
 sitemap = require "gulp-sitemap"
+favicons = require "gulp-favicons"
 
 
 css = ()->
@@ -89,6 +90,19 @@ gulp.task "generate_sitemap", ->
     sitemap
       siteUrl: 'https://pupil-labs.com')
   .pipe gulp.dest('build')
+
+gulp.task "generate_favicons", ->
+  gulp.src("build/index.html")
+  .pipe(
+    favicons
+      files: {
+        dest: "media/graphics/web"
+        # html: "build/index.html"
+      },
+      settings: {
+        logging: true
+      })
+  .pipe gulp.dest("./")
 
 gulp.task "preview", ->
     wintersmith.settings.configFile = 'config.json'
