@@ -67,7 +67,9 @@ class PupilStore
       for p in getProductsFiltered('product').slice(1) #remove first item
         html = "<div class='Aligner-item'>
                   <div class='Aligner-item--column'>
-                    <img class='Feature-image' src=#{ p.img }>
+                    <div class='Feature-image--wrapper'>
+                      <img class='Feature-image' src=#{ p.img }>
+                    </div>
                     <div class='Aligner-item--stretchHeight'>
                       <p><strong> #{ p.label } </strong></p>
                       <p> #{ p.specs } </p>
