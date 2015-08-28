@@ -9,7 +9,7 @@ block main
     include includes/title 
     article.Grid.Article
       div.Grid-cell--sidebar
-      div.Grid-cell--blog
+      div.Grid-cell--main
         section.content!= typogr(page.html).typogrify()
       div.Grid-cell--sidebar
     a(href="/blog")

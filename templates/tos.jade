@@ -12,7 +12,7 @@ block main
     - var tosContent =  contents.tos['tos_terms.md']
     include includes/title
     div.Grid.Article
-      div.Grid-cell.Grid-cell--sidebar
-      div.Grid-cell.u-padBottom--5
+      div.Grid-cell--sidebar
+      div.Grid-cell--main.u-padBottom--5
         section.content!= typogr(tosContent.html).typogrify()
-      div.Grid-cell.Grid-cell--sidebar
+      div.Grid-cell--sidebar
