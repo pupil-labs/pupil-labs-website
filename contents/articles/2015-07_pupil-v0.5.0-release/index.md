@@ -33,7 +33,7 @@ We are very excited to release our latest set of improvements to the Pupil proje
   - Updated and streamlined GLFW bindings
   - Updated pyglui to v0.3
 
-As always, we’d be happy to receive your feedback. If you spot any typos, bugs, or have an idea for a new feature feature - please raise an issue at: [github.com/pupil-labs/pupil/issues](github.com/pupil-labs/pupil/issues 'issues on github')
+As always, we’d be happy to receive your feedback. If you spot any typos, bugs, or have an idea for a new feature feature - please raise an issue at: [github.com/pupil-labs/pupil/issues](https://github.com/pupil-labs/pupil/issues 'issues on github')
 
 We look forward to seeing what you do with Pupil :)
 
