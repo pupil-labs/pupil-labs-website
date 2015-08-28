@@ -95,12 +95,15 @@
 .Grid-cell--padright1
 	padding-right 1em
 	
+.Grid-cell--blog
+	flex 1 0
+
 .Grid-cell--sidebar
-	flex 0 0 20%
+	flex 1 0 20%
 	max-width 20%
 	
 	@media $break-sm
-		flex 0 0 5%
+		flex 1 0 5%
 		max-width 5%
 
 .Grid-cell--sidebar-sm
@@ -268,7 +271,8 @@
 	flex-direction column
 	
 .Aligner-item--stretchHeight
-	flex 1 0 auto
+	flex-grow 1
+	flex-shrink 0
 
 .Aligner-item--top
 	display flex
