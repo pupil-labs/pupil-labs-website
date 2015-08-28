@@ -5,7 +5,6 @@
  *    minimum size. See http://bit.ly/1Mn35US for details.
  * 3. Use `%` instead of `vh` since `vh` is buggy in older mobile Safari.
  */
-
 .Site
   display flex
   flex-direction column
@@ -21,9 +20,8 @@
   @media $break-sm
     padding-top 6.4em
 
-.Site-content
-  &:after
-  content '\00a0' /* &nbsp; */
+.Site-content:after
+  content '\00a0'
   display block
   height 0px
   visibility hidden
