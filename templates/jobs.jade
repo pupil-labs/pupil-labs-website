@@ -34,8 +34,8 @@ block main
     h2 Current Opportunities     
   div.Grid--gutters-noMargin.Aligner.u-padBottom--5
     each p in positions
-      div.Aligner-item--1of2.Aligner-item--column
-        h2.Feature-title.u-textCenter.u-padBottom--1.u-padTop--1= p.title
+      div.Aligner-item--1of2.Aligner-item--column.u-padBottom--2
+        h2(class="Feature-title u-textCenter u-padBottom--1 u-padTop--1" id=p.metadata.order)= p.title
         div.Article.Aligner-item--stretchHeight!= typogr(p.html).typogrify()
         a(href="mailto:jobs@pupil-labs.com" target="_blank" role="button" class="Button Button--whiteBorder") email us to apply
         p.Cart-disclaimerTxt.u-textCenter (please include your cv and links to relevant work)
