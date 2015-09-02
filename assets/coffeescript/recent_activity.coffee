@@ -63,12 +63,16 @@ processGithubEvents = (recentEvents)->
       releaseLink = e.payload.release.html_url
       events.push("<li #{ opacity }>#{ dateStr }<p class='Activity-releaseEvent'><strong>new release </strong> for <strong>#{ repoName } - <a class='Activity-releaseEvent--tag' href='#{ releaseLink }' target='_blank'>#{tagName}</a></p></li>")
 
-    if e.type is "IssuesEvent"
-      actionType = e.payload.action
-      issueLink = e.payload.issue.html_url
-      issueNumber = e.payload.issue.number
-      repoName = e.repo.name.split('/').pop()
-      events.push("<li #{ opacity }>#{ dateStr }<p>issue #{ actionType } at <a href='#{ issueLink }' target='_blank'>#{ repoName + '/#' + issueNumber}</a> - #{ e.payload.issue.title.truncate(60,true) }</p></li>")
+    # if e.type is "IssuesEvent"
+    #   repo = e.repo.name
+    #   console.log e
+    #   console.log repo
+    #   if repo isnt "pupil-labs/pupil-tasks" and repo isnt "pupil-labs/owner-tasks"
+    #     actionType = e.payload.action
+    #     issueLink = e.payload.issue.html_url
+    #     issueNumber = e.payload.issue.number
+    #     repoName = repo.split('/').pop()
+    #     events.push("<li #{ opacity }>#{ dateStr }<p>issue #{ actionType } at <a href='#{ issueLink }' target='_blank'>#{ repoName + '/#' + issueNumber}</a> - #{ e.payload.issue.title.truncate(60,true) }</p></li>")
 
   eventString = events.join('')
   $("#Home-activity-list").html("#{ eventString }")
