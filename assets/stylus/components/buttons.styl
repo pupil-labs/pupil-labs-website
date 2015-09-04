@@ -16,6 +16,19 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 .Button
 	button()
 
+.Button-player
+	button()
+	
+	@media $break-md-lg
+		margin-bottom 0.5em
+	
+.Button-dataset
+	button()
+	margin-left 0.65em
+	
+	@media $break-md-lg
+		margin-left 0em
+
 .Button-inverse
 	button(transparent,1em,700,1em .1em,1px solid #fff,5px)
 	color #fff
@@ -74,6 +87,8 @@ action_button()
 	.Button-inverse
 	.Button-sm
 	.Button--cart
+	.Button-player
+	.Button-dataset
 		&:hover
 			background $link-hover-color
 			color #fff
