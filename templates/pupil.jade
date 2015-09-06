@@ -44,11 +44,11 @@ block main
                 if typeof(f.metadata.linkTxt2) !== 'undefined'
                   div.Grid
                     div.Grid-cell--1of2
-                      a(href=f.metadata.link class="Button-player")= f.metadata.linkTxt
+                      a(href=f.metadata.link class="Button-player" target="_blank")= f.metadata.linkTxt
                     div.Grid-cell--1of2
-                      a(href=f.metadata.link2 class="Button-dataset")= f.metadata.linkTxt2
+                      a(href=f.metadata.link2 class="Button-dataset" target="_blank")= f.metadata.linkTxt2
                 else
-                  a(href=f.metadata.link class="Button")= f.metadata.linkTxt
+                  a(href=f.metadata.link class="Button" target="_blank")= f.metadata.linkTxt
 
       else if feature.title === "community-license"
         - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
