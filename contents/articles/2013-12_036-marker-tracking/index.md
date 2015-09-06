@@ -32,7 +32,10 @@ Here's what you can currently do with the marker tracking plugin.
   + Check out [marker detector plugin code on github](https://github.com/pupil-labs/pupil/blob/marker_tracking/pupil_src/capture/marker_detector.py "Marker detector code on github").
 
 Check out this cool demo video below where we use our gaze to navigate through a 3D environment!
-<iframe width="640" height="360" src="//www.youtube.com/embed/qHmfMxGST7A?rel=0" frameborder="0" class="Feature-image" allowfullscreen></iframe>    
+
+<div class="Feature-video-container-16by9">
+  <iframe class="Feature-video" src="//www.youtube.com/embed/qHmfMxGST7A?rel=0" frameborder="0" allowfullscreen></iframe>    
+</div>
 
 ## Coming Soon
 In the near future, defined surfaces can also be used after capture for visualization and analysis.  Think heatmaps or videos that show gaze when it is within a defined surface like different windows on a screen, areas of a website, areas of a newspaper, poster, or magazine.  We are working on a browser that will enable one to visualize captured data and load plugins like marker tracking to analyze results.       

@@ -82,6 +82,8 @@ class PupilStore
                 </div>"
         $("div[class~='Additional-products']").append(html)
 
+      @_updateSpecTxt('world','world_hs')
+      @_updateSpecTxt('eye','eye_30hz')
       @_updateConfigSubTotal()
 
   eventAddToCart: ->
@@ -359,12 +361,12 @@ class PupilStore
         if $(button).hasClass("TechSpecs--active")
           $(element).fadeOut(400)
           $(button).removeClass("TechSpecs--active")
-          $(button).text("show technical specs")
+          $(button).text("show detailed specs")
         else
           $(button).addClass("TechSpecs--active")
           @_updateSpecTxt(type,id)
           $(element).fadeIn(400)
-          $(button).text("hide technical specs")
+          $(button).text("hide detailed specs")
 
   eventShowOrderForm: ->
     if $(@cartPage).length > 0
@@ -560,7 +562,7 @@ class PupilStore
     infoTxt = ""
     for k,v of product.specs 
       if k is 'info'
-        infoTxt = "<p class='TechSpecs-txt'>#{ v }</p>"
+        infoTxt = v
       else
         tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
 
@@ -575,9 +577,12 @@ class PupilStore
       videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video(s)</strong></td><td>#{ links }</td></p>"
 
     selector = "div[class='Grid-cell TechSpecs--#{ type }']"
+    infoTxtSelector = "#infoTxt-#{ type }"
+
+    $(infoTxtSelector).text(infoTxt)
     if $(button).hasClass("TechSpecs--active")
       $(selector).empty()
-      $(selector).append("#{ infoTxt }")
+      # $(selector).append("#{ infoTxt }")
       $(selector).append("<table class='TechSpecs-table TechSpecs-txt--#{ type}'><tbody>"+"#{ tableRows }"+"#{ videoLink }"+"</tbody></table>")
     else
       $(selector).empty()

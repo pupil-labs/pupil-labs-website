@@ -41,7 +41,15 @@ block main
                   h1.Feature-title--lg.u-textCenter= f.title
                   h2.Feature-subtitle!= f.html
                 
-                a(href=f.metadata.link class="Button")= f.metadata.linkTxt
+                if typeof(f.metadata.linkTxt2) !== 'undefined'
+                  div.Grid
+                    div.Grid-cell--1of2
+                      a(href=f.metadata.link class="Button-player")= f.metadata.linkTxt
+                    div.Grid-cell--1of2
+                      a(href=f.metadata.link2 class="Button-dataset")= f.metadata.linkTxt2
+                else
+                  a(href=f.metadata.link class="Button")= f.metadata.linkTxt
+
       else if feature.title === "community-license"
         - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
         div.Grid.Grid--1of2.Grid--top

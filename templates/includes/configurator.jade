@@ -51,7 +51,8 @@ section.Grid.Grid--1of2--breakConfig
           //-     a(role="button" class=itemClass id=world.id href=world.image_url data-id=world.id data-specs=world.specs data-cost=world.cost)= world.label 
         div.Grid.Grid--full
           div.Grid-cell.u-textCenter.TechSpecs-container
-            a(href="#" role="button" id="specs-world" class="TechSpecs") show technical specs
+            p(id="infoTxt-world" class="TechSpecs-txt")
+            a(href="#" role="button" id="specs-world" class="TechSpecs") show detailed specs
           div.Grid-cell.TechSpecs--world
             //- table.TechSpecs-table.TechSpecs-txt--world
 
@@ -68,7 +69,8 @@ section.Grid.Grid--1of2--breakConfig
           //-     a(role="button" class=itemClass id=eye.id href=eye.image_url data-id=eye.id data-specs=eye.specs data-cost=eye.cost)= eye.label 
         div.Grid.Grid--full
           div.Grid-cell.u-textCenter.TechSpecs-container
-            a(href="#" role="button" id="specs-eye" class="TechSpecs") show technical specs
+            p(id="infoTxt-eye" class="TechSpecs-txt")
+            a(href="#" role="button" id="specs-eye" class="TechSpecs") show detailed specs
           div.Grid-cell.TechSpecs--eye
             //- table.TechSpecs-table.TechSpecs-txt--eye
 
@@ -76,7 +78,7 @@ section.Grid.Grid--1of2--breakConfig
       div.Grid-cell.Grid-center.StoreConfig-rowContainer.StoreConfig-rowContainer--license
         div.Grid.Grid--gutters
           div.Grid-cell.Grid-cell--1of3
-            a(href="#" role="button" class="Store-license StoreConfig--state-active--license" id="license") academic discount
+            a(href="#" role="button" class="Store-license" id="license") academic discount
           div.Grid-cell.Grid-cell--2of3
             p.LicenseSpecs-text.u-padBottom--2 Discount is granted with valid academic institution billing, and/or shipping address, or proof of current academic affiliation.
 
