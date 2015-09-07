@@ -171,9 +171,16 @@ class PupilStore
         $("#world_none").removeClass("StoreConfig--state-inactive")   
 
         if $(@worldConfigActiveClass).attr('id') is "world_none"
+          $("#specs-world").fadeTo(800,0).prop('disabled',true).css('cursor','default')
           $("#eye_none").addClass("StoreConfig--state-inactive")
+        else
+          $("#specs-world").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
         if $(@eyeConfigActiveClass).attr('id') is "eye_none"
+          $("#specs-eye").fadeTo(800,0).prop('disabled',true).css('cursor','default') 
           $("#world_none").addClass("StoreConfig--state-inactive")
+        else
+          $("#specs-eye").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
+          $("#specs-eye").fadeIn()
 
         if $(@worldConfigActiveClass).attr('id') is "world_hr"
           $("#eye_120hz_binocular").addClass("StoreConfig--state-inactive")
@@ -350,23 +357,25 @@ class PupilStore
       $("a[class='TechSpecs']").click (event)=>
         event.preventDefault()
         button = $(event.target)
-        # eye or world from 'id'
-        type = $(button).attr('id').split('-').pop() 
+        
+        if not $(button).prop('disabled')
+          # eye or world from 'id'
+          type = $(button).attr('id').split('-').pop() 
 
-        selection = "a[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
-        id = $(selection).attr('id')
-        # make append active class to container 
-        element = "div[class='Grid-cell TechSpecs--#{ type }']"       
+          selection = "a[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
+          id = $(selection).attr('id')
+          # make append active class to container 
+          element = "div[class='Grid-cell TechSpecs--#{ type }']"       
 
-        if $(button).hasClass("TechSpecs--active")
-          $(element).fadeOut(400)
-          $(button).removeClass("TechSpecs--active")
-          $(button).text("show detailed specs")
-        else
-          $(button).addClass("TechSpecs--active")
-          @_updateSpecTxt(type,id)
-          $(element).fadeIn(400)
-          $(button).text("hide detailed specs")
+          if $(button).hasClass("TechSpecs--active")
+            $(element).fadeOut(400)
+            $(button).removeClass("TechSpecs--active")
+            $(button).text("show detailed specs")
+          else
+            $(button).addClass("TechSpecs--active")
+            @_updateSpecTxt(type,id)
+            $(element).fadeIn(400)
+            $(button).text("hide detailed specs")
 
   eventShowOrderForm: ->
     if $(@cartPage).length > 0
