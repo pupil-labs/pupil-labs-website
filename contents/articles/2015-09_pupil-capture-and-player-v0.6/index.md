@@ -5,13 +5,14 @@
  subtitle: Pupil Capture and Pupil Player v0.6 release notes. New features include Pupil Sync, visible logging feedback, and restructred video capture.
  ---
 
+<a href="https://github.com/pupil-labs/pupil/releases" class="Button">Download Pupil v0.6.0</a>
+
  ### New Features
 
   - **Pupil Sync** -- Synchronise and control recording and timebase across all Pupil Capture instances running in the same network. We think this will be useful for multiuser and multi-camera setups. (You can run Pupil Capture with a webcam (we recommend c930e) to incorporate additional synchronised recordings from other viewpoints.)
   - Added **visible logging feedback** within the World window. 
   - You can **auto load your own plugin** while running from the application bundle. Check out documentation on the [wiki](https://github.com/pupil-labs/pupil/wiki/Plugin%20Guide)
   - **Restructured video capture** -- Pupil Capture now checks if a camera is already in use and allows to switch between all connected cameras and an additional 'fake capture'. You can now start Pupil Capture, connect the headset later and select the camera you want while the program runs. Multiple sessions of Pupil Capture can now be opened without it trying to open cameras that are already in use from a running Pupil Capture session.
-
   - Added slider enabling one to adjust the minimum marker size. This way you can **use much smaller markers**.
 
 ### Changes for developers
