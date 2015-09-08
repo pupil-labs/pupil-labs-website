@@ -2,7 +2,7 @@
  title: Pupil Capture and Player v0.6 Release
  date: Tue Sep 08 2015 15:25:54 GMT+0700 (ICT)
  author: Pupil Dev Team
- summary: Pupil Capture and Pupil Player v0.6 release notes. New features include Pupil Sync, visible logging feedback, and restructred video capture.
+ subtitle: Pupil Capture and Pupil Player v0.6 release notes. New features include Pupil Sync, visible logging feedback, and restructred video capture.
  ---
 
  ### New Features
