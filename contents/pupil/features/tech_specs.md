@@ -6,9 +6,9 @@ order: 2
 
 Eye tracking performance is determined in equal parts by the hardware and software. 
 
-We constantly improve our algorithms, so you can expect a steady improvement and new features. In a test from 2014 we measured a gaze accuracy of 0.6° with a precision of xx. For more details check our or [technical report][1].
+We constantly improve our algorithms, so you can expect a steady improvement and new features. In a test from 2014 we measured a gaze accuracy of 0.6° with a precision of 0.08°. For more details check our or [technical report][1].
 
-Pupil headsets connect to a Tablet, Laptop, or PC via USB2.0. The headset is configurable with different cameras, so you can get the hardware specs you need. From high resolution capture at 30hz to low latency (5.7ms) 120hz eye and scene video. 
+Pupil headsets connect to a Tablet, Laptop, or PC via USB2.0. The headset is configurable with different cameras, so you can get the hardware you need: from high resolution capture at 30hz to low latency (5.7ms) 120hz eye and scene video. 
 
 See the [configurator][2] for options, full technical specs for cameras, and sample videos.
   

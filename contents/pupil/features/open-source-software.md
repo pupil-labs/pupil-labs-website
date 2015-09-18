@@ -1,7 +1,7 @@
 ---
 title: Open Source Software
 image: ../media/images/pupil_page/web/pupil_source_code.png
-order: 6
+order: 7
 ---
 
 We believe in open source. All Pupil code is released with open source licenses.
