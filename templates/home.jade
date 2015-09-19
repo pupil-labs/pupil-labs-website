@@ -19,7 +19,8 @@ block main
           h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
           h2.Feature-subtitle #{ page_meta.pupil_description_1 }
           h2.Feature-subtitle #{ page_meta.pupil_description_2 }
-          h2.Feature-subtitle!= typogr(page_meta.pupil_description_3).typogrify()
+          h2.Feature-subtitle #{ page_meta.pupil_description_3 }
+          h2.Feature-subtitle!= typogr(page_meta.pupil_description_4).typogrify()
           a(href="/store" class="Button") #{ page_meta.pupil_link_text }
 
     - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_subtitle}
