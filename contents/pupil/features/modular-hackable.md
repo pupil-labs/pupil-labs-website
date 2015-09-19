@@ -1,7 +1,7 @@
 ---
 title: Modular & Hackable
 image: ../media/images/pupil_page/web/dev_explo.jpg
-order: 5
+order: 6
 ---
 
 Pupil is modular - make the headset you need for your research.

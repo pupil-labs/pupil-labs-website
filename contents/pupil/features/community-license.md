@@ -1,5 +1,5 @@
 ---
 title: community-license
 image: images/
-order: 7
+order: 8
 ---
