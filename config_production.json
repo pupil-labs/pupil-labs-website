@@ -10,7 +10,6 @@
     "./plugins/featured-articles.coffee",
     "./plugins/blog.coffee",
     "./node_modules/wintersmith-contents",
-    "./node_modules/wintersmith-sitemap"
   ],
   "shared": {
     "articles": "articles"
