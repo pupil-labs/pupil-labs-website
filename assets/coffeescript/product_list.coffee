@@ -20,7 +20,7 @@ productList = [
       sensor: "1910x1080 @30fps" 
       fov: "90 degrees diagonal with auto focus lens." 
       latency: "127.7ms"
-      'audio recording': 'Camera built-in stereo microphone.' 
+      audio_recording: 'Camera built-in stereo microphone.' 
     cartlabel: "World camera: high resolution"
     cartSpecs: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency"
     dimensions: 0
@@ -42,7 +42,7 @@ productList = [
       sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
       fov: "100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses."
       latency: "5.7ms"
-      'audio recording': 'via host device microphone.'
+      audio_recording: 'via host device microphone.'
     cartlabel: "World camera: high speed"
     cartSpecs: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses. 5.7ms latency."
     dimensions: 0
