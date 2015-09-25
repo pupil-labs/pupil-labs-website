@@ -2,7 +2,7 @@
  title: Pupil In Space
  date: Fri Sep 25 2015 21:27:19 GMT+0700 (ICT)
  author: Pupil Dev Team
- subtitle: Pupil is Pupil is now in SPACE! Two Pupil headset went up to the ISS on Soyuz 44s...
+ subtitle: Pupil is now in SPACE! Two Pupil headset went up to the ISS on Soyuz 44s...
 ---
 
 Pupil is now in SPACE! Two Pupil headset went up to the ISS on Soyuz 44s.
