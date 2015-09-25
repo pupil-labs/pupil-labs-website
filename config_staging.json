@@ -9,8 +9,7 @@
     "./plugins/paginator.coffee",
     "./plugins/featured-articles.coffee",
     "./plugins/blog.coffee",
-    "./node_modules/wintersmith-contents",
-    "./node_modules/wintersmith-sitemap"
+    "./node_modules/wintersmith-contents"
   ],
   "shared": {
     "articles": "articles"

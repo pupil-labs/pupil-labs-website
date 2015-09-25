@@ -124,7 +124,7 @@ gulp.task "build_wintersmith", ->
   if opts.production 
     wintersmith.settings.configFile = 'config_production.json'
     wintersmith.build ->
-    gutil.log "Successfully built wintersmith for **production**."
+      gutil.log "Successfully built wintersmith for **production**."
 
 gulp.task "css", ->
   css()
