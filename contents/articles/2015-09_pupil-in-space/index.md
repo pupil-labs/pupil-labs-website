@@ -5,7 +5,7 @@
  subtitle: Pupil is Pupil is now in SPACE! Two Pupil headset went up to the ISS on Soyuz 44s...
 ---
 
-Pupil is Pupil is now in SPACE! Two Pupil headset went up to the ISS on Soyuz 44s.
+Pupil is now in SPACE! Two Pupil headset went up to the ISS on Soyuz 44s.
 
 <img src="../../../../media/images/pupil_in_space_web.jpg" class='Feature-image' alt="Pupil in Space - on the ISS">
 
@@ -13,7 +13,7 @@ Pupil Labs created custom egocentric vision Pupil headsets -- world camera only 
 
 "The mobiPV flight segment is a wrist-mounted Android smartphone integrated with a Pupil egocentric vision headset coupled with an iPad providing 'assistive' functions. mobiPV enables astronauts to move about with unlimited mobility, live stream their workspace, share notes, and task progress with specialists at mission control and vice versa; providing an unprecedented task execution and situational awareness solution so far unavailable on the ISS."
 
-We are super excited! Too bad we did not have the smaller camera ready in time for fight certification - it would have looked even cooler :-)
+We are super excited! Too bad we did not have the smaller camera ready in time for flight certification - it would have looked even cooler :-)
 
 Follow the mission on Twitter via the tag [#mobipv][2]. All images are courtesy of [ESA Operations][3]. You can also follow Pupil Labs on Twitter [@pupil_labs][4]
 
