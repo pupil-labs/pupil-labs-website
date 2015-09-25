@@ -10,6 +10,7 @@
     "typogr": "0.5.x"
   },
   "devDependencies": {
+    "coffee-script": "^1.9.3",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-coffee": "^2.3.1",
