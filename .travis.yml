@@ -5,7 +5,7 @@ language: node_js
 node_js:
 - '0.12'
 install:
-- npm install -g git+https://github.com/jnordberg/wintersmith.git #try installing from source
+- npm install -g https://github.com/jnordberg/wintersmith.git #try installing from source
 - npm install
 script:
 - echo 'Building Site'
