@@ -17,7 +17,7 @@ We are super excited! Too bad we did not have the smaller camera ready in time f
 
 Follow the mission on Twitter via the tag [#mobipv][2]. All images are courtesy of [ESA Operations][3]. You can also follow Pupil Labs on Twitter [@pupil_labs][4]
 
-[1] [http://www.spaceapplications.com/ "Space Applications"]
-[2] [https://twitter.com/hashtag/mobipv "mobipv"]
-[3] [https://twitter.com/esaoperations "ESA Operations"]
-[4] [https://twitter.com/pupil_labs "Pupil Labs on Twitter"]
+[1]: http://www.spaceapplications.com/ "Space Applications"
+[2]: https://twitter.com/hashtag/mobipv "mobipv"
+[3]: https://twitter.com/esaoperations "ESA Operations"
+[4]: https://twitter.com/pupil_labs "Pupil Labs on Twitter"
