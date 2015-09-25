@@ -34,6 +34,6 @@ before_install:
 - cat ~/.ssh/config
 - openssl aes-256-cbc -K $encrypted_72cb34722471_key -iv $encrypted_72cb34722471_iv
   -in DEPLOY_KEY.enc -out DEPLOY_KEY -d
-# cache:
-#   directories:
-#   - node_modules
+cache:
+  directories:
+  - node_modules
