@@ -6,7 +6,7 @@ node_js:
 - '0.12'
 install:
 - npm install -g wintersmith
-- npm install -g coffeescript 
+- npm install -g coffee-script 
 - npm install
 script:
 - echo 'Building Site'
