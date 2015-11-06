@@ -4,7 +4,7 @@ order: 2
 ---
 
 ### Address
-Pupil Labs UG (haftungsbeschränkt) Gustav-Müller-Str. 40 10829 Berlin
+Pupil Labs UG (haftungsbeschränkt) Gustav-Müller-Str. 7 10829 Berlin
 
 ### Contact
 E-Mail <a href="mailto:info@pupil-labs.com" target="_blank">info@pupil-labs.com</a>
