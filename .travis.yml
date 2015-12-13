@@ -3,9 +3,9 @@ branches:
   - dev
 language: node_js
 node_js:
-- '0.12'
+- '4.1'
 install:
-- npm install -g wintersmith
+- npm install wintersmith -g
 - npm install
 script:
 - echo 'Building Site'
