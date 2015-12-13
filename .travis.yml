@@ -11,7 +11,7 @@ script:
 - echo 'Building Site'
 - gulp css
 - gulp js
-- gulp build_wintersmith --staging
+- gulp build_wintersmith --production
 - gulp image_min
 - gulp generate_sitemap
 - echo 'Done building'
