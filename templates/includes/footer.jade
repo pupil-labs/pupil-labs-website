@@ -8,10 +8,10 @@ footer.Site-footer
     form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
       div.Grid.Grid--bottom.Grid--gutters
         div.Grid-cell.Grid-cell--2of3
-          input(class="Form-input Form-input--text-newsletter" id="news_email" type="email" placeholder="email me with news updates" name="news_email" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
+          input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="email me with news updates" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
           p(class="Form-error--text" id="news_email_error")
         div.Grid-cell.Grid-cell--1of3
-          input(tyoe="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
+          input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
           label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") Sign Up!
 section.Footer-social
     ul.Grid-noWrap.Grid--justifyCenter
