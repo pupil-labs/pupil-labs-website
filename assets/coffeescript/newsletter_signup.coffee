@@ -1,11 +1,11 @@
 clearForm = ()->
   $("#mce-EMAIL").val('')
-  $("#mce-EMAIL").attr("placeholder","Success! Thanks for signing up.")
+  # $("#mce-EMAIL").attr("placeholder","Thanks for signing up.")
   $('label[for="newsletter-form-submit"]').removeClass("loading")     
-  $('label[for="newsletter-form-submit"]').attr('disabled',false)
-  $('label[for="newsletter-form-submit"]').text("Sign Up!")    
+  # $('label[for="newsletter-form-submit"]').attr('disabled',false)
+  $('label[for="newsletter-form-submit"]').text("Success!")    
 
-  $("#newsletter-form-submit").attr('disabled',false)      
+  # $("#newsletter-form-submit").attr('disabled',false)      
 
 newsletterSignup = ()->
   # bind jquery/ajax events here
