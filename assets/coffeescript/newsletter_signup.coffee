@@ -54,6 +54,6 @@ newsletterSignup = ()->
 
 
 $(document).ready ->
-  # bind jquery events to footer
-  newsletterSignup()
+  if $("#Home").length > 0
+    newsletterSignup()
 
