@@ -1,3 +1,12 @@
+clearForm = ()->
+  $("#mce-EMAIL").val('')
+  # $("#mce-EMAIL").attr("placeholder","Thanks for signing up.")
+  $('label[for="newsletter-form-submit"]').removeClass("loading")     
+  # $('label[for="newsletter-form-submit"]').attr('disabled',false)
+  $('label[for="newsletter-form-submit"]').text("Success!")    
+
+  # $("#newsletter-form-submit").attr('disabled',false)      
+
 newsletterSignup = ()->
   # bind jquery/ajax events here
   $("#newsletter-form").on "submit", (event)=>
@@ -30,20 +39,21 @@ newsletterSignup = ()->
         error: (jqXHR, textStatus, errorThrown) ->
           # console.warn "AJAX Error: #{textStatus}"
           if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
-              # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
-              # We continue anyways to the success page.
-              console.log "Successful AJAX call with Safari."
-              
+            # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
+            # We continue anyways to the success page.
+            console.log "Successful AJAX call with Safari."
+            clearForm()
+
         success: (data, textStatus, jqXHR) ->
-          console.log "Successful AJAX call: #{textStatus} - #{data.msg}"
-          $("#newsletter-form-submit").attr('disabled',false)
+          # console.log "Successful AJAX call: #{textStatus} - #{data.msg}" 
+          clearForm()
         complete: (jqXHR,textStatus) ->
           $('label[for="newsletter-form-submit"]').removeClass("loading")     
-
+    
 
 
 
 $(document).ready ->
-  # bind jquery events to footer
-  newsletterSignup()
+  if $("#Home").length > 0
+    newsletterSignup()
 

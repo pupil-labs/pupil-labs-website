@@ -1,7 +1,7 @@
 ---
 title: Design
 image: ../media/images/pupil_page/web/frame_flex.jpg
-order: 3
+order: 5
 ---
 
 A lot of design and engineering thought & energy has gone into getting the ergonomics of the headset just right.

@@ -1,6 +1,10 @@
 ---
 title: Internship
 order: 4
+<<<<<<< HEAD
+=======
+jobTitle: intern
+>>>>>>> master
 ---
 
 We are looking to hire paid interns to work at Pupil Labs. We are accepting internship applications on a rolling basis.

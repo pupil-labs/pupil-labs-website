@@ -1,12 +1,21 @@
 ---
+<<<<<<< HEAD
 title: Electrical Engineer (Full Time)
 order: 1
+=======
+title: Electrical Engineer
+order: 1
+jobTitle: electrical-engineer
+>>>>>>> master
 ---
 
 We are looking to hire an Electrical Engineer to join our Hardware Team in Berlin. 
 
 Who we are looking for
+<<<<<<< HEAD
 Who we are looking for
+=======
+>>>>>>> master
   + Qualification (Diploma or Bachelor’s Degree or higher) Electrical Engineering or equivalent
   + Has passion for hands-on work and assembly of electronics
   + Detail oriented, organized, and able to meet deadlines
@@ -16,6 +25,7 @@ Who we are looking for
     + Design of multi-layer PCB
     + Sourcing electronics parts and managing electronics stock
     + Proficiency in Eagle for PCB board design/layout
+<<<<<<< HEAD
     + Familiarity with high camera sensors
     + Familiarity with high speed USB 3.0 
     + Power consumption optimization, testing, and quality control
@@ -24,6 +34,16 @@ Who we are looking for
   
 Your responsibilities
   +  Hardware development for Pupil - camera based head wearable eye tracking and egocentric vision tools and other wearable HMD integrations
+=======
+    + Familiarity with camera sensors
+    + Familiarity with high speed USB 3.0 
+    + Power consumption optimization, testing, and quality control
+  + Language - must have a strong control of spoken and written English
+  + Location - work will be in our beautiful office in Berlin (Schoeneberg).
+  
+Your responsibilities
+  +  Hardware development for Pupil - camera based head wearable eye tracking and egocentric vision tools and other wearable and HMD integrations
+>>>>>>> master
   +  Assembly and management of electronics supply/stock
   +  Opportunity (commensurate with experience) to manage an assembly and fulfillment team 
   +  Hardware testing and quality control

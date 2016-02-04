@@ -1,7 +1,7 @@
 ---
 title: Technical Specifications & Performance
 image: ../media/images/pupil_page/web/technical_report.png
-order: 2
+order: 6
 ---
 
 Eye tracking performance is determined in equal parts by the hardware and software. 
