@@ -1,6 +1,6 @@
 ---
 title: Internship
-order: 1
+order: 4
 ---
 
 We are looking to hire paid interns to work at Pupil Labs. We are accepting internship applications on a rolling basis.
