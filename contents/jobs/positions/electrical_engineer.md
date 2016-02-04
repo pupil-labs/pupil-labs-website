@@ -1,6 +1,7 @@
 ---
-title: Electrical Engineer (Full Time)
+title: Electrical Engineer
 order: 1
+jobTitle: electrical-engineer
 ---
 
 We are looking to hire an Electrical Engineer to join our Hardware Team in Berlin. 

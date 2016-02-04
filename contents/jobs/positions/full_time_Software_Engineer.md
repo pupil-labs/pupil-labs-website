@@ -1,6 +1,7 @@
 ---
-title: Software Engineer (Full Time)
+title: Software Engineer
 order: 2
+jobTitle: software-engineer
 ---
 
 We are looking to hire a software engineer with experience in computer vision. Research and/or real world experience in computer vision applications is ideal. The position would involve working closely with a small team of designers and software engineers in the development of Pupil – mobile eye tracking framework.
