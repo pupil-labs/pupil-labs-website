@@ -1,10 +1,5 @@
 {
-  "Home": "/",
-  "Pupil": "/pupil",
-  "Store": "/store",
-  "Cart": "/cart",
   "About & Imprint": "/about",
   "Terms of Sale": "/tos",
-  "Jobs": "/jobs",
   "Blog": "/blog"
 }

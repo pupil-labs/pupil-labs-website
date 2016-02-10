@@ -1,6 +1,7 @@
 {
   "Pupil": "/pupil",
-  "Docs": "https://github.com/pupil-labs/pupil/wiki",
   "Store": "/store",
+  "Docs": "https://github.com/pupil-labs/pupil/wiki",
+  "Jobs": "/jobs",
   "Cart": "/cart"
 }
