@@ -8,11 +8,11 @@ We are looking to hire a software engineer with experience in computer vision. R
 
 Ideally you would work with us at our office in Berlin. However, we are willing to discuss remote collaborations. For remote work, we typically hold weekly video chats and would fly in remote employees for workshops at regular intervals throughout the year.
 
-We’re looking for a person with expertise in some or all of the following areas:
+We’re looking for someone who is highly self-motivated with expertise in some or all of the following areas:
 
 Background in Computer Vision
 
-  + Comfortable in Python & C
+  + Comfortable in Python & C++
   + Real-time data processing and sensor fusion
   + Experience working with or developing eye tracking algorithms
   + 3D location and reconstruction from Video (SfM, SLAM)
