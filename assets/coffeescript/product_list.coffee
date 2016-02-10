@@ -146,7 +146,7 @@ productList = [
         link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
       }
     ]  
-    order: 1
+    order: 4
   }, {
     id: "product_pupil_dev"
     cost: 380
@@ -159,6 +159,39 @@ productList = [
     img: "../media/images/additional_products/web/dev_iso.png"
     order: 0
   }, {
+    id: "product_oculus_mono"
+    cost: 800
+    label: "120hz eye camera add-on for Oculus Rift DK2"
+    specs: "120hz eye camera add-on brings eye tracking to the Oculus Rift DK2"
+    cartlabel: "120hz eye camera for Oculus Rift DK2"            
+    cartSpecs: "1 x 120hz eye IR eye camera and custom lens cup for Oculus Rift DK2."    
+    dimensions: 0
+    weight: 100
+    img: "https://placehold.it/200x200"
+    order: 1
+  }, {
+    id: "product_epson_bi"
+    cost: 1750
+    label: "120hz eye binocular eye camera add-ons and 120hz world camera for Epson Moverio BT-200"
+    specs: "120hz eye camera add-on turns Epson Moverio BT-200 into augmented reality + binocular eye tracking headset"
+    cartlabel: "Pupil binocular for Epson Moverio BT-200"            
+    cartSpecs: "2 x 120hz IR eye cameras, 1 x 120hz world camera, custom designed mounts for Epson Moverio BT-200"    
+    dimensions: 0
+    weight: 100
+    img: "https://placehold.it/200x200"
+    order: 2
+  }, {
+    id: "product_epson_mono"
+    cost: 800
+    label: "120hz eye monocular eye camera add-on for the Epson Moverio BT-200"
+    specs: "120hz eye camera add-on turns Epson Moverio BT-200 into augmented reality + binocular eye tracking headset"
+    cartlabel: "120hz eye camera for Epson Moverio BT-200"            
+    cartSpecs: "1 x 120hz IR eye camera and 1 x custom designed mount for Epson Moverio BT-200"    
+    dimensions: 0
+    weight: 100
+    img: "https://placehold.it/200x200"
+    order: 3
+  }, {    
     id: "product_support_6"
     cost: 1000
     label: "6 month support contract"
@@ -166,7 +199,7 @@ productList = [
     cartlabel: "Support contract"                
     cartSpecs: "6 month support contract. Email support and 4 videos support sessions."
     img: "../media/graphics/web/support_graphic_6mo_alt.svg"
-    order: 3
+    order: 5
   }, {
     id: "product_support_12"
     cost: 2000
@@ -175,7 +208,7 @@ productList = [
     cartlabel: "Support contract"            
     cartSpecs: "12 month support contract. Email support and 8 videos support sessions."
     img: "../media/graphics/web/support_graphic_12mo_alt.svg"
-    order: 4
+    order: 6
   }, {
     id: "license_academic"
     cost: -590
