@@ -7,7 +7,6 @@ jobTitle: electrical-engineer
 We are looking to hire an Electrical Engineer to join our Hardware Team in Berlin. 
 
 Who we are looking for
-=======
   + Qualification (Diploma or Bachelor’s Degree or higher) Electrical Engineering or equivalent
   + Has passion for hands-on work and assembly of electronics
   + Detail oriented, organized, and able to meet deadlines

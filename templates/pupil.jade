@@ -28,6 +28,7 @@ block main
     each feature, i in features
       - var rowType = (i%2 == 0 ? 'Grid Grid--1of2 Grid--center' : 'Grid Grid--1of2 Grid--center Grid--rowReverse')
       if feature.title === "Software"
+        a(class='anchor' name=feature.title.toLowerCase())
         - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
         - var bannerBkg = 'Banner-container--sm'
         - var bannerImg = feature.metadata.image
@@ -36,6 +37,7 @@ block main
       else if feature.title === "record-play"
         - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
         div.Grid.Grid--1of2.Aligner
+          a(class='anchor' name="software-download")
           each f in group 
             div.Grid-cell.Aligner-item--sm
               div.Feature.Feature--padded2.Aligner-item--column
@@ -55,12 +57,14 @@ block main
       else if feature.title === "community-license"
         - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
         div.Grid.Grid--1of2.Grid--top
+          a(class='anchor' name=feature.title.toLowerCase())
           each f in group 
             div.Grid-cell.u-padBottom--5
               div.Feature.Feature--padded2
                 h1.Feature-title--lg.u-textCenter= f.title
                 h2.Feature-subtitle!= f.html
       else
+        a(class='anchor' name=feature.title.toLowerCase().replace(/[^A-Z0-9]+/ig, "-"))
         div(class=rowType)
           div.Grid-cell
             div.Feature
