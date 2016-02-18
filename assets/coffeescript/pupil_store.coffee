@@ -533,10 +533,9 @@ class PupilStore
   postalCodeValidator: ->
     if $(@cartPage).length > 0
       window.ParsleyValidator.addValidator('postalcodevalidator', ((value, requirement) ->
-        # get formats
-        # postal codes are always digits, chars, hyphens and whitespace
         requirements = requirement.toString().split(',')
         tests = []
+        # ideally this should be a function (but can not call/return from fn within this fn)
         for r in requirements 
           exp = '('
           for c in r.trim().split("")
@@ -549,9 +548,6 @@ class PupilStore
           exp += ')$'
           exp = new RegExp(exp,'g')
           tests.push(exp.test(value))
-        # build regex following patterns
-        # use regex.test(x) to see if value works
-        # return true/false
         return true in tests
       )).addMessage 'en', 'postalcodevalidator', 'Postal code should follow the pattern: %s'
 
