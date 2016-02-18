@@ -35,7 +35,7 @@ div.Cart-orderForm-container
               input(class="Form-input Form-input--text" id="phone_b" type="text" placeholder="phone number" name="phone_b" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-phone--error")
               p(class="Form-error--text" id="b-phone--error")
           div.Grid-cell
-            input(class="Form-input Form-input--text" id="country_b" name="country_b" placeholder='country' list="country" required data-parsley-countryvalidator="na" data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error")
+            input(class="Form-input Form-input--text" id="country_b" name="country_b" placeholder='country' list="country" required data-parsley-countryvalidator="postalCode_b" data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error")
             p(class="Form-error--text" id="b-country--error")
             datalist(id="country")
               each val,key in countryObj
@@ -45,7 +45,7 @@ div.Cart-orderForm-container
               textarea(class="Form-input Form-input--text Form-input--textarea" id="address_b" placeholder="billing address" name="address_b" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
               p(class="Form-error--text" id="b-address--error")
             div.Grid-cell
-              input(class="Form-input Form-input--text" id="postalCode_b" type="text" placeholder="postal code" name="postalCode_b" data-parsley-trigger="focusout" data-parsley-errors-container="#b-postalCode--error")
+              input(class="Form-input Form-input--text" id="postalCode_b" type="text" placeholder="postal code" name="postalCode_b" data-parsley-postalcodevalidator=0 data-parsley-trigger="focusout" data-parsley-errors-container="#b-postalCode--error")
               p(class="Form-error--text" id="b-postalCode--error")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
@@ -78,7 +78,7 @@ div.Cart-orderForm-container
               input(class="Form-input Form-input--text" id="phone_s" type="text" placeholder="phone number" name="phone_s" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-phone--error")
               p(class="Form-error--text" id="s-phone--error")
           div.Grid-cell
-            input(class="Form-input Form-input--text" id="country_s" name="country_s" placeholder='country' list="country" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-country--error")
+            input(class="Form-input Form-input--text" id="country_s" name="country_s" placeholder='country' list="country" required data-parsley-countryvalidator="postalCode_s" data-parsley-trigger="focusout" data-parsley-errors-container="#s-country--error")
             p(class="Form-error--text" id="s-country--error")
             datalist(id="country")
               each val,key in countryObj
@@ -88,7 +88,7 @@ div.Cart-orderForm-container
               textarea(class="Form-input Form-input--text Form-input--textarea" id="address_s" placeholder="shipping address" name="address_s" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-address--error")
               p(class="Form-error--text" id="s-address--error")
             div.Grid-cell
-              input(class="Form-input Form-input--text" id="postalCode_s" type="text" placeholder="postal code" name="postalCode_s" data-parsley-trigger="focusout" data-parsley-errors-container="#s-postalCode--error")
+              input(class="Form-input Form-input--text" id="postalCode_s" type="text" placeholder="postal code" name="postalCode_s" data-parsley-postalcodevalidator=0 data-parsley-trigger="focusout" data-parsley-errors-container="#s-postalCode--error")
               p(class="Form-error--text" id="s-postalCode--error")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell

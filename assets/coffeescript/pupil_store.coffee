@@ -47,7 +47,7 @@ class PupilStore
       @eventGenerateOrderLink()
       @eventOrderLinkSuccessPage()
       @countryValidator()
-
+      @postalCodeValidator()
 
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -475,6 +475,7 @@ class PupilStore
           # add countryIso to form data
           $("input[id='countryIso_b']").val(countryList[$("input[id='country_b']").val()].countryISO)
           $("input[id='countryIso_s']").val(countryList[$("input[id='country_s']").val()].countryISO)
+          
           # add order object to a hidden form text area
           orders = []
           keys = [k for k,v in LocalStorage.dict()]
@@ -482,9 +483,9 @@ class PupilStore
             orders.push v
           $("textarea[id='cartObject']").val(JSON.stringify(orders))
           formData = $(form).serialize()
-          # sandbox_url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
+
           ops_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
-          # prod_url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
+          prod_url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
           url = ops_url
 
           $.ajax
@@ -510,14 +511,36 @@ class PupilStore
   countryValidator: ->
     if $(@cartPage).length > 0
       window.ParsleyValidator.addValidator('countryvalidator', ((value, requirement) ->
-        return value of countryList
+        validity = value of countryList
+        if validity
+          # check if required
+          country = countryList[value]
+          if country.usesPostalCode
+            $("input[id=#{requirement}]")
+            .prop("placeholder","postal code (e.g. #{country.postalCodeFormat})")
+            .prop("disabled",false)
+            .prop("required", true)
+            .attr("data-parsley-postalcodevalidator","#{country.postalCodeFormat}")
+          else
+            $("input[id=#{requirement}]")
+            .prop("placeholder","postal code (not required for #{country.countryISO})")
+            .prop("required", false)
+            .prop("disabled",true)
+
+        return validity
       )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
 
   postalCodeValidator: ->
     if $(@cartPage).length > 0
       window.ParsleyValidator.addValidator('postalcodevalidator', ((value, requirement) ->
-        return value of countryList
-      )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
+        # get formats
+        # postal codes are always digits, chars, hyphens and whitespace
+        console.log "#{requirement}"
+        # build regex following patterns
+        # use regex.test(x) to see if value works
+        # return true/false
+        return false
+      )).addMessage 'en', 'postalcodevalidator', 'Postal code should follow the pattern: %s'
 
 
   eventGenerateOrderLink: ->

@@ -854,9 +854,9 @@ countryList =
     'postalCodeLenMin': 6
     'postalCodeLenMax': 6
     'postalCodeLenVariance': 0
-  'Iraq                          ':
+  'Iraq':
     'countryISO': 'IQ'
-    'countryName': 'Iraq                          '
+    'countryName': 'Iraq'
     'locationFormat': 'City'
     'usesPostalCode': false
     'postalCodeFormat': null
@@ -998,9 +998,9 @@ countryList =
     'postalCodeLenMin': 7
     'postalCodeLenMax': 7
     'postalCodeLenVariance': 0
-  'Kosovo                          ':
+  'Kosovo':
     'countryISO': 'KV'
-    'countryName': 'Kosovo                          '
+    'countryName': 'Kosovo'
     'locationFormat': 'City'
     'usesPostalCode': true
     'postalCodeFormat': '99999'
@@ -1520,9 +1520,9 @@ countryList =
     'postalCodeLenMin': 4
     'postalCodeLenMax': 8
     'postalCodeLenVariance': 4
-  'Palau                         ':
+  'Palau':
     'countryISO': 'PW'
-    'countryName': 'Palau                         '
+    'countryName': 'Palau'
     'locationFormat': 'City Postcode'
     'usesPostalCode': true
     'postalCodeFormat': '99999'
@@ -1565,9 +1565,9 @@ countryList =
     'postalCodeLenMin': 6
     'postalCodeLenMax': 6
     'postalCodeLenVariance': 0
-  'Serbia, Republic of        ':
+  'Serbia, Republic of':
     'countryISO': 'RS'
-    'countryName': 'Serbia, Republic of        '
+    'countryName': 'Serbia, Republic of'
     'locationFormat': 'City'
     'usesPostalCode': true
     'postalCodeFormat': '99999'
@@ -1682,9 +1682,9 @@ countryList =
     'postalCodeLenMin': 0
     'postalCodeLenMax': 0
     'postalCodeLenVariance': 0
-  'San Marino                       ':
+  'San Marino':
     'countryISO': 'SM'
-    'countryName': 'San Marino                       '
+    'countryName': 'San Marino'
     'locationFormat': 'City'
     'usesPostalCode': true
     'postalCodeFormat': '99999'
@@ -1903,7 +1903,7 @@ countryList =
     'countryName': 'United States Of America'
     'locationFormat': 'City Postcode'
     'usesPostalCode': true
-    'postalCodeFormat': '99999, 99999-9999'
+    'postalCodeFormat': '99999,99999-9999'
     'postalCodeLenMin': 5
     'postalCodeLenMax': 10
     'postalCodeLenVariance': 5
