@@ -502,31 +502,13 @@ class PupilStore
             complete: (jqXHR,textStatus) ->
               $('label[for="form-submit"]').removeClass("loading")    
 
+
   countryValidator: ->
     if $(@cartPage).length > 0
-      $("input[id^='country_']").on "focusout", (event)=>
-        console.log "I'm inside country validator"
-        event.preventDefault()
-        input = $(event.target)
-        parsleyid = "parsley-id-"+input.data("parsley-id")
-        console.log parsleyid
-        errorContainer = input.data("parsley-errors-container")
-        errorId = 'parse-country-'+input.data("parsley-id")
-        errorMsg = "<li id='#{errorId}'>Please select a country from the list.</li>"
-        console.log errorContainer
-        if input.val() of countryList
-          if $("li[id='#{errorId}']").length > 0
-            $("li[id='#{errorId}']").remove()
-          if input.hasClass("parsley-success")
-            $("ul[id='#{parsleyid}']").remove()
-        else
-          if $("li[id='#{errorId}']").length < 1
-            if input.hasClass("parsley-error")
-              $("ul[id='#{parsleyid}']").append("#{errorMsg}")
-            else if input.hasClass("parsley-success")
-              # change back to error class
-              input.removeClass("parsley-success").addClass("parsley-error")
-              $("#{ errorContainer }").append("<ul class='parsley-errors-list filled' id='#{parsleyid}'></ul>").append("#{errorMsg}")          
+      window.ParsleyValidator.addValidator('countryvalidator', ((value, requirement) ->
+        return value of countryList
+      )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
+
 
   eventGenerateOrderLink: ->
     if $(@cartPage).length > 0 
