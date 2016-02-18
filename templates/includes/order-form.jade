@@ -49,8 +49,8 @@ div.Cart-orderForm-container
               input(class="Form-input Form-input--text" id="b_country" name="b_country" placeholder='country' list="country" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error")
               p(class="Form-error--text" id="b-country--error")
               datalist(id="country")
-                each country in countryList
-                  option(value=country['countryName'])
+                each val,key in countryObj
+                  option(value=key)
 
       //- shipping
       div.Grid-cell
