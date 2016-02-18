@@ -405,14 +405,14 @@ class PupilStore
 
   eventCopyBillingToShipping: ->
     if $(@cartPage).length > 0
-      $("[id^='b_']").change (event)=>
+      $("[id$='_b']").change (event)=>
         event.preventDefault()
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('_').pop()
+        type = fieldId.split('_').shift()
         try
-          sField = "s_"+type
+          sField = type+"_s"
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
@@ -479,7 +479,9 @@ class PupilStore
           $("textarea[class='Form-input--cart']").val(JSON.stringify(orders))
           formData = $(form).serialize()
           # sandbox_url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
-          url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
+          ops_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
+          # prod_url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
+          url = ops_url
 
           $.ajax
             type: 'POST'
@@ -502,17 +504,30 @@ class PupilStore
 
   countryValidator: ->
     if $(@cartPage).length > 0
-      $("input[id='b_country']").on "focusout", (event)=>
+      $("input[id^='country_']").on "focusout", (event)=>
         console.log "I'm inside country validator"
         event.preventDefault()
         input = $(event.target)
+        parsleyid = "parsley-id-"+input.data("parsley-id")
+        console.log parsleyid
+        errorContainer = input.data("parsley-errors-container")
+        errorId = 'parse-country-'+input.data("parsley-id")
+        errorMsg = "<li id='#{errorId}'>Please select a country from the list.</li>"
+        console.log errorContainer
         if input.val() of countryList
-          console.log "got a legit country"
+          if $("li[id='#{errorId}']").length > 0
+            $("li[id='#{errorId}']").remove()
+          if input.hasClass("parsley-success")
+            $("ul[id='#{parsleyid}']").remove()
         else
-          console.log "not a valid country in our list"
-          # show an error
-          $("#b-country--error").html("Please chose a country from the list")
-  
+          if $("li[id='#{errorId}']").length < 1
+            if input.hasClass("parsley-error")
+              $("ul[id='#{parsleyid}']").append("#{errorMsg}")
+            else if input.hasClass("parsley-success")
+              # change back to error class
+              input.removeClass("parsley-success").addClass("parsley-error")
+              $("#{ errorContainer }").append("<ul class='parsley-errors-list filled' id='#{parsleyid}'></ul>").append("#{errorMsg}")          
+
   eventGenerateOrderLink: ->
     if $(@cartPage).length > 0 
       $("#Nav-cart").click (event)=>
