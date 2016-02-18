@@ -573,7 +573,7 @@ class PupilStore
 
   _setOrderType: ->
     activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()
-    $("input[od='orderType']").val(activeId.toLowerCase())
+    $("input[id='o_type']").val(activeId.toLowerCase())
 
   _setActiveState: (links)->
     for link in links
