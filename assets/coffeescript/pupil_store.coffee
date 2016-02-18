@@ -535,12 +535,39 @@ class PupilStore
       window.ParsleyValidator.addValidator('postalcodevalidator', ((value, requirement) ->
         # get formats
         # postal codes are always digits, chars, hyphens and whitespace
-        console.log "#{requirement}"
+        requirements = requirement.split(',')
+        console.log typeof requirements[0]
+        exp = '/^'
+        for c in requirements[0].trim().split("")
+          fragment = switch
+            when c is "A" then '[aA-zZ]{1}'
+            when c is "9" then '[0-9]{1}'
+            when c is "-" then '\\-{1}'
+            when c is " " then '\\s{1}'
+          exp += fragment
+        exp += '/g'
+        console.log(exp)
         # build regex following patterns
         # use regex.test(x) to see if value works
         # return true/false
         return false
       )).addMessage 'en', 'postalcodevalidator', 'Postal code should follow the pattern: %s'
+
+  regexPatternBuilder: (str)->
+    console.log str
+    console.log str.trim()
+    console.log string.trim().split('')
+    exp = '/^'
+    for c in str.trim().split("")
+      fragment = switch
+        when c is "A" then '[aA-zZ]{1}'
+        when c is "9" then '[0-9]{1}'
+        when c is "-" then '\\-{1}'
+        when c is " " then '\\s{1}'
+      exp += fragment
+    exp += '/g'
+    console.log(exp)
+    return exp
 
 
   eventGenerateOrderLink: ->
