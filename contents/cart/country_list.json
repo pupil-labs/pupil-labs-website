@@ -1041,9 +1041,9 @@
   "countryName":"Suriname",
   "locationFormat":"City",
   "usesPostalCode":false,"postalCodeFormat":null,"postalCodeLenMin":0,"postalCodeLenMax":0,"postalCodeLenVariance":0},
-"SOUTH SUDAN":
+"South Sudan":
   {"countryISO":"SS",
-  "countryName":"SOUTH SUDAN",
+  "countryName":"South Sudan",
   "locationFormat":"City",
   "usesPostalCode":false,"postalCodeFormat":null,"postalCodeLenMin":0,"postalCodeLenMax":0,"postalCodeLenVariance":0},
 "Sao Tome and Principe":

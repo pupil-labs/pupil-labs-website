@@ -1,6 +1,5 @@
 //- see http://peric.github.io/GetCountries/
 - var countryObj = contents.cart['country_list.json'].metadata
-- var countryList = countryObj['countries']
 //- contact
 div.Cart-orderForm-container
   form(id="order-form" data-parsley-validate data-parsley-focus="first")
@@ -28,29 +27,33 @@ div.Cart-orderForm-container
             h4 Billing Info
         //- wrapper for billing inputs
         div.Form-billing-container
-          div.Grid.Grid--gutters.Grid--1of2
+          div.Grid.Grid--gutters.Grid--1of2              
             div.Grid-cell
               input(class="Form-input Form-input--text" id="b_name" type="text" placeholder="name" name="b_name" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-name--error")
               p(class="Form-error--text" id="b-name--error")
             div.Grid-cell
               input(class="Form-input Form-input--text" id="b_phone" type="text" placeholder="phone number" name="b_phone" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-phone--error")
               p(class="Form-error--text" id="b-phone--error")
+          div.Grid-cell
+            input(class="Form-input Form-input--text" id="b_country" name="b_country" placeholder='country' list="country" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error")
+            p(class="Form-error--text" id="b-country--error")
+            datalist(id="country")
+              each val,key in countryObj
+                option(value=key)
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="b_address" placeholder="billing address" name="b_address" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
+              p(class="Form-error--text" id="b-address--error")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="b_postalCode" type="text" placeholder="postal code" name="b_postalCode" data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
+              p(class="Form-error--text" id="b-address--error")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
               input(class="Form-input Form-input--text" id="b_company" type="text" placeholder="(optional) company or institution" name="b_company")
             div.Grid-cell
               input(class="Form-input Form-input--text" id="b_vatid" type="text" placeholder="(optional - EU only) VAT ID " name="b_vatid")
               p(class="Form-error--text" id="b-vatId--error")
-          div.Grid.Grid--gutters.Grid--1of2
-            div.Grid-cell
-              textarea(class="Form-input Form-input--text Form-input--textarea" id="b_address" placeholder="billing address" name="b_address" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
-              p(class="Form-error--text" id="b-address--error")
-            div.Grid-cell
-              input(class="Form-input Form-input--text" id="b_country" name="b_country" placeholder='country' list="country" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error")
-              p(class="Form-error--text" id="b-country--error")
-              datalist(id="country")
-                each val,key in countryObj
-                  option(value=key)
+
 
       //- shipping
       div.Grid-cell

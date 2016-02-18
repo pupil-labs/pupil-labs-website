@@ -46,6 +46,7 @@ class PupilStore
       @eventSubmitForm()
       @eventGenerateOrderLink()
       @eventOrderLinkSuccessPage()
+      @countryValidator()
 
 
   eventStorePageInit: ->
@@ -499,6 +500,19 @@ class PupilStore
             complete: (jqXHR,textStatus) ->
               $('label[for="form-submit"]').removeClass("loading")    
 
+  countryValidator: ->
+    if $(@cartPage).length > 0
+      $("input[id='b_country']").on "focusout", (event)=>
+        console.log "I'm inside country validator"
+        event.preventDefault()
+        input = $(event.target)
+        if input.val() of countryList
+          console.log "got a legit country"
+        else
+          console.log "not a valid country in our list"
+          # show an error
+          $("#b-country--error").html("Please chose a country from the list")
+  
   eventGenerateOrderLink: ->
     if $(@cartPage).length > 0 
       $("#Nav-cart").click (event)=>
