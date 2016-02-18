@@ -471,12 +471,16 @@ class PupilStore
           $("#form-submit").attr('disabled',true)
           @resetActivePaymentRadio()
           @_setOrderType()
+
+          # add countryIso to form data
+          $("input[id='countryIso_b']").val(countryList[$("input[id='country_b']").val()].countryISO)
+          $("input[id='countryIso_s']").val(countryList[$("input[id='country_s']").val()].countryISO)
           # add order object to a hidden form text area
           orders = []
           keys = [k for k,v in LocalStorage.dict()]
           for k,v of LocalStorage.dict()
             orders.push v
-          $("textarea[class='Form-input--cart']").val(JSON.stringify(orders))
+          $("textarea[id='cartObject']").val(JSON.stringify(orders))
           formData = $(form).serialize()
           # sandbox_url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
           ops_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
@@ -506,6 +510,12 @@ class PupilStore
   countryValidator: ->
     if $(@cartPage).length > 0
       window.ParsleyValidator.addValidator('countryvalidator', ((value, requirement) ->
+        return value of countryList
+      )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
+
+  postalCodeValidator: ->
+    if $(@cartPage).length > 0
+      window.ParsleyValidator.addValidator('postalcodevalidator', ((value, requirement) ->
         return value of countryList
       )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
 
@@ -563,7 +573,7 @@ class PupilStore
 
   _setOrderType: ->
     activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()
-    $("input[class='Form-input--orderType']").val(activeId.toLowerCase())
+    $("input[od='orderType']").val(activeId.toLowerCase())
 
   _setActiveState: (links)->
     for link in links
