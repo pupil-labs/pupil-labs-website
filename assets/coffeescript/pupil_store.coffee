@@ -542,17 +542,21 @@ class PupilStore
         tests = []
         # ideally this should be a function (but can not call/return from fn within this fn)
         for r in requirements 
-          exp = '('
+          exp = '^('
           for c in r.trim().split("")
             fragment = switch
               when c is "A" then '[aA-zZ]{1}'
-              when c is "9" then '[0-9]{1}'
+              when c is "9" then '\\d{1}'
               when c is "-" then '\\-{1}'
               when c is " " then '\\s{1}'
             exp += fragment
           exp += ')$'
-          exp = new RegExp(exp,'g')
+          exp = new RegExp(exp)
+          console.log "exp: " + exp
+
           tests.push(exp.test(value))
+        console.log "tests: " + tests
+
         return true in tests
       )).addMessage 'en', 'postalcodevalidator', 'Postal code should follow the pattern: %s'
 

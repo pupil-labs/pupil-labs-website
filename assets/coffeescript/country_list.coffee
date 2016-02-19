@@ -1863,19 +1863,3 @@ countryList =
     postalCodeFormat: null
     capitalCity: 'Harare'
     inEU: false
-
-
-# countryList[k].countryISO for k,v of countryList when countryList[k].countryISO in Object.keys(capitals) 
-# updateCountryList = (countryList)->
-#     for k, v of countryList
-#         if countryList[k].countryISO in Object.keys(capitals)
-#             countryList[k].capitalCity = capitals[countryList[k].countryISO]
-#         else
-#             countryList[k].capitalCity = null
-        
-#         if countryList[k].countryISO in eu
-#             countryList[k].inEU = true
-#         else 
-#             countryList[k].inEU = false
-
-#     countryList
