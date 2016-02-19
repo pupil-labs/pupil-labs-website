@@ -515,7 +515,8 @@ class PupilStore
       window.ParsleyValidator.addValidator('countryvalidator', ((value, requirement) ->
         validity = value of countryList
         if validity
-          # check if required
+          
+          # check if country uses a postalCode and update for pattern
           country = countryList[value]
           if country.usesPostalCode
             $("input[id=#{requirement}]")
@@ -531,6 +532,7 @@ class PupilStore
 
         return validity
       )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
+
 
   postalCodeValidator: ->
     if $(@cartPage).length > 0

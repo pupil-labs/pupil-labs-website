@@ -1270,7 +1270,7 @@ countryList =
     'countryName': 'United States Of America'
     'locationFormat': 'City Postcode'
     'usesPostalCode': true
-    'postalCodeFormat': '99999,99999-9999'
+    'postalCodeFormat': '99999, 99999-9999'
   'Uruguay':
     'countryISO': 'UY'
     'countryName': 'Uruguay'
@@ -1397,3 +1397,4 @@ countryList =
     'locationFormat': 'Postcode'
     'usesPostalCode': false
     'postalCodeFormat': null
+    
