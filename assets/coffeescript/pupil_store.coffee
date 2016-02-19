@@ -528,6 +528,7 @@ class PupilStore
             $("input[id=#{requirement}]")
             .prop("placeholder","postal code (not required for #{country.countryISO})")
             .prop("required", false)
+            .val("")
             .prop("disabled",true)
 
         return validity
