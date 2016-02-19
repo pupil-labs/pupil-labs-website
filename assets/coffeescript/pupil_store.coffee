@@ -427,6 +427,8 @@ class PupilStore
           # clear all the values of the inputs        
           $("label[for='#{ buttonId }']").addClass('Button--state-active')
           $("label[for='s-toggle-copy']").removeClass('Button--state-active')
+          $("input[id='postalCode_s']")
+          .attr("data-parsley-postalcodevalidator","#{$("input[id='postalCode_b']").data('parsley-postalcodevalidator')}")
           $(".Form-shipping-container").fadeIn()
         else
           $("label[for='#{ buttonId }']").addClass('Button--state-active')
