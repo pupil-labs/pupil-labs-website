@@ -181,7 +181,7 @@ productList = [
     img: "../media/images/additional_products/web/addon_oculus_dk2.png"
     order: 2
   }, {
-    id: "product_epson_mono"
+    id: "product_epson_bi"
     cost: 350
     label: "Epson Moverio BT-200 Binocular Mount Add-on"
     specs: "2 x camera mounts for Epson Moverio BT-200 with cables. Use with 120hz eye camera upgrade or existing 120hz eye camera from Pupil."
