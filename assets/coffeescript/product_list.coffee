@@ -189,7 +189,7 @@ productList = [
     cartSpecs: "2 x camera mounts for Epson Moverio BT-200 with cables for 120hz cameras. Use with 120hz eye camera upgrade or existing 120hz eye camera from Pupil."    
     dimensions: 0
     weight: 20
-    img: "../media/images/additional_products/web/addon_epson_bt200.png"
+    img: "../media/images/additional_products/web/addon_epson_bt200a.png"
     order: 3
   }, {    
     id: "product_support_6"
