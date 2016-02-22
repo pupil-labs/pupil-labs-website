@@ -161,10 +161,10 @@ productList = [
   }, {
     id: "product_oculus_mono"
     cost: 800
-    label: "Oculus Rift DK2 Monocular Add-on"
-    specs: "120hz monocular eye tracking add-on for Oculus Rift DK2. Includes 1 x 120hz eye cameras and USB cables."
-    cartlabel: "Oculus Rift DK2 Monocular Add-on"            
-    cartSpecs: "1 x 120hz eye tracking add-on for Oculus Rift DK2. Includes 1 x 120hz eye cameras and USB cables."    
+    label: "Oculus Rift DK2 Monocular Add-on Cup"
+    specs: "Add eye tracking to your Oculus Rift DK2 with our 120hz monocular eye tracking add-on. Includes one custom lens cup with: IR mirror, IR LEDs, 1 x 120 Hz eye camera, and USB cables."
+    cartlabel: "Oculus Rift DK2 Monocular Add-on Cup"            
+    cartSpecs: "1 x 120hz eye tracking add-on cup for Oculus Rift DK2. Includes one custom lens cup with: IR mirror, IR LEDs, 1 x 120 Hz eye camera, and USB cables."    
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/addon_oculus_dk2.png"
@@ -172,10 +172,10 @@ productList = [
   }, {
     id: "product_oculus_bi"
     cost: 1400
-    label: "Oculus Rift DK2 Binocular Add-on"
-    specs: "120hz binocular eye tracking add-on for Oculus Rift DK2. Includes 2 x 120hz eye cameras and USB cables."
+    label: "Oculus Rift DK2 Binocular Add-on Cups"
+    specs: "Add binocular eye tracking to your Oculus Rift DK2 with our 120hz monocular eye tracking add-on. Includes two custom lens cups with: IR mirors, IR LEDs, 2 x 120 Hz eye camera, and USB cables."
     cartlabel: "Oculus Rift DK2 Binocular Add-on"            
-    cartSpecs: "2 x 120hz eye tracking add-on for Oculus Rift DK2. Includes 2 x 120hz eye cameras and USB cables."    
+    cartSpecs: "2 x 120hz eye tracking add-on cups for Oculus Rift DK2. Includes two custom lens cups with: IR mirors, IR LEDs, 2 x 120 Hz eye camera, and USB cables."    
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/addon_oculus_dk2.png"
