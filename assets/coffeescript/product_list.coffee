@@ -161,34 +161,34 @@ productList = [
   }, {
     id: "product_oculus_mono"
     cost: 800
-    label: "120hz eye camera add-on for Oculus Rift DK2"
-    specs: "120hz eye camera add-on brings eye tracking to the Oculus Rift DK2"
-    cartlabel: "120hz eye camera for Oculus Rift DK2"            
-    cartSpecs: "1 x 120hz eye IR eye camera and custom lens cup for Oculus Rift DK2."    
+    label: "Oculus Rift DK2 Monocular Add-on"
+    specs: "120hz monocular eye tracking add-on for Oculus Rift DK2. Includes 1 x 120hz eye cameras and USB cables."
+    cartlabel: "Monocular Eye Tracking add-on for Oculus Rift DK2"            
+    cartSpecs: "1 x 120hz eye tracking add-on for Oculus Rift DK2."    
     dimensions: 0
-    weight: 100
-    img: "https://placehold.it/200x200"
+    weight: 20
+    img: "../media/additional_products/web/addon_oculus_dk2.png"
     order: 1
   }, {
-    id: "product_epson_bi"
-    cost: 1750
-    label: "120hz eye binocular eye camera add-ons and 120hz world camera for Epson Moverio BT-200"
-    specs: "120hz eye camera add-on turns Epson Moverio BT-200 into augmented reality + binocular eye tracking headset"
-    cartlabel: "Pupil binocular for Epson Moverio BT-200"            
+    id: "product_oculus_bi"
+    cost: 1400
+    label: "Oculus Rift DK2 Binocular Add-on"
+    specs: "120hz binocular eye tracking add-on for Oculus Rift DK2. Includes 2 x 120hz eye cameras and USB cables."
+    cartlabel: "Pupil Binocular for Oculus Rift DK2"            
     cartSpecs: "2 x 120hz IR eye cameras, 1 x 120hz world camera, custom designed mounts for Epson Moverio BT-200"    
     dimensions: 0
-    weight: 100
-    img: "https://placehold.it/200x200"
+    weight: 20
+    img: "../media/additional_products/web/addon_oculus_dk2.png"
     order: 2
   }, {
     id: "product_epson_mono"
-    cost: 800
-    label: "120hz eye monocular eye camera add-on for the Epson Moverio BT-200"
-    specs: "120hz eye camera add-on turns Epson Moverio BT-200 into augmented reality + binocular eye tracking headset"
-    cartlabel: "120hz eye camera for Epson Moverio BT-200"            
-    cartSpecs: "1 x 120hz IR eye camera and 1 x custom designed mount for Epson Moverio BT-200"    
+    cost: 350
+    label: "Epson Moverio BT-200 Binocular Mount Add-on"
+    specs: "2 x camera mounts for Epson Moverio BT-200 with cables. Use with 120hz eye camera upgrade or existing 120hz eye camera from Pupil."
+    cartlabel: "Epson Moverio BT-200 eye camera mounts"            
+    cartSpecs: "2 x camera mounts for Epson Moverio BT-200 with cables for 120hz cameras. Use with 120hz eye camera upgrade or existing 120hz eye camera from Pupil."    
     dimensions: 0
-    weight: 100
+    weight: 20
     img: "https://placehold.it/200x200"
     order: 3
   }, {    
