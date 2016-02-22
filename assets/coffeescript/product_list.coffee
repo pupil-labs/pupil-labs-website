@@ -163,8 +163,8 @@ productList = [
     cost: 800
     label: "Oculus Rift DK2 Monocular Add-on"
     specs: "120hz monocular eye tracking add-on for Oculus Rift DK2. Includes 1 x 120hz eye cameras and USB cables."
-    cartlabel: "Monocular Eye Tracking add-on for Oculus Rift DK2"            
-    cartSpecs: "1 x 120hz eye tracking add-on for Oculus Rift DK2."    
+    cartlabel: "Oculus Rift DK2 Monocular Add-on"            
+    cartSpecs: "1 x 120hz eye tracking add-on for Oculus Rift DK2. Includes 1 x 120hz eye cameras and USB cables."    
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/addon_oculus_dk2.png"
@@ -174,8 +174,8 @@ productList = [
     cost: 1400
     label: "Oculus Rift DK2 Binocular Add-on"
     specs: "120hz binocular eye tracking add-on for Oculus Rift DK2. Includes 2 x 120hz eye cameras and USB cables."
-    cartlabel: "Pupil Binocular for Oculus Rift DK2"            
-    cartSpecs: "2 x 120hz IR eye cameras, 1 x 120hz world camera, custom designed mounts for Epson Moverio BT-200"    
+    cartlabel: "Oculus Rift DK2 Binocular Add-on"            
+    cartSpecs: "2 x 120hz eye tracking add-on for Oculus Rift DK2. Includes 2 x 120hz eye cameras and USB cables."    
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/addon_oculus_dk2.png"
