@@ -146,7 +146,7 @@ productList = [
         link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
       }
     ]  
-    order: 1
+    order: 4
   }, {
     id: "product_pupil_dev"
     cost: 380
@@ -159,6 +159,39 @@ productList = [
     img: "../media/images/additional_products/web/dev_iso.png"
     order: 0
   }, {
+    id: "product_oculus_mono"
+    cost: 800
+    label: "Oculus Rift DK2 Monocular Add-on Cup"
+    specs: "Add eye tracking to your Oculus Rift DK2 with our 120hz monocular eye tracking add-on. Includes one custom lens cup with: IR mirror, IR LEDs, 1 x 120 Hz eye camera, and USB cables."
+    cartlabel: "Oculus Rift DK2 Monocular Add-on Cup"            
+    cartSpecs: "1 x 120hz eye tracking add-on cup for Oculus Rift DK2. Includes one custom lens cup with: IR mirror, IR LEDs, 1 x 120 Hz eye camera, and USB cables."    
+    dimensions: 0
+    weight: 20
+    img: "../media/images/additional_products/web/addon_oculus_dk2.png"
+    order: 1
+  }, {
+    id: "product_oculus_bi"
+    cost: 1400
+    label: "Oculus Rift DK2 Binocular Add-on Cups"
+    specs: "Add binocular eye tracking to your Oculus Rift DK2 with our 120hz monocular eye tracking add-on. Includes two custom lens cups with: IR mirors, IR LEDs, 2 x 120 Hz eye camera, and USB cables."
+    cartlabel: "Oculus Rift DK2 Binocular Add-on"            
+    cartSpecs: "2 x 120hz eye tracking add-on cups for Oculus Rift DK2. Includes two custom lens cups with: IR mirors, IR LEDs, 2 x 120 Hz eye camera, and USB cables."    
+    dimensions: 0
+    weight: 20
+    img: "../media/images/additional_products/web/addon_oculus_dk2.png"
+    order: 2
+  }, {
+    id: "product_epson_bi"
+    cost: 350
+    label: "Epson Moverio BT-200 Binocular Mount Add-on"
+    specs: "2 x camera mounts for Epson Moverio BT-200 with cables. Use with 120hz eye camera upgrade or existing 120hz eye camera from Pupil."
+    cartlabel: "Epson Moverio BT-200 eye camera mounts"            
+    cartSpecs: "2 x camera mounts for Epson Moverio BT-200 with cables for 120hz cameras. Use with 120hz eye camera upgrade or existing 120hz eye camera from Pupil."    
+    dimensions: 0
+    weight: 20
+    img: "../media/images/additional_products/web/addon_epson_bt200a.png"
+    order: 3
+  }, {    
     id: "product_support_6"
     cost: 1000
     label: "6 month support contract"
@@ -166,7 +199,7 @@ productList = [
     cartlabel: "Support contract"                
     cartSpecs: "6 month support contract. Email support and 4 videos support sessions."
     img: "../media/graphics/web/support_graphic_6mo_alt.svg"
-    order: 3
+    order: 5
   }, {
     id: "product_support_12"
     cost: 2000
@@ -175,7 +208,7 @@ productList = [
     cartlabel: "Support contract"            
     cartSpecs: "12 month support contract. Email support and 8 videos support sessions."
     img: "../media/graphics/web/support_graphic_12mo_alt.svg"
-    order: 4
+    order: 6
   }, {
     id: "license_academic"
     cost: -590
