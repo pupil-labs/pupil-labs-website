@@ -24,3 +24,5 @@ We use an IR mirror with IR illumination so that your view of the VR environment
 <img src="../../../../media/images/additional_products/web/addon_epson_bt200a.png" class='Feature-image' alt="Epson Moverio BT-200 Add-on">
 
 The Epson Moverio BT-200 camera mount add-on slides onto the BT-200 and is compatible with our 120hz cameras. You can either get the 120hz camera upgrades or use existing 120hz cameras from your Pupil eye tracking headset. 
+
+Both the Oculus and BT-200 add-ons connect to a host via USB 2.0. Since these are developers tools, we do not offer "turnkey" ready software. But, for most applications, Pupil Capture can be used in the integration. We plan to work with the Pupil community to create a Unity plugin for eye tracking.
