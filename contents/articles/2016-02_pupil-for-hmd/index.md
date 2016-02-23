@@ -1,5 +1,5 @@
 ---
- title: Eye Tracking for VR and AR - Oculus Rift DK2 and Epson Moverio BT-200
+ title: Eye Tracking for VR and AR
  date: Tue Feb 23 2016 09:23:14 GMT+0700 (ICT)
  author: Pupil Dev Team
  subtitle: New Products - Eye tracking for VR and AR head mounted displays. Oculus Rift DK2, Epson Moverio BT-200...
