@@ -7,9 +7,9 @@
 
 We have just released our eye tracking add-on cups for the Oculus DK2 and camera mounts for the Epson Moverio BT-200. Both are available on the [store](/store#products).
 
-Since we started Pupil Labs, we have received lots of interest and many requests from the community to integrate Pupil into Oculus and other VR and AR hardware. Eye tracking for VR and AR is something we always wanted to pursue. However, it has taken us some time to get to this public release because the majority of our energy has so far dedicated toward developing improving Pupil. 
+Since we started Pupil Labs, we have received lots of interest and many requests from the community to integrate Pupil into Oculus and other VR and AR hardware. Eye tracking for VR and AR is something we always wanted to pursue. However, it has taken us some time to get to this public release because the majority of our energy has so far dedicated toward developing Pupil. 
 
-Today, we are pleased to be able to announce this hardware release, and to announce our commitment to a new branch of work - making accessible eye tracking tools for virtual reality (VR) and augmented reality (AR) head mounted displays (HMDs). 
+Today, we are pleased to to announce this hardware release, and to begin our commitment to a new branch of work - making accessible eye tracking tools for virtual reality (VR) and augmented reality (AR) head mounted displays (HMDs). 
 
 Here is an overview of the new hardware:
 
