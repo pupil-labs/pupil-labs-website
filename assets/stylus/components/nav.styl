@@ -3,12 +3,12 @@
 	float left
 	list-style none
 	
-	@media all and (max-width: 48em)
+	@media $break-xs
 		border-right 1px solid #ddd
 		width (1/5*100)%
 	
+	
 .Nav-link
-	border-top 1px solid #ddd
 	display block
 	text-decoration none
 	text-align center
@@ -21,16 +21,18 @@
 	transition color .4s ease-in-out, background .4s ease-in-out
 	
 	// small screen
-	@media all and (max-width: 48em)
+	@media $break-xs
+		border-top 1px solid #ddd
 		background-color #f7f7f7
-		letter-spacing .01em
+		letter-spacing .001em
 		text-align center
+		font-size 0.85em
 		
 	// large screen
-	@media all and (min-width: 48em)
-		border-top none
-		margin 0
-		padding 1em 1.75em	
+	// @media $break-lg
+	// 	border-top none
+	// 	margin 0
+	// 	padding 1em 1.75em	
 
 #Nav-cart
 	// nothing here - placeholder for jquery
