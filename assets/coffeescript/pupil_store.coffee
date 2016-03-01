@@ -488,7 +488,7 @@ class PupilStore
 
           ops_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
           prod_url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
-          url = prod_url
+          url = ops_url
 
           $.ajax
             type: 'POST'
