@@ -3,7 +3,7 @@ title: About Us
 order: 1
 ---
 
-Pupil Labs is a company by <a href="mailto:moritz.@pupil-labs.com" target="_blank" alt="mail to moritz">Moritz Kassner</a>, <a href="mailto:will.@pupil-labs.com" target="_blank" alt="mail to will">Will Patera</a> and <a href="mailto:andreas.@pupil-labs.com" target="_blank" alt="mail to andreas">Andreas Bulling</a>.
+Pupil Labs is a company by <a href="mailto:moritz@pupil-labs.com" target="_blank" alt="mail to moritz">Moritz Kassner</a>, <a href="mailto:will@pupil-labs.com" target="_blank" alt="mail to will">Will Patera</a> and <a href="mailto:andreas@pupil-labs.com" target="_blank" alt="mail to andreas">Andreas Bulling</a>.
 
 We do research and development, with an emphasis on design. 
 
