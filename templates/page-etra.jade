@@ -1,0 +1,23 @@
+extends layout
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  div(id="Etra")
+    //- Title block
+    - var page_data = contents.etra['index.json'];
+    - var page_meta = page_data.metadata;
+    - var titleData = {title:page_meta.title, subtitle:page_meta.subtitle};   
+    include includes/title
+    
+    div.Grid
+      div.Grid-cell--main
+        div.Feature.u-padBottom--3
+          img(class="Feature-image" src="../media/images/gsm_2016_bw.jpg")
+
+    - var copyTxt = contents.etra['pupil_invisible.md'];
+    div.u-padBottom--5
+      div.Grid-cell
+        h1.Feature-title.u-textCenter.u-padBottom--1= copyTxt.title
+        div.Article!= typogr(copyTxt.html).typogrify()
