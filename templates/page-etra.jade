@@ -11,10 +11,8 @@ block main
     - var titleData = {title:page_meta.title, subtitle1:page_meta.subtitleOne, subtitle2:page_meta.subtitleTwo};   
     include includes/title
     
-    div.Grid
-      div.Grid-cell--main
-        div.Feature.u-padBottom--3
-          img(class="Feature-image" src=page_meta.imgTwo)
+  div.Feature-video-container-1by2
+    iframe(class="Feature-video" src=page_meta.video frameborder="0")    
 
     - var copyTxt = contents.etra['pupil_invisible_1.md'];
     div.u-padBottom--5
@@ -22,13 +20,10 @@ block main
         //- h1.Feature-title.u-textCenter.u-padBottom--1= copyTxt.title
         div.Article!= typogr(copyTxt.html).typogrify()
 
-    div.Feature-video-container-1by2
-      iframe(class="Feature-video" src=page_meta.video frameborder="0")    
-
-    //- div.Grid
-    //-   div.Grid-cell--main
-    //-     div.Feature.u-padBottom--3
-    //-       img(class="Feature-image" src=page_meta.imgOne)
+    div.Grid
+      div.Grid-cell--main
+        div.Feature.u-padBottom--3
+          img(class="Feature-image" src=page_meta.imgOne)
 
     - var copyTxt2 = contents.etra['pupil_invisible_2.md'];
     div.u-padBottom--5
