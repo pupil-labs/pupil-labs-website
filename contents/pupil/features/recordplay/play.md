@@ -5,7 +5,7 @@ order: 2
 linkTxt: Download Pupil Player
 link: https://github.com/pupil-labs/pupil/releases/latest
 linkTxt2: Download Sample Dataset
-link2: https://docs.google.com/a/pupil-labs.com/file/d/0Byap58sXjMVfckw1T29EUllMZE0/edit
+link2: https://docs.google.com/a/pupil-labs.com/uc?id=0Byap58sXjMVfckw1T29EUllMZE0&export=download
 ---
 Pupil Player is a media and data visualizer at its core. 
 
