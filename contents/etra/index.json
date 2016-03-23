@@ -1,9 +1,6 @@
 {
   "template": "page-etra.jade",
   "title": "ETRA 2016",
-  "subtitleOne": "Sneak Preview",
-  "subtitleTwo": "We're developing new eye tracking hardware",
-  "imgOne": "../media/images/pupil_invisible/web/pupil_invisible_preview_01.jpg",
-  "imgTwo": "../media/images/pupil_invisible/web/pupil_invisible_preview_02.jpg",
-  "video": "https://www.youtube.com/embed/ba6iU9ONWyw?rel=0"
+  "subtitleOne": "ETRA 2016 has concluded... We were proud to be sponsors!",
+  "subtitleTwo": "For questions and more info drop us an email - info@pupil-labs.com"
 }  
