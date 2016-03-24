@@ -412,7 +412,7 @@ class PupilStore
         bFieldVal = $(field).val()
         type = fieldId.split('_').shift()
         try
-          sField = type+"_s"
+          sField = if type is 'address' then type+"_s0" else type+"_s"
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
@@ -552,10 +552,8 @@ class PupilStore
             exp += fragment
           exp += ')$'
           exp = new RegExp(exp)
-          console.log "exp: " + exp
 
           tests.push(exp.test(value))
-        console.log "tests: " + tests
 
         return true in tests
       )).addMessage 'en', 'postalcodevalidator', 'Postal code should follow the pattern: %s'
