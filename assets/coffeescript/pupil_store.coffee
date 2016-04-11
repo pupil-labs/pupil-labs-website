@@ -486,7 +486,7 @@ class PupilStore
           $("textarea[id='cartObject']").val(JSON.stringify(orders))
           formData = $(form).serialize()
 
-          ops_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
+          ops_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
           prod_url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
           url = ops_url
 
