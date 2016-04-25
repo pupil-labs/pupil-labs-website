@@ -218,3 +218,4 @@ productList = [
     cartSpecs: "For use within an academic (non-commercial) context."               
   }
 ]
+

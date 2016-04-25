@@ -46,7 +46,8 @@ class PupilStore
       @eventSubmitForm()
       @eventGenerateOrderLink()
       @eventOrderLinkSuccessPage()
-
+      @countryValidator()
+      @postalCodeValidator()
 
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -404,14 +405,14 @@ class PupilStore
 
   eventCopyBillingToShipping: ->
     if $(@cartPage).length > 0
-      $("[id^='b_']").change (event)=>
+      $("[id$='_b']").change (event)=>
         event.preventDefault()
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('_').pop()
+        type = fieldId.split('_').shift()
         try
-          sField = "s_"+type
+          sField = if type is 'address' then type+"_s0" else type+"_s"
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
@@ -426,6 +427,8 @@ class PupilStore
           # clear all the values of the inputs        
           $("label[for='#{ buttonId }']").addClass('Button--state-active')
           $("label[for='s-toggle-copy']").removeClass('Button--state-active')
+          $("input[id='postalCode_s']")
+          .attr("data-parsley-postalcodevalidator","#{$("input[id='postalCode_b']").data('parsley-postalcodevalidator')}")
           $(".Form-shipping-container").fadeIn()
         else
           $("label[for='#{ buttonId }']").addClass('Button--state-active')
@@ -470,15 +473,22 @@ class PupilStore
           $("#form-submit").attr('disabled',true)
           @resetActivePaymentRadio()
           @_setOrderType()
+
+          # add countryIso to form data
+          $("input[id='countryIso_b']").val(countryList[$("input[id='country_b']").val()].countryISO)
+          $("input[id='countryIso_s']").val(countryList[$("input[id='country_s']").val()].countryISO)
+          
           # add order object to a hidden form text area
           orders = []
           keys = [k for k,v in LocalStorage.dict()]
           for k,v of LocalStorage.dict()
             orders.push v
-          $("textarea[class='Form-input--cart']").val(JSON.stringify(orders))
+          $("textarea[id='cartObject']").val(JSON.stringify(orders))
           formData = $(form).serialize()
-          # sandbox_url = "https://script.google.com/macros/s/AKfycbz6hkUNiXKGrOrDlEIEuGXpqsNvUAN6wpfN07NpzfkIBznWnxA/exec"
-          url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
+
+          ops_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
+          prod_url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
+          url = ops_url
 
           $.ajax
             type: 'POST'
@@ -498,6 +508,55 @@ class PupilStore
               $(location).attr('href',location.origin + "/order_success")
             complete: (jqXHR,textStatus) ->
               $('label[for="form-submit"]').removeClass("loading")    
+
+
+  countryValidator: ->
+    if $(@cartPage).length > 0
+      window.ParsleyValidator.addValidator('countryvalidator', ((value, requirement) ->
+        validity = value of countryList
+        if validity
+          
+          # check if country uses a postalCode and update for pattern
+          country = countryList[value]
+          if country.usesPostalCode
+            $("input[id=#{requirement}]")
+            .prop("placeholder","postal code (e.g. #{country.postalCodeFormat})")
+            .prop("disabled",false)
+            .prop("required", true)
+            .attr("data-parsley-postalcodevalidator","#{country.postalCodeFormat}")
+          else
+            $("input[id=#{requirement}]")
+            .prop("placeholder","postal code (not required for #{country.countryISO})")
+            .prop("required", false)
+            .val("")
+            .prop("disabled",true)
+
+        return validity
+      )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
+
+
+  postalCodeValidator: ->
+    if $(@cartPage).length > 0
+      window.ParsleyValidator.addValidator('postalcodevalidator', ((value, requirement) ->
+        requirements = requirement.toString().split(',')
+        tests = []
+        # ideally this should be a function (but can not call/return from fn within this fn)
+        for r in requirements 
+          exp = '^('
+          for c in r.trim().split("")
+            fragment = switch
+              when c is "A" then '[aA-zZ]{1}'
+              when c is "9" then '\\d{1}'
+              when c is "-" then '\\-{1}'
+              when c is " " then '\\s{1}'
+            exp += fragment
+          exp += ')$'
+          exp = new RegExp(exp)
+
+          tests.push(exp.test(value))
+
+        return true in tests
+      )).addMessage 'en', 'postalcodevalidator', 'Postal code should follow the pattern: %s'
 
   eventGenerateOrderLink: ->
     if $(@cartPage).length > 0 
@@ -552,7 +611,7 @@ class PupilStore
 
   _setOrderType: ->
     activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()
-    $("input[class='Form-input--orderType']").val(activeId.toLowerCase())
+    $("input[id='o_type']").val(activeId.toLowerCase())
 
   _setActiveState: (links)->
     for link in links
