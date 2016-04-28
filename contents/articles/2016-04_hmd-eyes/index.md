@@ -30,9 +30,9 @@ If you research and develop novel methods for eye tracking for HMDs, you may be 
 
 Our goal is to work with and support a community of researchers and developers in creating reusable open-source software modules for eye tracking in HMDs. We know that many developers have already thought of or implemented eye tracking software for HMDs and instead of re-inventing wheels, we should form a community to share knowledge and tools. Pupil Labs will contribute to this project and assume a moderator/admin role but we hope that others will join and contribute to this collaborative endeavour.
 
-We want to have collaboration built in to the project from the start. We really admire the way that ZeroMQ has built up a community and maintained an open source project. We propose to use the Collective Code Construction Contract (C4.1), as it clearly and concisely defines structure and roles for a community driven project. 
+We want to have collaboration built in to the project from the start. We really admire the way that ZeroMQ has built up a community and maintained an open source project. We propose to use the [Collective Code Construction Contract (C4.1)](http://rfc.zeromq.org/spec:22/C4.1), as it clearly and concisely defines structure and roles for a community driven project. 
 
-We propose to use the LGPLv3 license, because it is permissive for use in commercial and non-commercial contexts while encouraging community contributions.
+We propose to use the [LGPLv3](http://www.gnu.org/licenses/lgpl-3.0.en.html) license, because it is permissive for use in commercial and non-commercial contexts while encouraging community contributions.
 
 ## No Hardware or Platform Lock-In
 
@@ -42,7 +42,7 @@ No obligation and lock-in to use Pupil Labs hardware on a technical or licence l
 
 ## The first steps
 
-We are just getting started, and have created a repository for this work called hmd-eyes. 
+We are just getting started, and have created a repository for this work called [hmd-eyes](https://github.com/pupil-labs/hmd-eyes). 
 
 We added a mission.md file that shall outline the mission statement and key requirement of our collaborative project. We also added a collaboration.md file that outlines our proposed rules of collaboration and best practisies.
 
