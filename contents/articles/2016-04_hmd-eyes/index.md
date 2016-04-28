@@ -7,7 +7,7 @@
 After receiving many requests from the community, we have taken the first steps towards supporting eye tracking in Virtual Reality and Augmented Reality (VR/AR) head mounted displays (HMDs) with the release of eye tracking add-ons for Oculus DK2 and Epson Moverio BT-200. We are committed to bringing eye tracking to VR/AR HMDS, and plan to create new hardware for the latest VR and AR hardware when it hits the market. 
 
 <img src="https://files.gitter.im/willpatera/p7xa/image.png" class='Feature-image' alt="Corneal reflection of an HMD screen">
-Image by Alexander Plopski, Yuta Itoh: Corneal reflection of an HMD screen See paper:[Corneal-Imaging Calibration for Optical See-Through Head-Mounted Displays](http://campar.in.tum.de/pub/itoh2015vr2/itoh2015vr2.pdf)
+Corneal reflection of an HMD screen. Image by Alexander Plopski, Yuta Itoh, et al. See their paper: [Corneal-Imaging Calibration for Optical See-Through Head-Mounted Displays](http://campar.in.tum.de/pub/itoh2015vr2/itoh2015vr2.pdf)
 
 ## Blackbox vs Open Source Building Blocks
 Now that we have the hardware, the next step is to develop software for eye tracking in HMDs. Based on what we have learned from our community and our experience in experience developing Pupil, we believe that eye tracking in HMDs will not be a “one size fits all” solution. The various applications for eye tracking with AR and VR are extremely diverse and vastly unexplored. 
@@ -42,16 +42,16 @@ No obligation and lock-in to use Pupil Labs hardware on a technical or licence l
 
 ## The first steps
 
-We are just getting started, and have created a repository for this work called https://github.com/pupil-labs/hmd-eyes.
+We are just getting started, and have created a repository for this work called hmd-eyes. See it on github: https://github.com/pupil-labs/hmd-eyes.
 
-We added a mission.md file that shall outline the mission statement and key requirement of our collaborative project. We also added a collaboration.md file that outlines our proposed rules of collaboration and best practisies.
+We added a mission.md file that shall outline the mission statement and key requirement of our collaborative project. We also added a collaboration.md file that outlines our proposed rules of collaboration and best practices.
 
 For IM style chats we linked a Gitter room here: https://gitter.im/pupil-labs/hmd-eyes?utm_source=share-link&utm_medium=link&utm_campaign=share-link
 
 Also sign up to the public email group if you want to post and be updated on the project here: https://groups.google.com/forum/#!forum/hmd-eyes
 
 
-We would like to invite anyone who is interested in contributing to meet us via email, a private or a public hangouts call. In this initial phase the community should flesh a feature/wishlist, start contributing via pull requests. We are always happy to give involved members to become maintainers with write access to the repository.
+We would like to invite anyone who is interested in contributing to meet us via <a href="mailto:info@pupil-labs.com">email</a>, a private or a public hangouts call. In this initial phase the community should flesh a feature/wishlist, start contributing via pull requests. We are always happy to give involved members to become maintainers with write access to the repository.
 
 
 
