@@ -47,16 +47,16 @@ js = ()->
   .pipe livereload()
 
 gulp.task "newPost", ->
-  date = new Date()
-  y = date.getFullYear()
-  m = date.getMonth()+1 # yes...js months are 0 based
-  folderDate =  y + "-" + ("0" + m).slice(-2)
   knownOpts = 
-    string: 'title'
-    defaults: folderDate
+    string: ['title','date']
+    defaults: {date: folderDate, title: 'untitled'}
   opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'title':null}
   fileTitle = if opts.title then "_"+opts.title.replace(/\s+/g, '-').toLowerCase() else ""
   humanTitle = opts.title
+  date = if not isNaN(Date.parse(opts.date)) then new Date(opts.date) else new Date()
+  y = date.getFullYear()
+  m = date.getMonth()+1 # yes...js months are 0 based
+  folderDate =  y + "-" + ("0" + m).slice(-2)  
   postTitle = folderDate + fileTitle
 
   postDir = "contents/articles/" + "#{ postTitle }" 
@@ -71,6 +71,7 @@ gulp.task "newPost", ->
                 title: #{ humanTitle }\n
                 date: #{ date }\n
                 author: Pupil Dev Team\n
+                subtitle: \n
                 ---"
   fs.writeFile postDir+"/index.md", postHeader 
   gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
