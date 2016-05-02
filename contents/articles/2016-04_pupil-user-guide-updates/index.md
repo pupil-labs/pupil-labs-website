@@ -7,7 +7,7 @@
 
 We have just finished updating Pupil docs so that they cover new features in the v0.7 release. This update includes walkthrough videos for Pupil Capture and Pupil Player, as well as a new getting started guide. 
 
-The Getting Started guide outlines all the steps of a basic workflow with Pupil hardware and software. We hope this guide will be useful for the community. Head over to the [getting started guide]((/getting-started).
+The Getting Started guide outlines all the steps of a basic workflow with Pupil hardware and software. We hope this guide will be useful for the community. Head over to the [getting started guide](/getting-started).
 
 Check out Pupil Capture walkthrough video for v0.7. More videos are available on the [Pupil Labs YouTube channel](https://www.youtube.com/channel/UCO1Dx8T9sym3Dl2grS4fsFA).
 
