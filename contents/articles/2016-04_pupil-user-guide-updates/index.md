@@ -2,7 +2,7 @@
  title: Pupil User Docs Updates
  date: Mon Apr 25 2016 00:00:00 GMT+0700 (ICT)
  author: Pupil Dev Team
- subtitle: 
+ subtitle: New video walkthroughs for Pupil Capture and Player and brand new getting started guide...
  ---
 
 We have just finished updating Pupil docs so that they cover new features in the v0.7 release. This update includes walkthrough videos for Pupil Capture and Pupil Player, as well as a new getting started guide. 
