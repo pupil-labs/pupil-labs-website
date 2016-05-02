@@ -5,7 +5,7 @@ footer.Site-footer
         li.Grid-cell--auto.Footer-nav-item
           a(href=url class="Footer-nav-link")= title
 section.Footer-social
-    ul.Grid-noWrap.Grid--justifyCenter
+    ul.Grid.Grid--justifyCenter
       each url, title in contents.menu['footer-connect.json'].metadata
         li.Grid-cell--auto.Footer-social-item
           a(href=url target="_blank" class="Footer-social-link")= title
