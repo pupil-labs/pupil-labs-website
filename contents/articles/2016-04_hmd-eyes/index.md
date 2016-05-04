@@ -7,7 +7,7 @@
 
 After receiving many requests from the community, we have taken the first steps towards supporting eye tracking in Virtual Reality and Augmented Reality (VR/AR) head mounted displays (HMDs) with the release of eye tracking add-ons for Oculus DK2 and Epson Moverio BT-200. We are committed to bringing eye tracking to VR/AR HMDS, and plan to create new hardware for the latest VR and AR hardware when it hits the market. 
 
-<img src="https://files.gitter.im/willpatera/p7xa/image.png" class='Feature-image' alt="Corneal reflection of an HMD screen">
+<img src="../../../../media/images/blog/plopski_itoh_corneal-reflection.png" class='Feature-image' alt="Plopski, Itoh, et al. Corneal Imaging">
 Corneal reflection of an HMD screen. Image by Alexander Plopski, Yuta Itoh, et al. See their paper: [Corneal-Imaging Calibration for Optical See-Through Head-Mounted Displays](http://campar.in.tum.de/pub/itoh2015vr2/itoh2015vr2.pdf)
 
 ## Blackbox vs Open Source Building Blocks
