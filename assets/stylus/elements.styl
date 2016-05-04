@@ -6,7 +6,7 @@
 
 // Base settings for elements
 // - no default margins or padding for html elements 
-a,address,article,aside,audio,blockquote,body,caption,cite,code,dd,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,img,label,legend,li,nav,ol,p,pre,section,small,span,strong,sup,time,ul,video
+a,address,article,aside,audio,body,caption,cite,code,dd,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,img,label,legend,li,nav,ol,p,pre,section,small,span,strong,sup,time,ul,video
 	margin 0
 	padding 0
 
@@ -22,6 +22,10 @@ h3
 h4
 	font-size 1.1em
 // Reset the box-sizing
+
+blockquote
+	font-size $font-size-base - 0.1em
+	padding-bottom 1.4em
 
 *
 	box-sizing border-box
