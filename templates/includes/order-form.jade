@@ -42,8 +42,15 @@ div.Cart-orderForm-container
                 option(value=key)
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              textarea(class="Form-input Form-input--text Form-input--textarea" id="address_b" placeholder="billing address" name="address_b" data-parsley-maxlength="90" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="address_b" placeholder="street address" name="address_b" data-parsley-maxlength="90" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-address--error")
               p(class="Form-error--text" id="b-address--error")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="city_b" type="text" placeholder="city" name="city_b" required data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#b-city--error")
+              p(class="Form-error--text" id="b-city--error")                
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="division_b" type="text" placeholder="state/province/division" name="division_b" required data-parsley-trigger="focusout" data-parsley-errors-container="#b-division--error")
+              p(class="Form-error--text" id="b-division--error")            
             div.Grid-cell
               input(class="Form-input Form-input--text" id="postalCode_b" type="text" placeholder="postal code" name="postalCode_b" data-parsley-postalcodevalidator=0 data-parsley-trigger="focusout" data-parsley-errors-container="#b-postalCode--error")
               p(class="Form-error--text" id="b-postalCode--error")
@@ -85,8 +92,15 @@ div.Cart-orderForm-container
                 option(value=key)
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              textarea(class="Form-input Form-input--text Form-input--textarea" id="address_s0" placeholder="shipping address" name="address_s0" required data-parsley-maxlength="90" data-parsley-trigger="focusout" data-parsley-errors-container="#s-address--error")
+              textarea(class="Form-input Form-input--text Form-input--textarea" id="address_s0" placeholder="street address" name="address_s0" required data-parsley-maxlength="90" data-parsley-trigger="focusout" data-parsley-errors-container="#s-address--error")
               p(class="Form-error--text" id="s-address--error")
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="city_s" type="text" placeholder="city" name="city_s" required data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#s-city--error")
+              p(class="Form-error--text" id="s-city--error")                
+          div.Grid.Grid--gutters.Grid--1of2
+            div.Grid-cell
+              input(class="Form-input Form-input--text" id="division_s" type="text" placeholder="state/province/division" name="division_s" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-division--error")
+              p(class="Form-error--text" id="s-division--error")
             div.Grid-cell
               input(class="Form-input Form-input--text" id="postalCode_s" type="text" placeholder="postal code" name="postalCode_s" data-parsley-postalcodevalidator=0 data-parsley-trigger="focusout" data-parsley-errors-container="#s-postalCode--error")
               p(class="Form-error--text" id="s-postalCode--error")
