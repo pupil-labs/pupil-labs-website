@@ -48,6 +48,7 @@ class PupilStore
       @eventOrderLinkSuccessPage()
       @countryValidator()
       @postalCodeValidator()
+      @divisionValidator()
 
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -515,17 +516,30 @@ class PupilStore
       window.ParsleyValidator.addValidator('countryvalidator', ((value, requirement) ->
         validity = value of countryList
         if validity
-          
-          # check if country uses a postalCode and update for pattern
+          requirementIds = requirement.split("-")
+          postalCodeId = requirementIds[0]
+          stateId = requirementIds[1]
+
           country = countryList[value]
+
+          # if country US or CA force state abbreviations
+          if country.countryISO is 'US' or country.countryISO is 'CA'
+            placeholderTxt = if country.countryISO is 'US' then "state abbreviation (e.g. CA for California)" else "province abbreviation (e.g. QC for Quebec)"
+            $("input[id=#{stateId}]")
+            .prop("placeholder","#{placeholderTxt}")
+            .prop("required", true)
+            .attr("data-parsley-maxlength","2")
+            .attr("data-parsley-divisionvalidator","#{country.countryISO}")
+
+          # check if country uses a postalCode and update for pattern
           if country.usesPostalCode
-            $("input[id=#{requirement}]")
+            $("input[id=#{postalCodeId}]")
             .prop("placeholder","postal code (e.g. #{country.postalCodeFormat})")
             .prop("disabled",false)
             .prop("required", true)
             .attr("data-parsley-postalcodevalidator","#{country.postalCodeFormat}")
           else
-            $("input[id=#{requirement}]")
+            $("input[id=#{postalCodeId}]")
             .prop("placeholder","postal code (not required for #{country.countryISO})")
             .prop("required", false)
             .val("")
@@ -533,6 +547,13 @@ class PupilStore
 
         return validity
       )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
+
+  divisionValidator: ->
+    if $(@cartPage).length > 0
+      window.ParsleyValidator.addValidator('divisionvalidator', ((value, requirement) ->
+        validity = value in USCADivisions[requirement]
+        return validity
+      )).addMessage 'en', 'divisionvalidator', 'Must be a valid division abbreviation.'
 
 
   postalCodeValidator: ->

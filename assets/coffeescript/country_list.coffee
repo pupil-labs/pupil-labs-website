@@ -102,7 +102,7 @@ countryList =
     usesPostalCode: true
     postalCodeFormat: '9999'
     capitalCity: null
-    inEU: true
+    inEU: false
   Aruba:
     countryISO: 'AW'
     countryName: 'Aruba'
