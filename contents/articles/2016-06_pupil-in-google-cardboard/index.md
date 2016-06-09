@@ -7,7 +7,8 @@
 
 German
 
-[Eye Square](http://www.eye-square.com/) has integrated Pupil in Google Cardboard for product and in-store shopping studies using an existing Pupil headset, Google Cardboard and existing applications for eye-tracking in a virtual environment.
+
+[Eye Square](http://www.eye-square.com/) has combined a Pupil eye tracking headset with Google Cardboard to enable VR product and in-store studies. Using an existing Pupil headset, Google Cardboard and existing applications for eye-tracking in a virtual environment.
 
 <div class="Feature-video-container-16by9">
 	<iframe class="Feature-video" src="https://player.vimeo.com/video/168907965?title=0&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
