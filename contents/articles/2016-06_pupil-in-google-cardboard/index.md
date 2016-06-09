@@ -5,13 +5,14 @@
  subtitle: Eye Square has integrated Pupil in Google Cardboard for product and in-store shopping studies...  
  ---
 
-German
-
-
-[Eye Square](http://www.eye-square.com/) has combined a Pupil eye tracking headset with Google Cardboard to enable VR product and in-store studies. Using an existing Pupil headset, Google Cardboard and existing applications for eye-tracking in a virtual environment.
+[Eye Square](http://www.eye-square.com/) has combined a Pupil eye tracking headset with Google Cardboard to enable VR product and in-store studies. 
 
 <div class="Feature-video-container-16by9">
-	<iframe class="Feature-video" src="https://player.vimeo.com/video/168907965?title=0&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
+  <iframe class="Feature-video" src="https://player.vimeo.com/video/168907965?title=0&byline=0&portrait=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
-Using the Fulldive app, this allows for the user to use the manual marker calibration mode in VR and calibrate by moving the markers from a hosted computer. So by using existing tools and applications, users can use Pupil in VR with little skills required.
+To make the demo video, the team hacked together a hardware prototype by cutting small holes in the Google Cardboard viewer and inserting an existing Pupil headset. The Eye Square calibrated using the Pupil Capture's manual marker method, and moved markers to different positions on the Android screen via the FullDive app running on a host computer.
+
+We are excited about this work because it demonstrates how quickly one can put together a prototype with existing hardware and software and can have a working VR + Pupil eye tracking system up and running.
+
+We look forward to seeing the next iterations of this project.
