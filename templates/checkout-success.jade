@@ -1,0 +1,13 @@
+extends layout
+
+block vars
+  - var bodyClass = "Site"
+  - var mainClass = "Site-content Banner--gradientBkg"
+
+block append title
+  | #{ " - Checkout Success"}
+
+block main
+  div(id="Checkout")
+    - var bannerData = { "title": "Success", "s1": "Your payment was submitted.", "s2": "We are now reviwing your payment.", "s3": "We will send you an email with invoice as confirmation and begin fulfilling your order."}
+    include includes/banner
