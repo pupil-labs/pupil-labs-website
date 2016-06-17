@@ -1,0 +1,4 @@
+{
+  "template": "checkout-success.jade",
+  "title": "Payment Submitted"
+}
