@@ -1,6 +1,6 @@
 ---
 title: Software Engineer
-order: 2
+order: 1
 jobTitle: software-engineer
 ---
 

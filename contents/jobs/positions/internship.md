@@ -1,6 +1,6 @@
 ---
 title: Internship
-order: 4
+order: 3
 jobTitle: intern
 ---
 
