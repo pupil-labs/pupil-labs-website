@@ -7,7 +7,6 @@
 
 We are excited to share with you our new USB C clip.
 
-
-
 <img src="../../../../media/images/blog/usb-c.jpg" class='Feature-image' alt="USB C">
 
+<img src="../../../../media/images/blog/eyewear_computing_hci_acm_2016.png" class='Feature-image' alt="Bulling, Kunze - ACM Interactions, Eyewear Computing">
