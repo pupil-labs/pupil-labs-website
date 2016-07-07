@@ -9,5 +9,5 @@ We are excited to share with you our new USB C clip.
 
 
 
+<img src="../../../../media/images/blog/usb-c.jpg" class='Feature-image' alt="USB C">
 
-img src="">-: [](http://)
