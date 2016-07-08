@@ -6,7 +6,7 @@
  ---
 
 <div class="Feature-video-container-16by9">
-  <iframe class="Feature-video" src="https://www.youtube.com/watch?v=f8BM9y6Yz4A" frameborder="0" allowfullscreen></iframe>
+  <iframe class="Feature-video" src="https://www.youtube.com/embed/f8BM9y6Yz4A" frameborder="0" allowfullscreen></iframe>
 </div>
 
 <img src="../../../../media/images/blog/dmk-headset.jpg" class='Feature-image' alt="DMK Headset">
