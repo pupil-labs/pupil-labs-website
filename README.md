@@ -1,17 +1,23 @@
 # Pupil Labs Website
+[![Build Status](https://travis-ci.org/pupil-labs/pupil-labs-website.svg?branch=dev)](https://travis-ci.org/pupil-labs/pupil-labs-website)
 
-## Dependencies & Set Up
+### Dependencies
 
-**Install node and npm for your system**
+1. Install `node`
+1. Install `npm`
+1. Install `gulp` globally with `npm install -g gulp`
 
-1. Go to https://nodejs.org/en/ and install node.js (npm included)
-2. After installation restart computer
-3. Test node.js and npm
-	- open command line tool
-	- type `node -v` (should print out a version number)
-	- type `npm -v` (should print out a version number)
-4. In terminal cd pupil-labs-website
-	- Install packages locally with `npm install` Packages are defined in package.json
-	- type `gulp` to run website locally 
-	- if the command is not found, install gulp globally with 'npm install -g gulp' and repeat above step.
-	- the local preview is by default on localhost:3000
+### Packages
+1. Install local packakages `npm install`. Packages are defined in package.json
+
+### Preview 
+1. `cd pupil-labs-website`
+1. `gulp` 
+
+The default gulp task will run a webserver on localhost:3000. Checkout `gulpfile.coffee` for more commands
+
+### New Blog Post
+1. `cd pupil-labs-website`
+1. `gulp newPost title "Post Title"`
+
+This will create a folder in `contents/articles` with a skeleton `.md` file with the title and current date. Check out `gulpfile.coffee` to see more argv options for `newPost`
