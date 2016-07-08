@@ -7,7 +7,8 @@
 
 <img src="../../../../media/images/blog/usb-c.jpg" class='Feature-image' alt="USB C">
 
-We are excited to share with you our new USB C clip. The benefits of the new USB C clip is that it can power USB 3 devices to provide a more stable connection to run better on all devices, while providing more power to power the host devices. This extends the capability of our modular platform by being able to connect to USB 3 devices, increasing compatibility with other devices for new development
+We are excited to announce the release of our new USB C clip for Pupil hardware.
 
-So that we are no longer constrained by the limitations of USB 2.
- 
+The new clip enables us to connect and power USB 3 devices and extend the modularity of the Pupil platform. It also enables Pupil hardware to connect to more devices - like smart-phones! Upgrading from a USB 2 hub also enables us to ensure more that adequate power will be supplied to our hardware as some hosts impose very conservative limitations on USB 2.
+
+The new clip will be included in all Pupil headsets. All existing Pupil headsets can be upgraded to the new clip. We will be posting the clip on the store soon -- stay tuned.
