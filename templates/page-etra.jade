@@ -8,16 +8,25 @@ block main
     //- Title block
     - var page_data = contents.etra['index.json'];
     - var page_meta = page_data.metadata;
-    - var titleData = {title:page_meta.title, subtitle:page_meta.subtitle};   
+    - var titleData = {title:page_meta.title, subtitle1:page_meta.subtitleOne, subtitle2:page_meta.subtitleTwo};   
     include includes/title
     
-    div.Grid
-      div.Grid-cell--main
-        div.Feature.u-padBottom--3
-          img(class="Feature-image" src="../media/images/pupil_invisible/pupil_invisible_preview.png")
+    //- div.Feature-video-container-3by5
+    //-   iframe(class="Feature-video" src=page_meta.video frameborder="0")    
 
-    - var copyTxt = contents.etra['pupil_invisible.md'];
-    div.u-padBottom--5
-      div.Grid-cell
-        h1.Feature-title.u-textCenter.u-padBottom--1= copyTxt.title
-        div.Article!= typogr(copyTxt.html).typogrify()
+    //- - var copyTxt = contents.etra['pupil_invisible_1.md'];
+    //- div.u-padBottom--5
+    //-   div.Grid-cell
+    //-     //- h1.Feature-title.u-textCenter.u-padBottom--1= copyTxt.title
+    //-     div.Article!= typogr(copyTxt.html).typogrify()
+
+    //- div.Grid
+    //-   div.Grid-cell--main
+    //-     div.Feature.u-padBottom--3
+    //-       img(class="Feature-image" src=page_meta.imgOne)
+
+    //- - var copyTxt2 = contents.etra['pupil_invisible_2.md'];
+    //- div.u-padBottom--5
+    //-   div.Grid-cell
+    //-     div.Article!= typogr(copyTxt2.html).typogrify()
+

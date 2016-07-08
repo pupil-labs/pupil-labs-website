@@ -27,7 +27,7 @@ newsletterSignup = ()->
       url = "//pupil-labs.us3.list-manage.com/subscribe/post-json?u=ed9736f18028b208205770080&amp;id=56698f0460&c=?"
 
       formData = $(form).serialize()
-      console.log(formData)
+      # console.log(formData)
 
       $.ajax
         type: 'POST'
