@@ -10,7 +10,7 @@
 	- open command line tool
 	- type `node -v` (should print out a version number)
 	- type `npm -v` (should print out a version number)
-4. In command line tool go to ../pupil-labs-webiste repository
+4. In command line tool go to ../pupil-labs-website repository
 	- type `npm install`
 	- type `gulp` to run website locally 
 	- (if command not found type `npm install -g gulp`, then type `gulp` again)
