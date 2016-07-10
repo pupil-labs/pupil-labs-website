@@ -9,10 +9,8 @@
 	<iframe class="Feature-video" src="https://www.youtube.com/embed/f8BM9y6Yz4A?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>
 
-We are experimenting with color alternatives to the current black Pupil headset. We have tested a wide variety of colors (some good colors, some not soo good colors). The Pupil Development Team has converged on the cobalt color shown above in the video and below in the image. 
+We have been experimenting with color alternatives to the current black Pupil headset, and are planning to add a new color -- cobalt -- to the lineup. 
 
 <img src="../../../../media/images/blog/dmk-headset.jpg" class='Feature-image' alt="DMK Headset">
 
-Our in-house dyeing process involves careful measurement for the ideal dye to surface area of parts ratio, temperature control to produce the most saturated color, and a sealing process for product protection.
-
-If you have ideas about color, get in touch and let us know.
+We are continually working to improve the finish of headset material, and look forward to your feedback.
