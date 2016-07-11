@@ -489,7 +489,7 @@ class PupilStore
 
           testing_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
           production_url = "https://script.google.com/macros/s/AKfycbz6VPh0yqNOmAChtPa9C1Ot9dk_JwHWj_vWPIZlPzr4YodmTvs/exec"
-          url = testing_url
+          url = production_url
 
           $.ajax
             type: 'POST'
