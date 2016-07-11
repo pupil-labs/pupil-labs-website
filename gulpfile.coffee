@@ -16,6 +16,7 @@ wintersmith = require "run-wintersmith"
 stylus = require "gulp-stylus"
 prefixer = require "gulp-autoprefixer"
 coffee = require "gulp-coffee"
+babel = require "gulp-babel"
 concat = require "gulp-concat"
 uglify = require "gulp-uglify"
 imagemin = require "gulp-imagemin"
@@ -33,6 +34,13 @@ css = ()->
       cascade: true # prettify browser prefixes
       remove: true # remove un-needed prefixes
   .pipe gulp.dest "contents/css"
+  .pipe livereload()
+
+js6to5 = ()->
+  gulp.src "assets/js/*.js"
+  .pipe babel()
+  .pipe concat "main.js"
+  .pipe gulp.dest "contents/js"
   .pipe livereload()
 
 
@@ -132,6 +140,7 @@ gulp.task "css", ->
 
 gulp.task "js", ->
   js()
+  js6to5()
 
 gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
   gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
