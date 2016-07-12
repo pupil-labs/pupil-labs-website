@@ -80,7 +80,11 @@
   display none
   @media (max-width: 767px)
     display block
-    
+ 
+.Header-right-bar-item    
+  position relative
+  width 40px
+  
 .Header-button-container
   display inline-block
   position relative
@@ -117,18 +121,23 @@
   display inline-block
   position relative
     
-.Header-nav
-  padding-top 0
-    
-  @media $break-lg
-    float right
-    
-  @media $break-xs
-    padding-top 0.5em
-    
-  @extend .clearfix
-
-
+.Header-cart-badge
+  position absolute
+  top -2px
+  right 0
+  width 18px
+  height 18px
+  background-color #000000
+  border-radius 50%
+  color white
+  font-size 10px
+  font-weight 700
+  pointer-events none
+  display flex
+  flex-direction column
+  align-items center
+  justify-content center
+  
 
 
 .side-nav
