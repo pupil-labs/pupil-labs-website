@@ -8,6 +8,18 @@ header.Header-container
       div.Header-button-container
         a(class="Header-menu-button material-icons" href="/cart") shopping_cart
 
+  div.Header-tab-container
+    div.Header-tab-navs
+      ul
+        each url, title in contents.menu['header-nav.json'].metadata
+          - var pageTitle = "none"
+          - if (typeof(page) !== 'undefined'){
+          -   pageTitle = page.title
+          - }
+          - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Nav-link")
+          li.Nav-tab
+            a(href=url id=navId class=navState) #{ title }
+
   aside.js-side-nav.side-nav
     nav.js-side-nav-container.side-nav__container
       div.js-menu-hide
@@ -22,16 +34,4 @@ header.Header-container
           a(href="/about") about
         li
           a(href="/blog") blog
-          
-  //- nav(class="Header-nav")
-  //-   ul
-  //-     each url, title in contents.menu['header-nav.json'].metadata
-  //-       - var pageTitle = "none"
-  //-       - if (typeof(page) !== 'undefined'){
-  //-       -   pageTitle = page.title
-  //-       - }
-  //-       - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Nav-link")
-  //-       - var navId = (title === "Cart" ? "Nav-cart" : "")
-  //-       - var supTag = (title === "Cart" ? "<sup class=Nav-cart-itemCount></sup>" : "<sup> </sup>")
-  //-       li.Nav-list-item
-  //-         a(href=url id=navId class=navState) #{ title } !{supTag}
+

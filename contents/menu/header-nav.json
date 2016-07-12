@@ -3,6 +3,5 @@
   "Store": "/store",
   "Docs": "/docs",
   "Blog": "/blog",
-  "Jobs": "/jobs",
-  "Cart": "/cart"
+  "Jobs": "/jobs"
 }

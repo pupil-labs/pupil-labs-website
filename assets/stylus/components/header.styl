@@ -28,6 +28,22 @@
   // right 0
   width 100%
   z-index 1
+  background rgba(255,255,255,0.95)  
+  transition transform 0.33s cubic-bezier(0,0,0.15,1)
+  @media (max-width: 767px)
+    position relative
+
+
+.Header-container-hide
+  transform translate3d(0px, -135px, 0px);
+  @media (max-width: 767px)
+    transform none
+        
+.Header-container-show
+  transform translate3d(0px, -66px, 0px);
+  @media (max-width: 767px)
+    transform none
+        
 
 .Header
   position relative
@@ -36,11 +52,9 @@
   align-items center
   padding 0 1.2em
   height 64px
-  background rgba(255,255,255,0.95)  
   border-top 3px solid transparent
   border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
   border-image-slice 1
-  transition transform 0.33s cubic-bezier(0,0,0.3,1)
 
   a
     text-decoration none
@@ -50,7 +64,8 @@
     color $text-color    
     &:hover
       color $text-color
-  
+
+
 .Header-logo
   flex 1
   pointer-events none
@@ -85,7 +100,22 @@
   box-sizing border-box !important
   color $text-color
    
-
+.Header-tab-container
+  position relative
+  height 66px
+  display block
+  @media (max-width: 767px)
+    display none
+  
+.Header-tab-navs
+  display flex
+  align-items center
+  justify-content center
+  
+.Nav-tab
+  margin 0 10px
+  display inline-block
+  position relative
     
 .Header-nav
   padding-top 0
@@ -98,8 +128,6 @@
     
   @extend .clearfix
 
-.Header-hide
-  transform translateY(-102%)
 
 
 

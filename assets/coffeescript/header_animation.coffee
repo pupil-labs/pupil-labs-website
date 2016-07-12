@@ -1,8 +1,8 @@
 hideHeaderOnScroll = ()->
   did_scroll = false
   last_scroll_top = 0
-  delta = 5
-  navbar_height = $('.Header').outerHeight()
+  delta = 40
+  navbar_height = $('.Header-container').outerHeight()
 
   $(window).scroll (event)=>
     did_scroll = true
@@ -12,10 +12,14 @@ hideHeaderOnScroll = ()->
     if Math.abs(last_scroll_top - st) <= delta
       return
 
-    if st > last_scroll_top and st > navbar_height
-      $('.Header').removeClass('Header-show').addClass('Header-hide')
+    if st < $('.Header').outerHeight()
+      $('.Header-container').removeClass('Header-container-show').removeClass('Header-container-hide')
+      # coordinates = "translate3d(0px,"+st+"px,0px)"
+      # $('.Header-container').css("transform",coordinates)
+    else if st > last_scroll_top and st > navbar_height
+      $('.Header-container').removeClass('Header-container-show').addClass('Header-container-hide')
     else if st + $(window).height() < $(document).height()
-      $(".Header").removeClass('Header-hide').addClass('Header-show')
+      $(".Header-container").removeClass('Header-container-hide').addClass('Header-container-show')
 
     last_scroll_top = st    
   
@@ -26,5 +30,4 @@ hideHeaderOnScroll = ()->
   ,250
 
 $(document).ready ->
-
   hideHeaderOnScroll()
