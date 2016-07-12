@@ -56,7 +56,9 @@ jscoffee = ()->
   .pipe gulp.dest "contents/js"
   .pipe livereload();
 
-
+js = ()->
+  jsbabel()
+  jscoffee()
 
 gulp.task "newPost", ->
   knownOpts = 
@@ -143,11 +145,7 @@ gulp.task "css", ->
   css()
 
 gulp.task "js", ->
-  jsbabel()
-  jscoffee()
-
-gulp.task "clean_js", ->
-  del(['contents/js/babel.js','contents/js/coffee.js'])
+  js()
 
 gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
   gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
