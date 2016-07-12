@@ -1,12 +1,21 @@
 header.Site-header.Header-container
   div.Header
     div.Header-left-bar-item
-      a(class="Header-menu-button js-menu-show-header material-icons" href="#") menu
+      a(class="Header-menu-button js-menu-show material-icons" href="#") menu
     div.Header-logo
       a(href="/")= locals.name
     div.Header-right-bar-item
       div.Header-button-container
         a(class="Header-menu-button material-icons" href="/cart") shopping_cart
+
+  aside.js-side-nav.side-nav
+    nav.js-side-nav-container.side-nav__container
+      div.js-menu-hide
+      header.side-nav__header side nav
+      ul.side-nav__content
+        li one
+        li two
+        li three
 
   //- nav(class="Header-nav")
   //-   ul
