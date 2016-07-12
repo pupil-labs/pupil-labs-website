@@ -1,14 +1,23 @@
-header.Site-header.Header
-  a(class="Header-logo" href="/")= locals.name
-  nav(class="Header-nav")
-    ul
-      each url, title in contents.menu['header-nav.json'].metadata
-        - var pageTitle = "none"
-        - if (typeof(page) !== 'undefined'){
-        -   pageTitle = page.title
-        - }
-        - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Nav-link")
-        - var navId = (title === "Cart" ? "Nav-cart" : "")
-        - var supTag = (title === "Cart" ? "<sup class=Nav-cart-itemCount></sup>" : "<sup> </sup>")
-        li.Nav-list-item
-          a(href=url id=navId class=navState) #{ title } !{supTag}
+header.Site-header.Header-container
+  div.Header
+    div.Header-left-bar-item
+      div.Header-button-container
+        button(class="js-menu-show-header header__menu-toggle") menu
+    div.Header-logo
+      a(class="Header-logo-button" href="/")= locals.name
+    div.Header-right-bar-item
+      div.Header-button-container
+        button cart
+
+  //- nav(class="Header-nav")
+  //-   ul
+  //-     each url, title in contents.menu['header-nav.json'].metadata
+  //-       - var pageTitle = "none"
+  //-       - if (typeof(page) !== 'undefined'){
+  //-       -   pageTitle = page.title
+  //-       - }
+  //-       - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Nav-link")
+  //-       - var navId = (title === "Cart" ? "Nav-cart" : "")
+  //-       - var supTag = (title === "Cart" ? "<sup class=Nav-cart-itemCount></sup>" : "<sup> </sup>")
+  //-       li.Nav-list-item
+  //-         a(href=url id=navId class=navState) #{ title } !{supTag}

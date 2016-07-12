@@ -1,47 +1,84 @@
-.Header
-	background $navbar-bg
-	// border-bottom 1px solid $navbar-border-color
-	display block
-	margin 0 auto
-	max-width 100%
-	width 100%
-	z-index $zindex-navbar
+// .Header
+// 	background $navbar-bg
+// 	// border-bottom 1px solid $navbar-border-color
+// 	display block
+// 	margin 0 auto
+// 	max-width 100%
+// 	width 100%
+// 	z-index $zindex-navbar
+// 	position fixed
+// 	top 0
+// 	left 0
+// 	// height 6.75rem
+// 	padding 0.5em 0 0
+// 	border-top 3px solid transparent
+// 	border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
+// 	border-image-slice 1
+
+// 	@media $break-lg
+// 		background rgba(255,255,255,0.95)
+// 		padding .7em 1.5em
+// 		// height 5rem
+
+// 	@extend .clearfix
+.Header-container
 	position fixed
 	top 0
 	left 0
-	// height 6.75rem
-	padding 0.5em 0 0
+	right 0
+	z-index 1
+	background-color rgba(255,255,255,0.5)
+
+.Header
+	position relative
+	display flex
+	flex-direction row
+	align-items center
+	padding 0 1.2em
+	pointer-events none
+	height 64px
 	border-top 3px solid transparent
 	border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
 	border-image-slice 1
 
-	@media $break-lg
-		background rgba(255,255,255,0.95)
-		padding .7em 1.5em
-		// height 5rem
-
-	@extend .clearfix
 	
 .Header-logo
+	flex 1
+	pointer-events none
+	text-align center
+
+.Header-logo a
 	text-decoration none
-	position relative
-	display block
-	margin 0 auto
-	// typography 
+	display inline-block
 	font-family $font-family-sans-serif
 	font-weight 700
-	text-align center
 	font-size $font-size-base + 0.3
 	color $text-color
 	transition color .3s ease-in-out
-	
-	@media $break-lg
-		float left
-		padding-top 1em - 0.3
-		
-	@media $break-xs
-		padding-top 0
 
+.Header-left-bar-item
+	width 40px
+		
+.Header-button-container
+	display inline-block
+	position relative
+	z-index 0
+	width 40px
+	height 40px
+
+.Header-menu-button
+	// justify-content center
+	position relative
+	vertical-align middle
+	display inline-flex
+
+.Header-menu-button
+	// display inline-block
+	// position relative
+	// padding 0.25em
+	// outline none
+	// cursor pointer
+	// box-sizing border-box !important
 	
 .Header-nav
 	padding-top 0
