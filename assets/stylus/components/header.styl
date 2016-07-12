@@ -40,6 +40,8 @@
   border-top 3px solid transparent
   border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
   border-image-slice 1
+  transition transform 0.33s cubic-bezier(0,0,0.3,1)
+
   a
     text-decoration none
     display inline-block
@@ -95,6 +97,9 @@
     padding-top 0.5em
     
   @extend .clearfix
+
+.Header-hide
+  transform translateY(-102%)
 
 
 
