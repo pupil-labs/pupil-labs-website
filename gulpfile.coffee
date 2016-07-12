@@ -4,6 +4,7 @@ gutil = require "gulp-util"
 
 # node filesystem 
 fs = require('fs')
+del = require('del')
 
 # parse command line args
 minimist = require('minimist') 
@@ -23,7 +24,7 @@ imagemin = require "gulp-imagemin"
 pngquant = require "imagemin-pngquant"
 sitemap = require "gulp-sitemap"
 favicons = require "gulp-favicons"
-
+gulpsync = require("gulp-sync")(gulp)
 
 css = ()->
   gulp.src "assets/stylus/main.styl"
@@ -36,15 +37,16 @@ css = ()->
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
-js6to5 = ()->
+jsbabel = ()->
   gulp.src "assets/js/*.js"
-  .pipe babel()
-  .pipe concat "main.js"
-  .pipe gulp.dest "contents/js"
-  .pipe livereload()
+    .pipe babel(presets: ['es2015'])
+    .pipe concat "nav.js"
+    .pipe uglify()
+    .pipe gulp.dest "contents/js"
+    .pipe livereload();
 
 
-js = ()->
+jscoffee = ()->
   gulp.src "assets/coffeescript/*.coffee"
   .pipe coffee(
     bare: true
@@ -52,7 +54,9 @@ js = ()->
   .pipe concat "main.js"
   .pipe uglify()
   .pipe gulp.dest "contents/js"
-  .pipe livereload()
+  .pipe livereload();
+
+
 
 gulp.task "newPost", ->
   knownOpts = 
@@ -139,8 +143,11 @@ gulp.task "css", ->
   css()
 
 gulp.task "js", ->
-  js()
-  js6to5()
+  jsbabel()
+  jscoffee()
+
+gulp.task "clean_js", ->
+  del(['contents/js/babel.js','contents/js/coffee.js'])
 
 gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
   gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
