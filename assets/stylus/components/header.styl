@@ -35,28 +35,27 @@
   flex-direction row
   align-items center
   padding 0 1.2em
-  pointer-events none
   height 64px
   border-top 3px solid transparent
   border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
   border-image-slice 1
-
+  a
+    text-decoration none
+    display inline-block
+    transition-property none
+    pointer-events auto
+    color $text-color    
+    &:hover
+      color $text-color
   
 .Header-logo
   flex 1
   pointer-events none
   text-align center
   a
-    text-decoration none
-    display inline-block
     font-family $font-family-sans-serif
     font-weight 700
     font-size $font-size-base + 0.3
-    color $text-color
-    transition-property none
-    pointer-events auto
-    &:hover 
-      color $text-color
 
 .Header-left-bar-item
   width 40px
@@ -67,6 +66,8 @@
   z-index 0
   width 40px
   height 40px
+  color $text-color
+
 
 .Header-menu-button
   // justify-content center
@@ -74,17 +75,11 @@
   vertical-align middle
   display inline-flex
   padding 8px
-  outline none
-  z-index 0
   height 40px
-  color $text-color
   box-sizing border-box !important
-  a
-    text-decoration none
-    display inline-block
-    cursor pointer
+  color $text-color
+   
 
-    // pointer-events auto
     
 .Header-nav
   padding-top 0

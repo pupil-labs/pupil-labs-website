@@ -1,13 +1,12 @@
 header.Site-header.Header-container
   div.Header
     div.Header-left-bar-item
-      div.Header-button-container
-        a(class="Header-menu-button js-menu-show-header material-icons" href="") menu
+      a(class="Header-menu-button js-menu-show-header material-icons" href="#") menu
     div.Header-logo
       a(href="/")= locals.name
     div.Header-right-bar-item
       div.Header-button-container
-        a(class="Header-menu-button material-icons") shopping_cart
+        a(class="Header-menu-button material-icons" href="/cart") shopping_cart
 
   //- nav(class="Header-nav")
   //-   ul
