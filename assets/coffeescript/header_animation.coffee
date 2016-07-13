@@ -16,9 +16,9 @@ hideHeaderOnScroll = ()->
       # if we move less than delta early return (do nothing)
       return
 
-    if st < $('.Header').outerHeight()
+    # if st < $('.Header').outerHeight()
       # reveal everything 
-      $('.Header-container').removeClass('Header-container-show').removeClass('Header-container-hide')
+      # $('.Header-container').removeClass('Header-container-show').removeClass('Header-container-hide')
       # coordinates = "translate3d(0px,"+st+"px,0px)"
       # $('.Header-container').css("transform",coordinates)
     else if st > last_scroll_top and st > navbar_height
@@ -26,7 +26,7 @@ hideHeaderOnScroll = ()->
       $('.Header-container').removeClass('Header-container-show').addClass('Header-container-hide')
     else if st + $(window).height() < $(document).height()
       console.log "show nav tabs --> document height: #{ $(document).height() } \n window height: #{ $(window).height() }"
-      $(".Header-container").removeClass('Header-container-hide').addClass('Header-container-show')
+      $(".Header-container").removeClass('Header-container-hide').removeClass('Header-container-show')
 
     last_scroll_top = st    
   
