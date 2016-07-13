@@ -58,7 +58,7 @@
 
   a
     text-decoration none
-    display inline-block
+    // display inline-block
     transition-property none
     pointer-events auto
     color $text-color    
@@ -77,9 +77,6 @@
 
 .Header-left-bar-item
   width 40px
-  display none
-  @media (max-width: 767px)
-    display block
  
 .Header-right-bar-item    
   position relative
@@ -96,13 +93,26 @@
 
 .Header-menu-button
   // justify-content center
+  display none
   position relative
   vertical-align middle
-  display inline-flex
   padding 8px
   height 40px
   box-sizing border-box !important
   color $text-color
+  @media (max-width: 767px)
+    display inline-block
+    
+.Header-menu-button--cart
+  // justify-content center
+  display inline-block
+  position relative
+  vertical-align middle
+  padding 8px
+  height 40px
+  box-sizing border-box !important
+  color $text-color
+
    
 .Header-tab-container
   position relative
