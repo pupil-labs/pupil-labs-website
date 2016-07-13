@@ -22,7 +22,7 @@ class PupilStore
     @licenseConfigSelector = "a[class^='#{ @licenseConfigClass }']"
     @licenseConfigActiveClass = "a[class='#{ @licenseConfigClass } #{ @licenseConfigActive }']"
     @configSubTotalClass = "p[class='StoreConfig-subTotal']"
-    @cartNavCounter = $("sup[class='Nav-cart-itemCount']")
+    @cartNavCounter = $("div[id='cart-counter']")
     @storeConfigPresetClass = "a[class='Store-navPreset']"
     ) ->
       @_preloadConfigImages()
@@ -152,10 +152,11 @@ class PupilStore
 
   eventUpdateCartNavCounter: ->
     qty = [v.qty for k,v of LocalStorage.dict()]
-    if qty[0].length > 0
+    if qty[0].length <= 0
+      $(@cartNavCounter).text("0").removeClass("cart-full")
+    else if qty[0].length > 0
       qtySum = qty[0].reduce (a,b) -> a + b
-    counter = if LocalStorage.length() > 0 then qtySum else ""
-    $(@cartNavCounter).text("#{ counter }")
+      $(@cartNavCounter).text("#{ qtySum }").addClass("cart-full")
 
   eventUpdateConfig: ->
     if $("#Store").length > 0
