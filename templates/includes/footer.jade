@@ -1,12 +1,12 @@
 footer.Site-footer
   div.Footer-container
-    div.Grid.Grid--1of4
+    div.Grid.Grid--justifySpaceBetween
       each category_data, category_title in contents.menu['footer-nav.json'].metadata
-        div.Grid-cell
+        div.Grid-cell--auto
           h3.Footer-h3 #{ category_title }
           ul
             each val, key in category_data
               - var data = (category_title == "Contact & Address" ? "<p>"+val+"</p>" : "<a href='"+val+"'>"+key+"</a>");
               li
-                !{data}
+                !{ data }
 
