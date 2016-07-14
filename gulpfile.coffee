@@ -4,6 +4,7 @@ gutil = require "gulp-util"
 
 # node filesystem 
 fs = require('fs')
+del = require('del')
 
 # parse command line args
 minimist = require('minimist') 
@@ -16,13 +17,14 @@ wintersmith = require "run-wintersmith"
 stylus = require "gulp-stylus"
 prefixer = require "gulp-autoprefixer"
 coffee = require "gulp-coffee"
+babel = require "gulp-babel"
 concat = require "gulp-concat"
 uglify = require "gulp-uglify"
 imagemin = require "gulp-imagemin"
 pngquant = require "imagemin-pngquant"
 sitemap = require "gulp-sitemap"
 favicons = require "gulp-favicons"
-
+gulpsync = require("gulp-sync")(gulp)
 
 css = ()->
   gulp.src "assets/stylus/main.styl"
@@ -35,8 +37,16 @@ css = ()->
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
+jsbabel = ()->
+  gulp.src "assets/js/*.js"
+    .pipe babel(presets: ['es2015'])
+    .pipe concat "nav.js"
+    .pipe uglify()
+    .pipe gulp.dest "contents/js"
+    .pipe livereload();
 
-js = ()->
+
+jscoffee = ()->
   gulp.src "assets/coffeescript/*.coffee"
   .pipe coffee(
     bare: true
@@ -44,7 +54,11 @@ js = ()->
   .pipe concat "main.js"
   .pipe uglify()
   .pipe gulp.dest "contents/js"
-  .pipe livereload()
+  .pipe livereload();
+
+js = ()->
+  jsbabel()
+  jscoffee()
 
 gulp.task "newPost", ->
   knownOpts = 

@@ -1,53 +1,234 @@
-.Header
-	background $navbar-bg
-	border-bottom 1px solid $navbar-border-color
-	display block
-	margin 0 auto
-	max-width 100%
-	width 100%
-	z-index $zindex-navbar
-	position fixed
-	top 0
-	left 0
-	// height 6.75rem
-	padding 0.5em 0 0
+.Header-container
+  // no styles
+    
+#Header
+  position fixed
+  left 0
+  right 0
+  top 0
+  height 64px
+  z-index 1
+  display flex
+  flex-direction row
+  align-items flex-start
+  border-top 3px solid transparent
+  border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
+  border-image-slice 1
+  // border-bottom 1px solid transparent
+  background-color rgba(255,255,255,0.85)
+  transition transform 0.33s ease-in-out
+  box-shadow 0px 1px 4px -1px rgba(0,0,0,0.39)
 
-	@media $break-lg
-		background linear-gradient(to bottom, rgba(255,255,255,.975), rgba(255,255,255,1))
-		padding .7em 1.5em
-		// height 5rem
 
-	@extend .clearfix
-	
+.Header-container-hide
+  // transform translate3d(0px, -135px, 0px);
+  @media (max-width: 767px)
+    transform none
+        
+.Header-container-show
+  // transform translate3d(0px, -66px, 0px);
+  @media (max-width: 767px)
+    transform none
+
+
+.Header-menu-button-container
+  position relative
+  top 17px
+  left 20px
+  width 40px
+  height 40px
+  z-index 0
+  display inline-block
+  
+
+.Header-cart-button-container
+  position relative
+  top 19px
+  right 20px
+  width 40px
+  height 40px
+  z-index 0
+  display inline-block
+  #cart-mobile 
+    display none
+  @media (max-width: 767px)
+    #cart-mobile
+      display inline-flex
+
+.Header-menu-button
+  display none
+  color rgba(0,0,0,0.54)
+  a
+    color rgba(0,0,0,0.54)
+  @media (max-width: 767px)
+    display inline-block
+  
+  
 .Header-logo
-	text-decoration none
-	position relative
-	display block
-	margin 0 auto
-	// typography 
-	font-family $font-family-sans-serif
-	font-weight 700
-	text-align center
-	font-size $font-size-base + 0.3
-	color $text-color
-	transition color .3s ease-in-out
-	
-	@media $break-lg
-		float left
-		padding-top 1em - 0.3
-		
-	@media $break-xs
-		padding-top 0
+  display inline-block
+  position relative
+  top 20px
+  @media (max-width: 767px)
+    display inline-flex
+    flex 1
+    text-align center
+    justify-content center
 
-	
+.logotype-container
+  width 90px
+  // height 100px
+    
 .Header-nav
-	padding-top 0
-		
-	@media $break-lg
-		float right
-		
-	@media $break-xs
-		padding-top 0.5em
-		
-	@extend .clearfix
+  position relative
+  top 21px
+  // right 40px
+  flex 1
+  text-align right
+  li
+    font-size 14px
+    margin-left 31px
+  ul
+    list-style none
+    display inline-flex
+    flex-direction row
+    list-style-type none
+  @media (max-width: 767px)
+    display none
+    
 
+.Header-nav-list
+  // nothing
+    
+.Header-nav-item
+  text-decoration none !important
+  font-family 'Roboto', 'sans-serif'
+  font-weight 500
+  color rgba(0,0,0,0.54)
+  text-transform uppercase
+  
+  
+.Header-cart-badge
+  position absolute
+  top -4px
+  right -15px
+  width 18px
+  height 18px
+  background-color #b1b1b1
+  border-radius 50%
+  color white
+  font-size 11px
+  font-weight 700
+  pointer-events none
+  display none
+  flex-direction column
+  align-items center
+  justify-content center
+  @media (max-width: 767px)
+    top 4px
+    right 0px
+    width 20px
+    height 20px
+    font-size 12px
+    pointer-events auto
+    a
+      color rgba(0,0,0,0.54)
+  
+.cart-full
+  display flex
+
+.logotype
+  width 110px
+
+.logotype-pupil
+  fill #4d4d4d
+  
+.logotype-labs
+  fill lighten(#4d4d4d, 20%)
+
+.side-nav
+  position fixed
+  left 0
+  top 0
+  z-index 2
+  width 100%
+  height 100%
+  overflow hidden
+  pointer-events none
+
+.side-nav
+  &:before
+    content ''
+    display block
+    position absolute
+    left 0
+    top 0
+    width 100%
+    height 100%
+    background rgba(255,255,255,0.5)
+    opacity 0
+    will-change opacity
+    transition opacity 0.3s cubic-bezier(0,0,0.3,1)
+
+.side-nav--visible
+  pointer-events auto
+  &.side-nav--animatable
+    .side-nav__container
+      transition transform 0.33s cubic-bezier(0,0,0.3,1)
+  &:before
+    opacity 1
+  .side-nav__container
+    transform none
+
+.side-nav__container
+  position relative
+  width 50%
+  max-width 400px
+  background #FFF
+  height 100%
+  box-shadow 2px 0 12px rgba(0,0,0,0.4)
+  transform translateX(-102%)
+  display flex
+  flex-direction column
+  will-change transform
+
+.side-nav--animatable
+  .side-nav__container
+    transition transform 0.13s cubic-bezier(0,0,0.3,1)
+
+.side-nav__hide
+  position absolute
+  left 16px
+  top 16px
+  background none
+  border none
+  color #FFF
+  width 24px
+  height 24px
+  padding 0
+  margin 0
+
+.side-nav__header
+  height 64px
+  background #FFF
+  color gray
+  display flex
+  padding 16px
+  align-items flex-end
+  font-size 24px
+
+.side-nav__content
+  padding-top 32px
+  flex 1
+  list-style none
+  padding 0
+  margin 0
+  overflow-x hidden
+  overflow-y auto
+  overflow-scrolling touch
+  li
+    height 48px
+    line-height 48px
+    padding 0 34px
+    font-size 14px
+    &:hover
+      background rgba(0,0,0,0.1)
