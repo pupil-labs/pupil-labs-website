@@ -1,3 +1,4 @@
+- var location = 'javascript: window.location.pathname'
 header.Header-container
   div(id="Header")
     div.Header-menu-button-container
@@ -22,13 +23,9 @@ header.Header-container
       div(class="Header-cart-badge" id="cart-counter")
       ul.Header-nav-list
         each url, title in contents.menu['header-nav.json'].metadata
-          - var pageTitle = "none"
-          - if (typeof(page) !== 'undefined'){
-          -   pageTitle = page.title
-          - }
-          - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Header-nav-item")
+          - var navItemClass = (location === url ? "Header-nav-item u-linkAttention" : "Header-nav-item")
           li.Nav-tab
-            a(href=url id=navId class=navState) #{ title }
+            a(class=navItemClass href=url) #{ title }
 
   aside.js-side-nav.side-nav
     nav.js-side-nav-container.side-nav__container
