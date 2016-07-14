@@ -20,26 +20,21 @@ header.Header-container
             path(d='M68.12,10.18A3.81,3.81,0,0,1,72,14.25a3.84,3.84,0,1,1-7.67,0A3.8,3.8,0,0,1,68.12,10.18Zm3.66-.74a4.83,4.83,0,0,0-4-1.87,6.38,6.38,0,0,0-6.36,6.69,6.38,6.38,0,0,0,6.36,6.69,4.82,4.82,0,0,0,4-1.86v1.53h2.77v-13H71.78Z')
 
     div.Header-nav
-      div(class="Header-cart-badge" id="cart-counter")
+      div(class="Header-cart-badge")
       ul.Header-nav-list
         each url, title in contents.menu['header-nav.json'].metadata
           - var navItemClass = (location === url ? "Header-nav-item u-linkAttention" : "Header-nav-item")
           li.Nav-tab
             a(class=navItemClass href=url) #{ title }
-    div.Header-menu-button-container
+    div.Header-cart-button-container
+      a(class="Header-cart-badge" id="cart-mobile" href="/cart")
 
   aside.js-side-nav.side-nav
     nav.js-side-nav-container.side-nav__container
       div.js-menu-hide
       ul.side-nav__content
-        li
-          a(href="/pupil") pupil
-        li 
-          a(href="/store") store
-        li 
-          a(href="/jobs") jobs
-        li
-          a(href="/about") about
-        li
-          a(href="/blog") blog
-
+        li.Header-nav-item
+          a(class="Header-nav-item" href="/") home
+        each url, title in contents.menu['header-nav.json'].metadata
+          li
+            a(class="Header-nav-item" href=url) #{ title }

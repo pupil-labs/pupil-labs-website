@@ -22,7 +22,7 @@ class PupilStore
     @licenseConfigSelector = "a[class^='#{ @licenseConfigClass }']"
     @licenseConfigActiveClass = "a[class='#{ @licenseConfigClass } #{ @licenseConfigActive }']"
     @configSubTotalClass = "p[class='StoreConfig-subTotal']"
-    @cartNavCounter = $("div[id='cart-counter']")
+    @cartNavCounter = $(".Header-cart-badge")
     @storeConfigPresetClass = "a[class='Store-navPreset']"
     ) ->
       @_preloadConfigImages()

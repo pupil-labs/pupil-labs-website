@@ -33,13 +33,28 @@
 
 .Header-menu-button-container
   position relative
-  top 20px
+  top 17px
   left 20px
   width 40px
   height 40px
   z-index 0
   display inline-block
   
+
+.Header-cart-button-container
+  position relative
+  top 19px
+  right 20px
+  width 40px
+  height 40px
+  z-index 0
+  display inline-block
+  #cart-mobile 
+    display none
+  @media (max-width: 767px)
+    #cart-mobile
+      display inline-flex
+
 .Header-menu-button
   display none
   color rgba(0,0,0,0.54)
@@ -72,7 +87,6 @@
   li
     font-size 14px
     margin-left 31px
-    text-transform uppercase
   ul
     list-style none
     display inline-flex
@@ -90,7 +104,7 @@
   font-family 'Roboto', 'sans-serif'
   font-weight 500
   color rgba(0,0,0,0.54)
-  // margin inherit
+  text-transform uppercase
   
   
 .Header-cart-badge
@@ -109,6 +123,15 @@
   flex-direction column
   align-items center
   justify-content center
+  @media (max-width: 767px)
+    top 4px
+    right 0px
+    width 20px
+    height 20px
+    font-size 12px
+    pointer-events auto
+    a
+      color rgba(0,0,0,0.54)
   
 .cart-full
   display flex
@@ -185,7 +208,7 @@
   margin 0
 
 .side-nav__header
-  height 100px
+  height 64px
   background #FFF
   color gray
   display flex
@@ -205,6 +228,7 @@
   li
     height 48px
     line-height 48px
-    padding 0 16px
+    padding 0 34px
+    font-size 14px
     &:hover
-      background #CCC
+      background rgba(0,0,0,0.1)
