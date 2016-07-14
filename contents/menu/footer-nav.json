@@ -1,4 +1,17 @@
 {
-  "About & Imprint": "/about",
-  "Terms of Sale": "/tos"
+  "Products": {"Pupil Headset": "/pupil",
+                "Occulus Rift DK2 Add-on": "/store",
+                "Epson BT-200 Add-on": "/store"
+                },
+  "Social": {"Github":"https://github.com/pupil-labs",
+            "Youtube":"https://youtube.com/c/PupilLabs",
+            "Twitter":"https://twitter.com/pupil_labs"
+          },
+  "Contact & Address":{"email":"info@pupil-labs.com",
+                      "address1":"Pupil Labs UG (haftungsbeschränkt)",
+                      "address2":"Gustav-Müller-Str. 7",
+                      "address3":"10829, Berlin, Germany"
+                    },
+  "Terms & Info": {"Terms of Sale": "/tos",
+                    "Privacy Policy": "/privacy"}
 }

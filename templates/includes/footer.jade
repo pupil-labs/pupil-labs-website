@@ -1,15 +1,12 @@
 footer.Site-footer
-  section.Footer-nav
-    ul.Grid-noWrap.Grid-noWrap--breakSmall.Grid--stretch.Grid--justifySpaceAround
-      each url, title in contents.menu['footer-nav.json'].metadata
-        li.Grid-cell--auto.Footer-nav-item
-          a(href=url class="Footer-nav-link")= title
-section.Footer-social
-    ul.Grid.Grid--justifyCenter
-      each url, title in contents.menu['footer-connect.json'].metadata
-        li.Grid-cell--auto.Footer-social-item
-          a(href=url target="_blank" class="Footer-social-link")= title
-  //- section.Footer-copy
-  //-   div.Grid-noWrap.Grid--justifyCenter
-  //-     div.Grid-cell--noFlex.Footer-copy-item
-  //-       p.Footer-copy-text #{locals.owner} #{new Date().getFullYear()} 
+  div.Footer-container
+    div.Grid.Grid--1of4
+      each category_data, category_title in contents.menu['footer-nav.json'].metadata
+        div.Grid-cell
+          h3.Footer-h3 #{ category_title }
+          ul
+            each val, key in category_data
+              - var data = (category_title == "Contact & Address" ? "<p>"+val+"</p>" : "<a href='"+val+"'>"+key+"</a>");
+              li
+                !{data}
+
