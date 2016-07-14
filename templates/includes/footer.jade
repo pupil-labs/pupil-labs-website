@@ -7,6 +7,6 @@ footer.Site-footer
           ul
             each val, key in category_data
               - var data = (category_title == "Contact & Address" ? "<p>"+val+"</p>" : "<a href='"+val+"'>"+key+"</a>");
-              li
+              li.Footer-data
                 !{ data }
 
