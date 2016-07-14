@@ -152,13 +152,15 @@
 
 .Background-img
   background embedurl("../media/images/config_images/web/hs_30m.jpg") no-repeat bottom center
-  background-attachment fixed // set to scroll for full size
+  background-attachment scroll // set to scroll for full size
   background-size contain
   width 100vw
-  height calc(100vh - 64px)
+  height 100vh
   position relative
   display flex
   flex-direction column
+  justify-content center
+  align-items center
   
 .Feature-specs
   flex 1 0 auto
