@@ -1,7 +1,7 @@
 hideHeaderOnScroll = ()->
   did_scroll = false
   last_scroll_top = 0
-  delta = 40
+  delta = 50
   navbar_height = $('#Header').outerHeight()
 
   $(window).scroll (event)=>

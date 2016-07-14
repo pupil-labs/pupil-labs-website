@@ -1,3 +1,6 @@
+.Header-container
+  // no styles
+    
 #Header
   position fixed
   left 0
@@ -8,74 +11,88 @@
   display flex
   flex-direction row
   align-items flex-start
-  border-top 2px solid transparent
+  border-top 3px solid transparent
   border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
   border-image-slice 1
   // border-bottom 1px solid transparent
   background-color rgba(255,255,255,0.85)
-  transition transform 0.33s cubic-bezier(0,0,0.15,1)
+  transition transform 0.33s ease-in-out
+  box-shadow 0px 1px 4px -1px rgba(0,0,0,0.39)
+
 
 .Header-container-hide
-  transform translate3d(0px, -135px, 0px);
+  // transform translate3d(0px, -135px, 0px);
   @media (max-width: 767px)
     transform none
         
 .Header-container-show
-  transform translate3d(0px, -66px, 0px);
+  // transform translate3d(0px, -66px, 0px);
   @media (max-width: 767px)
     transform none
 
 
 .Header-menu-button-container
-	position relative
-	top 8px
-	padding 12px
-	width auto
-	height auto
-	z-index 0
-	display block
-	
+  position relative
+  top 20px
+  left 20px
+  width 40px
+  height 40px
+  z-index 0
+  display inline-block
+  
 .Header-menu-button
-	display none
-	@media (max-width: 767px)
-		display inline-block
-	
+  display none
+  color rgba(0,0,0,0.54)
+  a
+    color rgba(0,0,0,0.54)
+  @media (max-width: 767px)
+    display inline-block
+  
+  
 .Header-logo
-	display inline-block
-	position relative
-	top 20px
-	
+  display inline-block
+  position relative
+  top 20px
+  @media (max-width: 767px)
+    display inline-flex
+    flex 1
+    text-align center
+    justify-content center
+
 .logotype-container
-	width 90px
-	// height 100px
-		
+  width 90px
+  // height 100px
+    
 .Header-nav
-	position relative
-	top 20px
-	right 24px
-	flex 1
-	text-align right
-	li
-		font-size 14px
-		margin-left 31px
-		text-transform uppercase
-	ul
-		list-style none
-		display inline-flex
-		flex-direction row
-		list-style-type none
+  position relative
+  top 21px
+  // right 40px
+  flex 1
+  text-align right
+  li
+    font-size 14px
+    margin-left 31px
+    text-transform uppercase
+  ul
+    list-style none
+    display inline-flex
+    flex-direction row
+    list-style-type none
+  @media (max-width: 767px)
+    display none
+    
 
 .Header-nav-list
-	// nothing
-		
+  // nothing
+    
 .Header-nav-item
-	text-decoration none !important
-	font-family 'Roboto', 'sans-serif'
-	font-weight 500
-	color rgba(0,0,0,0.54)
-	// margin inherit
-	
-	
+  text-decoration none !important
+  font-family 'Roboto', 'sans-serif'
+  font-weight 500
+  color rgba(0,0,0,0.54)
+  // margin inherit
+  
+  
 .Header-cart-badge
   position absolute
   top -4px
@@ -97,13 +114,13 @@
   display flex
 
 .logotype
-	width 110px
+  width 110px
 
 .logotype-pupil
-	fill #4d4d4d
-	
+  fill #4d4d4d
+  
 .logotype-labs
-	fill lighten(#4d4d4d, 20%)
+  fill lighten(#4d4d4d, 20%)
 
 .side-nav
   position fixed
