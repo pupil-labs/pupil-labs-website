@@ -1,141 +1,73 @@
-// .Header
-//  background $navbar-bg
-//  // border-bottom 1px solid $navbar-border-color
-//  display block
-//  margin 0 auto
-//  max-width 100%
-//  width 100%
-//  z-index $zindex-navbar
-//  position fixed
-//  top 0
-//  left 0
-//  // height 6.75rem
-//  padding 0.5em 0 0
-//  border-top 3px solid transparent
-//  border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
-//  border-image-slice 1
-
-//  @media $break-lg
-//    background rgba(255,255,255,0.95)
-//    padding .7em 1.5em
-//    // height 5rem
-
-//  @extend .clearfix
-.Header-container
+#Header
   position fixed
-  top 0
   left 0
-  // right 0
-  line-height 1
-  width 100%
+  right 0
+  top 0
+  height 64px
   z-index 1
-  background rgba(255,255,255,0.95)  
-  transition transform 0.33s cubic-bezier(0,0,0.15,1)
-  // @media (max-width: 767px)
-  //   position relative
-
-
-.Header-container-hide
-  transform translate3d(0px, -135px, 0px);
-  @media (max-width: 767px)
-    transform none
-        
-.Header-container-show
-  transform translate3d(0px, -66px, 0px);
-  @media (max-width: 767px)
-    transform none
-        
-
-.Header
-  position relative
   display flex
   flex-direction row
-  align-items center
-  padding 0 1.2em
-  height 64px
-  border-top 3px solid transparent
+  align-items flex-start
+  border-top 2px solid transparent
   border-image linear-gradient(to left, #38EA92 0%, #A1DEF0 100%)
   border-image-slice 1
+  border-bottom 1px solid transparent
+  background-color rgba(255,255,255,0.75)
 
-  a
-    text-decoration none
-    // display inline-block
-    transition-property none
-    pointer-events auto
-    color $text-color    
-    &:hover
-      color $text-color
-
-
-.Header-logo
-  flex 1
-  pointer-events none
-  text-align center
-  a
-    font-family $font-family-sans-serif
-    font-weight 700
-    font-size $font-size-base + 0.3
-
-.Header-left-bar-item
-  width 40px
- 
-.Header-right-bar-item    
-  position relative
-  width 40px
-  
-.Header-button-container
-  display inline-block
-  position relative
-  z-index 0
-  width 40px
-  height 40px
-  color $text-color
-
-
+.Header-menu-button-container
+	position relative
+	top 8px
+	padding 12px
+	width auto
+	height auto
+	z-index 0
+	display block
+	
 .Header-menu-button
-  // justify-content center
-  display none
-  position relative
-  vertical-align middle
-  padding 8px
-  height 40px
-  box-sizing border-box !important
-  color $text-color
-  @media (max-width: 767px)
-    display inline-block
-    
-.Header-menu-button--cart
-  // justify-content center
-  display inline-block
-  position relative
-  vertical-align middle
-  padding 8px
-  height 40px
-  box-sizing border-box !important
-  color $text-color
+	display none
+	@media (max-width: 767px)
+		display inline-block
+	
+.Header-logo
+	display inline-block
+	position relative
+	top 20px
+	
+.logotype-container
+	width 90px
+	// height 100px
+		
+.Header-nav
+	position relative
+	top 20px
+	right 24px
+	flex 1
+	text-align right
+	li
+		font-size 14px
+		margin-left 31px
+		text-transform uppercase
+	ul
+		list-style none
+		display inline-flex
+		flex-direction row
+		list-style-type none
 
-   
-.Header-tab-container
-  position relative
-  height 66px
-  display block
-  @media (max-width: 767px)
-    display none
-  
-.Header-tab-navs
-  display flex
-  align-items center
-  justify-content center
-  
-.Nav-tab
-  margin 0 10px
-  display inline-block
-  position relative
-    
+.Header-nav-list
+	// nothing
+		
+.Header-nav-item
+	text-decoration none !important
+	font-family 'Roboto', 'sans-serif'
+	font-weight 500
+	color rgba(0,0,0,0.54)
+	// margin inherit
+	
+	
 .Header-cart-badge
   position absolute
-  top -3px
-  right 5px
+  top -4px
+  right -15px
   width 18px
   height 18px
   background-color #b1b1b1
