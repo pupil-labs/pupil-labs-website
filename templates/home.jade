@@ -7,25 +7,30 @@ block main
     - var intro_meta = intro_data.metadata    
     - var oss_data = contents.home['home_open_source.json']
     - var oss_meta = oss_data.metadata
+    - var home_made = contents.home['home_made.json']
+    - var home_made_meta = home_made.metadata
     div.Grid
       div.Background-img
 
     //- pupil intro row
     div.Site-content-container
       div.Feature-container-column
-        div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell--2of3
-            div.Feature.Feature--padded2
+            div.Feature
               h1.Feature-title--lg.u-padBottom--1 #{ intro_meta.pupil_title }
               p.Feature-paragraph #{ intro_meta.pupil_description_1 }
               p.Feature-paragraph #{ intro_meta.pupil_description_2 }
               p.Feature-paragraph #{ intro_meta.pupil_description_3 }
               p.Feature-paragraph!= typogr(intro_meta.pupil_description_4).typogrify()
-              a(href="/pupil" class="Button Button-max-width--50-100 u-marginTop--2") #{ intro_meta.pupil_link_text }
           div.Grid-cell--1of3
-            div.Feature.Feature--padded2
+            div.Feature
               figure.Feature-figure
                 img(class="Feature-image" src=intro_meta.pupil_image alt=intro_meta.pupil_image_alt)
+          div.Grid-cell
+            div
+              a(href="/pupil" class="Button Button-max-width--40-80") #{ intro_meta.pupil_link_text }
+
 
     //- oss motivation row
     div.Site-gray-bkg
@@ -33,28 +38,51 @@ block main
         div.Feature-container-column
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full.u-textCenter
-              h1.Feature-title--lg.u-padBottom--1 #{ oss_meta.title1 }
-            div.Grid.Grid--1of3
-              div.Grid-cell
-                p.Feature-paragraph #{ oss_meta.point1 }
-              div.Grid-cell
-                p.Feature-paragraph #{ oss_meta.point2 }
-              div.Grid-cell
-                p.Feature-paragraph #{ oss_meta.point3 }
+              div.Feature
+                h1.Feature-title--lg.u-padBottom--1 #{ oss_meta.title1 }
+              div.Grid.Grid--1of3
+                div.Grid-cell
+                  p.Feature-paragraph #{ oss_meta.point1 }
+                div.Grid-cell
+                  p.Feature-paragraph #{ oss_meta.point2 }
+                div.Grid-cell
+                  p.Feature-paragraph #{ oss_meta.point3 }
 
     //- made in berlin row
     div.Site-content-container
       div.Feature-container-column
-        div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Feature
+              h1.Feature-title--lg.u-padBottom--1 #{ home_made_meta.title1 }
+            div.Grid
+              div.Grid-cell.Grid-cell--full
+                p.Feature-paragraph #{ home_made_meta.point1 }
+              div.Grid-cell.Grid-cell--full
+                p.Feature-paragraph #{ home_made_meta.point2 }
+              div.Grid-cell.Grid-cell--full
+                p.Feature-paragraph #{ home_made_meta.point3 }
+
     //- dev feed row
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
-          div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.Feature-title--lg.u-padBottom--1 Development Feed
+            div.Grid
+              div.Grid-cell.u-padTop--2
+                div(id="Home-activity")
+                  ul(id="Home-activity-list" class="Activity")
+
+    
     //- newsletter row
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+    
+
     //- Newsletter Update
     //- div.u-padTop--6
     //-   div.Grid.Grid--1of2.Grid--gutters.Grid--center

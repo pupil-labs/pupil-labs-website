@@ -87,7 +87,7 @@ getGithubRepoEvents = (org = "pupil-labs",repo = "pupil")->
       # sessionStorage.set("github_repo_activity")
       processGithubRepoData(data.data)
       
-getGithubOrgEvents = (org = "pupil-labs",pages = 1,per_page = 20)->
+getGithubOrgEvents = (org = "pupil-labs",pages = 1,per_page = 10)->
   urlQuery = "https://api.github.com/orgs/#{ org }/events?pages=#{ pages }&per_page=#{ per_page }" 
   $.ajax
     type: 'GET'
