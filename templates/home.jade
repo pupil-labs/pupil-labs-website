@@ -26,11 +26,22 @@ block main
             div.Feature.Feature--padded2
               figure.Feature-figure
                 img(class="Feature-image" src=intro_meta.pupil_image alt=intro_meta.pupil_image_alt)
+
     //- oss motivation row
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
-          div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              h1.Feature-title--lg.u-padBottom--1 #{ oss_meta.title1 }
+            div.Grid.Grid--1of3
+              div.Grid-cell
+                p.Feature-paragraph #{ oss_meta.point1 }
+              div.Grid-cell
+                p.Feature-paragraph #{ oss_meta.point2 }
+              div.Grid-cell
+                p.Feature-paragraph #{ oss_meta.point3 }
+
     //- made in berlin row
     div.Site-content-container
       div.Feature-container-column
