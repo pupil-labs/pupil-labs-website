@@ -8,6 +8,22 @@ block main
     div.Grid
       div.Background-img
 
+    //- Pupil intro
+    div.Grid.Grid--justifyCenter
+      div.Site-content-max
+        div.Grid-cell--2of3
+          div.Feature.u-padTop--2.u-padBottom--2
+            h1.Feature-title--lg #{ page_meta.pupil_title }
+            p #{ page_meta.pupil_description_1 }
+            //- h2.Feature-subtitle #{ page_meta.pupil_description_2 }
+            p #{ page_meta.pupil_description_3 }
+            p!= typogr(page_meta.pupil_description_4).typogrify()
+            a(href="/store" class="Button") #{ page_meta.pupil_link_text }
+        div.Grid-cell--1of3
+          div.Feature
+            figure.Feature-figure
+              img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
+
     //- Pupil 
     //- div.Grid.Grid--1of2
     //-   div.Grid-cell
