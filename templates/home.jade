@@ -8,21 +8,21 @@ block main
     div.Grid
       div.Background-img
 
-    //- Pupil intro
-    div.Grid.Grid--justifyCenter
-      div.Site-content-max
-        div.Grid-cell--2of3
-          div.Feature.u-padTop--2.u-padBottom--2
-            h1.Feature-title--lg #{ page_meta.pupil_title }
-            p #{ page_meta.pupil_description_1 }
-            //- h2.Feature-subtitle #{ page_meta.pupil_description_2 }
-            p #{ page_meta.pupil_description_3 }
-            p!= typogr(page_meta.pupil_description_4).typogrify()
-            a(href="/store" class="Button") #{ page_meta.pupil_link_text }
-        div.Grid-cell--1of3
-          div.Feature
-            figure.Feature-figure
-              img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+          div.Grid-cell--2of3
+            div.Feature.Feature--padded2
+              h1.Feature-title--lg.u-padBottom--1 #{ page_meta.pupil_title }
+              p.Feature-paragraph #{ page_meta.pupil_description_1 }
+              p.Feature-paragraph #{ page_meta.pupil_description_2 }
+              p.Feature-paragraph #{ page_meta.pupil_description_3 }
+              p.Feature-paragraph!= typogr(page_meta.pupil_description_4).typogrify()
+              a(href="/store" class="Button Button-max-width--50-100 u-marginTop--2") #{ page_meta.pupil_link_text }
+          div.Grid-cell--1of3
+            div.Feature.Feature--padded2
+              figure.Feature-figure
+                img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
 
     //- Pupil 
     //- div.Grid.Grid--1of2

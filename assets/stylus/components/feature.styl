@@ -172,13 +172,29 @@
 .Feature-wrapper
   display flex
   flex-direction column
-    
-.Grid-cell p
-    flex 1 0 auto
-    
+        
 .Feature-grayBkg
   color invert($gray-darker)
   background darken($link-hover-color,30%)
   
 .Feature-container--activityHome
   background rgba(0,0,0,0.1)
+  
+.Feature-paragraph
+  font-size 1em
+  padding-bottom 1em
+  
+.Feature-row
+  min-height 30em
+  display flex
+
+.Feature-container-column
+  display flex
+  flex-direction column
+  
+.Feature-row
+  min-height 40em
+  padding 4em 0em
+  @media $break-767
+    padding 3em 0em
+    min-height 0

@@ -19,7 +19,7 @@
 	
 
 .Grid-noWrap--breakSmall
-	@media $break-sm
+	@media $break-767
 		flex-wrap wrap
 	
 .Grid-cell
@@ -85,18 +85,16 @@
 	
 .Grid-cell--1of3
 	flex 0 0 (1/3)*100%	
+	@media $break-767
+		flex 0 0 100%
 
 .Grid-cell--1of6
 	flex 0 0 (1/6)*100%	
 
 .Grid-cell--2of3
 	flex 0 0 (2/3)*100%
-
-.Grid-cell--padright2
-	padding-right 2em
-
-.Grid-cell--padright1
-	padding-right 1em
+	@media $break-767
+		flex 0 0 100%
 	
 .Grid-cell--main
 	flex 1 0
@@ -105,7 +103,7 @@
 	flex 1 0 20%
 	max-width 20%
 	
-	@media $break-sm
+	@media $break-767
 		flex 1 0 5%
 		max-width 5%
 
@@ -113,7 +111,7 @@
 	flex 0 0 8%
 	max-width 8%
 	
-	@media $break-sm
+	@media $break-767
 		flex 0 0 5%
 		max-width 5%
 
@@ -169,7 +167,7 @@
 		// firefox fix below
 		max-width 50%
 			
-		@media $break-sm
+		@media $break-767
 			flex 0 0 100%
 			max-width 100%
 
@@ -192,7 +190,7 @@
 		max-width 33.3333%
 
 		
-		@media $break-sm
+		@media $break-767
 			flex 0 0 100%
 			max-width 100%
 
@@ -202,14 +200,14 @@
 		flex 0 0 25%
 		max-width 25%
 		
-		@media $break-sm
+		@media $break-767
 			flex 0 0 100%
 			max-width 100%
 
 .Grid-cell--header
 	font-weight 700
 	
-	@media $break-sm
+	@media $break-767
 		font-size .8em
 
 .Grid-cell--borderBottom
@@ -227,7 +225,7 @@
 	> .Grid-cell
 		padding 1em 0 0 1em
 		
-		@media $break-sm
+		@media $break-767
 			flex 0 0 100%
 			max-width 100%
 		
@@ -238,7 +236,7 @@
 	> .Aligner-item
 		padding 2em 4em 4em 4em
 		
-		@media $break-sm
+		@media $break-767
 			padding 2em 2.4em 4em 2.4em
 			
 	> .Aligner-item--1of2
