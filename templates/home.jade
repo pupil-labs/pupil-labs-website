@@ -3,95 +3,94 @@ extends layout
 block main
   div(id="Home")
 
-    - var page_data = contents.home['index.json']
-    - var page_meta = page_data.metadata    
+    - var intro_data = contents.home['home_pupil_intro.json']
+    - var intro_meta = intro_data.metadata    
+    - var oss_data = contents.home['home_open_source.json']
+    - var oss_meta = oss_data.metadata
     div.Grid
       div.Background-img
 
+    //- pupil intro row
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Feature-row
           div.Grid-cell--2of3
             div.Feature.Feature--padded2
-              h1.Feature-title--lg.u-padBottom--1 #{ page_meta.pupil_title }
-              p.Feature-paragraph #{ page_meta.pupil_description_1 }
-              p.Feature-paragraph #{ page_meta.pupil_description_2 }
-              p.Feature-paragraph #{ page_meta.pupil_description_3 }
-              p.Feature-paragraph!= typogr(page_meta.pupil_description_4).typogrify()
-              a(href="/store" class="Button Button-max-width--50-100 u-marginTop--2") #{ page_meta.pupil_link_text }
+              h1.Feature-title--lg.u-padBottom--1 #{ intro_meta.pupil_title }
+              p.Feature-paragraph #{ intro_meta.pupil_description_1 }
+              p.Feature-paragraph #{ intro_meta.pupil_description_2 }
+              p.Feature-paragraph #{ intro_meta.pupil_description_3 }
+              p.Feature-paragraph!= typogr(intro_meta.pupil_description_4).typogrify()
+              a(href="/pupil" class="Button Button-max-width--50-100 u-marginTop--2") #{ intro_meta.pupil_link_text }
           div.Grid-cell--1of3
             div.Feature.Feature--padded2
               figure.Feature-figure
-                img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
-
-    //- Pupil 
-    //- div.Grid.Grid--1of2
-    //-   div.Grid-cell
-    //-     div.Feature
-    //-       figure.Feature-figure
-    //-         img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
-    //-   div.Grid-cell.Grid-cell--center
-    //-     div.Feature.Feature--padded3
-    //-       h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
-    //-       h2.Feature-subtitle #{ page_meta.pupil_description_1 }
-    //-       h2.Feature-subtitle #{ page_meta.pupil_description_2 }
-    //-       h2.Feature-subtitle #{ page_meta.pupil_description_3 }
-    //-       h2.Feature-subtitle!= typogr(page_meta.pupil_description_4).typogrify()
-    //-       a(href="/store" class="Button") #{ page_meta.pupil_link_text }
-
+                img(class="Feature-image" src=intro_meta.pupil_image alt=intro_meta.pupil_image_alt)
+    //- oss motivation row
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+    //- made in berlin row
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+    //- dev feed row
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Feature-row
+    //- newsletter row
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Feature-row
     //- Newsletter Update
-    div.u-padTop--6
-      div.Grid.Grid--1of2.Grid--gutters.Grid--center
-        div.Grid-cell
-          h1.Banner-title.u-textCenter=page_meta.about_title
-          h2.Banner-subtitle.u-textCenter=page_meta.about_subtitle
-          h2.Feature-subtitle=page_meta.about_description_1
-          h2.Feature-subtitle=page_meta.about_description_2
-        div.Grid-cell.Grid-cell-center
-          div.Feature.Feature--padded3
-            h2.Banner-title.u-textCenter Stay updated
-            h2.Feature-subtitle We send about one email per quarter with product updates, community news, and technical reports. We will never share your information or spam your inbox.
-            form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
-              input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="your email address" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
-              p(class="Form-error--text" id="news_email_error")
-              input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
-              label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") Subscribe
+    //- div.u-padTop--6
+    //-   div.Grid.Grid--1of2.Grid--gutters.Grid--center
+    //-     div.Grid-cell
+    //-       h1.Banner-title.u-textCenter=intro_meta.about_title
+    //-       h2.Banner-subtitle.u-textCenter=intro_meta.about_subtitle
+    //-       h2.Feature-subtitle=intro_meta.about_description_1
+    //-       h2.Feature-subtitle=intro_meta.about_description_2
+    //-     div.Grid-cell.Grid-cell-center
+    //-       div.Feature.Feature--padded3
+    //-         h2.Banner-title.u-textCenter Stay updated
+    //-         h2.Feature-subtitle We send about one email per quarter with product updates, community news, and technical reports. We will never share your information or spam your inbox.
+    //-         form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+    //-           input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="your email address" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
+    //-           p(class="Form-error--text" id="news_email_error")
+    //-           input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
+    //-           label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") Subscribe
 
 
-    //- About Pupil Labs
-    //- - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_subtitle}
-    //- - var bannerParagraphs = [page_meta.about_description_1,page_meta.about_description_2]
-    //- - var bannerBkg = "Banner-container"
-    //- - var bannerSubClass = "Banner-subtitle Banner-subtitle--pad" 
+
+
+    //- //- Recent Activity
+    //- - var bannerData = {'title': intro_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
+    //- - var bannerBkg = "Banner-container--sm"
+    //- - var bannerParagraphs = ""
     //- include includes/banner
+    //- div.Feature-container--activityHome
+    //-   div.Grid.Grid--1of2.Grid--gutters-noMargin
+    //-     div.Grid-cell
+    //-       h2.u-textCenter Recent Blog Posts 
+    //-       div.Feature.Feature--padded3
+    //-         ul
+    //-         - var articles = env.helpers.getArticles(contents)
+    //-         - var articleLimit = 5
+    //-         each article,i in articles.slice(0,articleLimit)
+    //-           - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
+    //-           li(class="Article-list-item" style=opacity)
+    //-             article
+    //-               header
+    //-                 h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
+    //-                 p= article.metadata.subtitle
+    //-                 a(href=article.url class="Article-link") Read More 
 
-
-    //- Recent Activity
-    - var bannerData = {'title': page_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
-    - var bannerBkg = "Banner-container--sm"
-    - var bannerParagraphs = ""
-    include includes/banner
-    div.Feature-container--activityHome
-      div.Grid.Grid--1of2.Grid--gutters-noMargin
-        div.Grid-cell
-          h2.u-textCenter Recent Blog Posts 
-          div.Feature.Feature--padded3
-            ul
-            - var articles = env.helpers.getArticles(contents)
-            - var articleLimit = 5
-            each article,i in articles.slice(0,articleLimit)
-              - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
-              li(class="Article-list-item" style=opacity)
-                article
-                  header
-                    h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
-                    p= article.metadata.subtitle
-                    a(href=article.url class="Article-link") Read More 
-
-        div.Grid-cell
-          h2.u-textCenter Development Feed 
-          div(id="Home-activity" class="Feature Feature--padded3")
-            ul(id="Home-activity-list" class="Activity")
+    //-     div.Grid-cell
+    //-       h2.u-textCenter Development Feed 
+    //-       div(id="Home-activity" class="Feature Feature--padded3")
+    //-         ul(id="Home-activity-list" class="Activity")
 
 
 
