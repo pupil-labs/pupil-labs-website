@@ -150,16 +150,34 @@
   top 0 
 
 
-.Background-img
+.Background-img--full-wh
   // background-image embedurl("../media/images/slides/1.jpg")
   background-position-x center
   background-position-y center
   background-repeat-x no-repeat
   background-repeat-y no-repeat  
-  background-attachment fixed // set to scroll for full size
+  background-attachment fixed // set to scroll so content doesn't scroll over top
   background-size cover
   width 100vw
   height calc(100vh - 64px)
+  position relative
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+
+
+.Background-img--full-w
+  background-position-x center
+  background-position-y 64px
+  background-repeat-x no-repeat
+  background-repeat-y no-repeat  
+  background-attachment fixed 
+  background-size contain
+  width 100vw
+  height 0
+  padding 0 // clear prior setting bottom padding
+  padding-bottom 70% // this should be equal to the aspect ratio of source images 
   position relative
   display flex
   flex-direction column
