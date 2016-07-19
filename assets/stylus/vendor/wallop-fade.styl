@@ -1,0 +1,27 @@
+//  *
+//  * wallop--fade.css
+//  *
+//  * @fileoverview ade animation for wallop
+//  *
+//  * @author Pedro Duarte
+//  * @author http://pedroduarte.me/wallop
+
+
+.Wallop--fade .Wallop-item--hidePrevious,
+.Wallop--fade .Wallop-item--hideNext
+  visibility visible
+  animation fadeOut 450ms cubic-bezier(0.455, 0.03, 0.515, 0.955) both
+
+.Wallop--fade .Wallop-item--hidePrevious,
+.Wallop--fade .Wallop-item--hideNext
+  z-index 2
+
+.Wallop--fade .Wallop-item--showPrevious,
+.Wallop--fade .Wallop-item--showNext
+  z-index 1
+
+
+@keyframes fadeOut
+  100%
+    opacity 0
+    visibility hidden
