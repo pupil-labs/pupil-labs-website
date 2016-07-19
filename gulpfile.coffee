@@ -40,7 +40,7 @@ css = ()->
 jsbabel = ()->
   gulp.src "assets/js/*.js"
     .pipe babel(presets: ['es2015'])
-    .pipe concat "nav.js"
+    .pipe concat "vendor.js"
     .pipe uglify()
     .pipe gulp.dest "contents/js"
     .pipe livereload();
