@@ -187,10 +187,13 @@
 .Feature-container-column
   display flex
   flex-direction column
+  padding 3em 0em
+  @media $break-767
+    padding 2.5em 0em
+    div[class^="Grid-cell"]
+      padding 1em 0em
   
 .Feature-row
-  min-height 40em
-  padding 4em 0em
+  min-height 30em
   @media $break-767
-    padding 3em 0em
-    min-height 0
+    min-height 0em
