@@ -68,7 +68,7 @@ headerOpacityHome = ()->
   ,100
 
 $(document).ready ->
-  if $("#Home").length > 0
+  if $("#Home").length > 0 or $("#Pupil").length > 0
     # on load make the header transparent
     headerOpacityHome()
   else
