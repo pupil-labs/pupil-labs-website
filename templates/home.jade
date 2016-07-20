@@ -12,7 +12,7 @@ block main
     - var home_newsletter = contents.home['home_newsletter.json']
     - var home_newsletter_meta = home_newsletter.metadata
 
-    div.Grid.Grid--center.Grid--alignContentCenter.Wallop.Wallop--fade.Wallop-transform
+    div(id="slider" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform")
       div.Wallop-list
         div.Wallop-item
           div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/00.jpg');")
@@ -21,12 +21,17 @@ block main
         div.Wallop-item
           div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/03.jpg');")
       div.Grid-cell.u-textCenter     
-        button.Wallop-buttonPrevious -
+        button.Wallop-buttonPrevious
+          svg.Wallop-arrow-right(viewbox='0 0 180 310')
+            path(d='M170 10 L10 161 M10 150 L170 300')
       div.Grid-cell.u-textCenter
-        button.Wallop-buttonNext +
+        button.Wallop-buttonNext
+          svg.Wallop-arrow-right(viewbox='0 0 180 310')
+            path(d='M10 10 L170 161 M170 150 L10 300')
+
 
     //- pupil intro row
-    div.Site-content-container
+    div(id="content-top" class="Site-content-container")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell--2of3

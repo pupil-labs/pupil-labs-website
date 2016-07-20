@@ -13,14 +13,26 @@ $w = 20px
 .Wallop-buttonPrevious
   border none
   z-index 2
-  width ($w * 2)
-  height ($w * 2)
+  width 2.5em
+  height 2.5em
   position absolute
   background-color rgba(255,255,255,0.5)
   color #FEFEFE
   border-radius 50%
   font-size 24px
   outline none
+  cursor pointer
+  transition color 0.4s ease
+  transition background-color 0.4s ease-in-out
+  &:hover
+    background-color rgba(255,255,255,0.75)
+    .Wallop-arrow-right,
+    .Wallop-arrow-left
+      stroke $link-hover-color
+
+  @media $break-767
+    display none
+    
 
 .Wallop-buttonPrevious
   left 40px
@@ -28,14 +40,17 @@ $w = 20px
 .Wallop-buttonNext
   right 40px
 
-// .Wallop-arrow-right
-// .Wallop-arrow-left
-//   width 40px
-//   height 40px
-//   stroke #000
-//   stroke-width 4px
-//   stroke-linejoin round
-//   stroke-linecap round
-//   shape-rendering geometricPrecision
-//   fill none
+.Wallop-arrow-right
+.Wallop-arrow-left
+  width 18px
+  height 31px
+  stroke #FFF
+  stroke-width 20px
+  shape-rendering geometricPrecision
+  fill none
+  display block
+  margin auto
+  transition stroke 0.4s ease-in-out
+
+
   
