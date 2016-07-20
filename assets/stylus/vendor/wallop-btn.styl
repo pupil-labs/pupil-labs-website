@@ -13,14 +13,24 @@ $w = 20px
 .Wallop-buttonPrevious
   border none
   z-index 2
-  width ($w * 2)
-  height ($w * 2)
+  width 2.5em
+  height 2.5em
   position absolute
   background-color rgba(255,255,255,0.5)
   color #FEFEFE
   border-radius 50%
   font-size 24px
   outline none
+  cursor pointer
+  transition color 0.4s ease
+  transition background-color 0.4s ease
+  &:hover
+    background-color rgba(255,255,255,0.6)
+    color $link-hover-color
+    
+  @media $break-767
+    display none
+    
 
 .Wallop-buttonPrevious
   left 40px

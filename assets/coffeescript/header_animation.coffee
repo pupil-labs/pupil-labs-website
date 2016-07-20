@@ -27,5 +27,5 @@ hideHeaderOnScroll = ()->
       did_scroll = false
   ,250
 
-$(document).ready ->
-  hideHeaderOnScroll()
+# $(document).ready ->
+  # hideHeaderOnScroll()

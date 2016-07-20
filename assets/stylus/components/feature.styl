@@ -160,30 +160,13 @@
   background-size cover
   width 100vw
   height 100vh
-  // position relative
-  // display flex
-  // flex-direction column
-  // justify-content center
-  // align-items center
 
-
-.Background-img--full-w
-  background-position-x center
-  background-position-y top
-  background-repeat-x no-repeat
-  background-repeat-y no-repeat  
-  background-attachment scroll 
-  background-size contain
-  width 100vw
-  height 0
-  padding 0 // clear prior setting bottom padding
-  padding-bottom 75% // this should be equal to the aspect ratio of source images 
-  position relative
-  display flex
-  flex-direction column
-  justify-content center
-  align-items center
-  
+  @media $break-767
+    padding 0
+    padding-bottom 75%
+    height 0
+    background-position-y top
+    
 .Feature-specs
   flex 1 0 auto
     
