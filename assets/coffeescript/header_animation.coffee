@@ -71,3 +71,5 @@ $(document).ready ->
   if $("#Home").length > 0
     # on load make the header transparent
     headerOpacityHome()
+  else
+    $("#Header").removeClass("Header-bkg-transparent").addClass("Header-bkg-opaque")
