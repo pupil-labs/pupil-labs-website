@@ -23,11 +23,13 @@ $w = 20px
   outline none
   cursor pointer
   transition color 0.4s ease
-  transition background-color 0.4s ease
+  transition background-color 0.4s ease-in-out
   &:hover
-    background-color rgba(255,255,255,0.6)
-    color $link-hover-color
-    
+    background-color rgba(255,255,255,0.75)
+    .Wallop-arrow-right,
+    .Wallop-arrow-left
+      stroke $link-hover-color
+
   @media $break-767
     display none
     
@@ -38,14 +40,17 @@ $w = 20px
 .Wallop-buttonNext
   right 40px
 
-// .Wallop-arrow-right
-// .Wallop-arrow-left
-//   width 40px
-//   height 40px
-//   stroke #000
-//   stroke-width 4px
-//   stroke-linejoin round
-//   stroke-linecap round
-//   shape-rendering geometricPrecision
-//   fill none
+.Wallop-arrow-right
+.Wallop-arrow-left
+  width 18px
+  height 31px
+  stroke #FFF
+  stroke-width 20px
+  shape-rendering geometricPrecision
+  fill none
+  display block
+  margin auto
+  transition stroke 0.4s ease-in-out
+
+
   

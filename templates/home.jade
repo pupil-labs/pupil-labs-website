@@ -21,9 +21,14 @@ block main
         div.Wallop-item
           div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/03.jpg');")
       div.Grid-cell.u-textCenter     
-        button.Wallop-buttonPrevious -
+        button.Wallop-buttonPrevious
+          svg.Wallop-arrow-right(viewbox='0 0 180 310')
+            path(d='M170 10 L10 161 M10 150 L170 300')
       div.Grid-cell.u-textCenter
-        button.Wallop-buttonNext +
+        button.Wallop-buttonNext
+          svg.Wallop-arrow-right(viewbox='0 0 180 310')
+            path(d='M10 10 L170 161 M170 150 L10 300')
+
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
