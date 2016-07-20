@@ -42,15 +42,17 @@ headerOpacityHome = ()->
   has_scrolled = ()=>
     st = $(this).scrollTop()
     bkg_img_height = $('.Background-img--full-wh').height()
-    distance = $('.Background-img--full-wh').height() - ( $(window).scrollTop() + navbar_height)
     offset = 20
+    navbar_pos = bkg_img_height - (offset + navbar_height)
+    within_container = st < navbar_pos
 
-    if st < bkg_img_height - (offset + navbar_height)
+    if within_container
       # add transparent class remove opaque class
-      $("#Header").css('background-color', 'rgba(255,255,255,0.0)')
+      # $("#Header").css('background-color', 'rgba(255,255,255,0.0)')
+      $("#Header").addClass("Header-bkg-transparent").removeClass("Header-bkg-opaque")
     else 
       # remove transparent class add opaque class
-      $("#Header").css('background-color', 'rgba(255,255,255,0.95)')
+      $("#Header").addClass("Header-bkg-opaque").removeClass("Header-bkg-transparent")
 
     last_scroll_top = st
 
@@ -62,4 +64,6 @@ headerOpacityHome = ()->
 
 $(document).ready ->
   if $("#Home").length > 0
+    # on load make the header transparent
+    $("#Header").addClass("Header-bkg-transparent")
     headerOpacityHome()
