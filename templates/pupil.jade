@@ -8,15 +8,12 @@ block main
   div(id="Pupil")
     - var page_data = contents.pupil['index.json']
     - var page_meta = page_data.metadata
-
-    div(id="slider" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform")
+    div(id="slider" style="background-color: gray;" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform")
       div.Wallop-list
         div.Wallop-item.Wallop-item--current
-          div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/00.jpg');")
+          div(class="Background-img--full-wh" style="background-image: url('../media/images/pupil/headset_line_drawings/30m-w.png');")
         div.Wallop-item
-          div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/01.jpg');")
-        div.Wallop-item
-          div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/03.jpg');")
+          div(class="Background-img--full-wh" style="background-image: url('../media/images/pupil/headset_line_drawings/hshsm-w.png');")
       div.Grid-cell.u-textCenter     
         button.Wallop-buttonPrevious
           svg.Wallop-arrow-right(viewbox='0 0 180 310')
