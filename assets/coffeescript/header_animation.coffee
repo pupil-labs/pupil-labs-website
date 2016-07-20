@@ -34,9 +34,14 @@ headerOpacityHome = ()->
   last_scroll_top = 0
 
 
+  if $(window).width() < 768
+    $("#Header").addClass("Header-bkg-opaque")
+    return
+  else
+    $("#Header").addClass("Header-bkg-transparent")
+
+
   $(window).scroll (event)=>
-    if $(window).width() > 768
-      # scrollling and on desktop
       did_scroll = true
 
   has_scrolled = ()=>
@@ -65,5 +70,4 @@ headerOpacityHome = ()->
 $(document).ready ->
   if $("#Home").length > 0
     # on load make the header transparent
-    $("#Header").addClass("Header-bkg-transparent")
     headerOpacityHome()
