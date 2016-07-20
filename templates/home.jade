@@ -12,7 +12,7 @@ block main
     - var home_newsletter = contents.home['home_newsletter.json']
     - var home_newsletter_meta = home_newsletter.metadata
 
-    div.Grid.Grid--center.Grid--alignContentCenter.Wallop.Wallop--fade.Wallop-transform
+    div(id="slider" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform")
       div.Wallop-list
         div.Wallop-item
           div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/00.jpg');")
@@ -26,7 +26,7 @@ block main
         button.Wallop-buttonNext +
 
     //- pupil intro row
-    div.Site-content-container
+    div(id="content-top" class="Site-content-container")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell--2of3
