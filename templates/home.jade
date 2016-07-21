@@ -14,7 +14,8 @@ block main
 
     div(id="slider" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform")
       div.Wallop-list
-        div.Wallop-item
+        //- it is imperative for safari to set Wallop-item--current to one item
+        div.Wallop-item.Wallop-item--current 
           div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/00.jpg');")
         div.Wallop-item
           div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/01.jpg');")

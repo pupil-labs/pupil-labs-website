@@ -167,7 +167,23 @@
     height 0
     background-position-y top
     
-    
+ .Background-img--full-w
+  // background-image embedurl("../media/images/slides/1.jpg")
+  background-position-x center
+  background-position-y top
+  background-repeat-x no-repeat
+  background-repeat-y no-repeat  
+  background-attachment scroll // set to scroll so content doesn't scroll over top
+  background-size contain
+  width 100vw
+  height 100vh
+
+  @media $break-767
+    padding 0
+    padding-bottom 75%
+    height 0
+    background-position-y top  
+
 .Feature-specs
   flex 1 0 auto
     
