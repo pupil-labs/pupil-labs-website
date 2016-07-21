@@ -8,7 +8,10 @@ block main
   div(id="Pupil")
     - var page_data = contents.pupil['index.json']
     - var page_meta = page_data.metadata
-    div(id="slider" style="background-color: gray;" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
+    
+    //- slider 
+    //- TODO - add bkg color class (not inline)
+    div(id="slider" style="background-color: gray;max-height:100vh;" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
       div.Wallop-list
         div.Wallop-item.Wallop-item--current
           div(class="Background-img--full-w" style="background-image: url('../media/images/pupil/headset_line_drawings/30m-w.png');")
@@ -22,7 +25,14 @@ block main
         button.Wallop-buttonNext
           svg.Wallop-arrow-right(viewbox='0 0 180 310')
             path(d='M10 10 L170 161 M170 150 L10 300')
+      //- pagination
+      div(style="transform:translate3d(0,-40px,0)").Grid-cell.u-textCenter
+        div.Wallop-dot +
+        div.Wallop-dot +
 
+      //- add text overlay that is dynamically controlled by the slider
+
+    //- configurable
 
     //- Features
     //- ====================================
