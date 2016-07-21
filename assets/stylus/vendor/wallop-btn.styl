@@ -7,14 +7,18 @@
 //   background embedurl("../media/graphics/web/slider_assets/arrow-right.svg") no-repeat
 
 $w = 20px
-
+$button_w = 54px
+$arrow_w = 18px
+$arrow_h = 31px
+$arrow_offset = 16px
+$arrow_offset_h = 11.5px
 
 .Wallop-buttonNext
 .Wallop-buttonPrevious
   border none
   z-index 2
-  width 2.5em
-  height 2.5em
+  width $button_w
+  height $button_w
   position absolute
   background-color rgba(255,255,255,0.5)
   color #FEFEFE
@@ -42,15 +46,41 @@ $w = 20px
 
 .Wallop-arrow-right
 .Wallop-arrow-left
-  width 18px
-  height 31px
+  position absolute
+  width $arrow_w
+  height $arrow_h
+  top $arrow_offset_h
   stroke #FFF
   stroke-width 20px
   shape-rendering geometricPrecision
   fill none
   display block
-  margin auto
   transition stroke 0.4s ease
+  margin auto
 
+.Wallop-arrow-right
+  // $button_w - arrow_w / 2
+  right $arrow_offset
 
+.Wallop-arrow-left
+  left $arrow_offset
+
+.Wallop-pagination-container
+  transform translate3d(0,-40px,0)
+  z-index 2
+
+.Wallop-dot
+  // text-indent -9999px
+  border 0
+  border-radius 50%
+  outline none
+  width 12px
+  height 12px
+  padding 0
+  margin 5px
+  background-color rgba(255,255,255,0.5)
+  transition all 0.2s ease
   
+.Wallop-dot--current
+  transform scale(1.25,1.25)
+  background-color rgba(255,255,255,0.75)
