@@ -14,25 +14,11 @@ block main
     //- slider 
     //- TODO - add bkg color class (not inline)
     //- TODO - pull slider images from json file and run in for loop
-    div(id="slider" style="background-color: gray;" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
-      div.Wallop-list
-        each slide, i in pupil_slides_meta    
-          - var slide_class = (i == 0 ? "Wallop-item Wallop-item--current" : "Wallop-item")
-          - var bkg_img = "background-image: url('"+slide.url+"');"
-          div(class=slide_class)
-            div(class="Background-img--full-w" style=bkg_img)
-      div.Grid-cell.u-textCenter     
-        button.Wallop-buttonPrevious
-          svg.Wallop-arrow-left(viewbox='0 0 180 310')
-            path(d='M170 10 L10 161 M10 150 L170 300')
-      div.Grid-cell.u-textCenter
-        button.Wallop-buttonNext
-          svg.Wallop-arrow-right(viewbox='0 0 180 310')
-            path(d='M10 10 L170 161 M170 150 L10 300')
-      //- pagination
-      div.Grid-cell.u-textCenter.Wallop-pagination-container
-        each slide, i in pupil_slides_meta
-          button.Wallop-dot
+    - var slider_data = pupil_slides_meta
+    - var slider_inline_style = "background-color: gray;"
+    - var slider_id = "Pupil-slider"
+
+    include  includes/slider.jade
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")

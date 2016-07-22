@@ -1,0 +1,23 @@
+- var _slider_data = slider_data
+- var _slider_inline_style = (typeof slider_inline_style !== 'undefined' ? slider_inline_style : "")
+- var _slider_id = (typeof slider_id !== 'undefined' ? slider_id : "slider")
+- var _slider_classes = (typeof slider_classes !== 'undefined' ? slider_classes : "Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
+div(class=_slider_classes id=_slider_id style=_slider_inline_style)
+  div.Wallop-list
+    each slide, i in _slider_data    
+      - var slide_class = (i == 0 ? "Wallop-item Wallop-item--current" : "Wallop-item")
+      - var bkg_img = "background-image: url('"+slide.url+"');"
+      div(class=slide_class)
+        div(class="Background-img--full-w" style=bkg_img)
+  div.Grid-cell.u-textCenter     
+    button.Wallop-buttonPrevious
+      svg.Wallop-arrow-left(viewbox='0 0 180 310')
+        path(d='M170 10 L10 161 M10 150 L170 300')
+  div.Grid-cell.u-textCenter
+    button.Wallop-buttonNext
+      svg.Wallop-arrow-right(viewbox='0 0 180 310')
+        path(d='M10 10 L170 161 M170 150 L10 300')
+  //- pagination
+  div.Grid-cell.u-textCenter.Wallop-pagination-container
+    each slide, i in _slider_data
+      button.Wallop-dot
