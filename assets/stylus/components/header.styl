@@ -29,6 +29,13 @@
 .Header-bkg-opaque
   background-color rgba(255,255,255,0.95)
   // box-shadow 0px 1px 4px -1px rgba(0,0,0,0.39)
+  // .logotype-pupil
+  //   fill #4d4d4d
+    
+  // .logotype-labs
+  //   fill lighten(#4d4d4d, 20%)
+
+
   
 .Header-container-hide
   // transform translate3d(0px, -135px, 0px);
@@ -58,7 +65,7 @@
   width 40px
   height 40px
   z-index 0
-  display inline-block
+  display block
   #cart-mobile 
     display none
   @media (max-width: 767px)
@@ -66,12 +73,21 @@
       display inline-flex
 
 .Header-menu-button
+  // position relative
+  // top 19px
+  // right 20px
+  cursor pointer
   display none
+  background none
+  outline none
+  border none
+  width 40px
+  height 40px
+  padding 19px 0px
+  margin-left 20px
   color rgba(0,0,0,0.54)
-  a
-    color rgba(0,0,0,0.54)
   @media (max-width: 767px)
-    display inline-block
+    display block
   
   
 .Header-logo
