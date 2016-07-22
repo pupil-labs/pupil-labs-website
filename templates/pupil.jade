@@ -11,6 +11,7 @@ block main
     
     //- slider 
     //- TODO - add bkg color class (not inline)
+    //- TODO - pull slider images from json file and run in for loop
     div(id="slider" style="background-color: gray;" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
       div.Wallop-list
         div.Wallop-item.Wallop-item--current
@@ -30,7 +31,37 @@ block main
         button.Wallop-dot
         button.Wallop-dot
 
-      //- add text overlay that is dynamically controlled by the slider
+    //- pupil intro row
+    div(id="content-top" class="Site-content-container")
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.Feature-title--lg Pupil
+              h2.Feature-subtitle.u-padBottom--1 A platform for eye tracking and egocentric vision research
+              p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
+              p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
+              p.Feature-paragraph Pupil is designed as a modular system to support the diverse needs and applications of researchers
+
+    //- background image
+    div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+    //- software row
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.Feature-title--lg Software
+              h2.Feature-subtitle.u-padBottom--1 Connect your Pupil headset to a Linux, MacOS, or Windows computer via USB 
+            div.Grid.Grid--1of3
+              div.Grid-cell
+                h2.Feature-subtitle Capture
+              div.Grid-cell
+                h2.Feature-subtitle Player
+              div.Grid-cell
+                h2.Feature-subtitle Service
 
     //- configurable
 

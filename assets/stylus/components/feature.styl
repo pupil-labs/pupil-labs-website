@@ -117,8 +117,8 @@
   font-size 2em
         
 .Feature-subtitle
-  padding .5em 1em
-  color darken(#8A8A8A, 20%)
+  // padding .5em 1em
+  // color darken(#8A8A8A, 20%)
   font-size 1.1em
   text-align justify
   text-justify inter-word
@@ -181,6 +181,22 @@
     padding-bottom 75%
     height 0
     background-position-y top  
+
+.Background-img--full-w-fixed
+  background-position-x center
+  background-position-y center
+  background-repeat no-repeat  
+  background-attachment fixed // set to scroll so content doesn't scroll over top
+  background-size cover
+  width 100vw
+  height 80vh
+  @media $break-767
+    padding 0
+    padding-bottom 75%
+    height 0
+    background-position-y top
+    background-size contain
+    background-attachment scroll
 
 .Feature-specs
   flex 1 0 auto
