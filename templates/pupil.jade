@@ -8,16 +8,19 @@ block main
   div(id="Pupil")
     - var page_data = contents.pupil['index.json']
     - var page_meta = page_data.metadata
+    - var pupil_slides_data = contents.pupil.features['slides_pupil_drawings.json']
+    - var pupil_slides_meta = pupil_slides_data.metadata
     
     //- slider 
     //- TODO - add bkg color class (not inline)
     //- TODO - pull slider images from json file and run in for loop
     div(id="slider" style="background-color: gray;" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
       div.Wallop-list
-        div.Wallop-item.Wallop-item--current
-          div(class="Background-img--full-w" style="background-image: url('../media/images/pupil/headset_line_drawings/30m-w.png');")
-        div.Wallop-item
-          div(class="Background-img--full-w" style="background-image: url('../media/images/pupil/headset_line_drawings/hshsm-w.png');")
+        each slide, i in pupil_slides_meta    
+          - var slide_class = (i == 0 ? "Wallop-item Wallop-item--current" : "Wallop-item")
+          - var bkg_img = "background-image: url('"+slide.url+"');"
+          div(class=slide_class)
+            div(class="Background-img--full-w" style=bkg_img)
       div.Grid-cell.u-textCenter     
         button.Wallop-buttonPrevious
           svg.Wallop-arrow-left(viewbox='0 0 180 310')
@@ -28,8 +31,8 @@ block main
             path(d='M10 10 L170 161 M170 150 L10 300')
       //- pagination
       div.Grid-cell.u-textCenter.Wallop-pagination-container
-        button.Wallop-dot
-        button.Wallop-dot
+        each slide, i in pupil_slides_meta
+          button.Wallop-dot
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
@@ -67,15 +70,15 @@ block main
     //- open source
     div.Site-content-container
       div.Feature-container-column
-      div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-        div.Grid-cell--1of2
+      div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+        div.Grid-cell
           div.Feature
             h1.Feature-title--lg.u-padBottom--1 Open Source
             p.Feature-paragraph We believe in open source. All Pupil code is released with open source licenses.
             p.Feature-paragraph A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
             p.Feature-paragraph We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
             p.Feature-paragraph Check out the pupil repository on <a href="https://github.com/pupil-labs/pupil/" rel="noopener">Github</a>. Read developer documentation on the <a href="https://github.com/pupil-labs/pupil/wiki" rel="noopener">wiki</a>.
-        div.Grid-cell--1of2
+        div.Grid-cell
           div.Feature
             figure.Feature-figure
               img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
