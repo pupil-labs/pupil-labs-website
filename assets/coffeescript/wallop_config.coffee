@@ -24,6 +24,17 @@ loadWallopSlider = ()->
     hammertime.on 'swiperight', (eventObject)->
       slider.previous()
 
+  pagination_dots = Array.prototype.slice.call(document.querySelectorAll('.Wallop-dot'))
+
+  add_listener = (el,i)->
+    el.addEventListener 'click', ()->
+      slider.goTo(i)
+
+  add_listener(dot_el, idx) for dot_el,idx in pagination_dots
+
+  slider.on 'change', (event)=>
+    $('.Wallop-dot').removeClass('Wallop-dot--current')
+    $(pagination_dots[event.detail.currentItemIndex]).addClass('Wallop-dot--current')
 
 $(document).ready ->
   if $("#Home").length > 0 or $("#Pupil").length > 0
