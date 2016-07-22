@@ -44,7 +44,8 @@ block main
               p.Feature-paragraph Pupil is designed as a modular system to support the diverse needs and applications of researchers
 
     //- background image
-    div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
+    div.Grid
+      div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
 
     //- software row
     div.Site-gray-bkg
@@ -63,7 +64,25 @@ block main
               div.Grid-cell
                 h2.Feature-subtitle Service
 
-    //- configurable
+    //- open source
+    div.Site-content-container
+      div.Feature-container-column
+      div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+        div.Grid-cell--1of2
+          div.Feature
+            h1.Feature-title--lg.u-padBottom--1 Open Source
+            p.Feature-paragraph We believe in open source. All Pupil code is released with open source licenses.
+            p.Feature-paragraph A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
+            p.Feature-paragraph We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
+            p.Feature-paragraph Check out the pupil repository on <a href="https://github.com/pupil-labs/pupil/" rel="noopener">Github</a>. Read developer documentation on the <a href="https://github.com/pupil-labs/pupil/wiki" rel="noopener">wiki</a>.
+        div.Grid-cell--1of2
+          div.Feature
+            figure.Feature-figure
+              img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
+ 
+
+   
+   
 
     //- Features
     //- ====================================
