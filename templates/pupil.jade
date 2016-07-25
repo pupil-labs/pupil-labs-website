@@ -100,5 +100,17 @@ block main
 
 
    
-   //- background video placeholder or placeholder image
+      //- background video placeholder or placeholder image
+    div.Grid
+      div.Background-img--full-w-scroll
+        video(id="background_video")
+        div(id="video_cover")
+
+
+      //- Modular & Hackable
+
+      //- Community
+      
+      block page_scripts
+        script(src=contents.js['pupil_video.js'].url)
 

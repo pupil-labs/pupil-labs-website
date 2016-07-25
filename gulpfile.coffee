@@ -37,10 +37,18 @@ css = ()->
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
-jsbabel = ()->
-  gulp.src "assets/js/*.js"
+js_sideNav = ()->
+  gulp.src "assets/js/sidenav/*.js"
     .pipe babel(presets: ['es2015'])
-    .pipe concat "vendor.js"
+    .pipe concat "sidenav.js"
+    .pipe uglify()
+    .pipe gulp.dest "contents/js"
+    .pipe livereload();
+
+js_bkgVideo = ()->
+  gulp.src "assets/js/bkg_video/*.js"
+    .pipe babel(presets: ['es2015'])
+    .pipe concat "pupil_video.js"
     .pipe uglify()
     .pipe gulp.dest "contents/js"
     .pipe livereload();
@@ -57,7 +65,8 @@ jscoffee = ()->
   .pipe livereload();
 
 js = ()->
-  jsbabel()
+  js_sideNav()
+  js_bkgVideo()
   jscoffee()
 
 gulp.task "newPost", ->
