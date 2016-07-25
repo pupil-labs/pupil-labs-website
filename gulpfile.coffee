@@ -107,17 +107,26 @@ gulp.task "generate_sitemap", ->
   .pipe gulp.dest('build')
 
 gulp.task "generate_favicons", ->
-  gulp.src("build/index.html")
-  .pipe(
-    favicons
-      files: {
-        dest: "media/graphics/web"
-        # html: "build/index.html"
-      },
-      settings: {
-        logging: true
-      })
-  .pipe gulp.dest("./")
+  return gulp.src("./build/media/graphics/favicon_base.png")
+    .pipe(
+      favicons
+        appName: "Pupil Labs"
+        appDescription: "Pupil Labs Website"
+        developerName: "Pupil Labs Dev Team"
+        developerURL: "https://github.com/pupil-labs/pupil-labs-website"
+        background: "#38ea92"
+        path: "build/media/graphics/web/favicons/"
+        display: "standalone"
+        orientation: "portrait"
+        version: 2.0
+        logging: false
+        html: "build/index.html"
+        pipeHTML: true
+        replace: true
+    )
+    .on("error", gutil.log)
+    .pipe(gulp.dest(".build/media/graphics/web/favicons/"))
+
 
 gulp.task "preview", ->
     wintersmith.settings.configFile = 'config.json'
