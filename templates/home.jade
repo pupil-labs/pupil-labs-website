@@ -12,27 +12,16 @@ block main
     - var home_newsletter = contents.home['home_newsletter.json']
     - var home_newsletter_meta = home_newsletter.metadata
 
-    div(id="slider" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform")
-      div.Wallop-list
-        //- it is imperative for safari to set Wallop-item--current to one item
-        div.Wallop-item.Wallop-item--current 
-          div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/00.jpg');")
-        div.Wallop-item
-          div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/01.jpg');")
-        div.Wallop-item
-          div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/03.jpg');")
-      div.Grid-cell.u-textCenter     
-        button.Wallop-buttonPrevious
-          svg.Wallop-arrow-left(viewbox='0 0 180 310')
-            path(d='M170 10 L10 161 M10 150 L170 300')
-      div.Grid-cell.u-textCenter
-        button.Wallop-buttonNext
-          svg.Wallop-arrow-right(viewbox='0 0 180 310')
-            path(d='M10 10 L170 161 M170 150 L10 300')
-      div.Grid-cell.u-textCenter.Wallop-pagination-container
-        button.Wallop-dot
-        button.Wallop-dot
-        button.Wallop-dot
+    //- slides
+    - var home_slides_data = contents.home['home_slides.json']
+    - var home_slides_meta = home_slides_data.metadata
+    - var slider_data = home_slides_meta
+    - var slider_classes = "Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform Wallop--fade"
+    - var slider_id = "Home-slider"
+    - var slide_img_class = "Background-img--full-wh"
+
+    //- use slider template
+    include  includes/slider.jade
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")

@@ -2,13 +2,15 @@
 - var _slider_inline_style = (typeof slider_inline_style !== 'undefined' ? slider_inline_style : "")
 - var _slider_id = (typeof slider_id !== 'undefined' ? slider_id : "slider")
 - var _slider_classes = (typeof slider_classes !== 'undefined' ? slider_classes : "Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
+- var _slide_img_class = (typeof slide_img_class !== 'undefined' ? slide_img_class : "Background-img--full-w")
+
 div(class=_slider_classes id=_slider_id style=_slider_inline_style)
   div.Wallop-list
     each slide, i in _slider_data    
       - var slide_class = (i == 0 ? "Wallop-item Wallop-item--current" : "Wallop-item")
       - var bkg_img = "background-image: url('"+slide.url+"');"
       div(class=slide_class)
-        div(class="Background-img--full-w" style=bkg_img)
+        div(class=_slide_img_class style=bkg_img)
   div.Grid-cell.u-textCenter     
     button.Wallop-buttonPrevious
       svg.Wallop-arrow-left(viewbox='0 0 180 310')
