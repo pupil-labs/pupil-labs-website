@@ -8,31 +8,70 @@ block main
   div(id="Pupil")
     - var page_data = contents.pupil['index.json']
     - var page_meta = page_data.metadata
+    - var pupil_slides_data = contents.pupil.features['slides_pupil_drawings.json']
+    - var pupil_slides_meta = pupil_slides_data.metadata
     
     //- slider 
     //- TODO - add bkg color class (not inline)
-    div(id="slider" style="background-color: gray;" class="Grid Grid--center Grid--alignContentCenter Wallop Wallop-transform")
-      div.Wallop-list
-        div.Wallop-item.Wallop-item--current
-          div(class="Background-img--full-w" style="background-image: url('../media/images/pupil/headset_line_drawings/30m-w.png');")
-        div.Wallop-item
-          div(class="Background-img--full-w" style="background-image: url('../media/images/pupil/headset_line_drawings/hshsm-w.png');")
-      div.Grid-cell.u-textCenter     
-        button.Wallop-buttonPrevious
-          svg.Wallop-arrow-left(viewbox='0 0 180 310')
-            path(d='M170 10 L10 161 M10 150 L170 300')
-      div.Grid-cell.u-textCenter
-        button.Wallop-buttonNext
-          svg.Wallop-arrow-right(viewbox='0 0 180 310')
-            path(d='M10 10 L170 161 M170 150 L10 300')
-      //- pagination
-      div.Grid-cell.u-textCenter.Wallop-pagination-container
-        button.Wallop-dot
-        button.Wallop-dot
+    //- TODO - pull slider images from json file and run in for loop
+    - var slider_data = pupil_slides_meta
+    - var slider_inline_style = "background-color: gray;"
+    - var slider_id = "Pupil-slider"
 
-      //- add text overlay that is dynamically controlled by the slider
+    include  includes/slider.jade
 
-    //- configurable
+    //- pupil intro row
+    div(id="content-top" class="Site-content-container")
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.Feature-title--lg Pupil
+              h2.Feature-subtitle.u-padBottom--1 A platform for eye tracking and egocentric vision research
+              p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
+              p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
+              p.Feature-paragraph Pupil is designed as a modular system to support the diverse needs and applications of researchers
+
+    //- background image
+    div.Grid
+      div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+    //- software row
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.Feature-title--lg Software
+              h2.Feature-subtitle.u-padBottom--1 Connect your Pupil headset to a Linux, MacOS, or Windows computer via USB 
+            div.Grid.Grid--1of3
+              div.Grid-cell
+                h2.Feature-subtitle Capture
+              div.Grid-cell
+                h2.Feature-subtitle Player
+              div.Grid-cell
+                h2.Feature-subtitle Service
+
+    //- open source
+    div.Site-content-container
+      div.Feature-container-column
+      div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+        div.Grid-cell
+          div.Feature
+            h1.Feature-title--lg.u-padBottom--1 Open Source
+            p.Feature-paragraph We believe in open source. All Pupil code is released with open source licenses.
+            p.Feature-paragraph A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
+            p.Feature-paragraph We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
+            p.Feature-paragraph Check out the pupil repository on <a href="https://github.com/pupil-labs/pupil/" rel="noopener">Github</a>. Read developer documentation on the <a href="https://github.com/pupil-labs/pupil/wiki" rel="noopener">wiki</a>.
+        div.Grid-cell
+          div.Feature
+            figure.Feature-figure
+              img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
+ 
+
+   
+   
 
     //- Features
     //- ====================================
