@@ -37,10 +37,18 @@ css = ()->
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
-jsbabel = ()->
-  gulp.src "assets/js/*.js"
+js_sideNav = ()->
+  gulp.src "assets/js/sidenav/*.js"
     .pipe babel(presets: ['es2015'])
-    .pipe concat "vendor.js"
+    .pipe concat "sidenav.js"
+    .pipe uglify()
+    .pipe gulp.dest "contents/js"
+    .pipe livereload();
+
+js_bkgVideo = ()->
+  gulp.src "assets/js/bkg_video/*.js"
+    .pipe babel(presets: ['es2015'])
+    .pipe concat "pupil_video.js"
     .pipe uglify()
     .pipe gulp.dest "contents/js"
     .pipe livereload();
@@ -57,7 +65,8 @@ jscoffee = ()->
   .pipe livereload();
 
 js = ()->
-  jsbabel()
+  js_sideNav()
+  js_bkgVideo()
   jscoffee()
 
 gulp.task "newPost", ->
@@ -107,17 +116,26 @@ gulp.task "generate_sitemap", ->
   .pipe gulp.dest('build')
 
 gulp.task "generate_favicons", ->
-  gulp.src("build/index.html")
-  .pipe(
-    favicons
-      files: {
-        dest: "media/graphics/web"
-        # html: "build/index.html"
-      },
-      settings: {
-        logging: true
-      })
-  .pipe gulp.dest("./")
+  return gulp.src("./build/media/graphics/favicon_base.png")
+    .pipe(
+      favicons
+        appName: "Pupil Labs"
+        appDescription: "Pupil Labs Website"
+        developerName: "Pupil Labs Dev Team"
+        developerURL: "https://github.com/pupil-labs/pupil-labs-website"
+        background: "#38ea92"
+        path: "build/media/graphics/web/favicons/"
+        display: "standalone"
+        orientation: "portrait"
+        version: 2.0
+        logging: false
+        html: "build/index.html"
+        pipeHTML: true
+        replace: true
+    )
+    .on("error", gutil.log)
+    .pipe(gulp.dest(".build/media/graphics/web/favicons/"))
+
 
 gulp.task "preview", ->
     wintersmith.settings.configFile = 'config.json'

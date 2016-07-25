@@ -30,9 +30,9 @@ block main
               h2.Feature-subtitle.u-padBottom--1 A platform for eye tracking and egocentric vision research
               p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
               p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
-              p.Feature-paragraph Pupil is designed as a modular system to support the diverse needs and applications of researchers
+              p.Feature-paragraph Pupil is designed as a modular system to support the diverse needs and applications of researchers.
 
-    //- background image
+    //- full width background image
     div.Grid
       div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
 
@@ -68,75 +68,49 @@ block main
           div.Feature
             figure.Feature-figure
               img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
- 
+
+
+    //- tech specs and performance
+    div.Site-gray-bkg
+      div(id="content-top" class="Site-content-container")
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full
+              div.Feature
+                h1.Feature-title--lg Technical Specifications & Performance
+                p.Feature-paragraph Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
+                p.Feature-paragraph Accuracy 0.60 degrees 
+                p.Feature-paragraph Precision 0.08 degrees
+                p.Feature-paragraph Latency 5.7 ms (using 120hz eye and high speed world cameras).
+
+
+    //- design
+    div.Site-content-container
+      div.Feature-container-column
+      div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+        div.Grid-cell
+          div.Feature
+            h1.Feature-title--lg.u-padBottom--1 Design
+            p.Feature-paragraph A lot of design and engineering thought has gone into getting the ergonomics of the headset just right.
+            p.Feature-paragraph It is designed to fit snugly, securely, and comfortably. The headset and cameras can be adjusted to accommodate a wide range of users. The headset is made from laser sintered PA12, an extremely flexible, durable, and lightweight material.
+        div.Grid-cell
+          div.Feature
+            figure.Feature-figure
+              img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
+
 
    
-   
+      //- background video placeholder or placeholder image
+    div.Grid
+      div.Background-img--full-w-scroll
+        video(id="background_video")
+        div(id="video_cover")
 
-    //- Features
-    //- ====================================
-    //- Configurable
-    //- Software
-    //- Record-Play (download links)
-    //- Open Source Software
 
-    //- Design
-    //- Technical Specs
-    //- Modular & Hackable
-    //- Community-License
-    //- - var features = _.chain(contents.pupil['features']._.pages).sortBy(function(item) {
-    //- -   return item.metadata['order'];
-    //- - }).value()     
-    //- each feature, i in features
-    //-   - var rowType = (i%2 == 0 ? 'Grid Grid--1of2 Grid--center' : 'Grid Grid--1of2 Grid--center Grid--rowReverse')
-    //-   if feature.title === "Software"
-    //-     a(class='anchor' name=feature.title.toLowerCase())
-    //-     - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
-    //-     - var bannerBkg = 'Banner-container--sm'
-    //-     - var bannerImg = feature.metadata.image
-    //-     - var bannerImgClass = "Feature-image--software"
-    //-     include includes/banner     
-    //-   else if feature.title === "record-play"
-    //-     - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
-    //-     div.Grid.Grid--1of2.Aligner
-    //-       a(class='anchor' name="software-download")
-    //-       each f in group 
-    //-         div.Grid-cell.Aligner-item--sm
-    //-           div.Feature.Feature--padded2.Aligner-item--column
-    //-             div.Aligner-item--stretchHeight
-    //-               h1.Feature-title--lg.u-textCenter= f.title
-    //-               h2.Feature-subtitle!= f.html
-                
-    //-             if typeof(f.metadata.linkTxt2) !== 'undefined'
-    //-               div.Grid
-    //-                 div.Grid-cell--1of2
-    //-                   a(href=f.metadata.link class="Button-player" target="_blank")= f.metadata.linkTxt
-    //-                 div.Grid-cell--1of2
-    //-                   a(href=f.metadata.link2 class="Button-dataset" target="_blank")= f.metadata.linkTxt2
-    //-             else
-    //-               a(href=f.metadata.link class="Button" target="_blank")= f.metadata.linkTxt
+      //- Modular & Hackable
 
-    //-   else if feature.title === "community-license"
-    //-     - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
-    //-     div.Grid.Grid--1of2.Grid--top
-    //-       a(class='anchor' name=feature.title.toLowerCase())
-    //-       each f in group 
-    //-         div.Grid-cell.u-padBottom--5
-    //-           div.Feature.Feature--padded2
-    //-             h1.Feature-title--lg.u-textCenter= f.title
-    //-             h2.Feature-subtitle!= f.html
-    //-   else
-    //-     a(class='anchor' name=feature.title.toLowerCase().replace(/[^A-Z0-9]+/ig, "-"))
-    //-     div(class=rowType)
-    //-       div.Grid-cell
-    //-         div.Feature
-    //-           figure.Feature-figure
-    //-             - var imgSrc = (feature.metadata.image.length > 10 ? feature.metadata.image : "http://placehold.it/1000x800/")
-    //-             - var imgId = "Feature-image--"+feature.title.toLowerCase().replace(/[^A-Z0-9]+/ig, "_")
-    //-             img(id=imgId class="Feature-image" src=imgSrc)
-    //-       div.Grid-cell.Grid-cell--center
-    //-         div.Feature.Feature--padded2
-    //-           h1.Feature-title--lg.u-textCenter= feature.title 
-    //-           h2.Feature-subtitle!= feature.html 
-
+      //- Community
+      
+      block page_scripts
+        script(src=contents.js['pupil_video.js'].url)
 
