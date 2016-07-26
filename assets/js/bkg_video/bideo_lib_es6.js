@@ -10,7 +10,7 @@ class Bideo {
     this.autoplay = opt.autoplay || false;
     this.onLoad = opt.onLoad;
     this.src = opt.src;
-    this._addSources = this._addSources.bind(this);    
+    // this._addSources = this._addSources.bind(this);    
     this._addSources();
 
     this._addEventListeners = this._addEventListeners.bind(this); 
@@ -37,7 +37,7 @@ class Bideo {
       }
     }
 
-    return this.videoEl.appendChild(source);
+    this.videoEl.appendChild(source);
   }
 
   _canPlay () {

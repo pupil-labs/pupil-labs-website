@@ -13,10 +13,6 @@ let options = {
       src: '../media/videos/assembly.mp4',
       type: 'video/mp4'
     }
-    // {
-    //   src: 'assembly.webm',
-    //   type: 'video/webm;codecs="vp8, vorbis"'
-    // }
   ],
   onLoad: ()=>{
     console.log("hiding video cover");
