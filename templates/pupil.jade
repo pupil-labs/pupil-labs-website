@@ -101,9 +101,10 @@ block main
 
    
       //- background video placeholder or placeholder image
-    div.Grid
-      video(id="background_video" class="Background-img--full-w-scroll")
-      div(id="video_cover" class="Background-img--full-w-scroll")
+    div(id="Assembly-video-container").Grid
+      div.Grid-cell.Grid-cell--full
+        video(id="background_video" class="Background-img--full-w-scroll" style="object-fit: cover;" loop muted)
+        div(id="video_cover" class="Background-img--full-w-scroll")
 
 
       //- Modular & Hackable

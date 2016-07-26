@@ -10,6 +10,7 @@ class Bideo {
     this.autoplay = opt.autoplay || false;
     this.onLoad = opt.onLoad;
     this.src = opt.src;
+    this.container = opt.container;
     // this._addSources = this._addSources.bind(this);    
     this._addSources();
 
@@ -24,7 +25,10 @@ class Bideo {
   _addEventListeners () {
     this.videoEl.addEventListener('loadedmetadata', this._resize, false);
     this.videoEl.addEventListener('canplay', this._canPlay);
-    console.log("added event listeners...");
+    if (this.resize === true){
+      window.addEventListener('resize', this._resize, false);
+    }
+
   }
 
   _addSources () {
@@ -54,14 +58,14 @@ class Bideo {
 
   _resize () {
     console.log("called resize");
-    if ('object-fit' in document.body.style) return;
+    // if ('object-fit' in document.body.style) return;
 
     let w = this.videoEl.videoWidth;
     let h = this.videoEl.videoHeight;
     let videoRatio = (w/h).toFixed(2);
 
-    let container = this.opt.container
-    let containerStyles = window.getComputedStyle(container)
+    let container = this.container;
+    let containerStyles = window.getComputedStyle(container);
     let minW = parseInt( containerStyles.getPropertyValue('width') );
     let minH = parseInt( containerStyles.getPropertyValue('height') );
 
@@ -77,7 +81,7 @@ class Bideo {
 
     let widthRatio = minW / w;
     let heightRatio = minH / h;
-    var new_width, newheight;
+    var new_width, new_height;
 
     if (widthRatio > heightRatio) {
       new_width = minW;
