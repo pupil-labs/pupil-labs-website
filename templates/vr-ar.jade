@@ -1,0 +1,21 @@
+extends layout
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  //- Title block
+  div(id="VR-AR")
+    - var page_data = contents['vr-ar']['index.json']
+    - var page_meta = page_data.metadata
+    - var vr_ar_slides_data = contents['vr-ar']['slides_vr.json']
+    - var vr_ar_slides_meta = vr_ar_slides_data.metadata
+    
+    //- slider 
+    //- TODO - add bkg color class (not inline)
+    //- TODO - pull slider images from json file and run in for loop
+    - var slider_data = vr_ar_slides_meta
+    - var slider_inline_style = "background-color: gray;"
+    - var slider_id = "VR-AR-slider"
+
+    include  includes/slider.jade
