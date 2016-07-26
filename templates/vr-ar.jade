@@ -20,6 +20,7 @@ block main
 
     include  includes/slider.jade
 
+      //- intro
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
@@ -29,8 +30,97 @@ block main
               h2 for
             div.Grid.Grid--1of3
               div.Grid-cell
-                p.Feature-paragraph VR
+                p.Feature-title--lg VR
+                p.Feature-paragraph Virtual Reality 
               div.Grid-cell
-                p.Feature-paragraph AR
+                p.Feature-title--lg AR
+                p.Feature-paragraph Augmented Reality
               div.Grid-cell
-                p.Feature-paragraph MR
+                p.Feature-title--lg MR
+                p.Feature-paragraph Mixed Reality
+            div.Grid-cell.Grid-cell--full
+              p.Feature-paragraph Our goal is to work with and support cimmunity of researchers and developers in creating reusbale open source software for eye tracking in HMDs. We know that many developers have already thought of or implemented eye tracking software HMDs and instead re-inventing the wheels, we should form a community to share knowledge and tools.
+
+      //- additional products
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Feature
+              h1.Feature-title--lg.u-padBottom--1 Hardware Add-On
+            div.Grid.Grid--1of3
+              div.Grid-cell
+                div.Feature
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/additional_products/web/addon_oculus_dk2.png")
+                p.Feature-paragraph 120hz monocular eye tracking add-on for Oculus DK2. Includes one custom lens cup with IR mirror. IR LEDs. 1 x 120 Hz eye camera, and USB cables.
+              div.Grid-cell
+                div.Feature
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
+                p.Feature-paragraph Augmented Reality
+              div.Grid-cell
+                div.Feature
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
+                p.Feature-paragraph Mixed Reality
+
+      //- full width background image
+    div.Grid
+      div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+      //- software
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Feature
+              h1.Feature-title--lg.u-padBottom--1 Software
+            div.Grid-cell.Grid-cell--full A lot of design and engineering thought has gone into getting the ergonomics of the headset just right. It is designed to fit snugly, securely, and comfortably. The headset and cameras can be adjusted to accommodate a wide range of users. The headset is made from laser sintered PA12, an extremely flexible, durable, and lightweight material.
+
+        div.Grid.Grid--1of2
+          div.Grid-cell
+              div.Feature
+              figure.Feature-figure
+                img(class="Feature-image" src="../media/images/blog/pupil-service.png")
+              p.Feature-paragraph Pupil Service
+            div.Grid-cell
+              div.Feature
+              figure.Feature-figure
+                img(class="Feature-image" src="../media/images/blog/pupil-service.png")
+              p.Feature-paragraph HMD Eyes
+
+      //- full width background image
+    div.Grid
+      div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+      //- made in berlin row
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Feature
+              h1.Feature-title--lg.u-padBottom--1 Community
+            div.Grid
+              div.Grid-cell.Grid-cell--full
+                p.Feature-paragraph Our goal is to work with and support cimmunity of researchers and developers in creating reusbale open source software for eye tracking in HMDs. We know that many developers have already thought of or implemented eye tracking software HMDs and instead re-inventing the wheels, we should form a community to share knowledge and tools.
+              div.Grid.Grid--1of3
+                div.Grid-cell
+                  div.Feature
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/additional_products/web/addon_oculus_dk2.png")
+                  p.Feature-paragraph Github
+                div.Grid-cell
+                  div.Feature
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
+                  p.Feature-paragraph Gitter
+                div.Grid-cell
+                  div.Feature
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
+                  p.Feature-paragraph Mailing List
+
+
+      
+
