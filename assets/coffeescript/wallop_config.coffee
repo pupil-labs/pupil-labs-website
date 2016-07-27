@@ -37,6 +37,6 @@ loadWallopSlider = ()->
     $(pagination_dots[event.detail.currentItemIndex]).addClass('Wallop-dot--current')
 
 $(document).ready ->
-  if $("#Home").length > 0 or $("#Pupil").length > 0
+  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length > 0
     loadWallopSlider()
 
