@@ -33,8 +33,12 @@ block main
               p.Feature-paragraph Pupil is designed as a modular system to support the diverse needs and applications of researchers.
 
     //- full width background image
-    div.Grid
-      div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
+    //- div.Grid
+    //-   div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
+    //- background video placeholder or placeholder image
+    div(id="Assembly-video-container")
+      video(id="background_video" class="Background-video" loop muted)
+      div(id="video_cover" class="Background-img--full-w-scroll")
 
     //- software row
     div.Site-gray-bkg
@@ -99,12 +103,7 @@ block main
               img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
 
 
-   
-      //- background video placeholder or placeholder image
-    div(id="Assembly-video-container").Grid
-      div.Grid-cell.Grid-cell--full
-        video(id="background_video" class="Background-img--full-w-scroll" style="object-fit: cover;" loop muted)
-        div(id="video_cover" class="Background-img--full-w-scroll")
+
 
 
       //- Modular & Hackable

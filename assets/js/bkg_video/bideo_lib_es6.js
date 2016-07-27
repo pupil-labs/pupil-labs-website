@@ -23,7 +23,7 @@ class Bideo {
   }
 
   _addEventListeners () {
-    this.videoEl.addEventListener('loadedmetadata', this._resize, false);
+    // this.videoEl.addEventListener('loadedmetadata', this._resize, false);
     this.videoEl.addEventListener('canplay', this._canPlay);
     if (this.resize === true){
       window.addEventListener('resize', this._resize, false);
@@ -62,18 +62,18 @@ class Bideo {
 
     let w = this.videoEl.videoWidth;
     let h = this.videoEl.videoHeight;
-    let videoRatio = (w/h).toFixed(2);
+    let videoRatio = (w/h).toFixed(4);
 
     let container = this.container;
     let containerStyles = window.getComputedStyle(container);
-    let minW = parseInt( containerStyles.getPropertyValue('width') );
-    let minH = parseInt( containerStyles.getPropertyValue('height') );
+    let minW = parseFloat( containerStyles.getPropertyValue('width') );
+    let minH = parseFloat( containerStyles.getPropertyValue('height') );
 
     if (containerStyles.getPropertyValue('box-sizing') !== 'border-box'){
-      let paddingTop = parseInt(containerStyles.getPropertyValue('padding-top'));
-      let paddingBottom = parseInt(containerStyles.getPropertyValue('padding-bottom'));
-      let paddingLeft = parseInt(containerStyles.getPropertyValue('padding-left'));
-      let paddingRight = parseInt(containerStyles.getPropertyValue('padding-right'));
+      let paddingTop = parseFloat(containerStyles.getPropertyValue('padding-top'));
+      let paddingBottom = parseFloat(containerStyles.getPropertyValue('padding-bottom'));
+      let paddingLeft = parseFloat(containerStyles.getPropertyValue('padding-left'));
+      let paddingRight = parseFloat(containerStyles.getPropertyValue('padding-right'));
       
       minW += paddingLeft + paddingRight;
       minH += paddingTop + paddingBottom;
