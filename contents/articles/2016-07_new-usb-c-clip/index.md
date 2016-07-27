@@ -17,4 +17,4 @@ An added bonus of USB C is that it is a symmetric connector. This means no more 
 
 The new clip will be included in all Pupil headsets. We will supply USB C to USB A (USB 3) cables. Any existing Pupil headsets can be upgraded to use the new clip. 
 
-We will be posting the clip on the store very soon -- stay tuned.
+The upgrade is now availble in the [store](/store).

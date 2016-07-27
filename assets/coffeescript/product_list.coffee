@@ -146,7 +146,7 @@ productList = [
         link: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
       }
     ]  
-    order: 4
+    order: 5
   }, {
     id: "product_pupil_dev"
     cost: 380
@@ -191,6 +191,17 @@ productList = [
     weight: 20
     img: "../media/images/additional_products/web/addon_epson_bt200a.png"
     order: 3
+  }, {
+    id: "product_usb_c"
+    cost: 210
+    label: "USB-C Clip Upgrade"
+    specs: "Upgrade any existing Pupil headset with the new USB-C clip. Comes with USB-C to USB-A cable. Recommended for smooth operation with MacBooks and Android devices. (Phillips screw driver required for upgrade)"
+    cartlabel: "USB-C Clip Upgrade"            
+    cartSpecs: "USB-C clip upgrade for an existing Pupil headset."    
+    dimensions: 0
+    weight: 20
+    img: "../media/images/additional_products/web/usbc-1.png"
+    order: 4
   }, {    
     id: "product_support_6"
     cost: 1000
@@ -199,7 +210,7 @@ productList = [
     cartlabel: "Support contract"                
     cartSpecs: "6 month support contract. Email support and 4 videos support sessions."
     img: "../media/graphics/web/support_graphic_6mo_alt.svg"
-    order: 5
+    order: 6
   }, {
     id: "product_support_12"
     cost: 2000
@@ -208,7 +219,7 @@ productList = [
     cartlabel: "Support contract"            
     cartSpecs: "12 month support contract. Email support and 8 videos support sessions."
     img: "../media/graphics/web/support_graphic_12mo_alt.svg"
-    order: 6
+    order: 7
   }, {
     id: "license_academic"
     cost: -590
