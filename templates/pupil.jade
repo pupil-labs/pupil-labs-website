@@ -26,21 +26,22 @@ block main
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg Pupil
-              h2.Feature-subtitle.u-padBottom--1 A platform for eye tracking and egocentric vision research
-              p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
-              p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
-              p.Feature-paragraph Pupil is designed as a modular system to support the diverse needs and applications of researchers.
+              h1.Feature-title--lg.u-textCenter Pupil
+              h2.Feature-subtitle.u-padBottom--1.u-textCenter.u-padTop--1 A platform for eye tracking and egocentric vision research
+              p.Feature-paragraph.u-textCenter.u-padTop--2 Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
+              p.Feature-paragraph.u-textCenter Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
+              p.Feature-paragraph.u-textCenter Pupil is designed as a modular system to support the diverse needs and applications of researchers.
 
     //- full width background image
     //- div.Grid
     //-   div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
     //- background video placeholder or placeholder image
+
     div(id="Assembly-video-container")
       video(id="background_video" class="Background-video" loop muted)
       div(id="video_cover" class="Background-img--full-w-scroll")
 
-    //- software row
+    //- software 
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
@@ -48,14 +49,27 @@ block main
           div.Grid-cell.Grid-cell--full
             div.Feature
               h1.Feature-title--lg Software
-              h2.Feature-subtitle.u-padBottom--1 Connect your Pupil headset to a Linux, MacOS, or Windows computer via USB 
-            div.Grid.Grid--1of3
-              div.Grid-cell
-                h2.Feature-subtitle Capture
-              div.Grid-cell
-                h2.Feature-subtitle Player
-              div.Grid-cell
-                h2.Feature-subtitle Service
+              h2.Feature-subtitle.u-padBottom--3.u-padTop--1 Connect your Pupil headset to a Linux, MacOS, or Windows computer via USB 
+              div.Grid.Grid-pad--1of2
+                div.Grid-cell
+                  h2.Feature-title--lg.u-padBottom--1 Record
+                  p.Feature-paragraph Pupil Capture is the software used with your Pupil headset.
+                  p.Feature-paragraph Pupil Capture recieves video and audio streams, detects your pupil, tracks your gazem tracks markers in your environment, stream data in real-time over the network, and records data in an open format.
+                div.Grid-cell
+                  h2.Feature-title--lg.u-padBottom--1 Play
+                  p.Feature-paragraph Pupil Player is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. 
+                  p.Feature-paragraph Visualize your data and export it. All Pupil software is open-source. You can modify it or write your own plugins to suit your needs.
+              div.Grid.Grid--1of2
+                div.Grid-cell
+                  div.Feature.u-padTop--2
+                    figure.Feature-image--capturePlayerIcons
+                      img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pc.png")
+                      h2.Feature-subtitle.u-textCenter.u-padTop--1 Capture
+                div.Grid-cell
+                  div.Feature.u-padTop--2
+                    figure.Feature-image--capturePlayerIcons
+                      img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pp.png")
+                      h2.Feature-subtitle.u-textCenter.u-padTop--1 Player
 
     //- open source
     div.Site-content-container
@@ -81,35 +95,68 @@ block main
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full
               div.Feature
-                h1.Feature-title--lg Technical Specifications & Performance
-                p.Feature-paragraph Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
-                p.Feature-paragraph Accuracy 0.60 degrees 
-                p.Feature-paragraph Precision 0.08 degrees
-                p.Feature-paragraph Latency 5.7 ms (using 120hz eye and high speed world cameras).
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Technical Specifications & Performance
+                p.Feature-paragraph.u-textCenter Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
+                p.Feature-paragraph.u-textCenter Accuracy 0.60 degrees 
+                p.Feature-paragraph.u-textCenter Precision 0.08 degrees
+                p.Feature-paragraph.u-textCenter Latency 5.7 ms (using 120hz eye and high speed world cameras).
 
 
     //- design
     div.Site-content-container
       div.Feature-container-column
+        div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell
+            div.Feature
+              h1.Feature-title--lg.u-padBottom--1 Design
+              p.Feature-paragraph A lot of design and engineering thought has gone into getting the ergonomics of the headset just right.
+              p.Feature-paragraph It is designed to fit snugly, securely, and comfortably. The headset and cameras can be adjusted to accommodate a wide range of users. The headset is made from laser sintered PA12, an extremely flexible, durable, and lightweight material.
+          div.Grid-cell
+            div.Feature
+              figure.Feature-figure
+                img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
+
+    //- full width background image
+    div.Grid
+      div(class="Background-img--full-w-scroll" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+    //- Modular & Hackable
+    div.Site-content-container
+      div.Feature-container-column
       div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
         div.Grid-cell
           div.Feature
-            h1.Feature-title--lg.u-padBottom--1 Design
-            p.Feature-paragraph A lot of design and engineering thought has gone into getting the ergonomics of the headset just right.
-            p.Feature-paragraph It is designed to fit snugly, securely, and comfortably. The headset and cameras can be adjusted to accommodate a wide range of users. The headset is made from laser sintered PA12, an extremely flexible, durable, and lightweight material.
+            h1.Feature-title--lg.u-padBottom--1 Modular & Hackable
+            p.Feature-paragraph If we don't have the configuration you need, customize it yourself. Our camera mount geometry and electrical interface is open. We also like to work with users to create custom solutions. Get in touch if you're excited about SMD soldering and hacking: you can buy a DEV frame, buy parts, and follow assembly instructions to build your own Pupil DEV headset.
         div.Grid-cell
           div.Feature
             figure.Feature-figure
-              img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
+              figure.Feature-figure
+              img(class="Feature-image" src="../media/images/pupil_page/web/dev_explo.jpg")
+
+    //- Community
+    div.Site-gray-bkg
+      div(id="content-top" class="Site-content-container")
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full
+              div.Feature
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Community
+                p.Feature-paragraph.u-textCenter Pupil is driven by an active community. Start developing in your own by forking the code on Github. Read the docs and contribute to the user guide. Discuss your project and get free support
+
+    //- Commercial Use & Dedicated Suppor
+    div(id="content-top" class="Site-content-container")
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Commercial Use & Dedicated Support
+              p.Feature-paragraph.u-textCenter We offer use licenses to commercial users.
+              p.Feature-paragraph.u-textCenter We offer dedicated email and video training and support packages. 
+              p.Feature-paragraph.u-textCenter See support packages in the store
+              p.Feature-paragraph.u-textCenter discuss a custom use license, send us an email.
 
 
-
-
-
-      //- Modular & Hackable
-
-      //- Community
-      
 block page_scripts
   script(src=contents.js['pupil_video.js'].url)
 
