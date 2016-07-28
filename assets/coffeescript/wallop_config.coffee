@@ -1,8 +1,8 @@
 loadWallopSlider = ()->
-  wallop_home = document.querySelector('.Wallop')
-  slider = new Wallop wallop_home
+  wallop_element = document.querySelector('.Wallop')
+  slider = new Wallop wallop_element
   # setup touch events
-  hammertime = new Hammer wallop_home
+  hammertime = new Hammer wallop_element
   hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL })
 
   # if $(window).width() < 767
@@ -16,6 +16,7 @@ loadWallopSlider = ()->
       # right arrow
       slider.next()
   )
+ 
 
   if $(window).width() < 768
     # only enable swipe on small screens (touch devices)
@@ -36,7 +37,26 @@ loadWallopSlider = ()->
     $('.Wallop-dot').removeClass('Wallop-dot--current')
     $(pagination_dots[event.detail.currentItemIndex]).addClass('Wallop-dot--current')
 
+  autoplay = (interval)=>
+    last_time = 0
+
+    frame = (timestamp)=>
+      console.log "called frame"
+      update = timestamp - last_time >= interval
+      if update
+        console.log update
+        slider.next()
+        last_time = timestamp
+
+      requestAnimationFrame(frame)
+    requestAnimationFrame(frame)
+
+  if wallop_element.dataset.autoplay
+    console.log "autoplay"
+    # something
+    autoplay(500)
+
 $(document).ready ->
-  if $("#Home").length > 0 or $("#Pupil").length > 0
+  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length > 0
     loadWallopSlider()
 
