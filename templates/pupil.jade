@@ -37,9 +37,9 @@ block main
       div(class="Background-img--full-w-scroll" style="background-image: url('../media/images/home/slides/01.jpg');")
 
     //- software 
-    div.Site-gray-bkg
-      div.Site-content-container
-        div.Feature-container-column
+    //- div.Site-gray-bkg
+    div.Site-content-container
+      div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
@@ -59,42 +59,34 @@ block main
                   div.Feature.u-padTop--2
                     figure.Feature-image--capturePlayerIcons
                       img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pc.png")
-                      h2.Feature-subtitle.u-textCenter.u-padTop--1 Capture
+                      h2.Feature-subtitle.u-textCenter.u-padTop--1 Pupil Capture
                 div.Grid-cell
                   div.Feature.u-padTop--2
                     figure.Feature-image--capturePlayerIcons
                       img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pp.png")
-                      h2.Feature-subtitle.u-textCenter.u-padTop--1 Player
+                      h2.Feature-subtitle.u-textCenter.u-padTop--1 Pupil Player
 
     //- open source
-    div.Site-content-container
-      div.Feature-container-column
-      div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-        div.Grid-cell
-          div.Feature
-            h1.Feature-title--lg.u-padBottom--1 Open Source
-            p.Feature-paragraph We believe in open source. All Pupil code is released with open source licenses.
-            p.Feature-paragraph A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
-            p.Feature-paragraph We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
-            p.Feature-paragraph Check out the pupil repository on <a href="https://github.com/pupil-labs/pupil/" rel="noopener">Github</a>. Read developer documentation on the <a href="https://github.com/pupil-labs/pupil/wiki" rel="noopener">wiki</a>.
-        div.Grid-cell
-          div.Feature
-            figure.Feature-figure
-              img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
-
-
-    //- tech specs and performance
     div.Site-gray-bkg
-      div(id="content-top" class="Site-content-container")
-        div.Feature-container-column
-          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-            div.Grid-cell.Grid-cell--full
+      div.Site-content-container
+        div.Site-content-container
+          div.Feature-container-column
+          div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell
               div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Technical Specifications & Performance
-                p.Feature-paragraph.u-textCenter Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
-                p.Feature-paragraph.u-textCenter Accuracy 0.60 degrees 
-                p.Feature-paragraph.u-textCenter Precision 0.08 degrees
-                p.Feature-paragraph.u-textCenter Latency 5.7 ms (using 120hz eye and high speed world cameras).
+                h1.Feature-title--lg.u-padBottom--1 Open Source
+                p.Feature-paragraph We believe in open source. All Pupil code is released with open source licenses.
+                p.Feature-paragraph A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
+                p.Feature-paragraph We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
+                p.Feature-paragraph Check out the pupil repository on <a href="https://github.com/pupil-labs/pupil/" rel="noopener">Github</a>. Read developer documentation on the <a href="https://github.com/pupil-labs/pupil/wiki" rel="noopener">wiki</a>.
+            div.Grid-cell
+              div.Feature
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
+    
+    //- full width background image software screenshots
+    //- div.Grid
+    //-   div(class="Background-img--full-w-scroll--contain" style="background-image: url('../media/images/v04_world_eye_composite_screenshot.png');")
 
 
     //- design
@@ -111,9 +103,19 @@ block main
               figure.Feature-figure
                 img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
 
-    //- full width background image
-    div.Grid
-      div(class="Background-img--full-w-scroll" style="background-image: url('../media/images/home/slides/01.jpg');")
+    //- tech specs and performance
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full
+              div.Feature
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Technical Specifications & Performance
+                p.Feature-paragraph.u-textCenter Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
+                p.Feature-paragraph.u-textCenter Accuracy 0.60 degrees 
+                p.Feature-paragraph.u-textCenter Precision 0.08 degrees
+                p.Feature-paragraph.u-textCenter Latency 5.7 ms (using 120hz eye and high speed world cameras)
+
 
     //- Modular & Hackable
     div.Site-content-container
@@ -137,7 +139,10 @@ block main
             div.Grid-cell.Grid-cell--full
               div.Feature
                 h1.Feature-title--lg.u-textCenter.u-padBottom--1 Community
-                p.Feature-paragraph.u-textCenter Pupil is driven by an active community. Start developing in your own by forking the code on Github. Read the docs and contribute to the user guide. Discuss your project and get free support
+                p.Feature-paragraph.u-textCenter Pupil is driven by an active community. 
+                p.Feature-paragraph.u-textCenter Make a fork of the Pupil Github repository and start developing. 
+                p.Feature-paragraph.u-textCenter Read the docs and contribute to the user guide. 
+                p.Feature-paragraph.u-textCenter Discuss your project and get free support.
 
     //- Commercial Use & Dedicated Suppor
     div(id="content-top" class="Site-content-container")
@@ -146,8 +151,9 @@ block main
           div.Grid-cell.Grid-cell--full
             div.Feature
               h1.Feature-title--lg.u-textCenter.u-padBottom--1 Commercial Use & Dedicated Support
+              p.Feature-paragraph.u-textCenter We offer dedicated email and video training and support packages.
+              p.Feature-paragraph.u-textCenter See support packages in the store. 
               p.Feature-paragraph.u-textCenter We offer use licenses to commercial users.
-              p.Feature-paragraph.u-textCenter We offer dedicated email and video training and support packages. 
-              p.Feature-paragraph.u-textCenter See support packages in the store
-              p.Feature-paragraph.u-textCenter discuss a custom use license, send us an email.
+              p.Feature-paragraph.u-textCenter Contact us to discuss custom licensing options.
+
 
