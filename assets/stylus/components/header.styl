@@ -129,14 +129,29 @@
 .Header-nav-list
   // nothing
     
+//NAT-CLASS
+
 .Header-nav-item
   text-decoration none !important
   font-family 'Roboto', 'sans-serif'
   font-weight 700
   color rgba(0,0,0,0.54)
   text-transform uppercase
+
+.Header-nav-item:after
+  content ''
+  display block
+  height 3px
+  width 0
+  background transparent
+  transition width .6s ease, background-color .5s ease
+
+.Header-nav-item:hover:after
+  width 100%
+  background $link-hover-color
   
-  
+
+
 .Header-cart-badge
   position absolute
   top -4px
