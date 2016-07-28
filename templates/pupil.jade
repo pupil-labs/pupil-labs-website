@@ -33,13 +33,8 @@ block main
               p.Feature-paragraph.u-textCenter Pupil is designed as a modular system to support the diverse needs and applications of researchers.
 
     //- full width background image
-    //- div.Grid
-    //-   div(class="Background-img--full-w-fixed" style="background-image: url('../media/images/home/slides/01.jpg');")
-    //- background video placeholder or placeholder image
-
-    div(id="Assembly-video-container")
-      video(id="background_video" class="Background-video" loop muted)
-      div(id="video_cover" class="Background-img--full-w-scroll")
+    div.Grid
+      div(class="Background-img--full-w-scroll" style="background-image: url('../media/images/home/slides/01.jpg');")
 
     //- software 
     div.Site-gray-bkg
@@ -155,8 +150,4 @@ block main
               p.Feature-paragraph.u-textCenter We offer dedicated email and video training and support packages. 
               p.Feature-paragraph.u-textCenter See support packages in the store
               p.Feature-paragraph.u-textCenter discuss a custom use license, send us an email.
-
-
-block page_scripts
-  script(src=contents.js['pupil_video.js'].url)
 
