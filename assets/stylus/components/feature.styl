@@ -213,6 +213,22 @@
     background-position-y top
     background-size contain
     background-attachment scroll
+    
+.Background-img--full-w-scroll--contain
+  background-position-x center
+  background-position-y center
+  background-repeat no-repeat  
+  background-attachment scroll // set to scroll so content doesn't scroll over top
+  background-size contain
+  width 100vw
+  height 80vh
+  @media $break-767
+    padding 0
+    padding-bottom 71.4%
+    height 0
+    background-position-y top
+    background-size contain
+    background-attachment scroll
 
 .Background-video-container
   position relative
