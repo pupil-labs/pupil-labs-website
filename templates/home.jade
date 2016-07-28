@@ -1,7 +1,7 @@
 extends layout
 
 block main
-  div(id="Home")
+  div(id="Home").Wallop-transform
 
     - var intro_data = contents.home['home_pupil_intro.json']
     - var intro_meta = intro_data.metadata    
@@ -16,7 +16,7 @@ block main
     - var home_slides_data = contents.home['home_slides.json']
     - var home_slides_meta = home_slides_data.metadata
     - var slider_data = home_slides_meta
-    - var slider_classes = "Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop-transform Wallop--fade"
+    - var slider_classes = "Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop--fade"
     - var slider_id = "Home-slider"
     - var slide_img_class = "Background-img--full-wh"
 
