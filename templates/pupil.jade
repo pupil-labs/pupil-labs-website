@@ -16,13 +16,13 @@ block main
     //- TODO - pull slider images from json file and run in for loop
     - var slider_data = pupil_slides_meta
     - var slider_id = "Pupil-slider"
-    - var slide_img_class = "Background-image--half-w-scroll"
+    - var slide_img_class = "Background-img--half-w Background-img-contain"
     - var slider_button_previous_inline_style = "left: 20px;"
     - var slider_button_next_inline_style = "right: calc(50vw + 20px);"
     - var slider_show_pagination = false
 
     div.Grid
-      div(class="Background-img--full-wh" style="background-image: url('../media/images/home/slides/03.jpg');")
+      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/03.jpg');")
 
     //- pupil intro row
     //- div(id="content-top" class="Site-content-container")
@@ -83,7 +83,7 @@ block main
                       h2.Feature-subtitle.u-textCenter.u-padTop--1 Pupil Player
     //- full width background image
     div.Grid
-      div(class="Background-img--full-w-scroll" style="background-image: url('../media/images/home/slides/01.jpg');")
+      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
 
 
     //- open source

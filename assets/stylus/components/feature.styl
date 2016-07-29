@@ -150,13 +150,18 @@
   top 0 
 
 
+.Background-img-cover
+  background-size cover
+
+.Background-img-contain
+    background-size contain
+
 .Background-img--full-wh
   // background-image embedurl("../media/images/slides/1.jpg")
   background-position-x center
   background-position-y center
   background-repeat no-repeat
   background-attachment scroll // set to scroll so content doesn't scroll over top
-  background-size cover
   width 100vw
   height 100vh
 
@@ -172,7 +177,6 @@
   background-position-y center
   background-repeat no-repeat  
   background-attachment scroll // set to scroll so content doesn't scroll over top
-  background-size contain
   width 100vw
   min-height 30em
 
@@ -182,12 +186,11 @@
     height 0
     background-position-y top  
     
-.Background-image--half-w-scroll
+.Background-img--half-w
   background-position-x center
   background-position-y center
   background-repeat no-repeat  
   background-attachment scroll // set to scroll so content doesn't scroll over top
-  background-size contain
   width 50vw
   // min-height 30em
   height 0
@@ -205,7 +208,6 @@
   background-position-y center
   background-repeat no-repeat  
   background-attachment fixed // set to scroll so content doesn't scroll over top
-  background-size cover
   width 100vw
   height 80vh
   @media $break-767
@@ -216,37 +218,7 @@
     background-size contain
     background-attachment scroll
 
-.Background-img--full-w-scroll
-  background-position-x center
-  background-position-y center
-  background-repeat no-repeat  
-  background-attachment scroll // set to scroll so content doesn't scroll over top
-  background-size cover
-  width 100vw
-  height 100vh
-  @media $break-767
-    padding 0
-    padding-bottom 71.4%
-    height 0
-    background-position-y top
-    background-size contain
-    background-attachment scroll
-    
-.Background-img--full-w-scroll--contain
-  background-position-x center
-  background-position-y center
-  background-repeat no-repeat  
-  background-attachment scroll // set to scroll so content doesn't scroll over top
-  background-size contain
-  width 100vw
-  height 80vh
-  @media $break-767
-    padding 0
-    padding-bottom 71.4%
-    height 0
-    background-position-y top
-    background-size contain
-    background-attachment scroll
+
 
 .Background-video-container
   position relative
