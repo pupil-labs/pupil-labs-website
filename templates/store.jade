@@ -8,8 +8,6 @@ block main
   div(id="Store")
     - var page_data = contents.store['index.json']
     - var page_meta = page_data.metadata
-    - var titleData = {'title':page_meta.title,'s1':page_meta.s1, 's2':page_meta.s2}    
-    include includes/title
 
     //- Configurator
     include includes/configurator

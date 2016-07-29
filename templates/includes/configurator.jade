@@ -9,7 +9,7 @@
 - }).value()
 
 
-section.Grid.Grid--1of2--breakConfig
+div.Grid.Grid--1of2--breakConfig
   a(class='anchor' name="config")
   
   //- Images
@@ -24,6 +24,12 @@ section.Grid.Grid--1of2--breakConfig
   //- Controls
   div.Grid-cell
     div.Grid.Grid-column
+      div.Grid-cell.StoreConfig-rowContainer
+        div.Grid
+          div.Grid-cell.u-textCenter
+            h1 Pupil
+            h3 Configure the headset to suit your needs
+
       //- Presets -- pulled from JSON
       //- here we sort the data in pupil-presets by the order key
       //- - var config_data = contents.store.products['pupil-presets.json'].metadata
