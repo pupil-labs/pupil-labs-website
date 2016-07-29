@@ -114,12 +114,15 @@
 
 .Feature-title--lg
   color #515151
-  font-size 2em
+  font-size $heading-font-size
+  font-weight $heading-font-weight
+
         
 .Feature-subtitle
   // padding .5em 1em
   // color darken(#8A8A8A, 20%)
-  font-size 1.1em
+  font-size $subtitle-font-size
+  font-weight $subhead-font-weight
   text-align justify
   text-justify inter-word
   
@@ -131,8 +134,10 @@
 
 .Feature-subtitle--lg
   padding .2em 1em
-  color darken(#8A8A8A, 20%)
-  font-size 1.3em
+  // color darken(#8A8A8A, 20%)
+  font-size $subtitle-font-size
+  font-weight $subhead-font-weight
+
   
   @media $break-lg
       font-size 1.4em
@@ -242,7 +247,8 @@
   background rgba(0,0,0,0.1)
   
 .Feature-paragraph
-  font-size 1em
+  font-size $paragraph-font-size
+  font-weight $paragraph-font-weight
   padding-bottom 1em
 
 .Feature-container-column
