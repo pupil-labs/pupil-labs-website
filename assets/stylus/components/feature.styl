@@ -166,7 +166,7 @@
     height 0
     background-position-y top
     
- .Background-img--full-w
+.Background-img--full-w
   // background-image embedurl("../media/images/slides/1.jpg")
   background-position-x center
   background-position-y center
@@ -174,13 +174,31 @@
   background-attachment scroll // set to scroll so content doesn't scroll over top
   background-size contain
   width 100vw
-  height 100vh
+  min-height 30em
 
   @media $break-767
     padding 0
     padding-bottom 75%
     height 0
     background-position-y top  
+    
+.Background-image--half-w-scroll
+  background-position-x center
+  background-position-y center
+  background-repeat no-repeat  
+  background-attachment scroll // set to scroll so content doesn't scroll over top
+  background-size contain
+  width 50vw
+  // min-height 30em
+  height 0
+  padding-bottom 75%
+  
+  @media $break-767
+    padding 0
+    padding-bottom 75%
+    height 0
+    background-position-y top  
+  
 
 .Background-img--full-w-fixed
   background-position-x center
@@ -205,7 +223,7 @@
   background-attachment scroll // set to scroll so content doesn't scroll over top
   background-size cover
   width 100vw
-  height 80vh
+  height 100vh
   @media $break-767
     padding 0
     padding-bottom 71.4%
