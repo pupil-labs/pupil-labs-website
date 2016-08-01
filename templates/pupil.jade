@@ -45,13 +45,13 @@ block main
               div(style="color: white;").Feature
                 h1(style="color: white;").Feature-title--lg.u-textCenter Pupil
                 h2.Feature-subtitle.u-padBottom--1.u-textCenter.u-padTop--1 A platform for eye tracking and egocentric vision research
+                p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. The hardware is designed as a #[strong modular system] that can be configured to support your research and application requirments.
             div(style="color: white;").Grid-cell.Grid-cell--1of3
-                h3.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
+
                 //- p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
-                p.Feature-paragraph Pupil is designed as a #[strong modular system] to support the diverse needs and applications of researchers.
                 each slide, i in slider_data
                   - var text_class = (i == 0 ? "Feature-paragraph Wallop-txt Wallop-txt--current" : "Feature-paragraph Wallop-txt Wallop-txt--hidden")
-                  p(class=text_class)=slide.text
+                  p(class=text_class)=slide.configuration_title + " - " + slide.configuration_text 
 
             div.Grid-cell.Grid-cell--2of3.u-padBottom--2
               div(id="pupil-headset-slider").Grid.Grid--center.Grid--align-ContentCenter.Wallop
