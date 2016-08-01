@@ -2,21 +2,21 @@
   "0": {
     "url":"../media/images/pupil/slides/w120_e120.png",
     "alt_title":"",
-    "text": ""
+    "text": "monocular"
   },
   "1": {
     "url":"../media/images/pupil/slides/w120_e120b.png",
     "alt_title":"",
-    "text": ""
+    "text": "binocular"
   },
   "2": {
     "url":"../media/images/pupil/slides/w120_enone.png",
     "alt_title":"",
-    "text": ""
+    "text": "egocentric"
   },
   "3": {
     "url":"../media/images/pupil/slides/wnone_e120b.png",
     "alt_title":"",
-    "text": ""
+    "text": "eye movement research"
   }
 }

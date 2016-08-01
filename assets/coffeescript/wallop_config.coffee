@@ -26,6 +26,7 @@ loadWallopSlider = ()->
       slider.previous()
 
   pagination_dots = Array.prototype.slice.call(document.querySelectorAll('.Wallop-dot'))
+  text_points = Array.prototype.slice.call(document.querySelectorAll('.Wallop-txt'))
 
   add_listener = (el,i)->
     el.addEventListener 'click', ()->
@@ -36,6 +37,8 @@ loadWallopSlider = ()->
   slider.on 'change', (event)=>
     $('.Wallop-dot').removeClass('Wallop-dot--current')
     $(pagination_dots[event.detail.currentItemIndex]).addClass('Wallop-dot--current')
+    $('.Wallop-txt').removeClass('Wallop-txt--current').addClass('Wallop-txt--hidden')
+    $(text_points[event.detail.currentItemIndex]).removeClass('Wallop-txt--hidden').addClass('Wallop-txt--current')
 
   autoplay = (interval)=>
     last_time = 0

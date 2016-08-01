@@ -37,20 +37,34 @@ block main
     //-           p.Feature-paragraph.u-textCenter Pupil is designed as a modular system to support the diverse needs and applications of researchers.
 
     //- half width slider
-    div.Feature-slide-wrapper
-      div.Grid.Grid--1of2.Grid--center
-        div.Grid-cell
-          include includes/slider.jade
-          //- div(class="Background-image--half-w-scroll" style="background-image: url('../media/images/home/slides/02.jpg');")
-        div.Grid-cell
-          div(style="color: white;").Feature
-            h1(style="color: white;").Feature-title--lg.u-textCenter Pupil
-            h2.Feature-subtitle.u-padBottom--1.u-textCenter.u-padTop--1 A platform for eye tracking and egocentric vision research
-            p.Feature-paragraph.u-textCenter.u-padTop--2 Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
-            p.Feature-paragraph.u-textCenter Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
-            p.Feature-paragraph.u-textCenter Pupil is designed as a modular system to support the diverse needs and applications of researchers.
+    section(style="background-color:#6f7679;")
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--center
+            div.Grid-cell.Grid-cell--full
+              div(style="color: white;").Feature
+                h1(style="color: white;").Feature-title--lg.u-textCenter Pupil
+                h2.Feature-subtitle.u-padBottom--1.u-textCenter.u-padTop--1 A platform for eye tracking and egocentric vision research
+            div(style="color: white;").Grid-cell.Grid-cell--1of3
+                h3.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. 
+                //- p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
+                p.Feature-paragraph Pupil is designed as a #[strong modular system] to support the diverse needs and applications of researchers.
+                each slide, i in slider_data
+                  - var text_class = (i == 0 ? "Feature-paragraph Wallop-txt Wallop-txt--current" : "Feature-paragraph Wallop-txt Wallop-txt--hidden")
+                  p(class=text_class)=slide.text
 
+            div.Grid-cell.Grid-cell--2of3.u-padBottom--2
+              div(id="pupil-headset-slider").Grid.Grid--center.Grid--align-ContentCenter.Wallop
+                div.Wallop-list.Grid-cell.Grid-cell--full
+                  each slide, i in slider_data    
+                    - var slide_class = (i == 0 ? "Wallop-item Wallop-item--current" : "Wallop-item")
+                    - var bkg_img = "background-image: url('"+slide.url+"');"
+                    div(class=slide_class)
+                      div(class="Background-img--full-w-grid Background-img-contain" style=bkg_img)
 
+            div.Grid-cell.Grid-cell--full.u-textCenter.Wallop-pagination-container
+              each slide, i in slider_data
+                button.Wallop-dot
 
     //- software 
     //- div.Site-gray-bkg
