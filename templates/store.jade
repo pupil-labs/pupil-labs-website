@@ -4,11 +4,13 @@ block append title
   | #{ " - " + page.title}
 
 block main
-  //- Title block
   div(id="Store")
     - var page_data = contents.store['index.json']
     - var page_meta = page_data.metadata
-    div.Site-gray-bkg
+
+
+    //- Pupil section
+    section.Site-gray-bkg
       div.Site-content-container
         a(class='anchor' name="pupil")
         div.Feature-container-column
@@ -25,7 +27,7 @@ block main
 
 
     //- VR/AR/MR
-    div.Site-gray-bkg
+    section.Site-gray-bkg
       div.Site-content-container
         a(class='anchor' name="vr-ar")
         div.Feature-container-column
@@ -40,7 +42,7 @@ block main
 
 
     //- Additional Products
-    div.Site-gray-bkg
+    section.Site-gray-bkg
       div.Site-content-container
         a(class='anchor' name="additional-products")
         div.Feature-container-column
