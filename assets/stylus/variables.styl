@@ -16,12 +16,16 @@ $gray-base ?=           #000
 $gray-darker ?=         lighten($gray-base, 13.5%) // #222
 $gray-dark ?=           lighten($gray-base, 20%)   // #333
 $gray ?=                lighten($gray-base, 33.5%) // #555
-$gray-light ?=          lighten($gray-base, 46.7%) // #777
-$gray-lighter ?=        lighten($gray-base, 93.5%) // #eee
+$gray-light ?=      	lighten($gray-base, 40%)   // #666
+$gray-lighter ?=        lighten($gray-base, 46.7%) // #777
+$gray-lighterer ?=      lighten($gray-base, 93.5%) // #eee
+
+
 
 // Scaffolding
+$header-color ?= $gray
 $body-bg ?= $color-default
-$text-color ?= $gray-dark
+$text-color ?= $gray-light
 
 $link-hover-color ?= lighten(rgb(17, 160, 140),25%) //#247b75
 $link-color ?= rgb(17, 160, 140)
@@ -33,12 +37,11 @@ $link-text-decoration ?= none
 // Typography
 // the ?= is a conditional assignment - if the variable is already assigned it doesn't get overwritten
 // kind of overkill here but, interesting feature 
-$font-family-sans-serif ?= 	'aktiv-grotesk', sans-serif
-$font-family-sans-serif-alt ?=		'aktiv-grotesk', sans-serif
+$font-family-sans-serif ?= 	'Montserrat', sans-serif
+$font-family-sans-serif-alt ?=		'Helvetica', sans-serif
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace ?=  	Menlo, Monaco, Consolas, "Courier New", monospace
 $font-family-base ?=      	$font-family-sans-serif
-$font-family-grotesk ?= 'aktiv-grotesk', sans-serif
 
 $font-size-base ?=			1em
 $line-height-base ?=  		26px // "unit-less" base line height that can be used as a multiplier by elements
