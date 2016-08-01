@@ -2,11 +2,12 @@
 - var _slider_inline_style = (typeof slider_inline_style !== 'undefined' ? slider_inline_style : "")
 - var _slider_id = (typeof slider_id !== 'undefined' ? slider_id : "slider")
 - var _slider_classes = (typeof slider_classes !== 'undefined' ? slider_classes : "Grid Grid--center Grid--alignContentCenter Wallop")
-- var _slide_img_class = (typeof slide_img_class !== 'undefined' ? slide_img_class : "Background-img--full-w")
+- var _slide_img_class = (typeof slide_img_class !== 'undefined' ? slide_img_class : "Background-img--full-wh Background-img-contain")
 - var _slider_show_pagination = (typeof slider_show_pagination !== 'undefined' ? slider_show_pagination : true)
 - var _slider_show_controls = (typeof slider_show_controls !== 'undefined' ? slider_show_controls : true)
 - var _slider_data_attributes = (typeof slider_data_attributes !== 'undefined' ? slider_data_attributes : {} )
-
+- var _button_previous_inline_style = (typeof slider_button_previous_inline_style !== 'undefined' ? slider_button_previous_inline_style : "") 
+- var _button_next_inline_style = (typeof slider_button_next_inline_style !== 'undefined' ? slider_button_next_inline_style : "") 
 
 div(class=_slider_classes id=_slider_id style=_slider_inline_style)&attributes(_slider_data_attributes)
   div.Wallop-list
@@ -19,13 +20,13 @@ div(class=_slider_classes id=_slider_id style=_slider_inline_style)&attributes(_
   //- control arrows
   if _slider_show_controls
     div.Grid-cell.u-textCenter     
-      button.Wallop-buttonPrevious
+      button(style=_button_previous_inline_style).Wallop-buttonPrevious
         svg.Wallop-arrow-left(viewbox='0 0 180 310')
           path(d='M170 10 L10 161 M10 150 L170 300')
-      div.Grid-cell.u-textCenter
-        button.Wallop-buttonNext
-          svg.Wallop-arrow-right(viewbox='0 0 180 310')
-            path(d='M10 10 L170 161 M170 150 L10 300')
+    div.Grid-cell.u-textCenter
+      button(style=_button_next_inline_style).Wallop-buttonNext
+        svg.Wallop-arrow-right(viewbox='0 0 180 310')
+          path(d='M10 10 L170 161 M170 150 L10 300')
   //- pagination
   if _slider_show_pagination
     div.Grid-cell.u-textCenter.Wallop-pagination-container

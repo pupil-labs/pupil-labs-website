@@ -20,8 +20,10 @@ block main
     - var slider_id = "Home-slider"
     - var slide_img_class = "Background-img--full-wh"
 
-    //- use slider template
-    include  includes/slider.jade
+    //- show background image
+    div.Grid
+      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/00.jpg');")
+
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
