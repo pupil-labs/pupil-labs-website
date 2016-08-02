@@ -62,12 +62,9 @@ jscoffee = ()->
     )
   .pipe concat "main.js"
   .pipe uglify()
-  .pipe gulp.dest "contents/js"
-  .pipe livereload();
+  js_sideNav()
 
 js = ()->
-  js_sideNav()
-  js_bkgVideo()
   jscoffee()
 
 gulp.task "newPost", ->
@@ -166,7 +163,8 @@ gulp.task "build_wintersmith", (cb)->
 gulp.task "css_clean", ->
   return gulp.src('build/css/main.css')
     .pipe(uncss(
-      html: ['build/**/*.html']))
+      html: ['build/**/*.html'],
+      ignore: ['.Header-bkg-transparent','.Header-bkg-transparent .Header-nav-item','.Header-bkg-opaque','.Header-nav-item','.Header-nav-item:after','.Header-nav-item:hover:after','.Header-cart-button-container','.cart-full','.Cart-table-container','.Cart-rowContainer','cursor default:hover','.no-touch','.no-touch a:hover','.no-touch .Button:hover','.no-touch .button-flex:hover','.no-touch .Button-inverse:hover','.no-touch .Button-sm:hover','.no-touch .Button--cart:hover','.no-touch .Button-player:hover','.no-touch .Button-dataset:hover','.no-touch .Button--cart:active','.Wallop-dot','.Wallop-dot--current','.Wallop-item','.Wallop-item--hidePrevious','.Wallop-item--current','.Wallop-item--showNext','.StoreConfig-world:last-child','.StoreConfig-world','.StoreConfig-eye','.StoreConfig-eye:last-child','.StoreConfig--state-active','.StoreConfig--state-inactive','.Store-license','.no-touch .Store-license:hover', '.AddtoCart','.Button-cart','.Cart--triangle-up','.Cart--triangle-down','.Cart-itemQuant--increment','.no-touch .Cart-itemQuant--increment:hover','.Cart-itemQuant--increment:active','.Cart-itemQuant--increment:active >p.Cart--triangle-up','.Cart-itemQuant--increment:active >p.Cart--triangle-down','.no-touch .Cart-itemQuant--increment:hover >p.Cart--triangle-up','.Grid-cell--1of6','.Grid-cell--top','.Grid--cartFormula-break','.Aligner-item','.Grid--gutters-lg > .Aligner-item','hr,[role="button"]','.TechSpecs-table','.TechSpecs-txt--eye', '.TechSpecs-table td', '.TechSpecs-table .TechSpecs-table--column', '.TechSpecs-table--column']))
     .pipe(gulp.dest('build/css'))
 
 
