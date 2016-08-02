@@ -59,7 +59,7 @@ storeConfig-button($stroke=1px,$stroke_color=#ddd)
 .StoreConfig-SubTotal--label
   color #fff
   
-  @media $break-sm
+  @media $break-767
     padding-top 1em 
     padding-bottom 1em
 
@@ -78,7 +78,11 @@ storeConfig-button($stroke=1px,$stroke_color=#ddd)
   background rgba(0,0,0,.025)
   
 .StoreConfig-rowContainer--world
-  border-top 1px solid #ddd
+  &nth-child(odd)
+    border-top 1px solid #ddd
+  
+  @media $break-767
+    border-top 1px solid #ddd
 
 .StoreConfig-rowContainer--eye
   // border-top 1px solid black
