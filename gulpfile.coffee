@@ -24,7 +24,8 @@ imagemin = require "gulp-imagemin"
 pngquant = require "imagemin-pngquant"
 sitemap = require "gulp-sitemap"
 favicons = require "gulp-favicons"
-gulpsync = require("gulp-sync")(gulp)
+runSequence = require("run-sequence")
+uncss = require "gulp-uncss"
 
 css = ()->
   gulp.src "assets/stylus/main.styl"
@@ -100,7 +101,7 @@ gulp.task "newPost", ->
   gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
 
 gulp.task "image_min", ->
-  gulp.src('build/media/images/**/*')
+  return gulp.src('build/media/images/**/*')
   .pipe(
     imagemin
       optimizationLevel: 2
@@ -141,7 +142,7 @@ gulp.task "preview", ->
     wintersmith.settings.configFile = 'config.json'
     wintersmith.preview()
 
-gulp.task "build_wintersmith", ->
+gulp.task "build_wintersmith", (cb)->
   knownOpts = 
     boolean: ['dev','staging','production']
   # opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dev':true}
@@ -150,6 +151,7 @@ gulp.task "build_wintersmith", ->
     wintersmith.settings.configFile = 'config.json'
     wintersmith.build ->
       gutil.log "Successfully built wintersmith for local dev."
+      cb()
   if opts.staging
     wintersmith.settings.configFile = 'config_staging.json'
     wintersmith.build ->
@@ -159,15 +161,32 @@ gulp.task "build_wintersmith", ->
     wintersmith.build ->
       gutil.log "Successfully built wintersmith for **production**."
 
+
+
+gulp.task "css_clean", ->
+  return gulp.src('build/css/main.css')
+    .pipe(uncss(
+      html: ['build/**/*.html']))
+    .pipe(gulp.dest('build/css'))
+
+
 gulp.task "css", ->
-  css()
+  return css()
 
 gulp.task "js", ->
-  js()
+  return js()
 
-gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
-  gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
+gulp.task "build_clean", (cb)->
+  return del('build/')
 
+gulp.task "build_log", (cb)->
+  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
+
+gulp.task "build", (cb)->
+  runSequence('build_clean',
+              ['css','js'],
+              'build_wintersmith',
+              ['image_min','css_clean'],cb)
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
