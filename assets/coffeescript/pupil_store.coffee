@@ -54,6 +54,17 @@ class PupilStore
     if $(@storePage).length > 0
       # ConfigOptions--world
       # getProductsFiltered('world')
+      # create products in configurator
+      product_db = get_product_database()
+
+      for world_id in get_world_cam_ids()
+        klass = if world_id is "w120" then "StoreConfig-world StoreConfig--state-active" else "StoreConfig-world"
+        html = "<li class='Grid-cell u-textCenter'>
+                 <a role='button' class='#{ klass }' id='#{ world_id }' href='#{ w.img }'>#{w.label}</a> 
+                 </li>"
+        $("ul[class='Grid Grid--justifyCenter ConfigOptions--world']").append(html)
+
+
       for w in getProductsFiltered('world')
         klass = if w.id is "world_hs" then "StoreConfig-world StoreConfig--state-active" else "StoreConfig-world"
         html = "<li class='Grid-cell u-textCenter'>
