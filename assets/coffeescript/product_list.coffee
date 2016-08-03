@@ -269,7 +269,6 @@ get_world_cam_data = ->
 get_world_cam_ids = ->
   return (k for k,v of get_world_cam_data())
 
-console.log get_world_cam_ids()
 
 get_eye_cam_data = ->
   eye_cam_data = 
@@ -314,6 +313,9 @@ get_eye_cam_data = ->
       weight: 43
       title_video: "Download sample video"
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
+
+get_eye_cam_ids = ->
+  return (k for k,v of get_eye_cam_data())
 
 get_edu_discount_data = ->
   edu_discount_data = 

@@ -1,4 +1,4 @@
-_products = productList
+# _products = productList
 _configImgs = configImgs
 
 # jsonToCoffeeObj = (file)->

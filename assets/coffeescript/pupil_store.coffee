@@ -55,26 +55,20 @@ class PupilStore
       # ConfigOptions--world
       # getProductsFiltered('world')
       # create products in configurator
-      product_db = get_product_database()
 
       for world_id in get_world_cam_ids()
+        title_store = get_world_cam_data()[world_id]['title_store']
         klass = if world_id is "w120" then "StoreConfig-world StoreConfig--state-active" else "StoreConfig-world"
         html = "<li class='Grid-cell u-textCenter'>
-                 <a role='button' class='#{ klass }' id='#{ world_id }' href='#{ w.img }'>#{w.label}</a> 
+                 <button class='#{ klass }' id='#{ world_id }'>#{title_store}</button> 
                  </li>"
         $("ul[class='Grid Grid--justifyCenter ConfigOptions--world']").append(html)
 
-
-      for w in getProductsFiltered('world')
-        klass = if w.id is "world_hs" then "StoreConfig-world StoreConfig--state-active" else "StoreConfig-world"
+      for eye_id in get_eye_cam_ids()
+        title_store = get_eye_cam_data()[eye_id]['title_store']
+        klass = if eye_id is "e30" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
         html = "<li class='Grid-cell u-textCenter'>
-                 <a role='button' class='#{ klass }' id='#{ w.id }' href='#{ w.img }'>#{w.label}</a> 
-                 </li>"
-        $("ul[class='Grid Grid--justifyCenter ConfigOptions--world']").append(html)
-      for e in getProductsFiltered('eye')
-        klass = if e.id is "eye_30hz" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
-        html = "<li class='Grid-cell u-textCenter'>
-                 <a role='button' class='#{ klass }'' id='#{ e.id }' href='#{ e.img }'>#{e.label}</a> 
+                 <button class='#{ klass }'' id='#{ eye_id }' href='#{}'>#{title_store}</button> 
                  </li>"
         $("ul[class~='ConfigOptions--eye']").append(html)
       for p in getProductsFiltered('product').slice(1) #remove first item
