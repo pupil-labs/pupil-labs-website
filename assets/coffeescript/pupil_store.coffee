@@ -8,22 +8,22 @@ class PupilStore
     @cartPage = "#Cart" #Cart class
     @orderPage = "Order" #Order form class
     @storeConfigClass = "StoreConfig"
-    @storeConfigSelector = "a[class^='#{ @storeConfigClass}-']"
+    @storeConfigSelector = "button[class^='#{ @storeConfigClass}-']"
     @storeConfigActiveClass = "StoreConfig--state-active"
-    @addToCartClass = "a[class^='AddToCart']"
+    @addToCartClass = "button[class^='AddToCart']"
     @clearCartClass = "a[id='Cart-clearCart']"
     @addToCartButton = $(@addToCartClass)
     @clearCartButton = $(@clearCartClass)
-    @addToCartConfig = $("a[id='AddToCart-config']")
+    @addToCartConfig = $("button[id='AddToCart-config']")
     @worldConfigActiveClass = "button[class='StoreConfig-world #{ @storeConfigActiveClass }']"
     @eyeConfigActiveClass = "button[class='StoreConfig-eye #{ @storeConfigActiveClass }']"
     @licenseConfigClass = 'Store-license'
     @licenseConfigActive = 'StoreConfig--state-active--license'
-    @licenseConfigSelector = "a[class^='#{ @licenseConfigClass }']"
-    @licenseConfigActiveClass = "a[class='#{ @licenseConfigClass } #{ @licenseConfigActive }']"
+    @licenseConfigSelector = "button[class^='#{ @licenseConfigClass }']"
+    @licenseConfigActiveClass = "button[class='#{ @licenseConfigClass } #{ @licenseConfigActive }']"
     @configSubTotalClass = "p[class='StoreConfig-subTotal']"
     @cartNavCounter = $(".Header-cart-badge")
-    @storeConfigPresetClass = "a[class='Store-navPreset']"
+    @storeConfigPresetClass = "button[class='Store-navPreset']"
     ) ->
       @_preloadConfigImages()
       @eventStorePageInit()
@@ -67,10 +67,11 @@ class PupilStore
         title_store = get_eye_cam_data()[eye_id]['title_store']
         klass = if eye_id is "e30" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
         html = "<li class='Grid-cell u-textCenter'>
-                 <button class='#{ klass }'' id='#{ eye_id }' href='#{}'>#{title_store}</button> 
+                 <button class='#{ klass }' id='#{ eye_id }' href='#{}'>#{title_store}</button> 
                  </li>"
         $("ul[class~='ConfigOptions--eye']").append(html)
       
+
       # create vr/ar products
       for vr_ar_id in get_vr_ar_product_ids()
         product = db[vr_ar_id]
@@ -194,7 +195,7 @@ class PupilStore
 
         activeLinks = $(event.target)
         @_setActiveState(activeLinks)
-        @_swapImg($("a[class~='StoreConfig--state-active']"))
+        @_swapImg($("button[class~='StoreConfig--state-active']"))
         @_updateConfigSubTotal()
 
         $("#w30").removeClass("StoreConfig--state-inactive")
@@ -202,19 +203,19 @@ class PupilStore
         $("#enone").removeClass("StoreConfig--state-inactive")
         $("#wnone").removeClass("StoreConfig--state-inactive")   
 
-        if $(@worldConfigActiveClass).attr('id') is "world_none"
+        if $(@worldConfigActiveClass).attr('id') is "wnone"
           $("#specs-world").fadeTo(800,0).prop('disabled',true).css('cursor','default')
           $("#enone").addClass("StoreConfig--state-inactive")
         else
           $("#specs-world").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
-        if $(@eyeConfigActiveClass).attr('id') is "eye_none"
+        if $(@eyeConfigActiveClass).attr('id') is "enone"
           $("#specs-eye").fadeTo(800,0).prop('disabled',true).css('cursor','default') 
           $("#wnone").addClass("StoreConfig--state-inactive")
         else
           $("#specs-eye").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
           $("#specs-eye").fadeIn()
 
-        if $(@worldConfigActiveClass).attr('id') is "world_hr"
+        if $(@worldConfigActiveClass).attr('id') is "w30"
           $("#e120b").addClass("StoreConfig--state-inactive")
         if $(@eyeConfigActiveClass).attr('id') is "e120b"
           $("#w30").addClass("StoreConfig--state-inactive")
@@ -225,8 +226,8 @@ class PupilStore
         event.preventDefault()
         activeLink = $(event.currentTarget)
         [worldId,eyeId] = $(activeLink).data('preset').split(" ")
-        worldLink = "a[id='#{worldId}']"
-        eyeLink = "a[id='#{eyeId}']"
+        worldLink = "button[id='#{worldId}']"
+        eyeLink = "button[id='#{eyeId}']"
         @_setActiveState([worldLink, eyeLink])
         @_swapImg([worldLink, eyeLink])
         @_updateConfigSubTotal()    
@@ -394,7 +395,7 @@ class PupilStore
           # eye or world from 'id'
           type = $(button).attr('id').split('-').pop() 
 
-          selection = "a[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
+          selection = "button[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
           id = $(selection).attr('id')
           # make append active class to container 
           element = "div[class='Grid-cell TechSpecs--#{ type }']"       
@@ -666,9 +667,11 @@ class PupilStore
   _setActiveState: (links)->
     for link in links
       # see if it is 'eye' or 'world' or maybe in the future 'other'
-      type = $(link).attr('id').split('_',1)
+      type = if $(link).attr('class').indexOf('world') > -1 then 'world' else 'eye'
       configType = @storeConfigClass + "-" + type
-      prevSelection = "a[class='#{ configType + " " }#{ @storeConfigActiveClass}']"
+      prevSelection = "button[class='#{ configType + " " }#{ @storeConfigActiveClass}']"
+      console.log "prev selection: #{ prevSelection }"
+      console.log "previous selection: #{ $(prevSelection).attr('id') }"
       $(prevSelection).removeClass("#{ @storeConfigActiveClass }")
       $(link).addClass("#{ @storeConfigActiveClass }")
       @_updateSpecTxt(type,$(link).attr('id'))
@@ -701,12 +704,13 @@ class PupilStore
 
   _swapImg: (links)->
     ids = ($(link).attr('id') for link in links)
-    imgSrc = getConfigImgByIds(ids)
+    product_id = ['pupil',ids[0],ids[1]].join('_')
+    imgSrc = get_product_database()[product_id]['img']
     $("#pupil-config-img").attr("src", imgSrc).show()
 
   _preloadConfigImages: ()->
     if $("#Store").length > 0
-      imageUrls = getConfigImageUrls()
+      imageUrls = get_config_images()
       for url in imageUrls
         (new Image()).src = url
 
@@ -721,22 +725,23 @@ class PupilStore
     activeEyeId = $(@eyeConfigActiveClass).attr('id')
     product_id = if $("#license").hasClass(@licenseConfigActive) then ['pupil',activeWorldId,activeEyeId,"edu"].join("_") else ['pupil',activeWorldId,activeEyeId].join("_")
 
-    db = get_product_database()
-    console.log product_id
-    product = db[product_id]
-    sub_products = product.sub_products  
-
-    subTotal = "€ " + db[product_id]['cost']
-    weight = "weight: " + sub_products['world_camera'].weight + sub_products['eye_camera'].weight + " grams"
-
     if activeWorldId is "wnone" and activeEyeId is "enone"
       subTotal = "Not for sale"  
       weight = ""
-    if activeWorldId is "w30" and activeEyeId is "e120b"
+    else if activeWorldId is "w30" and activeEyeId is "e120b"
       subTotal = "Not for sale"  
       weight = ""
+    else
+      db = get_product_database()
+      console.log product_id
+      product = db[product_id]
+      sub_products = product.sub_products  
 
-    $(@configSubTotalClass).text(subTotal)
+      subTotal = "€ " + db[product_id]['cost']
+      weight = "weight: " + Number(sub_products['world_camera'].weight + sub_products['eye_camera'].weight) + " grams"
+
+
+    $("#AddToCart-config").text(subTotal)
     $("#StoreConfig-weight").text(weight)
 
 
