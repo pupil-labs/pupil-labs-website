@@ -86,7 +86,7 @@ class PupilStore
                       <p> #{ product.description_store } </p>
                     </div>
 
-                    <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}<button>
+                    <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
                 
                   </div>
                 </div>"
@@ -106,7 +106,7 @@ class PupilStore
               <p> #{ product.description_store } </p>
             </div>
 
-            <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}<button>
+            <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
         
           </div>
         </div>"
@@ -131,10 +131,10 @@ class PupilStore
               worldId = $(@worldConfigActiveClass).attr('id')
               eyeId = $(@eyeConfigActiveClass).attr('id')
               if $("#license").hasClass(@licenseConfigActive)
-                licenseId = "license_academic"
-                orderItems = [worldId,eyeId,licenseId]
+                licenseId = "edu"
+                orderItems = ['pupil',worldId,eyeId,licenseId].join("_")
               else
-                orderItems = [worldId,eyeId]
+                orderItems = ['pupil',worldId,eyeId].join("_")
               
               # id = [worldId,eyeId]
               # price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
@@ -238,23 +238,26 @@ class PupilStore
         # remove empty cart text
         $("#Cart-empty").hide()
         $(".Cart-container").show()
+        db = get_product_database()
+
         for k,v of LocalStorage.dict()
+          console.log "key: #{ k }, val: #{ v }, order: #{ v.order }"
           # product, id, specs, price, quantity
           productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
                           <div class='Feature-figure Feature-figure--config'>
-                            #{ getImagesForOrder(v.order) }
+                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.order]['img'] }>
                           </div>
                         </div>"  
 
           specTxtHtml = "<div class='Grid-cell--1of2 Grid-cell--padright2'>
-                          #{ getOrderSpecTxt(v.order) }
+                          #{ db[v.order]['title_product'] }
                         </div>"
 
           costFormulaHtml = "<div class='Grid-cell Grid-cell--cartFormula'>
                                 <div class='Grid Grid--cartFormula-break'>
 
                                   <div id='CartItem-unitCost' class='Grid-cell'>
-                                    <p class='Cart-costCalc'>€ #{ getProductsSum(v.order,1) }</p>
+                                    <p class='Cart-costCalc'>€ #{ Number(db[v.order]['cost']) }</p>
                                   </div>              
                                 
                                   <div class='Grid-cell'>
@@ -285,7 +288,7 @@ class PupilStore
                             </div>                                                   
                                 
                             <div class='Grid-cell u-textCenter'>
-                              <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ getProductsSum(v.order,v.qty) }</p>
+                              <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ Number(db[v.order]['cost'] * v.qty) }</p>
                             </div>  
                                 
                             <div class='Cart-removeItem Grid-cell u-textRight'>
@@ -670,8 +673,6 @@ class PupilStore
       type = if $(link).attr('class').indexOf('world') > -1 then 'world' else 'eye'
       configType = @storeConfigClass + "-" + type
       prevSelection = "button[class='#{ configType + " " }#{ @storeConfigActiveClass}']"
-      console.log "prev selection: #{ prevSelection }"
-      console.log "previous selection: #{ $(prevSelection).attr('id') }"
       $(prevSelection).removeClass("#{ @storeConfigActiveClass }")
       $(link).addClass("#{ @storeConfigActiveClass }")
       @_updateSpecTxt(type,$(link).attr('id'))
@@ -733,7 +734,6 @@ class PupilStore
       weight = ""
     else
       db = get_product_database()
-      console.log product_id
       product = db[product_id]
       sub_products = product.sub_products  
 
@@ -747,7 +747,7 @@ class PupilStore
 
   _arrayEqual: (a, b) ->
     # a.length is b.length and 
-    a.every (elem, i) -> elem is b[i]
+    a.every(elem, i) -> elem is b[i]
 
   _compareOrders: (orderItems)->
     if LocalStorage.length() > 0

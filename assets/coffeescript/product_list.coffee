@@ -326,5 +326,3 @@ get_product_database = ->
 get_config_images = ->
   db = get_product_database()
   return (db[k]['img'] for k of db when k.split("_").length == 3) 
-
-console.log ['a','b'] + ['c']
