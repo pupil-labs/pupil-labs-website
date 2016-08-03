@@ -15,8 +15,8 @@ class PupilStore
     @addToCartButton = $(@addToCartClass)
     @clearCartButton = $(@clearCartClass)
     @addToCartConfig = $("a[id='AddToCart-config']")
-    @worldConfigActiveClass = "a[class='StoreConfig-world #{ @storeConfigActiveClass }']"
-    @eyeConfigActiveClass = "a[class='StoreConfig-eye #{ @storeConfigActiveClass }']"
+    @worldConfigActiveClass = "button[class='StoreConfig-world #{ @storeConfigActiveClass }']"
+    @eyeConfigActiveClass = "button[class='StoreConfig-eye #{ @storeConfigActiveClass }']"
     @licenseConfigClass = 'Store-license'
     @licenseConfigActive = 'StoreConfig--state-active--license'
     @licenseConfigSelector = "a[class^='#{ @licenseConfigClass }']"
@@ -52,10 +52,8 @@ class PupilStore
 
   eventStorePageInit: ->
     if $(@storePage).length > 0
-      # ConfigOptions--world
-      # getProductsFiltered('world')
-      # create products in configurator
-
+      db = get_product_database()
+      # create world products in configurator
       for world_id in get_world_cam_ids()
         title_store = get_world_cam_data()[world_id]['title_store']
         klass = if world_id is "w120" then "StoreConfig-world StoreConfig--state-active" else "StoreConfig-world"
@@ -64,6 +62,7 @@ class PupilStore
                  </li>"
         $("ul[class='Grid Grid--justifyCenter ConfigOptions--world']").append(html)
 
+      # create eye products in configurator
       for eye_id in get_eye_cam_ids()
         title_store = get_eye_cam_data()[eye_id]['title_store']
         klass = if eye_id is "e30" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
@@ -71,26 +70,51 @@ class PupilStore
                  <button class='#{ klass }'' id='#{ eye_id }' href='#{}'>#{title_store}</button> 
                  </li>"
         $("ul[class~='ConfigOptions--eye']").append(html)
-      for p in getProductsFiltered('product').slice(1) #remove first item
+      
+      # create vr/ar products
+      for vr_ar_id in get_vr_ar_product_ids()
+        product = db[vr_ar_id]
+
         html = "<div class='Aligner-item'>
                   <div class='Aligner-item--column'>
                     <div class='Feature-image--wrapper'>
-                      <img class='Feature-image' src=#{ p.img }>
+                      <img class='Feature-image' src='https://placehold.it/400x400'>
                     </div>
                     <div class='Aligner-item--stretchHeight'>
-                      <p><strong> #{ p.label } </strong></p>
-                      <p> #{ p.specs } </p>
-                      <p class='u-padBottom--2'><strong>€ #{ p.cost } </strong></p>
+                      <p><strong> #{ product.title_store } </strong></p>
+                      <p> #{ product.description_store } </p>
                     </div>
 
-                    <a role='button' id='#{ p.id }' class='AddToCart Button' href='#' data-product='product'>Add to Cart</a>
+                    <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}<button>
                 
                   </div>
                 </div>"
+        $("div[class~='VR-AR-products']").append(html)
+
+
+      # create additional products
+      for p_id in get_additional_product_ids()
+        product = db[p_id]
+        html = "<div class='Aligner-item'>
+          <div class='Aligner-item--column'>
+            <div class='Feature-image--wrapper'>
+              <img class='Feature-image' src='https://placehold.it/400x400'>
+            </div>
+            <div class='Aligner-item--stretchHeight'>
+              <p><strong> #{ product.title_store } </strong></p>
+              <p> #{ product.description_store } </p>
+            </div>
+
+            <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}<button>
+        
+          </div>
+        </div>"
+
         $("div[class~='Additional-products']").append(html)
 
-      @_updateSpecTxt('world','world_hs')
-      @_updateSpecTxt('eye','eye_30hz')
+
+      @_updateSpecTxt('world','w120')
+      @_updateSpecTxt('eye','e30')
       @_updateConfigSubTotal()
 
   eventAddToCart: ->
@@ -173,27 +197,27 @@ class PupilStore
         @_swapImg($("a[class~='StoreConfig--state-active']"))
         @_updateConfigSubTotal()
 
-        $("#world_hr").removeClass("StoreConfig--state-inactive")
-        $("#eye_120hz_binocular").removeClass("StoreConfig--state-inactive")
-        $("#eye_none").removeClass("StoreConfig--state-inactive")
-        $("#world_none").removeClass("StoreConfig--state-inactive")   
+        $("#w30").removeClass("StoreConfig--state-inactive")
+        $("#e120b").removeClass("StoreConfig--state-inactive")
+        $("#enone").removeClass("StoreConfig--state-inactive")
+        $("#wnone").removeClass("StoreConfig--state-inactive")   
 
         if $(@worldConfigActiveClass).attr('id') is "world_none"
           $("#specs-world").fadeTo(800,0).prop('disabled',true).css('cursor','default')
-          $("#eye_none").addClass("StoreConfig--state-inactive")
+          $("#enone").addClass("StoreConfig--state-inactive")
         else
           $("#specs-world").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
         if $(@eyeConfigActiveClass).attr('id') is "eye_none"
           $("#specs-eye").fadeTo(800,0).prop('disabled',true).css('cursor','default') 
-          $("#world_none").addClass("StoreConfig--state-inactive")
+          $("#wnone").addClass("StoreConfig--state-inactive")
         else
           $("#specs-eye").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
           $("#specs-eye").fadeIn()
 
         if $(@worldConfigActiveClass).attr('id') is "world_hr"
-          $("#eye_120hz_binocular").addClass("StoreConfig--state-inactive")
-        if $(@eyeConfigActiveClass).attr('id') is "eye_120hz_binocular"
-          $("#world_hr").addClass("StoreConfig--state-inactive")
+          $("#e120b").addClass("StoreConfig--state-inactive")
+        if $(@eyeConfigActiveClass).attr('id') is "e120b"
+          $("#w30").addClass("StoreConfig--state-inactive")
 
   eventSelectPreset: ->
     if $(@storePage).length > 0
@@ -651,29 +675,22 @@ class PupilStore
 
   _updateSpecTxt: (type,id)->
     button = ".TechSpecs"
-    product = getProductById(id) 
+    product = get_camera_data()[id]
     tableRows = ""
     infoTxt = ""
-    for k,v of product.specs 
-      if k is 'info'
-        infoTxt = v
-      else
-        tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
-
     videoLink = ""
-    if typeof(product.videos) isnt 'undefined'
-      links = ""
-      for video,i in product.videos
-        links += "<a href=#{ video.link } target='_blank'>#{ video.title }</a>"
-        if i isnt product.videos.length-1
-          links += "  |  "
-        
-      videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video(s)</strong></td><td>#{ links }</td></p>"
+
+    for k,v of product.tech_specs 
+      tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
+
+    if typeof(product.link_video) isnt 'undefined'
+      link = "<a href=#{ product.link_video } target='_blank'>#{ product.title_video }</a>"        
+      videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video(s)</strong></td><td>#{ link }</td></p>"
 
     selector = "div[class='Grid-cell TechSpecs--#{ type }']"
     infoTxtSelector = "#infoTxt-#{ type }"
 
-    $(infoTxtSelector).text(infoTxt)
+    $(infoTxtSelector).text(product.description_store)
     if $(button).hasClass("TechSpecs--active")
       $(selector).empty()
       # $(selector).append("#{ infoTxt }")
@@ -702,24 +719,26 @@ class PupilStore
   _updateConfigSubTotal: ->
     activeWorldId = $(@worldConfigActiveClass).attr('id')
     activeEyeId = $(@eyeConfigActiveClass).attr('id')
-    activeLicenseId = if $("#license").hasClass(@licenseConfigActive) then "license_academic" else null
-    # subTotal = "€ " + @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
-    subTotal = "€ " + getProductsSum([activeWorldId,activeEyeId,activeLicenseId])
-    weight = "weight: " + getProductWeight([activeWorldId,activeEyeId]) + " grams"
-    if activeWorldId is "world_none" and activeEyeId is "eye_none"
+    product_id = if $("#license").hasClass(@licenseConfigActive) then ['pupil',activeWorldId,activeEyeId,"edu"].join("_") else ['pupil',activeWorldId,activeEyeId].join("_")
+
+    db = get_product_database()
+    console.log product_id
+    product = db[product_id]
+    sub_products = product.sub_products  
+
+    subTotal = "€ " + db[product_id]['cost']
+    weight = "weight: " + sub_products['world_camera'].weight + sub_products['eye_camera'].weight + " grams"
+
+    if activeWorldId is "wnone" and activeEyeId is "enone"
       subTotal = "Not for sale"  
       weight = ""
-    if activeWorldId is "world_hr" and activeEyeId is "eye_120hz_binocular"
+    if activeWorldId is "w30" and activeEyeId is "e120b"
       subTotal = "Not for sale"  
       weight = ""
+
     $(@configSubTotalClass).text(subTotal)
     $("#StoreConfig-weight").text(weight)
 
-  # _uniqueId: (len=6)->
-  #   id = ""
-  #   id += Math.random().toString(36).substr(2) while id.length < len
-  #   id.substr 0, len
-  #   return id
 
   _arrayEqual: (a, b) ->
     # a.length is b.length and 

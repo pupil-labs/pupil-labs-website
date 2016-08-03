@@ -241,10 +241,11 @@ get_world_cam_data = ->
       id: 'w30'
       title_store: "high resolution"
       description_store: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed."
-      specs_sensor: "1910x1080 @30fps"
-      specs_fov: "90 degrees diagonal with auto focus lens." 
-      specs_latency: "127.7ms"
-      specs_audio: "Record audio with built-in stereo microphone"
+      tech_specs:
+        sensor: "1910x1080 @30fps"
+        fov: "90 degrees diagonal with auto focus lens." 
+        latency: "127.7ms"
+        audio: "Record audio with built-in stereo microphone"
       title_cart: "World camera: high resolution"
       description_cart: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency."
       weight: 17
@@ -254,10 +255,11 @@ get_world_cam_data = ->
       id: 'w120'
       title_store: "high speed"
       description_store: "World camera custom built by Pupil Labs. The fastest, smallest, lightest, and most versatile. We recommend this option for most use cases."
-      specs_sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
-      specs_fov: "100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses."
-      specs_latency: "5.7ms"
-      specs_audio: "Record audio via host device microphone"
+      tech_specs:
+        sensor: "1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps"
+        fov: "100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses."
+        latency: "5.7ms"
+        audio: "Record audio via host device microphone"
       title_cart: "World camera: high speed"
       description_cart: "Variable Resolution: 1920x1080 @30fps, 1280x720 @60fps, 640x480 @120fps. FOV 100 degrees diagonal. Lenses are exchangeable: Headset ships with 60deg and 100 deg FOV lenses. 5.7ms latency."
       weight: 5
@@ -265,9 +267,6 @@ get_world_cam_data = ->
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-TmJvSFhFeWp1NEk/view?usp=sharing"
 
   return world_cam_data
-
-get_world_cam_ids = ->
-  return (k for k,v of get_world_cam_data())
 
 
 get_eye_cam_data = ->
@@ -281,9 +280,10 @@ get_eye_cam_data = ->
       id: 'e30'
       title_store: "30hz"
       description_store: "Eye camera with the smallest dimensions. Good for fixation detection."
-      specs_sensor: "640x480 @30fps"
-      specs_illumination: "IR camera with IR illumination (dark pupil tracking)"
-      specs_latency: "35.6ms"
+      tech_specs:
+        sensor: "640x480 @30fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)"
+        latency: "35.6ms"
       title_cart: "Eye camera: 30hz eye camera"
       description_cart: "Resolution: 640x480 @30fps. IR illumination."
       weight: 30
@@ -293,9 +293,10 @@ get_eye_cam_data = ->
       id: 'e120'
       title_store: "120hz"
       description_store: "Eye camera custom built by Pupil Labs that will resolve a wider range of eye movement motifs"
-      specs_sensor: "640x480 @120fps"
-      specs_illumination: "IR camera with IR illumination (dark pupil tracking)"
-      specs_latency: "5.7ms"
+      tech_specs:
+        sensor: "640x480 @120fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)"
+        latency: "5.7ms"
       title_cart: "Eye camera: 120hz eye camera"
       description_cart: "Resolution: 640x480 @120fps. IR illumination."
       weight: 31
@@ -305,14 +306,24 @@ get_eye_cam_data = ->
       id: 'e120b'
       title_store: "120hz binocular"
       description_store: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that will resolve a wider range of eye movement motifs"
-      specs_sensor: "640x480 @120fps"
-      specs_illumination: "IR camera with IR illumination (dark pupil tracking)"
-      specs_latency: "5.7ms"
+      tech_specs:
+        sensor: "640x480 @120fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)"
+        latency: "5.7ms"
       title_cart: "Eye cameras: 120hz binocular eye cameras"
       description_cart: "2 eye cameras. Resolution: 640x480 @120fps. IR illumination."
       weight: 43
       title_video: "Download sample video"
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
+
+get_camera_data = ->
+  camera_data = get_eye_cam_data()
+  for k,v of get_world_cam_data()
+    camera_data[k] = v
+  return camera_data
+
+get_world_cam_ids = ->
+  return (k for k,v of get_world_cam_data())
 
 get_eye_cam_ids = ->
   return (k for k,v of get_eye_cam_data())
@@ -327,7 +338,7 @@ get_vr_ar_product_ids = ->
   return ['oculusdk2m','oculusdk2b','epsonbt200b']
 
 get_additional_product_ids = ->
-  return ['e120upgrade','support6','support12','usbcupgrade']
+  return ['usbcupgrade','e120upgrade','support6','support12']
 
 get_product_database = ->
   world_cam_data = get_world_cam_data()
@@ -494,13 +505,13 @@ get_product_database = ->
     support6:
       cost: 1000
       title_product: 'Support Contract'
-      title_product: '6 Month Support Contract'
+      title_store: '6 Month Support Contract'
       description_store: '6 month support contract. 4 video support sessions and email support.'
       description_cart: '6 month support contract. 4 video support sessions and email support.'
     support12:
       cost: 2000
       title_product: 'Support Contract'
-      title_product: '12 Month Support Contract'
+      title_store: '12 Month Support Contract'
       description_store: '12 month support contract. 4 video support sessions and email support.'
       description_cart: '12 month support contract. 4 video support sessions and email support.'
     usbcupgrade:
@@ -508,7 +519,7 @@ get_product_database = ->
       title_product: 'USB-C Clip Upgrade'
       title_store: 'USB-C Clip Upgrade'
       description_store: 'Upgrade any existing Pupil headset with the new USB-C clip. Comes with USB-C to USB-A cable.'
-      description_store: 'USB-C clip upgrade for an existing Pupil Headset. Comes with USB-C to USB-A cable.'
+      description_cart: 'USB-C clip upgrade for an existing Pupil Headset. Comes with USB-C to USB-A cable.'
 
   return product_db
 
