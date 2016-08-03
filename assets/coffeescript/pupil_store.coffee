@@ -79,7 +79,7 @@ class PupilStore
         html = "<div class='Aligner-item'>
                   <div class='Aligner-item--column'>
                     <div class='Feature-image--wrapper'>
-                      <img class='Feature-image' src='https://placehold.it/400x400'>
+                      <img class='Feature-image' src='#{ product.img }'>
                     </div>
                     <div class='Aligner-item--stretchHeight'>
                       <p><strong> #{ product.title_store } </strong></p>
@@ -99,7 +99,7 @@ class PupilStore
         html = "<div class='Aligner-item'>
           <div class='Aligner-item--column'>
             <div class='Feature-image--wrapper'>
-              <img class='Feature-image' src='https://placehold.it/400x400'>
+              <img class='Feature-image' src='#{ product.img }'>
             </div>
             <div class='Aligner-item--stretchHeight'>
               <p><strong> #{ product.title_store } </strong></p>

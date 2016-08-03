@@ -115,7 +115,7 @@ get_product_database = ->
   eye_cam_data = get_eye_cam_data()
   edu_discount = get_edu_discount_data()
   pupil_img_path = "../media/images/store_pupil/web"
-  vr_ar_img_path = "../media/images/store_vr_ar/web"
+  vr_ar_img_path = "../media/images/store_vr_ar"
   additional_product_path = "../media/images/store_additional_products" 
 
   product_db = 
