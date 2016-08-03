@@ -254,6 +254,7 @@ get_product_database = ->
         world_camera: world_cam_data.w120
         eye_camera: eye_cam_data.e30
         discount: edu_discount
+      img: [pupil_img_path,'pupil_w120_e30.jpg'].join('/')        
     pupil_w120_e120_edu:
       cost: 1050
       title_product: 'Pupil Headset'

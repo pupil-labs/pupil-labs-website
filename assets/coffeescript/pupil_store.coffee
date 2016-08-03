@@ -106,7 +106,7 @@ class PupilStore
               <p> #{ product.description_store } </p>
             </div>
 
-            <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
+            <button id='#{ p_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
         
           </div>
         </div>"
@@ -132,28 +132,24 @@ class PupilStore
               eyeId = $(@eyeConfigActiveClass).attr('id')
               if $("#license").hasClass(@licenseConfigActive)
                 licenseId = "edu"
-                orderItems = ['pupil',worldId,eyeId,licenseId].join("_")
+                product_id = ['pupil',worldId,eyeId,licenseId].join("_")
               else
-                orderItems = ['pupil',worldId,eyeId].join("_")
+                product_id = ['pupil',worldId,eyeId].join("_")
               
               # id = [worldId,eyeId]
               # price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
               # specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
               # license = $(@licenseConfigActiveClass).data('id')
             else 
-              orderItems = [$(addToCartBtn).attr('id')]
-              # id = [$(addToCartBtn).data('id')]
-              # price = $(addToCartBtn).data('cost')
-              # specs = $(addToCartBtn).data('specs')
-              # license = "not applicable"
-          
+              product_id = $(addToCartBtn).attr('id')
+
             # check if the order already exists in the cart
             # if so, then increment the quantity of that order in the cart
-            existingOrderKey = @_compareOrders(orderItems)
-            if existingOrderKey
-              existingOrder = JSON.parse(LocalStorage.get(existingOrderKey))
-              existingOrder.qty += 1
-              LocalStorage.set(existingOrderKey,JSON.stringify(existingOrder))
+            if @_product_id_in_cart(product_id)
+              key = @_get_key_from_product_id(product_id)
+              cart_item = JSON.parse(LocalStorage.get(key))
+              cart_item.qty += 1
+              LocalStorage.set(key,JSON.stringify(cart_item))
             else
               # add new key
               key = 0
@@ -162,7 +158,7 @@ class PupilStore
                 key = Math.max.apply @,keys
                 key += 1
               item = {
-                "order" : orderItems
+                "product" : product_id
                 "qty"   : 1
               }
               LocalStorage.set(key, JSON.stringify(item))
@@ -241,23 +237,23 @@ class PupilStore
         db = get_product_database()
 
         for k,v of LocalStorage.dict()
-          console.log "key: #{ k }, val: #{ v }, order: #{ v.order }"
+          console.log "key: #{ k }, val: #{ v }, product: #{ v.product }, img: #{ db[v.product]['img'] }"
           # product, id, specs, price, quantity
           productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
                           <div class='Feature-figure Feature-figure--config'>
-                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.order]['img'] }>
+                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] }>
                           </div>
                         </div>"  
 
           specTxtHtml = "<div class='Grid-cell--1of2 Grid-cell--padright2'>
-                          #{ db[v.order]['title_product'] }
+                          #{ db[v.product]['title_product'] }
                         </div>"
 
           costFormulaHtml = "<div class='Grid-cell Grid-cell--cartFormula'>
                                 <div class='Grid Grid--cartFormula-break'>
 
                                   <div id='CartItem-unitCost' class='Grid-cell'>
-                                    <p class='Cart-costCalc'>€ #{ Number(db[v.order]['cost']) }</p>
+                                    <p class='Cart-costCalc'>€ #{ Number(db[v.product]['cost']) }</p>
                                   </div>              
                                 
                                   <div class='Grid-cell'>
@@ -288,7 +284,7 @@ class PupilStore
                             </div>                                                   
                                 
                             <div class='Grid-cell u-textCenter'>
-                              <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ Number(db[v.order]['cost'] * v.qty) }</p>
+                              <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ Number(db[v.product]['cost'] * v.qty) }</p>
                             </div>  
                                 
                             <div class='Cart-removeItem Grid-cell u-textRight'>
@@ -313,8 +309,8 @@ class PupilStore
                     "</div>"
 
           $("#Cart-table").after(newRow)
-        [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Subtotal"] else ["",""]
-        totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
+        [totalPrice,label] = if LocalStorage.length() > 0 then [Number(get_product_database()[v.product].cost * v.qty) for k,v of LocalStorage.dict(),"Subtotal"] else ["",""]
+        totalPrice = if totalPrice.length > 0 then "€ " + totalPrice.reduce (a,b) -> a + b
         $("h3[id='CartSum--label']").text("#{ label }")
         $("h3[id='CartSum--total']").text("#{ totalPrice }")
         $("div[id='CartSum-label--container']").append("<p class='Cart-disclaimerTxt'>(additional shipping and VAT may apply)</p>")
@@ -335,8 +331,8 @@ class PupilStore
           $(container).remove()
 
         # update total
-        [totalPrice,label] = if LocalStorage.length() > 0 then [getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict(),"Total"] else ["",""]
-        totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
+        [totalPrice,label] = if LocalStorage.length() > 0 then [Number(get_product_database()[v.product].cost * v.qty) for k,v of LocalStorage.dict(),"Total"] else ["",""]
+        totalPrice = if totalPrice.length > 0 then "€ " + totalPrice.reduce (a,b) -> a + b
 
         $("h3[id='CartSum--label']").text("#{ label }")
         $("h3[id='CartSum--total']").text("#{ totalPrice }")
@@ -371,11 +367,11 @@ class PupilStore
         $(numDisplay).text("#{ item.qty }")
 
         # update row sum
-        $(row).find("p[class='Cart--sumRow Cart-costCalc--subTotal']").text("€ " + "#{ getProductsSum(item.order,item.qty) }")
+        $(row).find("p[class='Cart--sumRow Cart-costCalc--subTotal']").text("€ " + "#{ Number(get_product_database()[item.product].cost * item.qty) }")
 
         # update cart subtotal 
-        totalPrice = if LocalStorage.length() > 0 then getProductsSum(v.order,v.qty) for k,v of LocalStorage.dict() else ""
-        totalPrice = if totalPrice.length > 0 then "€ " + _sumAll(totalPrice)
+        totalPrice = if LocalStorage.length() > 0 then (Number(get_product_database()[v.product].cost * v.qty) for k,v of LocalStorage.dict()) else ""
+        totalPrice = if totalPrice.length > 0 then "€ " + totalPrice.reduce (a,b) -> a + b
         $("#CartSum--total").text("#{ totalPrice }")
 
         @eventUpdateCartNavCounter()
@@ -514,11 +510,11 @@ class PupilStore
           $("input[id='countryIso_s']").val(countryList[$("input[id='country_s']").val()].countryISO)
           
           # add order object to a hidden form text area
-          orders = []
+          products = []
           keys = [k for k,v in LocalStorage.dict()]
           for k,v of LocalStorage.dict()
-            orders.push v
-          $("textarea[id='cartObject']").val(JSON.stringify(orders))
+            products.push v
+          $("textarea[id='cartObject']").val(JSON.stringify(products))
           formData = $(form).serialize()
 
           production_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
@@ -629,10 +625,10 @@ class PupilStore
       # while pairs.length > 0
       j = 0
       for p,i in pairs by 2
-        orderItems = decodeURIComponent(decodeURIComponent(pairs.shift().split("=").pop())).split(',')
+        product_id = decodeURIComponent(decodeURIComponent(pairs.shift().split("=").pop())).split(',')
         qty = parseInt(pairs.shift().split("=").pop())
         item = {
-          "order" : orderItems
+          "product" : product_id
           "qty"   : qty
         }
         LocalStorage.set(j, JSON.stringify(item))
@@ -745,16 +741,15 @@ class PupilStore
     $("#StoreConfig-weight").text(weight)
 
 
-  _arrayEqual: (a, b) ->
-    # a.length is b.length and 
-    a.every(elem, i) -> elem is b[i]
-
-  _compareOrders: (orderItems)->
+  _product_id_in_cart: (id)->
     if LocalStorage.length() > 0
-      for k,v of LocalStorage.dict()
-        if @_arrayEqual(v.order,orderItems)
-          return k
+      products = (v.product for k,v of LocalStorage.dict())
+      return (id in products)
 
+  _get_key_from_product_id: (id)->
+    if LocalStorage.length() > 0
+      key = (k for k,v of LocalStorage.dict() when id is v.product)
+      return parseInt(key) 
 
 $(document).ready ->
   s = new PupilStore
