@@ -1,12 +1,15 @@
 storeConfig-button($stroke=1px,$stroke_color=#ddd)
-  display flex
+  display inline-flex
+  width 100%
   flex-wrap nowrap
   align-items center
   justify-content center
-  border-radius 3px 
+  border-radius 3px
+  // outline $link-hover-color
+  border none 
   // border-top $stroke solid #ddd
   // border-bottom $stroke solid #ddd
-  border-right $stroke solid #ddd
+  // border-right $stroke solid #ddd
   background transparent
   padding .5em
   color $text-color
@@ -14,9 +17,7 @@ storeConfig-button($stroke=1px,$stroke_color=#ddd)
   font-family $font-family-sans-serif
   font-weight 700
   font-size .9em
-
-  &:last-child
-    border-right 0px solid #ddd
+  cursor pointer
     
 
 .StoreConfig-world
