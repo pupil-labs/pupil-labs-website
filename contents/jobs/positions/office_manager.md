@@ -9,11 +9,7 @@ We are searching for a self-motivated, smart, and enthuastic individual to join 
 
 Your Responsibilities as an Office Manager
 
-<<<<<<< .merge_file_7hwWya
-  + Fulfillment - coordinate with sales and assembly team; prepare order sheets for the assembly team, create shipping and export documentation using our database, d coordinate with shipping agents
-=======
   + Fulfillment - coordinate with sales and assembly team; prepare order sheets for the assembly team, create shipping and export documentation using our database, coordinate with shipping agents
->>>>>>> .merge_file_eKy9HG
   + Book keeping - process incoming mail, inbound and outbound invoices, act as the point of contact for all book keeping, and liaise with tax attorney 
   + Analysis - generating reports/summaries based on sales and other analytics data for quarterly reports
   + Scheduling - assist in organizing meetings and keeping the leadership up to date with calendar events. Update calendar with employee vacation dates and sickness/ave dates 
