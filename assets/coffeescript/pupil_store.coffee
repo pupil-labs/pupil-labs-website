@@ -31,7 +31,6 @@ class PupilStore
       @eventClearCart()
       @eventUpdateCartNavCounter()
       @eventUpdateConfig()
-      @eventSelectPreset()
       @eventSelectLicense()
       @eventFillCartFromQueryString()
       @eventRenderCart()
@@ -135,11 +134,6 @@ class PupilStore
                 product_id = ['pupil',worldId,eyeId,licenseId].join("_")
               else
                 product_id = ['pupil',worldId,eyeId].join("_")
-              
-              # id = [worldId,eyeId]
-              # price = @_calcConfigSubTotal([@worldConfigActiveClass,@eyeConfigActiveClass,@licenseConfigActiveClass])
-              # specs = $(@worldConfigActiveClass).data('specs') + "," + $(@eyeConfigActiveClass).data('specs')
-              # license = $(@licenseConfigActiveClass).data('id')
             else 
               product_id = $(addToCartBtn).attr('id')
 
@@ -216,17 +210,6 @@ class PupilStore
         if $(@eyeConfigActiveClass).attr('id') is "e120b"
           $("#w30").addClass("StoreConfig--state-inactive")
 
-  eventSelectPreset: ->
-    if $(@storePage).length > 0
-      $(@storeConfigPresetClass).click (event)=>
-        event.preventDefault()
-        activeLink = $(event.currentTarget)
-        [worldId,eyeId] = $(activeLink).data('preset').split(" ")
-        worldLink = "button[id='#{worldId}']"
-        eyeLink = "button[id='#{eyeId}']"
-        @_setActiveState([worldLink, eyeLink])
-        @_swapImg([worldLink, eyeLink])
-        @_updateConfigSubTotal()    
 
   eventRenderCart: ->
     if $(@cartPage).length > 0
@@ -659,7 +642,6 @@ class PupilStore
       @eventUpdateCartNavCounter()
     
 
-
   _getOrderPermalink: ->
     data = []
     i = 0
@@ -722,12 +704,6 @@ class PupilStore
       imageUrls = get_config_images()
       for url in imageUrls
         (new Image()).src = url
-
-  _calcConfigSubTotal: (links)->
-    sum = 0
-    for link in links
-      sum += $(link).data('cost')
-    return sum  
 
   _updateConfigSubTotal: ->
     activeWorldId = $(@worldConfigActiveClass).attr('id')
