@@ -287,7 +287,7 @@ get_product_database = ->
       img: [vr_ar_img_path,'oculusdk2m.png'].join('/')
     epsonbt200b:
       cost: 350
-      title_product: 'Epson Moverio BT-200 eye camera mounts'
+      title_product: 'Epson Moverio BT-200 Eye Camera Mounts'
       title_store: 'Epson Moverio BT-200 Binocular Mount Add-on'
       description_store: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."

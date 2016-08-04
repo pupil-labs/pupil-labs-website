@@ -237,7 +237,18 @@ class PupilStore
         db = get_product_database()
 
         for k,v of LocalStorage.dict()
-          console.log "key: #{ k }, val: #{ v }, product: #{ v.product }, img: #{ db[v.product]['img'] }"
+
+          title_product = db[v.product]['title_product']
+          cart_spec_html = ""
+
+          if title_product is "Pupil Headset"
+            sub_products = db[v.product]['sub_products']
+            for sbu_product_key,sub_product_data of sub_products
+              cart_spec_html += "<h4>#{ sub_product_data['title_cart'] }</h4>
+                                 <p class='LicenseSpecs-txt'>#{ sub_product_data['description_cart'] }</p>"
+          else
+            cart_spec_html += "<p class='LicenseSpecs-txt'>#{ db[v.product]['description_cart'] }</p>"
+
           # product, id, specs, price, quantity
           productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
                           <div class='Feature-figure Feature-figure--config'>
@@ -246,7 +257,8 @@ class PupilStore
                         </div>"  
 
           specTxtHtml = "<div class='Grid-cell--1of2 Grid-cell--padright2'>
-                          #{ db[v.product]['title_product'] }
+                          <h2>#{ db[v.product]['title_product'] }</h2>
+                          #{ cart_spec_html }
                         </div>"
 
           costFormulaHtml = "<div class='Grid-cell Grid-cell--cartFormula'>
