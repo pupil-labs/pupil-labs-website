@@ -59,7 +59,7 @@ headerOpacityHome = ()->
   ,100
 
 $(document).ready ->
-  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length or $("#About").length > 0
+  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length or $("#About").length > 0 or $("#Jobs").length > 0
     # on load make the header transparent
     headerOpacityHome()
   else
