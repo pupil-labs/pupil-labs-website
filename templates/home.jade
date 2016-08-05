@@ -60,51 +60,37 @@ block main
                 div.Grid-cell
                   p.Feature-paragraph #{ oss_meta.point3 }
 
-    //- made in berlin row
+
+    //- dev feed row
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full.u-textCenter
+          div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-padBottom--1 #{ home_made_meta.title1 }
-            div.Grid
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_made_meta.point1 }
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_made_meta.point2 }
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_made_meta.point3 }
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Development Feed
+          div.Grid-cell.Grid-cell--full.u-padTop--2
+            div(id="Home-activity")
+              ul(id="Home-activity-list" class="Activity")
 
-    //- dev feed row
+    
+    //- newsletter row
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full
               div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Development Feed
-            div.Grid-cell.Grid-cell--full.u-padTop--2
-              div(id="Home-activity")
-                ul(id="Home-activity-list" class="Activity")
-
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ home_newsletter_meta.title }
+             div.Grid
+                div.Grid-cell.Grid-cell--full
+                  p.Feature-paragraph #{ home_newsletter_meta.point1 }
+                div.Grid-cell
+                  form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+                    input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
+                    p(class="Form-error--text" id="news_email_error")
+                    input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
+                    label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
     
-    //- newsletter row
-    div.Site-content-container
-      div.Feature-container-column
-        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full
-            div.Feature
-              h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ home_newsletter_meta.title }
-           div.Grid
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_newsletter_meta.point1 }
-              div.Grid-cell
-                form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
-                  input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
-                  p(class="Form-error--text" id="news_email_error")
-                  input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
-                  label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
-  
 
     //- //- Recent Activity
     //- - var bannerData = {'title': intro_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
