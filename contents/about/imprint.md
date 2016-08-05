@@ -1,6 +1,5 @@
 ---
 title: Imprint
-order: 2
 ---
 
 ### Address

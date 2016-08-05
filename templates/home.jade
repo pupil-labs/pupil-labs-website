@@ -7,23 +7,12 @@ block main
     - var intro_meta = intro_data.metadata    
     - var oss_data = contents.home['home_open_source.json']
     - var oss_meta = oss_data.metadata
-    - var home_made = contents.home['home_made.json']
-    - var home_made_meta = home_made.metadata
     - var home_newsletter = contents.home['home_newsletter.json']
     - var home_newsletter_meta = home_newsletter.metadata
-
-    //- slides
-    - var home_slides_data = contents.home['home_slides.json']
-    - var home_slides_meta = home_slides_data.metadata
-    - var slider_data = home_slides_meta
-    - var slider_classes = "Grid Grid--center Grid--alignContentCenter Wallop Wallop--fade Wallop--fade"
-    - var slider_id = "Home-slider"
-    - var slide_img_class = "Background-img--full-wh"
 
     //- show background image
     div.Grid
       div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/00.jpg');")
-
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
@@ -60,78 +49,56 @@ block main
                 div.Grid-cell
                   p.Feature-paragraph #{ oss_meta.point3 }
 
-    //- made in berlin row
+
+    //- dev feed row
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full.u-textCenter
+          div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-padBottom--1 #{ home_made_meta.title1 }
-            div.Grid
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_made_meta.point1 }
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_made_meta.point2 }
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_made_meta.point3 }
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Development Feed
+          div.Grid-cell.Grid-cell--full.u-padTop--2
+            div(id="Home-activity")
+              ul(id="Home-activity-list" class="Activity")
 
-    //- dev feed row
+    
+    //- newsletter row
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full
               div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Development Feed
-            div.Grid-cell.Grid-cell--full.u-padTop--2
-              div(id="Home-activity")
-                ul(id="Home-activity-list" class="Activity")
-
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ home_newsletter_meta.title }
+             div.Grid
+                div.Grid-cell.Grid-cell--full
+                  p.Feature-paragraph #{ home_newsletter_meta.point1 }
+                div.Grid-cell
+                  form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+                    input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
+                    p(class="Form-error--text" id="news_email_error")
+                    input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
+                    label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
     
-    //- newsletter row
+
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ home_newsletter_meta.title }
-           div.Grid
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph #{ home_newsletter_meta.point1 }
-              div.Grid-cell
-                form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
-                  input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
-                  p(class="Form-error--text" id="news_email_error")
-                  input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
-                  label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
-  
-
-    //- //- Recent Activity
-    //- - var bannerData = {'title': intro_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
-    //- - var bannerBkg = "Banner-container--sm"
-    //- - var bannerParagraphs = ""
-    //- include includes/banner
-    //- div.Feature-container--activityHome
-    //-   div.Grid.Grid--1of2.Grid--gutters-noMargin
-    //-     div.Grid-cell
-    //-       h2.u-textCenter Recent Blog Posts 
-    //-       div.Feature.Feature--padded3
-    //-         ul
-    //-         - var articles = env.helpers.getArticles(contents)
-    //-         - var articleLimit = 5
-    //-         each article,i in articles.slice(0,articleLimit)
-    //-           - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
-    //-           li(class="Article-list-item" style=opacity)
-    //-             article
-    //-               header
-    //-                 h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
-    //-                 p= article.metadata.subtitle
-    //-                 a(href=article.url class="Article-link") Read More 
-
-    //-     div.Grid-cell
-    //-       h2.u-textCenter Development Feed 
-    //-       div(id="Home-activity" class="Feature Feature--padded3")
-    //-         ul(id="Home-activity-list" class="Activity")
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 News
+          div.Grid-cell.Grid-cell--full.u-padTop--2
+            ul
+            - var articles = env.helpers.getArticles(contents)
+            - var articleLimit = 5
+            each article,i in articles.slice(0,articleLimit)
+              - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
+              li(class="Article-list-item" style=opacity)
+                article
+                  header
+                    h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
+                    p= article.metadata.subtitle
+                    a(href=article.url class="Article-link") Read More 
 
 
 

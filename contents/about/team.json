@@ -1,0 +1,48 @@
+{
+  "0":
+  {
+    "name":"Moritz Kassner",
+    "contact": "moritz@pupil-labs.com",
+    "role":"Co-Founder, CEO",
+    "img":"https://placehold.it/400x400"
+  },
+  "1":
+  {
+    "name":"Will Patera",
+    "contact":"will@pupil-labs.com",
+    "role":"Co-Founder",
+    "img":"https://placehold.it/400x400"    
+  },
+  "2":
+  {
+    "name":"Andreas Bulling",
+    "contact":"andreas@pupil-labs.com",
+    "role":"Partner, Scientific Adviser",
+    "img":"https://placehold.it/400x400"    
+  },
+  "3":
+  {
+    "name":"Sarah Leu",
+    "role":"Electrical Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  "4":
+  {
+    "name":"Nathakits Sae-Tan",
+    "role":"Designer",
+    "img":"https://placehold.it/400x400"    
+  },
+  "5":
+  {
+    "name":"Douglas Mackay",
+    "role":"Electrical Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  "6":
+  {
+    "name":"Pablo Prietz",
+    "role":"Software Engineer",
+    "img":"https://placehold.it/400x400"    
+  }
+
+}
