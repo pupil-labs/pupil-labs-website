@@ -37,5 +37,12 @@
     "name":"Douglas Mackay",
     "role":"Electrical Engineer",
     "img":"https://placehold.it/400x400"    
+  },
+  "6":
+  {
+    "name":"Pablo Prietz",
+    "role":"Software Engineer",
+    "img":"https://placehold.it/400x400"    
   }
+
 }

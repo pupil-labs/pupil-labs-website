@@ -6,56 +6,84 @@ block append title
 block main
   div(id="About").Wallop-transform
     //- Title block
-    - var page_data = contents.about['index.json']
-    - var page_meta = page_data.metadata;
-    
+    - var team_data = contents.about['team.json']
+    - var team_meta = team_data.metadata
+    - var imprint_data = contents.about['imprint.md']
+    - var imprint_meta = imprint_data.metadata
+
+    //- office image 1
     div.Grid
       div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_bw.jpg');")
 
     //- mission
-    div.Site-content-container
-      div.Feature-container-column
-        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full.u-textCenter
-            div.Feature
-              h1.Feature-title--lg.u-padBottom--1 Mission
-            div.Grid
-              div.Grid-cell.Grid-cell--full
-                p.Feature-paragraph At Pupil Labs we do research and development, with an emphasis on design. 
-                p.Feature-paragraph We work projects that we find challenging and exciting. It is our goal with every aspect of our work to learn something new. We are excited about eye tracking, because it enables us to work at the intersection of many fields and to interact with a diverse community.
-                p.Feature-paragraph We believe in open source. We have formed our business around an open source model, and have grown with our community.
-                p.Feature-paragraph We are currently focusing our development efforts on Pupil – a mobile eye tracking headset and open source software framework – and in developing open source tools for virtual reality, augmented reality, and mixed reality.
-
-    //- team
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
-                h1.Feature-title--lg.u-padBottom--1 Team
-              //- todo
-              //- separate make content into json 
-              //- add images
-              //- loop through content and images
-              div.Grid.Grid--1of3
+                h1.Feature-title--lg.u-padBottom--1 Mission
+              div.Grid
+                div.Grid-cell.Grid-cell--full
+                  p.Feature-paragraph At Pupil Labs we do research and development, with an emphasis on design. 
+                  p.Feature-paragraph We work projects that we find challenging and exciting. It is our goal with every aspect of our work to learn something new. We are excited about eye tracking, because it enables us to work at the intersection of many fields and to interact with a diverse community.
+                  p.Feature-paragraph We believe in open source. We have formed our business around an open source model, and have grown with our community.
+                  p.Feature-paragraph We are currently focusing our development efforts on Pupil – a mobile eye tracking headset and open source software framework – and in developing open source tools for virtual reality, augmented reality, and mixed reality.
+
+    //- team
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Feature
+              h1.Feature-title--lg.u-padBottom--1 Team
+            //- todo
+            //- separate make content into json 
+            //- add images
+            //- loop through content and images
+            div.Grid.Grid--1of3.Grid--gutters
+              each member,i in team_meta
+                - var memberContact = (!member.contact ? member.name : "<a href='mailto:"+member.contact+"'>"+member.name+"</a>")
                 div.Grid-cell
-                  img(src="https://placehold.it/400x400" style="border-radius:50%;").Feature-image
-                  p.Feature-paragraph Moritz Kassner
-                div.Grid-cell
-                  img(src="https://placehold.it/400x400" style="border-radius:50%;").Feature-image
-                  p.Feature-paragraph Will Patera
-                div.Grid-cell
-                  img(src="https://placehold.it/400x400" style="border-radius:50%;").Feature-image
-                  p.Feature-paragraph Andreas Bulling
+                  img(src="#{ member.img }" style="border-radius:50%;").Feature-image
+                  p.Feature-paragraph!= typogr(memberContact).typogrify()
+                  p.Feature-paragraph= member.role
+
+    //- office image 2
+    div.Grid
+      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_topview.jpg');")
+
+
+    //- made in berlin row
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.Feature-title--lg.u-padBottom--1 Made in Berlin
+              div.Grid
+                div.Grid-cell.Grid-cell--full
+                  p.Feature-paragraph Our main office is located in Berlin, Germany. 
+                div.Grid-cell.Grid-cell--full
+                  p.Feature-paragraph We fabricate locally and ship worldwide.
+                div.Grid-cell.Grid-cell--full
+                  p.Feature-paragraph We strive to make great tools, and are excited to see what you do with them! 
+
 
     //- imprint
-    - var items = _.chain(contents.about['info']._.pages).sortBy(function(item) {
-    -   return item.metadata['order'];
-    - }).value()    
-    div.u-padBottom--5
-      div.Grid.Grid--1of2
-        each i in items
-          div.Grid-cell
-            h2.Feature-title.u-textCenter.u-padBottom--1= i.title
-            div.Article!= typogr(i.html).typogrify()
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1= imprint_meta.title
+            div.Grid
+              div.Grid-cell.Grid-cell--full!= typogr(imprint_data.html).typogrify()
+
+
+    //- div.u-padBottom--5
+    //-   div.Grid.Grid--1of2
+    //-     div.Grid-cell
+    //-       h2.Feature-title.u-textCenter.u-padBottom--1= i.title
+    //-       div.Article!= typogr(i.html).typogrify()
