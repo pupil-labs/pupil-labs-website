@@ -35,8 +35,8 @@ header.Header-container
     nav.js-side-nav-container.side-nav__container
       div.js-menu-hide
       ul.side-nav__content
-        li.Header-nav-item
-          a(class="Header-nav-item" href="/") home
+        li.side-nav-item
+          a(class="side-nav-item" href="/") home
         each url, title in contents.menu['header-nav.json'].metadata
           li
-            a(class="Header-nav-item" href=url) #{ title }
+            a(class="side-nav-item" href=url) #{ title }
