@@ -1,6 +1,8 @@
 {  "title": "Pupil Labs",
   "s1": "accessible open source tools",
   "s2": "for eye tracking and egocentric vision research",
+  "pupil_background_image": "background-image: url('../media/images/home/slides/00.jpg');",
+  "pupil_background_image_title": "Pupil Bicycle",
   "pupil_image": "media/images/config_images/web/hs_30m.jpg",
   "pupil_image_alt": "Pupil Binocular",
   "pupil_title": "Pupil",

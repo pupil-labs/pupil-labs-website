@@ -17,7 +17,7 @@ block main
     - var slider_data = pupil_slides_meta
 
     div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/03.jpg');")
+      div(class="Background-img--full-wh Background-img-cover" style=page_meta.pupil_background_image_1 title=page_meta.pupil_background_image_1_title)
 
     //- pupil intro row
     //- div(id="content-top" class="Site-content-container")
@@ -38,9 +38,9 @@ block main
           div.Grid.Grid--center
             div.Grid-cell.Grid-cell--full
               div(style="color: white;").Feature
-                h1(style="color: white;").Feature-title--lg.u-textCenter Pupil
-                h2.Feature-subtitle.u-padBottom--1.u-textCenter.u-padTop--1 A platform for eye tracking and egocentric vision research
-                p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses. The hardware is designed as a #[strong modular system] that can be configured to support your research and application requirments.
+                h1(style="color: white;").Feature-title--lg.u-textCenter #{ page_meta.pupil_title_1 }
+                h2.Feature-subtitle.u-padBottom--1.u-textCenter.u-padTop--1 #{ page_meta.pupil_description_1 }
+                p.Feature-paragraph #{ page_meta.pupil_description_2 }
             div(style="color: white;").Grid-cell.Grid-cell--1of3
 
                 //- p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
@@ -68,32 +68,32 @@ block main
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-padBottom--1 Software
-              h2.Feature-paragraph.u-padBottom--1 Connect your Pupil headset to a Linux, MacOS, or Windows computer via USB 
+              h1.Feature-title--lg.u-padBottom--1 #{ page_meta.pupil_title_2 }
+              h2.Feature-paragraph.u-padBottom--1 #{ page_meta.pupil_description_3 }
               div.Grid.Grid-pad--1of2
                 div.Grid-cell
-                  h2.Feature-subtitle.u-padBottom--1 Record
-                  p.Feature-paragraph Pupil Capture is the software used with your Pupil headset.
-                  p.Feature-paragraph Pupil Capture recieves video and audio streams, detects your pupil, tracks your gazem tracks markers in your environment, stream data in real-time over the network, and records data in an open format.
+                  h2.Feature-subtitle.u-padBottom--1 #{ page_meta.pupil_sub_title_1 }
+                  p.Feature-paragraph #{ page_meta.pupil_description_4 }
+                  p.Feature-paragraph #{ page_meta.pupil_description_5 }
                 div.Grid-cell
-                  h2.Feature-subtitle.u-padBottom--1 Play
-                  p.Feature-paragraph Pupil Player is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. 
-                  p.Feature-paragraph Visualize your data and export it. All Pupil software is open-source. You can modify it or write your own plugins to suit your needs.
+                  h2.Feature-subtitle.u-padBottom--1 #{ page_meta.pupil_sub_title_2 }
+                  p.Feature-paragraph #{ page_meta.pupil_description_6 }
+                  p.Feature-paragraph #{ page_meta.pupil_description_7 }
               div.Grid.Grid--1of2
                 div.Grid-cell
                   div.Feature.u-padTop--2
                     figure.Feature-image--capturePlayerIcons
-                      img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pc.png")
-                    h2.Feature-subtitle.u-textCenter.u-padTop--1 Pupil Capture
+                      img(class="Feature-image" src=page_meta.pupil_icon_1 alt=page_meta.pupil_icon_1_alt)
+                    h2.Feature-subtitle.u-textCenter.u-padTop--1 #{ page_meta.pupil_sub_title_3 }
                 div.Grid-cell
                   div.Feature.u-padTop--2
                     figure.Feature-image--capturePlayerIcons
-                      img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pp.png")
-                    h2.Feature-subtitle.u-textCenter.u-padTop--1 Pupil Player
+                      img(class="Feature-image" src=page_meta.pupil_icon_2 alt=page_meta.pupil_icon_2_alt)
+                    h2.Feature-subtitle.u-textCenter.u-padTop--1 #{ page_meta.pupil_sub_title_4 }
 
     //- full width background image
     div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
+      div(class="Background-img--full-wh Background-img-cover" style=page_meta.pupil_background_image_2 title=page_meta.pupil_background_image_2_title)
 
 
     //- open source
@@ -103,15 +103,16 @@ block main
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell
             div.Feature
-              h1.Feature-title--lg.u-padBottom--1 Open Source
-              p.Feature-paragraph We believe in open source. All Pupil code is released with open source licenses.
-              p.Feature-paragraph A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
-              p.Feature-paragraph We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
+              h1.Feature-title--lg.u-padBottom--1 #{ page_meta.pupil_title_3 }
+              p.Feature-paragraph #{ page_meta.pupil_description_8 }
+              p.Feature-paragraph #{ page_meta.pupil_description_9 }
+              p.Feature-paragraph #{ page_meta.pupil_description_10 }
+              //- how to put text with html elements in json file?
               p.Feature-paragraph Check out the pupil repository on <a href="https://github.com/pupil-labs/pupil/" rel="noopener">Github</a>. Read developer documentation on the <a href="https://github.com/pupil-labs/pupil/wiki" rel="noopener">wiki</a>.
           div.Grid-cell
             div.Feature
               figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
+                img(class="Feature-image" src=page_meta.pupil_image_1 alt=page_meta.pupil_image_1_alt title=page_meta.pupil_image_1_title)
 
 
     //- design
@@ -120,13 +121,13 @@ block main
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell
             div.Feature
-              h1.Feature-title--lg.u-padBottom--1 Design
-              p.Feature-paragraph A lot of design and engineering thought has gone into getting the ergonomics of the headset just right.
-              p.Feature-paragraph It is designed to fit snugly, securely, and comfortably. The headset and cameras can be adjusted to accommodate a wide range of users. The headset is made from laser sintered PA12, an extremely flexible, durable, and lightweight material.
+              h1.Feature-title--lg.u-padBottom--1 #{ page_meta.pupil_title_4 }
+              p.Feature-paragraph #{ page_meta.pupil_description_11 }
+              p.Feature-paragraph #{ page_meta.pupil_description_12 }
           div.Grid-cell
             div.Feature
               figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
+                img(class="Feature-image" src=page_meta.pupil_image_2 alt=page_meta.pupil_image_2_alt title=page_meta.pupil_image_2_title)
 
     //- tech specs and performance
     div.Site-gray-bkg
@@ -135,11 +136,11 @@ block main
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full
               div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Technical Specifications & Performance
-                p.Feature-paragraph.u-textCenter Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
-                p.Feature-paragraph.u-textCenter Accuracy 0.60 degrees 
-                p.Feature-paragraph.u-textCenter Precision 0.08 degrees
-                p.Feature-paragraph.u-textCenter Latency 5.7 ms (using 120hz eye and high speed world cameras)
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ page_meta.pupil_title_5 }
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_13 }
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_14 } 
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_15 }
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_16 }
 
 
     //- Modular & Hackable
@@ -148,13 +149,13 @@ block main
       div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
         div.Grid-cell
           div.Feature
-            h1.Feature-title--lg.u-padBottom--1 Modular & Hackable
-            p.Feature-paragraph If we don't have the configuration you need, customize it yourself. Our camera mount geometry and electrical interface is open. We also like to work with users to create custom solutions. Get in touch if you're excited about SMD soldering and hacking: you can buy a DEV frame, buy parts, and follow assembly instructions to build your own Pupil DEV headset.
+            h1.Feature-title--lg.u-padBottom--1 #{ page_meta.pupil_title_6 }
+            p.Feature-paragraph #{ page_meta.pupil_description_17 }
         div.Grid-cell
           div.Feature
             figure.Feature-figure
               figure.Feature-figure
-              img(class="Feature-image" src="../media/images/pupil_page/web/dev_explo.jpg")
+              img(class="Feature-image" src=page_meta.pupil_image_3 alt=page_meta.pupil_image_3_alt title=page_meta.pupil_image_4_title)
 
     //- Community
     div.Site-gray-bkg
@@ -163,11 +164,11 @@ block main
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full
               div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Community
-                p.Feature-paragraph.u-textCenter Pupil is driven by an active community. 
-                p.Feature-paragraph.u-textCenter Make a fork of the Pupil Github repository and start developing. 
-                p.Feature-paragraph.u-textCenter Read the docs and contribute to the user guide. 
-                p.Feature-paragraph.u-textCenter Discuss your project and get free support.
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ page_meta.pupil_title_7 }
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_18 }
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_19 }
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_20 }
+                p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_21 }
 
     //- Commercial Use & Dedicated Suppor
     div(id="content-top" class="Site-content-container")
@@ -175,10 +176,10 @@ block main
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Commercial Use & Dedicated Support
-              p.Feature-paragraph.u-textCenter We offer dedicated email and video training and support packages. 
-              p.Feature-paragraph.u-textCenter See support packages in the store. 
-              p.Feature-paragraph.u-textCenter We offer use licenses to commercial users.
-              p.Feature-paragraph.u-textCenter Contact us to discuss custom licensing options.
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ page_meta.pupil_title_8 }
+              p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_22 }
+              p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_23 }
+              p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_24 }
+              p.Feature-paragraph.u-textCenter #{ page_meta.pupil_description_25 }
 
 
