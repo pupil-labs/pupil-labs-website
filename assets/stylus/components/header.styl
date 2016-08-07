@@ -66,6 +66,8 @@
   height 40px
   z-index 0
   display block
+  // setting pointer-events is important so it doesn't block click event of the link
+  pointer-events none 
   #cart-mobile 
     display none
   @media (max-width: 767px)
