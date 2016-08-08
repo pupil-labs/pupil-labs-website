@@ -66,6 +66,8 @@
   height 40px
   z-index 0
   display block
+  // setting pointer-events is important so it doesn't block click event of the link
+  pointer-events none 
   #cart-mobile 
     display none
   @media (max-width: 767px)
@@ -189,6 +191,13 @@
   
 .logotype-labs
   fill lighten(#4d4d4d, 20%)
+
+.side-nav-item
+  text-decoration none !important
+  font-family $font-family-sans-serif-alt
+  font-weight 700
+  color rgba(0,0,0,0.54)
+  text-transform uppercase
 
 .side-nav
   position fixed
