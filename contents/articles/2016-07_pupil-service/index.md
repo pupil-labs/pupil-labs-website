@@ -1,9 +1,10 @@
 ---
- title: Pupil Service
- date: Tue Jul 06 2016 08:47:48 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: Pupil Service is a new app in release v0.8.0...
- ---
+title: Pupil Service
+date: Tue Jul 06 2016 08:47:48 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: Pupil Service is a new app in release v0.8.0...
+featured_img: "../../../../media/images/blog/pupil-service.png"
+---
 
 <div class="Grid-noWrap Grid--justifyCenter Grid--center u-padBottom--2">
 	<img src="../../../../media/images/blog/pupil-service.png" alt="Pupil Service">
