@@ -6,19 +6,18 @@ block append title
 block main
   div(id="Jobs").Site-transform
     //- Title block
-    - var page_data = contents.jobs['index.json']
+    - var page_data = contents.careers['index.json']
     - var page_meta = page_data.metadata
     - var titleData = {'title':page_meta.title,'s1':page_meta.subtitle}    
     //- include includes/title
 
-    -var positions_folder = contents.jobs['positions']
+    -var positions_folder = contents.careers['positions']
     
     //- show background image
     div.Background-img-top.Background-img-cover
       figure(class="Background-img--full-wh" src="../media/images/jobs/jobs_workbench.jpg" style="background-image: url('../media/images/jobs/jobs_workbench.jpg');")
-      div(style="color:gray;").Site-content-container.Background-img--caption.u-textCenter
-        h1.Background-img--caption-h1 Jobs
-        h2.Background-img--caption-h2 Are you excited about eye tracking, computer vision, design, and contributing to open source? Check out current openings below. 
+      div(style="color:rgb(90,90,90);top:50%;").Site-content-container.Background-img--caption.u-textCenter
+        h1.Background-img--caption-h1 Become part of our team.
 
     //- div.Site-gray-bkg  
     //-   div.Site-content-container
