@@ -12,23 +12,24 @@ block main
     //- include includes/title
 
     -var positions_folder = contents.jobs['positions']
-
-    - var missionData = contents.jobs['pupil_mission.md']
     
     //- show background image
-    div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/jobs/jobs_workbench.jpg');")
-  
-    div.Site-gray-bkg  
-      div.Site-content-container
-        div.Feature-container-column
-          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-            div.Grid-cell.Grid-cell--full.u-textCenter
-              div.Feature
-                h1.Feature-title--lg.u-padBottom--1 Jobs
-              div.Grid
-                div.Grid-cell.Grid-cell--full
-                  p.Feature-paragraph Are you excited about eye tracking, computer vision, design, and contributing to open source? Check out current openings below. 
+    div.Background-img-top.Background-img-cover
+      figure(class="Background-img--full-wh" src="../media/images/jobs/jobs_workbench.jpg" style="background-image: url('../media/images/jobs/jobs_workbench.jpg');")
+      div(style="color:gray;").Site-content-container.Background-img--caption.u-textCenter
+        h1.Background-img--caption-h1 Jobs
+        h2.Background-img--caption-h2 Are you excited about eye tracking, computer vision, design, and contributing to open source? Check out current openings below. 
+
+    //- div.Site-gray-bkg  
+    //-   div.Site-content-container
+    //-     div.Feature-container-column
+    //-       div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+    //-         div.Grid-cell.Grid-cell--full.u-textCenter
+    //-           div.Feature
+    //-             h1.Feature-title--lg.u-padBottom--1 Jobs
+    //-           div.Grid
+    //-             div.Grid-cell.Grid-cell--full
+    //-               p.Feature-paragraph Are you excited about eye tracking, computer vision, design, and contributing to open source? Check out current openings below. 
 
 
     - var positions = _.chain(positions_folder._.pages).sortBy(function(item) {

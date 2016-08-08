@@ -11,8 +11,11 @@ block main
     - var home_newsletter_meta = home_newsletter.metadata
 
     //- show background image
-    div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/00.jpg');")
+    div.Background-img-top.Background-img-cover
+      figure(class="Background-img--full-wh" src="../media/images/home/slides/00.jpg" style="background-image: url('../media/images/home/slides/00.jpg');")
+      div.Site-content-container.Background-img--caption.u-textCenter
+        h1.Background-img--caption-h1 Pupil Labs
+        h2.Background-img--caption-h2 
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")

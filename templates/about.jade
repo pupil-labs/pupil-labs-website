@@ -12,8 +12,14 @@ block main
     - var imprint_meta = imprint_data.metadata
 
     //- office image 1
-    div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_bw.jpg');")
+    div.Background-img-top.Background-img-cover
+      figure(class="Background-img--full-wh" src="'../media/images/about/gsm_2016_bw.jpg'" style="background-image: url('../media/images/about/gsm_2016_bw.jpg');")
+      div.Site-content-container.Background-img--caption.u-textCenter
+        h1.Background-img--caption-h1 About Us
+        h2.Background-img--caption-h2 We do research and development, with an emphasis on design. 
+
+    //- div
+    //-   figure(class="Background-img-top Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_bw.jpg');")
 
     //- mission
     div.Site-gray-bkg
@@ -25,10 +31,11 @@ block main
                 h1.Feature-title--lg.u-padBottom--1 Mission
               div.Grid
                 div.Grid-cell.Grid-cell--full
-                  p.Feature-paragraph At Pupil Labs we do research and development, with an emphasis on design. 
-                  p.Feature-paragraph We work projects that we find challenging and exciting. It is our goal with every aspect of our work to learn something new. We are excited about eye tracking, because it enables us to work at the intersection of many fields and to interact with a diverse community.
+                  //- p.Feature-paragraph At Pupil Labs we do research and development, with an emphasis on design. 
                   p.Feature-paragraph We believe in open source. We have formed our business around an open source model, and have grown with our community.
-                  p.Feature-paragraph We are currently focusing our development efforts on Pupil – a mobile eye tracking headset and open source software framework – and in developing open source tools for virtual reality, augmented reality, and mixed reality.
+                  p.Feature-paragraph We work projects that we find challenging and exciting. It is our goal with every aspect of our work to learn something new. 
+                  p.Feature-paragraph We are excited about eye tracking. It enables us to work at the intersection of many fields and to interact with a diverse community.
+                  p.Feature-paragraph We are currently focusing our development efforts on Pupil – a mobile eye tracking headset and open source software framework – and on developing open source tools for virtual reality, augmented reality, and mixed reality.
 
     //- team
     div.Site-content-container
@@ -51,7 +58,7 @@ block main
 
     //- office image 2
     div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_topview.jpg');")
+      div(class="Background-img--full-wh-grid Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_topview.jpg');")
 
 
     //- made in berlin row

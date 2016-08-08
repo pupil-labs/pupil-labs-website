@@ -20,7 +20,7 @@ headerOpacityHome = ()->
 
   has_resized = ()=>
     st = $(this).scrollTop()
-    bkg_img_height = $("div[class^='Background-img--full-']").height()
+    bkg_img_height = $(".Background-img-top").height()
     within_container = st <= bkg_img_height
 
     if $(window).width() < 768
@@ -34,7 +34,7 @@ headerOpacityHome = ()->
 
   has_scrolled = ()=>
     st = $(this).scrollTop()
-    bkg_img_height = $("div[class^='Background-img--full-']").height()
+    bkg_img_height = $(".Background-img-top").height()
     offset = 20
     navbar_pos = bkg_img_height - (offset + navbar_height)
     within_container = st < navbar_pos
