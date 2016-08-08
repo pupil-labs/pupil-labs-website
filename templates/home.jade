@@ -13,9 +13,9 @@ block main
     //- show background image
     div.Background-img-top.Background-img-cover
       figure(class="Background-img--full-wh" src="../media/images/home/slides/00.jpg" style="background-image: url('../media/images/home/slides/00.jpg');")
-      div.Site-content-container.Background-img--caption.u-textCenter
-        h1.Background-img--caption-h1 Pupil Labs
-        h2.Background-img--caption-h2 
+      div(style="top:55%;").Site-content-container.Background-img--caption.u-textCenter
+        h1.Background-img--caption-h1 Open source eye tracking.
+        //- h2.Background-img--caption-h2 
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
@@ -59,6 +59,7 @@ block main
           div.Grid-cell.Grid-cell--full
             div.Feature
               h1.Feature-title--lg.u-textCenter.u-padBottom--1 Development Feed
+              p.Feature-paragraph Take a look at what we are working on now.
           div.Grid-cell.Grid-cell--full.u-padTop--2
             div(id="Home-activity")
               ul(id="Home-activity-list" class="Activity")
@@ -88,7 +89,7 @@ block main
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-textCenter.u-padBottom--1 News
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Recent Blog Posts
           div.Grid-cell.Grid-cell--full.u-padTop--2
             ul
             - var articles = env.helpers.getArticles(contents)
