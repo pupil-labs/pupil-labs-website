@@ -29,9 +29,8 @@ block main
               p.Feature-paragraph #{ intro_meta.pupil_description_3 }
               p.Feature-paragraph!= typogr(intro_meta.pupil_description_4).typogrify()
           div.Grid-cell--1of3
-            div.Feature
-              figure.Feature-figure
-                img(class="Feature-image" src=intro_meta.pupil_image alt=intro_meta.pupil_image_alt)
+            figure.Feature-figure
+              img(class="Feature-image" src=intro_meta.pupil_image alt=intro_meta.pupil_image_alt)
           div.Grid-cell.u-padTop1
               a(href="/pupil" class="Button Button-max-width--50-100") #{ intro_meta.pupil_link_text }
 
