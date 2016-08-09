@@ -21,18 +21,22 @@ block main
     div(id="content-top" class="Site-content-container")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell--2of3
-            div.Feature
-              h1.Feature-title--lg.u-padBottom--1 #{ intro_meta.pupil_title }
-              p.Feature-paragraph #{ intro_meta.pupil_description_1 }
-              p.Feature-paragraph #{ intro_meta.pupil_description_2 }
-              p.Feature-paragraph #{ intro_meta.pupil_description_3 }
-              p.Feature-paragraph!= typogr(intro_meta.pupil_description_4).typogrify()
-          div.Grid-cell--1of3
-            figure.Feature-figure
-              img(class="Feature-image" src=intro_meta.pupil_image alt=intro_meta.pupil_image_alt)
-          div.Grid-cell.u-padTop1
-              a(href="/pupil" class="Button Button-max-width--50-100") #{ intro_meta.pupil_link_text }
+          div.Grid-cell.Grid-cell--full
+            h1.Feature-title--lg.u-padBottom--1 Pupil Platform
+            p.Feature-paragraph We develop open source software and build accessible hardware for eye tracking.
+          div.Grid.Grid--1of3.Grid--gutters.u-textCenter
+            div.Grid-cell
+              figure.Feature-figure
+                img(class="Feature-image" src="https://placehold.it/400x400")
+              p.Feature-paragraph Pupil Hardware +
+            div.Grid-cell
+              figure.Feature-figure
+                img(class="Feature-image" src="https://placehold.it/400x400")
+              p.Feature-paragraph Your Device +
+            div.Grid-cell
+              figure.Feature-figure
+                img(class="Feature-image" src="https://placehold.it/400x400")
+              p.Feature-paragraph Pupil Open Source Software
 
 
     //- oss motivation row
@@ -43,19 +47,19 @@ block main
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
                 h1.Feature-title--lg.u-padBottom--1 #{ oss_meta.title1 }
-              div.Grid.Grid--1of3.Grid--gutters
-                div.Grid-cell
-                  figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/modular.png")
-                  p.Feature-paragraph #{ oss_meta.point1 }
-                div.Grid-cell
-                  figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/community.png")
-                  p.Feature-paragraph #{ oss_meta.point2 }
-                div.Grid-cell
-                  figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/service.png")
-                  p.Feature-paragraph #{ oss_meta.point3 }
+            div.Grid.Grid--1of3.Grid--gutters.u-textCenter
+              div.Grid-cell
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/home/icons/modular.png")
+                p.Feature-paragraph #{ oss_meta.point1 }
+              div.Grid-cell
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/home/icons/community.png")
+                p.Feature-paragraph #{ oss_meta.point2 }
+              div.Grid-cell
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/home/icons/service.png")
+                p.Feature-paragraph #{ oss_meta.point3 }
 
 
     //- dev feed row
