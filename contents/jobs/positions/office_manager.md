@@ -1,6 +1,6 @@
 ---
 title: Office Manager
-order: 3
+order: -1
 jobTitle: office-manager
 ---
 
