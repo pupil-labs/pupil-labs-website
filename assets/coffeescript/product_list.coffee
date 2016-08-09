@@ -168,7 +168,7 @@ productList = [
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/addon_oculus_dk2.png"
-    order: 1
+    order: 4
   }, {
     id: "product_oculus_bi"
     cost: 1400
@@ -179,7 +179,7 @@ productList = [
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/addon_oculus_dk2.png"
-    order: 2
+    order: 3
   }, {
     id: "product_epson_bi"
     cost: 350
@@ -190,7 +190,7 @@ productList = [
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/addon_epson_bt200a.png"
-    order: 3
+    order: 5
   }, {
     id: "product_usb_c"
     cost: 210
@@ -201,7 +201,18 @@ productList = [
     dimensions: 0
     weight: 20
     img: "../media/images/additional_products/web/usbc-1.png"
-    order: 4
+    order: 2
+  }, {
+    id: "product_htc_vive_bi"
+    cost: 1400
+    label: "HTC Vive Binocular Add-on"
+    specs: "Add binocular eye tracking to your HTC Vive VR Headset. Includes binocular 120hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
+    cartlabel: "HTC Vive Binocular Add-on"            
+    cartSpecs: "120hz binocular eye tracking add-on for your HTC Vive VR Headset."    
+    dimensions: 0
+    weight: 20
+    img: "../media/images/additional_products/web/htcviveb.png"
+    order: 1
   }, {    
     id: "product_support_6"
     cost: 1000
@@ -210,7 +221,7 @@ productList = [
     cartlabel: "Support contract"                
     cartSpecs: "6 month support contract. Email support and 4 videos support sessions."
     img: "../media/graphics/web/support_graphic_6mo_alt.svg"
-    order: 6
+    order: 7
   }, {
     id: "product_support_12"
     cost: 2000
@@ -219,7 +230,7 @@ productList = [
     cartlabel: "Support contract"            
     cartSpecs: "12 month support contract. Email support and 8 videos support sessions."
     img: "../media/graphics/web/support_graphic_12mo_alt.svg"
-    order: 7
+    order: 8
   }, {
     id: "license_academic"
     cost: -590
