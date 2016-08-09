@@ -23,7 +23,7 @@ Here is a sample video of the right eye.
 <div class="Feature-video-container-16by9">
 	<iframe class="Feature-video" src="https://www.youtube.com/embed/DpOUeKS5Ntk?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>
-Download original video here.
+Download original video [here](https://drive.google.com/open?id=0Byap58sXjMVfZWxmckZtd3BNclU).
 
 The cameras can be connected to the Vive's built in USB port, or directly to your computer using a separate USB cable routed alongside the HMDI tether.
 
