@@ -3,6 +3,7 @@
  date: Thr Mar 24 2016 00:00:00 GMT+0700 (ICT)
  author: Pupil Dev Team
  subtitle: We are happy to release v.0.7 of the Pupil platform. This is a major release with lots of changes. Including the 3d pupil detector...
+ featured_img: "../../../../media/images/blog/release_tag.png"
  ---
 
 <script src="//cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>

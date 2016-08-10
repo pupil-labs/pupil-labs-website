@@ -1,6 +1,6 @@
 ---
 title: New Headset Color
-date: Tue Jul 07 2016 09:47:48 GMT+0700 (ICT)
+date: Thu Jul 07 2016 09:47:48 GMT+0700 (ICT)
 author: Pupil Dev Team
 subtitle: A new Pupil headset color is coming soon. We are experimenting with an in-house dyeing process to perfect the finish of our headsets...
 featured_img: "../../../../media/images/blog/dmk-headset.jpg"
