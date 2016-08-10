@@ -58,9 +58,20 @@ headerOpacityHome = ()->
       did_resize = false
   ,100
 
+set_active_nav_link = ()->
+  current_path = window.location.href
+  console.log current_path
+  for link in $(".Header-nav-item")
+    $(link).removeClass("Header-nav-active")
+    if link.href is current_path
+      $(link).addClass("Header-nav-active")
+
+
 $(document).ready ->
   if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length or $("#About").length > 0 or $("#Jobs").length > 0
     # on load make the header transparent
     headerOpacityHome()
   else
     $("#Header").removeClass("Header-bkg-transparent").addClass("Header-bkg-opaque")
+
+  set_active_nav_link()

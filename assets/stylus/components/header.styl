@@ -161,25 +161,14 @@
     background transparent
     transition width .6s ease, background-color .5s ease
 
-  &:hover
-    color rgba(0,0,0,0.54) !important
-    &:after
-      width 100%
-      // background rgba(0,0,0,0.54)
 
   
-navLinks = ('nav-pupil' 'nav-vrar' 'nav-store' 'nav-blog' 'nav-about' 'nav-careers' 'nav-cart')
-
-for n in navLinks
-  ul.{n} 
-    a.{n}
-      &:after
-        content ''
-        display block
-        height 2px
-        width 100%
-        // background rgba(0,0,0,0.54)
-  
+.Header-nav-active
+  &:after
+    content ''
+    display block
+    height 2px
+    width 100%
 
 
 .Header-cart-badge

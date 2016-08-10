@@ -7,14 +7,13 @@ header.Header-container
 
     div.Header-nav
       div(class="Header-cart-badge")
-      - var page_nav = (!page ? "nav-blog" : page.metadata.nav)
-      ul(class="Header-nav-list #{ page_nav }")
+      ul(class="Header-nav-list")
         each data, title in contents.menu['header-nav.json'].metadata
           - var rel_attribute = (title === "docs" ? "noopener" : "")
           - var nav_id = (title === 'cart' ? 'Nav-cart' : '')
           li.Nav-tab
             nav(id=nav_id)
-              a(class="Header-nav-item #{ data.nav }" href=data.url rel=rel_attribute) #{ title }
+              a(class="Header-nav-item" href=data.url rel=rel_attribute) #{ title }
 
     div.Header-cart-button-container
       a(class="Header-cart-badge" id="cart-mobile" href="/cart")
