@@ -1,10 +1,10 @@
 {
-  "pupil": "/pupil",
-  "vr/ar": "/vr-ar",
-  "store": "/store",
-  "docs": "/docs",
-  "blog": "/blog",
-  "about": "/about",
-  "careers": "/careers",
-  "cart": "/cart"
+  "pupil": {"url": "/pupil", "nav": "nav-pupil"},
+  "vr/ar": {"url": "/vr-ar", "nav": "nav-vrar"},
+  "store": {"url": "/store", "nav": "nav-store"},
+  "docs": {"url": "/docs", "nav": "nav-docs"},
+  "blog": {"url": "/blog", "nav": "nav-blog"},
+  "about": {"url": "/about", "nav": "nav-about"},
+  "careers": {"url": "/careers", "nav": "nav-careers"},
+  "cart": {"url": "/cart", "nav": "nav-cart"}
 }

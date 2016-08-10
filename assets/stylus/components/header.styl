@@ -21,6 +21,13 @@
   .Header-nav-item
     cursor pointer
     color rgba(255,255,255,1)
+    &:after
+      background rgba(255,255,255,1)
+    &:hover
+      color rgba(255,255,255,1) !important
+      &:after
+        background rgba(255,255,255,1)
+
   .logotype
     color rgba(255,255,255,1.0)
 
@@ -32,6 +39,10 @@
     
   // .logotype-labs
   //   fill lighten(#4d4d4d, 20%)
+  .Header-nav-item
+    &:after
+      background rgba(0,0,0,0.54)
+
 
 
   
@@ -142,17 +153,32 @@
   color rgba(0,0,0,0.54)
   text-transform uppercase
 
-.Header-nav-item:after
-  content ''
-  display block
-  height 3px
-  width 0
-  background transparent
-  transition width .6s ease, background-color .5s ease
+  &:after
+    content ''
+    display block
+    height 2px
+    width 0
+    background transparent
+    transition width .6s ease, background-color .5s ease
 
-.Header-nav-item:hover:after
-  width 100%
-  background $link-hover-color
+  &:hover
+    color rgba(0,0,0,0.54) !important
+    &:after
+      width 100%
+      // background rgba(0,0,0,0.54)
+
+  
+navLinks = ('nav-pupil' 'nav-vrar' 'nav-store' 'nav-blog' 'nav-about' 'nav-careers' 'nav-cart')
+
+for n in navLinks
+  ul.{n} 
+    a.{n}
+      &:after
+        content ''
+        display block
+        height 2px
+        width 100%
+        // background rgba(0,0,0,0.54)
   
 
 

@@ -5,8 +5,6 @@ block append title
 
 block main
   div(id="Article")
-    - var titleData = {'title': page.title,'s1': moment.utc(page.date).format('YYYY MMM DD')}
-    include includes/title 
     article.Grid.Article
       div.Grid-cell--sidebar
       div.Grid-cell--main
