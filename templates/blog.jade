@@ -1,29 +1,29 @@
 extends layout
 
-block vars
-  - var bodyClass = "Site"
-  - var mainClass = "Site-content Site-blog"
-
 block append title
   | #{ " - Blog"}
 
 block main
   div(id="Blog")
-    //- include author
-    - var titleData = {'title':"Blog",'s1':"news and development updates"}    
-    - var titleBkg = 'Blog-pageTitle'
-    include includes/title
-    
-    div.Grid
-    each article in articles
-      a(href=article.url)
-        div.Grid-item.Blog-article
-          header
-              h2.Blog-article-title.u-textCenter= article.title
-            p.Blog-article-date.u-textCenter= moment.utc(article.date).format('YYYY MMM DD')      
 
-            if article.metadata.subtitle            
-              h3.Blog-article-subtitle.u-textCenter= article.metadata.subtitle
+    each article, i in articles
+      div.Blog-row
+        div.Site-content-container
+          div.Feature-container-column
+            article.Grid.Grid--1of2.Grid--justifyCenter.Grid--alignContentCenter
+              div.Grid-cell
+                figure.Feature-figure
+                  - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
+                  img(class="Feature-image" src=img_src)
+              div.Grid-cell.Blog-article-intro
+                a(href=article.url)
+                  h2.Blog-article-title= article.title
+                p.Blog-article-date= moment.utc(article.date).format('YYYY MMM DD')      
+
+                if article.metadata.subtitle            
+                  p.Feature-paragraph= article.metadata.subtitle
+                a(href=article.url) read more
+
             //- a(href=article.url)
               h3.u-textCenter read more
         //- article.Grid.Grid--gutters

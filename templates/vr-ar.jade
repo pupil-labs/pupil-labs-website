@@ -5,7 +5,7 @@ block append title
 
 block main
   //- Title block
-  div(id="VR-AR" class="Wallop-transform")
+  div(id="VR-AR" class="Site-transform")
     - var page_data = contents['vr-ar']['index.json']
     - var page_meta = page_data.metadata
     - var vr_ar_slides_data = contents['vr-ar']['slides_vr.json']
@@ -17,8 +17,8 @@ block main
     - var slider_data = vr_ar_slides_meta
     - var slider_inline_style = "background-color: gray;"
     - var slider_id = "VR-AR-slider"
-    - var slider_show_controls = false
-    - var slider_show_pagination = false
+    - var slider_show_controls = false;
+    - var slider_show_pagination = false;
     - var slider_data_attributes = {'data-autoplay':'true'}
 
     include  includes/slider.jade
@@ -68,11 +68,11 @@ block main
                   img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
                 p.Feature-paragraph Mixed Reality
 
-      //- full width background image
+    //- full width background image
     div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
+      feature(class="Background-img--full-wh-grid Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
 
-      //- software
+    //- software
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
@@ -94,7 +94,7 @@ block main
               p.Feature-paragraph HMD Eyes
 
 
-      //- made in berlin row
+    //- made in berlin row
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row

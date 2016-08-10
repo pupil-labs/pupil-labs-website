@@ -154,6 +154,24 @@
   left 0
   top 0 
 
+.Background-img-top
+  display block
+  position relative
+  width 100%
+  height 100vh
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background-position center center
+  background-repeat no-repeat  
+  background-attachment fixed // set to scroll so content doesn't scroll over top
+  @media $break-767
+    height calc(100vh - 64px)
+  //   padding 0
+  //   padding-bottom 75%
+  //   height 0
+  //   background-position-y top
 
 .Background-img-cover
   background-size cover
@@ -162,6 +180,17 @@
     background-size contain
 
 .Background-img--full-wh
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background-position center center
+  background-repeat no-repeat
+  background-color transparent
+  background-size cover
+
+.Background-img--full-wh-grid
   background-position center center
   background-repeat no-repeat
   background-attachment scroll // set to scroll so content doesn't scroll over top
@@ -186,8 +215,7 @@
     padding-bottom 75%
     height 0
     background-position-y top  
-
-
+    
 .Background-img--full-w-fixed
   background-position center center
   background-repeat no-repeat  
@@ -222,7 +250,20 @@
   width 100%
   video
     object-fit cover !important
-    
+
+.Background-img--caption
+  transform translateY(-50%)
+  position relative
+  top 60%
+  z-index 1
+  color #fff
+      
+.Background-img--caption-h1
+  font-size 2.6em
+  padding-bottom 0.6em
+  
+.Background-img--caption-h2
+  font-size 1.3em
     
 .Feature-specs
   flex 1 0 auto

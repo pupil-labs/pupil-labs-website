@@ -104,7 +104,7 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['oculusdk2m','oculusdk2b','epsonbt200b']
+  return ['htcviveb','oculusdk2b','oculusdk2m','epsonbt200b']
 
 get_additional_product_ids = ->
   return ['usbcupgrade','e120upgrade','support6','support12']
@@ -292,6 +292,13 @@ get_product_database = ->
       description_store: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       img: [vr_ar_img_path,'epsonbt200b.png'].join('/')   
+    htcviveb:
+      cost: 1400
+      title_product: 'HTC Vive Binocular Add-on'
+      title_store: 'HTC Vive Binocular Add-on'
+      description_store: "Add binocular eye tracking to your HTC Vive VR Headset. Includes binocular 120hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
+      description_cart: "120hz binocular eye tracking add-on for your HTC Vive VR Headset."
+      img: [vr_ar_img_path,'htcviveb.png'].join('/')   
     usbcupgrade:
       cost: 210
       title_product: 'USB-C Clip Upgrade'

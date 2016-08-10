@@ -1,9 +1,10 @@
 ---
- title: USB C Clip
- date: Tue Jul 09 2016 07:00:00 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: We are excited to share with you our new USB C clip...
- ---
+title: USB C Clip
+date: Tue Jul 09 2016 07:00:00 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: We are excited to share with you our new USB C clip...
+featured_img: "../../../../media/images/blog/usb-c.jpg" 
+---
 
 We are excited to announce the release of our new USB C clip for Pupil hardware.
 

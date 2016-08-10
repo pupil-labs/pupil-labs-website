@@ -28,17 +28,23 @@
   },
   "4":
   {
-    "name":"Nathakits Sae-Tan",
-    "role":"Designer",
+    "name":"Ishizki Takahiro",
+    "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   },
   "5":
+  {
+    "name":"Nathakit Sae-Tan",
+    "role":"Designer",
+    "img":"https://placehold.it/400x400"    
+  },
+  "6":
   {
     "name":"Douglas Mackay",
     "role":"Electrical Engineer",
     "img":"https://placehold.it/400x400"    
   },
-  "6":
+  "7":
   {
     "name":"Pablo Prietz",
     "role":"Software Engineer",

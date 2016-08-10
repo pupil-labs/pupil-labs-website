@@ -1,7 +1,7 @@
 extends layout
 
 block main
-  div(id="Home").Wallop-transform
+  div(id="Home").Site-transform
 
     - var intro_data = contents.home['home_pupil_intro.json']
     - var intro_meta = intro_data.metadata    
@@ -11,26 +11,32 @@ block main
     - var home_newsletter_meta = home_newsletter.metadata
 
     //- show background image
-    div.Grid
-      div(class="Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/home/slides/00.jpg');")
+    div.Background-img-top.Background-img-cover
+      figure(class="Background-img--full-wh" src="../media/images/home/slides/00.jpg" style="background-image: url('../media/images/home/slides/00.jpg');")
+      div(style="top:55%;").Site-content-container.Background-img--caption.u-textCenter
+        h1.Background-img--caption-h1 Open source eye tracking.
+        //- h2.Background-img--caption-h2 
 
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell--2of3
-            div.Feature
-              h1.Feature-title--lg.u-padBottom--1 #{ intro_meta.pupil_title }
-              p.Feature-paragraph #{ intro_meta.pupil_description_1 }
-              p.Feature-paragraph #{ intro_meta.pupil_description_2 }
-              p.Feature-paragraph #{ intro_meta.pupil_description_3 }
-              p.Feature-paragraph!= typogr(intro_meta.pupil_description_4).typogrify()
-          div.Grid-cell--1of3
-            div.Feature
+          div.Grid-cell.Grid-cell--full
+            h1.Feature-title--lg.u-padBottom--1 Pupil Platform
+            p.Feature-paragraph We develop open source software and build accessible hardware for eye tracking.
+          div.Grid.Grid--1of3.Grid--gutters.u-textCenter
+            div.Grid-cell
               figure.Feature-figure
-                img(class="Feature-image" src=intro_meta.pupil_image alt=intro_meta.pupil_image_alt)
-          div.Grid-cell.u-padTop1
-              a(href="/pupil" class="Button Button-max-width--50-100") #{ intro_meta.pupil_link_text }
+                img(class="Feature-image" src="https://placehold.it/400x400")
+              p.Feature-paragraph Pupil Hardware +
+            div.Grid-cell
+              figure.Feature-figure
+                img(class="Feature-image" src="https://placehold.it/400x400")
+              p.Feature-paragraph Your Device +
+            div.Grid-cell
+              figure.Feature-figure
+                img(class="Feature-image" src="https://placehold.it/400x400")
+              p.Feature-paragraph Pupil Open Source Software
 
 
     //- oss motivation row
@@ -41,13 +47,19 @@ block main
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
                 h1.Feature-title--lg.u-padBottom--1 #{ oss_meta.title1 }
-              div.Grid.Grid--1of3
-                div.Grid-cell
-                  p.Feature-paragraph #{ oss_meta.point1 }
-                div.Grid-cell
-                  p.Feature-paragraph #{ oss_meta.point2 }
-                div.Grid-cell
-                  p.Feature-paragraph #{ oss_meta.point3 }
+            div.Grid.Grid--1of3.Grid--gutters.u-textCenter
+              div.Grid-cell
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/home/icons/modular.png")
+                p.Feature-paragraph #{ oss_meta.point1 }
+              div.Grid-cell
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/home/icons/community.png")
+                p.Feature-paragraph #{ oss_meta.point2 }
+              div.Grid-cell
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/home/icons/service.png")
+                p.Feature-paragraph #{ oss_meta.point3 }
 
 
     //- dev feed row
@@ -57,6 +69,7 @@ block main
           div.Grid-cell.Grid-cell--full
             div.Feature
               h1.Feature-title--lg.u-textCenter.u-padBottom--1 Development Feed
+              p.Feature-paragraph Take a look at what we are working on now.
           div.Grid-cell.Grid-cell--full.u-padTop--2
             div(id="Home-activity")
               ul(id="Home-activity-list" class="Activity")
@@ -86,7 +99,7 @@ block main
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-textCenter.u-padBottom--1 News
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Recent Blog Posts
           div.Grid-cell.Grid-cell--full.u-padTop--2
             ul
             - var articles = env.helpers.getArticles(contents)
