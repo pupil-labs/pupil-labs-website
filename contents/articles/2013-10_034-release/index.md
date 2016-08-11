@@ -3,7 +3,7 @@ title: Pupil 0.3.4 Release
 author: Pupil Dev Team
 date: 2013-10-21
 subtitle: We have been busy working on Pupil in the last month and want to share updates!
-featured_img: "../../../../media/images/blog/release_tag.png"
+featured_img: "../../../../media/images/blog/v0.3.4_release_tag.png"
 ---
 
 We have been busy working on Pupil in the last month and want to share updates!

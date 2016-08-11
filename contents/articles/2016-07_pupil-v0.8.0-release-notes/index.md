@@ -3,7 +3,7 @@
  date: Tue Jul 05 2016 09:47:48 GMT+0700 (ICT)
  author: Pupil Dev Team
  subtitle: Release notes for v0.8.0 for the Pupil Platform. Includes lots of changes to the message format, new inter proecss communication (IPC Backbone), and many more new features...
- featured_img: "../../../../media/images/blog/release_tag.png"
+ featured_img: "../../../../media/images/blog/v0.8.0_release_tag.png"
  ---
 
 <script src="//cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>
