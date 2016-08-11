@@ -25,6 +25,8 @@ pngquant = require "imagemin-pngquant"
 sitemap = require "gulp-sitemap"
 favicons = require "gulp-favicons"
 runSequence = require "run-sequence"
+plumber = require 'gulp-plumber'
+image_min = require "gulp-sharp-minimal"
 
 css = ()->
   gulp.src "assets/stylus/main.styl"
@@ -96,14 +98,21 @@ gulp.task "newPost", ->
   fs.writeFile postDir+"/index.md", postHeader 
   gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
 
-gulp.task "image_min", ->
-  return gulp.src('build/media/images/**/*')
-  .pipe(
-    imagemin
-      optimizationLevel: 2
-      progressive: true
-      use: [pngquant()])
-  .pipe gulp.dest('build/media/images')
+
+gulp.task 'image_min', ->
+  options = {
+    resize: [1440,1440],
+    quality: 60,
+    progressive: true,
+    compressionLevel: 6,
+    sequentialRead: true,
+    trellisQuantisation: false
+  }
+
+  return gulp.src('build/media/images/**/*.{jpg}',{base: './'})
+    .pipe(plumber())
+    .pipe(image_min(options))
+    .pipe(gulp.dest('./'))
 
 gulp.task "generate_sitemap", ->
   gulp.src('build/**/*.html')
@@ -157,24 +166,20 @@ gulp.task "build_wintersmith", (cb)->
     wintersmith.build ->
       gutil.log "Successfully built wintersmith for **production**."
 
-
 gulp.task "css", ->
   return css()
 
 gulp.task "js", ->
   return js()
 
-gulp.task "build_clean", (cb)->
+gulp.task "build_clean", ->
   return del('build/')
 
-gulp.task "build_log", (cb)->
+gulp.task "build_log", ->
   return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
 gulp.task "build", (cb)->
-  runSequence('build_clean',
-              ['css','js'],
-              'build_wintersmith',
-              ['image_min'],cb)
+  runSequence 'build_clean', ['css','js'], 'build_wintersmith', cb
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
