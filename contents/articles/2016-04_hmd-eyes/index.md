@@ -3,6 +3,7 @@
  date: Thu Apr 28 2016 13:59:00 GMT+0700 (ICT)
  author: Pupil Dev Team
  subtitle: We propose a community driven, open source suite of software building blocks for eye tracking in Head Mounted Displays...
+ featured_img: "../../../../media/images/blog/plopski_itoh_corneal-reflection.png"
  --- 
 
 After receiving many requests from the community, we have taken the first steps towards supporting eye tracking in Virtual Reality and Augmented Reality (VR/AR) head mounted displays (HMDs) with the release of eye tracking add-ons for Oculus DK2 and Epson Moverio BT-200. We are committed to bringing eye tracking to VR/AR HMDS, and plan to create new hardware for the latest VR and AR hardware when it hits the market. 
