@@ -64,6 +64,8 @@ jscoffee = ()->
   js_sideNav()
 
 js = ()->
+  js_bkgVideo()
+  js_sideNav()
   jscoffee()
 
 gulp.task "newPost", ->
