@@ -28,15 +28,15 @@ block main
             div.Grid-cell
               figure.Feature-figure
                 img(class="Feature-image" src="https://placehold.it/400x400")
-              p.Feature-paragraph Pupil Hardware +
+              p.Feature-paragraph Mobile Eye Tracking +
             div.Grid-cell
               figure.Feature-figure
                 img(class="Feature-image" src="https://placehold.it/400x400")
-              p.Feature-paragraph Your Device +
+              p.Feature-paragraph AR VR Integrations +
             div.Grid-cell
               figure.Feature-figure
                 img(class="Feature-image" src="https://placehold.it/400x400")
-              p.Feature-paragraph Pupil Open Source Software
+              p.Feature-paragraph Open Source Software and Algorithms
 
 
     //- oss motivation row
@@ -46,7 +46,7 @@ block main
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
-                h1.Feature-title--lg.u-padBottom--1 #{ oss_meta.title1 }
+                h1.Feature-title--lg.u-padBottom--1 Pupil is Open Source
             div.Grid.Grid--1of3.Grid--gutters.u-textCenter
               div.Grid-cell
                 figure.Feature-figure
@@ -60,58 +60,58 @@ block main
                 figure.Feature-figure
                   img(class="Feature-image" src="../media/images/home/icons/service.png")
                 p.Feature-paragraph #{ oss_meta.point3 }
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                p.Feature-paragraph.u-textCenter The entire platform is on #[a(href="https://github.com/pupil-labs") github] and licensed under LGPLv3. Here is a snapshot of the most recent activity.
+            div.Grid-cell.Grid-cell--full
+              div(id="Home-activity")
+                ul(id="Home-activity-list" class="Activity")
+
+
 
 
     //- dev feed row
+    //- div.Site-content-container
+    //-   div.Feature-container-column
+
+    
+    //- newsletter row
+    //- div.Site-gray-bkg
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Development Feed
-              p.Feature-paragraph Take a look at what we are working on now.
-          div.Grid-cell.Grid-cell--full.u-padTop--2
-            div(id="Home-activity")
-              ul(id="Home-activity-list" class="Activity")
-
-    
-    //- newsletter row
+              h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ home_newsletter_meta.title }
+           div.Grid
+              div.Grid-cell.Grid-cell--full
+                p.Feature-paragraph #{ home_newsletter_meta.point1 }
+              div.Grid-cell
+                form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+                  input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
+                  p(class="Form-error--text" id="news_email_error")
+                  input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
+                  label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
+  
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
             div.Grid-cell.Grid-cell--full
               div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 #{ home_newsletter_meta.title }
-             div.Grid
-                div.Grid-cell.Grid-cell--full
-                  p.Feature-paragraph #{ home_newsletter_meta.point1 }
-                div.Grid-cell
-                  form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
-                    input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
-                    p(class="Form-error--text" id="news_email_error")
-                    input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
-                    label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
-    
-
-    div.Site-content-container
-      div.Feature-container-column
-        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full
-            div.Feature
-              h1.Feature-title--lg.u-textCenter.u-padBottom--1 Recent Blog Posts
-          div.Grid-cell.Grid-cell--full.u-padTop--2
-            ul
-            - var articles = env.helpers.getArticles(contents)
-            - var articleLimit = 5
-            each article,i in articles.slice(0,articleLimit)
-              - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
-              li(class="Article-list-item" style=opacity)
-                article
-                  header
-                    h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
-                    p= article.metadata.subtitle
-                    a(href=article.url class="Article-link") Read More 
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Recent Blog Posts
+            div.Grid-cell.Grid-cell--full.u-padTop--2
+              ul
+              - var articles = env.helpers.getArticles(contents)
+              - var articleLimit = 5
+              each article,i in articles.slice(0,articleLimit)
+                - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
+                li(class="Article-list-item" style=opacity)
+                  article
+                    header
+                      h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
+                      p= article.metadata.subtitle
+                      a(href=article.url class="Article-link") Read More 
 
 
 

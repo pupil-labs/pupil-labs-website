@@ -61,7 +61,8 @@ jscoffee = ()->
     )
   .pipe concat "main.js"
   .pipe uglify()
-  js_sideNav()
+  .pipe gulp.dest "contents/js"
+  .pipe livereload();
 
 js = ()->
   js_bkgVideo()
@@ -90,11 +91,11 @@ gulp.task "newPost", ->
     return
 
   postHeader = "---\n
-                title: #{ humanTitle }\n
-                date: #{ date }\n
-                author: Pupil Dev Team\n
-                subtitle: \n
-                ---"
+               title: #{ humanTitle }\n
+               date: #{ date }\n
+               author: Pupil Dev Team\n
+               subtitle: \n
+               ---"
   fs.writeFile postDir+"/index.md", postHeader 
   gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
 

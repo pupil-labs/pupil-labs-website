@@ -18,7 +18,7 @@ block main
     div.Background-img-top.Background-img-cover
       figure(class="Background-img--full-wh" src="../media/images/home/slides/03.jpg" style="background-image: url('../media/images/home/slides/03.jpg');")
       div(style="top:85%;").Site-content-container.Background-img--caption.u-textCenter
-        h1.Background-img--caption-h1 Hardware and software for open source eye tracking and egocentric vision research.
+        h1.Background-img--caption-h1 Platform for eye tracking and egocentric vision research.
         //- h2.Background-img--caption-h2 A platform for eye tracking and egocentric vision research
     //- pupil intro row
     //- div(id="content-top" class="Site-content-container")
@@ -40,8 +40,8 @@ block main
             div.Grid-cell.Grid-cell--full
               div(style="color: white;").Feature
                 h1(style="color: white;").Feature-title--lg.u-padBottom--1 Hardware
-                p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses.
-                p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software.
+                p.Feature-paragraph Pupil headsets are 3D printed frames that you wear like a pair of glasses that connect to your device via USB.
+                p.Feature-paragraph Cameras record your field of view and your eye movements. Pupil Capture software uses the videos to generate gaze and eye tracking data in real-time.
                 p.Feature-paragraph The hardware is designed as a #[strong modular system] that can be configured to support your research and application requirments.
             div(style="color: white;").Grid-cell.Grid-cell--1of3
 
@@ -97,6 +97,23 @@ block main
     div.Grid
       div(class="Background-img--full-wh-grid Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
 
+    //- tech specs and performance
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full
+              div.Feature
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Technical Specifications & Performance
+                p.Feature-paragraph.u-textCenter Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
+                p.Feature-paragraph.u-textCenter Accuracy 0.60 degrees 
+                p.Feature-paragraph.u-textCenter Precision 0.08 degrees
+                p.Feature-paragraph.u-textCenter Latency 5.7 ms (using 120hz eye and high speed world cameras)
+                p.Feature-paragraph.u-textCenter Slippage compensation using 3d eye model
+                p.Feature-paragraph.u-textCenter Latency 5.7 ms (using 120hz eye and high speed world cameras)
+
+
+
 
     //- open source
     div.Site-gray-bkg
@@ -130,19 +147,6 @@ block main
               figure.Feature-figure
                 img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
 
-    //- tech specs and performance
-    div.Site-gray-bkg
-      div.Site-content-container
-        div.Feature-container-column
-          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-            div.Grid-cell.Grid-cell--full
-              div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Technical Specifications & Performance
-                p.Feature-paragraph.u-textCenter Eye tracking performance is determined in equal parts by the hardware and software. We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
-                p.Feature-paragraph.u-textCenter Accuracy 0.60 degrees 
-                p.Feature-paragraph.u-textCenter Precision 0.08 degrees
-                p.Feature-paragraph.u-textCenter Latency 5.7 ms (using 120hz eye and high speed world cameras)
-
 
     //- Modular & Hackable
     div.Site-content-container
@@ -159,19 +163,19 @@ block main
               img(class="Feature-image" src="../media/images/pupil_page/web/dev_explo.jpg")
 
     //- Community
-    div.Site-gray-bkg
-      div(id="content-top" class="Site-content-container")
-        div.Feature-container-column
-          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-            div.Grid-cell.Grid-cell--full
-              div.Feature
-                h1.Feature-title--lg.u-textCenter.u-padBottom--1 Community
-                p.Feature-paragraph.u-textCenter Pupil is driven by an active community. 
-                p.Feature-paragraph.u-textCenter Make a fork of the Pupil Github repository and start developing. 
-                p.Feature-paragraph.u-textCenter Read the docs and contribute to the user guide. 
-                p.Feature-paragraph.u-textCenter Discuss your project and get free support.
+    //- div.Site-gray-bkg
+    //-   div(id="content-top" class="Site-content-container")
+    //-     div.Feature-container-column
+    //-       div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+    //-         div.Grid-cell.Grid-cell--full
+    //-           div.Feature
+    //-             h1.Feature-title--lg.u-textCenter.u-padBottom--1 Community
+    //-             p.Feature-paragraph.u-textCenter Pupil is driven by an active community. 
+    //-             p.Feature-paragraph.u-textCenter Make a fork of the Pupil Github repository and start developing. 
+    //-             p.Feature-paragraph.u-textCenter Read the docs and contribute to the user guide. 
+    //-             p.Feature-paragraph.u-textCenter Discuss your project and get free support.
 
-    //- Commercial Use & Dedicated Suppor
+    //- Commercial Use & Dedicated Support
     div(id="content-top" class="Site-content-container")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
