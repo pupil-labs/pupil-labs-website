@@ -9,10 +9,7 @@ install:
 - npm install
 script:
 - echo 'Building Site'
-- gulp css
-- gulp js
-- gulp build_wintersmith --staging
-- gulp image_min
+- gulp build --staging
 - gulp generate_sitemap
 - echo 'Done building'
 after_success:

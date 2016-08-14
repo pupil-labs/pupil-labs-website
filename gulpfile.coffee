@@ -179,7 +179,11 @@ gulp.task "build_log", ->
   return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
 gulp.task "build", (cb)->
-  runSequence 'build_clean', ['css','js'], 'build_wintersmith', "image_min", cb
+  runSequence 'build_clean',
+               ['css','js'],
+               'build_wintersmith',
+               'image_min', 
+               cb
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
