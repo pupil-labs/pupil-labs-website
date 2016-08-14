@@ -19,6 +19,7 @@ install:
 script:
 - echo 'Building Site'
 - gulp build --staging
+- gulp image_min
 - gulp generate_sitemap
 - echo 'Done building'
 after_success:
