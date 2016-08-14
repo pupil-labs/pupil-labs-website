@@ -109,7 +109,7 @@ gulp.task 'image_min', ->
     trellisQuantisation: false
   }
 
-  return gulp.src('build/media/images/**/*.{jpg}',{base: './'})
+  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
     .pipe(plumber())
     .pipe(image_min(options))
     .pipe(gulp.dest('./'))
@@ -179,7 +179,7 @@ gulp.task "build_log", ->
   return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
 gulp.task "build", (cb)->
-  runSequence 'build_clean', ['css','js'], 'build_wintersmith', cb
+  runSequence 'build_clean', ['css','js'], 'build_wintersmith', "image_min", cb
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
