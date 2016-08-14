@@ -4,6 +4,17 @@ branches:
 language: node_js
 node_js:
 - '4.1'
+os:
+  - linux
+sudo: false
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
 install:
 - npm install wintersmith -g
 - npm install
