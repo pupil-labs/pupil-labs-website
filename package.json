@@ -21,6 +21,8 @@
     "gulp-favicons": "^2.2.6",
     "gulp-imagemin": "^3.0.2",
     "gulp-livereload": "^3.8.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sharp-minimal": "git+https://github.com/pupil-labs/gulp-sharp-minimal.git",
     "gulp-sitemap": "^4.1.1",
     "gulp-stylus": "^2.0.7",
     "gulp-uglify": "^1.4.1",
