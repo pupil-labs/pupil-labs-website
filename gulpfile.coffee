@@ -157,16 +157,18 @@ gulp.task "build_wintersmith", (cb)->
   if opts.dev
     wintersmith.settings.configFile = 'config.json'
     wintersmith.build ->
-      gutil.log "Successfully built wintersmith for local dev."
+      gutil.log "Successfully built wintersmith for --> local dev."
       cb()
   if opts.staging
     wintersmith.settings.configFile = 'config_staging.json'
     wintersmith.build ->
-      gutil.log "Successfully built wintersmith for staging."
+      gutil.log "Successfully built wintersmith for --> staging."
+      cb()
   if opts.production 
     wintersmith.settings.configFile = 'config_production.json'
     wintersmith.build ->
-      gutil.log "Successfully built wintersmith for **production**."
+      gutil.log "Successfully built wintersmith for --> production."
+      cb()
 
 gulp.task "css", ->
   return css()
