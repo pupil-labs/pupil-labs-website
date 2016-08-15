@@ -15,8 +15,8 @@ block main
       figure(class="img-placeholder" data-src="../media/images/home/slides/00.jpg")
         div(class="Background-img--full-wh img-loaded img-small" style="background-image: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAUAAD/4QMbaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlDNUQ2QTcwNUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlDNUQ2QTZGNUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9IkQ3NEIxQzI5QkJFOTMxNTVFRTIzNThCNkE5NzM4QTE5IiBzdFJlZjpkb2N1bWVudElEPSJENzRCMUMyOUJCRTkzMTU1RUUyMzU4QjZBOTczOEExOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEABIODg4QDhUQEBUeFBEUHiMaFRUaIyIZGRoZGSInHiMhISMeJycuMDMwLic+PkFBPj5BQUFBQUFBQUFBQUFBQUEBFBQUFhkWGxcXGxoWGhYaIRodHRohMSEhJCEhMT4tJycnJy0+ODszMzM7OEFBPj5BQUFBQUFBQUFBQUFBQUFBQf/AABEIAB4AKAMBIgACEQEDEQH/xAB4AAADAQEBAAAAAAAAAAAAAAAABAUGAgMBAQEBAQAAAAAAAAAAAAAAAAIBAAMQAAIBAwMCAwUJAAAAAAAAAAECAwARBCExEkEFUSITYaEyFQZxgZGxwUKiIxQRAAICAgEFAAAAAAAAAAAAAAABETEhAmFBURIDE//aAAwDAQACEQMRAD8AjN3dCSWj1O50p3D+oZIEZEjATpemIvp7B4cnk99q7XsmBIvEORY2vcaVzXEgfrxYlNnOh/0Swuol+FteLfZyWpWU7zv6gTiNtrflWozsdExB22Qn9rpKdQ5uduW1qQ+XNHxjWQgMbDQbmk9m7ZfmlRnI24tqAR7aKu5HYcaABmmOp2FqKkm8XJ6R9uy3iHqlr+BJA/CmlxGXt8itII2AZi3gRt1v0rQEydQPdUSxXJyvVLvjNz5WsEQEef4xrb2U9U56G3o7gXliRQdwQseIdZlBLR8hfcClpMTNgPrLKMmK/wDWwu38RfWrEfzKNI1i4zR20c+Q8beXTxoY5By7RgjyN6rR2sG6crffvVa7tMmjfKMnmLnZLDnsuwCkfpRWv82nj76KOBw5s//Z');")
         //- img(class="Background-img--full-wh")
-      div(style="top:55%;").Site-content-container.Background-img--caption.u-textCenter
-        h1(style="color: #ffffff;") Open source eye tracking.
+      div(style="top:55%;").Site-content-container.Background-img-caption-container.u-textCenter
+        h1.Background-img-caption Open source eye tracking.
         //- h2.Background-img--caption-h2 
 
     //- pupil intro row
@@ -28,17 +28,17 @@ block main
             h2 We develop open source software and build accessible hardware for eye tracking.
           div.Grid.Grid--1of3.Grid--gutters
             div.Grid-cell
-              figure.Feature-figure
+              figure.Feature-figure.u-padBottom--1
                 img(class="Feature-image" src="media/images/home/platform/pupil_headset.jpg")
-              h4 Mobile Eye Tracking
+              h4.u-textCenter Mobile Eye Tracking
             div.Grid-cell
-              figure.Feature-figure
+              figure.Feature-figure.u-padBottom--1
                 img(class="Feature-image" src="media/images/home/platform/pupil_vr_ar_integration.jpg")
-              h4 VR and AR Integrations
+              h4.u-textCenter VR and AR Integrations
             div.Grid-cell
-              figure.Feature-figure
+              figure.Feature-figure.u-padBottom--1
                 img(class="Feature-image" src="https://placehold.it/400x400")
-              h4 Open Source Software and Algorithms
+              h4.u-textCenter Open Source Software and Algorithms
 
 
     //- oss motivation row
@@ -70,16 +70,8 @@ block main
               div(id="Home-activity")
                 ul(id="Home-activity-list" class="Activity")
 
-
-
-
-    //- dev feed row
-    //- div.Site-content-container
-    //-   div.Feature-container-column
-
     
     //- newsletter row
-    //- div.Site-gray-bkg
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row

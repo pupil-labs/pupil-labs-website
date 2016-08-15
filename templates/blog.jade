@@ -21,7 +21,7 @@ block main
                 p.Blog-article-date= moment.utc(article.date).format('YYYY MMM DD')      
 
                 if article.metadata.subtitle            
-                  p.Feature-paragraph= article.metadata.subtitle
+                  p= article.metadata.subtitle
                 a(href=article.url) read more
 
             //- a(href=article.url)
