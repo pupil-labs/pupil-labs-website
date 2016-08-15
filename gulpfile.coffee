@@ -25,7 +25,7 @@ favicons = require "gulp-favicons"
 runSequence = require "run-sequence"
 plumber = require 'gulp-plumber'
 image_min = require 'gulp-sharp-minimal'
-size = require 'gulp-size'
+# size = require 'gulp-size'
 
 css = ()->
   gulp.src "assets/stylus/main.styl"
@@ -113,9 +113,7 @@ gulp.task 'image_min', ->
 
   return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
     .pipe(plumber())
-    .pipe(size({'title':'Size before'}))
     .pipe(image_min(options))
-    .pipe(size({'title':'Size after'}))
     .pipe(gulp.dest('./'))
 
 gulp.task "generate_sitemap", ->
