@@ -3,6 +3,11 @@ extends layout
 block append title
   | #{ " - " + page.title}
 
+block page_scripts
+  script(src=contents.js.vendor['Wallop.min.js'].url)
+  script(src=contents.js.vendor['Hammer.min.js'].url)
+
+
 block main
   //- Title block
   div(id="Pupil" class="Site-transform")
