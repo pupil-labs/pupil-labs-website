@@ -104,7 +104,7 @@ gulp.task "newPost", ->
 gulp.task 'image_min', ->
   options = {
     resize: [1440,1440],
-    quality: 60,
+    quality: 80,
     progressive: true,
     compressionLevel: 6,
     sequentialRead: true,
