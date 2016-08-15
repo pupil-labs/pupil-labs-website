@@ -53,9 +53,10 @@ block main
               each member,i in team_meta
                 - var memberContact = (!member.contact ? member.name : "<a href='mailto:"+member.contact+"'>"+member.name+"</a>")
                 div.Grid-cell
-                  img(src="#{ member.img }" style="border-radius:50%;").Feature-image
-                  p.Feature-paragraph!= typogr(memberContact).typogrify()
-                  p.Feature-paragraph= member.role
+                  //- show images when we have them ready
+                  //- img(src="#{ member.img }" style="border-radius:50%;").Feature-image
+                  p!= typogr(memberContact).typogrify()
+                  p= member.role
 
     //- office image 2
     div.Grid

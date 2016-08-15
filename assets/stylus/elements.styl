@@ -7,102 +7,121 @@
 // Base settings for elements
 // - no default margins or padding for html elements 
 a,address,article,aside,audio,body,caption,cite,code,dd,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,img,label,legend,li,nav,ol,p,pre,section,small,span,strong,sup,time,ul,video
-	margin 0
-	padding 0
+  margin 0
+  padding 0
 
-h1 
-	font-size $heading-font-size
-	line-height $heading-font-size * 0.5
+h1
+  // 2.8em 
+  font-size $heading-font-size
+  line-height $heading-font-size * 0.5
+  padding-bottom 1.2em
+  font-weight normal
 
 h2
-	font-size $subhead-font-size
-	line-height $subhead-font-size
-		
+  font-size $heading-font-size * 0.6
+  line-height 1.1em
+  padding-bottom 1.3em
+  font-weight 400
+    
 h3 
-	font-size 1.4em
-	
+  font-size $heading-font-size * 0.5
+  padding-bottom 1.0em
+  font-weight normal
+  
 h4
-	font-size 1.1em
+  font-size $heading-font-size * 0.4
+  padding-bottom 0.9em
+  font-weight normal
+  
+h5
+  font-size $heading-font-size * 0.3
+  padding-bottom 0.9em
+  font-weight normal
 
+  
+p
+  font-size $font-size-base
+  padding-bottom 0.8em
+  
 // Reset the box-sizing
 
 blockquote
-	font-size $font-size-base - 0.1em
-	padding-bottom 1.4em
+  font-size $font-size-base - 0.1em
+  padding-bottom 1.4em
 
 *
-	box-sizing border-box
+  box-sizing border-box
 *:before,
 *:after
-	box-sizing border-box
-	
+  box-sizing border-box
+  
 
 html
-	height 100%
-	-webkit-tap-highlight-color rgba(0, 0, 0, 0)
-	-webkit-font-smoothing antialiased
-	-moz-osx-font-smoothing grayscale
-	
+  height 100%
+  -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  
 body
-	font-size 100%
-	font-family $font-family-sans-serif-alt
-	font-size $font-size-base
-	line-height $line-height-base
-	color $text-color
-	text-rendering optimizeLegibility
-	font-feature-settings "liga", "kern"
+  font-size 100%
+  font-family $font-family-sans-serif-alt
+  font-size $font-size-base
+  line-height $line-height-base
+  color $text-color
+  text-rendering optimizeLegibility
+  font-feature-settings "liga", "kern"
 
 // Links
 input 
-	font-size .75em
-	font-family $font-family-sans-serif-alt
-	
+  font-size .75em
+  font-family $font-family-sans-serif-alt
+  
 textarea
-	font-size .75em
-	font-family $font-family-sans-serif-alt
-	
+  font-size .75em
+  font-family $font-family-sans-serif-alt
+  
 
 a
-	color $link-color
-	text-decoration $link-text-decoration
-	transition color .4s ease
-	cursor auto
-	&:focus
-		tab-focus()
+  color $link-color
+  text-decoration $link-text-decoration
+  transition color .4s ease
+  cursor auto
+  &:focus
+    tab-focus()
 
 
-.no-touch a	
-	&:hover
-		color $link-hover-color
-		text-decoration $link-hover-decoration
+.no-touch a 
+  &:hover
+    color $link-hover-color
+    text-decoration $link-hover-decoration
 
-		
+    
 // Images
 
 .img-rounded
-	border-radius 5px
-	
+  border-radius 5px
+  
 // Circular image
 .img-circle
-	vertical-align middle
-	border-radius 50%
-	
+  vertical-align middle
+  border-radius 50%
+  
 // table
 table
-	display block
-	overflow auto 
-	text-overflow ellipsis
+  display block
+  overflow auto 
+  text-overflow ellipsis
 
-	@media $break-md 
-		font-size .85em	
+  @media $break-md 
+    font-size .85em 
 // lists
 ul
-	list-style-type none
+  list-style-type none
 
 // Horizontal rules
 hr 
-	
-	
+  
+  
 // iOS "clickable elements" fix for role="button"
 //
 // Fixes "clickability" issue (and more generally, the firing of events such as focus as well)
@@ -111,4 +130,4 @@ hr
 // Upstream patch for normalize.css submitted: https://github.com/necolas/normalize.css/pull/379 - remove this fix once that is merged
 
 [role="button"]
-	cursor pointer
+  cursor pointer

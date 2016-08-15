@@ -6,6 +6,7 @@ headerOpacityHome = ()->
   last_scroll_top = 0
 
   # gets called on document load
+  console.log $(window).width()
   if $(window).width() < 768
     $("#Header").removeClass("Header-bkg-transparent").addClass("Header-bkg-opaque")
   else
@@ -33,6 +34,9 @@ headerOpacityHome = ()->
       return
 
   has_scrolled = ()=>
+    if $(window).width() < 768
+      return
+      
     st = $(this).scrollTop()
     bkg_img_height = $(".Background-img-top").height()
     offset = 20
