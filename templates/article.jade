@@ -8,10 +8,10 @@ block main
     div.Site-content-container
       div.Feature-container-column
 
-        article.Grid.Article
+        article.Grid
           header.Grid-cell.Grid-cell--full.Blog-article-header.u-textCenter
             h1.Blog-article-title= page.title
-            h4= moment.utc(page.date).format('YYYY MMM DD')
+            h4.small= moment.utc(page.date).format('YYYY MMM DD')
           section.Grid-cell.Grid-cell--full.content!= typogr(page.html).typogrify()
     a(href="/blog")
       div.Blog-nav.u-textCenter

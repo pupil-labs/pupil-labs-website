@@ -246,11 +246,11 @@
 	> .Grid-cell
 		padding 2em 2em 2em 2em
 		
-	> .Aligner-item
-		padding 2em 4em 4em 4em
+	// > .Aligner-item
+	// 	padding 2em 4em 4em 4em
 		
-		@media $break-767
-			padding 2em 2.4em 4em 2.4em
+	// 	@media $break-767
+	// 		padding 2em 0em 2em 0em
 			
 	> .Aligner-item--1of2
 		padding 2em 3em 2em 3em
@@ -265,7 +265,7 @@
 	max-width 50%
 	padding 1em 0em 0em 1em
 
-	@media $break-md
+	@media $break-767
 		flex 0 0 100%
 		max-width 100%
 
@@ -275,7 +275,7 @@
 	max-width 33.3333%
 	padding 1em 0em 0em 1em
 
-	@media $break-md
+	@media $break-767
 		flex 0 0 100%
 		max-width 100%
 
@@ -285,9 +285,10 @@
 	max-width 50%
 	padding 4em 1.4em 2em 1.4em
 
-	@media $break-md
+	@media $break-767
 		flex 0 0 100%
 		max-width 100%
+		padding 4em 0em 2em 0em
 		
 .Aligner-item--sm
 	display flex
@@ -295,10 +296,11 @@
 	max-width 33.33333%
 	padding 0.5em 1.4em 1em 1.4em
 
-	@media $break-md
+	@media $break-767
 		padding 0em 
 		flex 0 0 100%
 		max-width 100%
+		padding 0.5em 0.5em 1em 0.5em
 		
 .Aligner-item--column
 	width 100%
