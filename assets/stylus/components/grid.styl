@@ -2,317 +2,326 @@
 // Grid 
 
 .Grid
-	display flex
-	flex-wrap wrap
-	list-style none
-	margin 0
-	padding 0
+  display flex
+  flex-wrap wrap
+  list-style none
+  margin 0
+  // padding 0
 
 
 .Grid-noWrap
-	display flex
-	flex-wrap nowrap
-	list-style none
-	margin 0
-	padding 0	
-	overflow hidden
-	
+  display flex
+  flex-wrap nowrap
+  list-style none
+  margin 0
+  padding 0 
+  overflow hidden
+  
 
 .Grid-noWrap--breakSmall
-	@media $break-767
-		flex-wrap wrap
-	
+  @media $break-767
+    flex-wrap wrap
+  
 .Grid-cell
-	flex 1 0 auto
-	
+  flex 1 0 auto
+  
 .Grid-cell--noFlex
-	flex none
+  flex none
 
 .Grid-cell--auto
-	flex 0 0 auto
-	
+  flex 0 0 auto
+  
 .Grid--flexCells 
-	> .Grid-cell
-		display flex
-	
+  > .Grid-cell
+    display flex
+  
 .Grid--top
-	align-items flex-start
-	
+  align-items flex-start
+  
 .Grid--bottom
-	align-items flex-end
-	
+  align-items flex-end
+  
 .Grid--center
-	align-items center
+  align-items center
 
 .Grid--baseline
-	align-items baseline
-	
+  align-items baseline
+  
 .Grid--stretch
-	align-items stretch
-	
+  align-items stretch
+  
 .Grid--justifyCenter
-	justify-content center
-	
+  justify-content center
+  
 .Grid--justifySpaceAround
-	justify-content space-around
-	
+  justify-content space-around
+  
 .Grid--justifySpaceBetween
-	justify-content space-between
+  justify-content space-between
 
 .Grid--alignContentCenter
-	align-content center
+  align-content center
 
 .Grid-cell--top
-	align-self flex-start
-	
+  align-self flex-start
+  
 .Grid-cell--bottom
-	align-self flex-end
-	
+  align-self flex-end
+  
 .Grid-cell--center
-	align-self center
+  align-self center
 
 .Grid-column
-	flex-direction column
+  flex-direction column
 
 .Grid-row
-	flex-direction row
-	
+  flex-direction row
+  
 .Grid-cell--autoSize
-	flex none
+  flex none
 
 .Grid-cell--1of2
-	flex 0 0 50%
-	
-	@media $break-md-lg
-		flex 0 0 100%
-	
+  flex 0 0 50%
+  
+  @media $break-767
+    flex 0 0 100%
+  
 .Grid-cell--1of3
-	flex 0 0 (1/3)*100%	
-	@media $break-767
-		flex 0 0 100%
+  flex 0 0 (1/3)*100% 
+  @media $break-767
+    flex 0 0 100%
+
+.Grid-cell--1of3-no-break
+  flex 0 0 (1/3)*100% 
 
 .Grid-cell--1of6
-	flex 0 0 (1/6)*100%	
+  flex 0 0 (1/6)*100% 
 
 .Grid-cell--2of3
-	flex 0 0 (2/3)*100%
-	@media $break-767
-		flex 0 0 100%
-	
+  flex 0 0 (2/3)*100%
+  @media $break-767
+    flex 0 0 100%
+  
 .Grid-cell--main
-	flex 1 0
+  flex 1 0
 
 .Grid-cell--sidebar
-	flex 1 0 20%
-	max-width 20%
-	
-	@media $break-767
-		flex 1 0 5%
-		max-width 5%
+  flex 1 0 20%
+  max-width 20%
+  
+  @media $break-767
+    flex 1 0 5%
+    max-width 5%
 
 .Grid-cell--sidebar-sm
-	flex 0 0 8%
-	max-width 8%
-	
-	@media $break-767
-		flex 0 0 5%
-		max-width 5%
+  flex 0 0 8%
+  max-width 8%
+  
+  @media $break-767
+    flex 0 0 5%
+    max-width 5%
 
 
 .Grid-cell--1of2:first-child .Button-radio--lg
-	border-left 0
-	
+  border-left 0
+  
 .Grid-cell--cartFormula
-	@media $break-md
-		flex 0 0 100%
-		width 100%
+  @media $break-767
+    flex 0 0 100%
+    width 100%
 
 .Grid--cartFormula-break
-	align-items center
+  align-items center
 
-	@media $break-md
-		flex-direction column
-		align-items stretch
-		
+  @media $break-767
+    flex-direction column
+    align-items stretch
+    
 
 .Grid-cell--cartSum
-	@media $break-md
-		border-top 1px solid gray
-		margin-top .5em
-		padding-bottom .5em
-		flex 0 0 100%
-		width 100%
+  @media $break-767
+    border-top 1px solid gray
+    margin-top .5em
+    padding-bottom .5em
+    flex 0 0 100%
+    width 100%
 
 .Grid--rowReverse
-	flex-direction row-reverse
+  flex-direction row-reverse
 
 .Grid-cell--fillHeight
-	display flex
+  display flex
 
 .Grid--fit 
-	> .Grid-cell
-		flex 1
+  > .Grid-cell
+    flex 1
 
 .Grid-cell--full
-	flex 0 0 100%
-	max-width 100%
+  flex 0 0 100%
+  max-width 100%
 
 
 .Grid--full
-	> .Grid-cell
-		flex 0 0 100%
-		max-width 100%
+  > .Grid-cell
+    flex 0 0 100%
+    max-width 100%
 
-		
+    
 .Grid--1of2
-	> .Grid-cell
-		flex 0 0 50%
-		// firefox fix below
-		max-width 50%
-			
-		@media $break-767
-			flex 0 0 100%
-			max-width 100%
+  > .Grid-cell
+    flex 0 0 50%
+    // firefox fix below
+    max-width 50%
+      
+    @media $break-767
+      flex 0 0 100%
+      max-width 100%
 
 .Grid--1of2--breakConfig
-	> .Grid-cell
-		flex 0 0 50%
-		// firefox fix below
-		max-width 50%
-			
-		@media $break-767
-			flex 0 0 100%
-			max-width 100%
-			
-	//NAT_CLASS		
+  > .Grid-cell
+    flex 0 0 50%
+    // firefox fix below
+    max-width 50%
+      
+    @media $break-767
+      flex 0 0 100%
+      max-width 100%
+      
+  //NAT_CLASS   
 .Grid-pad--1of2
-	> .Grid-cell
-		flex 0 0 50%
-		// firefox fix below
-		max-width 50%
-		padding 0em 2em 0em 0em
-			
-		@media $break-767
-			flex 0 0 100%
-			max-width 100%
+  > .Grid-cell
+    flex 0 0 50%
+    // firefox fix below
+    max-width 50%
+    padding 0em 2em 0em 0em
+      
+    @media $break-767
+      flex 0 0 100%
+      max-width 100%
 
 .Grid--1of3
-	> .Grid-cell
-		flex 0 0 33.3333%
-		// firefox fix below
-		max-width 33.3333%
+  > .Grid-cell
+    flex 0 0 33.3333%
+    // firefox fix below
+    max-width 33.3333%
 
-		
-		@media $break-767
-			flex 0 0 100%
-			max-width 100%
+    
+    @media $break-767
+      flex 0 0 100%
+      max-width 100%
 
-		
+    
 .Grid--1of4
-	> .Grid-cell
-		flex 0 0 25%
-		max-width 25%
-		
-		@media $break-767
-			flex 0 0 100%
-			max-width 100%
+  > .Grid-cell
+    flex 0 0 25%
+    max-width 25%
+    
+    @media $break-767
+      flex 0 0 100%
+      max-width 100%
 
 .Grid-cell--header
-	font-weight 700
-	
-	@media $break-767
-		font-size .8em
+  font-weight 700
+  
+  @media $break-767
+    font-size .8em
 
 .Grid-cell--borderBottom
-	border-bottom 1px solid black
-	
+  border-bottom 1px solid black
+  
 .Grid--gutters
-	margin -1em 0 0em -1em
-	// padding 2em 0em
+  margin -1em 0 0em -1em
+  // padding 2em 0em
 
 .Grid--gutters-noMargin
-	margin 0 1em
-	
+  margin 0 1em
+  
 .Grid--gutters
 .Grid--gutters-noMargin
-	> .Grid-cell
-		padding 1em 0 0 1em
-		
-		@media $break-767
-			flex 0 0 100%
-			max-width 100%
-		
+  > .Grid-cell
+    padding 1em 0 0 1em
+    
+    @media $break-767
+      flex 0 0 100%
+      max-width 100%
+
 .Grid--gutters-lg
-	> .Grid-cell
-		padding 2em 2em 2em 2em
-		
-	> .Aligner-item
-		padding 2em 4em 4em 4em
-		
-		@media $break-767
-			padding 2em 2.4em 4em 2.4em
-			
-	> .Aligner-item--1of2
-		padding 2em 3em 2em 3em
+  > .Grid-cell
+    padding 2em 2em 2em 2em
+    
+  // > .Aligner-item
+  //  padding 2em 4em 4em 4em
+    
+  //  @media $break-767
+  //    padding 2em 0em 2em 0em
+      
+  > .Aligner-item--1of2
+    padding 2em 3em 2em 3em
 
 .Aligner
-	display flex
-	flex-wrap wrap
+  display flex
+  flex-wrap wrap
 
 .Aligner-item--1of2
-	display flex
-	flex 0 0 50%
-	max-width 50%
-	padding 1em 0em 0em 1em
+  display flex
+  flex 0 0 50%
+  max-width 50%
+  padding 1em 0em 0em 1em
 
-	@media $break-md
-		flex 0 0 100%
-		max-width 100%
+  @media $break-767
+    flex 0 0 100%
+    max-width 100%
 
 .Aligner-item--1of3
-	display flex
-	flex 0 0 33.3333%
-	max-width 33.3333%
-	padding 1em 0em 0em 1em
+  display flex
+  flex 0 0 33.3333%
+  max-width 33.3333%
+  padding 1em 0em 0em 1em
 
-	@media $break-md
-		flex 0 0 100%
-		max-width 100%
+  @media $break-767
+    flex 0 0 100%
+    max-width 100%
 
 .Aligner-item
-	display flex
-	flex 0 0 50%
-	max-width 50%
-	padding 4em 1.4em 2em 1.4em
+  display flex
+  flex 0 0 50%
+  max-width 50%
+  padding 4em 1.4em 2em 1.4em
 
-	@media $break-md
-		flex 0 0 100%
-		max-width 100%
-		
+  @media $break-767
+    flex 0 0 100%
+    max-width 100%
+    padding 4em 0em 2em 0em
+    
 .Aligner-item--sm
-	display flex
-	flex 0 0 33.33333%
-	max-width 33.33333%
-	padding 0.5em 1.4em 1em 1.4em
+  display flex
+  flex 0 0 33.33333%
+  max-width 33.33333%
+  padding 0.5em 1.4em 1em 1.4em
 
-	@media $break-md
-		padding 0em 
-		flex 0 0 100%
-		max-width 100%
-		
+  @media $break-767
+    padding 0em 
+    flex 0 0 100%
+    max-width 100%
+    padding 0.5em 0.5em 1em 0.5em
+    
 .Aligner-item--column
-	width 100%
-	display flex
-	flex-direction column
-	
+  width 100%
+  display flex
+  flex-direction column
+
+.Aligner-fill-column
+  // display flex
+  flex-grow 1
+  
 .Aligner-item--stretchHeight
-	flex-grow 1
-	flex-shrink 0
+  flex-grow 1
+  flex-shrink 0
 
 .Aligner-item--top
-	display flex
-	align-self flex-start
+  display flex
+  align-self flex-start
 
 .Aligner-item--bottom
-	display flex
-	align-self flex-end
+  display flex
+  align-self flex-end

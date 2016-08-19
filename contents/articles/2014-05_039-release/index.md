@@ -3,6 +3,7 @@ title: Pupil Capture & Pupil Player - Joint Release v0.3.9
 author: Pupil Dev Team
 date: 2014-05-21
 subtitle: We are pleased to announce another release of Pupil Player and Pupil Capture software...
+featured_img: "../../../../media/images/blog/v0.3.9_release_tag.png"
 ---
 
 We are pleased to announce another release of **Pupil Player** and **Pupil Capture** software. We usually aim to push new features every month, but we had been working on our [Technical Report](http://arxiv.org/abs/1405.0006 "Pervasive Eye Tracking and Mobile Gaze-based Interaction") and improved Pupil Pro Headsets -- available soon! Therefore we skipped one release cycle. Here's the list of new features and fixes:

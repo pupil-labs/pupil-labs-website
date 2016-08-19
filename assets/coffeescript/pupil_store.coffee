@@ -1,5 +1,3 @@
-#import "local_storage.coffee"
-#import "products.coffee"
 $ = jQuery
 
 class PupilStore

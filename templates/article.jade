@@ -5,13 +5,14 @@ block append title
 
 block main
   div(id="Article")
-    - var titleData = {'title': page.title,'s1': moment.utc(page.date).format('YYYY MMM DD')}
-    include includes/title 
-    article.Grid.Article
-      div.Grid-cell--sidebar
-      div.Grid-cell--main
-        section.content!= typogr(page.html).typogrify()
-      div.Grid-cell--sidebar
+    div.Site-content-container
+      div.Feature-container-column
+
+        article.Grid
+          header.Grid-cell.Grid-cell--full.Blog-article-header.u-textCenter
+            h1.Blog-article-title= page.title
+            h4.small= moment.utc(page.date).format('YYYY MMM DD')
+          section.Grid-cell.Grid-cell--full.content!= typogr(page.html).typogrify()
     a(href="/blog")
       div.Blog-nav.u-textCenter
         p.Blog-nav-link back to blog index

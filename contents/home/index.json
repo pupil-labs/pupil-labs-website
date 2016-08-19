@@ -1,4 +1,6 @@
 {
   "template": "home.jade",
-  "filename": "index.html"
+  "title": "home",
+  "filename": "index.html",
+  "nav": "nav-home"
 }

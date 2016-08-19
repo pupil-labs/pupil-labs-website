@@ -18,10 +18,10 @@ block main
               div.Grid-cell.Blog-article-intro
                 a(href=article.url)
                   h2.Blog-article-title= article.title
-                p.Blog-article-date= moment.utc(article.date).format('YYYY MMM DD')      
+                p.small= moment.utc(article.date).format('YYYY MMM DD')      
 
                 if article.metadata.subtitle            
-                  p.Feature-paragraph= article.metadata.subtitle
+                  p= article.metadata.subtitle
                 a(href=article.url) read more
 
             //- a(href=article.url)

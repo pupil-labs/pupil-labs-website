@@ -1,4 +1,5 @@
 {
   "template": "cart.jade",
-  "title": "Cart"
+  "title": "Cart",
+  "nav": "nav-cart"
 }

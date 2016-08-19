@@ -1,4 +1,5 @@
 {
   "template": "vr-ar.jade",
-  "title": "VR AR"
+  "title": "VR AR",
+  "nav": "nav-vrar"
 }

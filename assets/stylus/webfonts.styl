@@ -1,6 +1,16 @@
-@import url('//fonts.googleapis.com/css?family=Quicksand:400,700')
-@import url('//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400')
-@import url('//fonts.googleapis.com/css?family=Roboto')
+font-url(file)
+  return '../media/fonts/' + file
+
+webfont(family, file, weight = 'normal')
+  @font-face
+    font-family family
+    src url(font-url(file + '.woff')) format('woff') 
+    font-weight weight
+    font-style normal
+    font-stretch normal
+
 @import url('//fonts.googleapis.com/css?family=Space+Mono')
-@import url('//fonts.googleapis.com/css?family=Montserrat')
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons')
+webfont("Regular", "Regular-Semibold", "normal")
+webfont("AtlasGroteskRegular", "AtlasGrotesk-Regular-Web", "normal")
+

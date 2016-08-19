@@ -1,4 +1,5 @@
 {
   "template": "about.jade",
-  "title": "About & Imprint"
+  "title": "About",
+  "nav": "nav-about"
 }

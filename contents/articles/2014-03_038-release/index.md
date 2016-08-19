@@ -3,6 +3,7 @@ title: Pupil Capture & Pupil Player - Joint Release v0.3.8
 author: Pupil Dev Team
 date: 2014-03-25
 subtitle: We are happy to announce the release of new bundles for Pupil Capture & Pupil Player (v0.3.8). Bundles contain all the work that has been done in the last month. We have been working on many small but hopefully useful improvements...
+featured_img: "../../../../media/images/blog/v0.3.8_release_tag.png"
 ---
 
 We are happy to announce the release of new bundles for Pupil Capture & Pupil Player (v0.3.8). Bundles contain all the work that has been done in the last month. We have been working on many small but hopefully useful improvements.
