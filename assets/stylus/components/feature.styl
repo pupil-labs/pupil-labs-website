@@ -169,11 +169,8 @@
   background-repeat no-repeat  
   background-attachment fixed // set to scroll so content doesn't scroll over top
   @media $break-767
-    height 100vh
-  //   padding 0
-  //   padding-bottom 75%
-  //   height 0
-  //   background-position-y top
+    // don't use vh on mobile due to hiding navbar it make the site jumpy.
+    height 480px
 
 .Background-img-cover
   background-size cover
