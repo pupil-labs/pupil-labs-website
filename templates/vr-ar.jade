@@ -6,26 +6,31 @@ block append title
 block page_scripts
   script(src=contents.js.vendor['Wallop.min.js'].url)
   script(src=contents.js.vendor['Hammer.min.js'].url)
+  script(src=contents.js['bideo_ilib_es6.js'].url)
 
 block main
-  //- Title block
-  div(id="VR-AR" class="Site-transform")
-    - var page_data = contents['vr-ar']['index.json']
-    - var page_meta = page_data.metadata
-    - var vr_ar_slides_data = contents['vr-ar']['slides_vr.json']
-    - var vr_ar_slides_meta = vr_ar_slides_data.metadata
+    //- Title block
+    //-div(id="VR-AR" class="Site-transform")
+    //- var page_data = contents['vr-ar']['index.json']
+    //- var page_meta = page_data.metadata
+    //- var vr_ar_slides_data = contents['vr-ar']['slides_vr.json']
+    //- var vr_ar_slides_meta = vr_ar_slides_data.metadata
     
     //- slider 
     //- TODO - add bkg color class (not inline)
     //- TODO - pull slider images from json file and run in for loop
-    - var slider_data = vr_ar_slides_meta
-    - var slider_inline_style = "background-color: gray;"
-    - var slider_id = "VR-AR-slider"
-    - var slider_show_controls = false;
-    - var slider_show_pagination = false;
-    - var slider_data_attributes = {'data-autoplay':'true'}
+    //- var slider_data = vr_ar_slides_meta
+    //- var slider_inline_style = "background-color: gray;"
+    //- var slider_id = "VR-AR-slider"
+    //- var slider_show_controls = false;
+    //- var slider_show_pagination = false;
+    //- var slider_data_attributes = {'data-autoplay':'true'}
 
-    include  includes/slider.jade
+    //-include  includes/slider.jade
+
+    div(id="Oculus-addon-cup-video-container")
+      video(id="background_video" class="Background-video" loop muted)
+      div(id="video_cover" class="Background-img--full-w-scroll")
 
       //- intro
     div.Site-content-container
