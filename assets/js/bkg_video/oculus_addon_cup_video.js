@@ -1,6 +1,6 @@
 (()=>{
   let options = {
-    videoEl: document.querySelector('#background_video'),
+    videoEl: document.querySelector('#background-video'),
     container: document.querySelector('#Oculus-addon-cup-video-container'),
     resize: true,
     autoplay: true,

@@ -49,7 +49,7 @@ js_sideNav = ()->
 js_bkgVideo = ()->
   gulp.src "assets/js/bkg_video/*.js"
     .pipe babel(presets: ['es2015'])
-    .pipe concat "pupil_video.js"
+    .pipe concat "bkg_video.js"
     .pipe uglify()
     .pipe gulp.dest "contents/js"
     .pipe livereload();
