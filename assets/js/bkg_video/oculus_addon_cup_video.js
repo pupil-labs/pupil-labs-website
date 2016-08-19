@@ -1,7 +1,7 @@
 (()=>{
   let options = {
-    videoEl: document.querySelector('#background_video'),
-    container: document.querySelector('#Assembly-video-container'),
+    videoEl: document.querySelector('#background-video'),
+    container: document.querySelector('#Oculus-addon-cup-video-container'),
     resize: true,
     autoplay: true,
     isMobile: window.matchMedia('(max-width: 768px)').matches,
@@ -9,7 +9,7 @@
     pauseButton: document.querySelector('#pause'),
     src: [
       {
-        src: '../media/videos/assembly.mp4',
+        src: '../media/videos/oculus_addon_cup.mp4',
         type: 'video/mp4'
       }
       // {

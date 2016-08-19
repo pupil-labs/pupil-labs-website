@@ -4,30 +4,16 @@ block append title
   | #{ " - " + page.title}
 
 block page_scripts
-  script(src=contents.js.vendor['Wallop.min.js'].url)
-  script(src=contents.js.vendor['Hammer.min.js'].url)
+  script(src=contents.js['bkg_video.js'].url)
 
 block main
-  //- Title block
   div(id="VR-AR" class="Site-transform")
-    - var page_data = contents['vr-ar']['index.json']
-    - var page_meta = page_data.metadata
-    - var vr_ar_slides_data = contents['vr-ar']['slides_vr.json']
-    - var vr_ar_slides_meta = vr_ar_slides_data.metadata
-    
-    //- slider 
-    //- TODO - add bkg color class (not inline)
-    //- TODO - pull slider images from json file and run in for loop
-    - var slider_data = vr_ar_slides_meta
-    - var slider_inline_style = "background-color: gray;"
-    - var slider_id = "VR-AR-slider"
-    - var slider_show_controls = false;
-    - var slider_show_pagination = false;
-    - var slider_data_attributes = {'data-autoplay':'true'}
 
-    include  includes/slider.jade
+    div(id="Oculus-addon-cup-video-container" class="Background-video-container")
+      video(id="background-video" class="Background-video" loop muted)
+      div(id="video_cover" class="Background-img--full-w-scroll")
 
-      //- intro
+    //- intro
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
@@ -48,7 +34,7 @@ block main
             div.Grid-cell.Grid-cell--full
               p.Feature-paragraph Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs. Many developers have already thought of, or implemented eye tracking software HMDs. Instead re-inventing the wheels, we have formed a community to share knowledge and tools.
 
-      //- additional products
+    //- additional products
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
@@ -59,17 +45,17 @@ block main
               div.Grid-cell
                 div.Feature
                 figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/additional_products/web/addon_oculus_dk2.png")
+                  img(class="Feature-image" src="../media/images/store_vr_ar/oculusdk2m.png")
                 p.Feature-paragraph 120hz monocular eye tracking add-on for Oculus DK2. Includes one custom lens cup with IR mirror. IR LEDs. 1 x 120 Hz eye camera, and USB cables.
               div.Grid-cell
                 div.Feature
                 figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
+                  img(class="Feature-image" src="../media/images/store_vr_ar/addon_epson_bt200a.png")
                 p.Feature-paragraph Augmented Reality
               div.Grid-cell
                 div.Feature
                 figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
+                  img(class="Feature-image" src="../media/images/store_vr_ar/addon_epson_bt200a.png")
                 p.Feature-paragraph Mixed Reality
 
     //- full width background image
@@ -125,7 +111,3 @@ block main
                   figure.Feature-figure
                     img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
                   p.Feature-paragraph Mailing List
-
-
-      
-
