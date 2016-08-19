@@ -1,8 +1,7 @@
 {
-  "Products": {"Pupil Headset": "/pupil",
-                "Occulus Rift DK2 Add-on": "/store",
-                "Epson BT-200 Add-on": "/store"
-                },
+  "Products": {"Pupil - Mobile Eye Tracking": "/pupil",
+                "VR/AR - Eye Tracking Add-ons": "/vr-ar"
+              },
   "Social": {"Github":"https://github.com/pupil-labs",
             "Youtube":"https://youtube.com/c/PupilLabs",
             "Twitter":"https://twitter.com/pupil_labs"
@@ -12,6 +11,5 @@
                       "address2":"Gustav-Müller-Str. 7",
                       "address3":"10829, Berlin, Germany"
                     },
-  "Terms & Info": {"Terms of Sale": "/tos",
-                    "Privacy Policy": "/privacy"}
+  "Terms & Info": {"Terms of Sale": "/tos"}
 }
