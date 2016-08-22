@@ -118,30 +118,6 @@
   font-weight $heading-font-weight
 
         
-.Feature-subtitle
-  // padding .5em 1em
-  // color darken(#8A8A8A, 20%)
-  font-size $subtitle-font-size
-  font-weight $subhead-font-weight
-  text-align justify
-  text-justify inter-word
-  
-  @media $break-lg
-      font-size 1.15em
-      
-  > p
-    padding-bottom 1em
-
-.Feature-subtitle--lg
-  padding .2em 1em
-  // color darken(#8A8A8A, 20%)
-  font-size $subtitle-font-size
-  font-weight $subhead-font-weight
-
-  
-  @media $break-lg
-      font-size 1.4em
-        
 .Feature-image--configWorld
   position absolute
   width 59%
@@ -170,7 +146,7 @@
   background-attachment fixed // set to scroll so content doesn't scroll over top
   @media $break-767
     // don't use vh on mobile due to hiding navbar it make the site jumpy.
-    height 480px
+    height 400px
 
 .Background-img-cover
   background-size cover
@@ -199,7 +175,7 @@
 
 .img-loaded
   opacity 1
-  transition opacity 5s linear
+  transition opacity 0.4s linear
 
 .img-small
   // margin 0px
@@ -261,12 +237,15 @@
   overflow hidden
   margin 0
   padding 0
+  background-color #676668
+  
   
 .Background-video
   height 100%
   width 100%
-  video
-    object-fit cover !important
+  object-fit contain
+  // video
+  //   object-fit cover !important
       
 .Background-img-caption-container
   transform translateY(-50%)
@@ -296,11 +275,6 @@
 .Feature-container--activityHome
   background rgba(0,0,0,0.1)
   
-.Feature-paragraph
-  font-size $paragraph-font-size
-  font-weight $paragraph-font-weight
-  padding-bottom 1em
-
 .Feature-container-column
   display flex
   flex-direction column

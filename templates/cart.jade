@@ -12,14 +12,17 @@ block main
   div(id="Cart")
     //- Title block
     //- - var page_data = contents.cart['index.json']
+   
+    div(id="Cart-empty").Background-img-top.Background-img-cover  
+      div(style="top:40%").Site-content-container.Background-img-caption-container.u-textCenter
+        h1 Your cart is empty...
+        h3 Go to the #[a(href="/store" title="store") store] to add items.
+
 
     //- |---------Item---------|---Quantity---|---Price---|---Remove---|
     //- | Pupil description    |   ##  | +/-  |   xx EUR  |      X     |
     //-            3/5                 1/5          1/5         1/5
-    div(class="Banner-container Banner--gradientBkg" id="Cart-empty")
-      div.Banner-item.u-textCenter
-        h1.Banner-title Your cart is empty...
-        h2.Banner-subtitle Go to the #[a(href="/store") store] to add items.  
+
     div.Cart-container
       div.Cart-table-container
         div(class="Grid" id="Cart-table")

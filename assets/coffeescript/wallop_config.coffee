@@ -60,6 +60,6 @@ loadWallopSlider = ()->
     autoplay(500)
 
 $(document).ready ->
-  if $("#Pupil").length > 0 or $("#VR-AR").length > 0
+  if $("#Pupil").length > 0
     loadWallopSlider()
 

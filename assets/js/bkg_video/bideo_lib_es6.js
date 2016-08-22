@@ -19,7 +19,6 @@ class Bideo {
     this._canPlay = this._canPlay.bind(this);
 
     this._addEventListeners();
-    console.log("ran constructor...");
   }
 
   _addEventListeners () {
@@ -36,7 +35,7 @@ class Bideo {
 
     for (let sObj of this.src) {
       for (let k in sObj){
-        console.log(k +" - "+sObj[k]);
+        // console.log(k +" - "+sObj[k]);
         source.setAttribute(k, sObj[k]);    
       }
     }
@@ -45,11 +44,11 @@ class Bideo {
   }
 
   _canPlay () {
-    console.log("called canPlay");
+    // console.log("called canPlay");
     if (this.isMobile === false){
       this.onLoad();
       if(this.autoplay === true){
-        console.log(this.videoEl);
+        // console.log(this.videoEl);
         this.videoEl.play();
       }
     }
@@ -57,9 +56,12 @@ class Bideo {
 
 
   _resize () {
-    console.log("called resize");
-    // if ('object-fit' in document.body.style) return;
-
+    if ('object-fit' in document.body.style) {
+      return;
+    }
+    // everything below this line is a fallback
+    // for browsers that do not support object-fit
+    // console.log("object-fit not supported");
     let w = this.videoEl.videoWidth;
     let h = this.videoEl.videoHeight;
     let videoRatio = (w/h).toFixed(4);
