@@ -633,8 +633,8 @@ class PupilStore
       data = @_getOrderPermalink()
       url = window.location.origin + "/cart/?" + $.param(data)
       link = "<a href='#{url}'>permalink</a>"
-      html = "<h2 class='Banner-subtitle'>You can always revisit your order with this #{link}.</h2>"
-      $(".Banner-item.u-textCenter").append(html)
+      html = "<h3>You can always revisit your order with this #{link}.</h3>"
+      $(".Site-content-container.Background-img-caption-container.u-textCenter").append(html)
       # very important - clear LocalStorage after setting the link
       LocalStorage.clear()  
       @eventUpdateCartNavCounter()

@@ -9,5 +9,10 @@ block append title
 
 block main
   div(id="Checkout")
-    - var bannerData = { "title": "Success", "s1": "Your payment was submitted.", "s2": "We are now reviwing your payment.", "s3": "We will send you an email with invoice as confirmation and begin fulfilling your order."}
-    include includes/banner
+
+  div.Background-img-top.Background-img-cover  
+    div(style="top:40%").Site-content-container.Background-img-caption-container.u-textCenter
+      h1 Success
+      h3 Your payment was submitted.
+      h3 We are now reviewing your payment.
+      h3 We will send you an email with invoice as confirmation, and begin fulfilling your order.
