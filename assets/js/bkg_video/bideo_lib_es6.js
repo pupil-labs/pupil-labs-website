@@ -44,7 +44,7 @@ class Bideo {
   }
 
   _canPlay () {
-    console.log("called canPlay");
+    // console.log("called canPlay");
     if (this.isMobile === false){
       this.onLoad();
       if(this.autoplay === true){
@@ -61,7 +61,7 @@ class Bideo {
     }
     // everything below this line is a fallback
     // for browsers that do not support object-fit
-    console.log("object-fit not supported");
+    // console.log("object-fit not supported");
     let w = this.videoEl.videoWidth;
     let h = this.videoEl.videoHeight;
     let videoRatio = (w/h).toFixed(4);
