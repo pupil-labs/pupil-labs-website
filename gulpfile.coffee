@@ -48,7 +48,10 @@ js_sideNav = ()->
 
 js_bkgVideo = ()->
   gulp.src "assets/js/bkg_video/*.js"
-    .pipe babel(presets: ['es2015'])
+    .pipe babel(
+      presets: ['es2015']
+      plugins: ['transform-es2015-classes']
+    )
     .pipe concat "bkg_video.js"
     .pipe uglify()
     .pipe gulp.dest "contents/js"
