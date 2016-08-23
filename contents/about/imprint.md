@@ -7,7 +7,7 @@ Pupil Labs UG (haftungsbeschränkt) Gustav-Müller-Str. 7 10829 Berlin
 
 <h3 class="u-padBottom--0">Contact</h3>E-Mail 
 
-<a href="mailto:info@pupil-labs.com" target="_blank">info@pupil-labs.com</a>
+<p><a href="mailto:info@pupil-labs.com" target="_blank">info@pupil-labs.com</a></p>
 
 <h3 class="u-padBottom--0">CEO</h3>
 
