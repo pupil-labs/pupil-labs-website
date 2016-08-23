@@ -50,7 +50,7 @@ js_bkgVideo = ()->
   gulp.src "assets/js/bkg_video/*.js"
     .pipe babel(
       presets: ['es2015']
-      plugins: ['transform-es2015-classes']
+      plugins: ['babel-polyfill']
     )
     .pipe concat "bkg_video.js"
     .pipe uglify()
