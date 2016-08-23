@@ -90,7 +90,7 @@ block main
                     p Visualize your data and export it. All Pupil software is open-source. You can modify it or write your own plugins to suit your needs.
                     p Download the latest version of Pupil Player and test it out with our #[a(href="" rel="noopener" title="sample dataset download") sample dataset].
                   div.Feature.u-padTop--2
-                    a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Capture" rel="noopener")
+                    a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Player" rel="noopener")
                       figure.Feature-image--capturePlayerIcons
                         img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pp.png")
                       h2.u-textCenter.u-padTop--1 Pupil Player
@@ -107,15 +107,20 @@ block main
             div.Feature.u-textCenter
               h1 Technical Specifications & Performance
               h4 Eye tracking performance is determined in equal parts by the hardware and software. 
-              h4 We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features.
+              h4 We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features. For more details checkout our #[a(href="https://arxiv.org/abs/1405.0006" rel="noopener") technical report].
+              h4 The headset is configurable with different cameras, so you can get the hardware you need: from high resolution capture at 30 hz to low latency (5.7ms) 120hz eye and world camera.
+              
             div.Grid.Grid--justifyCenter.Grid--center
               ul
                 li Accuracy 0.60 degrees 
                 li Precision 0.08 degrees
-                li Latency 5.7 ms (using 120hz eye and high speed world cameras)
+                li Latency 5.7 ms using 120hz eye and high speed world cameras
                 li Slippage compensation using 3d eye model
-                li Latency 5.7 ms (using 120hz eye and high speed world cameras)
+                li Latency 35.6 ms using 30hz eye and 5.7 ms using high speed world cameras
 
+            div.Feature.u-textCenter.u-padTop--1
+              h4 Go to #[a(href='/store#pupil' title='pupil store') store] page to see the configurator for options, full technical specs for cameras, and sample videos.
+              
 
     //- open source
     div.Site-gray-bkg
@@ -128,11 +133,11 @@ block main
               h4 We believe in open source. All Pupil code is released with open source licenses.
               h4 A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
               h4 We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
-              h4 Check out the pupil repository on #[a(href="https://github.com/pupil-labs/pupil/" rel="noopener") Github]. Read developer documentation on the #[a(href="https://github.com/pupil-labs/pupil/wiki" rel="noopener") wiki].
+              h4 Check out the pupil repository on #[a(href="https://github.com/pupil-labs/pupil/" rel="noopener" title="pupil repository on github") Github]. Read developer documentation on the #[a(href="https://github.com/pupil-labs/pupil/wiki" rel="noopener" title="wiki") wiki].
           div.Grid-cell
             div.Feature
               figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png")
+                img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png" title="Pupil Plugin screenshot")
 
 
     //- design
@@ -148,7 +153,7 @@ block main
           div.Grid-cell
             div.Feature
               figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg")
+                img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg" title="Pupil Headset")
 
 
     //- Modular & Hackable
@@ -160,14 +165,15 @@ block main
             div.Feature
               figure.Feature-figure
                 figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/dev_explo_transp.png")
+                img(class="Feature-image" src="../media/images/pupil_page/web/dev_explo_transp.png" title="DIY Pupil Headset")
           div.Grid-cell
             div.Feature
               h1 Modular & Hackable
-              h4 If we don't have the configuration you need, customize it yourself. Our camera mount geometry and electrical interface is open. 
-              h4 We also like to work with users to create custom solutions. 
-              h4 If you're excited about SMD soldering and hacking: you can make your own Pupil DIY. Buy the frame, source parts, and follow assembly instructions to build your own Pupil DIY headset.
-
+              h4 Pupil is modular - make the headset you need for your research.
+              h4 If we don't have the configuration you need, customize it yourself. Our camera mount geometry and electrical interface is #[a(href="https://github.com/pupil-labs/pupil/wiki/Pupil%20Hardware%20Development" rel="noopener" title="open") open]. 
+              h4 We also like to work with users to create custom solutions. #[a(href="mailto:sales@pupil-labs.com" rel="noopener" title="get in touch") Get in touch!]
+              h4 If you're excited about SMD soldering and hacking: you can make your own Pupil DIY. 
+              h4 #[a(href="https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset" rel="noopener" title="buy the frame") Buy the frame], #[a(href="https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html" rel="noopener" title="source parts") source parts], and #[a(href="https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide" rel="noopener" title="follow assembly instructions") follow assembly instructions] to build your own Pupil DIY headset.
 
     //- Community
     //- div.Site-gray-bkg
@@ -192,6 +198,6 @@ block main
               h4 We offer dedicated email and video training and support packages. 
               h4 See support packages in the #[a(href='/store#additional-products' title='store') store]. 
               h4 We offer use licenses to commercial users.
-              h4 Contact us to discuss custom licensing options.
+              h4 #[a(href="mailto:sales@pupil-labs.com" title='contact us') Contact us] to discuss custom licensing options.
 
 
