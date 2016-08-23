@@ -46,6 +46,7 @@ class PupilStore
       @countryValidator()
       @postalCodeValidator()
       @divisionValidator()
+      @eventLoadCart()
 
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -167,6 +168,13 @@ class PupilStore
       $(".Cart-container").hide 800, ->
         $("#Cart-empty").fadeIn(1000)
       @eventUpdateCartNavCounter()
+
+  eventLoadCart: ->
+    if $("#Cart").length > 0
+      qty = [v.qty for k,v of LocalStorage.dict()]
+      if qty[0].length <= 0
+        $("#Cart-empty").fadeIn(1000)
+
 
   eventUpdateCartNavCounter: ->
     qty = [v.qty for k,v of LocalStorage.dict()]
