@@ -47,26 +47,30 @@ block main
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
                 h1 Pupil is Open Source
-            div.Grid.Grid--1of3.Grid--gutters.u-textCenter.u-padBottom--2
-              div.Grid-cell
-                figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/home/icons/modular.png")
-                h4 #{ oss_meta.point1 }
-              div.Grid-cell
-                figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/home/icons/community.png")
-                h4 #{ oss_meta.point2 }
-              div.Grid-cell
-                figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/home/icons/service.png")
-                h4 #{ oss_meta.point3 }
-            div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--2
-              div.Feature
-                h3 The entire platform is on #[a(href="https://github.com/pupil-labs") github] and licensed under LGPLv3.
-                h3 Check out a snapshot of the most recent activity below.
-          div.Grid.Grid--justifyCenter.Grid--center
-              div(id="Home-activity")
-                ul(id="Home-activity-list" class="Activity")
+          
+            div.Grid-cell.Grid-cell--full
+              div.Grid.Grid--1of3.Grid--gutters.u-textCenter.u-padBottom--2
+                div.Grid-cell
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/home/icons/modular.png")
+                  h4 #{ oss_meta.point1 }
+                div.Grid-cell
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/home/icons/community.png")
+                  h4 #{ oss_meta.point2 }
+                div.Grid-cell
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/home/icons/service.png")
+                  h4 #{ oss_meta.point3 }
+              div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--2
+                div.Feature
+                  h3 The entire platform is on #[a(href="https://github.com/pupil-labs") github] and licensed under LGPLv3.
+                  h3 Check out a snapshot of the most recent activity below.
+          
+          div.Grid-cell.Grid-cell--full
+            div.Grid.Grid--justifyCenter.Grid--center
+                div(id="Home-activity")
+                  ul(id="Home-activity-list" class="Activity")
 
     
     //- newsletter row
