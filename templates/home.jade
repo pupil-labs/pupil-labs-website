@@ -67,10 +67,10 @@ block main
                   h3 The entire platform is on #[a(href="https://github.com/pupil-labs") github] and licensed under LGPLv3.
                   h3 Check out a snapshot of the most recent activity below.
           
-          div.Grid-cell.Grid-cell--full
-            div.Grid.Grid--justifyCenter.Grid--center
-                div(id="Home-activity")
-                  ul(id="Home-activity-list" class="Activity")
+            div.Grid-cell.Grid-cell--full
+              div.Grid.Grid--justifyCenter.Grid--center
+                  div(id="Home-activity")
+                    ul(id="Home-activity-list" class="Activity")
 
     
     //- newsletter row
@@ -80,7 +80,8 @@ block main
           div.Grid-cell.Grid-cell--full
             div.Feature
               h1.u-textCenter #{ home_newsletter_meta.title }
-           div.Grid
+          div.Grid-cell.Grid-cell--full
+            div.Grid
               div.Grid-cell.Grid-cell--full
                 h4 #{ home_newsletter_meta.point1 }
               div.Grid-cell
