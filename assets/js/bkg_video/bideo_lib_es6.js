@@ -33,13 +33,15 @@ class Bideo {
   _addSources () {
     let source = document.createElement('source');
 
-    for (let sObj of this.src) {
-      for (let k in sObj){
-        // console.log(k +" - "+sObj[k]);
-        source.setAttribute(k, sObj[k]);    
-      }
-    }
-
+    // let video_sources = this.src;
+    // for (let sObj of video_sources) {
+    //   for (let k in sObj){
+    //     // console.log(k +" - "+sObj[k]);
+    //     source.setAttribute(k, sObj[k]);    
+    //   }
+    // }
+    source.setAttribute('src', this.src.src);
+    source.setAttribute('type',this.src.type);
     this.videoEl.appendChild(source);
   }
 

@@ -28,7 +28,7 @@
     "smartypants": true
   },
   "paginator": {
-    "perPage": 10,
+    "perPage": 15,
     "template": "blog.jade",
     "first": "blog/index.html",
     "filename": "blog/%d/index.html"

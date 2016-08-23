@@ -7,16 +7,9 @@
     isMobile: window.matchMedia('(max-width: 768px)').matches,
     playButton: document.querySelector('#play'),
     pauseButton: document.querySelector('#pause'),
-    src: [
-      {
-        src: '../media/videos/oculus_addon_cup.mp4',
-        type: 'video/mp4'
-      }
-      // {
-      //   src: 'assembly.webm',
-      //   type: 'video/webm;codecs="vp8, vorbis"'
-      // }
-    ],
+    src: {src: '../media/videos/oculus_addon_cup.mp4',
+          type: 'video/mp4'
+    },
     onLoad: ()=>{
       // console.log("hiding video cover");
       document.querySelector('#video_cover').style.display = 'none';
