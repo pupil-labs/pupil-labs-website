@@ -11,22 +11,29 @@ class Bideo {
     this.onLoad = opt.onLoad;
     this.src = opt.src;
     this.container = opt.container;
+    this.playButton = opt.playButton;
     // this._addSources = this._addSources.bind(this);    
     this._addSources();
+    this.loadState = false;
 
     this._addEventListeners = this._addEventListeners.bind(this); 
     this._resize = this._resize.bind(this);
     this._canPlay = this._canPlay.bind(this);
+    this._mobileOptIn = this._mobileOptIn.bind(this);
 
     this._addEventListeners();
+
   }
 
   _addEventListeners () {
     // this.videoEl.addEventListener('loadedmetadata', this._resize, false);
     this.videoEl.addEventListener('canplay', this._canPlay);
+    this.playButton.addEventListener('click', this._mobileOptIn);
     if (this.resize === true){
       window.addEventListener('resize', this._resize, false);
     }
+
+
 
   }
 
@@ -56,6 +63,21 @@ class Bideo {
     }
   }
 
+  _mobileOptIn () {
+    // if (this.isMobile){
+    //   if (this.playButton){
+    //     this.videoEl.addEventListener('timeupdate', function() {
+    //       if (!this.loadState){
+    //         this.onLoad();
+    //         this.loadState = true;
+    //       }
+    //     })
+    //   }
+    // }
+  
+      console.log("I was clicked");
+      this.playButton.style.display = 'none';
+  }
 
   _resize () {
     if ('object-fit' in document.body.style) {
