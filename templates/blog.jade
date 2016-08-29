@@ -5,6 +5,14 @@ block append title
 
 block main
   div(id="Blog")
+    
+    div(class="ui compact menu")
+        div(class="ui simple dropdown item") Archive
+          div(class="menu")
+            - var articles = env.helpers.getArticles(contents)
+            each article,i in articles
+              a(class="item" href=article.url)
+                    div #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('MMM. DD')]
 
     each article, i in articles
       div.Blog-row

@@ -82,3 +82,368 @@
     // small screen
     font-size 1.05em 
     
+
+
+
+.ui.compact.menu 
+  display inline-flex
+  margin 20px
+  vertical-align middle
+
+.ui.compact.vertical.menu 
+  display inline-block
+
+.ui.compact.menu .item:last-child 
+  border-radius 0em 0.285714rem 0.285714rem 0em
+
+.ui.compact.menu .item:last-child:before 
+  display none
+
+.ui.compact.vertical.menu 
+  width auto !important
+
+.ui.compact.vertical.menu .item:last-child::before 
+  display block
+
+.ui.simple.dropdown .menu:before,
+.ui.simple.dropdown .menu:after 
+  display none
+
+.ui.simple.dropdown .menu 
+  position absolute
+  display block
+  overflow hidden
+  top -9999px !important
+  opacity 0
+  width 0
+  height 0
+  -webkit-transition opacity 0.1s ease
+  transition opacity 0.1s ease
+
+.ui.simple.active.dropdown,
+.ui.simple.dropdown:hover 
+  border-bottom-left-radius 0em !important
+  border-bottom-right-radius 0em !important
+
+.ui.simple.active.dropdown > .menu,
+.ui.simple.dropdown:hover > .menu 
+  overflow visible
+  width auto
+  height auto
+  top 100% !important
+  opacity 1
+
+.ui.simple.dropdown > .menu > .item:active > .menu,
+.ui.simple.dropdown:hover > .menu > .item:hover > .menu 
+  overflow visible
+  width auto
+  height auto
+  top 0% !important
+  left 100% !important
+  opacity 1
+
+.ui.simple.disabled.dropdown:hover .menu 
+  display none
+  height 0px
+  width 0px
+  overflow hidden
+
+
+/* Visible */
+.ui.simple.visible.dropdown > .menu 
+  display block
+  
+.ui.menu 
+  display flex
+  margin 1rem 0px
+  font-family $font-family-sans-serif
+  background rgba(34,36,38,0.14902)
+  font-weight 400
+  border 1px solid rgba(34, 36, 38, 0.15)
+  box-shadow rgba(34,36,38,0.14902) 0px 1px 2px 0px
+  border-radius 0.285714rem
+  min-height 2.85714em
+
+
+.ui.menu:after 
+  content ''
+  display block
+  height 0px
+  clear both
+  visibility hidden
+
+
+.ui.menu:first-child 
+  margin-top 0rem
+
+.ui.menu:last-child 
+  margin-bottom 0rem
+  
+.ui.items > .item 
+  display @display
+  margin @itemSpacing 0em
+  width @width
+  min-height @minHeight
+  background @background
+  padding @padding
+
+  border @border
+  border-radius 0.285714rem
+  box-shadow @boxShadow
+  transition @transition
+  z-index @zIndex
+
+.ui.items > .item a 
+  cursor pointer
+
+
+/*--------------
+      Items
+---------------*/
+
+.ui.items 
+  margin @groupMargin
+
+
+.ui.items:first-child 
+  margin-top 0em !important
+
+.ui.items:last-child 
+  margin-bottom 0em !important
+
+
+/*--------------
+      Item
+---------------*/
+
+.ui.items > .item:after 
+  display block
+  content ' '
+  height 0px
+  clear both
+  overflow hidden
+  visibility hidden
+
+.ui.items > .item:first-child 
+  margin-top 0em
+
+.ui.items > .item:last-child 
+  margin-bottom 0em
+  
+
+.ui.menu .menu 
+  margin 0em
+
+
+.ui.menu:not(.vertical) > .menu 
+  display flex
+
+
+/*--------------
+      Item
+---------------*/
+
+.ui.menu:not(.vertical) .item 
+  display flex
+  align-items center
+  -webkit-box-align center
+
+
+.ui.menu .item 
+  position relative
+  vertical-align middle
+  line-height 1
+  text-decoration none
+  -webkit-tap-highlight-color transparent
+  -webkit-box-flex 0
+  -webkit-user-select none
+
+  background 0px 0px
+  padding 0.928571em 1.14286em
+  text-transform none
+  color rgba(0,0,0,0.870588)
+  font-weight 400
+  transition background 0.1s ease, box-shadow 0.1s ease, color 0.1s ease
+
+
+.ui.menu > .item:first-child 
+  border-radius 0.285714rem 0px 0px 0.285714rem
+
+
+/* Border */
+.ui.menu .item:before 
+  position absolute
+  content ''
+  top 0%
+  right 0px
+  height 100%
+
+  width @dividerSize
+  background @dividerBackground
+
+
+
+/*******************************
+            Dropdown
+*******************************/
+
+.ui.dropdown 
+  cursor pointer
+  position relative
+  display:inline-block
+  outline none
+  text-align left
+  -webkit-transition box-shadow 0.1s ease, width 0.1s ease
+  transition box-shadow 0.1s ease, width 0.1s ease
+  -webkit-tap-highlight-color rgba(0, 0, 0, 0)
+
+
+
+/*******************************
+            Content
+*******************************/
+
+
+/*--------------
+      Menu
+---------------*/
+
+.ui.dropdown .menu 
+  cursor auto
+  position absolute
+  display none
+  outline none
+  top 100%
+  min-width -webkit-max-content
+  min-width -moz-max-content
+  min-width max-content
+  margin 0em
+  padding 0em 0em
+  background #FFFFFF
+  font-size 1em
+  text-shadow none
+  text-align left
+  box-shadow 0px 2px 3px 0px rgba(34, 36, 38, 0.15)
+  border 1px solid rgba(34, 36, 38, 0.15)
+  border-radius 0.28571429rem
+  -webkit-transition opacity 0.1s ease
+  transition: opacity 0.1s ease
+  z-index 11
+  will-change transform, opacity
+
+.ui.dropdown .menu > * 
+  white-space nowrap
+  
+
+.ui.menu .dropdown.item .menu 
+  left 0px
+  min-width calc(100% - 1px)
+  border-radius 0em 0em 0.285714rem 0.285714rem
+  background rgb(255, 255, 255)
+  margin 0px
+  box-shadow rgba(0, 0, 0, 0.0784314) 0px 1px 3px 0px
+  flex-direction column !important
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+
+
+
+/* Menu Items */
+.ui.menu .ui.dropdown .menu > .item 
+  margin 0
+  text-align left
+  font-size 1em
+  padding 0.785714em 1.14286em !important
+  background 0px 0px !important
+  color rgba(0, 0, 0, 0.870588) !important
+  text-transform none !important
+  font-weight 400 !important
+  box-shadow none !important
+  transition none !important
+
+.ui.menu .ui.dropdown .menu > .item:hover 
+  background @dropdownHoveredItemBackground !important
+  color @dropdownHoveredItemColor !important
+
+.ui.menu .ui.dropdown .menu > .selected.item 
+  background @dropdownSelectedItemBackground !important
+  color @dropdownSelectedItemColor !important
+
+.ui.menu .ui.dropdown .menu > .active.item 
+  background @dropdownActiveItemBackground !important
+  font-weight @dropdownActiveItemFontWeight !important
+  color @dropdownActiveItemColor !important
+  
+.ui.menu .ui.dropdown.item .menu .item:not(.filtered)
+  display block
+
+.ui.menu .ui.dropdown .menu > .item .icon:not(.dropdown)
+  display inline-block
+  font-size @dropdownItemIconFontSize !important
+  float @dropdownItemIconFloat;
+  margin @dropdownItemIconMargin;
+  
+  /*--------------
+      Hover
+---------------*/
+
+
+.ui.link.menu .item:hover
+.ui.menu .link.item:hover
+.ui.menu a.item:hover 
+  cursor pointer
+  background rgba(0,0,0,.03)
+  color rgba(0,0,0,.95)
+  
+.ui.menu .dropdown.item:hover
+  cursor pointer
+  background rgba(0,0,0,.03)
+  color rgba(0,0,0,.95)
+
+
+/*--------------
+     Pressed
+---------------*/
+
+.ui.link.menu .item:active
+.ui.menu .link.item:active
+.ui.menu a.item:active 
+  background @pressedItemBackground
+  color @pressedItemTextColor
+
+
+
+/*--------------
+     Active
+---------------*/
+
+.ui.menu .active.item  
+  background @activeItemBackground
+  color @activeItemTextColor
+  font-weight @activeItemFontWeight
+  box-shadow @activeItemBoxShadow
+
+.ui.menu .active.item > i.icon 
+  opacity @activeIconOpacity
+
+
+/*--------------
+  Active Hover
+---------------*/
+
+.ui.menu .active.item:hover
+.ui.vertical.menu .active.item:hover 
+  background-color @activeHoverItemBackground
+  color @activeHoverItemColor
+
+
+
+/*--------------
+     Disabled
+---------------*/
+
+.ui.menu .item.disabled
+.ui.menu .item.disabled:hover 
+  cursor default
+  background-color transparent !important
+  color @disabledTextColor
