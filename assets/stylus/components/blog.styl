@@ -89,6 +89,7 @@
   display inline-flex
   margin 20px
   vertical-align middle
+  position relative
 
 .ui.compact.vertical.menu 
   display inline-block
@@ -447,3 +448,53 @@
   cursor default
   background-color transparent !important
   color @disabledTextColor
+  
+/*latest post
+*/
+
+.Top-post
+  background-position center center
+  background-repeat no-repeat
+  background-attachment scroll // set to scroll so content doesn't scroll over top
+  width 100vw
+  height 50vh
+  margin 20px
+
+.Top-post-cover
+  background-size cover
+  
+.Top-img-caption-container
+  transform translateY(-100%)
+  margin-left 0px
+  padding-bottom 70px
+  position relative
+  top 100%
+  z-index 1
+  
+.Top-img-caption
+  line-height 0.1em
+  color #ffffff
+  
+.Grid-pop--1of4
+  > .Grid-cell-pop
+    flex 0 0 25%
+    max-width 25%
+    
+    @media $break-767
+      flex 0 0 100%
+      max-width 100%
+    
+.Grid-cell-pop
+  flex-direction row
+  
+.Feature-image--pop
+  display block
+  margin-left auto
+  margin-right auto
+  width 40%
+  height auto
+  
+.Feature-image--top
+  display block
+  width 90%
+  height 100%
