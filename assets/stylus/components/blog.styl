@@ -502,6 +502,12 @@
   width 40%
   height auto
   
+.Feature-image--right
+  display block
+  margin-left auto
+  width auto
+  height auto
+  
 .Feature-image--top
   display block
   width 90%
@@ -511,11 +517,15 @@
   margin 0 300px
   padding 0 30px
   
+.Blog-content-container-flex
+  padding 0 30px  
+
+
 .Container
   margin-right 300px
   margin-left 300px
   padding 30px
-  
+    
 .Overlay
   position absolute
   left 0px
@@ -548,8 +558,59 @@
   
 .Feature-image-blog
   display block
-  width 50%
+  width 70%
   height auto
   
 
+.Post-column-left
+  min-height 1px
+  padding-left 15px
+  padding-right 15px
+  float left
+  
+.Post-column-right
+  min-height 1px
+  padding-left 15px
+  padding-right 15px
+  float left
+  
+.Side-bar-right
+  position relative
+  opacity .99%
+  
+.Side-bar-container
+  position absolute
+  top 1285px
+  width 300px
+  
+.Post-container-flex--margin
+  display flex
+  justify-content center
+  margin 0 300px
+  padding 0 30px
+  flex-direction row
+  
+.Post-container-flex-child
+  flex-grow 1
+  
+.Post-container-flex
+  display flex
+  justify-content center
+  flex-direction row-reverse
+  
+.Feature-container-column-blog
+  // display flex
+  // flex-direction column
+  padding 3em 0em
+  margin-right 200px
+  
+  @media $break-767
+    padding 2.5em 0em
+    div[class^="Grid-cell"]
+      padding 1em 0em
+      
+.vertical-line
+  padding-bottom 5px
+  border-bottom: 1px solid #EEE
+  
   

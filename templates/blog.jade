@@ -60,55 +60,61 @@ block main
 
   
       //-Categorize archive in years and all the posts in each month
-      div(class="ui compact menu")
-          div(class="ui simple dropdown item") Archive
-            div(class="menu")
-              div(class="ui simple dropdown item") 2016
-               div(class="menu")
-
-                div(class="ui simple dropdown item") Feb
-                  div(class="menu")
-                    a(class="item" href="../blog/2016-02/eye-tracking-for-vr-and-ar/index.html") Eye Tracking for VR and AR
-
-                div(class="ui simple dropdown item") Mar
-                  div(class="menu")
-                    a(class="item" href="../blog/2016-03/pupil-v0-7-release-notes/index.html") Pupil v0.7.0 release notes
-
-                div(class="ui simple dropdown item") Mar
-                  div(class="menu")
-                    a(class="item" href="../blog/2016-04/eye-tracking-head-mounted-displays/index.html") Eye Tracking HMDs
-                    a(class="item" href="../blog/2016-04/pupil-user-docs-updates/index.html") Pupil User Docs Updates
-                    a(class="item" href="../blog/2016-04/pupil-v0-7-5-release-notes/index.html") Pupil v0.7.5 Release Notes
-
-                p(class="item") May
-                p(class="item") Jun
-                p(class="item") Jul
-                p(class="item") Aug
-                p(class="item") Sep
-                p(class="item") Oct
-                p(class="item") Nov
-                p(class="item") Dec
-              div(class="ui simple dropdown item") 2015
-               div(class="menu")
+      
               
+    div.Post-container-flex--margin
+      div.Post-container-flex-child
+        each article, i in articles
+          div.Feature-container-column-blog
+            div.vertical-line
+              article.Grid.Grid--1of2.Grid
+                  div.Grid-cell
+                    figure.Feature-figure
+                      - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
+                      img(class="Feature-image-blog" src=img_src)
+                  div.Grid-cell--1of2.Blog-article-intro
+                    a(href=article.url)
+                      h2.Blog-article-title= article.title
+                    p.small= moment.utc(article.date).format('YYYY MMM DD')      
+                    if article.metadata.subtitle            
+                      p= article.metadata.subtitle
+                    a(href=article.url) read more
 
-    each article, i in articles
-      div.Blog-row
-        div.Blog-content-container
-          div.Feature-container-column
-            article.Grid.Grid--1of2
-              div.Grid-cell
-                figure.Feature-figure
-                  - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
-                  img(class="Feature-image-blog" src=img_src)
-              div.Grid-cell.Blog-article-intro
-                a(href=article.url)
-                  h2.Blog-article-title= article.title
-                p.small= moment.utc(article.date).format('YYYY MMM DD')      
+      div.Post-container-flex-child
+        div.Feature-container-column
+          figure.Feature-image--right
+            img(class="Feature-image" src="https://placehold.it/400x400")
+            div(class="ui compact menu")
+              div(class="ui simple dropdown item") Archive
+                div(class="menu")
+                  div(class="ui simple dropdown item") 2016
+                   div(class="menu")
 
-                if article.metadata.subtitle            
-                  p= article.metadata.subtitle
-                a(href=article.url) read more
+                    div(class="ui simple dropdown item") Feb
+                      div(class="menu")
+                        a(class="item" href="../blog/2016-02/eye-tracking-for-vr-and-ar/index.html") Eye Tracking for VR and AR
+
+                    div(class="ui simple dropdown item") Mar
+                      div(class="menu")
+                        a(class="item" href="../blog/2016-03/pupil-v0-7-release-notes/index.html") Pupil v0.7.0 release notes
+
+                    div(class="ui simple dropdown item") Mar
+                      div(class="menu")
+                        a(class="item" href="../blog/2016-04/eye-tracking-head-mounted-displays/index.html") Eye Tracking HMDs
+                        a(class="item" href="../blog/2016-04/pupil-user-docs-updates/index.html") Pupil User Docs Updates
+                        a(class="item" href="../blog/2016-04/pupil-v0-7-5-release-notes/index.html") Pupil v0.7.5 Release Notes
+
+                    p(class="item") May
+                    p(class="item") Jun
+                    p(class="item") Jul
+                    p(class="item") Aug
+                    p(class="item") Sep
+                    p(class="item") Oct
+                    p(class="item") Nov
+                    p(class="item") Dec
+                  div(class="ui simple dropdown item") 2015
+                   div(class="menu")
+
 
             //- a(href=article.url)
               //- h3.u-textCenter read more
