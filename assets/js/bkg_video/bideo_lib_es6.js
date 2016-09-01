@@ -64,7 +64,6 @@ class Bideo {
   }
 
   _mobileOptIn () {
-    console.log("I was clicked");
     if (this.isMobile){
       if (this.playButton){
     //     console.log("I am mobile and I am play button");
