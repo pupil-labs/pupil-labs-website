@@ -1,0 +1,6 @@
+{
+  "template": "blog-archive.jade",
+  "title": "blog-archive",
+  "s1": "All blog posts",
+  "nav": "nav-blog-archive"
+}

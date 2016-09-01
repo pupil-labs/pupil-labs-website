@@ -1,0 +1,57 @@
+extends layout
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  div(id="Blog-Archive")
+    //- Title block
+
+    div.Blog-content-img-container
+      div(id="Blog-content-img-container" data-url="../blog/2016-07/usb-c-clip/index.html" data-title="USB C Clip")
+        a(href="../blog/2016-07/usb-c-clip/index.html" title="USB C Clip")
+          //- div.Overlay
+          div(class="Blog-feature-img" style="background-image: url('../media/images/blog/usb-c.jpg');"
+          href="../blog/2016-07/usb-c-clip/index.html" title="USC C Clip")
+            //- img(class="Top-img" src="../media/images/blog/usb-c.jpg")
+            div(style="top:85%;").Blog-content-img-container.Top-img-caption-container
+              h1.Top-img-caption USB C Clip
+              h4.Top-img-caption We are excited to share with you our new USB C clip...
+              h4(href="../blog/2016-07/usb-c-clip/index.html") Read More
+  
+      //-Categorize archive in years and all the posts in each month
+      
+    div.Post-container-flex--margin
+      div.Post-container-flex-child
+      - var articles = env.helpers.getArticles(contents)        
+      each article, i in articles
+        div.Feature-container-column-blog
+          article.Grid.Grid--1of2.Grid
+            div.Grid-cell
+              figure.Feature-figure
+                - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
+                img(class="Feature-image-blog" src=img_src)
+            div.Grid-cell--1of2.Blog-article-intro
+              a(href=article.url)
+                h2.Blog-article-title= article.title
+              p.small= moment.utc(article.date).format('YYYY MMM DD')      
+              if article.metadata.subtitle            
+                p= article.metadata.subtitle
+              a(href=article.url) read more
+
+    div.Grid.Grid--justifyCenter
+      if prevPage
+        a(href=prevPage.url class="Blog-nav-link")
+          div.Grid-cell--auto.Blog-nav
+            p newer
+      //- else
+      //-   a(href='/archive.html' class="Blog-nav-link")
+      //-     div.Grid-cell--auto.Blog-nav
+      //-       p archives
+      if nextPage
+        a(href=nextPage.url class="Blog-nav-link")
+          div.Grid-cell--auto.Blog-nav
+            p older
+
+
+

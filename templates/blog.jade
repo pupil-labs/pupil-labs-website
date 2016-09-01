@@ -6,131 +6,93 @@ block append title
 block main
   div(id="Blog")
     
-    div(id="Blog-content-img-container" class="Container")
-      div(id="Blog-content-img-container" data-url="../blog/2016-07/usb-c-clip/index.html" data-title="USB C Clip")
+    div.Blog-content-container
+      div(id="Blog-content-container" data-url="../blog/2016-07/usb-c-clip/index.html" data-title="USB C Clip")
         a(href="../blog/2016-07/usb-c-clip/index.html" title="USB C Clip")
-          //- div.Overlay
           div(class="Blog-feature-img" style="background-image: url('../media/images/blog/usb-c.jpg');"
           href="../blog/2016-07/usb-c-clip/index.html" title="USC C Clip")
-            //- img(class="Top-img" src="../media/images/blog/usb-c.jpg")
-            div(style="top:85%;").Blog-content-img-container.Top-img-caption-container
-              h1.Top-img-caption USB C Clip
-              h4.Top-img-caption We are excited to share with you our new USB C clip...
-              h4(href="../blog/2016-07/usb-c-clip/index.html") Read More
+            div.Background-img-text-container.Background-text-container
+              div.Background-header-text USB C Clip
+              p.Background-caption-text We are excited to announce the release of our new USB C clip for Pupil hardware.
+              p.Background-caption-text-button Read More
 
-    //- div.Blog-row
-    //-   div.Blog-content-container
-    //-       div(class="Top-post Top-post-cover" style="background-image: url('../media/images/blog/usb-c.jpg');"
-    //-       href="../blog/2016-07/usb-c-clip/index.html" title="USC C Clip")
-    //-       //- img(class="Top-img" src="../media/images/blog/usb-c.jpg")
-    //-       div(style="top:85%;").Site-content-container.Top-img-caption-container
-    //-         h1.Top-img-caption USB C Clip
-    //-         h4.Top-img-caption We are excited to share with you our new USB C clip...
-    //-         a(href="../blog/2016-07/usb-c-clip/index.html") Read More
-
-    div.Blog-content-container
-      div.Grid.Grid-pop--1of4
-        div.Grid-cell-pop
-          figure.Feature-image--pop
-            img(class="Feature-image" src="https://placehold.it/400x400")
-            p Eye Tracking for VR and AR
-        div.Grid-cell-pop
-          figure.Feature-image--pop
-            img(class="Feature-image" src="https://placehold.it/400x400")
-            p Pupil v0.7.0 release notes
-        div.Grid-cell-pop
-          figure.Feature-image--pop
-            img(class="Feature-image" src="https://placehold.it/400x400")
-            p Pupil User Docs Updates
-        div.Grid-cell-pop
-          figure.Feature-image--pop
-            img(class="Feature-image" src="https://placehold.it/400x400")
-            p USB C Clip
+      //- div.Blog-row
+      //-   div.Blog-content-container
+      //-       div(class="Top-post Top-post-cover" style="background-image: url('../media/images/blog/usb-c.jpg');"
+      //-       href="../blog/2016-07/usb-c-clip/index.html" title="USC C Clip")
+      //-       //- img(class="Top-img" src="../media/images/blog/usb-c.jpg")
+      //-       div(style="top:85%;").Site-content-container.Top-img-caption-container
+      //-         h1.Top-img-caption USB C Clip
+      //-         h4.Top-img-caption We are excited to share with you our new USB C clip...
+      //-         a(href="../blog/2016-07/usb-c-clip/index.html") Read More
 
 
       //-Shows all the articels in one dropdown list
 
       //- div(class="ui compact menu")
-      //-     div(class="ui simple dropdown item") Archive
-      //-       div(class="menu")
-      //-         - var articles = env.helpers.getArticles(contents)
-      //-         each article,i in articles
-      //-           a(class="item" href=article.url)
-      //-                 div #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('MMM. DD')]
+      //-   div(class="ui simple dropdown item") Archive
+      //-     div(class="menu")
+      //-       - var articles = env.helpers.getArticles(contents)
+      //-       each article,i in articles
+      //-         a(class="item" href=article.url)
+      //-               div #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
 
   
       //-Categorize archive in years and all the posts in each month
       
-              
     div.Post-container-flex--margin
       div.Post-container-flex-child
         each article, i in articles
-          div.Feature-container-column-blog
-            div.vertical-line
-              article.Grid.Grid--1of2.Grid
-                  div.Grid-cell
-                    figure.Feature-figure
-                      - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
-                      img(class="Feature-image-blog" src=img_src)
-                  div.Grid-cell--1of2.Blog-article-intro
-                    a(href=article.url)
-                      h2.Blog-article-title= article.title
-                    p.small= moment.utc(article.date).format('YYYY MMM DD')      
-                    if article.metadata.subtitle            
-                      p= article.metadata.subtitle
-                    a(href=article.url) read more
+          div.Feature-container-column.vertical-line
+            article.Grid.Grid--1of2
+                div.Grid-cell
+                  figure.Feature-figure
+                    - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
+                    img(class="Feature-image" src=img_src)
+                div.Grid-cell--1of2.Blog-article-intro
+                  a(href=article.url)
+                    h2.Blog-article-title= article.title
+                  p.small= moment.utc(article.date).format('YYYY MMM DD')      
+                  if article.metadata.subtitle            
+                    p= article.metadata.subtitle
+                  a(href=article.url) read more
 
-      div.Post-container-flex-child
-        div.Feature-container-column
-          figure.Feature-image--right
-            img(class="Feature-image" src="https://placehold.it/400x400")
-            div(class="ui compact menu")
-              div(class="ui simple dropdown item") Archive
-                div(class="menu")
-                  div(class="ui simple dropdown item") 2016
-                   div(class="menu")
+        //- div.Post-container-flex-child
+        //-   div.Feature-container-column
+        //-     figure.Feature-image--right
+        //-       img(class="Feature-image" src="https://placehold.it/400x400")
+        //-       div(class="ui compact menu")
+        //-         div(class="ui simple dropdown item") Archive
+        //-           div(class="menu")
+        //-             div(class="ui simple dropdown item") 2016
+        //-              div(class="menu")
 
-                    div(class="ui simple dropdown item") Feb
-                      div(class="menu")
-                        a(class="item" href="../blog/2016-02/eye-tracking-for-vr-and-ar/index.html") Eye Tracking for VR and AR
+        //-               div(class="ui simple dropdown item") Feb
+        //-                 div(class="menu")
+        //-                   a(class="item" href="../blog/2016-02/eye-tracking-for-vr-and-ar/index.html") Eye Tracking for VR and AR
 
-                    div(class="ui simple dropdown item") Mar
-                      div(class="menu")
-                        a(class="item" href="../blog/2016-03/pupil-v0-7-release-notes/index.html") Pupil v0.7.0 release notes
+        //-               div(class="ui simple dropdown item") Mar
+        //-                 div(class="menu")
+        //-                   a(class="item" href="../blog/2016-03/pupil-v0-7-release-notes/index.html") Pupil v0.7.0 release notes
 
-                    div(class="ui simple dropdown item") Mar
-                      div(class="menu")
-                        a(class="item" href="../blog/2016-04/eye-tracking-head-mounted-displays/index.html") Eye Tracking HMDs
-                        a(class="item" href="../blog/2016-04/pupil-user-docs-updates/index.html") Pupil User Docs Updates
-                        a(class="item" href="../blog/2016-04/pupil-v0-7-5-release-notes/index.html") Pupil v0.7.5 Release Notes
+        //-               div(class="ui simple dropdown item") Mar
+        //-                 div(class="menu")
+        //-                   a(class="item" href="../blog/2016-04/eye-tracking-head-mounted-displays/index.html") Eye Tracking HMDs
+        //-                   a(class="item" href="../blog/2016-04/pupil-user-docs-updates/index.html") Pupil User Docs Updates
+        //-                   a(class="item" href="../blog/2016-04/pupil-v0-7-5-release-notes/index.html") Pupil v0.7.5 Release Notes
 
-                    p(class="item") May
-                    p(class="item") Jun
-                    p(class="item") Jul
-                    p(class="item") Aug
-                    p(class="item") Sep
-                    p(class="item") Oct
-                    p(class="item") Nov
-                    p(class="item") Dec
-                  div(class="ui simple dropdown item") 2015
-                   div(class="menu")
+        //-               p(class="item") May
+        //-               p(class="item") Jun
+        //-               p(class="item") Jul
+        //-               p(class="item") Aug
+        //-               p(class="item") Sep
+        //-               p(class="item") Oct
+        //-               p(class="item") Nov
+        //-               p(class="item") Dec
+        //-             div(class="ui simple dropdown item") 2015
+        //-              div(class="menu")
 
 
-            //- a(href=article.url)
-              //- h3.u-textCenter read more
-        //- article.Grid.Grid--gutters
-      //-   div.Grid-cell
-      //-     header.Blog-article-header
-      //-       h2.Blog-article-title
-      //-         a(href=article.url)= article.title
-      //-       p.Blog-article-date
-      //-         span= moment.utc(article.date).format('YYYY MMM DD')
-      //-     section.Blog-content
-      //-       //- if article.intro.length > 0
-      //-       != typogr(article.html).typogrify()
-            //- if article.hasMore
-            //-   p.More
-            //-     a(href=article.url) more
     div.Grid.Grid--justifyCenter
       if prevPage
         a(href=prevPage.url class="Blog-nav-link")
