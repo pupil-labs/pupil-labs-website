@@ -64,19 +64,30 @@ class Bideo {
   }
 
   _mobileOptIn () {
-    // if (this.isMobile){
-    //   if (this.playButton){
-    //     this.videoEl.addEventListener('timeupdate', function() {
+    console.log("I was clicked");
+    if (this.isMobile){
+      if (this.playButton){
+    //     console.log("I am mobile and I am play button");
+    //     // todo - look up timeupdate event listener
+    //     // this is required for pause functionality only
+    //     function video_update(){
+    //       console.log("calling event listener");
     //       if (!this.loadState){
     //         this.onLoad();
     //         this.loadState = true;
-    //       }
-    //     })
+    //         console.log("loaded state "+this.loadedState);
+    //       }          
+    //     }
+
+    //     this.videoEl.addEventListener('timeupdate', video_update())
     //   }
     // }
   
-      console.log("I was clicked");
-      this.playButton.style.display = 'none';
+        this.onLoad();
+        this.playButton.style.display = 'none';
+        this.videoEl.play();
+      }
+    }
   }
 
   _resize () {
