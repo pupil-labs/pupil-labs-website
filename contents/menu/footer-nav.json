@@ -1,10 +1,10 @@
 {
   "Products": {"Mobile Eye Tracking Headset": "/store#pupil",
-              "HTC Vive Eye Tracking Add-on": "/store#vr-ar",
-              "Oculus DK2 Eye Tracking Add-on": "/store#vr-ar",
-              "Epson BT-200 Eye Tracking Add-on": "/store#vr-ar",
+              "HTC Vive Eye Add-on": "/store#vr-ar",
+              "Oculus DK2 Add-on": "/store#vr-ar",
+              "Epson BT-200 Add-on": "/store#vr-ar",
               "Support Contract": "/store#additional-products",
-              "120hz Eye Camera Upgrade": "/store#additional-products"
+              "120hz Eye Camera": "/store#additional-products"
               },
   "Social": {"Github":"https://github.com/pupil-labs",
             "Youtube":"https://youtube.com/c/PupilLabs",
