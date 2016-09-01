@@ -1,61 +1,61 @@
 - var config_imgs = contents.media.images.store_pupil.web
 
+div.Site-content-container
+  div.Grid.Grid--1of2--breakConfig.Grid--center
+    a(class='anchor' name="config")
+    
+    //- Images
+    div.Grid-cell
+      div.Feature
+        figure.Feature-figure.Feature-figure--config
+          //- init with configuration
+          img(id="pupil-config-img" class="Feature-image Feature-image--configEye" src=config_imgs['pupil_w120_e120.jpg'].url)
+    
+    //- Controls
+    div.Grid-cell
+      div.Grid.Grid-column
 
-div.Grid.Grid--1of2--breakConfig.Grid--center
-  a(class='anchor' name="config")
-  
-  //- Images
-  div.Grid-cell
-    div.Feature
-      figure.Feature-figure.Feature-figure--config
-        //- init with configuration
-        img(id="pupil-config-img" class="Feature-image Feature-image--configEye" src=config_imgs['pupil_w120_e120.jpg'].url)
-  
-  //- Controls
-  div.Grid-cell
-    div.Grid.Grid-column
+        //- World options
+        div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--world
+          div.Grid.ConfigOptions
+            div.Grid-cell.u-textCenter
+              h3.StoreConfig-header World Camera
+          ul.Grid.Grid--justifyCenter.ConfigOptions--world
 
-      //- World options
-      div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--world
-        div.Grid.ConfigOptions
-          div.Grid-cell.u-textCenter
-            h3.StoreConfig-header World Camera
-        ul.Grid.Grid--justifyCenter.ConfigOptions--world
+          div.Grid.Grid--full
+            div.Grid-cell.u-textCenter.TechSpecs-container
+              p(id="infoTxt-world" class="TechSpecs-txt")
+              a(href="#" role="button" id="specs-world" class="TechSpecs") show detailed specs
+            div.Grid-cell.TechSpecs--world
+              //- table.TechSpecs-table.TechSpecs-txt--world
 
-        div.Grid.Grid--full
-          div.Grid-cell.u-textCenter.TechSpecs-container
-            p(id="infoTxt-world" class="TechSpecs-txt")
-            a(href="#" role="button" id="specs-world" class="TechSpecs") show detailed specs
-          div.Grid-cell.TechSpecs--world
-            //- table.TechSpecs-table.TechSpecs-txt--world
+        //- Eye options
+        div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--eye
+          div.Grid
+            div.Grid-cell.u-textCenter
+              h3.StoreConfig-header Eye Camera
+          ul.Grid.Grid--justifyCenter.ConfigOptions--eye
 
-      //- Eye options
-      div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--eye
-        div.Grid
-          div.Grid-cell.u-textCenter
-            h3.StoreConfig-header Eye Camera
-        ul.Grid.Grid--justifyCenter.ConfigOptions--eye
+          div.Grid.Grid--full
+            div.Grid-cell.u-textCenter.TechSpecs-container
+              p(id="infoTxt-eye" class="TechSpecs-txt")
+              a(href="#" role="button" id="specs-eye" class="TechSpecs") show detailed specs
+            div.Grid-cell.TechSpecs--eye
+              //- table.TechSpecs-table.TechSpecs-txt--eye
 
-        div.Grid.Grid--full
-          div.Grid-cell.u-textCenter.TechSpecs-container
-            p(id="infoTxt-eye" class="TechSpecs-txt")
-            a(href="#" role="button" id="specs-eye" class="TechSpecs") show detailed specs
-          div.Grid-cell.TechSpecs--eye
-            //- table.TechSpecs-table.TechSpecs-txt--eye
+        //- use license
+        div.Grid-cell.Grid-center.StoreConfig-rowContainer.StoreConfig-rowContainer--license
+          div.Grid.Grid--gutters
+            div.Grid-cell.Grid-cell--1of3
+              button(class="Store-license" id="license") academic discount
+            div.Grid-cell.Grid-cell--2of3
+              p.LicenseSpecs-text.u-padBottom--2 Discount is granted with valid academic institution billing, and/or shipping address, or proof of current academic affiliation.
 
-      //- use license
-      div.Grid-cell.Grid-center.StoreConfig-rowContainer.StoreConfig-rowContainer--license
-        div.Grid.Grid--gutters
-          div.Grid-cell.Grid-cell--1of3
-            button(class="Store-license" id="license") academic discount
-          div.Grid-cell.Grid-cell--2of3
-            p.LicenseSpecs-text.u-padBottom--2 Discount is granted with valid academic institution billing, and/or shipping address, or proof of current academic affiliation.
-
-    div.Grid.Grid--1of2.Grid--center.StoreConfig-rowContainer--cost
-      div(id="Config-sum" class="Grid-cell u-textCenter")
-        p(id="StoreConfig-weight")
-      div.Grid-cell.StoreConfig-rowContainer--cartBtns
-        button(id="AddToCart-config" class="AddToCart Button Button--cart" href="#" data-product="pupil") Add to cart
+      div.Grid.Grid--1of2.Grid--center.StoreConfig-rowContainer--cost
+        div(id="Config-sum" class="Grid-cell u-textCenter")
+          p(id="StoreConfig-weight")
+        div.Grid-cell.StoreConfig-rowContainer--cartBtns
+          button(id="AddToCart-config" class="AddToCart Button Button--cart" href="#" data-product="pupil") Add to cart
 
 
 
