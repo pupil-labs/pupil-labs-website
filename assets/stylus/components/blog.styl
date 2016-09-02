@@ -119,6 +119,9 @@
 .Background-text-container
   max-width 341px
   
+.Background-container
+  margin 0 352px
+  
 
 .Grid-pop--1of4
   > .Grid-cell-pop
@@ -135,13 +138,16 @@
 //-Page section container
 
 .Blog-content-container
-  margin 0 300px
+  // margin 0 352px
   padding 0 30px
-
-.Container
-  margin-right 300px
-  margin-left 300px
-  padding 30px
+  padding-top 30px
+  
+.Blog-content-wrapper
+  max-width 1300px
+  margin 0 auto
+  padding 0 40px
+  // @media $break-767
+  //   padding 0 1em
     
 .Overlay
   position absolute
@@ -171,41 +177,10 @@
   display block
   overflow hidden
   
-.Bacground-img-blog
-  height 300px
-  
-.Feature-image-blog
-  display block
-  width 70%
-  height auto
-  
 
-.Post-column-left
-  min-height 1px
-  padding-left 15px
-  padding-right 15px
-  float left
-  
-.Post-column-right
-  min-height 1px
-  padding-left 15px
-  padding-right 15px
-  float left
-  
-.Side-bar-right
-  position relative
-  opacity .99%
-  
-.Side-bar-container
-  position absolute
-  top 1285px
-  width 300px
-  
-.Post-container-flex--margin
+.Post-container-flex
   display flex
   justify-content center
-  margin 0 300px
-  padding 0 30px
   flex-direction row
   
 .Post-container-flex-child
@@ -219,19 +194,60 @@
 .Feature-container-column-blog
   // display flex
   // flex-direction column
-  padding 3em 0em
-  margin-right 200px
-  
+  max-height 400px
+  padding 30px 0em  
   @media $break-767
     padding 2.5em 0em
     div[class^="Grid-cell"]
       padding 1em 0em
       
+.Row
+  display -webkit-box
+  display -moz-box
+  display -ms-flexbox
+  display -webkit-flex
+  display flex
+
+  -webkit-box-orient horizontal 
+  -moz-box-orient horizontal
+  box-orient horizontal
+  flex-direction row
+
+  -webkit-box-pack center
+  -moz-box-pack center
+  box-pack center
+  justify-content center
+
+  -webkit-box-align center
+  -moz-box-align center
+  box-align center;
+  align-items center
+  background-color red
+
+
 .vertical-line
-  padding-bottom 3em
-  border-bottom: 1px solid #EEE
+  padding-bottom 30px
+  border-bottom 1px solid #d6d6d6
+
+.Feature-image-blog
+  // max-width 100%
+  align-self center
+  flex 0 0 auto
   
-.Block
-  max-height 500px
+.Container
+  display flex
+  flex-flow column
+  width 100%
+  height 100%
   
+.Box
+    flex 1 1 auto
+    background yellow
+    display flex
+    justify-content center
+    align-items stretch
+    
+.Box img
+  width 100%
+  object-fit contain
   
