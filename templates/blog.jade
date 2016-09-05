@@ -17,18 +17,25 @@ block main
                 p.Background-caption-text We are excited to announce the release of our new USB C clip for Pupil hardware.
                 p.Background-caption-text-button Read More
 
-      //-Shows all the articels in one dropdown list
+    div.Blog-content-container
+      div.Blog-content-wrapper
+        div.Feature-container-column.verticle-line
+          div.Grid.Grid-justifyCenter
+            div.Grid-cell.Grid-cell--center.Grid--justifyCenter.Grid
+              p #[a(href="/blog-archive" class="Caption-text-button" title="Blog Archive" rel="noopener") Blog Archive]
 
-      //- div(class="ui compact menu")
-      //-   div(class="ui simple dropdown item") Archive
-      //-     div(class="menu")
-      //-       - var articles = env.helpers.getArticles(contents)
-      //-       each article,i in articles
-      //-         a(class="item" href=article.url)
-      //-               div #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
+        //-Shows all the articels in one dropdown list
 
-  
-      //-Categorize archive in years and all the posts in each month
+        //- div(class="ui compact menu")
+        //-   div(class="ui simple dropdown item") Archive
+        //-     div(class="menu")
+        //-       - var articles = env.helpers.getArticles(contents)
+        //-       each article,i in articles
+        //-         a(class="item" href=article.url)
+        //-               div #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
+
+    
+        //-Categorize archive in years and all the posts in each month
       
     div.Blog-content-container
       div.Blog-content-wrapper
@@ -45,6 +52,7 @@ block main
                   if article.metadata.subtitle            
                     p= article.metadata.subtitle
                   a(href=article.url) read more
+
 
 
     div.Grid.Grid--justifyCenter

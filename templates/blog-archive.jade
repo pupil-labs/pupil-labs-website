@@ -8,37 +8,41 @@ block main
     //- Title block
 
     div.Blog-content-container
-      div(id="Blog-content-container" data-url="../blog/2016-07/usb-c-clip/index.html" data-title="USB C Clip")
-        a(href="../blog/2016-07/usb-c-clip/index.html" title="USB C Clip")
-          div(class="Blog-feature-img" style="background-image: url('../media/images/blog/usb-c.jpg');"
-          href="../blog/2016-07/usb-c-clip/index.html" title="USC C Clip")
-            div.Background-img-text-container.Background-text-container
-              div.Background-header-text USB C Clip
-              p.Background-caption-text We are excited to announce the release of our new USB C clip for Pupil hardware.
-              p.Background-caption-text-button Read More
+      div.Blog-content-wrapper
+        div(id="Blog-content-container" data-url="../blog/2016-07/usb-c-clip/index.html" data-title="USB C Clip")
+          a(href="../blog/2016-07/usb-c-clip/index.html" title="USB C Clip")
+            div(class="Blog-feature-img" style="background-image: url('../media/images/blog/usb-c.jpg');"
+            href="../blog/2016-07/usb-c-clip/index.html" title="USC C Clip")
+              div.Background-img-text-container.Background-text-container
+                div.Background-header-text USB C Clip
+                p.Background-caption-text We are excited to announce the release of our new USB C clip for Pupil hardware.
+                p.Background-caption-text-button Read More
   
-      //-Categorize archive in years and all the posts in each month
-    
+      
     div.Blog-content-container
-      div.Post-container-flex--margin
-        div.Post-container-flex-child
-        - var articles = env.helpers.getArticles(contents)        
-        each article, i in articles
-          div.Feature-container-column-blog
-            article.Grid.Grid--1of2.Grid
-              div.Grid-cell
-                figure.Feature-figure
-                  - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
-                  img(class="Feature-image-blog" src=img_src)
-              div.Grid-cell--1of2.Blog-article-intro
-                a(href=article.url)
-                  h2.Blog-article-title= article.title
-                p.small= moment.utc(article.date).format('YYYY MMM DD')      
-                if article.metadata.subtitle            
-                  p= article.metadata.subtitle
-                a(href=article.url) read more
+      div.Blog-content-wrapper
+        div.Feature-container-column
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Header-text BLOG ARCHIVE
 
 
+    div.Blog-content-container
+      div.Blog-content-wrapper
+        div.Grid--gutters-lg.Aligner
+          - var articles = env.helpers.getArticles(contents)
+          each article, i in articles
+            div.Aligner-item--sm
+              div.Aligner-item--column
+                - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
+                div.Feature-image--wrapper
+                  img(class="Feature-image" src=img_src)
+                div.Aligner-item--stretchHeight
+                  a(href=article.url)
+                    h2.Blog-article-title= article.title
+                  p.small= moment.utc(article.date).format('YYYY MMM DD')      
+                  if article.metadata.subtitle            
+                    p= article.metadata.subtitle
+                  a(href=article.url) read more
 
     div.Grid.Grid--justifyCenter
       if prevPage
