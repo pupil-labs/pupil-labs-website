@@ -17,12 +17,29 @@ block main
                 p.Background-caption-text We are excited to announce the release of our new USB C clip for Pupil hardware.
                 p.Background-caption-text-button Read More
 
+      //- div.Blog-content-container
+      //-   div.Blog-content-wrapper
+      //-     div.Feature-container-column.verticle-line
+      //-       div.Grid.Grid--1of3.Grid--justifyCenter
+      //-         div.Grid-cell.Grid--justifyCenter.Grid-cell--center
+      //-           h4 #[a(href="/blog-archive" class="Grid--justifyCenter" title="Blog Archive" rel="noopener") Blog Archive]
+      //-         div.Grid-cell.Grid--justifyCenter.Grid--center
+      //-           h4 #[a(href="/blog-archive" title="Blog Archive" rel="noopener") Blog Archive]
+      //-         div.Grid-cell.Grid--justifyCenter.Grid--center
+      //-           h4 #[a(href="/blog-archive" title="Blog Archive" rel="noopener") Blog Archive]
+
+      div.Site-content-container
+        div.Feature-header-container
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Grid
+              div.Grid-cell.Grid-cell--full.u-padTop--1
+                h2.Feature-paragraph Our blogs consists of new software releases and relevant news
+
     div.Blog-content-container
       div.Blog-content-wrapper
-        div.Feature-container-column.verticle-line
-          div.Grid.Grid-justifyCenter
-            div.Grid-cell.Grid-cell--center.Grid--justifyCenter.Grid
-              p #[a(href="/blog-archive" class="Caption-text-button" title="Blog Archive" rel="noopener") Blog Archive]
+        div.Horizontal-line-divider
+          #[a(href="/blog-archive" class="Box-grey Background-caption-text" title="Blog Archive" rel="noopener") Blog Archive]
 
         //-Shows all the articels in one dropdown list
 
@@ -37,10 +54,10 @@ block main
     
         //-Categorize archive in years and all the posts in each month
       
-    div.Blog-content-container
+    div.Blog-content-container-body
       div.Blog-content-wrapper
         each article, i in articles
-          div.Feature-container-column.vertical-line
+          div.Feature-container-column.Horizontal-line-body
             article.Grid.Grid--1of2.Grid--justifyCenter
                 div.Grid-cell
                   - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
@@ -48,9 +65,13 @@ block main
                 div.Grid-cell.Blog-article-intro
                   a(href=article.url)
                     h2.Blog-article-title= article.title
-                  p.small= moment.utc(article.date).format('YYYY MMM DD')      
-                  if article.metadata.subtitle            
-                    p= article.metadata.subtitle
+
+                  div.Grid
+                      p.small.Body-text-wrapper= moment.utc(article.date).format('YYYY MMM DD')      
+                      if article.metadata.subtitle
+                      p.small.Body-text-wrapper 0 Comments
+
+                  p= article.metadata.subtitle
                   a(href=article.url) read more
 
 

@@ -152,6 +152,10 @@
   padding 0 30px
   padding-top 30px
   
+.Blog-content-container-body
+  // margin 0 352px
+  padding 0 30px
+  
 .Blog-content-wrapper
   max-width 1300px
   margin 0 auto
@@ -235,9 +239,11 @@
   background-color red
 
 
-.vertical-line
-  padding-bottom 30px
+.Horizontal-line-divider
   border-bottom 1px solid #d6d6d6
+  
+.Horizontal-line-body
+  border-bottom 1px solid #EEE
 
 .Feature-image-blog
   // max-width 100%
@@ -274,3 +280,29 @@
   height 600px
   display flex
   flex-direction column
+
+.Vertical-line-divider
+  border-right 1px solid #d6d6d6
+  
+.Feature-header-container
+  padding-top 78px
+  padding-bottom 48px
+  
+  @media $break-767
+    padding 2.5em 0em
+    div[class^="Grid-cell"]
+      padding 1em 0em
+      
+.Box-grey
+  background-color #808080
+  // border 2px solid #ffffff
+  display inline-block
+  text-align center
+  padding 15px 25px
+  margin 4px 2px
+  margin-bottom 0px
+  // border-radius 4px
+
+.Body-text-wrapper
+  padding-right 15px
+  
