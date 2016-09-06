@@ -6,75 +6,49 @@ block append title
 block main
   div(id="Blog")
     
-    div.Blog-content-container
-      div.Blog-content-wrapper
-        div(id="Blog-content-container" data-url="../blog/2016-07/usb-c-clip/index.html" data-title="USB C Clip")
-          a(href="../blog/2016-07/usb-c-clip/index.html" title="USB C Clip")
-            div(class="Blog-feature-img" style="background-image: url('../media/images/blog/usb-c.jpg');"
-            href="../blog/2016-07/usb-c-clip/index.html" title="USC C Clip")
-              div.Background-img-text-container.Background-text-container
-                div.Background-header-text USB C Clip
-                p.Background-caption-text We are excited to announce the release of our new USB C clip for Pupil hardware.
-                p.Background-caption-text-button Read More
+    - var articles = env.helpers.getArticles(contents)
+    - var a0 = articles[0]
+    - var a0_img_src = (a0.metadata.featured_img ? a0.metadata.featured_img : "https://placehold.it/800x600")
 
-      //- div.Blog-content-container
-      //-   div.Blog-content-wrapper
-      //-     div.Feature-container-column.verticle-line
-      //-       div.Grid.Grid--1of3.Grid--justifyCenter
-      //-         div.Grid-cell.Grid--justifyCenter.Grid-cell--center
-      //-           h4 #[a(href="/blog-archive" class="Grid--justifyCenter" title="Blog Archive" rel="noopener") Blog Archive]
-      //-         div.Grid-cell.Grid--justifyCenter.Grid--center
-      //-           h4 #[a(href="/blog-archive" title="Blog Archive" rel="noopener") Blog Archive]
-      //-         div.Grid-cell.Grid--justifyCenter.Grid--center
-      //-           h4 #[a(href="/blog-archive" title="Blog Archive" rel="noopener") Blog Archive]
+    div.Background-img-top--blog.Background-img-cover.u-padBottom--3
+      div(class="Background-img--full-wh" style="background-image: url('"+a0_img_src+"');")
+      div.Site-content-container.Background-img-caption-container.u-textCenter
+        a(href=a0.url)
+          div.Background-header-text= a0.title
+          p.Background-img-caption= moment.utc(a0.date).format('YYYY MMM DD')
+        if a0.metadata.subtitle
+        p.Background-img-caption= a0.metadata.subtitle
+          a(href=a0.url)
+            p.Background-caption-text-button Read More
 
+    section.Site-gray-bkg
       div.Site-content-container
-        div.Feature-header-container
+        a(class='anchor' name="pupil")
+        div.Feature-container-column
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
             div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.u-padBottom--0 Blog
               div.Grid
-              div.Grid-cell.Grid-cell--full.u-padTop--1
-                h2.Feature-paragraph Our blogs consists of new software releases and relevant news
+                div.Grid-cell.Grid-cell--full
+                  h3 Check out the latest news and updates
 
-    div.Blog-content-container
-      div.Blog-content-wrapper
-        div.Horizontal-line-divider
-          #[a(href="/blog-archive" class="Box-grey Background-caption-text" title="Blog Archive" rel="noopener") Blog Archive]
+   
+    div.Site-content-container
 
-        //-Shows all the articels in one dropdown list
+      div.Grid.Grid--1of2.Grid--gutters-lg
+        each article, i in articles.slice(1)
+          - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
 
-        //- div(class="ui compact menu")
-        //-   div(class="ui simple dropdown item") Archive
-        //-     div(class="menu")
-        //-       - var articles = env.helpers.getArticles(contents)
-        //-       each article,i in articles
-        //-         a(class="item" href=article.url)
-        //-               div #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
-
-    
-        //-Categorize archive in years and all the posts in each month
-      
-    div.Blog-content-container-body
-      div.Blog-content-wrapper
-        each article, i in articles
-          div.Feature-container-column.Horizontal-line-body
-            article.Grid.Grid--1of2.Grid--justifyCenter
-                div.Grid-cell
-                  - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
-                  img(class="Feature-image" src=img_src)
-                div.Grid-cell.Blog-article-intro
-                  a(href=article.url)
-                    h2.Blog-article-title= article.title
-
-                  div.Grid
-                      p.small.Body-text-wrapper= moment.utc(article.date).format('YYYY MMM DD')      
-                      if article.metadata.subtitle
-                      p.small.Body-text-wrapper 0 Comments
-
-                  p= article.metadata.subtitle
-                  a(href=article.url) read more
-
-
+            div.Grid-cell
+              div.Feature-image--blog-archive--wrapper
+                div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
+              a(href=article.url)
+                h2.Blog-article-title= article.title
+              p.small= moment.utc(article.date).format('YYYY MMM DD')      
+              if article.metadata.subtitle            
+              p= article.metadata.subtitle
+              a(href=article.url) read more
 
     div.Grid.Grid--justifyCenter
       if prevPage
