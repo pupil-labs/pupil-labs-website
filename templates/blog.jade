@@ -15,11 +15,11 @@ block main
       div.Site-content-container.Background-img-caption-container.u-textCenter
         a(href=a0.url)
           div.Background-header-text= a0.title
-          p.Background-img-caption= moment.utc(a0.date).format('YYYY MMM DD')
+        p.Background-img-caption= moment.utc(a0.date).format('YYYY MMM DD')
         if a0.metadata.subtitle
-        p.Background-img-caption= a0.metadata.subtitle
-          a(href=a0.url)
-            p.Background-caption-text-button Read More
+          p.Background-img-caption= a0.metadata.subtitle
+        a(href=a0.url)
+          p.Background-caption-text-button Read More
 
     section.Site-gray-bkg
       div.Site-content-container
@@ -47,7 +47,7 @@ block main
                 h2.Blog-article-title= article.title
               p.small= moment.utc(article.date).format('YYYY MMM DD')      
               if article.metadata.subtitle            
-              p= article.metadata.subtitle
+                p= article.metadata.subtitle
               a(href=article.url) read more
 
     div.Grid.Grid--justifyCenter
