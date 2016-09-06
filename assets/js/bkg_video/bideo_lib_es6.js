@@ -56,6 +56,7 @@ class Bideo {
     // console.log("called canPlay");
     if (this.isMobile === false){
       this.onLoad();
+      this.playButton.style.display = 'none';
       if(this.autoplay === true){
         // console.log(this.videoEl);
         this.videoEl.play();
