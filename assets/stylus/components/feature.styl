@@ -130,6 +130,39 @@
   left 0
   top 0 
 
+.Feature-image--blog-archive--wrapper
+  height 20vh
+  padding-bottom 3em
+
+.Background-img--blog-archive
+  width 100%
+  height 100%
+  background-position center center
+  background-repeat no-repeat
+  // background-attachment fixed
+  margin 0px
+  overflow hidden
+  // position relative
+
+.Background-img-top--blog
+  margin 0px
+  overflow hidden
+  display block
+  position relative
+  width 100%
+  height 50vh
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background-position center center
+  background-repeat no-repeat  
+  background-attachment fixed // set to scroll so content doesn't scroll over top
+  @media $break-767
+    // don't use vh on mobile due to hiding navbar it make the site jumpy.
+    height 400px
+
+
 .Background-img-top
   margin 0px
   overflow hidden
