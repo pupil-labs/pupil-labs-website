@@ -12,6 +12,16 @@ module.exports = (env, callback) ->
   for key, value of defaults
     options[key] ?= defaults[key]
 
+  getArticles = (contents) ->
+    # helper that returns a list of articles found in *contents*
+    # note that each article is assumed to have its own directory in the articles directory
+    articles = contents[options.postsDir]._.directories.map (item) -> item.index
+    # skip articles that do not have a template associated
+    articles = articles.filter (item) -> item.template isnt 'none'
+    # sort article by date
+    articles.sort (a, b) -> b.date - a.date
+    return articles
+
   class BlogPostsPages extends env.plugins.MarkdownPage
     ### DRYer subclass of MarkdownPage ###
 
@@ -24,6 +34,8 @@ module.exports = (env, callback) ->
   # register the plugin
   prefix = if options.postsDir then options.postsDir + '/' else ''
   env.registerContentPlugin 'posts', prefix + '**/*.*(markdown|mkd|md)', BlogPostsPages
+
+  env.helpers.getArticles = getArticles
 
   # done!
   callback()
