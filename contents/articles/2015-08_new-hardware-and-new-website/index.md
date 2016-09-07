@@ -4,6 +4,7 @@
  author: Pupil Dev Team
  subtitle: Two big updates -- New Hardware and a brand new website...
  featured_img: "../../../../media/images/store_additional_products/e120upgrade.png"
+ featured_img_thumb: "../../../../media/images/thumb/store_additional_products/e120upgrade.png"
  ---
 
  We are excited to announce two big updates. 
