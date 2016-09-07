@@ -4,6 +4,7 @@ author: Pupil Dev Team
 date: 2014-02-20
 subtitle: We would like to introduce a new app for Pupil - Pupil Player - With this application we've finally added the crucial missing part of the toolchain. You can now visualize Pupil Capture recordings after the fact using the app with GUI...
 featured_img: "../../../../media/images/blog/pp.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/pp.png"
 ---
 
 We would like to introduce a new app for Pupil - **Pupil Player** - With this application we've finally added the crucial missing part of the toolchain. You can now visualize Pupil Capture recordings after the fact using the app with GUI. 

@@ -22,34 +22,29 @@ block main
       div(style="top:50%;").Site-content-container.Background-img-caption-container.u-textCenter
         h1.Background-img-caption Join the team.
 
-    //- div.Site-gray-bkg  
-    //-   div.Site-content-container
-    //-     div.Feature-container-column
-    //-       div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-    //-         div.Grid-cell.Grid-cell--full.u-textCenter
-    //-           div.Feature
-    //-             h1.Feature-title--lg.u-padBottom--1 Jobs
-    //-           div.Grid
-    //-             div.Grid-cell.Grid-cell--full
-    //-               p.Feature-paragraph Are you excited about eye tracking, computer vision, design, and contributing to open source? Check out current openings below. 
-
 
     - var positions = _.chain(positions_folder._.pages).sortBy(function(item) {
     -   return item.metadata['order'];
     - }).filter(function(item){return item.metadata['order'] > 0}).value()
+    
+    section.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1 Current Opportunities
+              div.Grid.Grid--justifySpaceBetween
+                each p in positions
+                  h3 #[a(href="#"+p.metadata.jobTitle)= p.title]
+
     div.Site-content-container
-      div.Feature-container-column
-        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full.u-textCenter
-            div.Feature
-              h1 Current Opportunities
-          div.Grid-cell.Grid-cell--full
-            div.Grid
-              each p in positions
-                div.Grid-cell.Grid-cell--full.u-padBottom--2
-                  div.Article.Feature--job-item.u-padTop--2
-                    a(class='anchor' name=p.metadata.jobTitle)
-                    h2(id=p.metadata.order)= p.title
-                    div!= typogr(p.html).typogrify()
-                    a(href="mailto:jobs@pupil-labs.com" target="_blank" role="button" class="Button") email us to apply
-                    p.Cart-disclaimerTxt.u-textCenter (please include your cv and links to relevant work)
+      div.Grid.u-padTop--3.u-padBottom--3
+        each p in positions
+          div.Grid-cell.Grid-cell--full.u-padBottom--2
+            div.Article.Feature--job-item.u-padTop--2
+              a(class='anchor' name=p.metadata.jobTitle)
+              h2(id=p.metadata.order)= p.title
+              div!= typogr(p.html).typogrify()
+              a(href="mailto:jobs@pupil-labs.com" target="_blank" role="button" class="Button") email us to apply
+              p.Cart-disclaimerTxt.u-textCenter (please include your cv and links to relevant work)

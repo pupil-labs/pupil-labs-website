@@ -38,7 +38,7 @@ block main
 
       div.Grid.Grid--1of2.Grid--gutters-lg
         each article, i in articles.slice(1)
-          - var img_src = (article.metadata.featured_img ? article.metadata.featured_img : "https://placehold.it/800x600")
+          - var img_src = (article.metadata.featured_img_thumb ? article.metadata.featured_img_thumb : "https://placehold.it/800x600")
 
             div.Grid-cell
               div.Feature-image--blog-archive--wrapper
