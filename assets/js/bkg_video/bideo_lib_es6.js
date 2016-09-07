@@ -20,6 +20,10 @@ class Bideo {
     this._resize = this._resize.bind(this);
     this._canPlay = this._canPlay.bind(this);
     this._mobileOptIn = this._mobileOptIn.bind(this);
+    
+    if(this.isMobile === true){
+      this.playButton.style.display = 'block';    
+    }
 
     this._addEventListeners();
 
@@ -27,7 +31,7 @@ class Bideo {
 
   _addEventListeners () {
     // this.videoEl.addEventListener('loadedmetadata', this._resize, false);
-    this.videoEl.addEventListener('canplay', this._canPlay);
+    this.videoEl.addEventListener('canplaythrough', this._canPlay);
     this.playButton.addEventListener('click', this._mobileOptIn);
     if (this.resize === true){
       window.addEventListener('resize', this._resize, false);
@@ -53,10 +57,9 @@ class Bideo {
   }
 
   _canPlay () {
-    // console.log("called canPlay");
+    // console.log(this.videoEl.readyState);
     if (this.isMobile === false){
       this.onLoad();
-      this.playButton.style.display = 'none';
       if(this.autoplay === true){
         // console.log(this.videoEl);
         this.videoEl.play();
