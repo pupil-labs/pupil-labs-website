@@ -15,11 +15,11 @@ block main
       div.Site-content-container.Background-img-caption-container.u-textCenter
         a(href=a0.url)
           div.Background-header-text= a0.title
-        p.Background-img-caption= moment.utc(a0.date).format('YYYY MMM DD')
+        p.Background-img-caption.u-padBottom--0= moment.utc(a0.date).format('YYYY MMM DD')
         if a0.metadata.subtitle
-          p.Background-img-caption= a0.metadata.subtitle
+          h3.Background-img-caption= a0.metadata.subtitle
         a(href=a0.url)
-          p.Background-caption-text-button Read More
+          h4(style="color:white;").Background-caption-text-button Read More
 
     section.Site-gray-bkg
       div.Site-content-container
@@ -49,14 +49,3 @@ block main
               if article.metadata.subtitle            
                 p= article.metadata.subtitle
               a(href=article.url) read more
-
-    div.Grid.Grid--justifyCenter
-      if prevPage
-        a(href=prevPage.url class="Blog-nav-link")
-          div.Grid-cell--auto.Blog-nav
-            p newer
-
-      //- if nextPage
-      //-   a(href=nextPage.url class="Blog-nav-link")
-      //-     div.Grid-cell--auto.Blog-nav
-      //-       p older
