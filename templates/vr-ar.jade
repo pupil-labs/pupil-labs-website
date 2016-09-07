@@ -24,18 +24,15 @@ block main
             div.Feature
               h1.Feature-title--lg.u-padBottom--1 Eye Tracking
               h2 for
-            div.Grid.Grid--1of3
+            div.Grid.Grid--1of2
               div.Grid-cell
                 p.Feature-title--lg VR
                 p.Feature-paragraph Virtual Reality 
               div.Grid-cell
                 p.Feature-title--lg AR
                 p.Feature-paragraph Augmented Reality
-              div.Grid-cell
-                p.Feature-title--lg MR
-                p.Feature-paragraph Mixed Reality
             div.Grid-cell.Grid-cell--full
-              p.Feature-paragraph Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs. Many developers have already thought of, or implemented eye tracking software HMDs. Instead re-inventing the wheels, we have formed a community to share knowledge and tools.
+              p.Feature-paragraph To enable eye tracking without compromise on the AR and VR experience we have created eye tracking add-ons for the current range of leading AR and VR platforms. Choose the AR/VR hardware you prefer or already own and augment it with our tools-free drop-in eye tracking hardware. Use our software tools for your work or roll your own. With our open source software and direct access to the raw eye video feed this becomes your choice.
 
     //- additional products
     div.Site-content-container
@@ -44,22 +41,20 @@ block main
           div.Grid-cell.Grid-cell--full.u-textCenter
             div.Feature
               h1.Feature-title--lg.u-padBottom--1 Hardware Add-On
-            div.Grid.Grid--1of3
+            div.Grid.Grid--1of2
+              div.Grid-cell
+                div.Feature
+                figure.Feature-figure
+                  img(class="Feature-image" src="../media/images/store_vr_ar/htcviveb.png")
+                  //- include name of the hardware??
+                  //- p.Feature-paragraph HTC Vive Binocular Add-on
               div.Grid-cell
                 div.Feature
                 figure.Feature-figure
                   img(class="Feature-image" src="../media/images/store_vr_ar/oculusdk2m.png")
-                p.Feature-paragraph 120hz monocular eye tracking add-on for Oculus DK2. Includes one custom lens cup with IR mirror. IR LEDs. 1 x 120 Hz eye camera, and USB cables.
-              div.Grid-cell
-                div.Feature
-                figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/store_vr_ar/addon_epson_bt200a.png")
-                p.Feature-paragraph Augmented Reality
-              div.Grid-cell
-                div.Feature
-                figure.Feature-figure
-                  img(class="Feature-image" src="../media/images/store_vr_ar/addon_epson_bt200a.png")
-                p.Feature-paragraph Mixed Reality
+                  //- p.Feature-paragraph Oculus Rift DK2 Binocular Add-on Cup
+            div.Grid-cell.Grid-cell--full.u-padTop--2
+              p.Feature-paragraph Our add-ons give your AR/VR Headset eye tracking powers. The video is transferred to your host via USB2.0. The hardware can easily be attached and removed. The cameras work at 120hz and have a latency of 5.7ms. Fast enough for interaction applications and detection of saccades and quick fixations.
 
     //- full width background image
     //- div.Grid
@@ -72,25 +67,18 @@ block main
           div.Grid-cell.Grid-cell--full.u-textCenter
             div.Feature
               h1.Feature-title--lg.u-padBottom--1 Software
-            div.Grid-cell.Grid-cell--full There is no one size fits all approach for this. So we have made Pupil Service - based on Pupil Capture that gives you access to all data (from eye video, to pupil data, gaze data). 
-
-        div.Grid.Grid--1of2
+            div.Grid-cell.Grid-cell--full 
+              p.Feature-paragraph There is no one size fits all approach for this. So we have made Pupil Service - based on Pupil Capture that gives you access to all data (from eye video, to pupil data, gaze data). Get the lasted release for free here:
           div.Grid-cell
               div.Feature
-              figure.Feature-figure
-                img(class="Feature-image" src="../media/images/blog/pupil-service.png")
-              p.Feature-paragraph Pupil Service
-              p.Feature-paragraph Explains what it is and how it works
+                a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Player" rel="noopener")
+                  //- icon size bit big i think
+                  figure.Feature-image--capturePlayerIcons
+                    img(class="Feature-image" src="../media/images/blog/pupil-service.png")
+                  h2.Feature-paragraph.u-textCenter Pupil Service
+              p.Feature-paragraph.u-textCenter We created a community driven repository of tools to hmd eye tracking. We call it #[a(href="https://gitter.im/pupil-labs/hmd-eyes" rel="noopener") HMD-eyes]
 
-            div.Grid-cell
-              div.Feature
-              figure.Feature-figure
-                img(class="Feature-image" src="../media/images/blog/pupil-service.png")
-              p.Feature-paragraph HMD Eyes
-              p.Feature-paragraph Explains what it is
-
-
-    //- made in berlin row
+    //- community
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
@@ -98,19 +86,17 @@ block main
             div.Feature
               h1.Feature-title--lg.u-padBottom--1 Community
             div.Grid
-              div.Grid.Grid--1of3
-                div.Grid-cell
-                  div.Feature
-                  figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/additional_products/web/addon_oculus_dk2.png")
-                  p.Feature-paragraph Github
-                div.Grid-cell
-                  div.Feature
-                  figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
-                  p.Feature-paragraph Gitter
-                div.Grid-cell
-                  div.Feature
-                  figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/additional_products/web/addon_epson_bt200a.png")
-                  p.Feature-paragraph Mailing List
+              p.Feature-paragraph Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs. Many developers have already thought of, or implemented eye tracking software HMDs. Instead of continuing to re-inventing wheels, we have formed a community to share knowledge and tools.
+            div.Grid.Grid--1of3.u-padTop--2
+              div.Grid-cell
+                div.Feature
+                figure.Feature-figure
+                h3 #[a(href="https://github.com/pupil-labs/" rel="noopener") Github]
+              div.Grid-cell
+                div.Feature
+                figure.Feature-figure
+                h3 #[a(href="https://gitter.im/pupil-labs/pupil" rel="noopener") Gitter]
+              div.Grid-cell
+                div.Feature
+                figure.Feature-figure
+                h3 #[a(href="mailto:info@pupil-labs.com" rel="noopener") Mailing List]
