@@ -64,7 +64,6 @@ processGithubEvents = (recentEvents)->
       events.push("<li #{ opacity }>#{ dateStr }<p class='Activity-releaseEvent'><strong>new release </strong> for <strong>#{ repoName } - <a class='Activity-releaseEvent--tag' href='#{ releaseLink }' target='_blank'>#{tagName}</a></p></li>")
 
     if e.type is "PullRequestEvent"
-      console.log "got pr event"
       repoName = e.repo.name
       actionType = e.payload.action
       pr_number = e.payload.number
