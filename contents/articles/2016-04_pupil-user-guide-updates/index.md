@@ -4,6 +4,7 @@
  author: Pupil Dev Team
  subtitle: New video walkthroughs for Pupil Capture and Player and brand new getting started guide...
  featured_img: "../../../../media/images/blog/v0.7_walkthrough.png"
+ featured_img_thumb: "../../../../media/images/blog/thumb/v0.7_walkthrough.png"
  ---
 
 We have just finished updating Pupil docs so that they cover new features in the v0.7 release. This update includes walkthrough videos for Pupil Capture and Pupil Player, as well as a new getting started guide. 
