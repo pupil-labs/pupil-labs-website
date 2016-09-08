@@ -13,11 +13,11 @@ blur_up = ()->
       # img_large_div.classList.add 'Background-img--full-wh', 'img-large'
       # img_large_div.style.backgroundImage = "url('"+img_large.src+"');"
       $('.img-large').css('background-image', 'url(' + img_large.src + ')');
-      img_large_div.classList.add('img-loaded')
+      img_large_div.classList.add 'img-loaded'
       
-      # remove b64 bkg image only if img_large is fully loaded
-  img_large_div.addEventListener "transitionend", (e) =>
-    img_small.style.removeProperty('background-image')
+    # remove b64 bkg image only if img_large is fully loaded
+    img_large_div.addEventListener "transitionend", (e) =>
+      img_small.style.removeProperty('background-image')
 
 
 $(document).ready ->
