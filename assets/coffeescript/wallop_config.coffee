@@ -40,24 +40,21 @@ loadWallopSlider = ()->
     $('.Wallop-txt').removeClass('Wallop-txt--current').addClass('Wallop-txt--hidden')
     $(text_points[event.detail.currentItemIndex]).removeClass('Wallop-txt--hidden').addClass('Wallop-txt--current')
 
-  autoplay = (interval)=>
-    last_time = 0
+  # autoplay = (interval)=>
+  #   last_time = 0
 
-    frame = (timestamp)=>
-      console.log "called frame"
-      update = timestamp - last_time >= interval
-      if update
-        console.log update
-        slider.next()
-        last_time = timestamp
+  #   frame = (timestamp)=>
+  #     update = timestamp - last_time >= interval
+  #     if update
+  #       slider.next()
+  #       last_time = timestamp
 
-      requestAnimationFrame(frame)
-    requestAnimationFrame(frame)
+  #     requestAnimationFrame(frame)
+  #   requestAnimationFrame(frame)
 
-  if wallop_element.dataset.autoplay
-    console.log "autoplay"
-    # something
-    autoplay(500)
+  # if wallop_element.dataset.autoplay
+  #   # something
+  #   autoplay(500)
 
 $(document).ready ->
   if $("#Pupil").length > 0
