@@ -177,6 +177,9 @@ gulp.task "css_clean", ->
       html: ['build/**/*.html'],
       ignore: [
                 new RegExp('^.no-touch.*'),
+                new RegExp('^.Header*'),
+                new RegExp('^.js-side-nav*'),
+                new RegExp('^.side-nav*'),
                 '.Header-logo','.logotype','.Header-bkg-transparent','.Header-bkg-transparent .Header-nav-item','.Header-bkg-opaque','.Header-nav-item','.Header-nav-item:after','.Header-nav-item:hover:after','.Header-cart-button-container',
                 '.cart-full','.Cart-table-container','.Cart-rowContainer',
                 'cursor default:hover','.no-touch','.no-touch a:hover','.no-touch .Button:hover','.no-touch .button-flex:hover','.no-touch .Button-inverse:hover','.no-touch .Button-sm:hover','.no-touch .Button--cart:hover','.no-touch .Button-player:hover','.no-touch .Button-dataset:hover','.no-touch .Button--cart:active',
