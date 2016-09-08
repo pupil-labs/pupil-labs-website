@@ -36,7 +36,8 @@ block main
                 h1 Current Opportunities
               div.Grid.Grid--justifySpaceBetween
                 each p in positions
-                  h3 #[a(href="#"+p.metadata.jobTitle)= p.title]
+                  div.Footer--cell.u-padBottom--0
+                    h3 #[a(href="#"+p.metadata.jobTitle)= p.title]
 
     div.Site-content-container
       div.Grid.u-padTop--3.u-padBottom--3
