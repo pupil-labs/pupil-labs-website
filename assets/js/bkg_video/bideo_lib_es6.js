@@ -31,7 +31,7 @@ class Bideo {
 
   _addEventListeners () {
     // this.videoEl.addEventListener('loadedmetadata', this._resize, false);
-    this.videoEl.addEventListener('canplaythrough', this._canPlay, false);
+    this.videoEl.addEventListener('canplay', this._canPlay, false);
     this.playButton.addEventListener('click', this._mobileOptIn);
     if (this.resize === true){
       window.addEventListener('resize', this._resize, false);
