@@ -64,7 +64,6 @@ headerOpacityHome = ()->
 
 set_active_nav_link = ()->
   current_path = window.location.href
-  # console.log current_path
   for link in $(".Header-nav-item")
     $(link).removeClass("Header-nav-active")
     if link.href is current_path
