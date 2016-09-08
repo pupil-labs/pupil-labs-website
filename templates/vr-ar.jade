@@ -53,17 +53,17 @@ block main
                 div.Feature
                 figure.Feature-figure
                   img(class="Feature-image" src="../media/images/store_vr_ar/htcviveb.png")
-                  p HTC Vive Binocular Add-on
+                  p #[a(href="/store#vr-ar") HTC Vive Binocular Add-on]
               div.Grid-cell
                 div.Feature
                 figure.Feature-figure
                   img(class="Feature-image" src="../media/images/store_vr_ar/epsonbt200b.png")
-                  p Epson BT-200 Add-on              
+                  p #[a(href="/store#vr-ar") Epson BT-200 Add-on]              
               div.Grid-cell
                 div.Feature
                 figure.Feature-figure
                   img(class="Feature-image" src="../media/images/store_vr_ar/oculusdk2m.png")
-                  p Oculus Rift DK2 Binocular Add-on
+                  p #[a(href="/store#vr-ar") Oculus Rift DK2 Binocular Add-on]
           div.Grid-cell.Grid-cell--full.u-padTop--2
             p Our add-ons give your AR/VR Headset eye tracking super-powers. Eye videos are transferred to your host via USB 2.0. 
             p The hardware is easily attached and removed. Eye cameras can run up to 120hz and have a latency of 5.7ms. Fast enough for interaction applications and detection of saccades and quick fixations.
@@ -76,15 +76,16 @@ block main
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
                 h1 Software
-              div.Grid-cell.Grid-cell--full 
-                p There is no one size fits all approach - that is why we made Pupil Service. 
-                p Pupil Service is based on Pupil Capture and gives you access to all data: eye videos, to pupil data, gaze data, and more. Get the lastest release below.
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              p There is no one size fits all approach - that is why we made Pupil Service. 
+              p Pupil Service is based on Pupil Capture and gives you access to all data: eye videos, to pupil data, gaze data, and more. Get the lastest release below.
             div.Grid-cell
               div.Feature
                 a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Player" rel="noopener")
                   figure.Feature-image--serviceIcon
                     img(class="Feature-image" src="../media/images/blog/pupil-service.png")
-                  h2.Feature-paragraph.u-textCenter Pupil Service
+                  h2.u-padTop--1.u-textCenter Pupil Service
+            div.Grid-cell.Grid-cell--full
               p We also maintain and contribute to a community driven repository of tools for eye tracking in head mounted displays called #[a(href="https://gitter.im/pupil-labs/hmd-eyes" rel="noopener") HMD-eyes]
 
     //- community
@@ -94,18 +95,8 @@ block main
           div.Grid-cell.Grid-cell--full.u-textCenter
             div.Feature
               h1.Feature-title--lg.u-padBottom--1 Community
-            div.Grid
-              p.Feature-paragraph Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs. Many developers have already thought of, or implemented eye tracking software HMDs. Instead of continuing to re-inventing wheels, we have formed a community to share knowledge and tools.
-            div.Grid.Grid--1of3.u-padTop--2
-              div.Grid-cell
-                div.Feature
-                figure.Feature-figure
-                h3 #[a(href="https://github.com/pupil-labs/" rel="noopener") Github]
-              div.Grid-cell
-                div.Feature
-                figure.Feature-figure
-                h3 #[a(href="https://gitter.im/pupil-labs/pupil" rel="noopener") Gitter]
-              div.Grid-cell
-                div.Feature
-                figure.Feature-figure
-                h3 #[a(href="mailto:info@pupil-labs.com" rel="noopener") Mailing List]
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            p Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs. 
+            p Many researchers and developers have already thought of, or implemented eye tracking software HMDs. Instead of continuing to reinvent the wheel, we have formed a community with the goal of sharing knowledge and tools.
+            p Fork the hmd-eyes code on  #[a(href="https://github.com/pupil-labs/hmd-eyes" rel="noopener") Github]. Chat with the hmd-eyes community on #[a(href="https://gitter.im/pupil-labs/hmd-eyes" rel="noopener") Gitter].
+
