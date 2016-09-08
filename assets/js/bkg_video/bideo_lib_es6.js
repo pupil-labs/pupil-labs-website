@@ -57,12 +57,13 @@ class Bideo {
   }
 
   _canPlay () {
-    // console.log(this.videoEl.readyState);
-    if (this.isMobile === false){
-      this.onLoad();
-      if(this.autoplay === true){
-        // console.log(this.videoEl);
-        this.videoEl.play();
+    if (this.videoEl.readyState > 3) {
+      if (this.isMobile === false){
+        this.onLoad();
+        if(this.autoplay === true){
+          // console.log(this.videoEl);
+          this.videoEl.play();
+        }
       }
     }
   }
