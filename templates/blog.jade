@@ -4,7 +4,7 @@ block append title
   | #{ " - Blog"}
 
 block main
-  div(id="Blog")
+  div(id="Blog").Site-transform
     
     - var articles = env.helpers.getArticles(contents)
     - var a0 = articles[0]

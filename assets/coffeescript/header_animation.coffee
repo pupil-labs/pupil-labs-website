@@ -38,7 +38,7 @@ headerOpacityHome = ()->
       return
       
     st = $(this).scrollTop()
-    bkg_img_height = $(".Background-img-top").height()
+    bkg_img_height = $("[class=^'.Background-img-top']").height()
     offset = 20
     navbar_pos = bkg_img_height - (offset + navbar_height)
     within_container = st < navbar_pos
@@ -72,7 +72,7 @@ set_active_nav_link = ()->
 
 
 $(document).ready ->
-  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length > 0 or $("#About").length > 0 or $("#Jobs").length > 0
+  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length > 0 or $("#About").length > 0 or $("#Jobs").length > 0 or $("#Blog").length > 0
     # on load make the header transparent
     headerOpacityHome()
   else
