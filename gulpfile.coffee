@@ -207,8 +207,7 @@ gulp.task "build_log", ->
 gulp.task "build", (cb)->
   runSequence 'build_clean',
                ['css','js'],
-               'build_wintersmith',
-               'css_clean',cb
+               'build_wintersmith',cb
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
