@@ -13,32 +13,12 @@ blur_up = ()->
       # img_large_div.classList.add 'Background-img--full-wh', 'img-large'
       # img_large_div.style.backgroundImage = "url('"+img_large.src+"');"
       $('.img-large').css('background-image', 'url(' + img_large.src + ')');
-      img_large_div.classList.add 'img-loaded'
+      img_large_div.classList.add('img-loaded')
+      
+      # remove b64 bkg image only if img_large is fully loaded
+  img_large_div.addEventListener "transitionend", (e) =>
+    img_small.style.removeProperty('background-image')
 
-    # placeholder.appendChild(img_large_div)
-
-
-
-# window.onload = function() {
-  
-#   var placeholder = document.querySelector('.placeholder'),
-#       small = placeholder.querySelector('.img-small')
-  
-#   // 1: load small image and show it
-#   var img = new Image();
-#   img.src = small.src;
-#   img.onload = function () {
-#    small.classList.add('loaded');
-#   };
-  
-#   // 2: load large image
-#   var imgLarge = new Image();
-#   imgLarge.src = placeholder.dataset.large; 
-#   imgLarge.onload = function () {
-#     imgLarge.classList.add('loaded');
-#   };
-#   placeholder.appendChild(imgLarge);
-# }
 
 $(document).ready ->
   blur_up()
