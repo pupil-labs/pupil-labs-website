@@ -38,7 +38,7 @@ headerOpacityHome = ()->
       return
       
     st = $(this).scrollTop()
-    bkg_img_height = $("[class=^'.Background-img-top']").height()
+    bkg_img_height = $("div[class^='Background-img-top']").height()
     offset = 20
     navbar_pos = bkg_img_height - (offset + navbar_height)
     within_container = st < navbar_pos
