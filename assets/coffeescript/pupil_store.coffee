@@ -226,20 +226,18 @@ class PupilStore
         db = get_product_database()
 
         for k,v of LocalStorage.dict()
+          if v.order?
+            # legacy - update
+            v['product'] = updateLegacyProductIds_(v.order)
+            delete v.order
+            LocalStorage.set(k,JSON.stringify(v))
 
           title_product = db[v.product]['title_product']
-          
-          # temporary workaround
-          if not title_product
-            LocalStorage.clear()
-            $(".Cart-container").hide()
-            $("#Cart-empty").show()
-
           cart_spec_html = ""
 
           if title_product is "Pupil Headset"
             sub_products = db[v.product]['sub_products']
-            for sbu_product_key,sub_product_data of sub_products
+            for sub_product_key,sub_product_data of sub_products
               cart_spec_html += "<h4>#{ sub_product_data['title_cart'] }</h4>
                                  <p class='LicenseSpecs-txt'>#{ sub_product_data['description_cart'] }</p>"
           else
