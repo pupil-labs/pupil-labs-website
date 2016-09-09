@@ -10,35 +10,51 @@ a,address,article,aside,audio,body,caption,cite,code,dd,div,dl,dt,em,embed,field
   margin 0
   padding 0
 
+
+$h2-size = $heading-font-size * 0.6
+$h3-size = $heading-font-size * 0.5
+$h4-size = $heading-font-size * 0.4
+$h5-size = $heading-font-size * 0.3
+
+
 h1
   // 2.8em 
   font-size $heading-font-size
   line-height $heading-font-size * 0.5
   padding-bottom 1.2em
   font-weight normal
+  @media $break-767
+    font-size $heading-font-size * 0.75
 
 h2
-  font-size $heading-font-size * 0.6
+  font-size $h2-size
   line-height 1.1em
   padding-bottom 1.3em
   font-weight 400
+  @media $break-767
+    font-size $h2-size * 0.8
+
     
 h3 
-  font-size $heading-font-size * 0.5
+  font-size $h3-size
   padding-bottom 1.0em
   font-weight normal
+  @media $break-767
+    font-size $h3-size * 0.8
+
   
 h4
-  font-size $heading-font-size * 0.4
+  font-size $h4-size
   padding-bottom 0.9em
-  line-height 1.25em
+  line-height 1.1em
   font-weight normal
+  @media $break-767
+    font-size $h4-size * 0.8
   
 h5
-  font-size $heading-font-size * 0.3
+  font-size $h5-size
   padding-bottom 0.9em
   font-weight normal
-
   
 p
   font-size $font-size-base
