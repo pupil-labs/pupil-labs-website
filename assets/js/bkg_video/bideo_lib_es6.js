@@ -125,10 +125,6 @@ class Bideo {
     let widthRatio = minW / w;
     let heightRatio = minH / h;
     var new_width, new_height;
-    console.log("w,h: "+w+", "+h);
-    console.log("minW, minH: "+minW+", "+minH);  
-    console.log("widthRatio: "+widthRatio);
-    console.log("heightRatio: "+heightRatio);
 
     // if (widthRatio > heightRatio) {
     //   new_width = minW;
@@ -142,8 +138,6 @@ class Bideo {
     new_width = minW;
     new_height = Math.ceil(minW / videoRatio);
 
-    console.log("new_width: "+new_width);
-    console.log("new_height: "+new_height);
 
     this.videoEl.style.width = new_width + 'px';
     this.videoEl.style.height = new_height + 'px';
