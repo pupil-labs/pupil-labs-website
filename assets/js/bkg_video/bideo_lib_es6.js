@@ -124,8 +124,8 @@ class Bideo {
     let widthRatio = minW / w;
     let heightRatio = minH / h;
     var new_width, new_height;
-    console.log("w,h: "+w", "+h);
-    console.log("minW, minH: "+minW", "+minH);  
+    console.log("w,h: "+w+", "+h);
+    console.log("minW, minH: "+minW+", "+minH);  
     console.log("widthRatio: "+widthRatio);
     console.log("heightRatio: "+heightRatio);
 
