@@ -228,6 +228,13 @@ class PupilStore
         for k,v of LocalStorage.dict()
 
           title_product = db[v.product]['title_product']
+          
+          # temporary workaround
+          if not title_product
+            LocalStorage.clear()
+            $(".Cart-container").hide()
+            $("#Cart-empty").show()
+
           cart_spec_html = ""
 
           if title_product is "Pupil Headset"
