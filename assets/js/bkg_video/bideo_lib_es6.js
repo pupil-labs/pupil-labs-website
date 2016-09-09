@@ -25,10 +25,8 @@ class Bideo {
       this.playButton.style.display = 'block';    
     }
 
-    if (!'object-fit' in document.body.style) {
-      // call resize on init to get proper scaling
-      this._resize();
-    }
+    // call resize on init to get proper scaling
+    this._resize();
 
     this._addEventListeners();
 
