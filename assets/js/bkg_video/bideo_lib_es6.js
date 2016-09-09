@@ -131,7 +131,7 @@ class Bideo {
 
     if (widthRatio > heightRatio) {
       new_width = minW;
-      new_height = Math.ceil( new_width/ videoRatio );
+      new_height = Math.ceil( new_width * videoRatio );
     } else {
       new_height = minH;
       new_width = Math.ceil(new_height * videoRatio);
