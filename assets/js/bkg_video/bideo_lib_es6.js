@@ -60,6 +60,7 @@ class Bideo {
     if (this.videoEl.readyState >= 3) {
       console.log("I have readyState >= 3");
       if (this.isMobile === false){
+        console.log("browser window is larger than mobile break point");
         this.onLoad();
         if(this.autoplay === true){
           console.log("autoplay is true");
