@@ -58,6 +58,7 @@ class Bideo {
 
   _canPlay () {
     console.log("I am ready to play");
+    console.log("ready state: "+this.videoEl.readyState);
     if (this.videoEl.readyState > 3) {
       console.log("I have readyState > 3");
       if (this.isMobile === false){
