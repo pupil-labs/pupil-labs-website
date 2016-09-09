@@ -1,6 +1,6 @@
 branches:
   only:
-  - dev
+  - master
 language: node_js
 node_js:
 - '6'
@@ -18,7 +18,7 @@ install:
 - npm install wintersmith -g
 script:
 - echo 'Building Site'
-- gulp build --staging
+- gulp build --production
 - gulp image_min
 - gulp generate_sitemap
 - echo 'Done building'
@@ -31,7 +31,7 @@ after_success:
 - eval `ssh-agent -s`
 - ssh-add ~/.ssh/id_rsa
 - echo 'Pushing to server'
-- rsync -azhv --exclude "*.DS_Store" --exclude "*.git" --exclude "*.gitignore" build/ $SERVER_DEV
+- rsync -azhv --exclude "*.DS_Store" --exclude "*.git" --exclude "*.gitignore" build/ $SERVER_PROD
 env:
   global:
   - secure: QDZJJX/CHH5i8pyZ7hnxse9l4xmlSxTIdIv184Nn1cU2UsgBYgu9tmGWYrDmCTJvzqDPWHxcUQ2z7NolXkcHp/d/XtB/BYElvMDyjLR5SZPOjRiwv1oc1TODPhMG8gJJlj2xifNXr8jFmgdSYcDzKyf+46OIR1KIFcjsoA+Tfrhucsw0uxKJD2T2uIbT1u9cXBeWH+KR3Cmud4VWfeNSUwKlMBgo01e5Ov2BodeosajgY/O4O6ba/Q4ejFgERDEWYH/w7zJCRLUWXj4hCBrloGyQ+UMwKXyhIc4IpSlGQ2IlDhaYSfRljJIuibNtal4b4bfHhxcIfWgLBBkKuB5c0Guz2kxf95RF8fa6VtQlJ1Qp0yhV8zdnFElG9PkBIhf22w0PkU4VuVzCNnuTSRpuyxBO1IyJNo+m+KrUk8R9Tgie3Ena/bobGxumETuq2xM86JM3aFAJYCF97J2svuehn7x0wxb86W2FMgBY1WvMYix9dxJVae75qIq/TFqJZJLn+h/ZwgnVNc+is5V2JYhDKhVAJAvPWWPjMtTiIV4qPbZyZCPjLmQmFUm25JNtke3dBrz/ufLmbtqm2pnF8/tYH52qKZO4OPmpu1lsCfsZS6bjfAOsNFeCTIxmyN6F3j6KkV0j5d7+l/afMAbLK9skqB1tDRzh6knHQJ3nQLt4oDs=
