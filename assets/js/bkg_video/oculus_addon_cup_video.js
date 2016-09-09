@@ -7,11 +7,11 @@
     isMobile: window.matchMedia('(max-width: 768px)').matches,
     playButton: document.querySelector('#play'),
     pauseButton: document.querySelector('#pause'),
-    src: {src: '../media/videos/oculus_addon_cup.mp4',
+    src: {src: '../media/videos/oculus_addon_cup_720p.mp4',
           type: 'video/mp4'
     },
     onLoad: ()=>{
-      console.log("hiding video cover");
+      // console.log("hiding video cover");
       document.querySelector('#video_cover').style.display = 'none';
     }
   }

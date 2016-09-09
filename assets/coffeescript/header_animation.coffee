@@ -66,7 +66,7 @@ set_active_nav_link = ()=>
   current_path = window.location.href
   for link in $(".Header-nav-item")
     $(link).removeClass("Header-nav-active")
-    if link.href is current_path
+    if current_path.indexOf(link.href) > -1 
       $(link).addClass("Header-nav-active")
 
 
@@ -79,4 +79,3 @@ $(document).ready ->
 
   set_active_nav_link()
 
-  
