@@ -78,3 +78,5 @@ $(document).ready ->
     $("#Header").removeClass("Header-bkg-transparent").addClass("Header-bkg-opaque")
 
   set_active_nav_link()
+
+  
