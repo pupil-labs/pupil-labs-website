@@ -57,13 +57,12 @@ class Bideo {
   }
 
   _canPlay () {
+    // readyState = 4 - all video is loaded
+    // readyState = 3 - next frame available
     if (this.videoEl.readyState >= 3) {
-      console.log("I have readyState >= 3");
       if (this.isMobile === false){
-        console.log("browser window is larger than mobile break point");
         this.onLoad();
         if(this.autoplay === true){
-          console.log("autoplay is true");
           this.videoEl.play();
         }
       }
@@ -102,7 +101,7 @@ class Bideo {
     }
     // everything below this line is a fallback
     // for browsers that do not support object-fit
-    // console.log("object-fit not supported");
+    console.log("object-fit not supported");
     let w = this.videoEl.videoWidth;
     let h = this.videoEl.videoHeight;
     let videoRatio = (w/h).toFixed(4);

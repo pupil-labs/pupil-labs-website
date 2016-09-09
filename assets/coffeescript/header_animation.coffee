@@ -62,7 +62,7 @@ headerOpacityHome = ()->
       did_resize = false
   ,100
 
-set_active_nav_link = ()->
+set_active_nav_link = ()=>
   current_path = window.location.href
   for link in $(".Header-nav-item")
     $(link).removeClass("Header-nav-active")
