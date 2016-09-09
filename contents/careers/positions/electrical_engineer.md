@@ -7,6 +7,7 @@ jobTitle: electrical-engineer
 We are looking to hire an Electrical Engineer to join our Hardware Team in Berlin. 
 
 Who we are looking for
+
   + Qualification (Diploma or Bachelor’s Degree or higher) Electrical Engineering or equivalent
   + Has passion for hands-on work and assembly of electronics
   + Detail oriented, organized, and able to meet deadlines
@@ -23,10 +24,12 @@ Who we are looking for
     + Location - work will be in our beautiful office in Berlin (Schoeneberg).
   
 Your responsibilities
+
   +  Hardware development for Pupil - camera based head wearable eye tracking and egocentric vision tools and other wearable and HMD integrations
   +  Assembly and management of electronics supply/stock
   +  Opportunity (commensurate with experience) to manage an assembly and fulfillment team 
   +  Hardware testing and quality control
 
 What we offer
+
 By joining us at this early stage, you will have the chance to make a big impact, work on projects that you are genuinely passionate about, and challenge your capacities. You will not just be another cog in the machine. We offer competitive salary commensurate with experience. 

@@ -20,10 +20,11 @@ While other tools/frameworks may already exist for eye tracking in HMDs, the maj
 This is why we propose a community driven, open source suite of software  **building blocks for eye tracking HMDs.**
 
 In this first draft we propose to create software building blocks for:
-* Detecting pupil positions in images. This is quite similar to what we do already in Pupil Capture. 
-* Mapping pupil positions into the world/scene. 
-* Calibration; For HMDs this is very different from how calibration works in Pupil Capture. 
-* Other features that are needed for specific research and applications (eye ball location, slippage, ...)
+
++ Detecting pupil positions in images. This is quite similar to what we do already in Pupil Capture. 
++ Mapping pupil positions into the world/scene. 
++ Calibration; For HMDs this is very different from how calibration works in Pupil Capture. 
++ Other features that are needed for specific research and applications (eye ball location, slippage, ...)
 
 As a researcher or developer exploring applications you want use eye tracking without having to develop the tool from start to finish. With building blocks like this becomes easier to put to together highly specific code for hmd eye tracking so you can concentrate your effort on the application and not the tool.
 
