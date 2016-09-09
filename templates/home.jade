@@ -62,12 +62,12 @@ block main
                   figure.Feature-figure
                     img(class="Feature-image" src="../media/images/home/icons/service.png")
                   h4 #{ oss_meta.point3 }
-              div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--2
+              div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--1
                 div.Feature
                   h3 The entire platform is on #[a(href="https://github.com/pupil-labs") github] and licensed under LGPLv3.
-                  h3 Check out a snapshot of the most recent activity below.
-          
-            div.Grid-cell.Grid-cell--full
+                  h3.u-padBottom--0 Check out a snapshot of the most recent activity below.
+              div(style="border-bottom: 2px rgba(255,255,255,0.75) solid")
+            div.Grid-cell.Grid-cell--full.u-padTop--1
               div.Grid.Grid--justifyCenter.Grid--center
                   div(id="Home-activity")
                     ul(id="Home-activity-list" class="Activity")
