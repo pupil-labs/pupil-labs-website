@@ -1,0 +1,86 @@
+// .Wallop-buttonPrevious
+//   left 50px
+//   background embedurl("../media/graphics/web/slider_assets/arrow-left.svg") no-repeat
+
+// .Wallop-buttonNext
+//   right 50px
+//   background embedurl("../media/graphics/web/slider_assets/arrow-right.svg") no-repeat
+
+$w = 20px
+$button_w = 54px
+$arrow_w = 18px
+$arrow_h = 31px
+$arrow_offset = 16px
+$arrow_offset_h = 11.5px
+
+.Wallop-buttonNext
+.Wallop-buttonPrevious
+  border none
+  z-index 2
+  width $button_w
+  height $button_w
+  position absolute
+  background-color rgba(255,255,255,0.0)
+  color #FEFEFE
+  border-radius 50%
+  font-size 24px
+  outline none
+  cursor pointer
+  transition color 0.4s ease
+  transition background-color 0.4s ease
+  &:hover
+    background-color rgba(255,255,255,0.75)
+    .Wallop-arrow-right,
+    .Wallop-arrow-left
+      stroke $link-hover-color
+
+  @media $break-767
+    display none
+    
+
+.Wallop-buttonPrevious
+  left 40px
+  
+.Wallop-buttonNext
+  right 40px
+
+.Wallop-arrow-right
+.Wallop-arrow-left
+  position absolute
+  width $arrow_w
+  height $arrow_h
+  top $arrow_offset_h
+  stroke #FFF
+  stroke-width 20px
+  shape-rendering geometricPrecision
+  fill none
+  display block
+  transition stroke 0.4s ease
+  margin auto
+
+.Wallop-arrow-right
+  // $button_w - arrow_w / 2
+  right $arrow_offset
+
+.Wallop-arrow-left
+  left $arrow_offset
+
+.Wallop-pagination-container
+  transform translate3d(0,-40px,0)
+  z-index 2
+
+.Wallop-dot
+  // text-indent -9999px
+  border 0
+  border-radius 50%
+  outline none
+  width 12px
+  height 12px
+  padding 0
+  margin 5px
+  background-color rgba(255,255,255,0.5)
+  transition all 0.2s ease
+  
+.Wallop-dot--current
+  transform scale(1.25,1.25)
+  background-color rgba(255,255,255,0.75)

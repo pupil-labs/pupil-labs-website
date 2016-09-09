@@ -1,81 +1,115 @@
 extends layout
 
 block main
-  div(id="Home")
+  div(id="Home").Site-transform
 
-    - var page_data = contents.home['index.json']
-    - var page_meta = page_data.metadata    
-    - var titleData = {'title':page_meta.title,'s1':page_meta.s1, 's2':page_meta.s2}    
-    include includes/title
+    - var intro_data = contents.home['home_pupil_intro.json']
+    - var intro_meta = intro_data.metadata    
+    - var oss_data = contents.home['home_open_source.json']
+    - var oss_meta = oss_data.metadata
+    - var home_newsletter = contents.home['home_newsletter.json']
+    - var home_newsletter_meta = home_newsletter.metadata
+
+    //- show background image
+    div.Background-img-top.Background-img-cover
+      figure(class="img-placeholder")
+        div(class="Background-img--full-wh img-loaded img-small" style="background-image: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAUAAD/4QMbaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlDNUQ2QTcwNUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlDNUQ2QTZGNUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9IkQ3NEIxQzI5QkJFOTMxNTVFRTIzNThCNkE5NzM4QTE5IiBzdFJlZjpkb2N1bWVudElEPSJENzRCMUMyOUJCRTkzMTU1RUUyMzU4QjZBOTczOEExOSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEABIODg4QDhUQEBUeFBEUHiMaFRUaIyIZGRoZGSInHiMhISMeJycuMDMwLic+PkFBPj5BQUFBQUFBQUFBQUFBQUEBFBQUFhkWGxcXGxoWGhYaIRodHRohMSEhJCEhMT4tJycnJy0+ODszMzM7OEFBPj5BQUFBQUFBQUFBQUFBQUFBQf/AABEIAB4AKAMBIgACEQEDEQH/xAB4AAADAQEBAAAAAAAAAAAAAAAABAUGAgMBAQEBAQAAAAAAAAAAAAAAAAIBAAMQAAIBAwMCAwUJAAAAAAAAAAECAwARBCExEkEFUSITYaEyFQZxgZGxwUKiIxQRAAICAgEFAAAAAAAAAAAAAAABETEhAmFBURIDE//aAAwDAQACEQMRAD8AjN3dCSWj1O50p3D+oZIEZEjATpemIvp7B4cnk99q7XsmBIvEORY2vcaVzXEgfrxYlNnOh/0Swuol+FteLfZyWpWU7zv6gTiNtrflWozsdExB22Qn9rpKdQ5uduW1qQ+XNHxjWQgMbDQbmk9m7ZfmlRnI24tqAR7aKu5HYcaABmmOp2FqKkm8XJ6R9uy3iHqlr+BJA/CmlxGXt8itII2AZi3gRt1v0rQEydQPdUSxXJyvVLvjNz5WsEQEef4xrb2U9U56G3o7gXliRQdwQseIdZlBLR8hfcClpMTNgPrLKMmK/wDWwu38RfWrEfzKNI1i4zR20c+Q8beXTxoY5By7RgjyN6rR2sG6crffvVa7tMmjfKMnmLnZLDnsuwCkfpRWv82nj76KOBw5s//Z');")
         
-    //- Pupil 
-    div.Grid.Grid--1of2
-      div.Grid-cell
-        div.Feature
-          figure.Feature-figure
-            img(class="Feature-image" src=page_meta.pupil_image alt=page_meta.pupil_image_alt)
-      div.Grid-cell.Grid-cell--center
-        div.Feature.Feature--padded3
-          h1.Feature-title--lg.u-textCenter #{ page_meta.pupil_title }
-          h2.Feature-subtitle #{ page_meta.pupil_description_1 }
-          h2.Feature-subtitle #{ page_meta.pupil_description_2 }
-          h2.Feature-subtitle #{ page_meta.pupil_description_3 }
-          h2.Feature-subtitle!= typogr(page_meta.pupil_description_4).typogrify()
-          a(href="/store" class="Button") #{ page_meta.pupil_link_text }
+        div(class="Background-img--full-wh img-large" data-src="../media/images/home/slides/00.jpg")   
+      div(style="top:55%;").Site-content-container.Background-img-caption-container.u-textCenter
+        h1.Background-img-caption Open source eye tracking.
+        //- h2.Background-img--caption-h2 
 
-    //- Newsletter Update
-    div.u-padTop--6
-      div.Grid.Grid--1of2.Grid--gutters.Grid--center
-        div.Grid-cell
-          h1.Banner-title.u-textCenter=page_meta.about_title
-          h2.Banner-subtitle.u-textCenter=page_meta.about_subtitle
-          h2.Feature-subtitle=page_meta.about_description_1
-          h2.Feature-subtitle=page_meta.about_description_2
-        div.Grid-cell.Grid-cell-center
-          div.Feature.Feature--padded3
-            h2.Banner-title.u-textCenter Stay updated
-            h2.Feature-subtitle We send about one email per quarter with product updates, community news, and technical reports. We will never share your information or spam your inbox.
-            form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
-              input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="your email address" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
-              p(class="Form-error--text" id="news_email_error")
-              input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
-              label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") Subscribe
+    //- pupil intro row
+    div(id="content-top" class="Site-content-container")
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            h1 Pupil Platform
+            h3 We develop open source software and build accessible hardware for eye tracking.
+          div.Grid-cell.Grid-cell--full
+            div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Grid--gutters
+              div.Grid-cell
+                p Our #[a(href="/pupil" title="Pupil mobile eye tracking headset") mobile eye tracking headsets] have research grade specs and enable accessible and scalable eye tracking research.
+                p Supercharge your #[a(href="/vr-ar" title="eye tracking for VR and AR") VR and AR eye tracking] research and development with our eye tracking add-ons for the latest consumer hardware.
+                p Take full control of the software and modify to your needs - it's 100% open source!
+                p All hardware is designed, developed, and assembled in our Berlin office and ships worldwide. Check out products on our #[a(href="/store" title="Pupil Labs store") store]. 
+              div.Grid-cell
+                figure.Feature-figure.u-padBottom--1
+                  img(class="Feature-image" src="media/images/home/platform/eye_debug_01a.png")
 
 
-    //- About Pupil Labs
-    //- - var bannerData = {'title': page_meta.about_title,'s1': page_meta.about_subtitle}
-    //- - var bannerParagraphs = [page_meta.about_description_1,page_meta.about_description_2]
-    //- - var bannerBkg = "Banner-container"
-    //- - var bannerSubClass = "Banner-subtitle Banner-subtitle--pad" 
-    //- include includes/banner
+    //- oss motivation row
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1 Pupil is Open Source
+          
+            div.Grid-cell.Grid-cell--full
+              div.Grid.Grid--1of3.Grid--gutters.u-textCenter.u-padBottom--2
+                div.Grid-cell
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/home/icons/modular.png")
+                  h4 #{ oss_meta.point1 }
+                div.Grid-cell
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/home/icons/community.png")
+                  h4 #{ oss_meta.point2 }
+                div.Grid-cell
+                  figure.Feature-figure
+                    img(class="Feature-image" src="../media/images/home/icons/service.png")
+                  h4 #{ oss_meta.point3 }
+              div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--1
+                div.Feature
+                  h3 The entire platform is on #[a(href="https://github.com/pupil-labs") github] and licensed under LGPLv3.
+                  h3.u-padBottom--0 Check out a snapshot of the most recent activity below.
+              div(style="border-bottom: 2px #ddd solid")
+            div.Grid-cell.Grid-cell--full.u-padTop--1
+              div.Grid.Grid--justifyCenter.Grid--center
+                  div(id="Home-activity")
+                    ul(id="Home-activity-list" class="Activity")
 
-
-    //- Recent Activity
-    - var bannerData = {'title': page_meta.activity_title,'s1': "a snapshot of the most recent pupil labs events"}
-    - var bannerBkg = "Banner-container--sm Banner--gradientBkg--reverse"
-    - var bannerParagraphs = ""
-    include includes/banner
-    div.Feature-container--activityHome
-      div.Grid.Grid--1of2.Grid--gutters-noMargin
-        div.Grid-cell
-          h2.u-textCenter Recent Blog Posts 
-          div.Feature.Feature--padded3
-            ul
-            - var articles = env.helpers.getArticles(contents)
-            - var articleLimit = 5
-            each article,i in articles.slice(0,articleLimit)
-              - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
-              li(class="Article-list-item" style=opacity)
-                article
-                  header
-                    h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
-                    p= article.metadata.subtitle
-                    a(href=article.url class="Article-link") Read More 
-
-        div.Grid-cell
-          h2.u-textCenter Development Feed 
-          div(id="Home-activity" class="Feature Feature--padded3")
-            ul(id="Home-activity-list" class="Activity")
+    
+    //- newsletter row
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.u-textCenter #{ home_newsletter_meta.title }
+          div.Grid-cell.Grid-cell--full
+            div.Grid
+              div.Grid-cell.Grid-cell--full
+                h4 #{ home_newsletter_meta.point1 }
+              div.Grid-cell
+                form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+                  input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
+                  p(class="Form-error--text" id="news_email_error")
+                  input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
+                  label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
+  
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full
+              div.Feature
+                h1.u-textCenter Recent Blog Posts
+            div.Grid-cell.Grid-cell--full.u-padTop--2
+              ul
+              - var articles = env.helpers.getArticles(contents)
+              - var articleLimit = 5
+              each article,i in articles.slice(0,articleLimit)
+                - var opacity = "opacity:"+String(1-(i*(1.1/articleLimit)))+";"
+                li(class="Article-list-item" style=opacity)
+                  article
+                    header
+                      h4 #{ article.title } - #[time(class="Article-time")= moment.utc(article.date).format('YYYY MMM. DD')]
+                      p= article.metadata.subtitle
+                      a(href=article.url class="Article-link") Read More 
 
 
 

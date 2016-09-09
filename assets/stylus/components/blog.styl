@@ -1,6 +1,10 @@
 #Blog
   // background linear-gradient(to bottom, rgba(255,255,255,1) 5%, rgba(255,255,255,.0001), rgba(0,0,0,.35))
 
+.Blog-row
+  &:nth-child(even)
+    background #f5f5f5
+
 .Blog-pageTitle
   background transparent
   
@@ -15,16 +19,21 @@
   &:active
     background $link-hover-color  
 
-  @media $break-sm
+  @media $break-767
     padding 3em .8em 3em .8em
 
-
+.Blog-article-intro
+  padding-left 2em
+  @media $break-767
+    padding-left 0em
+    
 .Blog-article-header
-  padding 1.5em 0em
+  padding-bottom 5em
+  padding-top 1em
 
 .Blog-article-title
-  color $gray-darker
-  font-size 2em
+  padding-bottom 0.1em
+  color #666
 
 .Blog-article-subtitle
   color $gray
@@ -36,7 +45,7 @@
       background rgba(0,0,0,.5)
       
       .Blog-article-title      
-        color lighten($gray-darker,90%)
+        color darken(#666, 30%)
       .Blog-article-subtitle
         color lighten($gray,70%)
       .Blog-article-date
@@ -59,17 +68,28 @@
   padding 3em 3em
   
 .Blog-nav-link
-  font-family $font-family-sans-serif
-  font-weight 700
   transition color .4s ease
   letter-spacing .01em  
   text-align center 
   
-  @media $break-lg
-    // big screen
-    font-size 1.1em 
-    
-  @media $break-sm
-    // small screen
-    font-size 1.05em 
-    
+
+//- NAT CLASS
+
+.Background-header-text
+  // line-height 1em
+  color #ffffff
+  font-size $heading-font-size
+  line-height $heading-font-size * 0.5
+  font-weight normal
+  padding-bottom 20px
+
+.Background-caption-text-button
+  // line-height 1em
+  background-color white
+    // color: black;
+  border 2px solid #ffffff
+  display inline-block
+  text-align center
+  padding 5px 15px
+  margin 4px 2px
+  border-radius 4px

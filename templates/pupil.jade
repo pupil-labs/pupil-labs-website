@@ -3,78 +3,232 @@ extends layout
 block append title
   | #{ " - " + page.title}
 
+block page_scripts
+  script(src=contents.js.vendor['Wallop.min.js'].url)
+  script(src=contents.js.vendor['Hammer.min.js'].url)
+
+
 block main
   //- Title block
-  div(id="Pupil")
+  div(id="Pupil" class="Site-transform")
     - var page_data = contents.pupil['index.json']
     - var page_meta = page_data.metadata
-    - var titleData = {'title':page_meta.title,'s1':page_meta.s1}    
-    include includes/title
+    - var pupil_slides_data = contents.pupil.features['slides_pupil_drawings.json']
+    - var pupil_slides_meta = pupil_slides_data.metadata
+    
+    //- slider 
+    //- TODO - add bkg color class (not inline)
+    //- TODO - pull slider images from json file and run in for loop
+    - var slider_data = pupil_slides_meta
+    div.Background-img-top.Background-img-cover
+      figure(class="img-placeholder")
+        div(class="Background-img--full-wh img-loaded img-small" style="background-image: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAUAAD/4QMbaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlDNUQ2QTc0NUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlDNUQ2QTczNUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9IjQ0NkMwODJBQTc2RDMwNTg2MDNFRTZBQzVCM0QyRjA0IiBzdFJlZjpkb2N1bWVudElEPSI0NDZDMDgyQUE3NkQzMDU4NjAzRUU2QUM1QjNEMkYwNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEABIODg4QDhUQEBUeFBEUHiMaFRUaIyIZGRoZGSInHiMhISMeJycuMDMwLic+PkFBPj5BQUFBQUFBQUFBQUFBQUEBFBQUFhkWGxcXGxoWGhYaIRodHRohMSEhJCEhMT4tJycnJy0+ODszMzM7OEFBPj5BQUFBQUFBQUFBQUFBQUFBQf/AABEIAB4AKAMBIgACEQEDEQH/xAB4AAACAgMAAAAAAAAAAAAAAAAAAwUGAQIEAQEAAwAAAAAAAAAAAAAAAAACAAEDEAACAQMDAQMLBQAAAAAAAAABAgMAEQTwIRIxUWGBQZGh0eHxIjITJAVCYsJjFBEAAgMAAgMAAAAAAAAAAAAAAAERIQJBA3ESIv/aAAwDAQACEQMRAD8Amkjvr200RDXvrZRtS8yWSHGeSIXcDbYta/lsOyoUlLgeMZivIebRpZjGvfUakv5sBrASLdQpIUfCb77EV34kzzw8nFmVip2sDxPUb0U5HvEKTDR60aKew1o0UgGivtSM/MhxYfrTbr8oUWLEt0sL1xZcn5IRAYcRaQ9WJA4ju5NVXzTl8/uw4k/svfwpJJq2kF6aahNlqyJVChzLxABPHfXjUjjyxPChiYMlhYgj11Rco5xhi+uHVASD04kfpJtT8A5tx/iV+f7P5UMZVzpSa9vZqvnXr45Lsz9/p9tFR+M+e0P3UZSUGxsbhh2/C1FLmDOak//Z');")   
+        div(class="Background-img--full-wh img-large" data-src="../media/images/home/slides/03.jpg")   
+      div(style="top:85%;").Site-content-container.Background-img-caption-container.u-textCenter
+        h1.Background-img-caption Platform for eye tracking and egocentric vision research.
 
-    //- Features
-    //- ====================================
-    //- Configurable
-    //- Software
-    //- Record-Play (download links)
-    //- Open Source Software
+    //- half width slider
+    section(style="background-color:#6f7679;")
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--center
+            div.Grid-cell.Grid-cell--full
+              div(style="color: white;").Feature
+                h1 Hardware
+                h4 Pupil headsets are 3D printed frames that you wear like a pair of glasses that connect to your device via USB.
+                h4 Cameras record your field of view and your eye movements. Pupil Capture software uses the videos to generate gaze and eye tracking data in real-time.
+                h4 The hardware is designed as a #[strong modular system] that can be configured to support your research and application requirments.
+            div(style="color: white;").Grid-cell.Grid-cell--1of3
 
-    //- Design
-    //- Technical Specs
-    //- Modular & Hackable
-    //- Community-License
-    - var features = _.chain(contents.pupil['features']._.pages).sortBy(function(item) {
-    -   return item.metadata['order'];
-    - }).value()     
-    each feature, i in features
-      - var rowType = (i%2 == 0 ? 'Grid Grid--1of2 Grid--center' : 'Grid Grid--1of2 Grid--center Grid--rowReverse')
-      if feature.title === "Software"
-        a(class='anchor' name=feature.title.toLowerCase())
-        - var bannerData = {'title': feature.title,'s1': feature.metadata.sub}
-        - var bannerBkg = 'Banner-container--sm'
-        - var bannerImg = feature.metadata.image
-        - var bannerImgClass = "Feature-image--software"
-        include includes/banner     
-      else if feature.title === "record-play"
-        - var group = [contents.pupil.features.recordplay['record.md'],contents.pupil.features.recordplay['play.md']]    
-        div.Grid.Grid--1of2.Aligner
-          a(class='anchor' name="software-download")
-          each f in group 
-            div.Grid-cell.Aligner-item--sm
-              div.Feature.Feature--padded2.Aligner-item--column
-                div.Aligner-item--stretchHeight
-                  h1.Feature-title--lg.u-textCenter= f.title
-                  h2.Feature-subtitle!= f.html
+                //- p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
+                each slide, i in slider_data
+                  - var text_class = (i == 0 ? "Feature-paragraph Wallop-txt Wallop-txt--current" : "Feature-paragraph Wallop-txt Wallop-txt--hidden")
+                  h4(class=text_class)=slide.configuration_title + " - " + slide.configuration_text 
+
+            div.Grid-cell.Grid-cell--2of3.u-padBottom--2
+              div(id="pupil-headset-slider").Grid.Grid--center.Grid--align-ContentCenter.Wallop
+                div.Wallop-list.Grid-cell.Grid-cell--full
+                  each slide, i in slider_data    
+                    - var slide_class = (i == 0 ? "Wallop-item Wallop-item--current" : "Wallop-item")
+                    - var bkg_img = "background-image: url('"+slide.url+"');"
+                    div(class=slide_class)
+                      div(class="Background-img--full-w-grid Background-img-contain" style=bkg_img)
+
+            div.Grid-cell.Grid-cell--full.u-textCenter.Wallop-pagination-container
+              each slide, i in slider_data
+                button.Wallop-dot
+
+    //- software 
+    //- div.Site-gray-bkg
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1 Software
+              h3 Connect your Pupil headset to a Linux, MacOS, or Windows computer via USB 
+          div.Grid-cell.Grid-cell--full
+
+            div.Grid--gutters-lg.Aligner
+              div.Aligner-item
+                div.Aligner-item--column
+                  div.Aligner-item--stretchHeight
+                    h2 Record
+                    p #[a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Capture" rel="noopener") Pupil Capture] is the software used with your Pupil headset.
+                    p Pupil Capture receives video and audio streams, detects your pupil, tracks your gaze, tracks markers in your environment, streams data in real-time over the network, and records data in an open format.
+                  div.Feature.u-padTop--2
+                    a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Capture" rel="noopener")
+                      figure.Feature-image--capturePlayerIcons
+                        img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pc.png")
+                      h2.u-textCenter.u-padTop--1 Pupil Capture
                 
-                if typeof(f.metadata.linkTxt2) !== 'undefined'
-                  div.Grid
-                    div.Grid-cell--1of2
-                      a(href=f.metadata.link class="Button-player" target="_blank")= f.metadata.linkTxt
-                    div.Grid-cell--1of2
-                      a(href=f.metadata.link2 class="Button-dataset" target="_blank")= f.metadata.linkTxt2
-                else
-                  a(href=f.metadata.link class="Button" target="_blank")= f.metadata.linkTxt
+              div.Aligner-item
+                div.Aligner-item--column
+                  div.Aligner-item--stretchHeight
+                    h2 Play
+                    p #[a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Player" rel="noopener") Pupil Player] is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. 
+                    p Visualize your data and export it. All Pupil software is open-source. You can modify it or write your own plugins to suit your needs.
+                    p Download the latest version of Pupil Player and test it out with our #[a(href="" rel="noopener" title="sample dataset download") sample dataset].
+                  div.Feature.u-padTop--2
+                    a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Player" rel="noopener")
+                      figure.Feature-image--capturePlayerIcons
+                        img(class="Feature-image" src="../media/graphics/web/pupil-app-icons/pp.png")
+                      h2.u-textCenter.u-padTop--1 Pupil Player
 
-      else if feature.title === "community-license"
-        - var group = [contents.pupil.features.communitylicense['community.md'],contents.pupil.features.communitylicense['license.md']]    
-        div.Grid.Grid--1of2.Grid--top
-          a(class='anchor' name=feature.title.toLowerCase())
-          each f in group 
-            div.Grid-cell.u-padBottom--5
-              div.Feature.Feature--padded2
-                h1.Feature-title--lg.u-textCenter= f.title
-                h2.Feature-subtitle!= f.html
-      else
-        a(class='anchor' name=feature.title.toLowerCase().replace(/[^A-Z0-9]+/ig, "-"))
-        div(class=rowType)
+    //- full width background image
+    div.Grid
+      div(class="Background-img--full-wh-grid Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+    //- tech specs and performance
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1 Technical Specifications & Performance
+              h4 Eye tracking performance is determined in equal parts by the hardware and software. 
+              h4 We constantly work on our algorithms and codebase, so you can expect a steady improvement and the latest features. 
+              h4 The headset is configurable with different cameras, so you can get the hardware you need: from high resolution capture at 30 hz to low latency (5.7ms) 120hz eye and world camera.
+
+
+            div.Grid-cell.TechSpecs-container
+              div.Grid-cell.TechSpecs--world
+                table.TechSpecs-table-feature.TechSpecs-txt--world
+                  tbody
+                    tr
+                      td.Table--column #[strong Gaze Accuracy]
+                      td 0.60 degrees
+                    tr
+                      td.Table--column #[strong Gaze Precision]
+                      td 0.08 degrees
+                    tr
+                      td.Table--column #[strong Pupil Tracking Technology]
+                      td Dark pupil with 3d model
+                    tr
+                      td.Table--column #[strong Pupil Parameters]
+                      td 2D position + 3D eye model parameters
+                    tr
+                      td.Table--column #[strong 2D Gaze Parameters]
+                      td Normalized 2D gaze position
+                    tr
+                      td.Table--column #[strong 3D Gaze Parameters]
+                      td 3D gaze rays + 3D gaze point through binocular vergence
+                    tr
+                      td.Table--column #[strong Pupil Diameter]
+                      td Relative size in eye camera pixels + absolute size in mm through 3d eye model
+                    tr
+                      td.Table--column #[strong Calibration]
+                      td 9-point and 5-point
+                    tr
+                      td.Table--column #[strong Sampling Frequency Eye Camera]
+                      td 120hz
+                    tr
+                      td.Table--column #[strong Sampling Frequency World Camera]
+                      td 60hz@720p / 30hz@1080p /120hz@vga
+                    tr
+                      td.Table--column #[strong Camera Latency]
+                      td 5.7 ms
+                    tr
+                      td.Table--column #[strong Processing Latency]
+                      td Depending on CPU typically > 3ms
+                    tr
+                      td.Table--column #[strong Slippage compensation]
+                      td Yes, through 3D eye model
+                    tr
+                      td.Table--column #[strong Recording]
+                      td Pupil and gaze and user data + raw eye and world video
+                    tr
+                      td.Table--column #[strong Realtime Streaming]
+                      td Pupil, gaze, user, and video data.
+
+
+            div.Feature.u-padTop--2
+              h4 Navigate to the #[a(href='/store#pupil' title='Pupil Store - pupil configurator') store] to check all configurations,  technical specs, and download sample videos.
+                  
+
+    //- open source
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+        div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell
+            div.Feature
+              h1 Open Source
+              h4 We believe in open source. All Pupil code is released with open source licenses.
+              h4 A lot of work went into making the software modular and accessible. The majority of the codebase is written in Python.
+              h4 We have developed a plugin structure that enables you to extend Pupil Capture and Pupil Player to suit your needs. 
+              h4 Check out the pupil repository on #[a(href="https://github.com/pupil-labs/pupil/" rel="noopener" title="pupil repository on github") Github]. Read developer documentation on the #[a(href="https://github.com/pupil-labs/pupil/wiki" rel="noopener" title="Pupil Wiki") wiki].
           div.Grid-cell
             div.Feature
               figure.Feature-figure
-                - var imgSrc = (feature.metadata.image.length > 10 ? feature.metadata.image : "http://placehold.it/1000x800/")
-                - var imgId = "Feature-image--"+feature.title.toLowerCase().replace(/[^A-Z0-9]+/ig, "_")
-                img(id=imgId class="Feature-image" src=imgSrc)
-          div.Grid-cell.Grid-cell--center
-            div.Feature.Feature--padded2
-              h1.Feature-title--lg.u-textCenter= feature.title 
-              h2.Feature-subtitle!= feature.html 
+                img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png" title="Pupil Plugin screenshot")
+
+
+    //- design
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell
+            div.Feature
+              h1 Design
+              h4 A lot of design and engineering thought has gone into getting the ergonomics of the headset just right.
+              h4 It is designed to fit snugly, securely, and comfortably. 
+              h4 The headset and cameras can be adjusted to accommodate a wide range of users. The headset is made from laser sintered PA12, an extremely flexible, durable, and lightweight material.
+          div.Grid-cell
+            div.Feature
+              figure.Feature-figure
+                img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg" title="Pupil Headset")
+
+
+    //- Modular & Hackable
+    div.Site-gray-bkg    
+      div.Site-content-container
+        div.Feature-container-column
+        div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+         div.Grid-cell
+            div.Feature
+              figure.Feature-figure
+                figure.Feature-figure
+                img(class="Feature-image" src="../media/images/pupil_page/web/dev_explo_transp.png" title="DIY Pupil Headset")
+          div.Grid-cell
+            div.Feature
+              h1 Modular & Hackable
+              h4 If we don't have the configuration you need, customize it yourself. Our camera mount geometry and electrical interface is #[a(href="https://github.com/pupil-labs/pupil/wiki/Pupil%20Hardware%20Development" rel="noopener" title="Pupil Wiki - Hardware Development") open]. 
+              h4 We also like to work with users to create custom solutions. #[a(href="mailto:sales@pupil-labs.com" rel="noopener" title="get in touch") Get in touch!]
+              h4 If you're excited about SMD soldering and hacking: you can make your own Pupil DIY. 
+              h4 #[a(href="https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset" rel="noopener" title="Pupil DIY frame on Shapeways") Buy the frame], #[a(href="https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html" rel="noopener" title="source parts") source parts], and #[a(href="https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide" rel="noopener" title="Pupil DIY guide") follow assembly instructions] to build your own Pupil DIY headset.
+
+
+    //- Commercial Use & Dedicated Support
+    div(id="content-top" class="Site-content-container")
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1 Commercial Use & Dedicated Support
+              h4 We offer dedicated email and video training and support packages. 
+              h4 See support packages in the #[a(href='/store#additional-products' title='Pupil Store - support packages') store]. 
+              h4 We offer use licenses to commercial users.
+              h4 #[a(href="mailto:sales@pupil-labs.com" title='contact us') Contact us] to discuss custom licensing options.
 
 

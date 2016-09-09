@@ -4,56 +4,58 @@ block append title
   | #{ " - " + page.title}
 
 block main
-  //- Title block
   div(id="Store")
     - var page_data = contents.store['index.json']
     - var page_meta = page_data.metadata
-    - var titleData = {'title':page_meta.title,'s1':page_meta.s1, 's2':page_meta.s2}    
-    include includes/title
+
+
+    //- Pupil section
+    section.Site-gray-bkg
+      div.Site-content-container
+        a(class='anchor' name="pupil")
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.u-padBottom--0 Pupil
+              div.Grid
+                div.Grid-cell.Grid-cell--full
+                  h3 configure your hardware to suit your needs
 
     //- Configurator
     include includes/configurator
 
+
+    //- VR/AR/MR
+    section.Site-gray-bkg
+      div.Site-content-container
+        a(class='anchor' name="vr-ar")
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.u-padBottom--0 VR/AR
+              div.Grid
+                div.Grid-cell.Grid-cell--full
+                  h3 integrate eye tracking into your vr and ar hardware
+
+    div.Site-content-container
+      div.Store-wrapper
+        div.Grid--gutters-lg.Aligner.VR-AR-products
+
     //- Additional Products
-    div.Banner--gradientBkg--reverse.u-padBottom--2
-        a(class='anchor' name="products")
+    section.Site-gray-bkg
+      div.Site-content-container
+        a(class='anchor' name="additional-products")
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.u-padBottom--0 Additional Products
+              div.Grid
+                div.Grid-cell.Grid-cell--full
+                  h3 add-ons, cameras, lens sets, accessories, support packages, and more
 
-        - var bannerData = {'title': 'Additional Products','subtitle': "cameras, lens sets, accessories, support packages, and more"}
-        - var bannerBkg = "Banner-container--sm"
-        include includes/banner
-
-        section.Store-wrapper
-          div.Grid--gutters-lg.Aligner.Additional-products
-
-        //- Pupil DIY  
-        //- - var bannerData = {'title': 'Pupil Dev', "subtitle": "entry level eye tracking headset using modified off-the-shelf components"}
-        //- - var bannerBkg = "Banner-container--sm"
-        //- - var bannerImg = "../media/images/additional_products/web/dev_iso.png"
-        //- - var bannerImgClass = "Feature-image--dev"
-        //- include includes/banner  
-
-        //- div.Grid--gutters-lg.Aligner.Store-wrapper--dev-diy
-        //-     div.Aligner-item--1of2
-        //-         div.Aligner-item--column.u-textCenter
-        //-             h3.u-padBottom--1.u-textCenter Pupil Dev
-        //-             div.Aligner-item--stretchHeight
-        //-                 p Get a Pupil Dev headset assembled by Pupil Labs.
-        //-                 p #[strong € 380] 
-        //-             div.Grid.Grid--full
-        //-                 div.Grid-cell
-        //-                     a(role='button' id='product_pupil_dev' class='AddToCart Button' href='#' data-product='product') Add to Cart
-
-        //-     div.Aligner-item--1of2
-        //-         div.Aligner-item--column.u-textCenter
-        //-             h3.u-padBottom--1.u-textCenter Pupil DIY
-        //-             p If you're excited about SMD soldering and hacking,
-        //-             p.u-padBottom--2 you can buy the parts, modify cameras, and assemble a Pupil DEV headset
-        //-             p.u-padBottom--2 We have made a guide and a shopping list for you. The total cost for all parts is approximately € 300.  
-        //-             div.Grid.Grid--gutters.Grid--1of3
-        //-                 div.Grid-cell
-        //-                     a(href="https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide" class="Button" target="_blank") DIY Guide
-        //-                 div.Grid-cell
-        //-                     a(href="https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html" class="Button" target="_blank") BOM
-        //-                 div.Grid-cell
-        //-                     a(href="https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset" class="Button" target="_blank") DIY Frame
-
+    div.Site-content-container
+      div.Store-wrapper
+        div.Grid--gutters-lg.Aligner.Additional-products

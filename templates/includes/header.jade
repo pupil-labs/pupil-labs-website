@@ -1,14 +1,29 @@
-header.Site-header.Header
-  a(class="Header-logo" href="/")= locals.name
-  nav(class="Header-nav")
-    ul
-      each url, title in contents.menu['header-nav.json'].metadata
-        - var pageTitle = "none"
-        - if (typeof(page) !== 'undefined'){
-        -   pageTitle = page.title
-        - }
-        - var navState = (title == pageTitle ? "Nav-link u-linkAttention" : "Nav-link")
-        - var navId = (title === "Cart" ? "Nav-cart" : "")
-        - var supTag = (title === "Cart" ? "<sup class=Nav-cart-itemCount></sup>" : "<sup> </sup>")
-        li.Nav-list-item
-          a(href=url id=navId class=navState) #{ title } !{supTag}
+header.Header-container
+  div(id="Header")
+    button(class="Header-menu-button js-menu-show material-icons") menu
+    div.Header-logo
+      nav
+        a(href="/").logotype pupil labs
+
+    div.Header-nav
+      div(class="Header-cart-badge")
+      ul(class="Header-nav-list")
+        each url, title in contents.menu['header-nav.json'].metadata
+          - var rel_attribute = (title === "docs" ? "noopener" : "")
+          - var nav_id = (title === 'cart' ? 'Nav-cart' : '')
+          li.Nav-tab
+            nav(id=nav_id)
+              a(class="Header-nav-item" href=url rel=rel_attribute) #{ title }
+
+    div.Header-cart-button-container
+      a(class="Header-cart-badge" id="cart-mobile" href="/cart")
+
+  aside.js-side-nav.side-nav
+    nav.js-side-nav-container.side-nav__container
+      div.js-menu-hide
+      ul.side-nav__content
+        li.side-nav-item
+          a(class="side-nav-item" href="/") home
+        each url, title in contents.menu['header-nav.json'].metadata
+          li
+            a(class="side-nav-item" href=url) #{ title }

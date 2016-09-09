@@ -7,11 +7,12 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 	background bkg
 	justify-content center	
 	transition color .3s ease-in-out,background .3s ease-in-out
-	font-family $font-family-sans-serif
+	font-family $font-family-sans-serif-alt
 	font-weight fontWeight
 	font-size fontSize
 	padding pad
-	
+	cursor pointer
+
 
 .Button
 	button()
@@ -19,14 +20,14 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 .Button-player
 	button()
 	
-	@media $break-md-lg
+	@media $break-767
 		margin-bottom 0.5em
 	
 .Button-dataset
 	button()
 	margin-left 0.65em
 	
-	@media $break-md-lg
+	@media $break-767
 		margin-left 0em
 
 .Button-inverse
@@ -44,6 +45,7 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 	cursor pointer
 	button(rgba(0,0,0,.025),1em,700,1em .1em,0,0px)
 	border-left 1px solid darken(#ddd,20%)
+	border-right 1px solid darken(#ddd,20%)
 	border-top 1px solid darken(#ddd,20%)
 	border-bottom 1px solid darken(#ddd,20%)
 	border-spacing 0px
@@ -52,6 +54,8 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 	background $link-hover-color
 
 action_button()
+	width 100%
+	// outline $link-hover-color
 	border-color transparent
 	border 1px solid #ddd
 	background rgba(255,255,255,.8)
@@ -105,3 +109,9 @@ action_button()
 		&:active
 			transition none
 			background complement($link-hover-color)	
+
+
+.Button-max-width--50-100
+	max-width 50%
+	@media $break-767
+		max-width 100%

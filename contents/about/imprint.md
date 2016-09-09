@@ -1,21 +1,24 @@
 ---
 title: Imprint
-order: 2
 ---
+<h3 class="u-padBottom--0">Address</h3>
 
-### Address
 Pupil Labs UG (haftungsbeschränkt) Gustav-Müller-Str. 7 10829 Berlin
 
-### Contact
-E-Mail <a href="mailto:info@pupil-labs.com" target="_blank">info@pupil-labs.com</a>
+<h3 class="u-padBottom--0">Contact</h3>E-Mail 
 
-### CEO
+<p><a href="mailto:info@pupil-labs.com" target="_blank">info@pupil-labs.com</a></p>
+
+<h3 class="u-padBottom--0">CEO</h3>
+
 Moritz Kassner
 
-### Registration
+<h3 class="u-padBottom--0">Registration</h3>
+
 Resitercourt/ Register id: District court Berlin (Charlottenburg) HRB 155541
 
-### VAT-ID
+<h3 class="u-padBottom--0">VAT ID</h3>
+
 gemäß § 27 a Umsatzsteuergesetz: DE293673193
 
 Responsible for Content (nach § 10 Absatz 3 MDStV): Moritz Kassner (Address as above)

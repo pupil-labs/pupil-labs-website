@@ -4,24 +4,100 @@ block append title
   | #{ " - " + page.title}
 
 block main
-  div(id="About")
+  div(id="About").Site-transform
     //- Title block
-    - var page_data = contents.about['index.json']
-    - var page_meta = page_data.metadata;
-    - var titleData = {'title':page_meta.title}   
-    include includes/title
-    
-    div.Grid
-      div.Grid-cell--main
-        div.Feature.u-padBottom--3
-          img(class="Feature-image" src="../media/images/gsm_2016_bw.jpg")
+    - var team_data = contents.about['team.json']
+    - var team_meta = team_data.metadata
+    - var imprint_data = contents.about['imprint.md']
+    - var imprint_meta = imprint_data.metadata
 
-    - var items = _.chain(contents.about['info']._.pages).sortBy(function(item) {
-    -   return item.metadata['order'];
-    - }).value()    
-    div.u-padBottom--5
-      div.Grid.Grid--1of2
-        each i in items
-          div.Grid-cell
-            h2.Feature-title.u-textCenter.u-padBottom--1= i.title
-            div.Article!= typogr(i.html).typogrify()
+    //- office image 1
+    div.Background-img-top.Background-img-cover
+      figure(class="img-placeholder")
+        div(class="Background-img--full-wh img-loaded img-small" style="background-image: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAUAAD/4QMUaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkJENzhCNDgxNUFEMjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkJENzhCNDgwNUFEMjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXA6Q3JlYXRvclRvb2w9IlBpY2FzYSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjVCOEJDNjY1RDdBOTExRTU5QjBCOTVGODE5NEZFOUY1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjVCOEJDNjY2RDdBOTExRTU5QjBCOTVGODE5NEZFOUY1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAEg4ODhAOFRAQFR4UERQeIxoVFRojIhkZGhkZIiceIyEhIx4nJy4wMzAuJz4+QUE+PkFBQUFBQUFBQUFBQUFBQQEUFBQWGRYbFxcbGhYaFhohGh0dGiExISEkISExPi0nJycnLT44OzMzMzs4QUE+PkFBQUFBQUFBQUFBQUFBQUFB/8AAEQgAIwAoAwEiAAIRAQMRAf/EAGgAAAIDAQAAAAAAAAAAAAAAAAAGAwQFAQEBAAAAAAAAAAAAAAAAAAAAABAAAgEDAwIEBQUBAAAAAAAAAQIDABEEITESQRNRgSIFYXGRQjPhMoJjFAYRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AGAPCBfmAPnXEyIjIqiRTzOmo1rByPe81cUM0axpGCxsh9X2gHl01q5gyI/tif5EMjIp7dm9aki+nyP1oNOeSJdOY8CKmdSEuLEm2hJHT4UuTe55HfkyJ5+wkUTLJA4H5bejiATdr71lr/1M3dxXlLS8UKZA/GjMzaNYblRQN7MwVrhRe17frRS7l+/9mSSNUDhdEAJ1bqS3hRQSZKLJjMigliCLeN+lLUKPjMWHJJL2BUlSAKY1kJG+ldnwosmIWIEoGjePwNAr5U82QwjeQsbk3ck9ep1vRh4qyyqkxPAXJVbbjcedqmlwQshLAgireKkUS95nFhcW60Bk+3pJKzRScQSbAjb6UVN3VeQhBaNf2sNL+VFBcXYVNFsd9ulFFBQyN+nnWdl/by3/ALNv48dKKKCxB+NdvLaiiig//9k=');")   
+
+        div(class="Background-img--full-wh img-large" data-src='../media/images/about/gsm_2016_bw.jpg')                
+      div.Site-content-container.Background-img-caption-container.u-textCenter
+        h1.Background-img-caption We build eye tracking hardware and software.
+        h1.Background-img-caption We believe in open source. 
+
+    //- div
+    //-   figure(class="Background-img-top Background-img--full-wh Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_bw.jpg');")
+
+    //- mission
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full
+              div.Feature
+                h1 Mission
+              div.Grid
+                div.Grid-cell.Grid-cell--full
+                  //- p.Feature-paragraph At Pupil Labs we do research and development, with an emphasis on design. 
+                  h4 We believe in open source. We have formed our business around an open source model, and have grown with our community.
+                  h4 We work projects that we find challenging and exciting. It is our goal with every aspect of our work to learn something new. 
+                  h4 We are excited about eye tracking. It enables us to work at the intersection of many fields and to interact with a diverse community.
+                  h4 We are currently focusing our development efforts on Pupil – a mobile eye tracking headset and open source software framework – and on developing open source tools for virtual reality, augmented reality, and mixed reality.
+
+    //- team
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Feature
+              h1 Team
+            //- todo
+            //- separate make content into json 
+            //- add images
+            //- loop through content and images
+            div.Grid.Grid--1of3.Grid--gutters
+              each member,i in team_meta
+                - var memberContact = (!member.contact ? member.name : "<a href='mailto:"+member.contact+"'>"+member.name+"</a>")
+                div.Grid-cell
+                  //- show images when we have them ready
+                  //- img(src="#{ member.img }" style="border-radius:50%;").Feature-image
+                  p.u-padBottom--0!= typogr(memberContact).typogrify()
+                  p.small= member.role
+              div.Grid-cell
+                p.u-padBottom--0 #[a(href="/careers" title="Join the team") You]
+                p.small Join the team
+
+    //- office image 2
+    div.Grid
+      div(class="Background-img--full-wh-grid Background-img-cover" style="background-image: url('../media/images/about/gsm_2016_topview.jpg');")
+
+
+    //- made in berlin row
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full.u-textCenter
+            div.Feature
+              h1 Made in Berlin
+            div.Grid
+              div.Grid-cell.Grid-cell--full
+                h4 Our main office is located in Berlin, Germany. 
+              div.Grid-cell.Grid-cell--full
+                h4 We fabricate locally and ship worldwide.
+              div.Grid-cell.Grid-cell--full
+                h4 We strive to make great tools, and are excited to see what you do with them! 
+
+
+    //- imprint
+    div.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full
+              div.Feature
+                h1.Feature-title--lg.u-textCenter.u-padBottom--1= imprint_meta.title
+              div.Grid
+                div.Grid-cell.Grid-cell--full!= typogr(imprint_data.html).typogrify()
+
+
+    //- div.u-padBottom--5
+    //-   div.Grid.Grid--1of2
+    //-     div.Grid-cell
+    //-       h2.Feature-title.u-textCenter.u-padBottom--1= i.title
+    //-       div.Article!= typogr(i.html).typogrify()

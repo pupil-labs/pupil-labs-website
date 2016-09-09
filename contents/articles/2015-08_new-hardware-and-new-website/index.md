@@ -3,6 +3,8 @@
  date: Tue Aug 25 2015 16:12:16 GMT+0700 (ICT)
  author: Pupil Dev Team
  subtitle: Two big updates -- New Hardware and a brand new website...
+ featured_img: "../../../../media/images/blog/e120upgrade.png"
+ featured_img_thumb: "../../../../media/images/blog/thumb/e120upgrade.png"
  ---
 
  We are excited to announce two big updates. 
@@ -18,7 +20,7 @@ The second big hardware update is the addition of custom made world and eye came
 
 With the new options and our online configurator, you can build the headset you require for your research. For example, you can configure Pupil for egocentric vision research with a high speed camera and no eye camera. Similarly, Pupil can be configured for pupillometry without scene information with monocular or binocular eye cameras and no world camera. Check out all the possible configurations on the store -- [https://pupil-labs.com/store](https://pupil-labs.com/store) 
 
-<img src="../../../../media/images/additional_products/web/hs_cam.png" class='Feature-image' alt="Pupil Capture World and Eye window screenshots v0.4.0">
+<img src="../../../../media/images/store_additional_products/e120upgrade.png" class='Feature-image' alt="Pupil Capture World and Eye window screenshots v0.4.0">
 
 For those of you with an existing Pupil Pro headset, we made an upgrade kit so that you can add 120fps eye capture to your headset (no tools required).        
 

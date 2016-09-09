@@ -16,12 +16,16 @@ $gray-base ?=           #000
 $gray-darker ?=         lighten($gray-base, 13.5%) // #222
 $gray-dark ?=           lighten($gray-base, 20%)   // #333
 $gray ?=                lighten($gray-base, 33.5%) // #555
-$gray-light ?=          lighten($gray-base, 46.7%) // #777
-$gray-lighter ?=        lighten($gray-base, 93.5%) // #eee
+$gray-light ?=      	lighten($gray-base, 40%)   // #666
+$gray-lighter ?=        lighten($gray-base, 46.7%) // #777
+$gray-lighterer ?=      lighten($gray-base, 93.5%) // #eee
+
+
 
 // Scaffolding
+$header-color ?= $gray
 $body-bg ?= $color-default
-$text-color ?= $gray-dark
+$text-color ?= $gray-light
 
 $link-hover-color ?= lighten(rgb(17, 160, 140),25%) //#247b75
 $link-color ?= rgb(17, 160, 140)
@@ -33,44 +37,27 @@ $link-text-decoration ?= none
 // Typography
 // the ?= is a conditional assignment - if the variable is already assigned it doesn't get overwritten
 // kind of overkill here but, interesting feature 
-$font-family-sans-serif ?= 	'Quicksand', sans-serif
-$font-family-sans-serif-alt ?=		'Open Sans', sans-serif
+$font-family-sans-serif ?= 	'Regular', sans-serif
+$font-family-sans-serif-alt ?=		'AtlasGroteskRegular', 'Helvetica', sans-serif
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
-$font-family-monospace ?=  	Menlo, Monaco, Consolas, "Courier New", monospace
+$font-family-monospace ?=  	"Space Mono", "Courier New", monospace
 $font-family-base ?=      	$font-family-sans-serif
 
 $font-size-base ?=			1em
-$line-height-base ?=  		1.5 // "unit-less" base line height that can be used as a multiplier by elements
+$line-height-base ?=  		1.2 // "unit-less" base line height that can be used as a multiplier by elements
+
+$heading-font-size ?=		2.8em
+
+$heading-font-weight ?=		400
+$subhead-font-weight ?=		400
+$subtitle-font-weight ?=	400
+$paragraph-font-weight ?=	300
 
 
-// Icons
-
-
-// Components
-// -- Define most commonly used padding and border radius sizes. We should use EM (relative to a base typography for this)
-
-// Tables
-
-
-// Buttons
-
-
-// Forms
-  
-
-// Dropdowns
-
-
-// Z-index master list
-$zindex-navbar ?= 			1000
 
 // Media queries, breakpoints 
-$break-lg-val ?= 48em
-$break-xs ?=				"all and (max-width: 44em)"
-$break-sm ?=				"all and (max-width: 48em)"
-$break-md ?=      		"all and (max-width 60em)"
-$break-md-lg ?=             "all and (max-width 65em)"
-$break-lg ?=				"all and (min-width: 44em)"
+$break-767 ?=             "all and (max-width 767px)"
+$content-max ?=				1000px
 
 // Grid system
 
@@ -78,8 +65,5 @@ $break-lg ?=				"all and (min-width: 44em)"
 // Navbar
 $navbar-bg ?= 				$color-default
 $navbar-border-color ?= 	$color-secondary
+$navbar-height ?= 64px
 
-// Navs
-
-
-// Pagination

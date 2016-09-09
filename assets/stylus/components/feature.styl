@@ -1,6 +1,9 @@
 .Feature
   // nothing here yet
         
+.Feature-100vh
+  height 100vh
+  
 .Feature--store
   display flex
   flex-direction column
@@ -23,18 +26,26 @@
 .Feature--padded2
   padding 2em
   
-  @media $break-sm
+  @media $break-767
     padding 3em .8em 3em .8em 
         
 .Feature--padded3
   padding 3em 
   
-  @media $break-sm
+  @media $break-767
     padding 3em .8em 3em .8em 
     
 .Feature-image--wrapper
   flex-shrink 0
 
+
+.Feature-image-100vh
+  display block
+  height 100vh
+  width auto
+  align-items center
+  justify-content center
+  
 .Feature-image
   display block
   width 100%
@@ -76,7 +87,7 @@
   margin-right auto
   height auto
 
-  @media $break-lg
+  @media $break-767
     max-width 60%
 
 .Feature-image--dev
@@ -87,7 +98,7 @@
   margin-right auto
   height auto
   
-  @media $break-sm
+  @media $break-767
     max-width 80%
 
 .Feature-image--store
@@ -101,30 +112,18 @@
   width 30%
   height auto
 
-.Feature-title--lg
-  color #515151
-  font-size 2em
-        
-.Feature-subtitle
-  padding .5em 1em
-  color darken(#8A8A8A, 20%)
-  font-size 1.1em
-  text-align justify
-  text-justify inter-word
-  
-  @media $break-lg
-      font-size 1.15em
-      
-  > p
-    padding-bottom 1em
+.Feature-image--serviceIcon
+  display block
+  margin-left auto
+  margin-right auto
+  width 25%
+  height auto  
 
-.Feature-subtitle--lg
-  padding .2em 1em
-  color darken(#8A8A8A, 20%)
-  font-size 1.3em
-  
-  @media $break-lg
-      font-size 1.4em
+.Feature-title--lg
+  color $header-color
+  font-size $heading-font-size
+  font-weight $heading-font-weight
+
         
 .Feature-image--configWorld
   position absolute
@@ -137,20 +136,216 @@
   position relative
   left 0
   top 0 
+
+.Feature-image--blog-archive--wrapper
+  height 30vh
+  padding-bottom 3em
   
+  @media $break-767
+    height 40vh
+
+.Background-img--blog-archive
+  width 100%
+  height 100%
+  background-position center center
+  background-repeat no-repeat
+  // background-attachment fixed
+  margin 0px
+  overflow hidden
+  // position relative
+
+.Background-img-top--blog
+  margin 0px
+  overflow hidden
+  display block
+  position relative
+  width 100%
+  height 65vh
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background-position center center
+  background-repeat no-repeat  
+  background-attachment fixed // set to scroll so content doesn't scroll over top
+  @media $break-767
+    // don't use vh on mobile due to hiding navbar it make the site jumpy.
+    height 400px
+
+
+.Background-img-top
+  margin 0px
+  overflow hidden
+  display block
+  position relative
+  width 100%
+  height 100vh
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background-position center center
+  background-repeat no-repeat  
+  background-attachment fixed // set to scroll so content doesn't scroll over top
+  @media $break-767
+    // don't use vh on mobile due to hiding navbar it make the site jumpy.
+    height 400px
+
+.Background-img-cover
+  background-size cover
+
+.Background-img-contain
+  background-size contain !important
+
+.Background-img--full-wh
+  position absolute
+  top 0
+  bottom 0
+  left 0
+  right 0
+  background-position center center
+  background-repeat no-repeat
+  background-color transparent
+  background-size cover
+
+
+.img-placeholder
+  // nothing here yet
+    
+.img-large
+.img-small
+  opacity 0
+
+.img-loaded
+  opacity 1
+  transition opacity 0.4s linear
+
+.img-small
+  // margin 0px
+  // overflow hidden
+  filter blur(50px)
+  transform scale(1)
+
+.Background-img--full-wh-grid
+  background-position center center
+  background-repeat no-repeat
+  background-attachment scroll // set to scroll so content doesn't scroll over top
+  width 100vw
+  height 100vh
+
+  @media $break-767
+    padding 0
+    padding-bottom 75%
+    height 0
+    background-position-y top
+    
+.Background-img--full-w
+  background-position center center
+  background-repeat no-repeat  
+  background-attachment scroll // set to scroll so content doesn't scroll over top
+  width 100vw
+  min-height 30em
+
+  @media $break-767
+    padding 0
+    padding-bottom 75%
+    height 0
+    background-position-y top  
+    
+.Background-img--full-w-fixed
+  background-position center center
+  background-repeat no-repeat  
+  background-attachment fixed // set to scroll so content doesn't scroll over top
+  width 100vw
+  height 80vh
+  @media $break-767
+    padding 0
+    padding-bottom 71.4%
+    height 0
+    background-position-y top
+    background-size contain
+    background-attachment scroll
+
+.Background-img--full-w-grid
+  background-position-x center
+  background-position-y center
+  background-attachment scroll
+  background-repeat no-repeat  
+  width 100%
+  padding-bottom 75%
+
+
+.Background-video-container
+  position relative
+  overflow hidden
+  margin 0
+  padding 0
+  background-color #676668
+  
+  
+.Background-video
+  height 100%
+  width 100%
+  object-fit contain
+  // video
+  //   object-fit cover !important
+      
+.Background-img-caption-container
+  transform translateY(-50%)
+  position relative
+  top 60%
+  z-index 1
+  
+.Background-img-button-container
+  position absolute
+  z-index 1
+  top calc(50% - 4em)
+  left calc(50% - 6em)
+
+.Background-img-caption
+  line-height 1em
+  color #ffffff
+  
+
+.Background-img--caption-h2
+  font-size 1.3em
+    
 .Feature-specs
   flex 1 0 auto
     
 .Feature-wrapper
   display flex
   flex-direction column
-    
-.Grid-cell p
-    flex 1 0 auto
-    
+        
 .Feature-grayBkg
   color invert($gray-darker)
   background darken($link-hover-color,30%)
   
 .Feature-container--activityHome
   background rgba(0,0,0,0.1)
+  
+.Feature-container-column
+  // display flex
+  // flex-direction column
+  padding 3em 0em
+  @media $break-767
+    padding 2.5em 0em
+    div[class^="Grid-cell"]
+      padding 1em 0em
+  
+.Feature-row
+  min-height 30em
+  @media $break-767
+    min-height 0em
+    
+.Feature-slide-wrapper
+  background-color #828282
+  min-height 60vh
+  padding 3em 0em
+  @media $break-767
+    badding 2.5em 0em
+
+.Feature--job-item
+  border-bottom-width 1px
+  border-bottom-color rgb(155,155,155)
+  border-bottom-style solid

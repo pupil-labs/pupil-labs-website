@@ -9,5 +9,9 @@ block append title
 
 block main
   div(id="Success")
-    - var bannerData = { "title": "Success", "s1": "Thanks for submitting your request, we will be in touch shortly via email."}
-    include includes/banner
+    div.Background-img-top.Background-img-cover  
+      div(style="top:40%").Site-content-container.Background-img-caption-container.u-textCenter
+        h1 Success
+        h3 Thank you for submitting your request.
+        h3 We will be in touch via email with a proforma invoice.
+

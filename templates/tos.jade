@@ -8,11 +8,10 @@ block main
     //- Title block
     - var page_data = contents.tos['index.json']
     - var page_meta = page_data.metadata
-    - var titleData = {'title':page_meta.title}
     - var tosContent =  contents.tos['tos_terms.md']
-    include includes/title
-    div.Grid.Article
-      div.Grid-cell--sidebar
-      div.Grid-cell--main.u-padBottom--5
-        section.content!= typogr(tosContent.html).typogrify()
-      div.Grid-cell--sidebar
+    div.Site-content-container
+      div.Feature-container-column
+        article.Grid
+          header.Grid-cell.Grid-cell--full.Blog-article-header.u-textCenter
+            h1.Blog-article-title Terms of Sale
+          section.Grid-cell.Grid-cell--full.content!= typogr(tosContent.html).typogrify()

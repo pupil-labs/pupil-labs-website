@@ -1,9 +1,0 @@
-- var td = titleData
-- var bannerClass = (typeof(titleBkg) !== 'undefined'? "Banner-container Banner--gradientBkg "+titleBkg: "Banner-container Banner--gradientBkg" )
-div(class=bannerClass)
-  div.Banner-item.u-textCenter
-    each v,k in td
-      - var titleItem = (k == 'title' ? "<h1 class='Banner-title'>"+v+"</h1>" : "<h2 class='Banner-subtitle'>"+v+"</h2>")
-        | !{ titleItem }
-
-

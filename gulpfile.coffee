@@ -4,6 +4,7 @@ gutil = require "gulp-util"
 
 # node filesystem 
 fs = require('fs')
+del = require('del')
 
 # parse command line args
 minimist = require('minimist') 
@@ -16,13 +17,16 @@ wintersmith = require "run-wintersmith"
 stylus = require "gulp-stylus"
 prefixer = require "gulp-autoprefixer"
 coffee = require "gulp-coffee"
+babel = require "gulp-babel"
 concat = require "gulp-concat"
 uglify = require "gulp-uglify"
-imagemin = require "gulp-imagemin"
-pngquant = require "imagemin-pngquant"
 sitemap = require "gulp-sitemap"
 favicons = require "gulp-favicons"
-
+runSequence = require "run-sequence"
+plumber = require 'gulp-plumber'
+image_min = require 'gulp-sharp-minimal'
+uncss = require "gulp-uncss"
+# size = require 'gulp-size'
 
 css = ()->
   gulp.src "assets/stylus/main.styl"
@@ -35,8 +39,24 @@ css = ()->
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
+js_sideNav = ()->
+  gulp.src "assets/js/sidenav/*.js"
+    .pipe babel(presets: ['es2015'])
+    .pipe concat "sidenav.js"
+    .pipe uglify()
+    .pipe gulp.dest "contents/js"
+    .pipe livereload();
 
-js = ()->
+js_bkgVideo = ()->
+  gulp.src "assets/js/bkg_video/*.js"
+    .pipe babel(presets: ['es2015'])
+    .pipe concat "bkg_video.js"
+    .pipe uglify()
+    .pipe gulp.dest "contents/js"
+    .pipe livereload();
+
+
+jscoffee = ()->
   gulp.src "assets/coffeescript/*.coffee"
   .pipe coffee(
     bare: true
@@ -44,7 +64,12 @@ js = ()->
   .pipe concat "main.js"
   .pipe uglify()
   .pipe gulp.dest "contents/js"
-  .pipe livereload()
+  .pipe livereload();
+
+js = ()->
+  js_bkgVideo()
+  js_sideNav()
+  jscoffee()
 
 gulp.task "newPost", ->
   knownOpts = 
@@ -68,22 +93,29 @@ gulp.task "newPost", ->
     return
 
   postHeader = "---\n
-                title: #{ humanTitle }\n
-                date: #{ date }\n
-                author: Pupil Dev Team\n
-                subtitle: \n
-                ---"
+               title: #{ humanTitle }\n
+               date: #{ date }\n
+               author: Pupil Dev Team\n
+               subtitle: \n
+               ---"
   fs.writeFile postDir+"/index.md", postHeader 
   gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
 
-gulp.task "image_min", ->
-  gulp.src('build/media/images/**/*')
-  .pipe(
-    imagemin
-      optimizationLevel: 2
-      progressive: true
-      use: [pngquant()])
-  .pipe gulp.dest('build/media/images')
+
+gulp.task 'image_min', ->
+  options = {
+    resize: [1440,1440],
+    quality: 80,
+    progressive: true,
+    compressionLevel: 6,
+    sequentialRead: true,
+    trellisQuantisation: false
+  }
+
+  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
+    .pipe(plumber())
+    .pipe(image_min(options))
+    .pipe(gulp.dest('./'))
 
 gulp.task "generate_sitemap", ->
   gulp.src('build/**/*.html')
@@ -93,23 +125,32 @@ gulp.task "generate_sitemap", ->
   .pipe gulp.dest('build')
 
 gulp.task "generate_favicons", ->
-  gulp.src("build/index.html")
-  .pipe(
-    favicons
-      files: {
-        dest: "media/graphics/web"
-        # html: "build/index.html"
-      },
-      settings: {
-        logging: true
-      })
-  .pipe gulp.dest("./")
+  return gulp.src("./build/media/graphics/favicon_base.png")
+    .pipe(
+      favicons
+        appName: "Pupil Labs"
+        appDescription: "Pupil Labs Website"
+        developerName: "Pupil Labs Dev Team"
+        developerURL: "https://github.com/pupil-labs/pupil-labs-website"
+        background: "#38ea92"
+        path: "build/media/graphics/web/favicons/"
+        display: "standalone"
+        orientation: "portrait"
+        version: 2.0
+        logging: false
+        html: "build/index.html"
+        pipeHTML: true
+        replace: true
+    )
+    .on("error", gutil.log)
+    .pipe(gulp.dest(".build/media/graphics/web/favicons/"))
+
 
 gulp.task "preview", ->
     wintersmith.settings.configFile = 'config.json'
     wintersmith.preview()
 
-gulp.task "build_wintersmith", ->
+gulp.task "build_wintersmith", (cb)->
   knownOpts = 
     boolean: ['dev','staging','production']
   # opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dev':true}
@@ -117,25 +158,57 @@ gulp.task "build_wintersmith", ->
   if opts.dev
     wintersmith.settings.configFile = 'config.json'
     wintersmith.build ->
-      gutil.log "Successfully built wintersmith for local dev."
+      gutil.log "Successfully built wintersmith for --> local dev."
+      cb()
   if opts.staging
     wintersmith.settings.configFile = 'config_staging.json'
     wintersmith.build ->
-      gutil.log "Successfully built wintersmith for staging."
+      gutil.log "Successfully built wintersmith for --> staging."
+      cb()
   if opts.production 
     wintersmith.settings.configFile = 'config_production.json'
     wintersmith.build ->
-      gutil.log "Successfully built wintersmith for **production**."
+      gutil.log "Successfully built wintersmith for --> production."
+      cb()
+
+gulp.task "css_clean", ->
+  return gulp.src('build/css/main.css')
+    .pipe(uncss(
+      html: ['build/**/*.html'],
+      ignore: [
+                new RegExp('^.no-touch.*'),
+                new RegExp('\.Header*(.)\S+'),
+                new RegExp('^.js-side-nav*'),
+                new RegExp('^.side-nav*'),
+                new RegExp('\.logotype*(.)\S+')
+                new RegExp('\.cart-*(.)\S+')
+                new RegExp('\.no-touch*(.)\S+')
+                new RegExp('\.Wallop.*(.)\S+')
+                new RegExp('\.Store*(.)\S+')
+                new RegExp('\.Add*(.)\S+')
+                new RegExp('\.Button*(.)\S+')
+                new RegExp('\.Grid-*(.)\S+')
+                new RegExp('\.Aligner-*(.)\S+')
+                new RegExp('\.TechSpecs-*(.)\S+')
+                ]))
+      .pipe(gulp.dest('build/css'))
 
 gulp.task "css", ->
-  css()
+  return css()
 
 gulp.task "js", ->
-  js()
+  return js()
 
-gulp.task "build", ['css','js','build_wintersmith','image_min'], ->
-  gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
+gulp.task "build_clean", ->
+  return del('build/')
 
+gulp.task "build_log", ->
+  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
+
+gulp.task "build", (cb)->
+  runSequence 'build_clean',
+               ['css','js'],
+               'build_wintersmith',cb
 
 # watch tasks watch folders and call functions defined above on change
 gulp.task 'default', ['css', 'js', 'preview'], ->
@@ -152,4 +225,3 @@ gulp.task 'default', ['css', 'js', 'preview'], ->
   # gulp.watch "templates/**", ->
   #   jade()
   #   gutil.log "Template file changed. Compiling and reloading..."
-

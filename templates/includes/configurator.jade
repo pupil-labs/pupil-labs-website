@@ -1,99 +1,61 @@
-- var config_imgs = contents.media.images.config_images.web
+- var config_imgs = contents.media.images.store_pupil.web
 
-- var world_cams = _.chain(contents.store.products['world-cameras.json'].metadata).sortBy(function(item){
--  return item['order']; 
-- }).value()
+div.Site-content-container
+  div.Grid.Grid--1of2--breakConfig.Grid--center
+    a(class='anchor' name="config")
+    
+    //- Images
+    div.Grid-cell
+      div.Feature
+        figure.Feature-figure.Feature-figure--config
+          //- init with configuration
+          img(id="pupil-config-img" class="Feature-image Feature-image--configEye" src=config_imgs['pupil_w120_e120.jpg'].url)
+    
+    //- Controls
+    div.Grid-cell
+      div.Grid.Grid-column
 
-- var eye_cams = _.chain(contents.store.products['eye-cameras.json'].metadata).sortBy(function(item){
--  return item['order']; 
-- }).value()
+        //- World options
+        div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--world
+          div.Grid.ConfigOptions
+            div.Grid-cell.u-textCenter
+              h3.StoreConfig-header World Camera
+          ul.Grid.Grid--justifyCenter.ConfigOptions--world
 
+          div.Grid.Grid--full
+            div.Grid-cell.u-textCenter.TechSpecs-container
+              p(id="infoTxt-world" class="TechSpecs-txt")
+              a(href="#" role="button" id="specs-world" class="TechSpecs") show detailed specs
+            div.Grid-cell.TechSpecs--world
+              //- table.TechSpecs-table.TechSpecs-txt--world
 
-section.Grid.Grid--1of2--breakConfig
-  a(class='anchor' name="config")
-  
-  //- Images
-  div.Grid-cell
-    div.Feature
-      figure.Feature-figure.Feature-figure--config
-        //- init eye image with 120fps
-        img(id="pupil-config-img" class="Feature-image Feature-image--configEye" src=config_imgs['hs_hsm.jpg'].url)
-        //- init world image with 120fps
-        //- img(id="world-img" class="Feature-image Feature-image--configWorld" src=config_imgs['pupil-config-world-120hz.jpg'].url)          
-  
-  //- Controls
-  div.Grid-cell
-    div.Grid.Grid-column
-      //- Presets -- pulled from JSON
-      //- here we sort the data in pupil-presets by the order key
-      //- - var config_data = contents.store.products['pupil-presets.json'].metadata
-      //- - var config_presets = _.chain(config_data).sortBy(function(item){
-      //- -  return item['order']; 
-      //- - }).value()
-      //- div.StoreConfig-rowContainer.StoreConfig-rowContainer--presets
-      //-   div.Grid
-      //-     div.Grid-cell.u-textCenter
-      //-       h3.StoreConfig-header Preset Configurations
-      //-   ul.Grid.Grid--justifyCenter
-      //-     each item in config_presets.slice(1,6)
-      //-       li.Grid-cell.u-textCenter
-      //-         a(role="button" href="#" class="Store-navPreset" data-preset=item.world+" "+item.eye) #{ item.label } 
+        //- Eye options
+        div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--eye
+          div.Grid
+            div.Grid-cell.u-textCenter
+              h3.StoreConfig-header Eye Camera
+          ul.Grid.Grid--justifyCenter.ConfigOptions--eye
 
-      //- World options
-      div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--world
-        div.Grid.ConfigOptions
-          div.Grid-cell.u-textCenter
-            h3.StoreConfig-header World Camera
-        ul.Grid.Grid--justifyCenter.ConfigOptions--world
-          //- each world in world_cams
-          //-   //- 120fps is active by default
-          //-   - var itemClass = (world.id === 'world-120hz' ? 'StoreConfig-world StoreConfig--state-active' : 'StoreConfig-world')
-          //-   li.Grid-cell.u-textCenter
-          //-     a(role="button" class=itemClass id=world.id href=world.image_url data-id=world.id data-specs=world.specs data-cost=world.cost)= world.label 
-        div.Grid.Grid--full
-          div.Grid-cell.u-textCenter.TechSpecs-container
-            p(id="infoTxt-world" class="TechSpecs-txt")
-            a(href="#" role="button" id="specs-world" class="TechSpecs") show detailed specs
-          div.Grid-cell.TechSpecs--world
-            //- table.TechSpecs-table.TechSpecs-txt--world
+          div.Grid.Grid--full
+            div.Grid-cell.u-textCenter.TechSpecs-container
+              p(id="infoTxt-eye" class="TechSpecs-txt")
+              a(href="#" role="button" id="specs-eye" class="TechSpecs") show detailed specs
+            div.Grid-cell.TechSpecs--eye
+              //- table.TechSpecs-table.TechSpecs-txt--eye
 
-      //- Eye options
-      div.Grid-cell.StoreConfig-rowContainer.StoreConfig-rowContainer--eye
-        div.Grid
-          div.Grid-cell.u-textCenter
-            h3.StoreConfig-header Eye Camera
-        ul.Grid.Grid--justifyCenter.ConfigOptions--eye
-          //- each eye in eye_cams
-          //-   //- 120fps is active by default
-          //-   - var itemClass = (eye.id === 'eye-30hz' ? 'StoreConfig-eye StoreConfig--state-active' : 'StoreConfig-eye')
-          //-   li.Grid-cell.u-textCenter
-          //-     a(role="button" class=itemClass id=eye.id href=eye.image_url data-id=eye.id data-specs=eye.specs data-cost=eye.cost)= eye.label 
-        div.Grid.Grid--full
-          div.Grid-cell.u-textCenter.TechSpecs-container
-            p(id="infoTxt-eye" class="TechSpecs-txt")
-            a(href="#" role="button" id="specs-eye" class="TechSpecs") show detailed specs
-          div.Grid-cell.TechSpecs--eye
-            //- table.TechSpecs-table.TechSpecs-txt--eye
+        //- use license
+        div.Grid-cell.Grid-center.StoreConfig-rowContainer.StoreConfig-rowContainer--license
+          div.Grid.Grid--gutters
+            div.Grid-cell.Grid-cell--1of3
+              button(class="Store-license" id="license") academic discount
+            div.Grid-cell.Grid-cell--2of3
+              p.LicenseSpecs-text.u-padBottom--2 Discount is granted with valid academic institution billing, and/or shipping address, or proof of current academic affiliation.
 
-      //- use license
-      div.Grid-cell.Grid-center.StoreConfig-rowContainer.StoreConfig-rowContainer--license
-        div.Grid.Grid--gutters
-          div.Grid-cell.Grid-cell--1of3
-            a(href="#" role="button" class="Store-license" id="license") academic discount
-          div.Grid-cell.Grid-cell--2of3
-            p.LicenseSpecs-text.u-padBottom--2 Discount is granted with valid academic institution billing, and/or shipping address, or proof of current academic affiliation.
+      div.Grid.Grid--1of2.Grid--center.StoreConfig-rowContainer--cost
+        div(id="Config-sum" class="Grid-cell u-textCenter")
+          p(id="StoreConfig-weight")
+        div.Grid-cell.StoreConfig-rowContainer--cartBtns
+          button(id="AddToCart-config" class="AddToCart Button Button--cart" href="#" data-product="pupil") Add to cart
 
-    div.Grid.Grid--1of2.Grid--center.StoreConfig-rowContainer--cost
-      div(id="Config-sum" class="Grid-cell u-textCenter")
-        h3.StoreConfig-SubTotal--label Price: &nbsp;#[p(class="StoreConfig-subTotal")]
-        p(id="StoreConfig-weight")
-      div.Grid-cell.StoreConfig-rowContainer--cartBtns
-        a(role="button" id="AddToCart-config" class="AddToCart Button Button--cart" href="#" data-product="pupil") Add to cart
-
-    //- div.Grid.Grid--1of2
-      div.Grid-cell.StoreConfig-rowContainer--cartBtns
-        a(role="button" class="AddToCart Button" href="#" data-product="pupil") Add to cart
-      //- div.Grid-cell.StoreConfig-rowContainer--cartBtns
-        //- a(role="button" id="StoreConfig-clearCart" class="Button" href="#") Clear Cart
 
 

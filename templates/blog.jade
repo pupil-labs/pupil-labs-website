@@ -1,57 +1,51 @@
 extends layout
 
-block vars
-  - var bodyClass = "Site"
-  - var mainClass = "Site-content Site-blog"
-
 block append title
   | #{ " - Blog"}
 
 block main
-  div(id="Blog")
-    //- include author
-    - var titleData = {'title':"Blog",'s1':"news and development updates"}    
-    - var titleBkg = 'Blog-pageTitle'
-    include includes/title
+  div(id="Blog").Site-transform
     
-    div.Grid
-    each article in articles
-      a(href=article.url)
-        div.Grid-item.Blog-article
-          header
-              h2.Blog-article-title.u-textCenter= article.title
-            p.Blog-article-date.u-textCenter= moment.utc(article.date).format('YYYY MMM DD')      
+    - var articles = env.helpers.getArticles(contents)
+    - var a0 = articles[0]
+    - var a0_img_src = (a0.metadata.featured_img ? a0.metadata.featured_img : "https://placehold.it/800x600")
 
-            if article.metadata.subtitle            
-              h3.Blog-article-subtitle.u-textCenter= article.metadata.subtitle
-            //- a(href=article.url)
-              h3.u-textCenter read more
-        //- article.Grid.Grid--gutters
-      //-   div.Grid-cell
-      //-     header.Blog-article-header
-      //-       h2.Blog-article-title
-      //-         a(href=article.url)= article.title
-      //-       p.Blog-article-date
-      //-         span= moment.utc(article.date).format('YYYY MMM DD')
-      //-     section.Blog-content
-      //-       //- if article.intro.length > 0
-      //-       != typogr(article.html).typogrify()
-            //- if article.hasMore
-            //-   p.more
-            //-     a(href=article.url) more
-    div.Grid.Grid--justifyCenter
-      if prevPage
-        a(href=prevPage.url class="Blog-nav-link")
-          div.Grid-cell--auto.Blog-nav
-            p newer
-      //- else
-      //-   a(href='/archive.html' class="Blog-nav-link")
-      //-     div.Grid-cell--auto.Blog-nav
-      //-       p archives
-      if nextPage
-        a(href=nextPage.url class="Blog-nav-link")
-          div.Grid-cell--auto.Blog-nav
-            p older
+    div.Background-img-top--blog.Background-img-cover.u-padBottom--3
+      div(class="Background-img--full-wh" style="background-image: url('"+a0_img_src+"');")
+      div.Site-content-container.Background-img-caption-container.u-textCenter
+        a(href=a0.url)
+          div.Background-header-text= a0.title
+        p.Background-img-caption.u-padBottom--0= moment.utc(a0.date).format('YYYY MMM DD')
+        if a0.metadata.subtitle
+          h3.Background-img-caption= a0.metadata.subtitle
+        a(href=a0.url)
+          h4(style="color:white;").Background-caption-text-button Read More
 
+    section.Site-gray-bkg
+      div.Site-content-container
+        a(class='anchor' name="pupil")
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.u-padBottom--0 Blog
+              div.Grid
+                div.Grid-cell.Grid-cell--full
+                  h3 Check out the latest news and updates
 
+   
+    div.Site-content-container
 
+      div.Grid.Grid--1of2.Grid--gutters-lg
+        each article, i in articles.slice(1)
+          - var img_src = (article.metadata.featured_img_thumb ? article.metadata.featured_img_thumb : "https://placehold.it/800x600")
+
+            div.Grid-cell
+              div.Feature-image--blog-archive--wrapper
+                div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
+              a(href=article.url)
+                h2.Blog-article-title= article.title
+              p.small= moment.utc(article.date).format('YYYY MMM DD')      
+              if article.metadata.subtitle            
+                p= article.metadata.subtitle
+              a(href=article.url) read more

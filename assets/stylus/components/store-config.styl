@@ -1,22 +1,23 @@
 storeConfig-button($stroke=1px,$stroke_color=#ddd)
-  display flex
+  display inline-flex
+  width 100%
   flex-wrap nowrap
   align-items center
   justify-content center
-  border-radius 3px 
+  border-radius 3px
+  // outline $link-hover-color
+  border none 
   // border-top $stroke solid #ddd
   // border-bottom $stroke solid #ddd
-  border-right $stroke solid #ddd
+  // border-right $stroke solid #ddd
   background transparent
   padding .5em
   color $text-color
   transition color .3s ease-in-out, background .3s ease-in-out
-  font-family $font-family-sans-serif
+  font-family $font-family-sans-serif-alt
   font-weight 700
-  font-size .9em
-
-  &:last-child
-    border-right 0px solid #ddd
+  font-size 0.85em
+  cursor pointer
     
 
 .StoreConfig-world
@@ -59,7 +60,7 @@ storeConfig-button($stroke=1px,$stroke_color=#ddd)
 .StoreConfig-SubTotal--label
   color #fff
   
-  @media $break-sm
+  @media $break-767
     padding-top 1em 
     padding-bottom 1em
 
@@ -78,7 +79,11 @@ storeConfig-button($stroke=1px,$stroke_color=#ddd)
   background rgba(0,0,0,.025)
   
 .StoreConfig-rowContainer--world
-  border-top 1px solid #ddd
+  &nth-child(odd)
+    border-top 1px solid #ddd
+  
+  @media $break-767
+    border-top 1px solid #ddd
 
 .StoreConfig-rowContainer--eye
   // border-top 1px solid black
@@ -105,6 +110,7 @@ storeConfig-button($stroke=1px,$stroke_color=#ddd)
   font-style italic
 
 spec_header()
+  font-size 0.85em
   text-transform lowercase
   font-variant small-caps
 
@@ -144,8 +150,25 @@ spec_header()
   border-right 1px solid #ddd
   width 20%
   
+.Table--column  
+  border-right 1px solid #ddd
+  
+.TechSpecs-table-feature
+  width 100%
+  display table
+  border none
+  border-spacing 0
+  padding-bottom 0.5em
+  
+  td
+    vertical-align middle
+    padding 1em
+  
+  tr:nth-child(odd)
+    background rgba(0,0,0,0.025)
+  
 spec_txt()
-  font-size .8em
+  font-size 0.8em
 
 .TechSpecs-txt--eye
   spec_txt()

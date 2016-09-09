@@ -1,8 +1,10 @@
 {
-  "Pupil": "/pupil",
-  "Store": "/store",
-  "Docs": "/docs",
-  "Blog": "/blog",
-  "Jobs": "/jobs",
-  "Cart": "/cart"
+  "pupil": "/pupil",
+  "vr/ar": "/vr-ar",
+  "store": "/store",
+  "docs": "/docs",
+  "blog": "/blog",
+  "about": "/about",
+  "careers": "/careers",
+  "cart": "/cart"
 }

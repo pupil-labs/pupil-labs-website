@@ -3,6 +3,8 @@
  date: Thu Apr 28 2016 13:59:00 GMT+0700 (ICT)
  author: Pupil Dev Team
  subtitle: We propose a community driven, open source suite of software building blocks for eye tracking in Head Mounted Displays...
+ featured_img: "../../../../media/images/blog/plopski_itoh_corneal-reflection.png"
+ featured_img_thumb: "../../../../media/images/blog/thumb/plopski_itoh_corneal-reflection.png"
  --- 
 
 After receiving many requests from the community, we have taken the first steps towards supporting eye tracking in Virtual Reality and Augmented Reality (VR/AR) head mounted displays (HMDs) with the release of eye tracking add-ons for Oculus DK2 and Epson Moverio BT-200. We are committed to bringing eye tracking to VR/AR HMDS, and plan to create new hardware for the latest VR and AR hardware when it hits the market. 
@@ -18,10 +20,11 @@ While other tools/frameworks may already exist for eye tracking in HMDs, the maj
 This is why we propose a community driven, open source suite of software  **building blocks for eye tracking HMDs.**
 
 In this first draft we propose to create software building blocks for:
-* Detecting pupil positions in images. This is quite similar to what we do already in Pupil Capture. 
-* Mapping pupil positions into the world/scene. 
-* Calibration; For HMDs this is very different from how calibration works in Pupil Capture. 
-* Other features that are needed for specific research and applications (eye ball location, slippage, ...)
+
++ Detecting pupil positions in images. This is quite similar to what we do already in Pupil Capture. 
++ Mapping pupil positions into the world/scene. 
++ Calibration; For HMDs this is very different from how calibration works in Pupil Capture. 
++ Other features that are needed for specific research and applications (eye ball location, slippage, ...)
 
 As a researcher or developer exploring applications you want use eye tracking without having to develop the tool from start to finish. With building blocks like this becomes easier to put to together highly specific code for hmd eye tracking so you can concentrate your effort on the application and not the tool.
 
