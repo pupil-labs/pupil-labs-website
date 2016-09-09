@@ -11,7 +11,7 @@
           type: 'video/mp4'
     },
     onLoad: ()=>{
-      // console.log("hiding video cover");
+      console.log("hiding video cover");
       document.querySelector('#video_cover').style.display = 'none';
     }
   }
