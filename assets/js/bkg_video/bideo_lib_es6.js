@@ -26,9 +26,6 @@ class Bideo {
     }
 
     this._addEventListeners();
-
-    // call resize on init to get proper scaling
-    this._resize();
   }
 
   _addEventListeners () {
@@ -61,6 +58,8 @@ class Bideo {
   _canPlay () {
     // readyState = 4 - all video is loaded
     // readyState = 3 - next frame available
+    // resize on init to get proper scaling on Edge and IE11
+    this._resize();
     if (this.videoEl.readyState >= 3) {
       if (this.isMobile === false){
         this.onLoad();
@@ -148,6 +147,7 @@ class Bideo {
 
     this.videoEl.style.width = new_width + 'px';
     this.videoEl.style.height = new_height + 'px';
+    this.videoEl.style.transform = 'translateY('+ Math.max(0,(minH-new_height)/2) +'px)';
   }
 
 }
