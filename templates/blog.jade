@@ -42,7 +42,7 @@ block main
 
             div.Grid-cell
               div.Feature-image--blog-archive--wrapper
-                div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
+                div(src=img_src style="background-image: url('"+img_src+"');" title=article.title alt=article.title).Background-img--blog-archive.Background-img-contain
               a(href=article.url)
                 h2.Blog-article-title= article.title
               p.small= moment.utc(article.date).format('YYYY MMM DD')      
