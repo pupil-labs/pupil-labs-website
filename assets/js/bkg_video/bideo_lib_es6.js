@@ -25,11 +25,10 @@ class Bideo {
       this.playButton.style.display = 'block';    
     }
 
-    // call resize on init to get proper scaling
-    this._resize();
-
     this._addEventListeners();
 
+    // call resize on init to get proper scaling
+    this._resize();
   }
 
   _addEventListeners () {
@@ -132,13 +131,18 @@ class Bideo {
     console.log("widthRatio: "+widthRatio);
     console.log("heightRatio: "+heightRatio);
 
-    if (widthRatio > heightRatio) {
-      new_width = minW;
-      new_height = Math.ceil(minW / videoRatio );
-    } else {
-      new_height = minH;
-      new_width = Math.ceil(minH / videoRatio);
-    }
+    // if (widthRatio > heightRatio) {
+    //   new_width = minW;
+    //   new_height = Math.ceil(minW / videoRatio );
+    // } else {
+    //   new_height = minH;
+    //   new_width = Math.ceil(minH / videoRatio);
+    // }
+    
+    // we always want to maximize width
+    new_width = minW;
+    new_height = Math.ceil(minW / videoRatio);
+
     console.log("new_width: "+new_width);
     console.log("new_height: "+new_height);
 
