@@ -25,13 +25,7 @@ class Bideo {
       this.playButton.style.display = 'block';    
     }
 
-    if (!'object-fit' in document.body.style) {
-      // call resize on init to get proper scaling
-      this._resize();
-    }
-
     this._addEventListeners();
-
   }
 
   _addEventListeners () {
@@ -64,6 +58,8 @@ class Bideo {
   _canPlay () {
     // readyState = 4 - all video is loaded
     // readyState = 3 - next frame available
+    // resize on init to get proper scaling on Edge and IE11
+    this._resize();
     if (this.videoEl.readyState >= 3) {
       if (this.isMobile === false){
         this.onLoad();
@@ -129,23 +125,23 @@ class Bideo {
     let widthRatio = minW / w;
     let heightRatio = minH / h;
     var new_width, new_height;
-    console.log("w,h: "+w+", "+h);
-    console.log("minW, minH: "+minW+", "+minH);  
-    console.log("widthRatio: "+widthRatio);
-    console.log("heightRatio: "+heightRatio);
 
-    if (widthRatio > heightRatio) {
-      new_width = minW;
-      new_height = Math.ceil(minW / videoRatio );
-    } else {
-      new_height = minH;
-      new_width = Math.ceil(minH / videoRatio);
-    }
-    console.log("new_width: "+new_width);
-    console.log("new_height: "+new_height);
+    // if (widthRatio > heightRatio) {
+    //   new_width = minW;
+    //   new_height = Math.ceil(minW / videoRatio );
+    // } else {
+    //   new_height = minH;
+    //   new_width = Math.ceil(minH / videoRatio);
+    // }
+    
+    // we always want to maximize width
+    new_width = minW;
+    new_height = Math.ceil(minW / videoRatio);
+
 
     this.videoEl.style.width = new_width + 'px';
     this.videoEl.style.height = new_height + 'px';
+    this.videoEl.style.transform = 'translateY('+ Math.max(0,(minH-new_height)/2) +'px)';
   }
 
 }
