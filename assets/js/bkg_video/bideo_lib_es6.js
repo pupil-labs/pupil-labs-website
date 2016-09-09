@@ -109,7 +109,7 @@ class Bideo {
     console.log("object-fit not supported");
     let w = this.videoEl.videoWidth;
     let h = this.videoEl.videoHeight;
-    let videoRatio = (w/h).toFixed(2);
+    let videoRatio = (w/h).toFixed(4);
 
     let container = this.container;
     let containerStyles = window.getComputedStyle(container);
@@ -136,10 +136,10 @@ class Bideo {
 
     if (widthRatio > heightRatio) {
       new_width = minW;
-      new_height = Math.ceil( new_width * videoRatio );
+      new_height = Math.ceil(minW / videoRatio );
     } else {
       new_height = minH;
-      new_width = Math.ceil(new_height * videoRatio);
+      new_width = Math.ceil(minH / videoRatio);
     }
     console.log("new_width: "+new_width);
     console.log("new_height: "+new_height);
