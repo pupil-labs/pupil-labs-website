@@ -31,7 +31,7 @@ class Bideo {
 
   _addEventListeners () {
     // this.videoEl.addEventListener('loadedmetadata', this._resize, false);
-    this.videoEl.addEventListener('canplay', this._canPlay, false);
+    this.videoEl.addEventListener('canplay', this._canPlay);
     this.playButton.addEventListener('click', this._mobileOptIn);
     if (this.resize === true){
       window.addEventListener('resize', this._resize, false);
@@ -63,7 +63,7 @@ class Bideo {
       if (this.isMobile === false){
         this.onLoad();
         if(this.autoplay === true){
-          // console.log(this.videoEl);
+          console.log("autoplay is true");
           this.videoEl.play();
         }
       }
