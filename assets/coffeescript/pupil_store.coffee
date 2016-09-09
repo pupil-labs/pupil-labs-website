@@ -226,13 +226,18 @@ class PupilStore
         db = get_product_database()
 
         for k,v of LocalStorage.dict()
+          if v.order?
+            # legacy - update
+            v['product'] = updateLegacyProductIds_(v.order)
+            delete v.order
+            LocalStorage.set(k,JSON.stringify(v))
 
           title_product = db[v.product]['title_product']
           cart_spec_html = ""
 
           if title_product is "Pupil Headset"
             sub_products = db[v.product]['sub_products']
-            for sbu_product_key,sub_product_data of sub_products
+            for sub_product_key,sub_product_data of sub_products
               cart_spec_html += "<h4>#{ sub_product_data['title_cart'] }</h4>
                                  <p class='LicenseSpecs-txt'>#{ sub_product_data['description_cart'] }</p>"
           else
@@ -518,8 +523,8 @@ class PupilStore
           $("textarea[id='cartObject']").val(JSON.stringify(products))
           formData = $(form).serialize()
 
-          dev_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
-          url = dev_url
+          prd_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
+          url = prd_url
 
           $.ajax
             type: 'POST'

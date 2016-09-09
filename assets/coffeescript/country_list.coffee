@@ -884,7 +884,7 @@ countryList =
     countryName: 'Korea, Republic Of'
     locationFormat: 'City'
     usesPostalCode: true
-    postalCodeFormat: '999-999'
+    postalCodeFormat: '99999, 999-999'
     capitalCity: null
     inEU: false
   Kosovo:
