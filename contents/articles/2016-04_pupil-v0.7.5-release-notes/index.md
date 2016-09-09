@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				var converter = new showdown.Converter();
 				var text = data.data.body;
 				var html = converter.makeHtml(text); 
-				$('section[class="content"]').html(html);
+				$('section[class~="content"]').html(html);
 				$('a[href="#downloads"]').prop('href',data.data.html_url);
 			}
 		});
