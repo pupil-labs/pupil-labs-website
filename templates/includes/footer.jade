@@ -6,5 +6,5 @@ footer.Site-footer
           h4.Footer-heading #{ category_title }
           ul
           each val, key in category_data
-            - var data = (category_title == "Contact & Address" ? "<p class='u-padBottom--0'>"+val+"</p>" : "<a href='"+val+"'>"+key+"</a>")
+            - var data = (category_title == "Contact & Address" ? "<p class='u-padBottom--0'>"+val+"</p>" : "<a href='"+val+"' rel='noopener'>"+key+"</a>")
             li.Footer-data !{ data }
