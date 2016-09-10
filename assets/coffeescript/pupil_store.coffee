@@ -640,20 +640,16 @@ class PupilStore
       j = 0
       for p,i in pairs by 2
         product_id = decodeURIComponent(decodeURIComponent(pairs.shift().split("=").pop())).split(',')
-        console.log product_id
         
         try
           pid = product_id[0]
         catch e
-          console.log "detected empty or malformed cart"
           LocalStorage.clear()
           return
 
         if pid of get_product_database() is false
-          console.log "detected legacy cart - updating"      
           pid = updateLegacyProductIds_(product_id)
           if pid.length is 0
-            console.log "detected malformed cart - clearing storage"          
             LocalStorage.clear()
             return false
           
