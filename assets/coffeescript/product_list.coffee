@@ -354,7 +354,8 @@ updateLegacyProductIds_ = (ids) ->
   res = []
   i = 0
   while i < ids.length
-    res.push map[ids[i]]
+    if ids[i] of map
+      res.push map[ids[i]]
     i++
   res.join '_'
 
