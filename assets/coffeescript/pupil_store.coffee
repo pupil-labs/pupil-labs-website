@@ -626,12 +626,14 @@ class PupilStore
     query = window.location.search.substring(1)
     if query.length > 0
       # ?0_order=world_none%2Ceye_120hz_binocular%2Clicense_commercial&0_qty=3&1_order=world_hr%2Ceye_120hz_binocular%2Clicense_commercial&1_qty=2&2_order=product_support_6&2_qty=1
+      # https://pupil-labs.com/cart/?0_order=world_hr%252Ceye_120hz%252Clicense_academic&0_qty=1
       LocalStorage.clear()
       pairs = query.split('&')
       # while pairs.length > 0
       j = 0
       for p,i in pairs by 2
         product_id = decodeURIComponent(decodeURIComponent(pairs.shift().split("=").pop())).split(',')
+        product_id = updateLegacyProductIds_(product_id)
         qty = parseInt(pairs.shift().split("=").pop())
         item = {
           "product" : product_id
