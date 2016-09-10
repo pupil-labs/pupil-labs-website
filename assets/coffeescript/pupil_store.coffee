@@ -232,7 +232,14 @@ class PupilStore
             # delete v.order
             LocalStorage.set(k,JSON.stringify(v))
 
-          title_product = db[v.product]['title_product']
+          db_product = db[v.product]
+          # handle outdated or corrupt cart
+          if db_product is undefined
+            LocalStorage.clear()
+            return false
+
+          title_product = db_product['title_product']
+
           cart_spec_html = ""
 
           if title_product is "Pupil Headset"
@@ -626,7 +633,7 @@ class PupilStore
     query = window.location.search.substring(1)
     if query.length > 0
       # ?0_order=world_none%2Ceye_120hz_binocular%2Clicense_commercial&0_qty=3&1_order=world_hr%2Ceye_120hz_binocular%2Clicense_commercial&1_qty=2&2_order=product_support_6&2_qty=1
-      # https://pupil-labs.com/cart/?0_order=world_hr%252Ceye_120hz%252Clicense_academic&0_qty=1
+      # ?0_order=world_hr%2CCeye_120hz%2Clicense_academic&0_qty=1
       LocalStorage.clear()
       pairs = query.split('&')
       # while pairs.length > 0
