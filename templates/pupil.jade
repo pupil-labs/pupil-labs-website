@@ -11,6 +11,8 @@ block page_scripts
 block main
   //- Title block
   div(id="Pupil" class="Site-transform")
+    a(name="top")
+
     - var page_data = contents.pupil['index.json']
     - var page_meta = page_data.metadata
     - var pupil_slides_data = contents.pupil.features['slides_pupil_drawings.json']
@@ -30,6 +32,7 @@ block main
     //- half width slider
     section(style="background-color:#6f7679;")
       div.Site-content-container
+        a(name="hardware")
         div.Feature-container-column
           div.Grid.Grid--center
             div.Grid-cell.Grid-cell--full
@@ -61,6 +64,7 @@ block main
     //- software 
     //- div.Site-gray-bkg
     div.Site-content-container
+      a(name="software")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
@@ -101,6 +105,7 @@ block main
 
     //- tech specs and performance
     div.Site-content-container
+      a(name="technical-specs")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
@@ -169,6 +174,7 @@ block main
     //- open source
     div.Site-gray-bkg
       div.Site-content-container
+        a(name="open-source")
         div.Feature-container-column
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell
@@ -186,6 +192,7 @@ block main
 
     //- design
     div.Site-content-container
+      a(name="design")
       div.Feature-container-column
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell
@@ -203,6 +210,7 @@ block main
     //- Modular & Hackable
     div.Site-gray-bkg    
       div.Site-content-container
+        a(name="modular")
         div.Feature-container-column
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
          div.Grid-cell
@@ -221,6 +229,7 @@ block main
 
     //- Commercial Use & Dedicated Support
     div(id="content-top" class="Site-content-container")
+      a(name="support")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
