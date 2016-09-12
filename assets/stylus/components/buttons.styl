@@ -1,5 +1,5 @@
-button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
-	// display flex
+button(display=flex, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
+	display display
 	align-items center
 	border-radius borderRadius
 	border border
@@ -16,6 +16,9 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 
 .Button
 	button()
+	
+.Button-store
+	button(display=block, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
 
 .Button-player
 	button()
@@ -62,7 +65,7 @@ action_button()
 	font-size 1.2em
 
 	&:active
-		background complement($link-hover-color)	
+		background $link-hover-color	
 
 .Button--cart
 	action_button()
@@ -99,6 +102,7 @@ action_button()
 	.Button-inverse
 	.Button-sm
 	.Button--cart
+	.Button-store
 	.Button-player
 	.Button-dataset
 		&:hover
