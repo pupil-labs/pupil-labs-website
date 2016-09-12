@@ -84,7 +84,7 @@ class PupilStore
                       <p> #{ product.description_store } </p>
                     </div>
 
-                    <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
+                    <button id='#{ vr_ar_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
                 
                   </div>
                 </div>"
@@ -104,7 +104,7 @@ class PupilStore
               <p> #{ product.description_store } </p>
             </div>
 
-            <button id='#{ p_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
+            <button id='#{ p_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
         
           </div>
         </div>"
