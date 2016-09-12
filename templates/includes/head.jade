@@ -46,10 +46,10 @@ head
   meta(name="msapplication-config" content=contents.media.graphics.web.favicons['browserconfig.xml'].url)
 
   //- stylesheets
-  link(rel='stylesheet' href=contents.css['main.css'].url)
+  link(rel='stylesheet' href=contents.css['main.css.gz'].url)
 
   //- js modernizr
-  script(src=contents.js.vendor['modernizr-2.8.3.min.js'].url)
+  script(src=contents.js.vendor['modernizr-2.8.3.min.js'].url async)
 
   //- cache control params should be modified
   meta(http-equiv="Cache-control" max-age=86400 content="public")

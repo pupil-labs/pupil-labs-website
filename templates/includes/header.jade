@@ -11,9 +11,10 @@ header.Header-container
         each url, title in contents.menu['header-nav.json'].metadata
           - var rel_attribute = (title === "docs" ? "noopener" : "")
           - var nav_id = (title === 'cart' ? 'Nav-cart' : '')
+          - var target_attribute = (title === "docs" ? "_blank": "")
           li.Nav-tab
             nav(id=nav_id)
-              a(class="Header-nav-item" href=url rel=rel_attribute) #{ title }
+              a(class="Header-nav-item" href=url target=target_attribute rel=rel_attribute) #{ title }
 
     div.Header-cart-button-container
       a(class="Header-cart-badge" id="cart-mobile" href="/cart")

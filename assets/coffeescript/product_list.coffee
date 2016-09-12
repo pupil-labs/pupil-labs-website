@@ -331,6 +331,34 @@ get_product_database = ->
   return product_db
 
 
+
+updateLegacyProductIds_ = (ids) ->
+  # list of product ids
+  map = 
+    world_none: 'pupil_wnone'
+    world_hr: 'pupil_w30'
+    world_hs: 'pupil_w120'
+    eye_none: 'enone'
+    eye_30hz: 'e30'
+    eye_120hz: 'e120'
+    eye_120hz_binocular: 'e120b'
+    product_eye_120hz: 'e120upgrade'
+    product_oculus_mono: 'oculusdk2m'
+    product_oculus_bi: 'oculusdk2b'
+    product_epson_bi: 'epsonbt200b'
+    product_support_6: 'support6'
+    product_support_12: 'support12'
+    license_academic: 'edu'
+    product_usb_c: 'usbcupgrade'
+    product_htc_vive_bi: 'htcviveb'
+  res = []
+  i = 0
+  while i < ids.length
+    res.push map[ids[i]]
+    i++
+  res.join '_'
+
+
 get_config_images = ->
   db = get_product_database()
   return (db[k]['img'] for k of db when k.split("_").length == 3) 
