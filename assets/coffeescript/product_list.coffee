@@ -44,6 +44,7 @@ get_eye_cam_data = ->
       id: 'enone'
       title_store: "none"
       title_cart: "Eye camera: no eye camera"
+      description_store: "No eye camera"
       weight: 26
     e30:
       id: 'e30'
