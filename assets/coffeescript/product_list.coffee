@@ -5,6 +5,7 @@ get_world_cam_data = ->
       title_store: "none"
       description_store: "No world camera"
       title_cart: "World camera: no world camera"
+      description_cart: "No world camera"
       weight: 0
     w30:
       id: 'w30'
@@ -45,6 +46,7 @@ get_eye_cam_data = ->
       title_store: "none"
       title_cart: "Eye camera: no eye camera"
       description_store: "No eye camera"
+      description_cart: "No eye camera"
       weight: 26
     e30:
       id: 'e30'
