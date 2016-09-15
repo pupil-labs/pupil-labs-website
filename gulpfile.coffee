@@ -26,7 +26,7 @@ runSequence = require "run-sequence"
 plumber = require 'gulp-plumber'
 image_min = require 'gulp-sharp-minimal'
 uncss = require "gulp-uncss"
-zopfli = require "gulp-zopfli"
+# zopfli = require "gulp-zopfli"
 # size = require 'gulp-size'
 
 css = ()->
@@ -37,7 +37,7 @@ css = ()->
       browsers: ["last 2 versions"]
       cascade: true # prettify browser prefixes
       remove: true # remove un-needed prefixes
-  .pipe zopfli()
+  # .pipe zopfli()
   .pipe gulp.dest "contents/css"
   .pipe livereload()
 
@@ -46,7 +46,7 @@ js_sideNav = ()->
     .pipe babel(presets: ['es2015'])
     .pipe concat "sidenav.js"
     .pipe uglify()
-    .pipe zopfli()
+    # .pipe zopfli()
     .pipe gulp.dest "contents/js"
     .pipe livereload();
 
@@ -55,7 +55,7 @@ js_bkgVideo = ()->
     .pipe babel(presets: ['es2015'])
     .pipe concat "bkg_video.js"
     .pipe uglify()
-    .pipe zopfli()    
+    # .pipe zopfli()    
     .pipe gulp.dest "contents/js"
     .pipe livereload();
 
@@ -67,7 +67,7 @@ jscoffee = ()->
     )
   .pipe concat "main.js"
   .pipe uglify()
-  .pipe zopfli()
+  # .pipe zopfli()
   .pipe gulp.dest "contents/js"
   .pipe livereload();
 
