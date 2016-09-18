@@ -748,7 +748,7 @@ countryList =
     countryName: 'Israel'
     locationFormat: 'City'
     usesPostalCode: true
-    postalCodeFormat: '99999'
+    postalCodeFormat: '99999','9999999',
     capitalCity: null
     inEU: false
   India:
