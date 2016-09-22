@@ -15,7 +15,7 @@ block main
       div.Site-content-container.Background-img-caption-container.u-textCenter
         a(href=a0.url)
           div.Background-header-text= a0.title
-        p.Background-img-caption.u-padBottom--0= moment.utc(a0.date).format('YYYY MMM DD')
+        p.Background-img-caption.u-padBottom--2= moment.utc(a0.date).format('YYYY MMM DD')
         if a0.metadata.subtitle
           h3.Background-img-caption= a0.metadata.subtitle
         a(href=a0.url)

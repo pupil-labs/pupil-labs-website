@@ -84,7 +84,7 @@ class PupilStore
                       <p> #{ product.description_store } </p>
                     </div>
 
-                    <button id='#{ vr_ar_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
+                    <button id='#{ vr_ar_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
                 
                   </div>
                 </div>"
@@ -104,7 +104,7 @@ class PupilStore
               <p> #{ product.description_store } </p>
             </div>
 
-            <button id='#{ p_id }' class='AddToCart Button' href='#' data-product='product'>€ #{product.cost}</button>
+            <button id='#{ p_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
         
           </div>
         </div>"
@@ -229,10 +229,17 @@ class PupilStore
           if v.order?
             # legacy - update
             v['product'] = updateLegacyProductIds_(v.order)
-            delete v.order
+            # delete v.order
             LocalStorage.set(k,JSON.stringify(v))
 
-          title_product = db[v.product]['title_product']
+          db_product = db[v.product]
+          # handle outdated or corrupt cart
+          if db_product is undefined
+            LocalStorage.clear()
+            return false
+
+          title_product = db_product['title_product']
+
           cart_spec_html = ""
 
           if title_product is "Pupil Headset"
@@ -319,7 +326,7 @@ class PupilStore
         totalPrice = if totalPrice.length > 0 then "€ " + totalPrice.reduce (a,b) -> a + b
         $("h3[id='CartSum--label']").text("#{ label }")
         $("h3[id='CartSum--total']").text("#{ totalPrice }")
-        $("div[id='CartSum-label--container']").append("<p class='Cart-disclaimerTxt'>(additional shipping and VAT may apply)</p>")
+        $("div[id='CartSum-label--container']").append("<p class='Cart-disclaimerTxt'>(free worldwide shipping, additional VAT may apply)</p>")
       else
         $(".Cart-container").hide()
 
@@ -626,15 +633,30 @@ class PupilStore
     query = window.location.search.substring(1)
     if query.length > 0
       # ?0_order=world_none%2Ceye_120hz_binocular%2Clicense_commercial&0_qty=3&1_order=world_hr%2Ceye_120hz_binocular%2Clicense_commercial&1_qty=2&2_order=product_support_6&2_qty=1
+      # ?0_order=world_hr%2CCeye_120hz%2Clicense_academic&0_qty=1
       LocalStorage.clear()
       pairs = query.split('&')
       # while pairs.length > 0
       j = 0
       for p,i in pairs by 2
         product_id = decodeURIComponent(decodeURIComponent(pairs.shift().split("=").pop())).split(',')
+        
+        try
+          pid = product_id[0]
+        catch e
+          LocalStorage.clear()
+          return
+
+        if pid of get_product_database() is false
+          pid = updateLegacyProductIds_(product_id)
+          if pid.length is 0
+            LocalStorage.clear()
+            return false
+          
+        # product_id = updateLegacyProductIds_(product_id)
         qty = parseInt(pairs.shift().split("=").pop())
         item = {
-          "product" : product_id
+          "product" : pid
           "qty"   : qty
         }
         LocalStorage.set(j, JSON.stringify(item))
