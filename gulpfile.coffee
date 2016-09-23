@@ -32,7 +32,7 @@ rev_replace = require 'gulp-rev-replace'
 # high level tasks
 # =================================================================                      
 gulp.task "build", (cb)->
-  return runSequence  ['clean:build', 'css:clean', 'js:clean'],
+  return runSequence  ['build:clean', 'css:clean', 'js:clean'],
                       ['css:build:all','js:build:all'],
                       'build_wintersmith', cb
 
