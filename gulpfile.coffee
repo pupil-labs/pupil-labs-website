@@ -33,16 +33,25 @@ rev_replace = require 'gulp-rev-replace'
 # =================================================================                      
 gulp.task "build", (cb)->
   return runSequence  ['build:clean', 'css:clean', 'js:clean'],
-                      'css:build:all',
-                      'js:build:all',
-                      'build_wintersmith', cb
+                      ['css:build','js:build'],
+                      'build_wintersmith',
+                      ['css:rev','js:rev'],
+                      'ref:all',
+                      'rev:clean',
+                       cb
+
+gulp.task "preview", (cb)->
+  return runSequence  ['build:clean', 'css:clean', 'js:clean'],
+                      ['css:build','js:build'],
+                      'build_wintersmith',
+                      cb
 
 
-gulp.task 'default', ['build'], ->
+gulp.task 'default', ['preview'], ->
   # preview with browserSync
   browserSync.init({server: "build", port:3000})
-  gulp.watch "assets/**/*.{js,coffee}", ['js:preview']
-  gulp.watch "./assets/stylus/**/*.styl", ['css:preview']
+  gulp.watch "assets/**/*.{js,coffee}", ['js:build:preview']
+  gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
 
 
 gulp.task "build:clean", ->
@@ -56,7 +65,6 @@ gulp.task "build_log", ->
 # css build tasks
 # =================================================================                      
 
-
 gulp.task "css:build", ->
   return gulp.src "./assets/stylus/main.styl"
         .pipe stylus
@@ -65,39 +73,29 @@ gulp.task "css:build", ->
             browsers: ["last 2 versions"]
             cascade: true # prettify browser prefixes
             remove: true # remove un-needed prefixes
-        .pipe rev()
         .pipe gulp.dest "./contents/css"
-        .pipe rev.manifest()
-        .pipe gulp.dest "./assets/rev_manifest"
+
+gulp.task "css:build:preview", ["css:build"], ->
+  return gulp.src "./contents/css/main.css"
+          .pipe gulp.dest "./build/css"
+        
+gulp.task "css:rev", ->
+  return gulp.src "./build/css/main.css"
+        .pipe rev()
+        .pipe gulp.dest "./build/css"
+        .pipe rev.manifest({base: "./assets/rev_manifest", merge:true})
+        .pipe gulp.dest "assets/rev_manifest"
 
 
 gulp.task "css:ref", ->
-  return gulp.src "./templates/includes/head.jade"
-          .pipe rev_replace( { manifest: gulp.src("./assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
+  return gulp.src "./build/**/index.html"
+          .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json") } )
           .pipe gulp.dest "./"
+
 
 gulp.task "css:clean", ->
   return gulp.src("./contents/css/*.css", {read: false})
         .pipe clean()
-
-
-gulp.task "css:build:all", (cb)->
-  return runSequence "css:clean",
-                      "css:build", 
-                      "css:ref",
-                      cb
-
-gulp.task "css:preview", ->
-  return gulp.src "./assets/stylus/main.styl"
-        .pipe stylus
-            compress: false
-        .pipe prefixer
-            browsers: ["last 2 versions"]
-            cascade: true # prettify browser prefixes
-            remove: true # remove un-needed prefixes
-        .pipe rev()
-        .pipe gulp.dest "./build/css"
-
   
 
 # =================================================================                      
@@ -109,44 +107,14 @@ gulp.task "js:sidenav:build", ->
       .pipe babel(presets: ['es2015'])
       .pipe concat "sidenav.js"
       .pipe uglify()
-      .pipe rev() 
-      .pipe gulp.dest "./contents/js"
-      .pipe rev.manifest()
-      .pipe gulp.dest "./assets/rev_manifest"
-
-gulp.task "js:sidenav:preview", ->
-  return gulp.src "./assets/js/sidenav/*.js"
-      .pipe babel(presets: ['es2015'])
-      .pipe concat "sidenav.js"
-      .pipe rev() 
-      .pipe gulp.dest "./build/js"
-
-gulp.task "js:sidenav:ref", ->
-  return gulp.src "./templates/includes/js.jade"
-          .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
-          .pipe gulp.dest "./"
+      .pipe gulp.dest "contents/js"      
     
 gulp.task "js:video:build", ->
   return gulp.src "./assets/js/bkg_video/*.js"
       .pipe babel(presets: ['es2015'])
       .pipe concat "bkg_video.js"
       .pipe uglify()
-      .pipe rev() 
-      .pipe gulp.dest "./contents/js"
-      .pipe rev.manifest()
-      .pipe gulp.dest "./assets/rev_manifest"
-
-gulp.task "js:video:preview", ->
-  return gulp.src "./assets/js/bkg_video/*.js"
-      .pipe babel(presets: ['es2015'])
-      .pipe concat "bkg_video.js"
-      .pipe rev() 
-      .pipe gulp.dest "./build/js"
-
-gulp.task "js:video:ref", ->
-  return gulp.src "./templates/vr-ar.jade"
-          .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
-          .pipe gulp.dest "./"
+      .pipe gulp.dest "contents/js"
 
 gulp.task "js:coffee:build", ->
   return gulp.src "./assets/coffeescript/*.coffee"
@@ -155,24 +123,7 @@ gulp.task "js:coffee:build", ->
           )
         .pipe concat "main.js"
         .pipe uglify()
-        .pipe rev() 
-        .pipe gulp.dest "./contents/js"
-        .pipe rev.manifest()
-        .pipe gulp.dest "./assets/rev_manifest"
-
-gulp.task "js:coffee:preview", ->
-  return gulp.src "./assets/coffeescript/*.coffee"
-        .pipe coffee(
-          bare: true
-          )
-        .pipe concat "main.js"
-        .pipe rev() 
-        .pipe gulp.dest "./build/js"
-
-gulp.task "js:coffee:ref", ->
-  return gulp.src "./templates/includes/js.jade"
-          .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
-          .pipe gulp.dest "./"
+        .pipe gulp.dest "contents/js"
   
 
 gulp.task "js:clean", ->
@@ -180,22 +131,38 @@ gulp.task "js:clean", ->
         .pipe clean()
 
 
-gulp.task "js:build:all", (cb)->
+gulp.task "js:build", (cb)->
   return runSequence "js:clean",
               "js:sidenav:build",
-              "js:sidenav:ref",
               "js:video:build",
-              "js:video:ref",
               "js:coffee:build",
-              "js:coffee:ref",
               cb
 
-gulp.task "js:preview", (cb)->
-  return runSequence "js:clean",
-              "js:sidenav:preview",
-              "js:video:preview",
-              "js:coffee:preview",
-              cb
+gulp.task "js:build:preview", ["js:build"], ->
+  return gulp.src "./contents/js/*.js"
+          .pipe gulp.dest "./build/js"
+
+gulp.task "js:rev", ->
+  return gulp.src "./build/js/*.js"
+        .pipe rev()
+        .pipe gulp.dest "./build/js"
+        .pipe rev.manifest({base: "./", merge:true})
+        .pipe gulp.dest "assets/rev_manifest"
+
+# =================================================================                      
+# update all refs
+# =================================================================                      
+
+
+gulp.task "ref:all", ->
+  return gulp.src "./build/**/*.html", {base: "./"}
+          .pipe rev_replace( { manifest: gulp.src("./assets/rev_manifest/rev-manifest.json") } )
+          .pipe gulp.dest "./"
+
+gulp.task "rev:clean", ->
+  # cleans pre-rev files
+  return gulp.src ["./build/css/main.css","./build/js/main.js","./build/js/bkg_video.js","./build/js/sidenav.js"]
+        .pipe clean()
 
 # =================================================================                      
 # image min tasks
@@ -211,10 +178,10 @@ gulp.task 'image_min', ->
     trellisQuantisation: false
   }
 
-  return gulp.src './build/media/images/**/*.{jpg,png}'
+  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
     .pipe(plumber())
     .pipe(image_min(options))
-    .pipe gulp.dest './' 
+    .pipe(gulp.dest('./'))
 
 
 # =================================================================                      
