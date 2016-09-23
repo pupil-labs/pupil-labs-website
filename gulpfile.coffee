@@ -72,7 +72,7 @@ gulp.task "css:build", ->
 
 
 gulp.task "css:ref", ->
-  return gulp.src "./templates/includes/head.jade", {base: "./"}
+  return gulp.src "./templates/includes/head.jade"
           .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
           .pipe gulp.dest "./"
 
@@ -211,10 +211,10 @@ gulp.task 'image_min', ->
     trellisQuantisation: false
   }
 
-  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
+  return gulp.src './build/media/images/**/*.{jpg,png}'
     .pipe(plumber())
     .pipe(image_min(options))
-    .pipe(gulp.dest('./'))
+    .pipe gulp.dest './' 
 
 
 # =================================================================                      
