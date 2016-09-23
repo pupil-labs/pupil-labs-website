@@ -77,6 +77,11 @@ js = ()->
   js_sideNav()
   jscoffee()
 
+gulp.task "rev:css", ->
+  return gulp.src "build/css/main.css"
+          .pipe rev()
+          .pipe gulp.dest "build/css"
+
 gulp.task "newPost", ->
   knownOpts = 
     string: ['title','date']
