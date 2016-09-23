@@ -44,7 +44,7 @@ gulp.task 'default', ['build'], ->
   gulp.watch "./assets/stylus/**/*.styl", ['css:preview']
 
 
-gulp.task "clean:build", ->
+gulp.task "build:clean", ->
   return gulp.src('./build',{read:false})
           .pipe(clean())
 
@@ -121,7 +121,7 @@ gulp.task "js:sidenav:preview", ->
       .pipe gulp.dest "./build/js"
 
 gulp.task "js:sidenav:ref", ->
-  return gulp.src "./templates/includes/js.jade", {base: "./"}
+  return gulp.src "./templates/includes/js.jade"
           .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
           .pipe gulp.dest "./"
     
@@ -143,7 +143,7 @@ gulp.task "js:video:preview", ->
       .pipe gulp.dest "./build/js"
 
 gulp.task "js:video:ref", ->
-  return gulp.src "./templates/vr-ar.jade", {base: "./"}
+  return gulp.src "./templates/vr-ar.jade"
           .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
           .pipe gulp.dest "./"
 
@@ -169,7 +169,7 @@ gulp.task "js:coffee:preview", ->
         .pipe gulp.dest "./build/js"
 
 gulp.task "js:coffee:ref", ->
-  return gulp.src "./templates/includes/js.jade", {base: "./"}
+  return gulp.src "./templates/includes/js.jade"
           .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
           .pipe gulp.dest "./"
   
