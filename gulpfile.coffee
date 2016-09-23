@@ -7,10 +7,8 @@ fs = require('fs')
 del = require('del')
 
 # parse command line args
-minimist = require('minimist') 
-
-# plugins - server 
-livereload = require "gulp-livereload"
+minimist = require 'minimist' 
+browserSync = require("browser-sync").create()
 
 # plugins - site
 wintersmith = require "run-wintersmith"
@@ -40,7 +38,6 @@ css = ()->
       remove: true # remove un-needed prefixes
   # .pipe zopfli()
   .pipe gulp.dest "contents/css"
-  .pipe livereload()
 
 js_sideNav = ()->
   gulp.src "assets/js/sidenav/*.js"
@@ -49,7 +46,7 @@ js_sideNav = ()->
     .pipe uglify()
     # .pipe zopfli()
     .pipe gulp.dest "contents/js"
-    .pipe livereload();
+    
 
 js_bkgVideo = ()->
   gulp.src "assets/js/bkg_video/*.js"
@@ -58,7 +55,7 @@ js_bkgVideo = ()->
     .pipe uglify()
     # .pipe zopfli()    
     .pipe gulp.dest "contents/js"
-    .pipe livereload();
+    
 
 
 jscoffee = ()->
@@ -70,7 +67,7 @@ jscoffee = ()->
   .pipe uglify()
   # .pipe zopfli()
   .pipe gulp.dest "contents/js"
-  .pipe livereload();
+  
 
 js = ()->
   js_bkgVideo()
@@ -168,15 +165,13 @@ gulp.task "generate_favicons", ->
     .pipe(gulp.dest(".build/media/graphics/web/favicons/"))
 
 
-gulp.task "preview", ->
-    wintersmith.settings.configFile = 'config.json'
-    wintersmith.preview()
 
 gulp.task "build_wintersmith", (cb)->
   knownOpts = 
     boolean: ['dev','staging','production']
-  # opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dev':true}
+
   opts = minimist process.argv.slice(2), knownOpts
+  
   if opts.dev
     wintersmith.settings.configFile = 'config.json'
     wintersmith.build ->
@@ -191,6 +186,11 @@ gulp.task "build_wintersmith", (cb)->
     wintersmith.settings.configFile = 'config_production.json'
     wintersmith.build ->
       gutil.log "Successfully built wintersmith for --> production."
+      cb()
+  else
+    wintersmith.settings.configFile = 'config.json'
+    wintersmith.build ->
+      gutil.log "Successfully built wintersmith for --> local dev."
       cb()
 
 gulp.task "css_clean", ->
@@ -233,8 +233,9 @@ gulp.task "build", (cb)->
                'build_wintersmith',cb
 
 # watch tasks watch folders and call functions defined above on change
-gulp.task 'default', ['css', 'js', 'preview'], ->
-  livereload.listen()
+gulp.task 'default', ['build'], ->
+  # 'preview'
+  browserSync.init({server: "build", port:3000})
 
   gulp.watch "assets/coffeescript/**", ->
     js()
