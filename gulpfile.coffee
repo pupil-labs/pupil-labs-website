@@ -73,7 +73,7 @@ gulp.task "css:build", ->
 
 gulp.task "css:ref", ->
   return gulp.src "./templates/includes/head.jade"
-          .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
+          .pipe rev_replace( { manifest: gulp.src("./assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
           .pipe gulp.dest "./"
 
 gulp.task "css:clean", ->
