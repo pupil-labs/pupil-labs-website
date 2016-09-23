@@ -327,8 +327,8 @@ get_product_database = ->
       cost: 2000
       title_product: 'Support Contract'
       title_store: '12 Month Support Contract'
-      description_store: '12 month support contract. 4 video support sessions and email support.'
-      description_cart: '12 month support contract. 4 video support sessions and email support.'
+      description_store: '12 month support contract. 8 video support sessions and email support.'
+      description_cart: '12 month support contract. 8 video support sessions and email support.'
       img: [additional_product_path,'support12.svg'].join('/')   
 
   return product_db
