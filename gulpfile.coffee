@@ -255,9 +255,8 @@ gulp.task 'default', ['build'], ->
   # 'preview'
   browserSync.init({server: "build", port:3000})
 
-  gulp.watch "assets/coffeescript/**", ->
+  gulp.watch "assets/**/*.{js,coffee}", ->
     js()
-    gutil.log gutil.colors.white.bgBlue("Coffeescript file changed."), "Compiling and reloading..."
 
   gulp.watch "./assets/stylus/**/*.styl", ['css_preview']
 
