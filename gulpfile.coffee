@@ -77,10 +77,21 @@ js = ()->
   js_sideNav()
   jscoffee()
 
+
 gulp.task "rev:css", ->
-  return gulp.src "build/css/main.css"
+  return gulp.src "contents/css/main.css", {base: "./"}
           .pipe rev()
-          .pipe gulp.dest "build/css"
+          .pipe gulp.dest "./"
+          .pipe rev.manifest()
+          .pipe gulp.dest "assets/rev_manifest"
+
+gulp.task "replace:css", ->
+  return gulp.src "templates/includes/head.jade", {base: "./"}
+          .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json"), replaceInExtensions: ['.jade']} )
+          .pipe gulp.dest "./"
+
+
+
 
 gulp.task "newPost", ->
   knownOpts = 
