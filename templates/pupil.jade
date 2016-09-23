@@ -11,6 +11,8 @@ block page_scripts
 block main
   //- Title block
   div(id="Pupil" class="Site-transform")
+    a(name="top")
+
     - var page_data = contents.pupil['index.json']
     - var page_meta = page_data.metadata
     - var pupil_slides_data = contents.pupil.features['slides_pupil_drawings.json']
@@ -30,14 +32,16 @@ block main
     //- half width slider
     section(style="background-color:#6f7679;")
       div.Site-content-container
+        a(name="hardware")
         div.Feature-container-column
           div.Grid.Grid--center
             div.Grid-cell.Grid-cell--full
               div(style="color: white;").Feature
                 h1 Hardware
-                h4 Pupil headsets are 3D printed frames that you wear like a pair of glasses that connect to your device via USB.
-                h4 Cameras record your field of view and your eye movements. Pupil Capture software uses the videos to generate gaze and eye tracking data in real-time.
-                h4 The hardware is designed as a #[strong modular system] that can be configured to support your research and application requirments.
+                h4 Pupil Headsets are plug and play USB devices carefully designed to be lightweight, unobtrusive, and easy to use.
+                h4 The hardware is strong and flexible. The 3d printed frame holds research grade cameras that record your field of view and your eye movements.
+                h4 Our #[a(href="/store#pupil" style="color:#a1def0;") versatile and modular system] is ready to be adapted to the specificities of your research or application requirements.
+                
             div(style="color: white;").Grid-cell.Grid-cell--1of3
 
                 //- p.Feature-paragraph Cameras record your field of view and your eye movements. Data is correlated with Pupil Capture software. 
@@ -61,6 +65,7 @@ block main
     //- software 
     //- div.Site-gray-bkg
     div.Site-content-container
+      a(name="software")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
@@ -88,7 +93,7 @@ block main
                     h2 Play
                     p #[a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Player" rel="noopener") Pupil Player] is a media and data visualizer at its core. You will use it to look at Pupil Capture recordings. 
                     p Visualize your data and export it. All Pupil software is open-source. You can modify it or write your own plugins to suit your needs.
-                    p Download the latest version of Pupil Player and test it out with our #[a(href="" rel="noopener" title="sample dataset download") sample dataset].
+                    p Download the latest version of Pupil Player and test it out with our #[a(href="https://docs.google.com/a/pupil-labs.com/uc?id=0Byap58sXjMVfQnAteVlQUlBJRjA&export=download" rel="noopener" title="sample dataset download") sample dataset].
                   div.Feature.u-padTop--2
                     a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Download Pupil Player" rel="noopener")
                       figure.Feature-image--capturePlayerIcons
@@ -101,6 +106,7 @@ block main
 
     //- tech specs and performance
     div.Site-content-container
+      a(name="technical-specs")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full
@@ -169,6 +175,7 @@ block main
     //- open source
     div.Site-gray-bkg
       div.Site-content-container
+        a(name="open-source")
         div.Feature-container-column
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell
@@ -186,6 +193,7 @@ block main
 
     //- design
     div.Site-content-container
+      a(name="design")
       div.Feature-container-column
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell
@@ -203,6 +211,7 @@ block main
     //- Modular & Hackable
     div.Site-gray-bkg    
       div.Site-content-container
+        a(name="modular")
         div.Feature-container-column
         div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
          div.Grid-cell
@@ -221,6 +230,7 @@ block main
 
     //- Commercial Use & Dedicated Support
     div(id="content-top" class="Site-content-container")
+      a(name="support")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
           div.Grid-cell.Grid-cell--full

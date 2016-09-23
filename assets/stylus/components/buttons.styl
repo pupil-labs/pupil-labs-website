@@ -1,5 +1,5 @@
-button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
-	display flex
+button(display=flex, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
+	display display
 	align-items center
 	border-radius borderRadius
 	border border
@@ -16,6 +16,9 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 
 .Button
 	button()
+	
+.Button-store
+	button(display=block, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
 
 .Button-player
 	button()
@@ -39,11 +42,11 @@ button(bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid
 	
 .Button-radio--sm
 	cursor pointer
-	button(rgba(255,255,255,.8),.5em,400,.5em .1em,0px,0px)
+	button(flex,rgba(255,255,255,.8),.5em,400,.5em .1em,0px,0px)
 
 .Button-radio--lg
 	cursor pointer
-	button(rgba(0,0,0,.025),1em,700,1em .1em,0,0px)
+	button(flex,rgba(0,0,0,.025),1em,700,1em .1em,0,0px)
 	border-left 1px solid darken(#ddd,20%)
 	border-right 1px solid darken(#ddd,20%)
 	border-top 1px solid darken(#ddd,20%)
@@ -62,7 +65,7 @@ action_button()
 	font-size 1.2em
 
 	&:active
-		background complement($link-hover-color)	
+		background $link-hover-color	
 
 .Button--cart
 	action_button()
@@ -99,6 +102,7 @@ action_button()
 	.Button-inverse
 	.Button-sm
 	.Button--cart
+	.Button-store
 	.Button-player
 	.Button-dataset
 		&:hover
