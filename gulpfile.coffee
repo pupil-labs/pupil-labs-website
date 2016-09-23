@@ -8,7 +8,8 @@ del = require('del')
 
 # parse command line args
 minimist = require 'minimist' 
-browserSync = require("browser-sync").create()
+browserSync = require("browser-sync")
+reload = browserSync.reload
 
 # plugins - site
 wintersmith = require "run-wintersmith"
@@ -38,6 +39,7 @@ css = ()->
       remove: true # remove un-needed prefixes
   # .pipe zopfli()
   .pipe gulp.dest "contents/css"
+
 
 js_sideNav = ()->
   gulp.src "assets/js/sidenav/*.js"
@@ -136,12 +138,14 @@ gulp.task 'image_min', ->
     .pipe(image_min(options))
     .pipe(gulp.dest('./'))
 
+
 gulp.task "generate_sitemap", ->
   gulp.src('build/**/*.html')
   .pipe(
     sitemap
       siteUrl: 'https://pupil-labs.com')
   .pipe gulp.dest('build')
+
 
 gulp.task "generate_favicons", ->
   return gulp.src("./build/media/graphics/favicon_base.png")
@@ -193,6 +197,8 @@ gulp.task "build_wintersmith", (cb)->
       gutil.log "Successfully built wintersmith for --> local dev."
       cb()
 
+
+
 gulp.task "css_clean", ->
   return gulp.src('build/css/main.css')
     .pipe(uncss(
@@ -218,6 +224,17 @@ gulp.task "css_clean", ->
 gulp.task "css", ->
   return css()
 
+gulp.task "css_preview", ->
+ return gulp.src "./assets/stylus/main.styl"
+        .pipe stylus
+            compress: true
+        .pipe prefixer
+            browsers: ["last 2 versions"]
+            cascade: true # prettify browser prefixes
+            remove: true # remove un-needed prefixes
+        .pipe gulp.dest "./build/css"
+        .pipe reload({stream:true})
+
 gulp.task "js", ->
   return js()
 
@@ -226,6 +243,7 @@ gulp.task "build_clean", ->
 
 gulp.task "build_log", ->
   return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
+
 
 gulp.task "build", (cb)->
   runSequence 'build_clean',
@@ -241,9 +259,7 @@ gulp.task 'default', ['build'], ->
     js()
     gutil.log gutil.colors.white.bgBlue("Coffeescript file changed."), "Compiling and reloading..."
 
-  gulp.watch "assets/stylus/**", ->
-    css()
-    gutil.log gutil.colors.white.bgBlue("Stylus file changed."), "Compiling and reloading..."
+  gulp.watch "./assets/stylus/**/*.styl", ['css_preview']
 
   # gulp.watch "templates/**", ->
   #   jade()
