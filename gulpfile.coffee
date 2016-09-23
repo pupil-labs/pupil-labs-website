@@ -44,6 +44,12 @@ gulp.task 'default', ['build'], ->
   gulp.watch "./assets/stylus/**/*.styl", ['css:preview']
 
 
+gulp.task "clean:build", ->
+  return gulp.src('./build',{read:false})
+          .pipe(clean())
+
+gulp.task "build_log", ->
+  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
 # =================================================================                      
 # css build tasks
@@ -279,18 +285,6 @@ gulp.task "build_wintersmith", (cb)->
 # =================================================================                      
 
 
-gulp.task "clean:build", ->
-  return gulp.src('./build',{read:false})
-          .pipe(clean())
-
-gulp.task "build_log", ->
-  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
-
-
-# =================================================================                      
-# content tasks
-# =================================================================                      
-
 gulp.task "newPost", ->
   knownOpts = 
     string: ['title','date']
@@ -348,5 +342,4 @@ gulp.task "css_clean", ->
                 new RegExp('\.TechSpecs-*(.)\S+')
                 ]))
       .pipe(gulp.dest('build/css'))
-
 
