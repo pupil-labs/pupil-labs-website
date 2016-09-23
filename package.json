@@ -23,6 +23,8 @@
     "gulp-filter": "^4.0.0",
     "gulp-livereload": "^3.8.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-rev": "^7.1.2",
+    "gulp-rev-replace": "^0.4.3",
     "gulp-sharp-minimal": "git+https://github.com/pupil-labs/gulp-sharp-minimal.git",
     "gulp-sitemap": "^4.1.1",
     "gulp-size": "^2.1.0",

@@ -27,7 +27,8 @@ plumber = require 'gulp-plumber'
 image_min = require 'gulp-sharp-minimal'
 uncss = require "gulp-uncss"
 # zopfli = require "gulp-zopfli"
-# size = require 'gulp-size'
+rev = require 'gulp-rev'
+rev_replace = require 'gulp-rev-replace'
 
 css = ()->
   gulp.src "assets/stylus/main.styl"
