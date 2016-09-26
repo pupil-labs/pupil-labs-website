@@ -9,6 +9,14 @@ block main
     - var page_meta = page_data.metadata
 
 
+    //- Free Shipping banner
+    div.Banner
+      div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+        i(style="display: inline; font-size: 36px; color: #fff; padding-right:15px;").material-icons public
+        span #[h3(style="color: #fff;").u-padBottom--0 Free Worldwide Shipping]
+
+
+
     //- Pupil section
     section.Site-gray-bkg
       div.Site-content-container
@@ -24,6 +32,7 @@ block main
 
     //- Configurator
     include includes/configurator
+
 
 
     //- VR/AR/MR
