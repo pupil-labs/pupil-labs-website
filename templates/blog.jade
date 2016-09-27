@@ -9,15 +9,16 @@ block main
     - var articles = env.helpers.getArticles(contents)
     - var a0 = articles[0]
     - var a0_img_src = (a0.metadata.featured_img ? a0.metadata.featured_img : "https://placehold.it/800x600")
+    - var a0_inline_style = (a0.metadata.featured_img ? "background-color:#6f7679; background-image: url('"+a0.metadata.featured_img+"');" : "background: linear-gradient(to right, #38EA92 0%, #A1DEF0 100%);")
 
     div.Background-img-top--blog.Background-img-cover.u-padBottom--3
-      div(class="Background-img--full-wh" style="background-color:#6f7679; background-image: url('"+a0_img_src+"');")
+      div(style=a0_inline_style ).Background-img--full-wh
       div.Site-content-container.Background-img-caption-container.u-textCenter
         a(href=a0.url)
           div.Background-header-text= a0.title
         p.Background-img-caption.u-padBottom--2= moment.utc(a0.date).format('YYYY MMM DD')
         if a0.metadata.subtitle
-          h3.Background-img-caption= a0.metadata.subtitle
+          h3(style="color:#fff;")= a0.metadata.subtitle
         a(href=a0.url)
           h4(style="color:white;").Background-caption-text-button Read More
 
