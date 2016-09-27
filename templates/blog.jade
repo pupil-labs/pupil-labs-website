@@ -18,7 +18,7 @@ block main
           div.Background-header-text= a0.title
         p.Background-img-caption.u-padBottom--2= moment.utc(a0.date).format('YYYY MMM DD')
         if a0.metadata.subtitle
-          h3.Background-img-caption= a0.metadata.subtitle
+          h3(style="color:#fff;")= a0.metadata.subtitle
         a(href=a0.url)
           h4(style="color:white;").Background-caption-text-button Read More
 
