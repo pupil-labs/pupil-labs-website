@@ -5,6 +5,7 @@ date: 2013-11-14
 subtitle: Another quick release of our recent development work on Pupil. Updates are recommended!
 featured_img: "../../../../media/images/blog/v0.3.5_release_tag.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/v0.3.5_release_tag.png"
+tag: {"caption":"v0.3.5","icon":"local_offer"}
 ---
 
 Another quick release of our recent development work on Pupil. Updates are recommended!
