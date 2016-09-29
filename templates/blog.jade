@@ -45,10 +45,11 @@ block main
             div.Grid-cell
 
               if article.metadata.tag
-                div.Tag-wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
-                  div.Circle.Tag-inner
-                    i.material-icons.Icon-tag= article.metadata.tag.icon
-                    h5.Caption-tag= article.metadata.tag.caption
+                div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
+                  div.Grid-cell
+                    div.Circle-tag.Tag-inner.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight.Grid-column
+                      i.material-icons.Icon-tag= article.metadata.tag.icon
+                      div.Caption-tag= article.metadata.tag.caption
               else
                 div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
                   div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain

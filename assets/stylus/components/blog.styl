@@ -94,29 +94,30 @@
   margin 4px 2px
   border-radius 4px
 
-
-.Circle
-  width 50%
-  height 0
-  padding-bottom 50%
+.Circle-tag
+  width 14em
+  height 14em
   background #ededed
   border-radius 50%
-  vertical-align middle
-
+  
+  @media $break-767
+    width 10em
+    height 10em
+    
 .Tag-inner
   text-align center
-  font-size 30px
+  margin auto
   
 .Icon-tag
-  font-size 1.5em
-  margin-top -0.5em
-  line-height 1em
-  padding-top 40%
-  padding-bottom 10%
-  width 100%  
-    
-.Caption-tag
-  line-height 0px
+  font-size 3em
+  margin .1em
   
-.Tag-wrapper
-  padding-bottom 3em
+  @media $break-767
+      font-size 2.5em
+
+.Caption-tag
+  font-size 1.5em
+  margin 0 0 .5em
+  
+  @media $break-767
+    font-size 1.3em
