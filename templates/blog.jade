@@ -15,10 +15,10 @@ block main
       div(style=a0_inline_style ).Background-img--full-wh
       div.Site-content-container.Background-img-caption-container.u-textCenter
         a(href=a0.url)
-          div.Background-header-text= a0.title
-        p.Background-img-caption.u-padBottom--2= moment.utc(a0.date).format('YYYY MMM DD')
+          div.Top-post-header= a0.title
+        p.Background-img-caption.u-padBottom--1= moment.utc(a0.date).format('YYYY MMM DD')
         if a0.metadata.subtitle
-          h3(style="color:#fff;")= a0.metadata.subtitle
+          h4(style="color:#fff;")= a0.metadata.subtitle
         a(href=a0.url)
           h4(style="color:white;").Background-caption-text-button Read More
 
@@ -39,11 +39,21 @@ block main
 
       div.Grid.Grid--1of2.Grid--gutters-lg
         each article, i in articles.slice(1)
+
           - var img_src = (article.metadata.featured_img_thumb ? article.metadata.featured_img_thumb : "https://placehold.it/800x600")
 
             div.Grid-cell
-              div.Feature-image--blog-archive--wrapper
-                div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
+
+              if article.metadata.tag
+                div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
+                  div.Grid-cell
+                    div.Circle-tag.Tag-inner.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight.Grid-column
+                      i.material-icons.Icon-tag= article.metadata.tag.icon
+                      div.Caption-tag= article.metadata.tag.caption
+              else
+                div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
+                  div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
+
               a(href=article.url)
                 h2.Blog-article-title= article.title
               p.small= moment.utc(article.date).format('YYYY MMM DD')      

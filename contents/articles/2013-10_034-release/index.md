@@ -5,6 +5,7 @@ date: 2013-10-21
 subtitle: We have been busy working on Pupil in the last month and want to share updates!
 featured_img: "../../../../media/images/blog/v0.3.4_release_tag.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/v0.3.4_release_tag.png"
+tag: {"caption":"v0.3.4","icon":"local_offer"}
 ---
 
 We have been busy working on Pupil in the last month and want to share updates!
