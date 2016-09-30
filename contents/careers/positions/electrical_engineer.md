@@ -1,6 +1,6 @@
 ---
 title: Electrical Engineer
-order: 2
+order: 4
 jobTitle: electrical-engineer
 ---
 
