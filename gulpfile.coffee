@@ -50,9 +50,11 @@ gulp.task "preview", (cb)->
 gulp.task 'default', ['preview'], ->
   # preview with browserSync
   browserSync.init({server: "build", port:3000})
-  gulp.watch "assets/**/*.{js,coffee}", ['js:build:preview']
+  gulp.watch "./assets/**/*.{js,coffee}", ['js:build:preview']
   gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
-  gulp.watch "templates/**/*.jade", ['build_wintersmith']
+  gulp.watch "./templates/**/*.jade", ['preview:jade']
+  gulp.watch "./contents/**/*.md", ['preview:md']
+
 
 
 gulp.task "build:clean", ->
@@ -62,6 +64,8 @@ gulp.task "build:clean", ->
 gulp.task "build_log", ->
   return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
+gulp.task 'preview:jade', ['build_wintersmith'], reload
+gulp.task 'preview:md', ['build_wintersmith'], reload
 
 # =================================================================                      
 # css build tasks
