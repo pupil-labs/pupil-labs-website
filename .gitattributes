@@ -1,1 +1,2 @@
 .travis.yml merge=ours
+.deploy.sh merge=ours
