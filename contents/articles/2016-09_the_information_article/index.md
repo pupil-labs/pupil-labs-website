@@ -1,6 +1,6 @@
 ---
  title: Pupil Featured on The Information 
- date: Fri Aug 19 2016 09:47:48 GMT+0700 (ICT)
+ date: Fri Sep 27 2016 09:47:48 GMT+0700 (ICT)
  author: Pupil Dev Team
  subtitle: Pupil is featured in The Information press article – "Eye-Tracking Companies Set Sights on VR...
  featured_img_thumb: "../../../../media/images/blog/thumb/theinformation_2016.png"
