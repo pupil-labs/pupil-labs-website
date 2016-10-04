@@ -10,10 +10,15 @@ block main
 
 
     //- Free Shipping banner
-    div.Banner
-      div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
-        i(style="display: inline; font-size: 36px; color: #fff; padding-right:15px;").material-icons public
-        span #[h3(style="color: #fff;").u-padBottom--0 Free Worldwide Shipping]
+    section.Banner
+      div.Banner-content-container
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+          div.Grid-cell.u-textCenter
+            h3(style="color: #fff").u-padBottom--0 Made in Berlin
+          div.Grid-cell.u-textCenter
+            i(style="display: inline; font-size: 36px; color: #fff;").u-textCenter.material-icons public
+          div.Grid-cell.u-textCenter
+            h3(style="color: #fff;").u-padBottom--0 Ships Worldwide
 
 
 
