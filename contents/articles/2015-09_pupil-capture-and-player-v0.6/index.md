@@ -1,12 +1,12 @@
 ---
- title: Pupil Capture and Player v0.6 Release
- date: Tue Sep 08 2015 15:25:54 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: Pupil Capture and Pupil Player v0.6 release notes. New features include Pupil Sync, visible logging feedback, and restructred video capture.
- featured_img: "../../../../media/images/blog/v0.6.0_release_tag.png"
- featured_img_thumb: "../../../../media/images/blog/thumb/v0.6.0_release_tag.png"
- tag: {"caption":"v0.6.0","icon":"local_offer"}
- ---
+title: Pupil Capture and Player v0.6 Release
+date: Tue Sep 08 2015 15:25:54 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: "Pupil Capture and Pupil Player v0.6 release notes. New features include Pupil Sync, visible logging feedback, and restructred video capture."
+featured_img: "../../../../media/images/blog/v0.6.0_release_tag.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/v0.6.0_release_tag.png"
+tag: {"caption":"v0.6.0","icon":"local_offer"}
+---
 
 <a href="https://github.com/pupil-labs/pupil/releases" class="Button">Download Pupil v0.6.0</a>
 

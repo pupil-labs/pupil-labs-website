@@ -2,7 +2,7 @@
 title: Pupil Capture & Pupil Player - Joint Release v0.3.9
 author: Pupil Dev Team
 date: 2014-05-21
-subtitle: We are pleased to announce another release of Pupil Player and Pupil Capture software...
+subtitle: "We are pleased to announce another release of Pupil Player and Pupil Capture software..."
 featured_img: "../../../../media/images/blog/v0.3.9_release_tag.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/v0.3.9_release_tag.png"
 tag: {"caption":"v0.3.9","icon":"local_offer"}
