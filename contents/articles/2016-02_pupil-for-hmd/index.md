@@ -1,11 +1,11 @@
 ---
- title: Eye Tracking for VR and AR
- date: Tue Feb 23 2016 09:23:14 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: New Products - Eye tracking for VR and AR head mounted displays. Oculus Rift DK2, Epson Moverio BT-200...
- featured_img: "../../../../media/images/blog/oculusdk2m.png"
- featured_img_thumb: "../../../../media/images/blog/thumb/oculusdk2m.png"
- ---
+title: Eye Tracking for VR and AR
+date: Tue Feb 23 2016 09:23:14 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: "New Products - Eye tracking for VR and AR head mounted displays. Oculus Rift DK2, Epson Moverio BT-200..."
+featured_img: "../../../../media/images/blog/oculusdk2m.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/oculusdk2m.png"
+---
 
 We have just released our eye tracking add-on cups for the Oculus DK2 and camera mounts for the Epson Moverio BT-200. Both are available on the [store](/store#products).
 

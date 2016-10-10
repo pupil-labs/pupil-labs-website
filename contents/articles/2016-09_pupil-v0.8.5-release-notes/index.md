@@ -1,11 +1,11 @@
 ---
- title: Pupil v0.8.5 release notes
- date: Tue Sep 30 2016 23:10:14 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: Release notes for v0.8.5 for the Pupil Platform. Includes updates for macOS 10.12 Sierra, new fixation detector, UI improvements, and more...
- featured_img_thumb: "../../../../media/images/blog/thumb/v0.8.5_release_tag.png"
- tag: {"caption":"v0.8.5","icon":"local_offer"}
- ---
+title: Pupil v0.8.5 release notes
+date: Tue Sep 30 2016 23:10:14 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: "Release notes for v0.8.5 for the Pupil Platform. Includes updates for macOS 10.12 Sierra, new fixation detector, UI improvements, and more..."
+featured_img_thumb: "../../../../media/images/blog/thumb/v0.8.5_release_tag.png"
+tag: {"caption":"v0.8.5","icon":"local_offer"}
+---
 
 <script src="//cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>
 <script type="text/javascript">

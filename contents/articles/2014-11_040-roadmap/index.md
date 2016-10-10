@@ -2,7 +2,7 @@
 title: Roadmap for v0.4.0 and Hardware Updates
 author: Pupil Dev Team
 date: 2014-11-14
-subtitle: Its been a while since we've posted any development updates. The reason for the silence is because we've been busy developing new hardware, and are preparing for major changes in the upcoming v0.4.0 releases for Pupil Capture and Pupil Player...
+subtitle: "Its been a while since we've posted any development updates. The reason for the silence is because we've been busy developing new hardware, and are preparing for major changes in the upcoming v0.4.0 releases for Pupil Capture and Pupil Player..."
 featured_img: "../../../../media/images/blog/demo_screenshot_20141124.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/demo_screenshot_20141124.png"
 ---
