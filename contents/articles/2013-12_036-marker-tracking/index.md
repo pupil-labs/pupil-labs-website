@@ -2,7 +2,7 @@
 title: Pupil v0.3.6 - Marker Tracking
 author: Pupil Dev Team
 date: 2013-12-09
-subtitle: We've been busy working on a lot of improvements in the last few weeks both on the hardware and software fronts. We're pleased to announce that we've completed a Marker Tracking plugin...
+subtitle: "We've been busy working on a lot of improvements in the last few weeks both on the hardware and software fronts. We're pleased to announce that we've completed a Marker Tracking plugin..."
 featured_img: "../../../../media/images/blog/v0.3.6_marker_tracking.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/v0.3.6_marker_tracking.png"
 ---

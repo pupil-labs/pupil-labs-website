@@ -1,12 +1,12 @@
 ---
- title: Pupil v0.7.5 release notes
- date: Tue Apr 19 2016 00:00:00 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: Release notes for v0.7.5 (minor release) of the Pupil platform. Includes improvements to the surface tracker, bug fixes, and performance improvements...
- featured_img: "../../../../media/images/blog/v0.7.5_release_tag.png"
- featured_img_thumb: "../../../../media/images/blog/thumb/v0.7.5_release_tag.png"
- tag: {"caption":"v0.7.5","icon":"local_offer"}
- ---
+title: Pupil v0.7.5 release notes
+date: Tue Apr 19 2016 00:00:00 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: "Release notes for v0.7.5 (minor release) of the Pupil platform. Includes improvements to the surface tracker, bug fixes, and performance improvements..."
+featured_img: "../../../../media/images/blog/v0.7.5_release_tag.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/v0.7.5_release_tag.png"
+tag: {"caption":"v0.7.5","icon":"local_offer"}
+---
 
 <script src="//cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>
 <script type="text/javascript">

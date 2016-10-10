@@ -1,11 +1,11 @@
 ---
- title: Pupil in Google Cardboard
- date: Wed Jun 01 2016 10:44:45 GMT-0500 (CDT)
- author: Pupil Dev Team
- subtitle: Eye Square has integrated Pupil in Google Cardboard for product and in-store shopping studies...
- featured_img: "../../../../media/images/blog/eye_square_vr.png"
- featured_img_thumb: "../../../../media/images/blog/thumb/eye_square_vr.png"  
- ---
+title: Pupil in Google Cardboard
+date: Wed Jun 01 2016 10:44:45 GMT-0500 (CDT)
+author: Pupil Dev Team
+subtitle: "Eye Square has integrated Pupil in Google Cardboard for product and in-store shopping studies..."
+featured_img: "../../../../media/images/blog/eye_square_vr.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/eye_square_vr.png"  
+---
 
 [Eye Square](http://www.eye-square.com/itx/) has combined a Pupil eye tracking headset with Google Cardboard to enable VR product and in-store studies. 
 
