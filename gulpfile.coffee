@@ -280,12 +280,13 @@ gulp.task "newPost", ->
       gutil.log gutil.colors.white.bgRed("Warning: "), "Directory already exists at path:", gutil.colors.white.bgRed("#{ e.path }"),  "\nTry an alternate title with gulp newPost --title 'my post title'"
     return
 
-  postHeader = "---\n
-               title: #{ humanTitle }\n
-               date: #{ date }\n
-               author: Pupil Dev Team\n
-               subtitle: \n
-               ---"
+  postHeader = "---
+              \ntitle: #{ humanTitle }
+              \ndate: #{ date }
+              \nauthor: Pupil Dev Team
+              \nsubtitle: ''
+              \nfeatured_img_thumb: ''
+              \n---"
   fs.writeFile postDir+"/index.md", postHeader 
   gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
 
