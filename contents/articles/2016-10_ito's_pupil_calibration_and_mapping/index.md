@@ -2,7 +2,7 @@
 title: Yuta Itoh's Pupil Calibration and Mapping (Windows)
 date: Mon Oct 17 2016 12:37:11 GMT+0700 (ICT)
 author: Pupil Dev Team
-subtitle: ""
+subtitle: "Yuta Itoh's Pupil calibration and mapping software aims to provide an easy-to-compile C++ implementation of a 3D eye-tracking method..."
 featured_img_thumb: "../../../../media/images/blog/thumb/itoh_pupil.png"
 ---
 
