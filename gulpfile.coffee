@@ -222,7 +222,7 @@ gulp.task "generate_favicons", ->
         replace: true
     )
     .on("error", gutil.log)
-    .pipe(gulp.dest(".build/media/graphics/web/favicons/"))
+    .pipe(gulp.dest("./build/media/graphics/web/favicons/"))
 
 
 
