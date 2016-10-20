@@ -7,9 +7,9 @@ featured_img: "../../../../media/images/blog/itoh_pupil.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/itoh_pupil.png"
 ---
 
-[Yuta Itoh](http://campar.in.tum.de/Main/YutaItoh), [Jason Orlosky](http://www.jeoresearch.com/research), et al., have implemented and open sourced an easy to compile C++ 3d detection and mapping implementation that runs on _Windows_! Check out the repo on [github](https://github.com/YutaItoh/3D-Eye-Tracker).
+We are excited to share [Yuta Itoh](http://campar.in.tum.de/Main/YutaItoh), [Jason Orlosky](http://www.jeoresearch.com/research), et al.'s open source 3d pupil detection and mapping implementation. The code is written in C++, is easy to compile, and runs on Windows. Check out their repo on [github](https://github.com/YutaItoh/3D-Eye-Tracker).
 
-Their software is **compatible** with Pupil hardware and enables one to obtain both 2d and 3d information:
+Their software is compatible with Pupil hardware and enables one to obtain the following:
 
 - 3d Gaze normal vector
 - 3d eyeball center w.r.t the camera
@@ -19,5 +19,5 @@ Their software is **compatible** with Pupil hardware and enables one to obtain b
 - Coming soon - glint positions
 
 <div class="Feature-video-container-16by9">
-	<iframe class="Feature-video" src="https://www.youtube.com/embed/EH6UVQZgvJE" frameborder="0" allowfullscreen></iframe>
+	<iframe class="Feature-video" src="https://www.youtube.com/embed/EH6UVQZgvJE?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 </div>

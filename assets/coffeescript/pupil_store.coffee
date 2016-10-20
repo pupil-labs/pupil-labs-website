@@ -77,7 +77,7 @@ class PupilStore
         html = "<div class='Aligner-item'>
                   <div class='Aligner-item--column'>
                     <div class='Feature-image--wrapper'>
-                      <img class='Feature-image' src='#{ product.img }'>
+                      <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
                     </div>
                     <div class='Aligner-item--stretchHeight'>
                       <p><strong> #{ product.title_store } </strong></p>
@@ -97,7 +97,7 @@ class PupilStore
         html = "<div class='Aligner-item'>
           <div class='Aligner-item--column'>
             <div class='Feature-image--wrapper'>
-              <img class='Feature-image' src='#{ product.img }'>
+              <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
             </div>
             <div class='Aligner-item--stretchHeight'>
               <p><strong> #{ product.title_store } </strong></p>
@@ -253,7 +253,7 @@ class PupilStore
           # product, id, specs, price, quantity
           productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
                           <div class='Feature-figure Feature-figure--config'>
-                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] }>
+                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] } title='#{ db[v.product]["title_product"] }'>
                           </div>
                         </div>"  
 
