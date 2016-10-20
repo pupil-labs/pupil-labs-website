@@ -1,6 +1,6 @@
 ---
 title: Open Source 3D Pupil Detection and Mapping for Windows
-date: Mon Oct 17 2016 12:37:11 GMT+0700 (ICT)
+date: Mon Oct 10 2016 12:37:11 GMT+0700 (ICT)
 author: Pupil Dev Team
 subtitle: "Yuta Itoh, Jason Orlosky, and other collaborators have implemented 3D an easy to compile 3D eye tracking method. Written in C++, runs on Windows, and works with Pupil..."
 featured_img: "../../../../media/images/blog/itoh_pupil.png"
