@@ -168,7 +168,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_wnone_e120b.jpg'].join('/')        
     pupil_w30_enone:
-      cost: 990
+      cost: 1190
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w30
@@ -189,7 +189,7 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120
       img: [pupil_img_path,'pupil_w30_e120.jpg'].join('/')
     pupil_w30_enone_edu:
-      cost: 400
+      cost: 600
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w30
@@ -214,7 +214,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w30_e120.jpg'].join('/')
     pupil_w120_enone:
-      cost: 990
+      cost: 1190
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w120
@@ -243,7 +243,7 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120b
       img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')        
     pupil_w120_enone_edu:
-      cost: 400
+      cost: 600
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w120
