@@ -15,5 +15,6 @@
                       "address2":"Gustav-Müller-Str. 7",
                       "address3":"10829, Berlin, Germany"
                     },
-  "Terms & Info": {"Terms of Sale": "/tos"}
+  "Terms & Info": {"Terms of Sale": "/tos",
+                   "Privacy": "/privacy"}
 }
