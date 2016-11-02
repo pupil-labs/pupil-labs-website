@@ -13,18 +13,11 @@ Image Source: [The Van Gogh Museum Eye-tracking Project](http://www.vupsy.nl/van
 <br>
 A group of researchers from the [Department of Experimental and Applied psychology](http://www.vupsy.nl/) at the [VU Amsterdam](http://www.vu.nl/en/) in collaboration with the [Van Gogh Museum](https://www.vangoghmuseum.nl/en) attempted to answer how we perceive and appreciate art in a 'real life' environment. Previous studies are often set in a laboratory environment in which people are stationary with bulky equipments. Surely this is not people normally view paintings. So how do we conduct the study in a way that is more of a 'natural setting'?
 
-[Francesco Walker](http://www.vupsy.nl/staff-members/francesco-walker/) (assisted by Berno Bucker, [Daniel Schreij](http://www.vupsy.nl/staff-members/daniel-schreij/) and Nicola Anderson, and supervised by prof. Jan Theeuwes) therefore chose to conduct the study in the museum using Pupil with Daniel's [pupil analysis tool](https://github.com/dschreij/PupilEyetrackerAnalysisTools/) to track gaze of children and adults as they viewed paitings on display in the museum itself, to study and understand the way people look at paintings.
+[Francesco Walker](http://www.vupsy.nl/staff-members/francesco-walker/) (assisted by Berno Bucker, [Daniel Schreij](http://www.vupsy.nl/staff-members/daniel-schreij/) and Nicola Anderson, and supervised by prof. Jan Theeuwes) therefore chose to conduct the study in the museum using Pupil with Daniel's [pupil analysis tool](https://github.com/dschreij/PupilEyetrackerAnalysisTools/) to track gaze of children and adults as they viewed paitings on display in the museum itself, to study and understand the way people look at paintings. The main focus of the study was how stimulus-driven and goal-driven processes work in guiding our attention and gaze through a painting.
 
-The main focus of the study was how stimulus-driven and goal-driven processes work in guiding our attention and gaze through a painting.
-
+The Van Gogh Museum Eye-tracking Project demonstrates the study exceptionally well in using Pupil to simulate the study in an outdoor environment.
 
 <br>
 <div class="Feature-video-container-16by9">
 	<iframe class="Feature-video" src="https://www.youtube.com/embed/0_KaItdTkEM?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
-
-
-
-
-
-
