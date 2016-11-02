@@ -1228,7 +1228,7 @@ countryList =
     countryName: 'Netherlands, The'
     locationFormat: 'City'
     usesPostalCode: true
-    postalCodeFormat: '9999'
+    postalCodeFormat: '9999, 9999AA'
     capitalCity: null
     inEU: true
   Norway:
