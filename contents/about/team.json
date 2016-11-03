@@ -50,7 +50,12 @@
     "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   },
-   "8":
+  "8":{
+    "name":"Marc Tonsen",
+    "role":"Research and Development Engineer",
+    "img":"https://placehold.it/400x400"
+  },
+   "9":
   {
     "name":"Ines Findewirth",
     "role":"Office Manager",
