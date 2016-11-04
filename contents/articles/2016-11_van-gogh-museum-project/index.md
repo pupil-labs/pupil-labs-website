@@ -1,8 +1,8 @@
 --- 
-title: The Van Gogh Museum Eye-tracking Project
+title: The Van Gogh Museum Eye-Tracking Project
 date: Wed Nov 02 2016 10:07:55 GMT+0700 (ICT) 
 author: Pupil Dev Team 
-subtitle: "Researchers at the VU Amsterdam in collaboration with The Van Gogh Museum attemps to answer how we perceive art..."
+subtitle: "We are really excited to see Pupil used in research from a group of researchers from the Department of Experimental and Applied psychology at the VU Amsterdam in collaboration with the Van Gogh Museum attempted to answer how we perceive and appreciate art in a 'real life' environment..."
 featured_img: "../../../../media/images/blog/van-gogh-museum.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/van-gogh-museum.jpg"
 ---
@@ -10,12 +10,14 @@ featured_img_thumb: "../../../../media/images/blog/thumb/van-gogh-museum.jpg"
 <img src="../../../../media/images/blog/van-gogh-museum.jpg" class='Feature-image u-padBottom--1' alt="The Van Gogh Museum Eye-tracking Project">
 Image Source: [The Van Gogh Museum Eye-tracking Project](http://www.vupsy.nl/van-gogh-museum-eye-tracking-project/)
 
+
 <br>
-A group of researchers from the [Department of Experimental and Applied psychology](http://www.vupsy.nl/) at the [VU Amsterdam](http://www.vu.nl/en/) in collaboration with the [Van Gogh Museum](https://www.vangoghmuseum.nl/en) attempted to answer how we perceive and appreciate art in a 'real life' environment. Previous studies are often set in a laboratory environment in which people are stationary with bulky equipments. Surely this is not people normally view paintings. So how do we conduct the study in a way that is more of a 'natural setting'?
+We are really excited to see Pupil used in research from a group of researchers from the [Department of Experimental and Applied psychology](http://www.vupsy.nl/) at the [VU Amsterdam](http://www.vu.nl/en/) in collaboration with the [Van Gogh Museum](https://www.vangoghmuseum.nl/en) attempted to answer how we perceive and appreciate art in a 'real life' environment. Previous studies are often set in a laboratory environment in which people are stationary.
 
-[Francesco Walker](http://www.vupsy.nl/staff-members/francesco-walker/) (assisted by Berno Bucker, [Daniel Schreij](http://www.vupsy.nl/staff-members/daniel-schreij/) and Nicola Anderson, and supervised by prof. Jan Theeuwes) therefore chose to conduct the study in the museum using Pupil with Daniel's [pupil analysis tool](https://github.com/dschreij/PupilEyetrackerAnalysisTools/) to track gaze of children and adults as they viewed paitings on display in the museum itself, to study and understand the way people look at paintings. The main focus of the study was how stimulus-driven and goal-driven processes work in guiding our attention and gaze through a painting.
+[Francesco Walker](http://www.vupsy.nl/staff-members/francesco-walker/) (assisted by Berno Bucker, [Daniel Schreij](http://www.vupsy.nl/staff-members/daniel-schreij/) and Nicola Anderson, and supervised by prof. Jan Theeuwes) used Pupil to record the gaze patterns of adults and children as they viewed paintings in the Van Gogh museum in order to gain insight into how people look at paintings. The team leverages the open data format of Pupil and built their own analysis tool - check out their [code on github](https://github.com/dschreij/PupilEyetrackerAnalysisTools/).
 
-The Van Gogh Museum Eye-tracking Project demonstrates the study exceptionally well in using Pupil to simulate the study in an outdoor environment.
+The video below is a great explanation of their study and a mobile eye tracking workflow. Pupil Player is used in the screen capture to show the heat maps and gaze visualization.
+
 
 <br>
 <div class="Feature-video-container-16by9">
