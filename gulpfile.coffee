@@ -122,6 +122,13 @@ gulp.task "js:video:build", ->
       .pipe uglify()
       .pipe gulp.dest "contents/js"
 
+gulp.task "js:lazyload:build", ->
+  return gulp.src "./assets/js/lazyload/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "lazyload.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
+
 gulp.task "js:coffee:build", ->
   return gulp.src "./assets/coffeescript/*.coffee"
         .pipe coffee(
@@ -141,6 +148,7 @@ gulp.task "js:build", (cb)->
   return runSequence "js:clean",
               "js:sidenav:build",
               "js:video:build",
+              "js:lazyload:build",
               "js:coffee:build",
               cb
 

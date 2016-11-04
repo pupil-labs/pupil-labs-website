@@ -2,7 +2,7 @@
 title: Pupil v0.8.6 release notes
 date: Fri Nov 04 2016 12:20:39 GMT+0700 (ICT) 
 author: Pupil Dev Team 
-subtitle: "Release notes for v0.8.5 for the Pupil Platform. Includes updates for improved the surface tracker performance and interface, UI improvements and more..." 
+subtitle: "Release notes for v0.8.6 for the Pupil Platform. Includes updates for improved the surface tracker performance and interface, UI improvements and more..." 
 featured_img_thumb: {"caption":"v0.8.6","icon":"local_offer"} 
 ---
 
