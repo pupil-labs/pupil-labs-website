@@ -12,9 +12,11 @@ Image Source: [The Van Gogh Museum Eye-tracking Project](http://www.vupsy.nl/van
 
 
 <br>
-We are really excited to see Pupil used in the [Van Gogh Museum](https://www.vangoghmuseum.nl/en) researchers at the [Department of Experimental and Applied psychology](http://www.vupsy.nl/) at the [VU Amsterdam](http://www.vu.nl/en/) to study how we perceive and appreciate art in a real life environment.
+We are really excited to see Pupil used in the [Van Gogh Museum](https://www.vangoghmuseum.nl/en) by researchers from the [Department of Experimental and Applied psychology](http://www.vupsy.nl/) at the [VU Amsterdam](http://www.vu.nl/en/) to study how we perceive and appreciate art in a real life environment.
 
-[Francesco Walker](http://www.vupsy.nl/staff-members/francesco-walker/) (assisted by Berno Bucker, [Daniel Schreij](http://www.vupsy.nl/staff-members/daniel-schreij/) and Nicola Anderson, and supervised by prof. Jan Theeuwes) used Pupil to record the gaze patterns of adults and children as they viewed paintings in the Van Gogh museum. The team used Pupil to gain insight into how people look at paintings. The team leverages the open data format of Pupil to capture and analyze data. The team also built their own analysis tools - check out their [code on github](https://github.com/dschreij/PupilEyetrackerAnalysisTools/).
+[Francesco Walker](http://www.vupsy.nl/staff-members/francesco-walker/) (assisted by Berno Bucker, [Daniel Schreij](http://www.vupsy.nl/staff-members/daniel-schreij/) and Nicola Anderson, and supervised by prof. Jan Theeuwes) used Pupil to record the gaze patterns of adults and children as they viewed paintings in the Van Gogh museum. The team used Pupil to gain insight into how people look at paintings. 
+
+The team leverages the open data format of Pupil to capture and analyze data and extended Pupil with their own analysis tools - check out their [code on github](https://github.com/dschreij/PupilEyetrackerAnalysisTools/).
 
 The video below is both a great explanation of their study and mobile eye tracking. Pupil Player is used in the screen capture to show the heat maps and gaze visualization.
 
