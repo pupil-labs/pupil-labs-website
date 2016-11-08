@@ -86,8 +86,10 @@ block main
                 h4 #{ home_newsletter_meta.point1 }
               div.Grid-cell
                 form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+                  label(class="Form-hidden" for="mce-EMAIL") email
                   input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
                   p(class="Form-error--text" id="news_email_error")
+                  label(class="Form-hidden" for="newsletter-form-submit") submit             
                   input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
                   label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
   
