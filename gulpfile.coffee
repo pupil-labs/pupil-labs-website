@@ -31,6 +31,7 @@ rev_replace = require 'gulp-rev-replace'
 purifycss = require 'gulp-purifycss'
 checkcss = require 'gulp-check-unused-css'
 mincss = require 'gulp-clean-css'
+gulpignore = require 'gulp-ignore'
 
 # =================================================================                      
 # high level tasks
@@ -299,16 +300,20 @@ gulp.task "newPost", ->
 # experiments
 # =================================================================                      
 
+# Agressive css clean
+condition = {'build/blog/**/*.html'}
 
 gulp.task "css_clean", ->
-  return gulp.src('build/css/main.css')
+  return gulp.src('build/css/*.css')
+    .pipe(gulpignore.exclude(condition))
     .pipe(uncss(
-      html: ['build/**/*.html'],
+      html: ['build/**/*.html']
+      report: true
       ignore: [
-                new RegExp('^.no-touch.*'),
-                new RegExp('\.Header*(.)\S+'),
-                new RegExp('^.js-side-nav*'),
-                new RegExp('^.side-nav*'),
+                new RegExp('^.no-touch.*')
+                new RegExp('\.Header*(.)\S+')
+                new RegExp('^.js-side-nav*')
+                new RegExp('^.side-nav*')
                 new RegExp('\.logotype*(.)\S+')
                 new RegExp('\.cart-*(.)\S+')
                 new RegExp('\.no-touch*(.)\S+')
@@ -320,21 +325,27 @@ gulp.task "css_clean", ->
                 new RegExp('\.Aligner-*(.)\S+')
                 new RegExp('\.TechSpecs-*(.)\S+')
                 ]
-      timeout: 5000
                 ))
-      .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('build/css'))
+
+# =================================================================                      
+# non aggresive css clean
 
 
 gulp.task "purifycss", ->
-  return gulp.src('build/css/main.css')
-    .pipe(purifycss(['build/**/*.html','build/**/*.js']))
-    .pipe(mincss({compatibility: 'ie8'}))
+  options = { 
+    minify: true
+    info: true
+    rejected: true
+  }
+  content = ['build/css/*.css','build/**/*.html']
+
+  return gulp.src('build/css/*.css')
+    .pipe(purifycss(content, options))
+    # .pipe(mincss({compatibility: 'ie8'}))
     .pipe(gulp.dest('build/css'))
 
-gulp.task "checkcss", ->
-  return gulp.src(['build/css/main.css','build/**/*.html'])
-    .pipe(checkcss())
-
+# =================================================================                      
 
 gulp.task 'cleaned', ->
   # preview with browserSync
@@ -343,3 +354,14 @@ gulp.task 'cleaned', ->
   gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
   gulp.watch "./templates/**/*.jade", ['preview:jade']
   gulp.watch "./contents/**/*.md", ['preview:md']
+
+# =================================================================                      
+# tools
+# =================================================================  
+
+gulp.task "checkcss", ->
+  return gulp.src(['build/css/main.css','build/**/*.html'])
+    .pipe(checkcss())
+
+
+
