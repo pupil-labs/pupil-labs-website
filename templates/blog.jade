@@ -15,7 +15,7 @@ block main
       div(style=a0_inline_style ).Background-img--full-wh
       div.Site-content-container.Background-img-caption-container.u-textCenter
         a(href=a0.url)
-          div.Top-post-header= a0.title
+          h1.Top-post-header= a0.title
         p.Background-img-caption.u-padBottom--1= moment.utc(a0.date).format('YYYY MMM DD')
         if a0.metadata.subtitle
           h4(style="color:#fff;")= a0.metadata.subtitle
