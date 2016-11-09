@@ -28,6 +28,10 @@ clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
 
+purifycss = require 'gulp-purifycss'
+checkcss = require 'gulp-check-unused-css'
+mincss = require 'gulp-clean-css'
+
 # =================================================================                      
 # high level tasks
 # =================================================================                      
@@ -315,6 +319,27 @@ gulp.task "css_clean", ->
                 new RegExp('\.Grid-*(.)\S+')
                 new RegExp('\.Aligner-*(.)\S+')
                 new RegExp('\.TechSpecs-*(.)\S+')
-                ]))
+                ]
+      timeout: 5000
+                ))
       .pipe(gulp.dest('build/css'))
 
+
+gulp.task "purifycss", ->
+  return gulp.src('build/css/main.css')
+    .pipe(purifycss(['build/**/*.html','build/**/*.js']))
+    .pipe(mincss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('build/css'))
+
+gulp.task "checkcss", ->
+  return gulp.src(['build/css/main.css','build/**/*.html'])
+    .pipe(checkcss())
+
+
+gulp.task 'cleaned', ->
+  # preview with browserSync
+  browserSync.init({server: "build", port:3000})
+  gulp.watch "./assets/**/*.{js,coffee}", ['js:build:preview']
+  gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
+  gulp.watch "./templates/**/*.jade", ['preview:jade']
+  gulp.watch "./contents/**/*.md", ['preview:md']
