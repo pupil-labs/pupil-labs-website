@@ -6,3 +6,4 @@ node_modules
 contents/css
 contents/js/*.js
 assets/rev_manifest
+rev_manifest.json
