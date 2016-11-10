@@ -33,12 +33,13 @@ checkcss = require 'gulp-check-unused-css'
 # high level tasks
 # =================================================================                      
 gulp.task "build", (cb)->
-  return runSequence  ['build:clean', 'css:clean', 'js:clean'],
+  return runSequence  ['build:clean', 'js:clean'],
                       ['css:build','js:build'],
                       'build_wintersmith',
                       ['css:rev','js:rev'],
                       'ref:all',
                       'rev:clean',
+                      'css:clean',
                        cb
 
 gulp.task "preview", (cb)->
@@ -296,7 +297,7 @@ gulp.task "newPost", ->
 # experiments
 # =================================================================                      
 
-gulp.task "css_clean", ->
+gulp.task "css:clean", ->
   return gulp.src('build/css/*.css')
     .pipe(uncss(
       html: ['build/*/*.html', 'build/index.html', "!build/blog"]
