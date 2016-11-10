@@ -314,6 +314,7 @@ gulp.task "css:clean", ->
                 new RegExp('^.Cart-r.*')
                 new RegExp('\.no-touch*(.)\S+')
                 new RegExp('\.Wallop.*(.)\S+')
+                new RegExp('^.Wallop.*')
                 new RegExp('^.Store.*')
                 new RegExp('\.Add*(.)\S+')
                 new RegExp('\.Button*(.)\S+')
