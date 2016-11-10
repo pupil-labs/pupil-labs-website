@@ -27,17 +27,19 @@ uncss = require "gulp-uncss"
 clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
+checkcss = require 'gulp-check-unused-css'
 
 # =================================================================                      
 # high level tasks
 # =================================================================                      
 gulp.task "build", (cb)->
-  return runSequence  ['build:clean', 'css:clean', 'js:clean'],
+  return runSequence  ['build:clean', 'js:clean'],
                       ['css:build','js:build'],
                       'build_wintersmith',
                       ['css:rev','js:rev'],
                       'ref:all',
                       'rev:clean',
+                      'css:clean',
                        cb
 
 gulp.task "preview", (cb)->
@@ -295,26 +297,41 @@ gulp.task "newPost", ->
 # experiments
 # =================================================================                      
 
-
-gulp.task "css_clean", ->
-  return gulp.src('build/css/main.css')
+gulp.task "css:clean", ->
+  return gulp.src('build/css/*.css')
     .pipe(uncss(
-      html: ['build/**/*.html'],
+      html: ['build/*/*.html', 'build/index.html', "!build/blog"]
+      report: true
       ignore: [
-                new RegExp('^.no-touch.*'),
-                new RegExp('\.Header*(.)\S+'),
-                new RegExp('^.js-side-nav*'),
-                new RegExp('^.side-nav*'),
+                new RegExp('^.no-touch.*')
+                new RegExp('^.Header.*')
+                new RegExp('^.js-side-nav*')
+                new RegExp('^.side-nav*')
                 new RegExp('\.logotype*(.)\S+')
-                new RegExp('\.cart-*(.)\S+')
+                new RegExp('^.cart-.*')
+                new RegExp('^.Cart--t.*')
+                new RegExp('^.CartItem-.*')
+                new RegExp('^.Cart-r.*')
                 new RegExp('\.no-touch*(.)\S+')
                 new RegExp('\.Wallop.*(.)\S+')
-                new RegExp('\.Store*(.)\S+')
+                new RegExp('^.Store.*')
                 new RegExp('\.Add*(.)\S+')
                 new RegExp('\.Button*(.)\S+')
                 new RegExp('\.Grid-*(.)\S+')
                 new RegExp('\.Aligner-*(.)\S+')
-                new RegExp('\.TechSpecs-*(.)\S+')
-                ]))
-      .pipe(gulp.dest('build/css'))
+                new RegExp('^.TechSpecs-.*')
+                new RegExp('^.Feature-video.*')
+                new RegExp('^.Grid-cell.*')
+                new RegExp('^.Grid--cart.*')
+                new RegExp('^.LicenseSpecs.*')
+                new RegExp('^.Blog-nav.*')
+                ]
+                ))
+    .pipe(gulp.dest('build/css'))
+
+gulp.task "checkcss", ->
+  return gulp.src(['build/css/*.css','build/**/*.html'])
+    .pipe(checkcss())
+
+
 
