@@ -27,11 +27,7 @@ uncss = require "gulp-uncss"
 clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
-
-purifycss = require 'gulp-purifycss'
 checkcss = require 'gulp-check-unused-css'
-mincss = require 'gulp-clean-css'
-gulpignore = require 'gulp-ignore'
 
 # =================================================================                      
 # high level tasks
@@ -300,67 +296,40 @@ gulp.task "newPost", ->
 # experiments
 # =================================================================                      
 
-# Agressive css clean
-condition = {'build/blog/**/*.html'}
-
 gulp.task "css_clean", ->
   return gulp.src('build/css/*.css')
-    .pipe(gulpignore.exclude(condition))
     .pipe(uncss(
-      html: ['build/**/*.html']
+      html: ['build/*/*.html', 'build/index.html', "!build/blog"]
       report: true
       ignore: [
                 new RegExp('^.no-touch.*')
-                new RegExp('\.Header*(.)\S+')
+                new RegExp('^.Header.*')
                 new RegExp('^.js-side-nav*')
                 new RegExp('^.side-nav*')
                 new RegExp('\.logotype*(.)\S+')
-                new RegExp('\.cart-*(.)\S+')
+                new RegExp('^.cart-.*')
+                new RegExp('^.Cart--t.*')
+                new RegExp('^.CartItem-.*')
+                new RegExp('^.Cart-r.*')
                 new RegExp('\.no-touch*(.)\S+')
                 new RegExp('\.Wallop.*(.)\S+')
-                new RegExp('\.Store*(.)\S+')
+                new RegExp('^.Store.*')
                 new RegExp('\.Add*(.)\S+')
                 new RegExp('\.Button*(.)\S+')
                 new RegExp('\.Grid-*(.)\S+')
                 new RegExp('\.Aligner-*(.)\S+')
-                new RegExp('\.TechSpecs-*(.)\S+')
+                new RegExp('^.TechSpecs-.*')
+                new RegExp('^.Feature-video.*')
+                new RegExp('^.Grid-cell.*')
+                new RegExp('^.Grid--cart.*')
+                new RegExp('^.LicenseSpecs.*')
+                new RegExp('^.Blog-nav.*')
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
 
-# =================================================================                      
-# non aggresive css clean
-
-
-gulp.task "purifycss", ->
-  options = { 
-    minify: true
-    info: true
-    rejected: true
-  }
-  content = ['build/css/*.css','build/**/*.html']
-
-  return gulp.src('build/css/*.css')
-    .pipe(purifycss(content, options))
-    # .pipe(mincss({compatibility: 'ie8'}))
-    .pipe(gulp.dest('build/css'))
-
-# =================================================================                      
-
-gulp.task 'cleaned', ->
-  # preview with browserSync
-  browserSync.init({server: "build", port:3000})
-  gulp.watch "./assets/**/*.{js,coffee}", ['js:build:preview']
-  gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
-  gulp.watch "./templates/**/*.jade", ['preview:jade']
-  gulp.watch "./contents/**/*.md", ['preview:md']
-
-# =================================================================                      
-# tools
-# =================================================================  
-
 gulp.task "checkcss", ->
-  return gulp.src(['build/css/main.css','build/**/*.html'])
+  return gulp.src(['build/css/*.css','build/**/*.html'])
     .pipe(checkcss())
 
 
