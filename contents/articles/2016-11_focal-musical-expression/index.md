@@ -7,11 +7,11 @@ featured_img: "../../../../media/images/blog/focal-music.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/focal-music.jpg"
 ---
 
-Focal is an experimental concept that uses AR headset with eye tracking as a digital musical controller. Enabling the musician to control many virtual electronic audio effects and synthesis parameters. The performer can control the virtual dials and switches by glancing at the effects they want to activate and using a single expression pedal to adjust those effects, while maintaining posture and balance for minimal disturbance and interaction during performance.
+Focal is an exciting experimental concept that uses AR headset with eye tracking as a digital musical controller. Enabling the musician to control many virtual electronic audio effects and synthesis parameters. The performer can control the virtual dials and switches by glancing at the effects they want to activate and using a single expression pedal to adjust those effects, while maintaining posture and balance for minimal disturbance and interaction during performance.
 
 <div class="Grid Grid--center Grid--justifyCenter">
 	<img class=".Feature-image--capturePlayerIcons
-	" src="../../../../media/images/blog/focal-system.jpg" class='Feature-image u-padBottom--1' alt="The Van Gogh Museum Eye-tracking Project">
+	" src="../../../../media/images/blog/focal-system.jpg" class='Feature-image u-padBottom--1' alt="Focal System">
 </div>
 Image Source: [Focal](http://stewartgreenhill.com/articles/focal/)
 <br>
@@ -23,9 +23,11 @@ The Focal system consists of four main parts:
 - 2 Pedals
 - Focal application
 
-Many of the electronic effects otherwise would be a multi-pedal system has been virtualised to the Focal application and singe pedal system.
+The headset combines a Pupil Epson Moverio monocular mount add-on with the Epson Moverio BT-200 AR glasses. To track the gaze of the musician and display the Focal application. And many of the electronic effects in a multi-pedal setup otherwise used physically in a performance is now displayed on the HUD where musicians can interact with interface.
 
 The motivation behind this experiment is to enable musicians in having more freedom in managing and controlling electronic effects while both hands are occupied performing the physical instrument.
+
+For more information check out their in-depth [article](http://stewartgreenhill.com/articles/focal/)
 
 <br>
 <br>
