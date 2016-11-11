@@ -3,7 +3,7 @@ title: An Eye-Tracking Musical Expression Controller
 date: Fri Nov 11 2016 14:43:37 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: "Focal is an experimental concept that uses AR headset with eye tracking as a digital musical controller..."
-featured_img: "../../../../media/images/blog/focal-music.jpg"
+featured_img: "../../../../media/images/blog/focal-systemb.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/focal-music.jpg"
 ---
 
