@@ -45,11 +45,12 @@ block main
             div.Grid-cell
 
               if article.metadata.tag
-                div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
-                  div.Grid-cell
-                    div.Circle-tag.Tag-inner.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight.Grid-column
-                      i.material-icons.Icon-tag= article.metadata.tag.icon
-                      div.Caption-tag= article.metadata.tag.caption
+                a(href=article.url)
+                  div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
+                    div.Grid-cell
+                      div.Circle-tag.Tag-inner.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight.Grid-column
+                        i.material-icons.Icon-tag= article.metadata.tag.icon
+                        div.Caption-tag= article.metadata.tag.caption
               else
                 a(href=article.url)
                   div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
