@@ -280,42 +280,42 @@ get_product_database = ->
       title_store: 'Oculus Rift DK2 Monocular Add-on Cup'
       description_store: "Add eye tracking to your Oculus Rift DK2 with our 120hz monocular eye tracking add-on. Includes one custom lens cup with: IR mirror, IR LEDs, 1 x 120 Hz eye camera, and USB cables."
       description_cart: "Monocular Oculus Rift DK2 add-on cup with 1 x 120hz eye camera."
-      img: [vr_ar_img_path,'oculusdk2m.png'].join('/')
+      img: [vr_ar_img_path,'oculusdk2m.jpg'].join('/')
     oculusdk2b:
       cost: 1400
       title_product: 'Oculus Rift DK2 Add-on'
       title_store: 'Oculus Rift DK2 Binocular Add-on Cup'
       description_store: "Add binocular eye tracking to your Oculus Rift DK2 with our 120hz binocular eye tracking add-on. Includes two custom lens cups with: IR mirror, IR LEDs, 2 x 120 Hz eye cameras, and USB cables."
       description_cart: "Binocular Oculus Rift DK2 add-on cup with 2 x 120hz eye camera."
-      img: [vr_ar_img_path,'oculusdk2m.png'].join('/')
+      img: [vr_ar_img_path,'oculusdk2m.jpg'].join('/')
     epsonbt200b:
       cost: 350
       title_product: 'Epson Moverio BT-200 Eye Camera Mounts'
       title_store: 'Epson Moverio BT-200 Binocular Mount Add-on'
       description_store: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
-      img: [vr_ar_img_path,'epsonbt200b.png'].join('/')   
+      img: [vr_ar_img_path,'epsonbt200b.jpg'].join('/')   
     htcviveb:
       cost: 1400
       title_product: 'HTC Vive Binocular Add-on'
       title_store: 'HTC Vive Binocular Add-on'
       description_store: "Add binocular eye tracking to your HTC Vive VR Headset. Includes binocular 120hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
       description_cart: "120hz binocular eye tracking add-on for your HTC Vive VR Headset."
-      img: [vr_ar_img_path,'htcviveb.png'].join('/')   
+      img: [vr_ar_img_path,'htcviveb.jpg'].join('/')   
     usbcupgrade:
       cost: 210
       title_product: 'USB-C Clip Upgrade'
       title_store: 'USB-C Clip Upgrade'
       description_store: 'Upgrade any existing Pupil headset with the new USB-C clip. Comes with USB-C to USB-A cable.'
       description_cart: 'USB-C clip upgrade for an existing Pupil Headset. Comes with USB-C to USB-A cable.'
-      img: [additional_product_path,'usbcupgrade.png'].join('/')         
+      img: [additional_product_path,'usbcupgrade.jpg'].join('/')         
     e120upgrade:
       cost: 450
       title_product: '120hz Eye Camera'
       title_store: "120hz Eye Camera"
       description_store: "Upgrade any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
-      img: [additional_product_path,'e120upgrade.png'].join('/')   
+      img: [additional_product_path,'e120upgrade.jpg'].join('/')   
     support6:
       cost: 1000
       title_product: 'Support Contract'
