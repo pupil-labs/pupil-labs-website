@@ -43,9 +43,10 @@ gulp.task "build", (cb)->
                        cb
 
 gulp.task "preview", (cb)->
-  return runSequence  ['build:clean', 'css:clean', 'js:clean'],
+  return runSequence  ['build:clean', 'js:clean'],
                       ['css:build','js:build'],
                       'build_wintersmith',
+                      'css:clean',
                       cb
 
 
