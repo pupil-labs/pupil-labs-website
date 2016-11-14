@@ -327,6 +327,7 @@ gulp.task "css:clean", ->
                 new RegExp('^.Grid--cart.*')
                 new RegExp('^.LicenseSpecs.*')
                 new RegExp('^.Blog-nav.*')
+                new RegExp('^.loading.*')
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
