@@ -18,7 +18,7 @@ A foot pedal can be used to adjust the selected effects enabling a musician to m
 	" src="../../../../media/images/blog/focal-system.jpg" class='Feature-image u-padBottom--1' alt="Focal System">
 </div>
 
-Image Source: [Focal](http://stewartgreenhill.com/articles/focal/)
+<small>Image source: [Focal](http://stewartgreenhill.com/articles/focal/)</small>
 
 The Focal system consists of four main technical components:
 
