@@ -328,6 +328,7 @@ gulp.task "css:clean", ->
                 new RegExp('^.LicenseSpecs.*')
                 new RegExp('^.Blog-nav.*')
                 new RegExp('^.loading.*')
+                new RegExp('^.parsley-.*')
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
