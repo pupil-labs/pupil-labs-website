@@ -22,15 +22,15 @@
   },
   "3":
   {
-    "name":"Sarah Leu",
-    "role":"Electrical Engineer",
+    "name":"Pablo Prietz",
+    "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   },
   "4":
   {
-    "name":"Ishizki Takahiro",
-    "role":"Software Engineer",
-    "img":"https://placehold.it/400x400"    
+    "name":"Marc Tonsen",
+    "role":"Research and Development Engineer",
+    "img":"https://placehold.it/400x400"
   },
   "5":
   {
@@ -46,16 +46,11 @@
   },
   "7":
   {
-    "name":"Pablo Prietz",
+    "name":"Ishizki Takahiro",
     "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
-  },
-  "8":{
-    "name":"Marc Tonsen",
-    "role":"Research and Development Engineer",
-    "img":"https://placehold.it/400x400"
-  },
-   "9":
+  },  
+   "8":
   {
     "name":"Ines Findewirth",
     "role":"Office Manager",
