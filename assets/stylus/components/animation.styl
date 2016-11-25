@@ -24,57 +24,179 @@
   max-width 100%
   height auto
 
-
+// modular
 
 .cube_color 
-  animation color 4s 3s infinite cubic-bezier(.05, .08, 0.365, 1)
-  -webkit-animation color 4s 3s infinite cubic-bezier(.05, .08, 0.365, 1)
-  -webkit-animation-fill-mode forwards
+  animation color 5s infinite cubic-bezier(.05, .08, 0.365, 1)
   animation-fill-mode forwards
-
 
 .cube_outline 
-  animation line 4s 3s infinite cubic-bezier(.05, .08, 0.365, 1)
-  -webkit-animation line 4s 3s infinite cubic-bezier(.05, .08, 0.365, 1)
-  -webkit-animation-fill-mode forwards
+  animation line 5s infinite cubic-bezier(.05, .08, 0.365, 1)
   animation-fill-mode forwards
-
 
 @keyframes line 
   0%
+    transform translate(0px, 0px)
 
+  50%
+    transform translate(-70px, -70px)
+    
+  90%
     transform translate(0px, 0px)
     
   100%
-
-    transform translate(-70px, -70px)
-
+    transform translate(0px, 0px)
 
 @keyframes color 
   0%
-
     opacity 1
     transform translate(0px, 0px)
-
-  85%
+  40%
     opacity .8
-    
-  100%
-
+  50%
     opacity 0
     transform translate(-70px, -70px)
+  90%
+    transform translate(0px, 0px)
+    opacity 0
+  100%
+    opacity 1
+    transform translate(0px, 0px)
+  
+
+// support
+.loop-circle-l
+  motion-path path("M3.8,109.8a44,44,0,0,1,75-31l24.1,24.1,6.9,6.9,29.1,29.1,2,2a43.9,43.9,0,1,0,0-62.1l-23.1,23.1-8,8L80.7,138.9l-2,2a44,44,0,0,1-75-31.1Z")
+  animation loop-reveal 7s linear infinite
+  fill #97d2ad
+  
+@keyframes loop-reveal
+  0%
+    motion-offset 0
+  100%
+    motion-offset 100%
+    
+.loop-circle-r
+  motion-path path("M215.9,109.4a44,44,0,0,0-75-30.6l-23.1,23.1-8,8L80.7,138.9l-2,2a43.9,43.9,0,1,1,0-62.1l24.1,24.1,6.9,6.9,29.1,29.1,2,2a43.9,43.9,0,0,0,75-31.5Z")
+  animation loop-reveal 8s linear infinite
+  fill #97d2ad
+  
+@keyframes loop-reveal
+  0%
+    motion-offset 0
+  100%
+    motion-offset 100%
+    
+    
+.loop-r
+  opacity 0
 
 
-.loop 
-  stroke #000000
-  stroke-width 1px
+// community
 
-@keyframes offset 
-  to 
-    stroke-dashoffset: 0px;
 
-.loop 
-  animation offset 2s linear forwards
 
-.loop-circle 
-  transform translate(-300, -300)
+.moving-node-left
+  motion-path path("M96,134.7H88.7a6.6,6.6,0,0,0-5.1,2.1L71.3,149.1a6.6,6.6,0,0,1-5.1,2.1H7.7")
+  animation node-line-left 4s ease-in-out infinite forwards
+  fill #97d2ad
+  
+@keyframes node-line-left
+  0%
+    motion-offset 0
+    
+  100%
+    motion-offset 100%
+    
+.left-node
+  animation left-node 4s ease-in-out infinite 
+  fill #97d2ad
+  opacity 0
+
+@keyframes left-node
+  0%
+    opacity 0
+  85%
+    opacity 0
+  100%
+    opacity 1
+    
+.node-reveal-left
+  stroke-dasharray 95
+  stroke-dashoffset 95
+  animation left 4s ease-in-out infinite forwards
+  
+@keyframes left
+  to
+    stroke-dashoffset 0
+  
+.left-node-draw
+  stroke-dasharray 23
+  stroke-dashoffset 23
+  animation left-node-draw 4s ease-in-out infinite forwards
+  
+@keyframes left-node-draw
+
+  100%
+    stroke-dashoffset 0
+    
+.moving-node-bottom
+  motion-path path("M128.8,134.7h15.4a13.1,13.1,0,0,1,7.6,2.1,16.4,16.4,0,0,1,2.5,2.1l9.3,9.3a12.9,12.9,0,0,1,4.2,8.9q0,.6,0,1.3V183a13.1,13.1,0,0,0,4.2,10.2l29.6,29.6")
+  animation node-line-bottom 4s ease-in-out infinite 
+  fill #97d2ad
+
+  
+@keyframes node-line-bottom
+  0%
+    motion-offset 0
+    opacity 0
+  20%
+    opacity 1
+  100%
+    motion-offset 100%
+
+    
+.bottom-node
+  animation node-bottom 4s ease-in-out infinite 
+  fill #97d2ad
+  opacity 0
+  
+@keyframes node-bottom
+  0%
+    opacity 0
+  90%
+    opacity 0
+  100%
+    opacity 1
+    
+.node-reveal-bottom
+  stroke-dasharray 130
+  stroke-dashoffset 130
+  animation bottom 4s ease-in-out infinite forwards
+  
+@keyframes bottom
+  to
+    stroke-dashoffset 0
+
+.bottom-node-draw
+  stroke-dasharray 60
+  stroke-dashoffset 60
+  animation bottom-node-draw 4s ease-in-out infinite forwards
+  
+@keyframes bottom-node-draw
+
+  100%
+    stroke-dashoffset 0
+
+
+.moving-node-top
+  motion-path path("M138.7,6.6l-8.5,8.5a6.6,6.6,0,0,0-2.1,5.1v54a6.6,6.6,0,0,1-2.1,5.1l-9.4,9.4a13.1,13.1,0,0,0-4.2,10.2v19.5")
+  animation node-line-top 3s 1s ease-in-out infinite forwards
+  fill #97d2ad
+  
+@keyframes node-line-top
+  0%
+    motion-offset 0
+    
+  100%
+    motion-offset 100%
