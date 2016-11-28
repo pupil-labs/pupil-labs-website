@@ -122,13 +122,19 @@
     opacity 1
     
 .node-reveal-left
+  stroke-width 1.1
   stroke-dasharray 95
   stroke-dashoffset 95
   animation left 4s ease-in-out infinite forwards
   
 @keyframes left
-  to
+  0%
+    opacity 1
+  80%
+    opacity .6
+  100%
     stroke-dashoffset 0
+    opacity 0
   
 .left-node-draw
   stroke-dasharray 23
@@ -175,10 +181,16 @@
   animation bottom 5s ease-in-out infinite forwards
   
 @keyframes bottom
-  to
+  0%
+    opacity 1
+  80%
+    opacity .6
+  100%
     stroke-dashoffset 0
+    opacity 0
 
 .bottom-node-draw
+  stroke-width 1.1
   stroke-dasharray 60
   stroke-dashoffset 60
   animation bottom-node-draw 5s ease-in-out  forwards
