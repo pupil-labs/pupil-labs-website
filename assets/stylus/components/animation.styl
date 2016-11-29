@@ -27,14 +27,14 @@
 // modular
 
 .cube_color 
-  animation color 5s infinite cubic-bezier(.05, .08, 0.365, 1)
+  animation cube 5s infinite cubic-bezier(.05, .08, 0.365, 1)
   animation-fill-mode forwards
 
 .cube_outline 
-  animation line 5s infinite cubic-bezier(.05, .08, 0.365, 1)
+  animation cube 5s infinite cubic-bezier(.05, .08, 0.365, 1)
   animation-fill-mode forwards
 
-@keyframes line 
+@keyframes cube
   0%
     transform translate(0px, 0px)
 
@@ -45,37 +45,14 @@
     transform translate(0px, 0px)
     
   100%
-    transform translate(0px, 0px)
-
-@keyframes color 
-  0%
-    opacity 1
-    transform translate(0px, 0px)
-  40%
-    opacity .8
-  50%
-    opacity 0
-    transform translate(-70px, -70px)
-  90%
-    transform translate(0px, 0px)
-    opacity 0
-  100%
-    opacity 1
     transform translate(0px, 0px)
   
-
 // support
 .loop-circle-l
   motion-path path("M3.8,109.8a44,44,0,0,1,75-31l24.1,24.1,6.9,6.9,29.1,29.1,2,2a43.9,43.9,0,1,0,0-62.1l-23.1,23.1-8,8L80.7,138.9l-2,2a44,44,0,0,1-75-31.1Z")
   animation loop-reveal 7s linear infinite
   fill #97d2ad
   
-@keyframes loop-reveal
-  0%
-    motion-offset 0
-  100%
-    motion-offset 100%
-    
 .loop-circle-r
   motion-path path("M215.9,109.4a44,44,0,0,0-75-30.6l-23.1,23.1-8,8L80.7,138.9l-2,2a43.9,43.9,0,1,1,0-62.1l24.1,24.1,6.9,6.9,29.1,29.1,2,2a43.9,43.9,0,0,0,75-31.5Z")
   animation loop-reveal 8s linear infinite
@@ -91,124 +68,163 @@
 .loop-r
   opacity 0
 
-
 // community
 
-
-
-.moving-node-left
-  motion-path path("M96,134.7H88.7a6.6,6.6,0,0,0-5.1,2.1L71.3,149.1a6.6,6.6,0,0,1-5.1,2.1H7.7")
-  animation node-line-left 4s ease-in-out infinite forwards
+.pp-dot--1
+  opacity 1
+  motion-path path("M96,134.7H88.7a6.7,6.7,0,0,0-3.3.8,7.6,7.6,0,0,0-1.7,1.3l-7.1,7.1L73,147.4l-1.7,1.7a6.6,6.6,0,0,0-2.1,5.1v10.1h-.1v8.2a13.1,13.1,0,0,0,4.2,10.2l3.3,3.3,8.7,8.7,10.6,10.6,5,5a13.1,13.1,0,0,1,4.2,10.2v32.4")
+  animation pp-dot 6s ease-in-out infinite forwards reverse
   fill #97d2ad
   
-@keyframes node-line-left
-  0%
-    motion-offset 0
-    
-  100%
-    motion-offset 100%
-    
-.left-node
-  animation left-node 4s ease-in-out infinite 
+.pp-dot--2
+  opacity 1
+  motion-path path("M138.7,6.6l-8.5,8.5a6.6,6.6,0,0,0-2.1,5.1v54a6.6,6.6,0,0,1-2.1,5.1l-9.4,9.4a13.1,13.1,0,0,0-4.2,10.2v19.5" )
+  animation pp-dot 6s ease-in-out infinite forwards 
   fill #97d2ad
-  opacity 0
 
-@keyframes left-node
-  0%
-    opacity 0
-  85%
-    opacity 0
-  100%
-    opacity 1
-    
-.node-reveal-left
-  stroke-width 1.1
-  stroke-dasharray 95
-  stroke-dashoffset 95
-  animation left 4s ease-in-out infinite forwards
+.pp-dot--3
+  opacity 1
+  motion-path path("M213.5,101.5l-10.9,10.9-10,10-8.1,8.1-1.7,1.5a12.9,12.9,0,0,1-8.5,2.7H128.8" )
+  animation pp-dot 7s ease-in-out infinite forwards 
+  fill #97d2ad
   
-@keyframes left
+@keyframes pp-dot
   0%
     opacity 1
   80%
-    opacity .6
+    opacity 1
   100%
-    stroke-dashoffset 0
     opacity 0
+    motion-offset 100%
+    
+.fork-line--1
+  stroke-dasharray 90
+  stroke-dashoffset -90
+  animation line 10s ease-in-out forwards 
+    
+.fork-line--2
+  stroke-dasharray 95
+  stroke-dashoffset 95
+  animation line 13s ease-in-out forwards 
+    
+.fork-line--3
+  stroke-dasharray 70
+  stroke-dashoffset 70
+  animation line 15s ease-in-out forwards 
   
-.left-node-draw
-  stroke-dasharray 23
-  stroke-dashoffset 23
-  animation left-node-draw 4s ease-in-out  forwards
+.fork-line--4
+  stroke-dasharray 85
+  stroke-dashoffset 85
+  animation line 12s ease-in-out forwards 
   
-@keyframes left-node-draw
-
-  100%
+.fork-line--5
+  stroke-dasharray 83
+  stroke-dashoffset 83
+  animation line 15s ease-in-out forwards 
+  
+.fork-line--6
+  stroke-dasharray 129
+  stroke-dashoffset 129
+  animation line 17s ease-in-out forwards 
+  
+.fork-line--7
+  stroke-dasharray 50
+  stroke-dashoffset -50
+  animation line 15s ease-in-out forwards 
+  
+.fork-line--8
+  stroke-dasharray 98
+  stroke-dashoffset 98
+  animation line 13s ease-in-out forwards 
+  
+.fork-line--9
+  stroke-dasharray 95
+  stroke-dashoffset 95
+  animation line 14s ease-in-out forwards 
+  
+.fork-line--10
+  stroke-dasharray 60
+  stroke-dashoffset 60
+  animation line 12s ease-in-out forwards 
+  
+.fork-line--11
+  stroke-dasharray 125
+  stroke-dashoffset -125
+  animation line 12s ease-in-out forwards 
+  
+@keyframes line
+  to
     stroke-dashoffset 0
     
-.moving-node-bottom
-  motion-path path("M128.8,134.7h15.4a13.1,13.1,0,0,1,7.6,2.1,16.4,16.4,0,0,1,2.5,2.1l9.3,9.3a12.9,12.9,0,0,1,4.2,8.9q0,.6,0,1.3V183a13.1,13.1,0,0,0,4.2,10.2l29.6,29.6")
-  animation node-line-bottom 5s ease-in-out infinite 
+.fork-dot--1
+  motion-path path("M78.5,49.6,94.5,65.6,95.9,67l12.3,12.3h0a12.9,12.9,0,0,1,4.2,8.8q0,.6,0,1.3v28.9")
+  animation fork-dot-reverse 10s ease-in-out forwards reverse
+  fill #97d2ad
+    
+.fork-dot--2
+  motion-path path("M112.4,118.3V89.4a13.1,13.1,0,0,0-4.2-10.2l-9-9A15.6,15.6,0,0,1,96.7,67,13.3,13.3,0,0,1,95,60v-30")
+  animation fork-dot 13s ease-in-out forwards 
+  fill #97d2ad
+  
+.fork-dot--3
+  motion-path path("M112.4,118.3V98.7a14.6,14.6,0,0,1,.8-5.1,13.8,13.8,0,0,1,3.4-5.1l6.3-6.3,9.8-9.8,6.9-6.9")
+  animation fork-dot 15s ease-in-out forwards 
+  fill #97d2ad
+  
+.fork-dot--4
+  motion-path path("M128.8,134.7h5.8a5.7,5.7,0,0,0,5.7-5.7v-22a13.1,13.1,0,0,1,4.2-10.2l1.6-1.6,12.8-12.8L170,71.3")
+  animation fork-dot 12s ease-in-out forwards 
   fill #97d2ad
 
+.fork-dot--5
+  motion-path path("M128.8,134.7h29a13.5,13.5,0,0,1,6.6,1.5,15.2,15.2,0,0,1,3.5,2.7l11.6,11.6,2.2,2.2,9.6,9.6,6.1,6.1")
+  animation fork-dot 15s ease-in-out forwards 
+  fill #97d2ad
   
-@keyframes node-line-bottom
+.fork-dot--6
+  motion-path path("M128.8,134.7h16.2a12.7,12.7,0,0,1,6.8,2.1,16.4,16.4,0,0,1,2.5,2.1l6.5,6.5,2.8,2.8a12.9,12.9,0,0,1,4.2,8.9q0,.6,0,1.3V183a13.3,13.3,0,0,0,1.7,6.9,15.5,15.5,0,0,0,2.5,3.2l15.7,15.7,14,14")
+  animation fork-dot 17s ease-in-out forwards 
+  fill #97d2ad
+  
+.fork-dot--7
+  motion-path path("M132.1,194.6l-4.2-4.2-7.9-7.9-.9-.9-2.4-2.4a13.4,13.4,0,0,1-3.7-6,15.4,15.4,0,0,1-.5-4.2v-18")
+  animation fork-dot-reverse 15s ease-in-out forwards reverse
+  fill #97d2ad
+  
+.fork-dot--8
+  motion-path path("M96,134.7H88.7a6.6,6.6,0,0,0-5.1,2.1l-1,1L71.3,149.1a6.6,6.6,0,0,0-2.1,5.1v61.5")
+  animation fork-dot 13s ease-in-out forwards 
+  fill #97d2ad
+  
+.fork-dot--9
+  motion-path path("M96,134.7H88.7a6.6,6.6,0,0,0-5.1,2.1l-.8.8-9.6,9.6-1.9,1.9a6.6,6.6,0,0,1-5.1,2.1H7.7")
+  animation fork-dot 14s ease-in-out forwards 
+  fill #97d2ad
+  
+.fork-dot--10
+  motion-path path("M96,134.7h-18a12.9,12.9,0,0,1-8.2-4.1l-2.1-2.1-2-2-7.7-7.6-4.4-4.3-2.1-2.1-4.7-4.7")
+  animation fork-dot 12s ease-in-out forwards 
+  fill #97d2ad
+  
+.fork-dot--11
+  motion-path path("M30.1,38.2l6.3,6.3,2.2,2.2,9.2,9.2L58.9,67,72.4,80.5l4.9,4.9a15.5,15.5,0,0,1,2.5,3.2,13.3,13.3,0,0,1,1.7,7v24a15.6,15.6,0,0,0,.5,3.9,12,12,0,0,0,.5,1.5,14.1,14.1,0,0,0,3.3,4.7l2.8,2.8a6.6,6.6,0,0,0,5.1,2.1H96")
+  animation fork-dot-reverse 12s ease-in-out forwards reverse
+  fill #97d2ad
+
+@keyframes fork-dot
   0%
-    motion-offset 0
     opacity 0
   20%
     opacity 1
   100%
-    motion-offset 100%
-
-    
-.bottom-node
-  animation node-bottom 5s ease-in-out infinite 
-  fill #97d2ad
-  opacity 0
-  
-@keyframes node-bottom
-  0%
-    opacity 0
-  90%
-    opacity 0
-  100%
     opacity 1
+    motion-offset 100%
     
-.node-reveal-bottom
-  stroke-dasharray 130
-  stroke-dashoffset 130
-  animation bottom 5s ease-in-out infinite forwards
-  
-@keyframes bottom
+@keyframes fork-dot-reverse
   0%
     opacity 1
   80%
-    opacity .6
+    opacity 1
   100%
-    stroke-dashoffset 0
     opacity 0
-
-.bottom-node-draw
-  stroke-width 1.1
-  stroke-dasharray 60
-  stroke-dashoffset 60
-  animation bottom-node-draw 5s ease-in-out  forwards
-  
-@keyframes bottom-node-draw
-
-  100%
-    stroke-dashoffset 0
-
-
-.moving-node-top
-  motion-path path("M138.7,6.6l-8.5,8.5a6.6,6.6,0,0,0-2.1,5.1v54a6.6,6.6,0,0,1-2.1,5.1l-9.4,9.4a13.1,13.1,0,0,0-4.2,10.2v19.5")
-  animation node-line-top 3s 1s ease-in-out infinite forwards
-  fill #97d2ad
-  
-@keyframes node-line-top
-  0%
-    motion-offset 0
-    
-  100%
     motion-offset 100%
