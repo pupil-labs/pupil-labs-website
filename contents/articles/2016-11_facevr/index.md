@@ -3,13 +3,13 @@ title: "FaceVR: Real-Time Facial Reenactment and Eye Gaze Control in VR"
 date: Thu Nov 17 2016 10:49:16 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: "A novel approach for real-time real-time gaze-aware facial performance capture system to drive the photo-realistic reconstructed digital face in virtual reality..."
-featured_img: "../../../../media/images/blog/face_vrb.png"
-featured_img_thumb: "../../../../media/images/blog/thumb/face_vr.png"
+featured_img: "../../../../media/images/blog/facevr_fig9-b.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/facevr_fig9.png"
 ---
 
 [Justus Thies](http://lgdv.cs.fau.de/people/card/justus/thies/) et al., have developed a novel approach for real-time gaze-aware facial capture system to drive the photo-realistic reconstructed digital face in virtual reality. Their approach enables facial reenactment that can transfer facial expressions and realistic eye appearance between a source and a target actor video.
 
-<img class="Feature-image u-padBottom--2 u-padTop--2" src="../../../../media/images/blog/face_vr.png" alt="Real-Time Facial Reenactment and Eye Gaze Control in VR">
+<img class="Feature-image u-padBottom--2 u-padTop--2" src="../../../../media/images/blog/facevr_fig1.png" alt="Real-Time Facial Reenactment and Eye Gaze Control in VR">
 
 Source: [FaceVR: Real-Time Facial Reenactment and Eye Gaze Control in VR](https://arxiv.org/pdf/1610.03151.pdf)
 
