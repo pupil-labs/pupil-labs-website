@@ -68,6 +68,7 @@ block main
             p Our add-ons give your AR/VR Headset eye tracking superpowers. Eye videos are transferred to your host via USB 2.0. 
             p The hardware is easily attached and removed. Eye cameras can run up to 120hz and have a latency of 5.7ms. Fast enough for interaction applications and detection of saccades and quick fixations.
 
+
     //- software
     section.Site-gray-bkg
       div.Site-content-container
@@ -88,15 +89,111 @@ block main
             div.Grid-cell.Grid-cell--full
               p We also maintain and contribute to a community driven repository of tools for eye tracking in head mounted displays called #[a(href="https://gitter.im/pupil-labs/hmd-eyes" title="HMD-eyes on Github" rel="noopener") HMD-eyes]
 
-    //- community
-    div.Site-content-container
+
+    section.Site-content-container
+      a(name="technical-specs")
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full.u-textCenter
+          div.Grid-cell.Grid-cell--full
             div.Feature
-              h1.Feature-title--lg.u-padBottom--1 Community
-          div.Grid-cell.Grid-cell--full.u-textCenter
-            p Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs. 
-            p Many researchers and developers have already thought of, or implemented eye tracking software HMDs. Instead of continuing to reinvent the wheel, we have formed a community with the goal of sharing knowledge and tools.
-            p Fork the hmd-eyes code on  #[a(href="https://github.com/pupil-labs/hmd-eyes" title="hmd-eyes on Github" rel="noopener") Github]. Chat with the hmd-eyes community on #[a(href="https://gitter.im/pupil-labs/hmd-eyes" title="HMD-eyes Gitter chat" rel="noopener") Gitter].
+              h1 Technical Specifications & Performance
+              h4 There are subtle differences in hardware add-ons that share technical and performance specifications, or otherwise noted. 
+            div.Grid-cell.TechSpecs-container
+              div.Grid-cell.TechSpecs--world
+                table.TechSpecs-table-feature.TechSpecs-txt--world
+                  tbody
+                    tr
+                      td.Table--column #[strong Basic Capabilities]
+                      td
+                    tr
+                      td.Table--column Mono/Stereo
+                      td Both, depending on desired setup
+                    tr
+                      td.Table--column Tracking Frequency
+                      td 120Hz
+                    tr
+                      td.Table--column Field of View
+                      td As far as the HMD goes
+                    tr
+                      td.Table--column Gaze Accuracy
+                      td ~1.0deg
+                    tr
+                      td.Table--column Gaze Precision
+                      td ~0.08deg
+                    tr
+                      td.Table--column #[strong Latency]
+                      td 
+                    tr
+                      td.Table--column Camera Latency
+                      td 5.7ms
+                    tr
+                      td.Table--column Processing latency (specify cpu assumptions)
+                      td 3-4ms on 15 CPU
+                    tr
+                      td.Table--column #[strong Imaging]
+                      td 
+                    tr
+                      td.Table--column Resolution
+                      td 640x480
+                    tr
+                      td.Table--column Connection
+                      td USB 2.0
+                    tr
+                      td.Table--column Saturation
+                      td Interconnect bandwidth USB 2.0 ~60% saturation
+                    tr
+                      td.Table--column #[strong Data Output]
+                      td 
+                    tr
+                      td.Table--column Combined Eye Gaze
+                      td Yes
+                    tr
+                      td.Table--column Independent Eye Gaze (1 gaze point per eye)
+                      td Yes
+                    tr
+                      td.Table--column Pupil Position
+                      td Yes
+                    tr
+                      td.Table--column Pupil Size
+                      td Yes
+                    tr
+                      td.Table--column Velocity/Acceleration
+                      td Can be implemented if desired
+                    tr
+                      td.Table--column Eye Accomodation
+                      td Yes, using binocular vergence
+                    tr
+                      td.Table--column #[strong Calibration]
+                      td 
+                    tr
+                      td.Table--column Method
+                      td 5 point
+                    tr
+                      td.Table--column #[strong Power/Performance/Memory]
+                      td 
+                    tr
+                      td.Table--column 
+                      td Host CPU % Utilization: 50% of one core per eye
+                    tr
+                      td.Table--column #[strong Connectivity]
+                      td 
+                    tr
+                      td.Table--column SDK
+                      td Through network message based API
+                    tr
+                      td.Table--column Plugin for Game Engines
+                      td Reference Implementation for Unity3D
+
+    //- community
+    section.Site-gray-bkg
+      div.Site-content-container
+        div.Feature-container-column
+          div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              div.Feature
+                h1.Feature-title--lg.u-padBottom--1 Community
+            div.Grid-cell.Grid-cell--full.u-textCenter
+              p Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs. 
+              p Many researchers and developers have already thought of, or implemented eye tracking software HMDs. Instead of continuing to reinvent the wheel, we have formed a community with the goal of sharing knowledge and tools.
+              p Fork the hmd-eyes code on  #[a(href="https://github.com/pupil-labs/hmd-eyes" title="hmd-eyes on Github" rel="noopener") Github]. Chat with the hmd-eyes community on #[a(href="https://gitter.im/pupil-labs/hmd-eyes" title="HMD-eyes Gitter chat" rel="noopener") Gitter].
 
