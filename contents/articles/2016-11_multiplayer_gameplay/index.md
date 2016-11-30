@@ -20,5 +20,5 @@ When gaze is augmented over the game and revealed to other players, gaze now bec
 
 Check out the their full research paper [here](http://www.socialnui.unimelb.edu.au/publications/2016-SocialNUI-Newn-3.pdf).
 
-If you use Pupil in your research and have published work, please send us a note. We would love to include it feature the work here on the blog and in a list of [work that cites Pupil](https://docs.google.com/spreadsheets/d/1ZD6HDbjzrtRNB4VB0b7GFMaXVGKZYeI0zBOBEEPwvBI/).
+If you use Pupil in your research and have published work, please send us a note. We would love to include your work here on the blog and in a list of [work that cites Pupil](https://docs.google.com/spreadsheets/d/1ZD6HDbjzrtRNB4VB0b7GFMaXVGKZYeI0zBOBEEPwvBI/).
 
