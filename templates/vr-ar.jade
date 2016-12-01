@@ -97,7 +97,7 @@ block main
           div.Grid-cell.Grid-cell--full
             div.Feature
               h1 Technical Specifications & Performance
-              h4 There are subtle differences in hardware add-ons that share technical and performance specifications, or otherwise noted. 
+              h4 VR and AR add-ons share many of the same specifications due to our modular design approach. There are subtle differences in specs and performance where noted in the table below. 
             div.Grid-cell.TechSpecs-container
               div.Grid-cell.TechSpecs--world
                 table.TechSpecs-table-feature.TechSpecs-txt--world
@@ -127,8 +127,8 @@ block main
                       td.Table--column Camera Latency
                       td 5.7ms
                     tr
-                      td.Table--column Processing latency (specify cpu assumptions)
-                      td 3-4ms on 15 CPU
+                      td.Table--column Processing latency
+                      td 3-4ms on i5 CPU
                     tr
                       td.Table--column #[strong Imaging]
                       td 
@@ -140,7 +140,7 @@ block main
                       td USB 2.0
                     tr
                       td.Table--column Saturation
-                      td Interconnect bandwidth USB 2.0 ~60% saturation
+                      td Interconnected bandwidth USB 2.0 ~60% saturation
                     tr
                       td.Table--column #[strong Data Output]
                       td 
@@ -148,14 +148,14 @@ block main
                       td.Table--column Combined Eye Gaze
                       td Yes
                     tr
-                      td.Table--column Independent Eye Gaze (1 gaze point per eye)
-                      td Yes
+                      td.Table--column Independent Eye Gaze 
+                      td Yes - 1 gaze point per eye
                     tr
                       td.Table--column Pupil Position
                       td Yes
                     tr
-                      td.Table--column Pupil Size
-                      td Yes
+                      td.Table--column Pupil Diameter
+                      td Yes - in pixels for 2d appearance and mm from 3d model
                     tr
                       td.Table--column Velocity/Acceleration
                       td Can be implemented if desired
@@ -179,10 +179,11 @@ block main
                       td 
                     tr
                       td.Table--column SDK
-                      td Through network message based API
+                      td #[a(href="https://github.com/pupil-labs/pupil/wiki/Pupil-Interprocess-and-Network-Communication" title="Pupil Interprocess and Network Communication" rel="noopener") Through network message based API]
                     tr
                       td.Table--column Plugin for Game Engines
-                      td Reference Implementation for Unity3D
+                      td #[a(href="https://github.com/pupil-labs/hmd-eyes" title="HMD Eyes" rel="noopener") Reference plugin] implementation for Unity3D
+
 
     //- community
     section.Site-gray-bkg
