@@ -50,21 +50,22 @@ block main
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
                 h1 Pupil is Open Source
-          
             div.Grid-cell.Grid-cell--full
               div.Grid.Grid--1of3.Grid--gutters.u-textCenter.u-padBottom--2
                 div.Grid-cell
                   figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/modular.png" title="Do it yourself" alt="Do it yourself")
+                    include includes/svg/modular_tools_svg
                   h4 #{ oss_meta.point1 }
                 div.Grid-cell
                   figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/community.png" title="Join our eye tracking community" alt="Join our eye tracking community")
+                    include includes/svg/community_network_svg
                   h4 #{ oss_meta.point2 }
                 div.Grid-cell
                   figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/service.png" title="Recieve continuous updates and support" alt="Recieve continuous updates and support")
+                    include includes/svg/support_infinity_svg                  
                   h4 #{ oss_meta.point3 }
+
+
               div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--1
                 div.Feature
                   h3 The entire platform is on #[a(href="https://github.com/pupil-labs" title="Pupil repository on github") github] and licensed under LGPLv3.
