@@ -3,9 +3,12 @@ title: Pupil plugin for Lab Streaming Layer
 date: Fri Nov 18 2016 13:37:50 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: "Introducing Pupil LSL relay plugin that relays pupil data, gaze data and notifications to the lab streaming layer..."
-featured_img: ""
-featured_img_thumb: "" 
+featured_img: "../../../../media/images/blog/Lab-Streaming-Layer.jpg"
+featured_img_thumb: "../../../../media/images/blog/thumb/Lab-Streaming-Layer.jpg"
 ---
+
+<img src="../../../../media/images/blog/Lab-Streaming-Layer.jpg" class='Feature-image u-padBottom--2' alt="Lab Streaming Layer">
+Image Source: [Qusp Product Portfolio](https://qusp.io/projects)
 
 We are excited to introduce the [Pupil + Lab Streaming Layer relay plugin](https://github.com/sccn/labstreaminglayer/tree/master/Apps/PupilLabs). The plugin works with [Pupil Capture](https://github.com/pupil-labs/pupil/wiki/Pupil-Capture) to relay pupil data, gaze data, and notifications to LSL. Users can link the data to other inlets in the network.
 
