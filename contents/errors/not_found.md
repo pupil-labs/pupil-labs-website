@@ -5,14 +5,10 @@ filename: not_found.html
 id: 404
 ---
 
-Oops... 
+# Oops... The page you are looking for doesn't exist.
 
-The page you are looking for doesn't exist.
+## Would you like to learn about [pupil](/pupil)?
 
-----------
+## Go to the [store](/store)?
 
-Would you like to learn about [pupil](/pupil)?
-
-Go to the [store](/store)?
-
-Skim through the [blog](/blog)? 
+## Skim through the [blog](/blog)? 

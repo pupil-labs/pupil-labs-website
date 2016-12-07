@@ -5,14 +5,10 @@ filename: forbidden.html
 id: 403
 ---
 
-Oops... 
+# Oops... this is a forbidden area.
 
-This area is forbidden
+### Would you like to learn about [pupil](/pupil)?
 
-----------
+### Go to the [store](/store)?
 
-Would you like to learn about [pupil](/pupil)?
-
-Go to the [store](/store)?
-
-Skim through the [blog](/blog)? 
+### Skim through the [blog](/blog)? 
