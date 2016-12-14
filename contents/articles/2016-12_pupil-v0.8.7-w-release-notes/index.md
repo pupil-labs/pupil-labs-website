@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var converter = new showdown.Converter();
         var text = data.data.body;
         var html = converter.makeHtml(text);
-        html += '<a href="https://github.com/pupil-labs/pupil/releases/tag/v0.8.7-w">Download v0.8.7-w</a>'  
         $('section[class~="content"]').html(html);
+        $('a[href="#downloads"]').prop('href',data.data.html_url);
       }
     });
   });
