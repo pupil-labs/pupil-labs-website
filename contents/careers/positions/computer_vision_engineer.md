@@ -1,6 +1,6 @@
 ---
 title: Computer Vision Developer
-order: 
+order: 6
 jobTitle: cv-dev
 ---
 
