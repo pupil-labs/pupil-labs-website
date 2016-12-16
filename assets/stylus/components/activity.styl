@@ -2,6 +2,8 @@
 ul.Activity
   word-wrap break-word
   list-style none
+  padding-left 5.5em
+  padding-right 5.5em
 
   li 
     // font-weight 700
@@ -15,6 +17,11 @@ ul.Activity
       // font-family $font-family-sans-serif-alt
       // font-size .85em
       // margin-left 1em
+        
+  @media $break-767
+    padding-left 0em
+    padding-right 0em
+
 
 .Activity-releaseEvent
   font-weight 700
