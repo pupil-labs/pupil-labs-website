@@ -88,7 +88,7 @@ block main
             div.Grid
               div.Grid-cell.Grid-cell--full
                 h4 #{ home_newsletter_meta.point1 }
-              div.Grid-cell
+              div(style="flex:1 0;")
                 form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
                   label(class="Form-hidden" for="mce-EMAIL") email
                   input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
