@@ -13,16 +13,12 @@ block page_scripts
 
   script.
     if (Modernizr.input.list === false){
-      console.warn("This browser does not support html element <datalist>. Using polyfill");
+      console.warn("This browser does not support html element <datalist>.");
       $.when(
-        $.getScript('/js/vendor/jquery.relevant-dropdown.min.js')
+        $.getScript('/js/vendor/jquery.relevant-dropdown.min.js'),
+        $.getScript('/js/vendor/datalist-fallback-safari.js')
       ).done(function(){
-        $('#country_b').relevantDropdown({
-          change: function(new_text){
-            $("#country_b").trigger('change');
-          }
-        });
-        $('#country_s').relevantDropdown()
+        console.log("Finished loading polyfill to support datalist on this browser.");
       });
     }
 
