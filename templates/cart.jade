@@ -11,6 +11,20 @@ block append title
 block page_scripts
   script(src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js")
 
+  script.
+    if (Modernizr.input.list){
+      console.log('I have datalist support');
+    } else {
+      $.when(
+        console.log('I dont have datalist support'),
+        $.getScript('/js/vendor/jquery.relevant-dropdown.js'),
+        $.getScript('/js/vendor/load-fallbacks.js')
+      ).done(function(){
+        $('#country_b').relevantDropdown();
+      });
+    }
+
+
 block main
   div(id="Cart")
     //- Title block
