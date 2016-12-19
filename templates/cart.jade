@@ -13,10 +13,10 @@ block page_scripts
 
   script.
     if (Modernizr.input.list){
-      console.log('I have datalist support');
+      //- console.log('I have datalist support');
     } else {
       $.when(
-        console.log('I dont have datalist support'),
+        //- console.log('I dont have datalist support'),
         $.getScript('/js/vendor/jquery.relevant-dropdown.js'),
         $.getScript('/js/vendor/load-fallbacks.js')
       ).done(function(){
