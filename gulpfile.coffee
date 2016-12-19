@@ -330,7 +330,7 @@ gulp.task "css:clean", ->
                 new RegExp('^.loading.*')
                 new RegExp('^.parsley-.*')
                 new RegExp('^.datalist.*')
-                new RegExp('^.active.*')
+                new RegExp('^li.active.*')
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
