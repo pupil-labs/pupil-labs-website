@@ -38,9 +38,9 @@ div.Cart-orderForm-container
               p(class="Form-error--text" id="b-phone--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_b") Country 
-            input(class="Form-input Form-input--text" id="country_b" name="country_b" placeholder='country' list="country" required data-parsley-countryvalidator="postalCode_b-division_b" data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error" autocomplete="country-name")
+            input(class="Form-input Form-input--text" id="country_b" name="country_b" placeholder='country' list="country_b_datalist" required data-parsley-countryvalidator="postalCode_b-division_b" data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error" autocomplete="country-name")
             p(class="Form-error--text" id="b-country--error")
-            datalist(id="country")
+            datalist(id="country_b_datalist")
               each val,key in countryObj
                 option(value=key)
           div.Grid.Grid--gutters.Grid--1of2
@@ -96,9 +96,9 @@ div.Cart-orderForm-container
               p(class="Form-error--text" id="s-phone--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_s") Country
-            input(class="Form-input Form-input--text" id="country_s" name="country_s" placeholder='country' list="country" required data-parsley-countryvalidator="postalCode_s-division_s" data-parsley-trigger="focusout" data-parsley-errors-container="#s-country--error" autocomplete="country-name")
+            input(class="Form-input Form-input--text" id="country_s" name="country_s" placeholder='country' list="country_s_datalist" required data-parsley-countryvalidator="postalCode_s-division_s" data-parsley-trigger="focusout" data-parsley-errors-container="#s-country--error" autocomplete="country-name")
             p(class="Form-error--text" id="s-country--error")
-            datalist(id="country")
+            datalist(id="country_s_datalist")
               each val,key in countryObj
                 option(value=key)
           div.Grid.Grid--gutters.Grid--1of2
