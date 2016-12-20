@@ -6,6 +6,8 @@ jobTitle: android-dev
 
 We are looking to hire an Android software developer to develop an application that can capture  video and audio from USB (UVC) webcams utilizing [this library](https://github.com/saki4510t/UVCCamera), record video and audio on the Android device, and stream video and audio over the network. The Android application will interface with Pupil Capture (eye tracking software). The application will form a basis for continuous development of a mobile egocentric vision and eye tracking platform.
 
+<!-- You have a comprehensive understanding of the Android development environment and experience with Android NDK. You can show us a portfolio of android apps. You care deeply about robust code and a maintainable codebase. You can work in a team of specialists to build a high performance android service with frontend app and ZMQ networking backend. -->
+
 Job Requirements
   
   + Language - must have a strong control of spoken and written English
