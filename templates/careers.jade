@@ -25,7 +25,7 @@ block main
 
     - var positions = _.chain(positions_folder._.pages).sortBy(function(item) {
     -   return item.metadata['order'];
-    - }).filter(function(item){return item.metadata['order'] > 0}).value()
+    - }).filter(function(item){return item.metadata['order'] > -1}).value()
     
     section.Site-gray-bkg
       div.Site-content-container
