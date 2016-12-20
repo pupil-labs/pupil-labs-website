@@ -4,22 +4,6 @@ order: 7
 jobTitle: javascript-dev
 ---
 
-We are looking to hire a part-time **Javascript** software developer
+We are looking to hire a part-time Javascript developer to join our team. Remote work is OK, but on-site in Bangkok is preferred.
 
-You have strong background in computer science and math and deep understanding of fundamental CV algorithms. You know the state of the art CV methods. You have expertise in one or more of the following areas: egocentric vision, scene understanding, object detection/recognition, SLAM, and eye tracking. You are fluent in C++ and Python. You are self-motivated and excited about pushing the boundaries of the state of the art.
-
-Who we are looking for
-
-  + 
-
-Project
-
-  + 
-
-Project Location
-
-  + 
-
-Start Date
-
-  + 
+You are excited about the future of the web and Javascript. You have solid javascript fundamentals; this means you enjoy writing vanilla js. You care equally about performance and user experience. You care deeply about writing code that is a pleasure for others to read. You have experience developing web components (e.g. polymer). You have experience with real time databases (e.g. firebase) and the google cloud computing stack. You are an excellent communicator and work well in a team.   

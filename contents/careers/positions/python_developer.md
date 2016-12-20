@@ -1,25 +1,11 @@
 ---
 title: Python Developer
-order: 9
+order: 4
 jobTitle: python-dev
 ---
 
-We are looking to hire a part-time **Machine Learning** engineer 
+We are looking to hire a full time Python developer to join our team in Berlin. 
 
-You love Python. You are a super efficient implementer. You are thinking about the future; you care deeply about writing code that is pleasure for others to read. You want to work on challenging projects in a small and committed team. Bonus if you are also very well versed in C/C++ and work with Cython. Join us; and build tools for an open source community of researchers. 
+You love Python. You are a super efficient implementer. You are thinking about the future; you care deeply about writing code that is pleasure for others to read. You want to work on challenging projects in a small and committed team. 
 
-Who we are looking for
-
-  + 
-
-Project
-
-  + 
-
-Project Location
-
-  + 
-
-Start Date
-
-  + 
+Join us and build tools for an open source community of researchers. 
