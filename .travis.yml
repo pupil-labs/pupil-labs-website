@@ -16,9 +16,7 @@ addons:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
   - ./deploy_before_install.sh
-install:
-  # `yarn` is run here because yarn.lock is present 
-  - yarn
+# maybe install: is not needed?
 script:
   - echo 'Building Site'
   - gulp build --staging
