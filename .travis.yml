@@ -14,8 +14,7 @@ addons:
     packages:
     - g++-4.8
 install:
-- npm install
-- npm install wintersmith -g
+- yarn install
 script:
 - echo 'Building Site'
 - gulp build --staging
@@ -33,5 +32,6 @@ before_install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
 - ./deploy_before_install.sh
 cache:
+  yarn: true
   directories:
-  - node_modules
+    - node_modules
