@@ -1,37 +1,36 @@
 branches:
   only:
-  - master
+    - dev
 language: node_js
 node_js:
-- '6'
+  - '6'
 os:
   - linux
 sudo: false
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-test
     packages:
-    - g++-4.8
-install:
-- npm install
-- npm install wintersmith -g
+      - g++-4.8
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
+  - ./deploy_before_install.sh
+# install: not required :)
 script:
-- echo 'Building Site'
-- gulp build --production
-- gulp image_min
-- gulp generate_sitemap
-- echo 'Done building'
+  - echo 'Building Site'
+  - gulp build --production
+  - gulp image_min
+  - gulp generate_sitemap
+  - echo 'Done building'
 after_success:
- - ./deploy_after_success.sh
+  - ./deploy_after_success.sh
 env:
   global:
-  - secure: QDZJJX/CHH5i8pyZ7hnxse9l4xmlSxTIdIv184Nn1cU2UsgBYgu9tmGWYrDmCTJvzqDPWHxcUQ2z7NolXkcHp/d/XtB/BYElvMDyjLR5SZPOjRiwv1oc1TODPhMG8gJJlj2xifNXr8jFmgdSYcDzKyf+46OIR1KIFcjsoA+Tfrhucsw0uxKJD2T2uIbT1u9cXBeWH+KR3Cmud4VWfeNSUwKlMBgo01e5Ov2BodeosajgY/O4O6ba/Q4ejFgERDEWYH/w7zJCRLUWXj4hCBrloGyQ+UMwKXyhIc4IpSlGQ2IlDhaYSfRljJIuibNtal4b4bfHhxcIfWgLBBkKuB5c0Guz2kxf95RF8fa6VtQlJ1Qp0yhV8zdnFElG9PkBIhf22w0PkU4VuVzCNnuTSRpuyxBO1IyJNo+m+KrUk8R9Tgie3Ena/bobGxumETuq2xM86JM3aFAJYCF97J2svuehn7x0wxb86W2FMgBY1WvMYix9dxJVae75qIq/TFqJZJLn+h/ZwgnVNc+is5V2JYhDKhVAJAvPWWPjMtTiIV4qPbZyZCPjLmQmFUm25JNtke3dBrz/ufLmbtqm2pnF8/tYH52qKZO4OPmpu1lsCfsZS6bjfAOsNFeCTIxmyN6F3j6KkV0j5d7+l/afMAbLK9skqB1tDRzh6knHQJ3nQLt4oDs=
-  - secure: OkSZcLr+6k4i7C7D2zHeFgISEmT74ESX34xKSuLTZXgct3xOv5Cdq1+CUyjtLCtIA9E4TTw/kO9fImfVhUPZLcWdipvx/b49B2mquCU3s8OV+Mvnr39FcGa7qT1UtkRCCYWKCFiQIpTCIjbBZBmDeTXM4EzxXEEUUUwsMwy/lFpVmw85HVki6utrn1H4TqxE1AfIqQQKck02zYCNwxOQACwdg1gMpzkma//jt4fRZrFLCUGv6bOSq/hMTjvLOxBxm/DoTBWNpPGrvG/0Skj+IFQR2LnB+Jh6jd5xKLlvNQW+uIsGgL07RmDQDsm7KBHv+PF/njVHJht4+gPvrDmqNvm/PkESXo9lmmBnFtuS6bEewjXwl7K1CjJu5i1Yc3IqOONwhKNcgmHUoKzle4rWJv6Rz1YfVETmPDPLRiUqA/r/ekbTwcuAyINVL2uKeK26j+HgPjaoKo5/8kAm/lFJIMRZvnT9o3xPApkW4wS5IefDs4aeFN3LiJQAHuM3z/1gqzGEUeL5d504ZPOQ4iDt+Aqa2dXJPTneOEnYWIMzaYXYj68AoLn6gPiqBShGiSoDKvKwGQ+MohgtVhb5GP0XY9bI8906g9KETdmTyW27EOD6yyC6MtMB1UP3XbuwG6rlT2D8W+Vm6ksoObynkqyrDcZBhm+wsC3fd0kL9bSTHRA=
-  - secure: DkGmYzA3XBTKbaMVkpOVSf4f99EPRE0c4l/48nG+DkMUJAyKESGZuMjWcXExRG0ZcJq8pn8w6oxcuYG6BFRAEkiL6A1aSZVT/2livE82xbqTWBwWyIuN4HBfnIb/yZ2kODMnMw+vdxI/BUsR1F9ssXKeQzU4+WAV0WTyUIkgVkM+lRZ7jyPf32Em5YK7n83cUu4GFGj2wxVMg6qRC1fEtYZRd7rU6HPc/ZstmJvxGJUidQ2XzWAU9KE4j1KHRfLX6i5ixttzXcBaDAEIQUclHI5mGoFAXct927Z1Fi4cSXupblpVSqBGI2qRG9gI4x/GDqOVM7Fbk9LPPxmgDFAySWevlGWO12Bri20AUUcVyp4PpybdXSsXf9UJlCwERpQ3gnqnkmnSb+cwNbUI7DPmA+3XqkGE3c/cg6kmcLI4Rtu5mzHzmbnEWf5fn3rFtOYXnFEDBjxVbYq9L9rmJf6UCx2Iim4LYVQhEdMeWVGtNjzj886gT0rmhzWb8zqHnUF98IL25URZRUVHBZVSnI2fATaKRsCu+xu5MNicnJpXAoMll/iro6Boyf8oaaLZRzSQn46JzUcj60G1yCmkQ5WULYJenPll7yxd+Nk6jDWDan/NnJqji0lVH5ZCt/5a5ZrL3DeG+QV0obIbg6IS/ZBUvE+Qz0S+yBqditFNpjvvpCM=
-before_install:
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
-- ./deploy_before_install.sh
+    - secure: QDZJJX/CHH5i8pyZ7hnxse9l4xmlSxTIdIv184Nn1cU2UsgBYgu9tmGWYrDmCTJvzqDPWHxcUQ2z7NolXkcHp/d/XtB/BYElvMDyjLR5SZPOjRiwv1oc1TODPhMG8gJJlj2xifNXr8jFmgdSYcDzKyf+46OIR1KIFcjsoA+Tfrhucsw0uxKJD2T2uIbT1u9cXBeWH+KR3Cmud4VWfeNSUwKlMBgo01e5Ov2BodeosajgY/O4O6ba/Q4ejFgERDEWYH/w7zJCRLUWXj4hCBrloGyQ+UMwKXyhIc4IpSlGQ2IlDhaYSfRljJIuibNtal4b4bfHhxcIfWgLBBkKuB5c0Guz2kxf95RF8fa6VtQlJ1Qp0yhV8zdnFElG9PkBIhf22w0PkU4VuVzCNnuTSRpuyxBO1IyJNo+m+KrUk8R9Tgie3Ena/bobGxumETuq2xM86JM3aFAJYCF97J2svuehn7x0wxb86W2FMgBY1WvMYix9dxJVae75qIq/TFqJZJLn+h/ZwgnVNc+is5V2JYhDKhVAJAvPWWPjMtTiIV4qPbZyZCPjLmQmFUm25JNtke3dBrz/ufLmbtqm2pnF8/tYH52qKZO4OPmpu1lsCfsZS6bjfAOsNFeCTIxmyN6F3j6KkV0j5d7+l/afMAbLK9skqB1tDRzh6knHQJ3nQLt4oDs=
+    - secure: OkSZcLr+6k4i7C7D2zHeFgISEmT74ESX34xKSuLTZXgct3xOv5Cdq1+CUyjtLCtIA9E4TTw/kO9fImfVhUPZLcWdipvx/b49B2mquCU3s8OV+Mvnr39FcGa7qT1UtkRCCYWKCFiQIpTCIjbBZBmDeTXM4EzxXEEUUUwsMwy/lFpVmw85HVki6utrn1H4TqxE1AfIqQQKck02zYCNwxOQACwdg1gMpzkma//jt4fRZrFLCUGv6bOSq/hMTjvLOxBxm/DoTBWNpPGrvG/0Skj+IFQR2LnB+Jh6jd5xKLlvNQW+uIsGgL07RmDQDsm7KBHv+PF/njVHJht4+gPvrDmqNvm/PkESXo9lmmBnFtuS6bEewjXwl7K1CjJu5i1Yc3IqOONwhKNcgmHUoKzle4rWJv6Rz1YfVETmPDPLRiUqA/r/ekbTwcuAyINVL2uKeK26j+HgPjaoKo5/8kAm/lFJIMRZvnT9o3xPApkW4wS5IefDs4aeFN3LiJQAHuM3z/1gqzGEUeL5d504ZPOQ4iDt+Aqa2dXJPTneOEnYWIMzaYXYj68AoLn6gPiqBShGiSoDKvKwGQ+MohgtVhb5GP0XY9bI8906g9KETdmTyW27EOD6yyC6MtMB1UP3XbuwG6rlT2D8W+Vm6ksoObynkqyrDcZBhm+wsC3fd0kL9bSTHRA=
+    - secure: DkGmYzA3XBTKbaMVkpOVSf4f99EPRE0c4l/48nG+DkMUJAyKESGZuMjWcXExRG0ZcJq8pn8w6oxcuYG6BFRAEkiL6A1aSZVT/2livE82xbqTWBwWyIuN4HBfnIb/yZ2kODMnMw+vdxI/BUsR1F9ssXKeQzU4+WAV0WTyUIkgVkM+lRZ7jyPf32Em5YK7n83cUu4GFGj2wxVMg6qRC1fEtYZRd7rU6HPc/ZstmJvxGJUidQ2XzWAU9KE4j1KHRfLX6i5ixttzXcBaDAEIQUclHI5mGoFAXct927Z1Fi4cSXupblpVSqBGI2qRG9gI4x/GDqOVM7Fbk9LPPxmgDFAySWevlGWO12Bri20AUUcVyp4PpybdXSsXf9UJlCwERpQ3gnqnkmnSb+cwNbUI7DPmA+3XqkGE3c/cg6kmcLI4Rtu5mzHzmbnEWf5fn3rFtOYXnFEDBjxVbYq9L9rmJf6UCx2Iim4LYVQhEdMeWVGtNjzj886gT0rmhzWb8zqHnUF98IL25URZRUVHBZVSnI2fATaKRsCu+xu5MNicnJpXAoMll/iro6Boyf8oaaLZRzSQn46JzUcj60G1yCmkQ5WULYJenPll7yxd+Nk6jDWDan/NnJqji0lVH5ZCt/5a5ZrL3DeG+QV0obIbg6IS/ZBUvE+Qz0S+yBqditFNpjvvpCM=
 cache:
+  yarn: true
   directories:
-  - node_modules
+    - node_modules
