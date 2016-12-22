@@ -27,7 +27,6 @@ uncss = require "gulp-uncss"
 clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
-checkcss = require 'gulp-check-unused-css'
 
 # =================================================================                      
 # high level tasks
@@ -334,10 +333,3 @@ gulp.task "css:clean", ->
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
-
-gulp.task "checkcss", ->
-  return gulp.src(['build/css/*.css','build/**/*.html'])
-    .pipe(checkcss())
-
-
-
