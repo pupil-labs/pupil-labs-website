@@ -8,8 +8,7 @@
   },
   "plugins": [
     "./plugins/blog.coffee",
-    "./plugins/featured-articles.coffee",    
-    "./node_modules/wintersmith-contents"
+    "./plugins/featured-articles.coffee"   
   ],
   "shared": {
     "articles": "articles"

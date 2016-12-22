@@ -3,16 +3,22 @@
 
 ### Dependencies
 
-1. Install `node`
-1. Install `npm`
-1. Install `gulp` globally with `npm install -g gulp`
+1. Install `node` & `yarn` (*note* on macOS `brew install yarn` will also install `node`)
+1. Add `yarn` to your PATH path according to [yarn docs](https://yarnpkg.com/en/docs/install) (*note* for fish shell users edit config.fish with `set -gx PATH $PATH $HOME/.config/yarn/global/node_modules/.bin`)
+1. Install `gulp` globally - `yarn global add gulp` 
 
-### Packages
-1. Install local packakages `npm install`. Packages are defined in package.json
+### Setup Packages
+1. If you just cloned the repo, install packages by running `yarn`. 
+
+### Adding Packages
+Packages are listed in `package.json`
+
+Add new dependencies - `yarn add <package name>`
+Add new *dev* dependencies - `yarn add --dev <package name>`
 
 ### Preview 
 1. `cd pupil-labs-website`
-1. `gulp` 
+1. `gulp`
 
 The default gulp task will run a webserver on localhost:3000. Checkout `gulpfile.coffee` for more commands
 
