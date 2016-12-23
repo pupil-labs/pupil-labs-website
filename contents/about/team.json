@@ -55,5 +55,10 @@
     "role":"Office Manager",
     "img":"includes/svg/team/_team.svg",
     "id":"ines"    
+  },
+    { 
+    "name":"You",
+    "role":"Join the team",
+    "id":"you"    
   }
 ]
