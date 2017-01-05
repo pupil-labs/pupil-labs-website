@@ -98,7 +98,7 @@ get_world_cam_ids = ->
   return (k for k,v of get_world_cam_data())
 
 get_eye_cam_ids = ->
-  return (k for k,v of get_eye_cam_data())
+  return (k for k,v of get_eye_cam_data() when k isnt 'e30')
 
 get_edu_discount_data = ->
   edu_discount_data = 
