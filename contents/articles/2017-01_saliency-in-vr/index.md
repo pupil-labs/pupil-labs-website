@@ -2,7 +2,7 @@
 title: Saliency in VR
 date: Mon Jan 09 2017 11:45:18 GMT+0700 (ICT) 
 author: Pupil Dev Team 
-subtitle: ""
+subtitle: "Vincent et al., proposes new methods to learn and predict time-dependent saliency in VR without eye trackers..."
 featured_img: "../../../../media/images/blog/vr_saliency.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/vr_saliency.jpg"
 ---
