@@ -23,7 +23,7 @@ block main
           h4(style="color:white;").Background-caption-text-button Read More
 
     section.Site-gray-bkg
-      div.Site-content-container
+      div(style="margin-bottom:1em;").Site-content-container
         a(class='anchor' name="pupil")
         div.Feature-container-column
           div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
@@ -51,6 +51,7 @@ block main
                       div.Circle-tag.Tag-inner.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight.Grid-column
                         i.material-icons.Icon-tag= article.metadata.tag.icon
                         div.Caption-tag= article.metadata.tag.caption
+
               else
                 a(href=article.url)
                   div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
