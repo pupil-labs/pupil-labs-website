@@ -12,7 +12,7 @@ Image Source: [Concept for Using Eye Tracking in a Head-Mounted Display to Adapt
 
 Advances in head-mounted displays for further immersion increases the need for performance optimizations to handle rendering workload. [Daniel Pohl](http://www.intel.com/content/www/us/en/research/people/intel-labs-bio-daniel-pohl.html) et al., propose to use the user's visual field of the eye gaze for rendering optimizations and increase performance.
 
-The research shows that there are lens defect in the current generation of HMD's where certain parts of the screen are not visible. Daniel Pohl et al., have provided a calibraton routine using [Pupil DK2 Add-On](https://pupil-labs.com/store#vr-ar) in Oculus DK2 to measure these lens effects to find the visual field.
+The research shows that there are lens defect in the current generation of HMD's where certain parts of the screen are not visible. Daniel Pohl et al., have provided a calibraton routine using Pupil Labs's [Oculus Rift DK2 add-on cup](https://pupil-labs.com/store/#vr-ar) in Oculus DK2 head-mounted display to measure these lens effects to find the visual field.
 
 The resulting visual field shows that users can see more area of the screen than when looking directly at outer areas. This leads to where certain parts that are invisible to the users gaze are skipped for rendering thus enabling faster frame rates and improves the performance up to 2X.
 
