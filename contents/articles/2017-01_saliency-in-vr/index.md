@@ -1,13 +1,13 @@
 --- 
-title: Saliency in VR
+title: "Saliency in VR: How do people explore virtual environment"
 date: Mon Jan 09 2017 11:45:18 GMT+0700 (ICT) 
 author: Pupil Dev Team 
-subtitle: "Vincent et al., proposes new methods to learn and predict time-dependent saliency in VR without eye trackers..."
+subtitle: "Vincent et al., proposes new methods to learn and predict time-dependent saliency in VR to make eye tracking expendable..."
 featured_img: "../../../../media/images/blog/vr_saliency.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/vr_saliency.png"
 ---
 
-<img src="../../../../media/images/blog/vr_saliency.png" class='Feature-image u-padBottom--1' alt="">
+<img src="../../../../media/images/blog/vr_saliency.png" class='Feature-image u-padBottom--1' alt="Ground Truth Saliency Map">
 Image Source: [Saliency in VR: How do people explore virtual environments?](https://arxiv.org/pdf/1612.04335.pdf)
 
 <br>
