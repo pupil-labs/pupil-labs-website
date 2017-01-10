@@ -100,15 +100,19 @@
   border-radius 4px
 
 .Circle-tag
-  width 14em
-  height 14em
+  width 13em
+  height 13em
   background #ededed
   border-radius 50%
   
   @media $break-767
-    width 10em
-    height 10em
+    width 8em
+    height 8em
     
+  @media $break-767-height
+    width 8em
+    height 8em
+  
 .Tag-inner
   text-align center
   margin auto
@@ -118,7 +122,11 @@
   margin .1em
   
   @media $break-767
-      font-size 2.5em
+    font-size 1.5em
+      
+  @media $break-767-height
+    font-size 1.5em
+
 
 .Caption-tag
   font-size 1.5em
