@@ -7,10 +7,15 @@ featured_img: "../../../../media/images/blog/.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/.png" 
 ---
 
-<img class="Feature-image u-padBottom--1" src="../../../../media/images/blog/.png" alt="">
+<img src="../../../../media/images/blog/.png" class='Feature-image u-padBottom--1' alt="">
+Image Source: [Concept for Using Eye Tracking in a Head-Mounted Display to Adapt Rendering to the User's Current Visual Field](https://perceptual.mpi-inf.mpg.de/wp-content/blogs.dir/12/files/2016/11/pohl2016_vrst.pdf)
 
-Source: []()
+Advances in head-mounted displays for further immersion increases the need for performance optimizations to handle rendering workload. [Daniel Pohl](http://www.intel.com/content/www/us/en/research/people/intel-labs-bio-daniel-pohl.html) et al., propose to use the user's visual field of the eye gaze for rendering optimizations and increase performance.
 
-With the advances in head-mounted displays for further immersion comes with more display workload. Daniel Pohl et al., propose to use the visual field of the gaze for rendering optimizations and increase in performance.
+The research shows that there are lens defect in the current generation of HMD's where certain parts of the screen are not visible. Daniel Pohl et al., have provided a calibraton routine using [Pupil DK2 Add-On](https://pupil-labs.com/store#vr-ar) in Oculus DK2 to measure these lens effects to find the visual field.
 
-The study shows there are lens defect in the current generation of HMD's from the calibraton precedure done by Daniel Pohl et al.
+The resulting visual field shows that users can see more area of the screen than when looking directly at outer areas. This leads to where certain parts that are invisible to the users gaze are skipped for rendering thus enabling faster frame rates and improves the performance up to 2X.
+
+Check out the their full research paper [here](https://perceptual.mpi-inf.mpg.de/wp-content/blogs.dir/12/files/2016/11/pohl2016_vrst.pdf).
+
+If you use Pupil in your research and have published work, please send us a note. We would love to include your work here on the blog and in a list of [work that cites Pupil](https://docs.google.com/spreadsheets/d/1ZD6HDbjzrtRNB4VB0b7GFMaXVGKZYeI0zBOBEEPwvBI/).
