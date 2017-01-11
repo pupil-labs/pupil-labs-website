@@ -11,9 +11,8 @@ Advances in head-mounted displays for further immersion increases the need for p
 
 <img src="../../../../media/images/blog/visfield.png" class='Feature-image u-padTop--1' alt="Adapt Rendering to the User's Current Visual Field">
 
-<div class="small">Image Source: [Concept for Using Eye Tracking in a Head-Mounted Display to Adapt Rendering to the User's Current Visual Field](https://perceptual.mpi-inf.mpg.de/wp-content/blogs.dir/12/files/2016/11/pohl2016_vrst.pdf)</div>
+<div class="small u-padBottom--2">Image Source: [Concept for Using Eye Tracking in a Head-Mounted Display to Adapt Rendering to the User's Current Visual Field](https://perceptual.mpi-inf.mpg.de/wp-content/blogs.dir/12/files/2016/11/pohl2016_vrst.pdf)</div>
 
-<br>
 The researchers have developed a calibration routine using Pupil Lab's [Oculus Rift DK2 add-on cup](https://pupil-labs.com/store/#vr-ar). Their calibration routine enables one to determine an individual user's visual field. The calibration demonstrates that users can actually see more of the VR environment when fixating on the center of a calibration area than when fixating on outer areas (due to lens defects).
 
 By knowing a user's visual field, one can optimize the rendering pipeline to skip areas that are not seen. This will enable faster frame rates (up to 2x performance gains) and lower perceived latency, and therefore a more immersive VR experience.
