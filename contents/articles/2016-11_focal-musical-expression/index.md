@@ -14,11 +14,10 @@ Focal enables musicians to manage and control electronic effects while both hand
 A foot pedal can be used to adjust the selected effects enabling a musician to maintain posture and balance for minimal disturbance during performance. Check out Stewart Greenhill and Cathie Travers full paper for NIME 2016 [here](http://stewartgreenhill.com/documents/FocalEyeTrackingMusicalExpressionController-NIME2016.pdf).
 
 <div class="Grid Grid--center Grid--justifyCenter">
-	<img class=".Feature-image--capturePlayerIcons
-	" src="../../../../media/images/blog/focal-system.jpg" class='Feature-image u-padBottom--1' alt="Focal System">
+	<img class=".Feature-image--capturePlayerIcons u-padTop--1 u-padBottom--1" src="../../../../media/images/blog/focal-system.jpg" alt="Focal System">
 </div>
 
-<small>Image source: [Focal](http://stewartgreenhill.com/articles/focal/)</small>
+<div class="small u-padBottom--2">Image source: [Focal](http://stewartgreenhill.com/articles/focal/)</div>
 
 The Focal system consists of four main technical components:
 
