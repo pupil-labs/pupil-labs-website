@@ -7,11 +7,10 @@ featured_img: "../../../../media/images/blog/.jpg"
 featured_img_thumb: "../../../../media/images/blog/.jpg"
 ---
 
-<img src="../../../../media/images/blog/.jpg" class='Feature-image u-padBottom--1' alt="">
+<img src="../../../../media/images/blog/.jpg" class='Feature-image' alt="">
 
-<div class="small">Image Source: [Personalized Image-based User Authentication using Wearable Cameras](https://arxiv.org/pdf/1612.06209.pdf)</div>
+<div class="small u-padBottom--2">Image Source: [Personalized Image-based User Authentication using Wearable Cameras](https://arxiv.org/pdf/1612.06209.pdf)</div>
 
-<br>
 Personal devices are a part of our everyday life that operate and store users private data. Such devices face an array of threats that have become a primary concern for users. The existing authentication mechanism requires users to register and remember one static password for each device at a time. However static passwords are vulnerable to various methods of attacks. 
 
 [Ngu Nguyen](http://ambientintelligence.aalto.fi/team.html) et al., propose a novel personalized user authentication mechanism that generates an image-based passwords from egocentric videos captured by wearable cameras. 
