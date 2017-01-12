@@ -7,11 +7,10 @@ featured_img: "../../../../media/images/blog/van-gogh-museum.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/van-gogh-museum.jpg"
 ---
 
-<img src="../../../../media/images/blog/van-gogh-museum.jpg" class='Feature-image u-padBottom--1' alt="The Van Gogh Museum Eye-tracking Project">
-Image Source: [The Van Gogh Museum Eye-tracking Project](http://www.vupsy.nl/van-gogh-museum-eye-tracking-project/)
+<img src="../../../../media/images/blog/van-gogh-museum.jpg" class='Feature-image' alt="The Van Gogh Museum Eye-tracking Project">
 
+<div class="small u-padBottom--2">Image Source: [The Van Gogh Museum Eye-tracking Project](http://www.vupsy.nl/van-gogh-museum-eye-tracking-project/)</div>
 
-<br>
 We are really excited to see Pupil used in the [Van Gogh Museum](https://www.vangoghmuseum.nl/en) by researchers from the [Department of Experimental and Applied psychology](http://www.vupsy.nl/) at the [VU Amsterdam](http://www.vu.nl/en/) to study how we perceive and appreciate art in a real life environment.
 
 [Francesco Walker](http://www.vupsy.nl/staff-members/francesco-walker/) (assisted by Berno Bucker, [Daniel Schreij](http://www.vupsy.nl/staff-members/daniel-schreij/) and Nicola Anderson, and supervised by prof. Jan Theeuwes) used Pupil to record the gaze patterns of adults and children as they viewed paintings in the Van Gogh museum. The team used Pupil to gain insight into how people look at paintings. 

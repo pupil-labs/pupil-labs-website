@@ -11,9 +11,8 @@ In their recent research paper [Saliency in VR: How do people explore virtual en
 
 <img src="../../../../media/images/blog/vr_saliency.png" class='Feature-image u-padTop--1' alt="Ground Truth Saliency Map">
 
-<div class="small">Saliency map generated using ground truth data collected using Pupil Labs Oculus DK2 eye tracking add-on overlay on top of one of the stimulus panorama images shown to the participants. Image Source: [Fig 5. Page 7.](https://arxiv.org/pdf/1612.04335.pdf)</div>
+<div class="small u-padBottom--2">Saliency map generated using ground truth data collected using Pupil Labs Oculus DK2 eye tracking add-on overlay on top of one of the stimulus panorama images shown to the participants. Image Source: [Fig 5. Page 7.](https://arxiv.org/pdf/1612.04335.pdf)</div>
 
-<br>
 To further understand viewing behavior and saliency in VR, Vincent Sitzmann et al. collected a dataset that records gaze data and head orientation from users oberserving omni-directional stereo panoramas using an Oculus Rift DK2 VR headset with Pupil Lab's [Oculus Rift DK2 add-on cup](https://pupil-labs.com/store/#vr-ar). 
 
 The dataset shows that gaze and head orientation can be used to build more accurate saliency maps for VR environments. Based on the data, Sitzmann and his colleagues propose new methods to learn and predict time-dependent saliency in VR. The collected data is a first step towards building saliency models specifically tailored to VR environments. If successful, these VR saliency models could serve as a method to approximate and predict gaze movements using movement data and image information.
