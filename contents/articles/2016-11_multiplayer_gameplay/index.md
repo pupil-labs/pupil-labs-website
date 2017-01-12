@@ -9,8 +9,9 @@ featured_img_thumb: "../../../../media/images/blog/thumb/gaze-gameplay.png"
 
 [Joshua Newn et al.](http://www.socialnui.unimelb.edu.au/research/social-play/#team), explore the invisible visual signals between players in multiplayer gameplay. The gameplay would simulate different gaze conditions to test players interactions, varying in levels of gaze information from invisible to visible. 
 
-<img src="../../../../media/images/blog/gaze-gameplay.png" style="width: 70%; margin: auto;" class='Feature-image u-padBottom--1' alt="Exploring the Effects of Gaze Awareness on Multiplayer Gameplay">
-Image Source: [Exploring the Effects of Gaze Awareness on Multiplayer Gameplay PDF](http://www.socialnui.unimelb.edu.au/publications/2016-SocialNUI-Newn-3.pdf)
+<img src="../../../../media/images/blog/gaze-gameplay.png" style="width: 70%; margin: auto;" class='Feature-image u-padTop--1' alt="Exploring the Effects of Gaze Awareness on Multiplayer Gameplay">
+
+<div class="small u-padBottom--2">Image Source: [Exploring the Effects of Gaze Awareness on Multiplayer Gameplay PDF](http://www.socialnui.unimelb.edu.au/publications/2016-SocialNUI-Newn-3.pdf)</div>
 
 Gaze can provide visual information of the player's intention. During gameplay, players monitor each other's interactions to gain and evaluate opponents intentions and formulate strategies based upon the visual information.
 
