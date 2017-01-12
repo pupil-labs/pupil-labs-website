@@ -11,7 +11,7 @@ Personal devices are a part of our everyday life that operate and store users pr
 
 <img src="../../../../media/images/blog/user_auth.png" class='Feature-image' alt="Image-Based Authentication Challenges Generated From Egocentric Videos">
 
-<div class="small u-padBottom--2">Image Source: [Personalized Image-based User Authentication using Wearable Cameras](https://arxiv.org/pdf/1612.06209.pdf)</div>
+<div class="small u-padBottom--2">Image Source: Fig 1. Page 2. - [Personalized Image-based User Authentication using Wearable Cameras](https://arxiv.org/pdf/1612.06209.pdf)</div>gul
 
 [Ngu Nguyen](http://ambientintelligence.aalto.fi/team.html) et al., propose a novel personalized user authentication mechanism that generates an image-based passwords from egocentric videos captured by wearable cameras. 
 
