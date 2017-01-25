@@ -1,6 +1,6 @@
 --- 
 title: Adapting Rendering to the User's Current Visual Field
-date: Mon Jan 18 2017 17:13:14 GMT+0700 (ICT) 
+date: Wed Jan 25 2017 17:13:14 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: "Daniel Pohl et al., use Pupil Labs' Oculus DK2 add-on to propose a rendering technique for HMDs that is optimized based on the user's current visual field..." 
 featured_img: "../../../../media/images/blog/visfield.png"
