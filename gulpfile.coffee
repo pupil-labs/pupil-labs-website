@@ -306,7 +306,6 @@ gulp.task "css:clean", ->
                 new RegExp('^.no-touch.*')
                 new RegExp('^.Header.*')
                 new RegExp('^.js-side-nav*')
-                new RegExp('^.js-menu*')
                 new RegExp('^.side-nav*')
                 new RegExp('\.logotype*(.)\S+')
                 new RegExp('^.cart-.*')
