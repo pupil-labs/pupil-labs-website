@@ -13,7 +13,7 @@ featured_img_thumb: "../../../../media/images/blog/thumb/epiretinal-array.png"
 	</div>
 </div>
 
-Current retinal implant systems (like the Argus II) use images from a scene in order to create electrical stimulations on a patient's retina. These systems have been shown to be helpful for blind people in accomplishing activities of daily living. However, current systems have a narrow field of view (18 degrees x 11 degrees) which require the participant to move their head in order to scan a scene. Integrating eye tracking will enable patients with retinal implants to use more natural eye movements to scan the scene.
+Current retinal implant systems (like the [Argus II](http://www.2-sight.com/g-the-argus-ii-prosthesis-system-pf-en.html)) use images from a scene in order to create electrical stimulations on a patient's retina. These systems have been shown to be helpful for blind people in accomplishing activities of daily living. However, current systems have a narrow field of view (18 degrees x 11 degrees) which require the participant to move their head in order to scan a scene. Integrating eye tracking will enable patients with retinal implants to use more natural eye movements to scan the scene.
 
 Avi Caspi et al., demonstrate that, "the brain accurately maps the artificial vision induced by a retinal prothesis based on instantaneous gaze position" and that "remapping based on eye position is feasible and will increase visual stability in prosthetic vision." The researchers combined a modified Pupil headset with the Argus II system in order to develop calibration procedures for the implanted blind patients and measured accuracy in mapping simulated retinal signals to real-world coordinates.
 
