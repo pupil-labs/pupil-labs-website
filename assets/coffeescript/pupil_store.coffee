@@ -530,8 +530,8 @@ class PupilStore
           $("textarea[id='cartObject']").val(JSON.stringify(products))
           formData = $(form).serialize()
 
-          prd_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
-          url = prd_url
+          dev_url = "https://script.google.com/macros/s/AKfycbyPEqIjIfyWR09vPhd5HcP7jB9KIjng0YzEwo2tjWOk8aEscM4/exec"
+          url = dev_url
 
           $.ajax
             type: 'POST'
