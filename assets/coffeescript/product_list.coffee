@@ -107,7 +107,7 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['htcviveb','oculusdk2b','oculusdk2m','epsonbt200b']
+  return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
 
 get_additional_product_ids = ->
   return ['usbcupgrade','e120upgrade','support6','support12']
@@ -289,12 +289,19 @@ get_product_database = ->
       description_cart: "Binocular Oculus Rift DK2 add-on cup with 2 x 120hz eye camera."
       img: [vr_ar_img_path,'oculusdk2m.jpg'].join('/')
     epsonbt200b:
-      cost: 350
+      cost: 550
       title_product: 'Epson Moverio BT-200 Eye Camera Mounts'
       title_store: 'Epson Moverio BT-200 Binocular Mount Add-on'
-      description_store: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
-      description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      description_store: "Binocular camera mounts for Epson Moverio BT-200 with USBC Clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC Clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       img: [vr_ar_img_path,'epsonbt200b.jpg'].join('/')   
+    epsonbt300b:
+      cost: 550
+      title_product: 'Epson Moverio BT-300 Eye Camera Mounts'
+      title_store: 'Epson Moverio BT-300 Binocular Mount Add-on'
+      description_store: "Binocular camera mounts for Epson Moverio BT-300 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
     htcviveb:
       cost: 1400
       title_product: 'HTC Vive Binocular Add-on'
@@ -302,6 +309,20 @@ get_product_database = ->
       description_store: "Add binocular eye tracking to your HTC Vive VR Headset. Includes binocular 120hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
       description_cart: "120hz binocular eye tracking add-on for your HTC Vive VR Headset."
       img: [vr_ar_img_path,'htcviveb.jpg'].join('/')   
+    hololens_w120_e120b:
+      cost: 1750
+      title_product: 'HoloLens Binocular Add-on'
+      title_store: 'HoloLens Binocular Add-on'
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, high speed world camera, clip on attachment mounts, and USB connector clip. No tools required!"
+      description_cart: "120hz binocular eye tracking add-on with high speed world camera for your Microsoft HoloLens AR headset."
+      img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
+    hololens_wnone_e120b:
+      cost: 1400
+      title_product: 'HoloLens Binocular Add-on'
+      title_store: 'HoloLens Binocular Add-on'
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, clip on attachment mounts, and USB connector clip. No tools required!"
+      description_cart: "120hz binocular eye tracking add-on for your Microsoft HoloLens AR headset."
+      img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
     usbcupgrade:
       cost: 210
       title_product: 'USB-C Clip Upgrade'
