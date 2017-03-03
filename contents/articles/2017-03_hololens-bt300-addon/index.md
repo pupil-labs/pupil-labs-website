@@ -1,5 +1,5 @@
 --- 
-title: Hololens and BT300 VR/AR Addon
+title: Hololens and BT300 eye tracking add-ons
 date: Thu Mar 02 2017 15:28:39 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: "New eye tracking add-ons for the Microsoft Hololens and the Epson Moverio BT-300 - now available on the store!"
