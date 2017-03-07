@@ -323,8 +323,8 @@ countryList =
     countryISO: 'CL'
     countryName: 'Chile'
     locationFormat: 'City'
-    usesPostalCode: false
-    postalCodeFormat: null
+    usesPostalCode: true
+    postalCodeFormat: '9999999'
     capitalCity: 'Santiago'
     inEU: false
   Cameroon:
