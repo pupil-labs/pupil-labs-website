@@ -13,7 +13,7 @@ featured_img_thumb: "../../../../media/images/blog/thumb/Lab-Streaming-Layer.jpg
 
 <div class="small u-padBottom--2">Image Source: [Qusp Product Portfolio](https://qusp.io/projects)</div>
 
-We are excited to introduce the [Pupil + Lab Streaming Layer relay plugin](https://github.com/sccn/labstreaminglayer/tree/master/Apps/PupilLabs). The plugin works with [Pupil Capture](https://github.com/pupil-labs/pupil/wiki/Pupil-Capture) to relay pupil data, gaze data, and notifications to LSL. Users can link the data to other inlets in the network.
+We are excited to introduce the [Pupil + Lab Streaming Layer relay plugin](https://github.com/sccn/labstreaminglayer/tree/master/Apps/PupilLabs). The plugin works with [Pupil Capture](http://docs.pupil-labs.com/#pupil-capture "Pupil Docs - Pupil Capture") to relay pupil data, gaze data, and notifications to LSL. Users can link the data to other inlets in the network.
 
 The [Lab Streaming Layer](https://github.com/sccn/labstreaminglayer) (LSL) is a system that provides unified collection of measurement time series between programs, computers, and devices over a network for distributed signal transport, time synchronization, and data collection. LSL has an extensive range of supported measurement modalities including eye tracking. 
 

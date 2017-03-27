@@ -12,7 +12,7 @@ We have developed a plugin structure that enables you to extend Pupil Capture an
 
 Check out the [pupil repository][1] on Github
 
-Read [developer documentation][2] on the wiki.  
+Read [developer docs][2].  
 
 [1]: https://github.com/pupil-labs/pupil "Pupil Repository on Github"
-[2]: https://github.com/pupil-labs/pupil/wiki/Developer-Guide "Developer Wiki Page"
+[2]: http://docs.pupil-labs.com/#developer-docs "Developer Docs"
