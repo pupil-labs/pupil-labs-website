@@ -12,8 +12,8 @@ We also like work with users to create custom solutions. [Get in touch][2]!
 
 If you're excited about SMD soldering and hacking: you can [buy a DEV frame][5], [buy parts][4], and [follow assembly instructions][3] to build your own Pupil DEV headset.
 
-[1]: https://github.com/pupil-labs/pupil/wiki/Pupil%20Hardware%20Development "Pupil Hardware Development"
+[1]: http://docs.pupil-labs.com/#pupil-hardware-development "Pupil Docs - Pupil Hardware Development"
 [2]: mailto:sales@pupil-labs.com
-[3]: https://github.com/pupil-labs/pupil/wiki/DIY-Kit-Guide "DIY Guide"
+[3]: http://docs.pupil-labs.com/#diy "Pupil Docs - DIY Guide"
 [4]: https://docs.google.com/spreadsheets/d/1NRv2WixyXNINiq1WQQVs5upn20jakKyEl1R8NObrTgU/pub?single=true&gid=0&output=html "BOM"
 [5]: https://www.shapeways.com/product/LQJJK2CHQ/pupil-mobile-eye-tracking-headset "DEV Frame on Shapeways"
