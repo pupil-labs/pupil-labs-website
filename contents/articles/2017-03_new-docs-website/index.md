@@ -6,9 +6,9 @@ subtitle: 'We have transitioned docs to docs.pupil-labs.com'
 featured_img_thumb: '' 
 ---
 
-All Pupil documentation - user docs, developer docs, and more - are now at [docs.pupil-labs.com](docs.pupil-labs.com). 
-
 <img src="../../../../media/images/blog/pupil-docs-web.png" class='Feature-image u-padBottom--2' alt="Pupil Docs Website">
+
+All Pupil documentation - user docs, developer docs, and more - are now at [docs.pupil-labs.com](https://docs.pupil-labs.com "Pupil docs"). 
 
 ## Github wiki --> docs.pupil-labs.com
 
