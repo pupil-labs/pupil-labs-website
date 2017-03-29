@@ -8,7 +8,7 @@ featured_img_thumb: ''
 
 All Pupil documentation - user docs, developer docs, and more - are now at [docs.pupil-labs.com](docs.pupil-labs.com). 
 
-<!-- @nathakits - please take a screenshot and put it here -->
+<img src="../../../../media/images/blog/pupil-docs-web.png" class='Feature-image u-padBottom--2' alt="Pupil Docs Website">
 
 ## Github wiki --> docs.pupil-labs.com
 
