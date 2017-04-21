@@ -1,0 +1,50 @@
+mixin svg(id)
+	svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 501 501" width="70%")
+		defs
+			style
+				| .cls-1,.cls-2,.cls-3,.cls-4{fill:none;stroke:#000;stroke-miterlimit:10;}.cls-2{stroke-width:0.6px;}.cls-3{stroke-width:0.3px;}.cls-4{stroke-width:0.3px;}
+
+		circle(id="border" cx="250.5" cy="250.5" r="250" class="cls-1")
+		g(id=id)
+
+			block
+
+mixin team_svg_abu
+	+svg('abu')
+		include ../svg/team/abu.svg
+
+mixin team_svg_doug
+	+svg('dmk')
+		include ../svg/team/dmk.svg
+
+mixin team_svg_ines
+	+svg('isf')
+		include ../svg/team/isf.svg
+
+mixin team_svg_mpk
+	+svg('mpk')
+		include ../svg/team/mpk.svg
+
+mixin team_svg_mt
+	+svg('mt')
+		include ../svg/team/mt.svg
+
+mixin team_svg_nat
+	+svg('nat')
+		include ../svg/team/nat.svg
+
+mixin team_svg_pp
+	+svg('pp')
+		include ../svg/team/pp.svg
+
+mixin team_svg_saki
+	+svg('it')
+		include ../svg/team/it.svg
+
+mixin team_svg_wrp
+	+svg('wrp')
+		include ../svg/team/wrp.svg
+
+mixin team_svg_you
+	+svg('you')
+		include ../svg/team/you.svg

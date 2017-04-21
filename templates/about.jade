@@ -1,4 +1,5 @@
 extends layout
+include ./includes/svg_mixin/team_mixin.jade
 
 block append title
   | #{ " - " + page.title}
@@ -62,11 +63,12 @@ block main
                 div.Grid-cell
                   //- show images when we have them ready
                   //- img(src="#{ member.img }" style="border-radius:50%;").Feature-image
+                  +#{"team_svg_" + member.id}
                   p.u-padBottom--0!= typogr(memberContact).typogrify()
                   p.small= member.role
-              div.Grid-cell
-                p.u-padBottom--0 #[a(href="/careers" title="Join the team") You]
-                p.small Join the team
+              //- div.Grid-cell
+              //-   p.u-padBottom--0 #[a(href="/careers" title="Join the team") You]
+              //-   p.small Join the team
 
     //- office image 2
     div.Grid

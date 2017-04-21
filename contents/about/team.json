@@ -3,48 +3,62 @@
     "name":"Moritz Kassner",
     "contact": "moritz@pupil-labs.com",
     "role":"Co-Founder, CEO",
-    "img":"https://placehold.it/400x400"
+    "img":"includes/svg/team/_team.svg",
+    "id":"mpk"
   },
   {
     "name":"Will Patera",
     "contact":"will@pupil-labs.com",
     "role":"Co-Founder",
-    "img":"https://placehold.it/400x400"    
+    "img":"includes/svg/team/_team.svg",
+    "id":"wrp"
   },
   {
     "name":"Andreas Bulling",
     "contact":"andreas@pupil-labs.com",
     "role":"Partner, Scientific Adviser",
-    "img":"https://placehold.it/400x400"    
+    "img":"includes/svg/team/_team.svg",
+    "id":"abu"    
   },
   {
     "name":"Pablo Prietz",
     "role":"Software Engineer",
-    "img":"https://placehold.it/400x400"    
+    "img":"includes/svg/team/_team.svg",
+    "id":"pp"    
   },
   {
     "name":"Marc Tonsen",
     "role":"Research and Development Engineer",
-    "img":"https://placehold.it/400x400"
+    "img":"includes/svg/team/_team.svg",
+    "id":"mt"
   },
   {
     "name":"Nathakit Sae-Tan",
     "role":"Designer",
-    "img":"https://placehold.it/400x400"    
+    "img":"includes/svg/team/_team.svg",
+    "id":"nat"    
   },
   {
     "name":"Douglas Mackay",
     "role":"Electrical Engineer",
-    "img":"https://placehold.it/400x400"    
+    "img":"includes/svg/team/_team.svg",
+    "id":"doug"    
   },
   {
     "name":"Ishizaki Takahiro",
     "role":"Software Engineer",
-    "img":"https://placehold.it/400x400"    
+    "img":"includes/svg/team/_team.svg",
+    "id":"saki"    
   },  
   { 
     "name":"Ines Findewirth",
     "role":"Office Manager",
-    "img":"https://placehold.it/400x400"    
+    "img":"includes/svg/team/_team.svg",
+    "id":"ines"    
+  },
+    { 
+    "name":"You",
+    "role":"Join the team",
+    "id":"you"    
   }
 ]
