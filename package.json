@@ -7,6 +7,7 @@
   "author": "Will Patera <willpatera@gmail.com>",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
+    "global": "^4.3.2",
     "moment": "^2.17.1",
     "typogr": "^0.6.6",
     "underscore": "^1.8.3",

@@ -3,10 +3,10 @@ title: New docs website
 date: Mon Mar 27 2017 17:44:45 GMT+0200 (CEST) 
 author: Pupil Dev Team 
 subtitle: 'We have transitioned docs to docs.pupil-labs.com' 
-featured_img_thumb: '' 
+featured_img_thumb: '../../../../media/images/blog/pupil-docs-web.jpg' 
 ---
 
-<img src="../../../../media/images/blog/pupil-docs-web.png" class='Feature-image u-padBottom--2' alt="Pupil Docs Website">
+<img src="../../../../media/images/blog/pupil-docs-web.jpg" class='Feature-image u-padBottom--2' alt="Pupil Docs Website">
 
 All Pupil documentation - user docs, developer docs, and more - are now at [docs.pupil-labs.com](https://docs.pupil-labs.com "Pupil docs"). 
 
