@@ -2,13 +2,13 @@
   {
     "name":"Moritz Kassner",
     "contact": "moritz@pupil-labs.com",
-    "role":"Co-Founder, CEO",
+    "role":"Founding Partner, CEO",
     "img":"https://placehold.it/400x400"
   },
   {
     "name":"Will Patera",
     "contact":"will@pupil-labs.com",
-    "role":"Co-Founder",
+    "role":"Founding Partner",
     "img":"https://placehold.it/400x400"    
   },
   {
@@ -24,7 +24,7 @@
   },
   {
     "name":"Marc Tonsen",
-    "role":"Research and Development Engineer",
+    "role":"Research & Development Engineer",
     "img":"https://placehold.it/400x400"
   },
   {
@@ -45,6 +45,21 @@
   { 
     "name":"Ines Findewirth",
     "role":"Office Manager",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Kai Dierkes",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Niall Oakes",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Francesco Gennari",
+    "role":"Hardware & Fulfillment",
     "img":"https://placehold.it/400x400"    
   }
 ]

@@ -1,6 +1,8 @@
 ---
 title: Imprint
 ---
+<h2>Pupil Labs - Berlin</h2>
+
 <h3 class="u-padBottom--0">Address</h3>
 
 <p>Pupil Labs UG (haftungsbeschränkt) Gustav-Müller-Str. 7 10829 Berlin</p>
@@ -22,3 +24,15 @@ title: Imprint
 <p>gemäß § 27 a Umsatzsteuergesetz: DE293673193</p>
 
 <p>Responsible for Content (nach § 10 Absatz 3 MDStV): Moritz Kassner (Address as above)</p>
+
+<div class="u-padBottom--2"><hr></div>
+
+<h2>Pupil Labs - Bangkok</h2>
+
+<h3 class="u-padBottom--0">Address</h3>
+
+<p>Pupil Labs, 29/5 Soi Phrom Chit, 2nd Floor, Khlong Tan Nua, Wattana, 10110, Bangkok, Thailand</p>
+
+<h3 class="u-padBottom--0">Managing Partner</h3>
+
+<p>Will Patera</p>
