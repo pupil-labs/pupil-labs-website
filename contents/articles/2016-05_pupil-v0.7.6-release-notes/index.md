@@ -1,11 +1,12 @@
 ---
- title: Pupil v0.7.6 release notes
- date: Wed May 11 2016 15:55:37 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: Release notes for v0.7.6 (minor release) of the Pupil platform. Includes improvements to the video backend, improved logging, and new plugins...
- featured_img: "../../../../media/images/blog/v0.7.6_release_tag.png"
- featured_img_thumb: "../../../../media/images/blog/thumb/v0.7.6_release_tag.png" 
- ---
+title: Pupil v0.7.6 release notes
+date: Wed May 11 2016 15:55:37 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: "Release notes for v0.7.6 (minor release) of the Pupil platform. Includes improvements to the video backend, improved logging, and new plugins..."
+featured_img: "../../../../media/images/blog/v0.7.6_release_tag.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/v0.7.6_release_tag.png"
+tag: {"caption":"v0.7.6","icon":"local_offer"}
+---
 
 <script src="//cdn.rawgit.com/showdownjs/showdown/1.3.0/dist/showdown.min.js"></script>
 <script type="text/javascript">

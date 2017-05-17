@@ -323,8 +323,8 @@ countryList =
     countryISO: 'CL'
     countryName: 'Chile'
     locationFormat: 'City'
-    usesPostalCode: false
-    postalCodeFormat: null
+    usesPostalCode: true
+    postalCodeFormat: '9999999'
     capitalCity: 'Santiago'
     inEU: false
   Cameroon:
@@ -1228,7 +1228,7 @@ countryList =
     countryName: 'Netherlands, The'
     locationFormat: 'City'
     usesPostalCode: true
-    postalCodeFormat: '9999'
+    postalCodeFormat: '9999, 9999AA'
     capitalCity: null
     inEU: true
   Norway:

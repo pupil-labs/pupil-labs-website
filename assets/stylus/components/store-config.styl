@@ -1,5 +1,5 @@
 storeConfig-button($stroke=1px,$stroke_color=#ddd)
-  display inline-flex
+  // display inline-flex
   width 100%
   flex-wrap nowrap
   align-items center
@@ -163,6 +163,10 @@ spec_header()
   td
     vertical-align middle
     padding 1em
+    
+    @media $break-767
+      padding 1em 0.5em 1em 0.5em
+
   
   tr:nth-child(odd)
     background rgba(0,0,0,0.025)

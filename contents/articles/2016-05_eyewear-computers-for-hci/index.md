@@ -2,7 +2,7 @@
 title: Eyewear Computers for Human-Computer Interaction
 date: Mon May 02 2016 00:00:00 GMT+0700 (ICT)
 author: Pupil Dev Team
-subtitle: Pupil featured in "Eyewear Computers for Human-Computer Interaction", ACM Interactions, Volume 23...
+subtitle: "Pupil featured in Eyewear Computers for Human-Computer Interaction, ACM Interactions, Volume 23..."
 featured_img: "../../../../media/images/blog/eyewear_computing_hci_acm_2016.png"
 featured_img_thumb: "../../../../media/images/blog/thumb/eyewear_computing_hci_acm_2016.png"
 ---

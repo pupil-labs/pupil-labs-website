@@ -1,19 +1,14 @@
 //- google jquery and jquery fallback
 script(src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js")
 script.
-  window.jQuery || document.write('<script src="js/vendor/jquery-2.1.4.min.js"><\/script>')
+  window.jQuery || document.write('<script src="/js/vendor/jquery-2.1.4.min.js"><\/script>')
 
-
-//- load parsley.js validation plugin
-//- todo only load on cart page.
-script(src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js")
 
 //- custom site script here
-script(src=contents.js['sidenav.js'].url)
-script(src=contents.js['main.js'].url)
+script(src=contents.js['sidenav.js'].url async)
+script(src=contents.js['main.js'].url async)
 
 block page_scripts
-  //- insert page specific scripts here
 
 
 //- GA
@@ -23,5 +18,5 @@ script.
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-40856943-2', 'auto');
+  ga('create', 'UA-40856943-2', 'auto',{'anonymizeIp': true});
   ga('send', 'pageview');

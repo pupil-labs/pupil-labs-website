@@ -9,6 +9,19 @@ block main
     - var page_meta = page_data.metadata
 
 
+    //- Free Shipping banner
+    section.Banner
+      div.Banner-content-container
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
+          div.Grid-cell.u-textCenter
+            h3(style="color: #fff").u-padBottom--0 Made in Berlin
+          div.Grid-cell.u-textCenter
+            i(style="display: inline; font-size: 36px; color: #fff;").u-textCenter.material-icons public
+          div.Grid-cell.u-textCenter
+            h3(style="color: #fff;").u-padBottom--0 Ships Worldwide
+
+
+
     //- Pupil section
     section.Site-gray-bkg
       div.Site-content-container
@@ -24,6 +37,7 @@ block main
 
     //- Configurator
     include includes/configurator
+
 
 
     //- VR/AR/MR

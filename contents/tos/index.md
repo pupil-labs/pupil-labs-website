@@ -1,5 +1,6 @@
 ---
 title: Terms & Conditions of Sale
+template: "legal.jade"
 subtitle: Pupil Labs UG (haftungsbeschränkt)
 ---
 

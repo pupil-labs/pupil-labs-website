@@ -5,3 +5,6 @@ block append title
 
 block main
   div(id="#{ 'Page-' + page.metadata.id }")
+    div.Background-img-top.Background-img-cover  
+      div(style="top:40%").Site-content-container.Background-img-caption-container.u-textCenter
+        div!= typogr(page.html).typogrify()     

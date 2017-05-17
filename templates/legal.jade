@@ -1,0 +1,14 @@
+extends layout
+
+block append title
+  | #{ " - " + page.title}
+
+block main
+  div(id="{{ page.file }}")
+    //- Title block
+    div.Site-content-container
+      div.Feature-container-column
+        article.Grid
+          header.Grid-cell.Grid-cell--full.Blog-article-header.u-textCenter
+            h1.Blog-article-title= page.title
+          section.Grid-cell.Grid-cell--full.content!= typogr(page.html).typogrify()

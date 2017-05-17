@@ -63,7 +63,7 @@ class PupilStore
       # create eye products in configurator
       for eye_id in get_eye_cam_ids()
         title_store = get_eye_cam_data()[eye_id]['title_store']
-        klass = if eye_id is "e30" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
+        klass = if eye_id is "e120" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
         html = "<li class='Grid-cell u-textCenter'>
                  <button class='#{ klass }' id='#{ eye_id }' href='#{}'>#{title_store}</button> 
                  </li>"
@@ -77,7 +77,7 @@ class PupilStore
         html = "<div class='Aligner-item'>
                   <div class='Aligner-item--column'>
                     <div class='Feature-image--wrapper'>
-                      <img class='Feature-image' src='#{ product.img }'>
+                      <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
                     </div>
                     <div class='Aligner-item--stretchHeight'>
                       <p><strong> #{ product.title_store } </strong></p>
@@ -97,7 +97,7 @@ class PupilStore
         html = "<div class='Aligner-item'>
           <div class='Aligner-item--column'>
             <div class='Feature-image--wrapper'>
-              <img class='Feature-image' src='#{ product.img }'>
+              <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
             </div>
             <div class='Aligner-item--stretchHeight'>
               <p><strong> #{ product.title_store } </strong></p>
@@ -113,7 +113,7 @@ class PupilStore
 
 
       @_updateSpecTxt('world','w120')
-      @_updateSpecTxt('eye','e30')
+      @_updateSpecTxt('eye','e120')
       @_updateConfigSubTotal()
 
   eventAddToCart: ->
@@ -253,7 +253,7 @@ class PupilStore
           # product, id, specs, price, quantity
           productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
                           <div class='Feature-figure Feature-figure--config'>
-                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] }>
+                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] } title='#{ db[v.product]["title_product"] }'>
                           </div>
                         </div>"  
 
@@ -326,7 +326,7 @@ class PupilStore
         totalPrice = if totalPrice.length > 0 then "€ " + totalPrice.reduce (a,b) -> a + b
         $("h3[id='CartSum--label']").text("#{ label }")
         $("h3[id='CartSum--total']").text("#{ totalPrice }")
-        $("div[id='CartSum-label--container']").append("<p class='Cart-disclaimerTxt'>(free worldwide shipping, additional VAT may apply)</p>")
+        $("div[id='CartSum-label--container']").append("<p class='Cart-disclaimerTxt'>(ships worldwide using DHL or UPS express, additional VAT may apply)</p>")
       else
         $(".Cart-container").hide()
 

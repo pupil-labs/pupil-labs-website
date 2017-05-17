@@ -1,16 +1,17 @@
 ---
- title: Eye Tracking + Head Mounted Displays
- date: Thu Apr 28 2016 13:59:00 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: We propose a community driven, open source suite of software building blocks for eye tracking in Head Mounted Displays...
- featured_img: "../../../../media/images/blog/plopski_itoh_corneal-reflection.png"
- featured_img_thumb: "../../../../media/images/blog/thumb/plopski_itoh_corneal-reflection.png"
- --- 
+title: Eye Tracking + Head Mounted Displays
+date: Thu Apr 28 2016 13:59:00 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: "We propose a community driven, open source suite of software building blocks for eye tracking in Head Mounted Displays..."
+featured_img: "../../../../media/images/blog/plopski_itoh_corneal-reflection.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/plopski_itoh_corneal-reflection.png"
+---
 
 After receiving many requests from the community, we have taken the first steps towards supporting eye tracking in Virtual Reality and Augmented Reality (VR/AR) head mounted displays (HMDs) with the release of eye tracking add-ons for Oculus DK2 and Epson Moverio BT-200. We are committed to bringing eye tracking to VR/AR HMDS, and plan to create new hardware for the latest VR and AR hardware when it hits the market. 
 
-<img src="../../../../media/images/blog/plopski_itoh_corneal-reflection.png" class='Feature-image' alt="Plopski, Itoh, et al. Corneal Imaging">
-Corneal reflection of an HMD screen. Image by Alexander Plopski, Yuta Itoh, et al. See their paper: [Corneal-Imaging Calibration for Optical See-Through Head-Mounted Displays](http://campar.in.tum.de/pub/itoh2015vr2/itoh2015vr2.pdf)
+<img src="../../../../media/images/blog/plopski_itoh_corneal-reflection.png" class='Feature-image u-padTop--1' alt="Plopski, Itoh, et al. Corneal Imaging">
+
+<div class="small u-padBottom--2" >Corneal reflection of an HMD screen. Image by Alexander Plopski, Yuta Itoh, et al. See their paper: [Corneal-Imaging Calibration for Optical See-Through Head-Mounted Displays](http://campar.in.tum.de/pub/itoh2015vr2/itoh2015vr2.pdf)</div>
 
 ## Blackbox vs Open Source Building Blocks
 Now that we have the hardware, the next step is to develop software for eye tracking in HMDs. Based on what we have learned from our community and our experience in experience developing Pupil, we believe that eye tracking in HMDs will not be a “one size fits all” solution. The various applications for eye tracking with AR and VR are extremely diverse and vastly unexplored. 

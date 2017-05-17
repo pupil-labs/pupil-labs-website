@@ -1,11 +1,12 @@
 ---
- title: Pupil v0.5.0 Release
- date: Mon Jul 03 2015 13:31:39 GMT+0700 (ICT)
- author: Pupil Dev Team
- subtitle: We are very excited to release our latest set of improvements to the Pupil project with v0.5.x ...
- featured_img: "../../../../media/images/blog/v0.5.0_release_tag.png"
- featured_img_thumb: "../../../../media/images/blog/thumb/v0.5.0_release_tag.png"
- ---
+title: Pupil v0.5.0 Release
+date: Mon Jul 03 2015 13:31:39 GMT+0700 (ICT)
+author: Pupil Dev Team
+subtitle: "We are very excited to release our latest set of improvements to the Pupil project with v0.5.x ..."
+featured_img: "../../../../media/images/blog/v0.5.0_release_tag.png"
+featured_img_thumb: "../../../../media/images/blog/thumb/v0.5.0_release_tag.png"
+tag: {"caption":"v0.5.0","icon":"local_offer"}
+---
 
 We are very excited to release our latest set of improvements to the Pupil project
 

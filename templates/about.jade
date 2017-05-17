@@ -51,8 +51,13 @@ block main
             //- separate make content into json 
             //- add images
             //- loop through content and images
+
+            - var team_sorted = _.sortBy(team_meta, function(obj){
+            -    return obj.name.split(' ').pop()
+            -  });
+
             div.Grid.Grid--1of3.Grid--gutters
-              each member,i in team_meta
+              each member,i in team_sorted
                 - var memberContact = (!member.contact ? member.name : "<a href='mailto:"+member.contact+"'>"+member.name+"</a>")
                 div.Grid-cell
                   //- show images when we have them ready
@@ -93,7 +98,7 @@ block main
               div.Feature
                 h1.Feature-title--lg.u-textCenter.u-padBottom--1= imprint_meta.title
               div.Grid
-                div.Grid-cell.Grid-cell--full!= typogr(imprint_data.html).typogrify()
+                div.Grid-cell.Grid-cell--full!= imprint_data.html
 
 
     //- div.u-padBottom--5

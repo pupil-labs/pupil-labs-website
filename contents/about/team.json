@@ -1,59 +1,65 @@
-{
-  "0":
+[
   {
     "name":"Moritz Kassner",
     "contact": "moritz@pupil-labs.com",
-    "role":"Co-Founder, CEO",
+    "role":"Founding Partner, CEO",
     "img":"https://placehold.it/400x400"
   },
-  "1":
   {
     "name":"Will Patera",
     "contact":"will@pupil-labs.com",
-    "role":"Co-Founder",
+    "role":"Founding Partner",
     "img":"https://placehold.it/400x400"    
   },
-  "2":
   {
     "name":"Andreas Bulling",
     "contact":"andreas@pupil-labs.com",
     "role":"Partner, Scientific Adviser",
     "img":"https://placehold.it/400x400"    
   },
-  "3":
-  {
-    "name":"Sarah Leu",
-    "role":"Electrical Engineer",
-    "img":"https://placehold.it/400x400"    
-  },
-  "4":
-  {
-    "name":"Ishizki Takahiro",
-    "role":"Software Engineer",
-    "img":"https://placehold.it/400x400"    
-  },
-  "5":
-  {
-    "name":"Nathakit Sae-Tan",
-    "role":"Designer",
-    "img":"https://placehold.it/400x400"    
-  },
-  "6":
-  {
-    "name":"Douglas Mackay",
-    "role":"Electrical Engineer",
-    "img":"https://placehold.it/400x400"    
-  },
-  "7":
   {
     "name":"Pablo Prietz",
     "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   },
-   "8":
   {
+    "name":"Marc Tonsen",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"
+  },
+  {
+    "name":"Nathakit Sae-Tan",
+    "role":"Designer",
+    "img":"https://placehold.it/400x400"    
+  },
+  {
+    "name":"Douglas Mackay",
+    "role":"Electrical Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  {
+    "name":"Ishizaki Takahiro",
+    "role":"Software Engineer",
+    "img":"https://placehold.it/400x400"    
+  },  
+  { 
     "name":"Ines Findewirth",
     "role":"Office Manager",
     "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Kai Dierkes",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Niall Oakes",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Francesco Gennari",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
   }
-}
+]

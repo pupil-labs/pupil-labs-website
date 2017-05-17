@@ -2,7 +2,7 @@
   "pupil": "/pupil",
   "vr/ar": "/vr-ar",
   "store": "/store",
-  "docs": "/docs",
+  "docs": "http://docs.pupil-labs.com",
   "blog": "/blog",
   "about": "/about",
   "careers": "/careers",

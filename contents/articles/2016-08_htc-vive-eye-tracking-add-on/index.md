@@ -2,7 +2,7 @@
 title: HTC Vive Eye Tracking Add On
 date: Tue Aug 09 2016 14:56:45 GMT+0700 (ICT)
 author: Pupil Dev Team
-subtitle: We are happy to announce the release of our eye tracking add-on for the HTC Vive headset. 120hz binocular eye tracking for the Vive... 
+subtitle: "We are happy to announce the release of our eye tracking add-on for the HTC Vive headset. 120hz binocular eye tracking for the Vive..."
 featured_img: "../../../../media/images/additional_products/web/htcviveb.png"
 featured_img_thumb: "../../../../media/images/additional_products/web/htcviveb.png"
 ---

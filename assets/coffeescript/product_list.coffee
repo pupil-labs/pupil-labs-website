@@ -98,7 +98,7 @@ get_world_cam_ids = ->
   return (k for k,v of get_world_cam_data())
 
 get_eye_cam_ids = ->
-  return (k for k,v of get_eye_cam_data())
+  return (k for k,v of get_eye_cam_data() when k isnt 'e30')
 
 get_edu_discount_data = ->
   edu_discount_data = 
@@ -107,7 +107,7 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['htcviveb','oculusdk2b','oculusdk2m','epsonbt200b']
+  return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
 
 get_additional_product_ids = ->
   return ['usbcupgrade','e120upgrade','support6','support12']
@@ -168,7 +168,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_wnone_e120b.jpg'].join('/')        
     pupil_w30_enone:
-      cost: 990
+      cost: 1190
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w30
@@ -189,7 +189,7 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120
       img: [pupil_img_path,'pupil_w30_e120.jpg'].join('/')
     pupil_w30_enone_edu:
-      cost: 400
+      cost: 600
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w30
@@ -214,7 +214,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w30_e120.jpg'].join('/')
     pupil_w120_enone:
-      cost: 990
+      cost: 1190
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w120
@@ -243,7 +243,7 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120b
       img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')        
     pupil_w120_enone_edu:
-      cost: 400
+      cost: 600
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w120
@@ -280,55 +280,76 @@ get_product_database = ->
       title_store: 'Oculus Rift DK2 Monocular Add-on Cup'
       description_store: "Add eye tracking to your Oculus Rift DK2 with our 120hz monocular eye tracking add-on. Includes one custom lens cup with: IR mirror, IR LEDs, 1 x 120 Hz eye camera, and USB cables."
       description_cart: "Monocular Oculus Rift DK2 add-on cup with 1 x 120hz eye camera."
-      img: [vr_ar_img_path,'oculusdk2m.png'].join('/')
+      img: [vr_ar_img_path,'oculusdk2m.jpg'].join('/')
     oculusdk2b:
       cost: 1400
       title_product: 'Oculus Rift DK2 Add-on'
       title_store: 'Oculus Rift DK2 Binocular Add-on Cup'
       description_store: "Add binocular eye tracking to your Oculus Rift DK2 with our 120hz binocular eye tracking add-on. Includes two custom lens cups with: IR mirror, IR LEDs, 2 x 120 Hz eye cameras, and USB cables."
       description_cart: "Binocular Oculus Rift DK2 add-on cup with 2 x 120hz eye camera."
-      img: [vr_ar_img_path,'oculusdk2m.png'].join('/')
+      img: [vr_ar_img_path,'oculusdk2m.jpg'].join('/')
     epsonbt200b:
-      cost: 350
+      cost: 550
       title_product: 'Epson Moverio BT-200 Eye Camera Mounts'
       title_store: 'Epson Moverio BT-200 Binocular Mount Add-on'
-      description_store: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
-      description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USB cables. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
-      img: [vr_ar_img_path,'epsonbt200b.png'].join('/')   
+      description_store: "Binocular camera mounts for Epson Moverio BT-200 with USBC Clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC Clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      img: [vr_ar_img_path,'epsonbt200b.jpg'].join('/')   
+    epsonbt300b:
+      cost: 550
+      title_product: 'Epson Moverio BT-300 Eye Camera Mounts'
+      title_store: 'Epson Moverio BT-300 Binocular Mount Add-on'
+      description_store: "Binocular camera mounts for Epson Moverio BT-300 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
+      img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
     htcviveb:
       cost: 1400
       title_product: 'HTC Vive Binocular Add-on'
       title_store: 'HTC Vive Binocular Add-on'
       description_store: "Add binocular eye tracking to your HTC Vive VR Headset. Includes binocular 120hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
       description_cart: "120hz binocular eye tracking add-on for your HTC Vive VR Headset."
-      img: [vr_ar_img_path,'htcviveb.png'].join('/')   
+      img: [vr_ar_img_path,'htcviveb.jpg'].join('/')   
+    hololens_w120_e120b:
+      cost: 1750
+      title_product: 'HoloLens Binocular Add-on'
+      title_store: 'HoloLens Binocular Add-on'
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, high speed world camera, clip on attachment mounts, and USB connector clip. No tools required!"
+      description_cart: "120hz binocular eye tracking add-on with high speed world camera for your Microsoft HoloLens AR headset."
+      img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
+    hololens_wnone_e120b:
+      cost: 1400
+      title_product: 'HoloLens Binocular Add-on'
+      title_store: 'HoloLens Binocular Add-on'
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, clip on attachment mounts, and USB connector clip. No tools required!"
+      description_cart: "120hz binocular eye tracking add-on for your Microsoft HoloLens AR headset."
+      img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
     usbcupgrade:
       cost: 210
       title_product: 'USB-C Clip Upgrade'
       title_store: 'USB-C Clip Upgrade'
       description_store: 'Upgrade any existing Pupil headset with the new USB-C clip. Comes with USB-C to USB-A cable.'
       description_cart: 'USB-C clip upgrade for an existing Pupil Headset. Comes with USB-C to USB-A cable.'
-      img: [additional_product_path,'usbcupgrade.png'].join('/')         
+      img: [additional_product_path,'usbcupgrade.jpg'].join('/')         
     e120upgrade:
       cost: 450
       title_product: '120hz Eye Camera'
       title_store: "120hz Eye Camera"
       description_store: "Upgrade any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
-      img: [additional_product_path,'e120upgrade.png'].join('/')   
+      img: [additional_product_path,'e120upgrade.jpg'].join('/')   
     support6:
       cost: 1000
       title_product: 'Support Contract'
       title_store: '6 Month Support Contract'
-      description_store: '6 month support contract. 4 video support sessions and email support.'
-      description_cart: '6 month support contract. 4 video support sessions and email support.'
+      description_store: '6 month support contract. 3 one hour video support sessions and email support.'
+      description_cart: '6 month support contract. 3 one hour video support sessions and email support.'
       img: [additional_product_path,'support6.svg'].join('/')   
     support12:
       cost: 2000
       title_product: 'Support Contract'
       title_store: '12 Month Support Contract'
-      description_store: '12 month support contract. 4 video support sessions and email support.'
-      description_cart: '12 month support contract. 4 video support sessions and email support.'
+      description_store: '12 month support contract. 7 one hour video support sessions and email support.'
+      description_cart: '12 month support contract. 7 one hour video support sessions and email support.'
       img: [additional_product_path,'support12.svg'].join('/')   
 
   return product_db

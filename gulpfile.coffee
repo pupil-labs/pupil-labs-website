@@ -4,13 +4,11 @@ gutil = require "gulp-util"
 
 # node filesystem 
 fs = require('fs')
-del = require('del')
 
 # parse command line args
-minimist = require('minimist') 
-
-# plugins - server 
-livereload = require "gulp-livereload"
+minimist = require 'minimist' 
+browserSync = require("browser-sync")
+reload = browserSync.reload
 
 # plugins - site
 wintersmith = require "run-wintersmith"
@@ -26,50 +24,242 @@ runSequence = require "run-sequence"
 plumber = require 'gulp-plumber'
 image_min = require 'gulp-sharp-minimal'
 uncss = require "gulp-uncss"
-# size = require 'gulp-size'
+clean = require "gulp-clean"
+rev = require 'gulp-rev'
+rev_replace = require 'gulp-rev-replace'
 
-css = ()->
-  gulp.src "assets/stylus/main.styl"
-  .pipe stylus
-      compress: true
-  .pipe prefixer
-      browsers: ["last 2 versions"]
-      cascade: true # prettify browser prefixes
-      remove: true # remove un-needed prefixes
-  .pipe gulp.dest "contents/css"
-  .pipe livereload()
+# =================================================================                      
+# high level tasks
+# =================================================================                      
+gulp.task "build", (cb)->
+  return runSequence  ['build:clean', 'js:clean'],
+                      ['css:build','js:build'],
+                      'build_wintersmith',
+                      ['css:rev','js:rev'],
+                      'ref:all',
+                      'rev:clean',
+                      'css:clean',
+                       cb
 
-js_sideNav = ()->
-  gulp.src "assets/js/sidenav/*.js"
-    .pipe babel(presets: ['es2015'])
-    .pipe concat "sidenav.js"
-    .pipe uglify()
-    .pipe gulp.dest "contents/js"
-    .pipe livereload();
-
-js_bkgVideo = ()->
-  gulp.src "assets/js/bkg_video/*.js"
-    .pipe babel(presets: ['es2015'])
-    .pipe concat "bkg_video.js"
-    .pipe uglify()
-    .pipe gulp.dest "contents/js"
-    .pipe livereload();
+gulp.task "preview", (cb)->
+  return runSequence  ['build:clean', 'js:clean'],
+                      ['css:build','js:build'],
+                      'build_wintersmith',
+                      'css:clean',
+                      cb
 
 
-jscoffee = ()->
-  gulp.src "assets/coffeescript/*.coffee"
-  .pipe coffee(
-    bare: true
+gulp.task 'default', ['preview'], ->
+  # preview with browserSync
+  browserSync.init({server: "build", port:3000})
+  gulp.watch "./assets/**/*.{js,coffee}", ['js:build:preview']
+  gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
+  gulp.watch "./templates/**/*.jade", ['preview:jade']
+  gulp.watch "./contents/**/*.md", ['preview:md']
+
+
+
+gulp.task "build:clean", ->
+  return gulp.src('./build',{read:false})
+          .pipe(clean())
+
+gulp.task "build_log", ->
+  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
+
+gulp.task 'preview:jade', ['build_wintersmith'], reload
+gulp.task 'preview:md', ['build_wintersmith'], reload
+
+# =================================================================                      
+# css build tasks
+# =================================================================                      
+
+gulp.task "css:build", ->
+  return gulp.src "./assets/stylus/main.styl"
+        .pipe stylus
+            compress: true
+        .pipe prefixer
+            browsers: ["last 2 versions"]
+            cascade: true # prettify browser prefixes
+            remove: true # remove un-needed prefixes
+        .pipe gulp.dest "./contents/css"
+
+gulp.task "css:build:preview", ["css:build"], ->
+  return gulp.src "./contents/css/main.css"
+          .pipe gulp.dest "./build/css"
+        
+gulp.task "css:rev", ->
+  return gulp.src "./build/css/main.css"
+        .pipe rev()
+        .pipe gulp.dest "./build/css"
+        .pipe rev.manifest({base: "./assets/rev_manifest", merge:true})
+        .pipe gulp.dest "assets/rev_manifest"
+
+
+gulp.task "css:ref", ->
+  return gulp.src "./build/**/index.html"
+          .pipe rev_replace( { manifest: gulp.src("assets/rev_manifest/rev-manifest.json") } )
+          .pipe gulp.dest "./"
+
+
+gulp.task "css:clean", ->
+  return gulp.src("./contents/css/*.css", {read: false})
+        .pipe clean()
+  
+
+# =================================================================                      
+# js build tasks
+# =================================================================                      
+
+gulp.task "js:sidenav:build", ->
+  return gulp.src "./assets/js/sidenav/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "sidenav.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"      
+    
+gulp.task "js:video:build", ->
+  return gulp.src "./assets/js/bkg_video/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "bkg_video.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
+
+gulp.task "js:coffee:build", ->
+  return gulp.src "./assets/coffeescript/*.coffee"
+        .pipe coffee(
+          bare: true
+          )
+        .pipe concat "main.js"
+        .pipe uglify()
+        .pipe gulp.dest "contents/js"
+  
+
+gulp.task "js:clean", ->
+  return gulp.src("./contents/js/*.js", {read: false})
+        .pipe clean()
+
+
+gulp.task "js:build", (cb)->
+  return runSequence "js:clean",
+              "js:sidenav:build",
+              "js:video:build",
+              "js:coffee:build",
+              cb
+
+gulp.task "js:build:preview", ["js:build"], ->
+  return gulp.src "./contents/js/*.js"
+          .pipe gulp.dest "./build/js"
+
+gulp.task "js:rev", ->
+  return gulp.src "./build/js/*.js"
+        .pipe rev()
+        .pipe gulp.dest "./build/js"
+        .pipe rev.manifest({base: "./", merge:true})
+        .pipe gulp.dest "assets/rev_manifest"
+
+# =================================================================                      
+# update all refs
+# =================================================================                      
+
+
+gulp.task "ref:all", ->
+  return gulp.src "./build/**/*.html", {base: "./"}
+          .pipe rev_replace( { manifest: gulp.src("./assets/rev_manifest/rev-manifest.json") } )
+          .pipe gulp.dest "./"
+
+gulp.task "rev:clean", ->
+  # cleans pre-rev files
+  return gulp.src ["./build/css/main.css","./build/js/main.js","./build/js/bkg_video.js","./build/js/sidenav.js"]
+        .pipe clean()
+
+# =================================================================                      
+# image min tasks
+# =================================================================                      
+
+gulp.task 'image_min', ->
+  options = {
+    resize: [1440,1440],
+    quality: 85,
+    progressive: true,
+    compressionLevel: 6,
+    sequentialRead: true,
+    trellisQuantisation: false
+  }
+
+  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
+    .pipe(plumber())
+    .pipe(image_min(options))
+    .pipe(gulp.dest('./'))
+
+
+# =================================================================                      
+# site compile tasks
+# =================================================================                      
+
+
+gulp.task "generate_sitemap", ->
+  return gulp.src('./build/**/*.html')
+        .pipe(
+          sitemap
+            siteUrl: 'https://pupil-labs.com')
+        .pipe gulp.dest('./')
+
+
+gulp.task "generate_favicons", ->
+  return gulp.src("./build/media/graphics/favicon_base.png")
+    .pipe(
+      favicons
+        appName: "Pupil Labs"
+        appDescription: "Pupil Labs Website"
+        developerName: "Pupil Labs Dev Team"
+        developerURL: "https://github.com/pupil-labs/pupil-labs-website"
+        background: "#38ea92"
+        path: "build/media/graphics/web/favicons/"
+        display: "standalone"
+        orientation: "portrait"
+        version: 2.0
+        logging: false
+        html: "build/index.html"
+        pipeHTML: true
+        replace: true
     )
-  .pipe concat "main.js"
-  .pipe uglify()
-  .pipe gulp.dest "contents/js"
-  .pipe livereload();
+    .on("error", gutil.log)
+    .pipe(gulp.dest("./build/media/graphics/web/favicons/"))
 
-js = ()->
-  js_bkgVideo()
-  js_sideNav()
-  jscoffee()
+
+
+gulp.task "build_wintersmith", (cb)->
+  knownOpts = 
+    boolean: ['dev','staging','production']
+
+  opts = minimist process.argv.slice(2), knownOpts
+  
+  if opts.dev
+    wintersmith.settings.configFile = 'config.json'
+    wintersmith.build ->
+      gutil.log "Successfully built wintersmith for --> local dev."
+      cb()
+  if opts.staging
+    wintersmith.settings.configFile = 'config_staging.json'
+    wintersmith.build ->
+      gutil.log "Successfully built wintersmith for --> staging."
+      cb()
+  if opts.production 
+    wintersmith.settings.configFile = 'config_production.json'
+    wintersmith.build ->
+      gutil.log "Successfully built wintersmith for --> production."
+      cb()
+  if not opts.dev and not opts.staging and not opts.production
+    wintersmith.settings.configFile = 'config.json'
+    wintersmith.build ->
+      gutil.log "Successfully built wintersmith for --> local dev."
+      cb()
+
+
+# =================================================================                      
+# utils
+# =================================================================                      
+
 
 gulp.task "newPost", ->
   knownOpts = 
@@ -92,136 +282,54 @@ gulp.task "newPost", ->
       gutil.log gutil.colors.white.bgRed("Warning: "), "Directory already exists at path:", gutil.colors.white.bgRed("#{ e.path }"),  "\nTry an alternate title with gulp newPost --title 'my post title'"
     return
 
-  postHeader = "---\n
-               title: #{ humanTitle }\n
-               date: #{ date }\n
-               author: Pupil Dev Team\n
-               subtitle: \n
-               ---"
+  postHeader = "---
+              \ntitle: #{ humanTitle }
+              \ndate: #{ date }
+              \nauthor: Pupil Dev Team
+              \nsubtitle: ''
+              \nfeatured_img_thumb: ''
+              \n---"
   fs.writeFile postDir+"/index.md", postHeader 
   gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
 
 
-gulp.task 'image_min', ->
-  options = {
-    resize: [1440,1440],
-    quality: 80,
-    progressive: true,
-    compressionLevel: 6,
-    sequentialRead: true,
-    trellisQuantisation: false
-  }
+# =================================================================                      
+# experiments
+# =================================================================                      
 
-  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
-    .pipe(plumber())
-    .pipe(image_min(options))
-    .pipe(gulp.dest('./'))
-
-gulp.task "generate_sitemap", ->
-  gulp.src('build/**/*.html')
-  .pipe(
-    sitemap
-      siteUrl: 'https://pupil-labs.com')
-  .pipe gulp.dest('build')
-
-gulp.task "generate_favicons", ->
-  return gulp.src("./build/media/graphics/favicon_base.png")
-    .pipe(
-      favicons
-        appName: "Pupil Labs"
-        appDescription: "Pupil Labs Website"
-        developerName: "Pupil Labs Dev Team"
-        developerURL: "https://github.com/pupil-labs/pupil-labs-website"
-        background: "#38ea92"
-        path: "build/media/graphics/web/favicons/"
-        display: "standalone"
-        orientation: "portrait"
-        version: 2.0
-        logging: false
-        html: "build/index.html"
-        pipeHTML: true
-        replace: true
-    )
-    .on("error", gutil.log)
-    .pipe(gulp.dest(".build/media/graphics/web/favicons/"))
-
-
-gulp.task "preview", ->
-    wintersmith.settings.configFile = 'config.json'
-    wintersmith.preview()
-
-gulp.task "build_wintersmith", (cb)->
-  knownOpts = 
-    boolean: ['dev','staging','production']
-  # opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'dev':true}
-  opts = minimist process.argv.slice(2), knownOpts
-  if opts.dev
-    wintersmith.settings.configFile = 'config.json'
-    wintersmith.build ->
-      gutil.log "Successfully built wintersmith for --> local dev."
-      cb()
-  if opts.staging
-    wintersmith.settings.configFile = 'config_staging.json'
-    wintersmith.build ->
-      gutil.log "Successfully built wintersmith for --> staging."
-      cb()
-  if opts.production 
-    wintersmith.settings.configFile = 'config_production.json'
-    wintersmith.build ->
-      gutil.log "Successfully built wintersmith for --> production."
-      cb()
-
-gulp.task "css_clean", ->
-  return gulp.src('build/css/main.css')
+gulp.task "css:clean", ->
+  return gulp.src('build/css/*.css')
     .pipe(uncss(
-      html: ['build/**/*.html'],
+      html: ['build/*/*.html', 'build/index.html', "!build/blog"]
+      report: true
       ignore: [
-                new RegExp('^.no-touch.*'),
-                new RegExp('\.Header*(.)\S+'),
-                new RegExp('^.js-side-nav*'),
-                new RegExp('^.side-nav*'),
+                new RegExp('^.no-touch.*')
+                new RegExp('^.Header.*')
+                new RegExp('^.js-side-nav*')
+                new RegExp('^.side-nav*')
                 new RegExp('\.logotype*(.)\S+')
-                new RegExp('\.cart-*(.)\S+')
+                new RegExp('^.cart-.*')
+                new RegExp('^.Cart--t.*')
+                new RegExp('^.CartItem-.*')
+                new RegExp('^.Cart-r.*')
                 new RegExp('\.no-touch*(.)\S+')
                 new RegExp('\.Wallop.*(.)\S+')
-                new RegExp('\.Store*(.)\S+')
+                new RegExp('^.Wallop.*')
+                new RegExp('^.Store.*')
                 new RegExp('\.Add*(.)\S+')
                 new RegExp('\.Button*(.)\S+')
                 new RegExp('\.Grid-*(.)\S+')
                 new RegExp('\.Aligner-*(.)\S+')
-                new RegExp('\.TechSpecs-*(.)\S+')
-                ]))
-      .pipe(gulp.dest('build/css'))
-
-gulp.task "css", ->
-  return css()
-
-gulp.task "js", ->
-  return js()
-
-gulp.task "build_clean", ->
-  return del('build/')
-
-gulp.task "build_log", ->
-  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
-
-gulp.task "build", (cb)->
-  runSequence 'build_clean',
-               ['css','js'],
-               'build_wintersmith',cb
-
-# watch tasks watch folders and call functions defined above on change
-gulp.task 'default', ['css', 'js', 'preview'], ->
-  livereload.listen()
-
-  gulp.watch "assets/coffeescript/**", ->
-    js()
-    gutil.log gutil.colors.white.bgBlue("Coffeescript file changed."), "Compiling and reloading..."
-
-  gulp.watch "assets/stylus/**", ->
-    css()
-    gutil.log gutil.colors.white.bgBlue("Stylus file changed."), "Compiling and reloading..."
-
-  # gulp.watch "templates/**", ->
-  #   jade()
-  #   gutil.log "Template file changed. Compiling and reloading..."
+                new RegExp('^.TechSpecs-.*')
+                new RegExp('^.Feature-video.*')
+                new RegExp('^.Grid-cell.*')
+                new RegExp('^.Grid--cart.*')
+                new RegExp('^.LicenseSpecs.*')
+                new RegExp('^.Blog-nav.*')
+                new RegExp('^.loading.*')
+                new RegExp('^.parsley-.*')
+                new RegExp('^.datalist.*')
+                new RegExp('^li.active.*')
+                ]
+                ))
+    .pipe(gulp.dest('build/css'))

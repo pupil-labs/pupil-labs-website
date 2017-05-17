@@ -1,5 +1,8 @@
 extends layout
 
+block page_scripts
+  script(src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.1.2/parsley.min.js")
+
 block main
   div(id="Home").Site-transform
 
@@ -28,15 +31,15 @@ block main
             h1 Pupil Platform
             h3 We develop open source software and build accessible hardware for eye tracking.
           div.Grid-cell.Grid-cell--full
-            div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Grid--gutters
+            div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter
               div.Grid-cell
                 p Our #[a(href="/pupil" title="Pupil mobile eye tracking headset") mobile eye tracking headsets] have research grade specs and enable accessible and scalable eye tracking research.
-                p Supercharge your #[a(href="/vr-ar" title="eye tracking for VR and AR") VR and AR eye tracking] research and development with our eye tracking add-ons for the latest consumer hardware.
+                p Supercharge your #[a(href="/vr-ar" title="Eye tracking for VR and AR") VR and AR eye tracking] research and development with our eye tracking add-ons for the latest consumer hardware.
                 p Take full control of the software and modify to your needs - it's 100% open source!
                 p All hardware is designed, developed, and assembled in our Berlin office and ships worldwide. Check out products on our #[a(href="/store" title="Pupil Labs store") store]. 
               div.Grid-cell
                 figure.Feature-figure.u-padBottom--1
-                  img(class="Feature-image" src="media/images/home/platform/eye_debug_01a.png")
+                  img(class="Feature-image" src="media/images/home/platform/eye_debug_01_opaque.png" title="Binocular 3D gaze mapper" alt="Binocular 3D gaze mapper")
 
 
     //- oss motivation row
@@ -47,30 +50,30 @@ block main
             div.Grid-cell.Grid-cell--full.u-textCenter
               div.Feature
                 h1 Pupil is Open Source
-          
             div.Grid-cell.Grid-cell--full
-              div.Grid.Grid--1of3.Grid--gutters.u-textCenter.u-padBottom--2
+              div.Grid.Grid--1of3.u-textCenter.u-padBottom--2
                 div.Grid-cell
                   figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/modular.png")
+                    include includes/svg/modular_tools_svg
                   h4 #{ oss_meta.point1 }
                 div.Grid-cell
                   figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/community.png")
+                    include includes/svg/community_network_svg
                   h4 #{ oss_meta.point2 }
                 div.Grid-cell
                   figure.Feature-figure
-                    img(class="Feature-image" src="../media/images/home/icons/service.png")
+                    include includes/svg/support_infinity_svg                  
                   h4 #{ oss_meta.point3 }
+
+
               div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--1
                 div.Feature
-                  h3 The entire platform is on #[a(href="https://github.com/pupil-labs") github] and licensed under LGPLv3.
+                  h3 The entire platform is on #[a(href="https://github.com/pupil-labs" title="Pupil repository on github") github] and licensed under LGPLv3.
                   h3.u-padBottom--0 Check out a snapshot of the most recent activity below.
               div(style="border-bottom: 2px #ddd solid")
             div.Grid-cell.Grid-cell--full.u-padTop--1
-              div.Grid.Grid--justifyCenter.Grid--center
-                  div(id="Home-activity")
-                    ul(id="Home-activity-list" class="Activity")
+              div(id="Home-activity")
+                ul(id="Home-activity-list" class="Activity")
 
     
     //- newsletter row
@@ -84,10 +87,12 @@ block main
             div.Grid
               div.Grid-cell.Grid-cell--full
                 h4 #{ home_newsletter_meta.point1 }
-              div.Grid-cell
+              div(style="flex:1 0;")
                 form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+                  label(class="Form-hidden" for="mce-EMAIL") email
                   input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
                   p(class="Form-error--text" id="news_email_error")
+                  label(class="Form-hidden" for="newsletter-form-submit") submit             
                   input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
                   label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
   
