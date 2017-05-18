@@ -1,6 +1,6 @@
 --- 
 title: Pupil Capture, Player, and Service Release v0.9.10
-date: Wed May 18 2017 17:34:00 GMT+0700 (ICT) 
+date: Tue May 16 2017 17:34:00 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: "We are pleased to announce the latest release of the Pupil Platform v0.9.10..."
 tag: {"caption":"v0.9.10","icon":"local_offer"} 
