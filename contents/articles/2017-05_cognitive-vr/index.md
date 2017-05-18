@@ -1,8 +1,8 @@
 --- 
-title: cognitiveVR
+title: Pupil Labs + cognitiveVR
 date: Wed May 17 2017 14:10:45 GMT+0200 (CEST) 
 author: Pupil Dev Team 
-subtitle: 'Pupil Labs Vive Add-On with cognitiveVR'
+subtitle: "Check out Pupil Labs HTC Vive Add-on used by cognitiveVR"
 featured_img: "../../../../media/images/blog/cognitive-vr.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/cognitive-vr.jpg"
 ---
