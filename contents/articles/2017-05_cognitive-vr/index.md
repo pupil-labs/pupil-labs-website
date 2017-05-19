@@ -9,7 +9,7 @@ featured_img_thumb: "../../../../media/images/blog/thumb/cognitive-vr.jpg"
 
 We are excited to announce that cognitiveVR has released support for Pupil Labs eye tracking add-ons!
 
-[cognitiveVR](http://cognitivevr.co/) is a powerful analytics platform for virtual reality to give content creators the ability to make better VR. Helping companies extract value from VR experiences by providing the tools to record, measure and analyze.
+[cognitiveVR](http://cognitivevr.co/) is a powerful analytics platform for virtual reality to give content creators the ability to make better VR. Their technology helps companies extract value from VR experiences by providing the tools to record, measure, and analyze user behavior and engagement.
 
 <div class="Feature-video-container-16by9">
 	<iframe class="Feature-video u-padTop--2" src="https://www.youtube.com/embed/YAFcQmbhMNk?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
