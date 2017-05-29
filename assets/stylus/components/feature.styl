@@ -226,6 +226,30 @@
   // overflow hidden
   filter blur(50px)
   transform scale(1)
+  
+.img-large
+  &.lazyloaded
+    opacity 1
+    transition: opacity .1s linear
+
+.lazy-img
+  margin auto
+  overflow hidden
+
+.ratio-box
+  position relative
+  height 0
+  display block
+  
+.ratio-box img
+.ratio-box iframe
+.ratio-box video
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  display block
 
 .Background-img--full-wh-grid
   background-position center center
