@@ -27,6 +27,10 @@ uncss = require "gulp-uncss"
 clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
+webp = require 'gulp-webp'
+size = require 'gulp-size'
+rename = require 'gulp-rename'
+imagemin = require 'gulp-imagemin'
 
 # =================================================================                      
 # high level tasks
@@ -43,7 +47,7 @@ gulp.task "build", (cb)->
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
-                      ['css:build','js:build'],
+                      ['css:build','js:build','img:make:previews'],
                       'build_wintersmith',
                       'css:clean',
                       cb
@@ -191,6 +195,35 @@ gulp.task 'image_min', ->
     .pipe(image_min(options))
     .pipe(gulp.dest('./'))
 
+# =================================================================                      
+# lazyload & webp tasks
+# ================================================================= 
+
+gulp.task 'img:make:previews', ->
+  options = {
+    resize: [20,20],
+    quality: 85,
+    progressive: true,
+    compressionLevel: 6,
+    sequentialRead: true,
+    trellisQuantisation: false
+  }
+
+  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
+    .pipe(plumber())
+    .pipe(image_min(options))
+    .pipe rename
+      suffix: '_preview'
+    .pipe(gulp.dest('./'))
+
+gulp.task 'webp:make', ->
+  return gulp.src('contents/media/images/**/*.{jpg,png}',{base: './'})
+    .pipe plumber()
+    .pipe size()
+    .pipe webp
+      quality: 80
+    .pipe size()
+    .pipe gulp.dest('./')
 
 # =================================================================                      
 # site compile tasks
