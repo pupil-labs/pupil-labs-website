@@ -39,6 +39,7 @@
     "gulp-uncss": "^1.0.6",
     "gulp-util": "^3.0.7",
     "gulp-webp": "^2.3.0",
+    "image-size": "^0.5.4",
     "minimist": "^1.2.0",
     "run-sequence": "^1.2.2",
     "run-wintersmith": "^0.0.3"
