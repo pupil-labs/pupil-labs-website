@@ -23,6 +23,7 @@ block main
         h1.Background-img-caption Open source eye tracking.
         //- h2.Background-img--caption-h2 
 
+    include includes/imgSize
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
       div.Feature-container-column
@@ -39,8 +40,7 @@ block main
                 p All hardware is designed, developed, and assembled in our Berlin office and ships worldwide. Check out products on our #[a(href="/store" title="Pupil Labs store") store]. 
               div.Grid-cell
                 figure.Feature-figure.u-padBottom--1
-                  img(class="Feature-image" src="media/images/home/platform/eye_debug_01_opaque.png" title="Binocular 3D gaze mapper" alt="Binocular 3D gaze mapper")
-
+                  +picture("/media/images/home/platform/eye_debug_01_opaque.png", "Binocular 3D gaze mapper", "Binocular 3D gaze mapper")
 
     //- oss motivation row
     div.Site-gray-bkg

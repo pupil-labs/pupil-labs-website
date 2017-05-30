@@ -10,4 +10,4 @@ mixin picture(path, title, alt)
     source(srcset="#{path_nosuffix}.png" type="image/png")
     source(srcset="#{path_nosuffix}.jpg" type="image/jpeg")
     img(src="#{path_nosuffix}.webp").img-small
-    img(data-src="#{path_nosuffix}.webp" title="#{title}" alt="#{alt}").img-large.lazyload
+    img(data-src="#{path_nosuffix}.webp" title="#{title}" alt="#{alt}").img-large-webp.lazyload

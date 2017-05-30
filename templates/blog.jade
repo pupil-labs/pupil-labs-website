@@ -37,6 +37,8 @@ block main
    
     div.Site-content-container
 
+      include includes/blog_webp
+
       div.Grid.Grid--1of2.Grid--gutters-lg
         each article, i in articles.slice(1)
 
@@ -55,7 +57,8 @@ block main
               else
                 a(href=article.url)
                   div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
-                    div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
+                    +picture(img_src)
+                    //- div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
 
               a(href=article.url)
                 h2.Blog-article-title= article.title
