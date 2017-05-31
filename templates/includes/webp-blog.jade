@@ -1,0 +1,22 @@
+mixin webp-blog(path, title, alt)
+
+  - var path_nosuffix = path.replace(/[.][a-z]{3}/, "");
+  - var path_ns_preview = path_nosuffix + "_preview"
+
+  - var validpath = fs.existsSync("./contents" + path);
+  //- console.log(validpath + " : " +path)
+
+  //- - var buffer = readChunk.sync(path);
+  //- - var filetype = fileType(buffer);
+  //- - console.log(path + " : " + filetype)
+
+
+  picture(style="height:30vh;").ratio-box.lazy-img
+    source(srcset="#{path_nosuffix}.webp" type="image/webp")
+    source(srcset="#{path_ns_preview}.webp" type="image/webp")
+    source(srcset="#{path_nosuffix}.png" type="image/png")
+    source(srcset="#{path_ns_preview}.png" type="image/png")
+    source(srcset="#{path_nosuffix}.jpg" type="image/jpeg")
+    source(srcset="#{path_ns_preview}.jpg" type="image/jpeg")
+    img(src="#{path_ns_preview}.webp" style="object-fit:contain;height:30vh;padding-bottom:3em;").img-small
+    img(data-src="#{path_nosuffix}.webp" title="#{title}" alt="#{alt}" style="object-fit:contain;height:30vh;padding-bottom:3em;").img-large-webp.lazyload
