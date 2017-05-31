@@ -42,7 +42,8 @@ block main
       div.Grid.Grid--1of2.Grid--gutters-lg
         each article, i in articles.slice(1)
 
-          - var img_src = (article.metadata.featured_img_thumb ? article.metadata.featured_img_thumb : "https://placehold.it/800x600")
+          - var img_thumb = article.metadata.featured_img_thumb
+          - var img_src = (img_thumb ? img_thumb : "https://placehold.it/800x600")
 
             div.Grid-cell
 
@@ -56,8 +57,8 @@ block main
 
               else
                 a(href=article.url)
-                  div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
-                    +picture(img_src)
+                  //- div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
+                  +picture(img_thumb, article.title, article.title)
                     //- div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
 
               a(href=article.url)

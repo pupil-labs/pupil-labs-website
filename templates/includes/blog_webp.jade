@@ -1,16 +1,10 @@
 mixin picture(path, title, alt)
-  - var img_path = path.replace(/([.]{2}\/){4}/, "");
-  - var updated_path = "../../contents/"+img_path
 
-  - var img_size = imageSize( path );
-  - var path_nosuffix = path.replace(/[.][a-z]{3}/, "")
-  - var width = img_size.width;
-  - var height = img_size.height;
-  - var ratio = "padding-bottom: " + (height/width)*100 + "%;";
+  - var path_nosuffix = path.replace(/[.][a-z]{3}/, "");
 
-  picture(style=ratio).ratio-box.lazy-img
+  picture(style="height:30vh;").ratio-box.lazy-img
     source(srcset="#{path_nosuffix}.webp" type="image/webp")
     source(srcset="#{path_nosuffix}.png" type="image/png")
     source(srcset="#{path_nosuffix}.jpg" type="image/jpeg")
-    img(src="#{path_nosuffix}.webp").img-small
-    img(data-src="#{path_nosuffix}.webp" title="#{title}" alt="#{alt}").img-large-webp.lazyload
+    img(src="#{path_nosuffix}.webp" style="object-fit:contain;height:30vh;padding-bottom:3em;").img-small
+    img(data-src="#{path_nosuffix}.webp" title="#{title}" alt="#{alt}" style="object-fit:contain;height:30vh;padding-bottom:3em;").img-large-webp.lazyload
