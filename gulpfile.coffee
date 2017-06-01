@@ -48,9 +48,8 @@ gulp.task "build", (cb)->
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
-                      ['css:build','js:build'],
+                      ['css:build','js:build', 'webp:make'],
                       'build_wintersmith',
-                      'webp:make',
                       'css:clean',
                       cb
 
@@ -239,7 +238,7 @@ gulp.task 'img:make:previews', ->
     .pipe(gulp.dest('./'))
 
 gulp.task 'webp:make', ->
-  return gulp.src('./build/media/images/**/*.{jpg,png}',{base: './'})
+  return gulp.src('./contents/media/images/**/*.{jpg,png}',{base: './'})
     .pipe plumber()
     .pipe size()
     .pipe webp
