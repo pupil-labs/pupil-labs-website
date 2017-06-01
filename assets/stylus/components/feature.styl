@@ -225,7 +225,17 @@
   // overflow hidden
   filter blur(50px)
   transform scale(1)
-  
+
+.img-small--webp
+  opacity 1
+  filter blur(20px)
+  transform scale(1)
+
+.img-small--webp
+  &.lazyloaded
+    opacity 0
+    transition opacity .1s linear
+
 .img-large--webp
   &.lazyloaded
     opacity 1
