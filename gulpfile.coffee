@@ -31,6 +31,7 @@ webp = require 'gulp-webp'
 size = require 'gulp-size'
 rename = require 'gulp-rename'
 imagemin = require 'gulp-imagemin'
+imgResize = require 'gulp-image-resize'
 
 # =================================================================                      
 # high level tasks
@@ -47,8 +48,9 @@ gulp.task "build", (cb)->
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
-                      ['css:build','js:build','img:make:previews'],
+                      ['css:build','js:build'],
                       'build_wintersmith',
+                      'webp:make',
                       'css:clean',
                       cb
 
@@ -199,6 +201,26 @@ gulp.task 'image_min', ->
 # lazyload & webp tasks
 # ================================================================= 
 
+gulp.task "img:make", (cb)->
+  return runSequence  'webp:make',
+                      'img:make:previews'
+                      cb
+
+gulp.task "img:clean", (cb)->
+  return runSequence  'jpeg:format',
+                      'jpeg:clean'
+                      cb
+
+gulp.task "jpeg:clean", ->
+  return gulp.src('contents/media/images/**/*.{jpeg}',{read:false})
+          .pipe(clean())
+
+gulp.task "jpeg:format", ->
+  return gulp.src('contents/media/images/**/*.{jpeg}',{base: './'})
+    .pipe plumber()
+    .pipe imgResize({format: 'jpg'})
+    .pipe(gulp.dest('./'))
+
 gulp.task 'img:make:previews', ->
   options = {
     resize: [20,20],
@@ -209,7 +231,7 @@ gulp.task 'img:make:previews', ->
     trellisQuantisation: false
   }
 
-  return gulp.src('build/media/images/**/*.{jpg,png}',{base: './'})
+  return gulp.src('./build/media/images/**/*.{jpg,png}',{base: './'})
     .pipe(plumber())
     .pipe(image_min(options))
     .pipe rename
@@ -217,7 +239,7 @@ gulp.task 'img:make:previews', ->
     .pipe(gulp.dest('./'))
 
 gulp.task 'webp:make', ->
-  return gulp.src('contents/media/images/**/*.{jpg,png}',{base: './'})
+  return gulp.src('./build/media/images/**/*.{jpg,png}',{base: './'})
     .pipe plumber()
     .pipe size()
     .pipe webp
@@ -363,6 +385,8 @@ gulp.task "css:clean", ->
                 new RegExp('^.parsley-.*')
                 new RegExp('^.datalist.*')
                 new RegExp('^li.active.*')
+                new RegExp('^.lazyloaded.*')
+                new RegExp('^.img-large--webp.*')
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
