@@ -386,6 +386,7 @@ gulp.task "css:clean", ->
                 new RegExp('^li.active.*')
                 new RegExp('^.lazyloaded.*')
                 new RegExp('^.img-large--webp.*')
+                new RegExp('^.img-small--webp.*')
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
