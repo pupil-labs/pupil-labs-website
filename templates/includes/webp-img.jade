@@ -1,9 +1,13 @@
 mixin webp-img(src, title, alt, picture_style, img_style)
+  
+  //- remove img src path suffix 
   - var path_nosuffix = src.replace(/[.][a-z]+/,"");
+  //- get absolute path from the src path and remove suffix
   - var absolute_path = (path.resolve("./contents"+src.match(/\/media.+/, "")));
   - var absolute_nosuffix = absolute_path.replace(/[.][a-z]+/,"");
 
-
+  //- for blogs use picture style
+  //- if the style is not supplied then calculate img ratio from image dimensions
   - if (!picture_style){
   -   var img_size = imageSize("./contents" + src );
   -   var width = img_size.width;
@@ -14,15 +18,18 @@ mixin webp-img(src, title, alt, picture_style, img_style)
   - var ratio = picture_style.length > 0 ? picture_style : "padding-bottom: " + (height/width)*100 + "%;" ;
   - var img_style = img_style.length > 0 ? img_style : "";
 
+  //- create object and keys for img file type
   - var sources = [["webp", false],["jpg", false],["png", false]];
 
+  //- iterate through images absolute path to check if image exists
+  //- and add suffix for images
   - for (i in sources) {
   -   var suffix = sources[i][0];
   -   sources[i][1] = fs.existsSync(absolute_nosuffix+"."+suffix);
   -   };
 
-  //- console.log(sources);
-
+  //- iterate through images that exists
+  //- if exist then add sources for each image found
   picture(style=ratio).ratio-box.lazy-img
     - var preferred_src_suffix
     for i in sources 
@@ -30,6 +37,7 @@ mixin webp-img(src, title, alt, picture_style, img_style)
         if file_exists
           - preferred_src_suffix = i[0]
           source(srcset="#{path_nosuffix}.#{preferred_src_suffix}" type="image/#{preferred_src_suffix}")
-
+    
+    //- add src path and use suffix for images that exists
     img(src="#{path_nosuffix}.#{preferred_src_suffix}" style=img_style).img-small--webp.lazyload
     img(data-src="#{path_nosuffix}.#{preferred_src_suffix}" style=img_style title="#{title}" alt="#{alt}").img-large--webp.lazyload
