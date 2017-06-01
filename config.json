@@ -17,7 +17,9 @@
     "moment": "moment",
     "_": "underscore",
     "typogr": "typogr",
-    "imageSize": "image-size"
+    "imageSize": "image-size",
+    "fs": "fs",
+    "path": "path"
   },
   "jade": {
     "pretty": true
