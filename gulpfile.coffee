@@ -30,7 +30,6 @@ rev_replace = require 'gulp-rev-replace'
 webp = require 'gulp-webp'
 size = require 'gulp-size'
 rename = require 'gulp-rename'
-imagemin = require 'gulp-imagemin'
 imgResize = require 'gulp-image-resize'
 
 # =================================================================                      
