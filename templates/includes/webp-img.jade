@@ -31,5 +31,5 @@ mixin webp-img(src, title, alt, picture_style, img_style)
           - preferred_src_suffix = i[0]
           source(srcset="#{path_nosuffix}.#{preferred_src_suffix}" type="image/#{preferred_src_suffix}")
 
-    img(src="#{path_nosuffix}.#{preferred_src_suffix}" style=img_style).img-small
+    img(src="#{path_nosuffix}.#{preferred_src_suffix}" style=img_style).img-small--webp.lazyload
     img(data-src="#{path_nosuffix}.#{preferred_src_suffix}" style=img_style title="#{title}" alt="#{alt}").img-large--webp.lazyload
