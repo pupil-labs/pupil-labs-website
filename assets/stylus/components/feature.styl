@@ -214,7 +214,7 @@
 
 .img-large
 .img-small
-.img-large-webp
+.img-large--webp
   opacity 0
 
 .img-loaded
@@ -227,10 +227,10 @@
   filter blur(50px)
   transform scale(1)
   
-.img-large-webp
+.img-large--webp
   &.lazyloaded
     opacity 1
-    transition: opacity .1s linear
+    transition opacity .1s linear
 
 .lazy-img
   margin auto
