@@ -6,37 +6,63 @@ mixin webp-img(src, title, alt, picture_style, img_style)
   - var absolute_path = (path.resolve("./contents"+src.match(/\/media.+/, "")));
   - var absolute_nosuffix = absolute_path.replace(/[.][a-z]+/,"");
 
-  //- for blogs use picture style
-  //- if the style is not supplied then calculate img ratio from image dimensions
-  - if (!picture_style){
-  -   var img_size = imageSize("./contents" + src );
-  -   var width = img_size.width;
-  -   var height = img_size.height;
-  -  }
-  - picture_style = !picture_style ? "" : picture_style;
-  - img_style = !img_style ? "" : img_style; 
-  - var ratio = picture_style.length > 0 ? picture_style : "padding-bottom: " + (height/width)*100 + "%;" ;
-  - var img_style = img_style.length > 0 ? img_style : "";
-
-  //- create object and keys for img file type
+  //- sources is an array of [str : image_type/suffix, bool : file exists]
+  //- The order of this array is important as it specifies the order we want sources within the picture element.
   - var sources = [["webp", false],["jpg", false],["png", false]];
 
-  //- iterate through images absolute path to check if image exists
-  //- and add suffix for images
+  //- Update sources array. 
+  //- For each source, check if the file type exists. bool true if exists
   - for (i in sources) {
   -   var suffix = sources[i][0];
   -   sources[i][1] = fs.existsSync(absolute_nosuffix+"."+suffix);
   -   };
 
-  //- iterate through images that exists
-  //- if exist then add sources for each image found
+  //- Add all sources with valid file path (all sources that exist).
+  - var filtered_sources = sources.filter(function(e,i,a){
+  -  return e[1] === true;
+  - });
+
+  //- filtered_sources = [] if no valid source
+  - var no_sources, preferred_src_suffix;
+  //- overwrite filtered_sources with new array with jpg only
+  - if (filtered_sources.length > 0) {
+  -    no_sources = filtered_sources.every(function(e,i,a){
+  -       return !e[1];
+  -    });
+  -    preferred_src_suffix = filtered_sources[0][0];
+  - } else {
+  -    console.log("no valid source ! "+src);  
+  -    no_sources = true;
+  -    preferred_src_suffix = 'jpg'; 
+  - }
+
+  //- This is a workaround and not a long term solution.
+  //- This assumes that if there is no function argument specified for picture_style, 
+  //- then we assume that it is not a blog post then calculate img ratio from image dimensions instead
+  - if (!picture_style && !no_sources){
+  -   var img_size = imageSize("./contents" + src );
+  -   var width = img_size.width;
+  -   var height = img_size.height;
+  -  } 
+
+  - picture_style = !picture_style ? "" : picture_style;
+  - img_style = !img_style ? "" : img_style; 
+  - var ratio = picture_style.length > 0 ? picture_style : "padding-bottom: " + (height/width)*100 + "%;" ;
+  - var img_style = img_style.length > 0 ? img_style : "";
+  - var placeholder_img = no_sources
+
+  //- If there is no source img found then a placeholder img link is supplied as the path instead 
+  - if (no_sources){
+  -   filtered_sources = [['jpg', true]];
+  -   path_nosuffix = 'http://via.placeholder.com/400';
+  -   ratio = "padding-bottom: 100%;";
+  -   img_style = "width:initial;height:initial"; 
+  -  }
+
   picture(style=ratio).ratio-box.lazy-img
-    - var preferred_src_suffix
-    for i in sources 
-      - var file_exists = i[1]
-        if file_exists
-          - preferred_src_suffix = i[0]
-          source(srcset="#{path_nosuffix}.#{preferred_src_suffix}" type="image/#{preferred_src_suffix}")
+    for i in filtered_sources 
+      - suffix = i[0]
+        source(srcset="#{path_nosuffix}.#{suffix}" type="image/#{suffix}")
     
     //- add src path and use suffix for images that exists
     img(src="#{path_nosuffix}.#{preferred_src_suffix}" style=img_style).img-small--webp.lazyload
