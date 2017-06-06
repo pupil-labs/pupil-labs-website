@@ -37,10 +37,14 @@ block main
    
     div.Site-content-container
 
+      include includes/webp-img
+
       div.Grid.Grid--1of2.Grid--gutters-lg
         each article, i in articles.slice(1)
 
-          - var img_src = (article.metadata.featured_img_thumb ? article.metadata.featured_img_thumb : "https://placehold.it/800x600")
+          - var img_thumb = article.metadata.featured_img_thumb
+          - var img_src = (img_thumb ? img_thumb : "https://placehold.it/800x600")
+
 
             div.Grid-cell
 
@@ -53,9 +57,9 @@ block main
                         div.Caption-tag= article.metadata.tag.caption
 
               else
+
                 a(href=article.url)
-                  div.Feature-image--blog-archive--wrapper.Grid--center.Grid--justifyCenter.Grid-cell--fillHeight
-                    div(src=img_src style="background-image: url('"+img_src+"');").Background-img--blog-archive.Background-img-contain
+                  +webp-img(img_thumb, article.title, article.title, "height:30vh;", "object-fit:contain;height:30vh;padding-bottom:3em;")
 
               a(href=article.url)
                 h2.Blog-article-title= article.title
