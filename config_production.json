@@ -15,7 +15,10 @@
   "require": {
     "moment": "moment",
     "_": "underscore",
-    "typogr": "typogr"
+    "typogr": "typogr",
+    "imageSize": "image-size",
+    "fs": "fs",
+    "path": "path"
   },
   "jade": {
     "pretty": true
