@@ -292,7 +292,7 @@ get_product_database = ->
       img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')
 
     pupil_w3d_enone:
-      cost: 1390
+      cost: 1440
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
@@ -300,7 +300,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
     pupil_w3d_e120:
-      cost: 1840
+      cost: 1890
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
@@ -308,7 +308,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
     pupil_w3d_e120b:
-      cost: 2540
+      cost: 2590
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
@@ -317,7 +317,7 @@ get_product_database = ->
       img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')   
 
     pupil_w3d_enone_edu:
-      cost: 800
+      cost: 850
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
@@ -325,7 +325,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
     pupil_w3d_e120_edu:
-      cost: 1250
+      cost: 1300
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
@@ -333,7 +333,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
     pupil_w3d_e120b_edu:
-      cost: 1950
+      cost: 2000
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
