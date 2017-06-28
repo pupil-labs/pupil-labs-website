@@ -35,6 +35,22 @@ get_world_cam_data = ->
       weight: 5
       title_video: "Download sample videos"
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-TmJvSFhFeWp1NEk/view?usp=sharing"
+    w3d:
+      id: 'w3d'
+      title_store: '3d'
+      description_store: "Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image."
+      tech_specs:
+        sensor: "See Intel R200 Docs for details"
+        fov: "See Intel R200 Docs for details"
+        latency: "See Intel R200 Docs for details"
+        audio: "Record audio via host device microphone"
+      title_cart: "World Camera: 3d"
+      description_cart: "Intel RealSense R200. Provides stereo RGB images and depth image."
+      weight: 17
+      title_video: "Download sample video"
+      link_video: "https://drive.google.com/file/d/0Byap58sXjMVfRi13ZUo2MkJTWUE/view?usp=sharing"
+
+
 
   return world_cam_data
 
@@ -273,7 +289,58 @@ get_product_database = ->
         world_camera: world_cam_data.w120
         eye_camera: eye_cam_data.e120b
         discount: edu_discount
-      img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')        
+      img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')
+
+    pupil_w3d_enone:
+      cost: 1390
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.enone
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
+    pupil_w3d_e120:
+      cost: 1840
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
+    pupil_w3d_e120b:
+      cost: 2540
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120b
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')   
+
+    pupil_w3d_enone_edu:
+      cost: 800
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.enone
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
+    pupil_w3d_e120_edu:
+      cost: 1250
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
+    pupil_w3d_e120b_edu:
+      cost: 1950
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120b
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')  
+
     oculusdk2m:
       cost: 800
       title_product: 'Oculus Rift DK2 Add-on'
