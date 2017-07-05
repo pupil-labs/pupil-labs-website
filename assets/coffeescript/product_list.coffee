@@ -297,7 +297,6 @@ get_product_database = ->
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.enone
-        discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
     pupil_w3d_e120:
       cost: 1890
@@ -305,7 +304,6 @@ get_product_database = ->
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.e120
-        discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
     pupil_w3d_e120b:
       cost: 2590
@@ -313,7 +311,6 @@ get_product_database = ->
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.e120b
-        discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')   
 
     pupil_w3d_enone_edu:
