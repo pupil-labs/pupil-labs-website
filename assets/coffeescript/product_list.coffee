@@ -446,6 +446,7 @@ updateLegacyProductIds_ = (ids) ->
     license_academic: 'edu'
     product_usb_c: 'usbcupgrade'
     product_htc_vive_bi: 'htcviveb'
+    w3dupgrade: 'w3dupgrade'
   res = []
   i = 0
   while i < ids.length
