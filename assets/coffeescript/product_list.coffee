@@ -126,7 +126,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
 
 get_additional_product_ids = ->
-  return ['usbcupgrade','e120upgrade','support6','support12']
+  return ['w3dupgrade','e120upgrade','usbcupgrade','support6','support12']
 
 
 get_product_database = ->
@@ -401,6 +401,13 @@ get_product_database = ->
       description_store: "Upgrade any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
       img: [additional_product_path,'e120upgrade.jpg'].join('/')   
+    w3dupgrade:
+      cost: 550
+      title_product: '3d World Camera'
+      title_store: "3d World Camera"
+      description_store: "Upgrade any existing Pupil headset with a 3d world camera. Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image. For more info, check out the camera specs in the configurator above. Ships with USB connector cable."
+      description_cart: "World camera: Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image."
+      img: [additional_product_path,'w3dupgrade.jpg'].join('/')   
     support6:
       cost: 1000
       title_product: 'Support Contract'
