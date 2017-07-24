@@ -35,6 +35,22 @@ get_world_cam_data = ->
       weight: 5
       title_video: "Download sample videos"
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-TmJvSFhFeWp1NEk/view?usp=sharing"
+    w3d:
+      id: 'w3d'
+      title_store: '3d'
+      description_store: "Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image."
+      tech_specs:
+        sensor: "See Intel R200 Docs for details"
+        fov: "See Intel R200 Docs for details"
+        latency: "See Intel R200 Docs for details"
+        audio: "Record audio via host device microphone"
+      title_cart: "World Camera: 3d"
+      description_cart: "Intel RealSense R200. Provides stereo RGB images and depth image."
+      weight: 17
+      title_video: "Download sample video"
+      link_video: "https://drive.google.com/file/d/0Byap58sXjMVfRi13ZUo2MkJTWUE/view?usp=sharing"
+
+
 
   return world_cam_data
 
@@ -110,7 +126,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
 
 get_additional_product_ids = ->
-  return ['usbcupgrade','e120upgrade','support6','support12']
+  return ['w3dupgrade','e120upgrade','usbcupgrade','support6','support12']
 
 
 get_product_database = ->
@@ -273,7 +289,55 @@ get_product_database = ->
         world_camera: world_cam_data.w120
         eye_camera: eye_cam_data.e120b
         discount: edu_discount
-      img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')        
+      img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')
+
+    pupil_w3d_enone:
+      cost: 1440
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.enone
+      img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
+    pupil_w3d_e120:
+      cost: 1890
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120
+      img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
+    pupil_w3d_e120b:
+      cost: 2590
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120b
+      img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')   
+
+    pupil_w3d_enone_edu:
+      cost: 850
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.enone
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
+    pupil_w3d_e120_edu:
+      cost: 1300
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
+    pupil_w3d_e120b_edu:
+      cost: 2000
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e120b
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')  
+
     oculusdk2m:
       cost: 800
       title_product: 'Oculus Rift DK2 Add-on'
@@ -337,6 +401,13 @@ get_product_database = ->
       description_store: "Upgrade any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
       img: [additional_product_path,'e120upgrade.jpg'].join('/')   
+    w3dupgrade:
+      cost: 550
+      title_product: '3d World Camera'
+      title_store: "3d World Camera"
+      description_store: "Upgrade any existing Pupil headset with a 3d world camera. Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image. For more info, check out the camera specs in the configurator above. Ships with USB connector cable."
+      description_cart: "World camera: Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image."
+      img: [additional_product_path,'w3dupgrade.jpg'].join('/')   
     support6:
       cost: 1000
       title_product: 'Support Contract'
@@ -375,6 +446,7 @@ updateLegacyProductIds_ = (ids) ->
     license_academic: 'edu'
     product_usb_c: 'usbcupgrade'
     product_htc_vive_bi: 'htcviveb'
+    w3dupgrade: 'w3dupgrade'
   res = []
   i = 0
   while i < ids.length

@@ -26,7 +26,9 @@
     "gulp-coffee": "^2.3.3",
     "gulp-concat": "^2.6.1",
     "gulp-favicons": "^2.2.7",
+    "gulp-image-resize": "^0.12.0",
     "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-rev": "^7.1.2",
     "gulp-rev-replace": "^0.4.3",
     "gulp-sharp-minimal": "git+https://github.com/pupil-labs/gulp-sharp-minimal.git",
@@ -36,6 +38,8 @@
     "gulp-uglify": "^2.0.0",
     "gulp-uncss": "^1.0.6",
     "gulp-util": "^3.0.7",
+    "gulp-webp": "^2.3.0",
+    "image-size": "^0.5.4",
     "minimist": "^1.2.0",
     "run-sequence": "^1.2.2",
     "run-wintersmith": "^0.0.3"

@@ -209,12 +209,12 @@
   background-size cover
   backface-visibility: hidden
 
-
 .img-placeholder
   // nothing here yet
-    
+
 .img-large
 .img-small
+.img-large--webp
   opacity 0
 
 .img-loaded
@@ -226,6 +226,40 @@
   // overflow hidden
   filter blur(50px)
   transform scale(1)
+
+.img-small--webp
+  opacity 1
+  filter blur(20px)
+  transform scale(1)
+
+.img-small--webp
+  &.lazyloaded
+    opacity 0
+    transition opacity .1s linear
+
+.img-large--webp
+  &.lazyloaded
+    opacity 1
+    transition opacity .1s linear
+
+.lazy-img
+  margin auto
+  overflow hidden
+
+.ratio-box
+  position relative
+  height 0
+  display block
+  
+.ratio-box img
+.ratio-box iframe
+.ratio-box video
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  display block
 
 .Background-img--full-wh-grid
   background-position center center
