@@ -2,7 +2,7 @@
 title: Introducing Pupil Mobile
 date: Thu Aug 05 2017 14:36:00 GMT+0700 (ICT) 
 author: Pupil Dev Team 
-subtitle: "Stream video to other clients over WiFi or record video locally on the device..."
+subtitle: "Connect your Pupil headset to your Android device and stream video over WiFi and record video on your Android..."
 featured_img: "../../../../media/images/blog/pupil_mobile.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/pupil_mobile.jpg"
 ---
