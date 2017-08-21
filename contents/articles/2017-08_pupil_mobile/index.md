@@ -18,7 +18,7 @@ Pupil Mobile has been supported in Pupil Capture since v0.9.4, and now that offl
 
 The Pupil Mobile app enables you to connect your Pupil eye tracking headset to your Android device (Nexus 5x or Nexus 6p) via USBC. You can preview video and other sensor streams on your Android device and stream video data over a WiFi network to other computers (clients) running Pupil Capture.
 
-You can also use Pupil Mobile to save video from your Pupil eye tracking headset other sensor data locally on your Android device.
+You can also use Pupil Mobile to save video from your Pupil eye tracking headset and other sensor data locally on your Android device.
 
 Please note that Pupil Mobile is still in _public alpha_. This means that you should not rely on the app to work all the time. If you do encounter trouble, please open an [issue](https://github.com/pupil-labs/pupil-mobile-app/issues), and we will do our best to provide quick feedback and support.
 
