@@ -38,11 +38,11 @@ get_world_cam_data = ->
     w3d:
       id: 'w3d'
       title_store: '3d'
-      description_store: "Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image."
+      description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image."
       tech_specs:
-        sensor: "See Intel R200 Docs for details"
-        fov: "See Intel R200 Docs for details"
-        latency: "See Intel R200 Docs for details"
+        sensor: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
+        fov:"See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
+        latency: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
         audio: "Record audio via host device microphone"
       title_cart: "World Camera: 3d"
       description_cart: "Intel RealSense R200. Provides stereo RGB images and depth image."
