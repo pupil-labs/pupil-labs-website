@@ -6,7 +6,7 @@ subtitle: 'Visit us at ECVP in Berlin on August 28 through August 31...'
 featured_img_thumb: '' 
 ---
 
-We are pleased to announce that we are exhibitors this year at the [European Conference on Visual Perception (ECVP)]() in Berlin from Monday August 28 through Thursday August 31. 
+We are pleased to announce that we are exhibitors this year at the [European Conference on Visual Perception (ECVP)](http://www.ecvp.org/2017/) in Berlin from Monday August 28 through Thursday August 31. 
 
 If you're attending ECVP, please stop by and say hello! 
 
