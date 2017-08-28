@@ -24,6 +24,6 @@ The default gulp task will run a webserver on localhost:3000. Checkout `gulpfile
 
 ### New Blog Post
 1. `cd pupil-labs-website`
-1. `gulp newPost title "Post Title"`
+1. `gulp newPost --title "Post Title"`
 
 This will create a folder in `contents/articles` with a skeleton `.md` file with the title and current date. Check out `gulpfile.coffee` to see more argv options for `newPost`
