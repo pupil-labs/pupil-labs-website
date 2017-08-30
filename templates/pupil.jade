@@ -92,19 +92,33 @@ block main
 
               include pupil-svg
 
-          div.Grid-cell.Grid-cell--full
-             div.Feature
-              h2 Mobile
-              p Pupil Mobile is companion app to Pupil Capture and Pupil Service. It is currently in public alpha!
-              p Pupil Mobile enables you to connect your Pupil eye tracking headset to your Android device via USBC. You can preview video and other sensor streams on the Android device and stream video data over a WiFi network to other computers (clients) running Pupil Capture. Seamlessly integrated with Pupil Capture and Pupil Service.
 
-            div.Feature-video-container-16by9
-              iframe.Feature-video.u-padTop--2(src="https://www.youtube.com/embed/atxUvyM0Sf8?rel=0&amp;showinfo=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
-            div.small.u-padBottom--2 Introducing Pupil Mobile
 
     //- full width background image
     div.Grid
       div(class="Background-img--full-wh-grid Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+    section(style="background-color:#6f7679;")
+      div.Site-content-container
+        a(name="pupil-mobile")
+        div.Feature-container-column
+        div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell
+            div(style="color: white;").Feature
+              h1 Pupil Mobile
+              p Pupil Mobile enables you to connect your Pupil eye tracking headset to your Android device via USBC.
+              p Preview video and other sensor streams on your Android device. Record video and other sensor streams locally on your Android device or stream data over your WiFi network to other computers (clients) running Pupil Capture.
+              p Pupil Mobile is seamlessly integrated with Pupil Capture. You can use Pupil Capture to remotely monitor and control instances of Pupil Mobile.
+              p Pupil Mobile is currently in public beta. Download it on the Google Play Store.
+          div.Grid-cell
+            div.Feature
+              figure.Feature-figure
+                +webp-img("/media/images/pupil_page/web/pupil-mobile.webp", "Pupil Mobile on Nexus 5x" , "Pupil Mobile on Nexus 5x")
+
+          div.Feature-video-container-16by9(style="margin-bottom:4em;margin-top:2em;" title="Introduction to Pupil Mobile" alt="Introduction to Pupil Mobile")
+            video(poster="/media/videos/pupil-mobile_promovid_1920x1080.jpg" controls)
+              source(src="/media/videos/pupil-mobile_promovid_1920x1080.mp4" type="video/mp4")
+              source(src="/media/videos/pupil-mobile_promovid_1920x1080.webm" type="video/webm")
 
     //- tech specs and performance
     div.Site-content-container
@@ -160,7 +174,7 @@ block main
                       td.Table--column #[strong Processing Latency]
                       td Depending on CPU typically > 3ms
                     tr
-                      td.Table--column #[strong Slippage compensation]
+                      td.Table--column #[strong Slippage Compensation]
                       td Yes, through 3D eye model
                     tr
                       td.Table--column #[strong Recording]
@@ -168,6 +182,9 @@ block main
                     tr
                       td.Table--column #[strong Realtime Streaming]
                       td Pupil, gaze, user, and video data.
+                    tr
+                      td.Table--column #[strong Mobile Recording Device]
+                      td Pupil Mobile on Android (Supported Devices: Nexus 5x, Nexus 6p, and OnePlus 3)
 
 
             div.Feature.u-padTop--2
