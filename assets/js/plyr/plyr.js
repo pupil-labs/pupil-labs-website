@@ -1335,7 +1335,7 @@
                 allowAudio: !1
             },
             storage: {
-                enabled: !0,
+                enabled: !1,
                 key: "plyr"
             },
             controls: ["play-large", "play", "progress", "current-time", "mute", "volume", "captions", "fullscreen"],
