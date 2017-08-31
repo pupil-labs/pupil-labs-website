@@ -531,14 +531,12 @@ class PupilStore
           formData_json = JSON.stringify(form.serializeArray())
           # formData = $(form).serialize()
           
-          formData_formatted = []
+          formData_formatted = {}
           for d in form.serializeArray()
-            obj = {}
             k = d.name
             v = d.value;
-            obj[k] = v;
-            formData_formatted.push(obj)
-
+            formData_formatted[k] = v;
+            
           console.log formData_formatted
           console.log JSON.stringify(formData_formatted)
 
