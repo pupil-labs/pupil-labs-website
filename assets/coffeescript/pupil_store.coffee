@@ -454,9 +454,9 @@ class PupilStore
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('_').shift()
+        type = fieldId.split('_').slice(0,-1).join('_')
         try
-          sField = if type is 'address' then type+"_s0" else type+"_s"
+          sField = type+"_s"
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
