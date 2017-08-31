@@ -528,29 +528,41 @@ class PupilStore
           for k,v of LocalStorage.dict()
             products.push v
           $("textarea[id='cartObject']").val(JSON.stringify(products))
-          formData = $(form).serialize()
+          formData_json = JSON.stringify(form.serializeArray())
+          # formData = $(form).serialize()
+          
+          formData_formatted = []
+          for d in form.serializeArray()
+            obj = {}
+            k = d.name
+            v = d.value;
+            obj[k] = v;
+            formData_formatted.push(obj)
 
-          prd_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
-          url = prd_url
+          console.log formData_formatted
+          console.log JSON.stringify(formData_formatted)
 
-          $.ajax
-            type: 'POST'
-            crossDomain: true
-            url: url
-            dataType: "json"
-            data: formData
-            error: (jqXHR, textStatus, errorThrown) ->
-              # console.warn "AJAX Error: #{textStatus}"
-              if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
-                  # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
-                  # We continue anyways to the success page.
-                  console.log "Successful AJAX call with Safari."
-                  $(location).attr('href',location.origin + "/order_success")
-            success: (data, textStatus, jqXHR) ->
-              console.log "Successful AJAX call: #{textStatus}"
-              $(location).attr('href',location.origin + "/order_success")
-            complete: (jqXHR,textStatus) ->
-              $('label[for="form-submit"]').removeClass("loading")    
+          # prd_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
+          # url = prd_url
+
+          # $.ajax
+          #   type: 'POST'
+          #   crossDomain: true
+          #   url: url
+          #   dataType: "json"
+          #   data: formData
+          #   error: (jqXHR, textStatus, errorThrown) ->
+          #     # console.warn "AJAX Error: #{textStatus}"
+          #     if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
+          #         # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
+          #         # We continue anyways to the success page.
+          #         console.log "Successful AJAX call with Safari."
+          #         $(location).attr('href',location.origin + "/order_success")
+          #   success: (data, textStatus, jqXHR) ->
+          #     console.log "Successful AJAX call: #{textStatus}"
+          #     $(location).attr('href',location.origin + "/order_success")
+          #   complete: (jqXHR,textStatus) ->
+          #     $('label[for="form-submit"]').removeClass("loading")    
 
 
   countryValidator: ->
