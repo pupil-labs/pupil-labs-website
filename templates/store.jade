@@ -3,6 +3,32 @@ extends layout
 block append title
   | #{ " - " + page.title}
 
+block page_scripts
+    script.
+      
+      let event = "'webkitAnimationEnd', 'mozAnimationEnd', 'MSAnimationEnd', 'oanimationend', 'animationend'";
+      
+      function Animate(x){
+        let cart = document.getElementById('animation');
+        
+        cart.classList.remove(x, "animated");
+        cart.classList.add(x, "animated");
+        cart.addEventListener('animationend', function(event) {
+          event.target.removeEventListener(event.type, arguments.callee);
+          cart.classList.remove(x, "animated");
+        }, false);
+      };
+
+      document.addEventListener("DOMContentLoaded", function() {
+        let addcart = document.getElementsByClassName('Button-store');
+        for (var i = 0; i < addcart.length; i++) {
+          addcart[i].addEventListener("click", function(e) {
+            e.preventDefault();
+            Animate("pulse");
+          }, false);
+        };
+      });
+
 block main
   div(id="Store")
     - var page_data = contents.store['index.json']
