@@ -119,7 +119,14 @@ gulp.task "js:sidenav:build", ->
       .pipe babel(presets: ['es2015'])
       .pipe concat "sidenav.js"
       .pipe uglify()
-      .pipe gulp.dest "contents/js"      
+      .pipe gulp.dest "contents/js"
+
+gulp.task "js:cart_animate:build", ->
+  return gulp.src "./assets/js/cart_animation/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "cart_animate.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
     
 gulp.task "js:video:build", ->
   return gulp.src "./assets/js/bkg_video/*.js"
@@ -146,6 +153,7 @@ gulp.task "js:clean", ->
 gulp.task "js:build", (cb)->
   return runSequence "js:clean",
               "js:sidenav:build",
+              "js:cart_animate:build",
               "js:video:build",
               "js:coffee:build",
               cb
@@ -386,6 +394,9 @@ gulp.task "css:clean", ->
                 new RegExp('^.lazyloaded.*')
                 new RegExp('^.img-large--webp.*')
                 new RegExp('^.img-small--webp.*')
+                new RegExp('^.animated.*')
+                new RegExp('^.pulse.*')
+
                 ]
                 ))
     .pipe(gulp.dest('build/css'))
