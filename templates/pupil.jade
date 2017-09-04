@@ -16,25 +16,22 @@ block page_scripts
     })();
   script.
     const ua = window.navigator.userAgent;
-    const iOS = !!ua.match(/iP(ad|hone)/i);
-    const webkit = !!ua.match(/WebKit/i);
-    const iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+    const iOS = (/(iPad|iPhone)/i);
+    const test = iOS.test(ua);
 
-    function fullscreen() {
+    function fls() {
       let header = document.getElementById("Header");
-      if(header.style.zIndex === '0') {
+      if (header.style.zIndex === '0') {
             header.style.zIndex = '2';
-        } else {
+      } else {
             header.style.zIndex = '0';
       }
     };
 
     document.addEventListener("DOMContentLoaded", function() {
-      if (ua != iOS) {
-        var btn = document.getElementsByTagName("button")[6];
-        if (btn.length > 0) {
-          btn.addEventListener("click", fullscreen);
-        }
+      if ( false == test ) {
+        let btn = document.getElementsByTagName("button")[6];
+        btn.addEventListener("click", fls);
       }
     });
 
