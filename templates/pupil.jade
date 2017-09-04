@@ -7,24 +7,6 @@ block page_scripts
   script(src=contents.js.vendor['Wallop.min.js'].url)
   script(src=contents.js.vendor['Hammer.min.js'].url)
   script(Src=contents.js['plyr.js'].url)
-  script.
-    (function() { 
-      var instances = plyr.setup({
-        controls: ["play-large", "fullscreen"],
-        showPosterOnEnd: true
-      });
-    })();
-  script.
-    var header = document.getElementById("Header");
-    var btn = document.getElementsByTagName("button")[6];
-
-    btn.onclick = function(){
-      if (header.style.zIndex === '0') {
-          header.style.zIndex = '2';
-      } else {
-          header.style.zIndex = '0';
-      }
-    }
 
 block main
   //- Title block
@@ -136,7 +118,7 @@ block main
                   +webp-img("/media/images/pupil_page/web/pupil-mobile.webp", "Pupil Mobile on Nexus 5x" , "Pupil Mobile on Nexus 5x")
 
           div.Feature-video-container-16by9(style="margin-bottom:3em;margin-top:2em;" title="Introduction to Pupil Mobile" alt="Introduction to Pupil Mobile")
-            video(poster="/media/videos/pupil-mobile_promovid_1920x1080.jpg" controls)
+            video(class="plyr--polyfill" poster="/media/videos/pupil-mobile_promovid_1920x1080.jpg" controls playsinline)
               source(src="/media/videos/pupil-mobile_promovid_1920x1080.mp4" type="video/mp4")
               source(src="/media/videos/pupil-mobile_promovid_1920x1080.webm" type="video/webm")
 
