@@ -19,7 +19,7 @@ function fls() {
 };
 
 document.addEventListener("DOMContentLoaded", function() {
-  if ( test == false ) {
+  if ( test === false ) {
     let btn = document.getElementsByTagName("button")[6];
     btn.addEventListener("click", fls);
   }
