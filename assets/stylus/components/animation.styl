@@ -27,19 +27,28 @@
   from
     background-color #b1b1b1
     transform scale3d(1, 1, 1)
+    
+  25%
+    background-color #38ea92
 
-  50%
-    transform scale3d(2, 2, 2)
+  30%
+    transform scale3d(1.85, 1.85, 1.85)
+  
+  65%
+    transform scale3d(1, 1, 1)
+    
+  75%
+    background-color #a1def0
 
   to
-    background-color #38ea92
-    transform scale3d(1, 1, 1)
-
+    // background-color #38ea92
+    background-color #b1b1b1
+    // transform scale3d(1, 1, 1)
+    
 .pulse
   animation-name pulse
-  
 
-.animated {
-  animation-duration: .5s;
-  animation-fill-mode: both;
-}
+.animated
+  animation-duration .9s
+  animation-fill-mode both
+  animation-timing-function linear
