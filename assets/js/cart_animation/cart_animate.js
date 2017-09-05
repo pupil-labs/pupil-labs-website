@@ -15,13 +15,14 @@ function Animate(x){
   });
 };
 
-document.addEventListener("DOMContentLoaded", function() {
-  let addcarts = [].slice.call(document.getElementsByClassName('Button-store'));
-  addcarts.forEach(function (el, i){
-    el.addEventListener("click", function(e){
+window.onload = function(){
+  var addcarts = [].slice.call(document.getElementsByClassName('Button-store'));
+  for(var i = 0; i < addcarts.length; i++){
+    var carts = addcarts[i];
+    carts.addEventListener("click", function(e){
       e.preventDefault();
       Animate(p);
-      console.log("pulsed: " + i + " !");
-    });
-  });
-});
+      console.log("Pulsed: " + addcarts[i]);
+    })
+  }
+};
