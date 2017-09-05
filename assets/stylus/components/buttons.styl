@@ -1,121 +1,124 @@
 button(display=flex, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
-	display display
-	align-items center
-	border-radius borderRadius
-	border border
-	color currentColor
-	background bkg
-	justify-content center	
-	transition color .3s ease-in-out,background .3s ease-in-out
-	font-family $font-family-sans-serif-alt
-	font-weight fontWeight
-	font-size fontSize
-	padding pad
-	cursor pointer
+    display display
+    align-items center
+    border-radius borderRadius
+    border border
+    color currentColor
+    background bkg
+    justify-content center  
+    transition color .3s ease-in-out,background .3s ease-in-out
+    font-family $font-family-sans-serif-alt
+    font-weight fontWeight
+    font-size fontSize
+    padding pad
+    cursor pointer
 
 
 .Button
-	button()
-	
+    button()
+    
 .Button-store
-	button(display=block, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
+    button(display=block, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,border=1px solid #ddd,borderRadius=5px)
 
 .Button-player
-	button()
-	
-	@media $break-767
-		margin-bottom 0.5em
-	
+    button()
+    
+    @media $break-767
+        margin-bottom 0.5em
+    
 .Button-dataset
-	button()
-	margin-left 0.65em
-	
-	@media $break-767
-		margin-left 0em
+    button()
+    margin-left 0.65em
+    
+    @media $break-767
+        margin-left 0em
 
 .Button-inverse
-	button(transparent,1em,700,1em .1em,1px solid #fff,5px)
-	color #fff
+    button(transparent,1em,700,1em .1em,1px solid #fff,5px)
+    color #fff
 
 .Button--whiteBorder
-	border 1px solid #fff
-	
+    border 1px solid #fff
+    
 .Button-radio--sm
-	cursor pointer
-	button(flex,rgba(255,255,255,.8),.5em,400,.5em .1em,0px,0px)
+    cursor pointer
+    button(flex,rgba(255,255,255,.8),.5em,400,.5em .1em,0px,0px)
 
 .Button-radio--lg
-	cursor pointer
-	button(flex,rgba(0,0,0,.025),1em,700,1em .1em,0,0px)
-	border-left 1px solid darken(#ddd,20%)
-	border-right 1px solid darken(#ddd,20%)
-	border-top 1px solid darken(#ddd,20%)
-	border-bottom 1px solid darken(#ddd,20%)
-	border-spacing 0px
+    cursor pointer
+    button(flex,rgba(0,0,0,.025),1em,700,1em .1em,0,0px)
+    border-left 1px solid darken(#ddd,20%)
+    border-right 1px solid darken(#ddd,20%)
+    border-top 1px solid darken(#ddd,20%)
+    border-bottom 1px solid darken(#ddd,20%)
+    border-spacing 0px
 
 .Button--state-active
-	background $link-hover-color
+    background $link-hover-color
 
 action_button()
-	width 100%
-	// outline $link-hover-color
-	border-color transparent
-	border 1px solid #ddd
-	background rgba(255,255,255,.8)
-	font-size 1.2em
+    width 100%
+    // outline $link-hover-color
+    border-color transparent
+    border 1px solid #ddd
+    background rgba(255,255,255,.8)
+    font-size 1.2em
 
-	&:active
-		background $link-hover-color	
+    &:active
+        background $link-hover-color    
 
 .Button--cart
-	action_button()
-	cursor pointer
+    action_button()
+    cursor pointer
 
 .Button--state-inactive
-	background darken(rgba(255,255,255,.8),50%)
-	pointer-events none
+    background darken(rgba(255,255,255,.8),50%)
+    pointer-events none
     cursor default
    
-	&:hover
-		transition none
-		hover none
+    &:hover
+        transition none
+        hover none
 
 .Button-submit 
-	action_button()
-	margin-top .75em
-	width 100%	
-	
+    action_button()
+    margin-top .75em
+    width 100%  
+    
 
 .Button-submit-newsletter
-	action_button()
-	font-size 1em
-	color $gray-light
-	padding .8em .1em
+    action_button()
+    font-size 1em
+    color $gray-light
+    padding .8em .1em
 
-	
+    
 .Button-checkout
-	action_button()
+    action_button()
 
 .no-touch
-	.button-flex
-	.Button
-	.Button-inverse
-	.Button-sm
-	.Button--cart
-	.Button-store
-	.Button-player
-	.Button-dataset
-		&:hover
-			background $link-hover-color
-			color #fff
-	
-	.Button--cart
-		&:active
-			transition none
-			background complement($link-hover-color)	
+    .button-flex
+    .Button
+    .Button-inverse
+    .Button-sm
+    .Button--cart
+    .Button-store
+    .Button-player
+    .Button-dataset
+        &:hover
+            background $link-hover-color
+            color #fff
+    
+    .Button--cart
+        &:active
+            transition none
+            background complement($link-hover-color)    
 
 
 .Button-max-width--50-100
-	max-width 50%
-	@media $break-767
-		max-width 100%
+    max-width 50%
+    @media $break-767
+        max-width 100%
+
+button::-moz-focus-inner
+    border 0

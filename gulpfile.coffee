@@ -135,6 +135,13 @@ gulp.task "js:video:build", ->
       .pipe uglify()
       .pipe gulp.dest "contents/js"
 
+gulp.task "js:plyr:build", ->
+  return gulp.src "./assets/js/plyr/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "plyr.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
+
 gulp.task "js:coffee:build", ->
   return gulp.src "./assets/coffeescript/*.coffee"
         .pipe coffee(
@@ -155,6 +162,7 @@ gulp.task "js:build", (cb)->
               "js:sidenav:build",
               "js:cart_animate:build",
               "js:video:build",
+              "js:plyr:build",
               "js:coffee:build",
               cb
 
@@ -396,7 +404,6 @@ gulp.task "css:clean", ->
                 new RegExp('^.img-small--webp.*')
                 new RegExp('^.animated.*')
                 new RegExp('^.pulse.*')
-
-                ]
-                ))
+                new RegExp('^.plyr.*')
+               ]))
     .pipe(gulp.dest('build/css'))

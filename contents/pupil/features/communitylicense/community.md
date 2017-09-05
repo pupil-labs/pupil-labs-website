@@ -20,4 +20,4 @@ Report bugs and request features on [Github][6].
 [4]: http://docs.pupil-labs.com/#user-docs "Pupil Docs - User Docs"
 [5]: https://groups.google.com/forum/#!forum/pupil-discuss "Pupil Google Group"
 [6]: http://github.com/pupil-labs/pupil/issues "Pupil Issue Tracker"
-[7]: https://discord.gg/gKmmGqy "Pupil - Discord Invite"
+[7]: https://pupil-labs.com/chat "Pupil - Discord Invite"

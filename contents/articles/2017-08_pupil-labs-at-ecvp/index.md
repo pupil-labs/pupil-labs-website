@@ -3,7 +3,7 @@ title: Pupil Labs at ECVP
 date: Mon Aug 28 2017 10:28:00 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: 'Visit us at ECVP in Berlin on August 28 through August 31...' 
-featured_img_thumb: '' 
+featured_img_thumb: "../../../../media/images/blog/thumb/wallpaper_rgb.jpg"
 ---
 
 We are pleased to announce that we are exhibitors this year at the [European Conference on Visual Perception (ECVP)](http://www.ecvp.org/2017/) in Berlin from Monday August 28 through Thursday August 31. 
