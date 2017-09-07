@@ -6,7 +6,7 @@ header.Header-container
         a(href="/").logotype pupil labs
 
     div.Header-nav
-      div(class="Header-cart-badge")
+      div(class="Header-cart-badge" id="animation")
       ul(class="Header-nav-list")
         each url, title in contents.menu['header-nav.json'].metadata
           - var rel_attribute = (title === "docs" ? "noopener" : "")
