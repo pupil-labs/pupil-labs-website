@@ -9,7 +9,8 @@ function animate(pulse_class, id){
   const animated_class = "animated";
 
   cart_badge.classList.add(pulse_class, animated_class);
-  for(var animate_end_event of animation_end_events){
+  for(var i = 0; i < animation_end_events.length; i++){
+    var animate_end_event = animation_end_events[i];
     cart_badge.addEventListener(animate_end_event, function(e){
       cart_badge.classList.remove(pulse_class, animated_class);
     });
@@ -21,10 +22,12 @@ window.onload = function(){
   const ids = ['cart-desktop', 'cart-mobile'];
 
   var add_to_cart_buttons = document.getElementsByClassName('Button-store');
-  for (var button of add_to_cart_buttons){
+  for (var i = 0; i < add_to_cart_buttons.length; i++){
+    var button = add_to_cart_buttons[i]
     button.addEventListener("click", function(e){
       e.preventDefault();
-      for(var id of ids){
+      for(var j = 0; j < ids.length; j++){
+        var id = ids[j];
         animate(pulse_class, id);      
       }
     })
