@@ -1,28 +1,32 @@
-const a = "animated";
-const p = "pulse";
-const types = ['webkitAnimationEnd', 'mozAnimationEnd', 'MSAnimationEnd', 'oanimationend', 'animationend'];
+function animate(pulse_class, id){
+  let cart_badge = document.getElementById(id);
 
-function Animate(x){
-  let cart = document.getElementById('animation');
- 
-  cart.classList.remove(x, a);
-  cart.classList.add(x, a);
-  types.forEach(function(t){
-    cart.addEventListener(t, function(event) {
-      // event.target.removeEventListener(event.type, arguments.callee);
-      cart.classList.remove(x, a);
-    }, false);
-  });
-};
+  const animation_end_events = ['webkitAnimationEnd', 
+                        'mozAnimationEnd', 
+                        'MSAnimationEnd', 
+                        'oanimationend', 
+                        'animationend'];
+  const animated_class = "animated";
+
+  cart_badge.classList.add(pulse_class, animated_class);
+  for(var animate_end_event of animation_end_events){
+    cart_badge.addEventListener(animate_end_event, function(e){
+      cart_badge.classList.remove(pulse_class, animated_class);
+    });
+  }    
+}
 
 window.onload = function(){
-  var addcarts = [].slice.call(document.getElementsByClassName('Button-store'));
-  for(var i = 0; i < addcarts.length; i++){
-    var carts = addcarts[i];
-    carts.addEventListener("click", function(e){
+  const pulse_class = "pulse";
+  const ids = ['cart-desktop', 'cart-mobile'];
+
+  var add_to_cart_buttons = document.getElementsByClassName('Button-store');
+  for (var button of add_to_cart_buttons){
+    button.addEventListener("click", function(e){
       e.preventDefault();
-      Animate(p);
-      console.log("Pulsed: " + addcarts[i]);
+      for(var id of ids){
+        animate(pulse_class, id);      
+      }
     })
   }
 };
