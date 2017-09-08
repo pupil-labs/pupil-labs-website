@@ -3,6 +3,9 @@ extends layout
 block append title
   | #{ " - " + page.title}
 
+block page_scripts
+  script(src=contents.js['cart_animate.js'].url)
+
 block main
   div(id="Store")
     - var page_data = contents.store['index.json']
