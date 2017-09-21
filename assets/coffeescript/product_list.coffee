@@ -126,7 +126,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
 
 get_additional_product_ids = ->
-  return ['pm_nexus5x','e120upgrade','usbcupgrade','support6','support12']
+  return ['e120upgrade','usbcupgrade','pm_nexus5x','support6','support12']
 
 
 get_product_database = ->

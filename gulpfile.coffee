@@ -62,6 +62,8 @@ gulp.task 'default', ['preview'], ->
   gulp.watch "./contents/**/*.md", ['preview:md']
 
 
+gulp.task 'browsersync', (cb)->
+  return browserSync.init({server: "build", port:3000})
 
 gulp.task "build:clean", ->
   return gulp.src('./build',{read:false})
@@ -388,7 +390,8 @@ gulp.task "css:clean", ->
                 new RegExp('\.Add*(.)\S+')
                 new RegExp('\.Button*(.)\S+')
                 new RegExp('\.Grid-*(.)\S+')
-                new RegExp('\.Aligner-*(.)\S+')
+                new RegExp('^.Aligner-*(.)\S+')
+                new RegExp('^.Aligner-item--stretchHeight-bottom')
                 new RegExp('^.TechSpecs-.*')
                 new RegExp('^.Feature-video.*')
                 new RegExp('^.Grid-cell.*')
