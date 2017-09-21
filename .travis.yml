@@ -16,8 +16,6 @@ addons:
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
   - ./deploy_before_install.sh
-  - npm install -g coffeescript
-  - npm install -g node-gyp
   - npm install
 script:
   - gulp webp:make
