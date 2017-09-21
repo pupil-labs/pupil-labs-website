@@ -99,7 +99,7 @@ class PupilStore
             <div class='Feature-image--wrapper'>
               <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
             </div>
-            <div class='Aligner-item--stretchHeight'>
+            <div class='Aligner-item--stretchHeight-bottom'>
               <p><strong> #{ product.title_store } </strong></p>
               <p> #{ product.description_store } </p>
             </div>
