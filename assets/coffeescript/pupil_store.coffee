@@ -454,9 +454,9 @@ class PupilStore
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('_').shift()
+        type = fieldId.split('_').slice(0,-1).join('_')
         try
-          sField = if type is 'address' then type+"_s0" else type+"_s"
+          sField = type+"_s"
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
@@ -528,17 +528,27 @@ class PupilStore
           for k,v of LocalStorage.dict()
             products.push v
           $("textarea[id='cartObject']").val(JSON.stringify(products))
-          formData = $(form).serialize()
+          formData_json = JSON.stringify(form.serializeArray())
+          # formData = $(form).serialize()
+          
+          formData_formatted = {}
+          for d in form.serializeArray()
+            k = d.name
+            v = d.value;
+            formData_formatted[k] = v;
+            
+          # console.log formData_formatted
+          # console.log JSON.stringify(formData_formatted)
+          formData_formatted_JSON = JSON.stringify(formData_formatted)
 
-          prd_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
-          url = prd_url
+          url = "https://139.59.145.226/order/form_handler"
 
           $.ajax
             type: 'POST'
             crossDomain: true
             url: url
             dataType: "json"
-            data: formData
+            data: formData_formatted_JSON
             error: (jqXHR, textStatus, errorThrown) ->
               # console.warn "AJAX Error: #{textStatus}"
               if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
