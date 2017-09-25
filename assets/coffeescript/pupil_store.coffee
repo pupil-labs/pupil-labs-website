@@ -541,7 +541,7 @@ class PupilStore
           # console.log JSON.stringify(formData_formatted)
           formData_formatted_JSON = JSON.stringify(formData_formatted)
 
-          url = "https://139.59.145.226/order/form_handler"
+          url = "https://139.59.145.226:8000/order/form_handler"
 
           $.ajax
             type: 'POST'
