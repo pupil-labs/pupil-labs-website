@@ -62,6 +62,8 @@ gulp.task 'default', ['preview'], ->
   gulp.watch "./contents/**/*.md", ['preview:md']
 
 
+gulp.task 'browsersync', (cb)->
+  return browserSync.init({server: "build", port:3000})
 
 gulp.task "build:clean", ->
   return gulp.src('./build',{read:false})
@@ -119,12 +121,26 @@ gulp.task "js:sidenav:build", ->
       .pipe babel(presets: ['es2015'])
       .pipe concat "sidenav.js"
       .pipe uglify()
-      .pipe gulp.dest "contents/js"      
+      .pipe gulp.dest "contents/js"
+
+gulp.task "js:cart_animate:build", ->
+  return gulp.src "./assets/js/cart_animation/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "cart_animate.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
     
 gulp.task "js:video:build", ->
   return gulp.src "./assets/js/bkg_video/*.js"
       .pipe babel(presets: ['es2015'])
       .pipe concat "bkg_video.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
+
+gulp.task "js:plyr:build", ->
+  return gulp.src "./assets/js/plyr/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "plyr.js"
       .pipe uglify()
       .pipe gulp.dest "contents/js"
 
@@ -146,7 +162,9 @@ gulp.task "js:clean", ->
 gulp.task "js:build", (cb)->
   return runSequence "js:clean",
               "js:sidenav:build",
+              "js:cart_animate:build",
               "js:video:build",
+              "js:plyr:build",
               "js:coffee:build",
               cb
 
@@ -372,7 +390,8 @@ gulp.task "css:clean", ->
                 new RegExp('\.Add*(.)\S+')
                 new RegExp('\.Button*(.)\S+')
                 new RegExp('\.Grid-*(.)\S+')
-                new RegExp('\.Aligner-*(.)\S+')
+                new RegExp('^.Aligner-*(.)\S+')
+                new RegExp('^.Aligner-item--stretchHeight-bottom')
                 new RegExp('^.TechSpecs-.*')
                 new RegExp('^.Feature-video.*')
                 new RegExp('^.Grid-cell.*')
@@ -386,6 +405,8 @@ gulp.task "css:clean", ->
                 new RegExp('^.lazyloaded.*')
                 new RegExp('^.img-large--webp.*')
                 new RegExp('^.img-small--webp.*')
-                ]
-                ))
+                new RegExp('^.animated.*')
+                new RegExp('^.pulse.*')
+                new RegExp('^.plyr.*')
+               ]))
     .pipe(gulp.dest('build/css'))

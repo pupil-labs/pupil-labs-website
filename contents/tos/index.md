@@ -28,13 +28,13 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
   
   3.2 All costs except any customs duties and similar public charges shall be borne by the Customer will be listed on the proforma invoice (quotation).
 
-  3.3 Payments are being settled by use of credit cards, PayPal, by advanced payment. We reserve the right to allow payment post delivery on a case to case bases.
+  3.3 Payments are being settled by use of credit cards, by advanced payment, or a wire transfer in which we will provide the bank name, swift code, and our account number. We reserve the right to allow payment post delivery on a case to case bases.
 
 #### **4. Dispatch of the Product**
 
-  4.1 Any date of dispatch communicated by us shall be only approximate, except if a fixed date of dispatch has been agreed upon.
+  4.1 Any date of dispatch communicated by us shall be only approximate, except if a fixed date of dispatch has been agreed upon. We will exercise due diligence in processing the order.
 
-  4.2 Any time period relevant to determine the date of dispatch pursuant to this Section 4 (as specified by us when the order is made or as otherwise agreed upon) shall begin (a) if advance payment has been agreed, upon receipt by us of the full purchase price (including VAT and shipping costs) or (b) if payment after delivery has been agreed, upon the conclusion of the sales contract.
+  4.2 Any time period relevant to determine the date of dispatch pursuant to this Section 4 (as specified by us when the order is made or as otherwise agreed upon) shall begin (a) if advance payment has been agreed, upon receipt by us of the full purchase price (including VAT and shipping costs) or (b) if payment after delivery has been agreed, upon the conclusion of the sales contract and issuance of a Purchase Order (PO).
 
   4.3 The date of dispatch shall be such day on which the product is handed over by us to the carrier.
 
@@ -42,9 +42,9 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   5.1 Unless expressly otherwise agreed upon, we shall be free to determine the appropriate mode of shipment and to select the carrier at our reasonable discretion.
 
-  5.1 We shall only be obliged to properly and timely deliver the product to the carrier and shall not be responsible for any delays caused by the carrier. Any transit times specified by us shall therefore only be non-binding estimates.
+  5.2 We shall only be obliged to properly and timely deliver the product to the carrier and shall not be responsible for any delays caused by the carrier. Any transit times specified by us shall therefore only be non-binding estimates.
 
-  5.3 The risk of accidental destruction, damage or loss of the delivered product shall pass to the Customer upon delivery of the product by us to the carrier.
+  5.3 The risk of accidental destruction, damage or loss of the delivered product shall pass to the Customer upon delivery of the product by us to the carrier. In the event the product is damaged at time of delivery or lost in transit, we will assist the Customer in making a claim against the shipper of the product.
 
 #### **6. Retention of title**
 
@@ -54,21 +54,24 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   7.1 In the event of a defect of the delivered product, we shall have the right to choose to repair the product or to supply another product (as ordered) at our discretion, provided that such choice shall be made by us by written notice (in “text form”, including by telefax or by e-mail) within a period of five business days following receipt of the Customer’s notice of the defect. 
 
-  7.2 The warranty period shall be twelve months upon delivery of the product.
+  7.2 The warranty period shall be twelve months upon delivery of the product. We represent and warrant that: (i) the product is new, (ii) the product does not infringe the intellectual property rights of a third person, (iii) the product does not violate any law, rule, regulation, or code, and (iv) the product will perform in accordance with published specifications and documentation.
 
   7.3 The Customer shall inspect the product with due care promptly upon delivery. The delivered product shall be deemed to be approved by the Customer unless the defect is notified to us (i) in case of any obvious defects within a period of five business days upon delivery or (ii) otherwise within five business days from the day when the defect has been identified.
+
+  7.4 We reserve the right to allow for returns of hardware within 30 business days on a case to case basis. Our hardware return policy must be agreed upon prior to executing a sale by both parties. The return will be accepted only if the hardware is returned without defects according to our Warranty policy.   
 
 #### **8. License for commercial use**
 
   8.1. Subject to the Customers continuous compliance with this agreement, we grant the Customer a limited non-exclusive license to install and make use of the product including the software with the right to modify the software for the Customers commercial use provided that the software, whether modified by the Customer or not, will only be sold and/or transferred along with our product (hardware) to third parties (the “Commercial License”). The Commercial License granted to Customer will automatically terminate without prior notice if the Customer breaches any terms of this Agreement, especially this Section 8.
 
-  8.2 Our license for non-commercial use as set out on the Website remains unaffected.
+  8.2 Our license for non-commercial use of the software can be accessed at [https://github.com/pupil-labs/pupil/blob/master/COPYING](https://github.com/pupil-labs/pupil/blob/master/COPYING) and [https://github.com/pupil-labs/pupil/blob/master/COPYING.LESSER](https://github.com/pupil-labs/pupil/blob/master/COPYING.LESSER) and is as set out on the Website remains unaffected.
 
 #### **9. Liability**
 
-  9.1 We are unrestrictedly liable for damages that have been caused by deliberate intention or by gross negligence by us, our legal representatives or senior executives and for damages that have been caused by deliberate intention by other assistance in performance; in respect of gross negligence of other assistants in performance our liability shall be as set forth in the provisions for slight negligence.
+  9.1 We are unrestrictedly liable for damages that have been caused by (i) our breach of these Terms &
+  Conditions, (ii) deliberate intention or by negligence by us, our legal representatives or senior executives, (iii),deliberate intention by others we hire, engage or otherwise direct assistance in performance of our obligations, in respect of negligence of other assistants in performance our liability shall be as set forth in the provisions for negligence, and (iv) claims that Customer’s use of the product and software infringes on the intellectual property rights of third parties.
 
-  9.2 In cases of slight negligence, we are only liable if we, our legal representatives or assistants in performance have infringed a fundamental duty and if the purpose of the contract is threatened thereby or if it, our legal representatives or assistants in performance have infringed duties that have to be fulfilled for the duly contract implementation and if the Customer generally relies on the fulfilment of these duties. In the aforementioned cases, we are only liable for foreseeable damages to the Customer at the time the respective service was performed. Our liability for consequential damage and lost profit is excluded.
+  9.2 In cases of negligence, we are only liable to the extent that we, or our employees, agents, personnel, representatives, legal representatives or assistants in performance have infringed a fundamental duty (including a breach of a term or condition herein) and if the purpose of the contract is threatened thereby or if it, we, or our employees, agents, personnel, representatives, legal representatives or assistants in performance have infringed duties that have to be fulfilled by others for the contract implementation and if the Customer generally relies on the fulfilment of these duties. In the aforementioned cases, we are only liable for foreseeable damages to the Customer at the time the respective service was performed. Our liability for consequential damage and lost profit is excluded.
 
   9.3 We will not be liable hereunder by reason of any failure to timely perform our duties hereunder due to an event beyond our reasonable control, including acts of God; acts of terrorism; civil unrest; war; fires; power cuts; epidemics.
 
@@ -84,5 +87,5 @@ subtitle: Pupil Labs UG (haftungsbeschränkt)
 
   10.3. Should any provision of these Terms and Conditions be or become invalid, ineffective or unenforceable as a whole or in part, the validity, effectiveness and enforceability of the remaining provisions shall not be affected thereby. Any such invalid, ineffective or unenforceable provisions shall be deemed replaced by such valid, effective and enforceable provision as come closest to the economic intent and purpose as of such invalid, ineffective or unenforceable provisions as regard subject-matter, amount, time, place and extent. The aforesaid shall apply mutatis mutandis to any gap in these Terms and Conditions if any court has confirmed such proceeding.
 
-*Last update: August 2014*
+*Last update: August 2017*
 

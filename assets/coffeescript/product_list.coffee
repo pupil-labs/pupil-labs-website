@@ -38,11 +38,11 @@ get_world_cam_data = ->
     w3d:
       id: 'w3d'
       title_store: '3d'
-      description_store: "Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image."
+      description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image."
       tech_specs:
-        sensor: "See Intel R200 Docs for details"
-        fov: "See Intel R200 Docs for details"
-        latency: "See Intel R200 Docs for details"
+        sensor: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
+        fov:"See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
+        latency: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
         audio: "Record audio via host device microphone"
       title_cart: "World Camera: 3d"
       description_cart: "Intel RealSense R200. Provides stereo RGB images and depth image."
@@ -126,7 +126,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
 
 get_additional_product_ids = ->
-  return ['w3dupgrade','e120upgrade','usbcupgrade','support6','support12']
+  return ['e120upgrade','usbcupgrade','pm_nexus5x','support6','support12']
 
 
 get_product_database = ->
@@ -377,14 +377,14 @@ get_product_database = ->
       cost: 1750
       title_product: 'HoloLens Binocular Add-on'
       title_store: 'HoloLens Binocular Add-on'
-      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, high speed world camera, clip on attachment mounts, and USB connector clip. No tools required!"
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, high speed world camera, clip on attachment mounts, and USB connector clip."
       description_cart: "120hz binocular eye tracking add-on with high speed world camera for your Microsoft HoloLens AR headset."
       img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
     hololens_wnone_e120b:
       cost: 1400
       title_product: 'HoloLens Binocular Add-on'
       title_store: 'HoloLens Binocular Add-on'
-      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, clip on attachment mounts, and USB connector clip. No tools required!"
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, clip on attachment mounts, and USB connector clip."
       description_cart: "120hz binocular eye tracking add-on for your Microsoft HoloLens AR headset."
       img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
     usbcupgrade:
@@ -408,6 +408,13 @@ get_product_database = ->
       description_store: "Upgrade any existing Pupil headset with a 3d world camera. Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image. For more info, check out the camera specs in the configurator above. Ships with USB connector cable."
       description_cart: "World camera: Intel RealSense R200 RGBD camera. Provides stereo RGB images and depth image."
       img: [additional_product_path,'w3dupgrade.jpg'].join('/')   
+    pm_nexus5x:
+      cost: 350
+      title_product: 'Pupil Mobile Bundle'
+      title_store: "Pupil Mobile Bundle"
+      description_store: "Connect your Pupil headset to the Nexus 5x. Record video locally on the Nexus 5x, or stream video over Wifi. The Nexus 5x comes with a sports arm band, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. "
+      description_cart: "Nexus 5x pre-loaded with Pupil Mobile app, sports arm band, and USBC-USBC cable. Connects to Pupil headsets via USBC-USBC cable."
+      img: [additional_product_path,'pm_nexus5x.jpg'].join('/')   
     support6:
       cost: 1000
       title_product: 'Support Contract'
