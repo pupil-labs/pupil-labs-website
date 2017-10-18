@@ -537,36 +537,29 @@ class PupilStore
             v = d.value;
             formData_formatted[k] = v;
             
-          # console.log formData_formatted
-          # console.log JSON.stringify(formData_formatted)
           formData_formatted_JSON = JSON.stringify(formData_formatted)
 
           url = "https://p-u-p-i-l.com/order/form_handler"
-          
-          $.ajax
-            async: true
-            crossDomain: true
-            url: url
-            type: "POST"
-            headers: {
-              "content-type": "application/json",
-              "cache-control": "no-cache"
-            }
-            processData: false
-            data: formData_formatted_JSON
-            error: (jqXHR, textStatus, errorThrown) ->
-              # console.warn "AJAX Error: #{textStatus}"
-              if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
-                  # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
-                  # We continue anyways to the success page.
-                  console.log "Successful AJAX call with Safari."
-                  $(location).attr('href',location.origin + "/order_success")
-            success: (data, textStatus, jqXHR) ->
-              console.log "Successful AJAX call: #{textStatus}"
-              $(location).attr('href',location.origin + "/order_success")
-            complete: (jqXHR,textStatus) ->
-              $('label[for="form-submit"]').removeClass("loading")    
 
+          xhr = new XMLHttpRequest()
+          # xhr.withCredentials = true
+
+          xhr.addEventListener "readystatechange", ->
+            # todo disable buttons when loading
+            console.log @readyState
+            if @readyState is 4
+              if @status is 200
+                console.log "status: #{@status}, responseText: #{@responseText}"
+                window.location.replace "#{window.location.origin}/order_success"
+              else
+                console.warn "Request Error: #{@statusText}"
+  
+
+          xhr.open "POST", url
+          xhr.setRequestHeader "content-type", "application/json"
+          xhr.setRequestHeader "cache-control", "no-cache"
+
+          xhr.send formData_formatted_JSON
 
   countryValidator: ->
     if $(@cartPage).length > 0
