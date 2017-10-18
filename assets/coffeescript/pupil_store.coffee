@@ -541,13 +541,18 @@ class PupilStore
           # console.log JSON.stringify(formData_formatted)
           formData_formatted_JSON = JSON.stringify(formData_formatted)
 
-          url = "http://p-u-p-i-l.com/order/form_handler"
-
+          url = "https://p-u-p-i-l.com/order/form_handler"
+          
           $.ajax
-            type: 'POST'
+            async: true
             crossDomain: true
             url: url
-            dataType: "json"
+            type: "POST"
+            headers: {
+              "content-type": "application/json",
+              "cache-control": "no-cache"
+            }
+            processData: false
             data: formData_formatted_JSON
             error: (jqXHR, textStatus, errorThrown) ->
               # console.warn "AJAX Error: #{textStatus}"
