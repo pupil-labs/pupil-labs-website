@@ -58,8 +58,23 @@
     "img":"https://placehold.it/400x400"    
   },
   { 
-    "name":"Francesco Gennari",
-    "role":"Hardware & Fulfillment",
+    "name":"Bernhard Petersch",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Kamen Kirov",
+    "role":"Lead Embedded Systems Engineer, Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Ching-Ting Huang",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"André Nicolai",
+    "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   }
 ]
