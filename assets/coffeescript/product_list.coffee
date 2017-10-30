@@ -416,7 +416,7 @@ get_product_database = ->
       description_cart: "Nexus 5x pre-loaded with Pupil Mobile app, sports arm band, and USBC-USBC cable. Connects to Pupil headsets via USBC-USBC cable."
       img: [additional_product_path,'pm_nexus5x.jpg'].join('/')   
     pm_motoz2:
-      cost: 350
+      cost: 650
       title_product: 'Pupil Mobile Bundle'
       title_store: "Pupil Mobile Bundle"
       description_store: "Connect your Pupil headset to the Moto Z2 play. Record up to 4 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app."
