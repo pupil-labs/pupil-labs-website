@@ -12,7 +12,7 @@
     "img":"https://placehold.it/400x400"    
   },
   {
-    "name":"Andreas Bulling",
+    "name":"Dr. Andreas Bulling",
     "contact":"andreas@pupil-labs.com",
     "role":"Partner, Scientific Adviser",
     "img":"https://placehold.it/400x400"    
@@ -24,7 +24,7 @@
   },
   {
     "name":"Marc Tonsen",
-    "role":"Research & Development Engineer",
+    "role":"Partner, Research & Development Engineer",
     "img":"https://placehold.it/400x400"
   },
   {
@@ -34,7 +34,7 @@
   },
   {
     "name":"Douglas Mackay",
-    "role":"Electrical Engineer",
+    "role":"Hardware Development & Production Manager",
     "img":"https://placehold.it/400x400"    
   },
   {
@@ -48,7 +48,7 @@
     "img":"https://placehold.it/400x400"    
   },
   { 
-    "name":"Kai Dierkes",
+    "name":"Dr. Kai Dierkes",
     "role":"Research & Development Engineer",
     "img":"https://placehold.it/400x400"    
   },
@@ -58,8 +58,23 @@
     "img":"https://placehold.it/400x400"    
   },
   { 
-    "name":"Francesco Gennari",
-    "role":"Hardware & Fulfillment",
+    "name":"Dr. Bernhard Petersch",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Kamen Kirov",
+    "role":"Lead Embedded Systems Engineer, Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Ching-Ting Huang",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"André Nicolai",
+    "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   }
 ]

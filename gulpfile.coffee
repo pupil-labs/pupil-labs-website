@@ -27,6 +27,10 @@ uncss = require "gulp-uncss"
 clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
+webp = require 'gulp-webp'
+size = require 'gulp-size'
+rename = require 'gulp-rename'
+imgResize = require 'gulp-image-resize'
 
 # =================================================================                      
 # high level tasks
@@ -43,7 +47,7 @@ gulp.task "build", (cb)->
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
-                      ['css:build','js:build'],
+                      ['css:build','js:build', 'webp:make'],
                       'build_wintersmith',
                       'css:clean',
                       cb
@@ -58,6 +62,8 @@ gulp.task 'default', ['preview'], ->
   gulp.watch "./contents/**/*.md", ['preview:md']
 
 
+gulp.task 'browsersync', (cb)->
+  return browserSync.init({server: "build", port:3000})
 
 gulp.task "build:clean", ->
   return gulp.src('./build',{read:false})
@@ -115,12 +121,26 @@ gulp.task "js:sidenav:build", ->
       .pipe babel(presets: ['es2015'])
       .pipe concat "sidenav.js"
       .pipe uglify()
-      .pipe gulp.dest "contents/js"      
+      .pipe gulp.dest "contents/js"
+
+gulp.task "js:cart_animate:build", ->
+  return gulp.src "./assets/js/cart_animation/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "cart_animate.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
     
 gulp.task "js:video:build", ->
   return gulp.src "./assets/js/bkg_video/*.js"
       .pipe babel(presets: ['es2015'])
       .pipe concat "bkg_video.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
+
+gulp.task "js:plyr:build", ->
+  return gulp.src "./assets/js/plyr/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "plyr.js"
       .pipe uglify()
       .pipe gulp.dest "contents/js"
 
@@ -142,7 +162,9 @@ gulp.task "js:clean", ->
 gulp.task "js:build", (cb)->
   return runSequence "js:clean",
               "js:sidenav:build",
+              "js:cart_animate:build",
               "js:video:build",
+              "js:plyr:build",
               "js:coffee:build",
               cb
 
@@ -191,6 +213,55 @@ gulp.task 'image_min', ->
     .pipe(image_min(options))
     .pipe(gulp.dest('./'))
 
+# =================================================================                      
+# lazyload & webp tasks
+# ================================================================= 
+
+gulp.task "img:make", (cb)->
+  return runSequence  'webp:make',
+                      'img:make:previews'
+                      cb
+
+gulp.task "img:clean", (cb)->
+  return runSequence  'jpeg:format',
+                      'jpeg:clean'
+                      cb
+
+gulp.task "jpeg:clean", ->
+  return gulp.src('contents/media/images/**/*.{jpeg}',{read:false})
+          .pipe(clean())
+
+gulp.task "jpeg:format", ->
+  return gulp.src('contents/media/images/**/*.{jpeg}',{base: './'})
+    .pipe plumber()
+    .pipe imgResize({format: 'jpg'})
+    .pipe(gulp.dest('./'))
+
+gulp.task 'img:make:previews', ->
+  options = {
+    resize: [20,20],
+    quality: 85,
+    progressive: true,
+    compressionLevel: 6,
+    sequentialRead: true,
+    trellisQuantisation: false
+  }
+
+  return gulp.src('./build/media/images/**/*.{jpg,png}',{base: './'})
+    .pipe(plumber())
+    .pipe(image_min(options))
+    .pipe rename
+      suffix: '_preview'
+    .pipe(gulp.dest('./'))
+
+gulp.task 'webp:make', ->
+  return gulp.src('./contents/media/images/**/*.{jpg,png}',{base: './'})
+    .pipe plumber()
+    .pipe size()
+    .pipe webp
+      quality: 80
+    .pipe size()
+    .pipe gulp.dest('./')
 
 # =================================================================                      
 # site compile tasks
@@ -319,7 +390,8 @@ gulp.task "css:clean", ->
                 new RegExp('\.Add*(.)\S+')
                 new RegExp('\.Button*(.)\S+')
                 new RegExp('\.Grid-*(.)\S+')
-                new RegExp('\.Aligner-*(.)\S+')
+                new RegExp('^.Aligner-*(.)\S+')
+                new RegExp('^.Aligner-item--stretchHeight-bottom')
                 new RegExp('^.TechSpecs-.*')
                 new RegExp('^.Feature-video.*')
                 new RegExp('^.Grid-cell.*')
@@ -330,6 +402,11 @@ gulp.task "css:clean", ->
                 new RegExp('^.parsley-.*')
                 new RegExp('^.datalist.*')
                 new RegExp('^li.active.*')
-                ]
-                ))
+                new RegExp('^.lazyloaded.*')
+                new RegExp('^.img-large--webp.*')
+                new RegExp('^.img-small--webp.*')
+                new RegExp('^.animated.*')
+                new RegExp('^.pulse.*')
+                new RegExp('^.plyr.*')
+               ]))
     .pipe(gulp.dest('build/css'))

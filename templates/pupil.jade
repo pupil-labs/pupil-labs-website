@@ -6,7 +6,7 @@ block append title
 block page_scripts
   script(src=contents.js.vendor['Wallop.min.js'].url)
   script(src=contents.js.vendor['Hammer.min.js'].url)
-
+  script(Src=contents.js['plyr.js'].url)
 
 block main
   //- Title block
@@ -24,7 +24,8 @@ block main
     - var slider_data = pupil_slides_meta
     div.Background-img-top.Background-img-cover
       figure(class="img-placeholder")
-        div(class="Background-img--full-wh img-loaded img-small" style="background-image: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAUAAD/4QMbaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlDNUQ2QTc0NUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlDNUQ2QTczNUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9IjQ0NkMwODJBQTc2RDMwNTg2MDNFRTZBQzVCM0QyRjA0IiBzdFJlZjpkb2N1bWVudElEPSI0NDZDMDgyQUE3NkQzMDU4NjAzRUU2QUM1QjNEMkYwNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEABIODg4QDhUQEBUeFBEUHiMaFRUaIyIZGRoZGSInHiMhISMeJycuMDMwLic+PkFBPj5BQUFBQUFBQUFBQUFBQUEBFBQUFhkWGxcXGxoWGhYaIRodHRohMSEhJCEhMT4tJycnJy0+ODszMzM7OEFBPj5BQUFBQUFBQUFBQUFBQUFBQf/AABEIAB4AKAMBIgACEQEDEQH/xAB4AAACAgMAAAAAAAAAAAAAAAAAAwUGAQIEAQEAAwAAAAAAAAAAAAAAAAACAAEDEAACAQMDAQMLBQAAAAAAAAABAgMAEQTwIRIxUWGBQZGh0eHxIjITJAVCYsJjFBEAAgMAAgMAAAAAAAAAAAAAAAERIQJBA3ESIv/aAAwDAQACEQMRAD8Amkjvr200RDXvrZRtS8yWSHGeSIXcDbYta/lsOyoUlLgeMZivIebRpZjGvfUakv5sBrASLdQpIUfCb77EV34kzzw8nFmVip2sDxPUb0U5HvEKTDR60aKew1o0UgGivtSM/MhxYfrTbr8oUWLEt0sL1xZcn5IRAYcRaQ9WJA4ju5NVXzTl8/uw4k/svfwpJJq2kF6aahNlqyJVChzLxABPHfXjUjjyxPChiYMlhYgj11Rco5xhi+uHVASD04kfpJtT8A5tx/iV+f7P5UMZVzpSa9vZqvnXr45Lsz9/p9tFR+M+e0P3UZSUGxsbhh2/C1FLmDOak//Z');")   
+        div(class="Background-img--full-wh img-loaded img-small" style="background-image: url('data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAUAAD/4QMbaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlDNUQ2QTc0NUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlDNUQ2QTczNUFCRjExRTZBNzMxQjg5Q0RDOTU0NUI2IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9IjQ0NkMwODJBQTc2RDMwNTg2MDNFRTZBQzVCM0QyRjA0IiBzdFJlZjpkb2N1bWVudElEPSI0NDZDMDgyQUE3NkQzMDU4NjAzRUU2QUM1QjNEMkYwNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pv/uAA5BZG9iZQBkwAAAAAH/2wCEABIODg4QDhUQEBUeFBEUHiMaFRUaIyIZGRoZGSInHiMhISMeJycuMDMwLic+PkFBPj5BQUFBQUFBQUFBQUFBQUEBFBQUFhkWGxcXGxoWGhYaIRodHRohMSEhJCEhMT4tJycnJy0+ODszMzM7OEFBPj5BQUFBQUFBQUFBQUFBQUFBQf/AABEIAB4AKAMBIgACEQEDEQH/xAB4AAACAgMAAAAAAAAAAAAAAAAAAwUGAQIEAQEAAwAAAAAAAAAAAAAAAAACAAEDEAACAQMDAQMLBQAAAAAAAAABAgMAEQTwIRIxUWGBQZGh0eHxIjITJAVCYsJjFBEAAgMAAgMAAAAAAAAAAAAAAAERIQJBA3ESIv/aAAwDAQACEQMRAD8Amkjvr200RDXvrZRtS8yWSHGeSIXcDbYta/lsOyoUlLgeMZivIebRpZjGvfUakv5sBrASLdQpIUfCb77EV34kzzw8nFmVip2sDxPUb0U5HvEKTDR60aKew1o0UgGivtSM/MhxYfrTbr8oUWLEt0sL1xZcn5IRAYcRaQ9WJA4ju5NVXzTl8/uw4k/svfwpJJq2kF6aahNlqyJVChzLxABPHfXjUjjyxPChiYMlhYgj11Rco5xhi+uHVASD04kfpJtT8A5tx/iV+f7P5UMZVzpSa9vZqvnXr45Lsz9/p9tFR+M+e0P3UZSUGxsbhh2/C1FLmDOak//Z');")
+
         div(class="Background-img--full-wh img-large" data-src="../media/images/home/slides/03.jpg")   
       div(style="top:85%;").Site-content-container.Background-img-caption-container.u-textCenter
         h1.Background-img-caption Platform for eye tracking and egocentric vision research.
@@ -92,9 +93,35 @@ block main
 
               include pupil-svg
 
+
+
     //- full width background image
     div.Grid
       div(class="Background-img--full-wh-grid Background-img-cover" style="background-image: url('../media/images/home/slides/01.jpg');")
+
+    //- pupil mobile
+    section(style="background-color:#6f7679;")
+      div.Site-content-container
+        a(name="pupil-mobile")
+        div.Feature-container-column
+          div.Grid.Grid--1of2.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+            div.Grid-cell
+              div(style="color: white;").Feature
+                h1 Pupil Mobile
+                p Pupil Mobile enables you to connect your Pupil eye tracking headset to your Android device via USBC.
+                p Preview video and other sensor streams on your Android device. Record video and other sensor streams locally on your Android device or stream data over your WiFi network to other computers (clients) running Pupil Capture.
+                p Pupil Mobile is seamlessly integrated with Pupil Capture. You can use Pupil Capture to remotely monitor and control instances of Pupil Mobile.
+                p Pupil Mobile is currently in public beta. Download it on the #[a(href="https://play.google.com/store/apps/details?id=com.pupillabs.pupilmobile&hl=en" style="color:#a1def0;" rel="noopener" title="Google Play Store") Google Play Store].
+
+            div.Grid-cell
+              div.Feature
+                figure.Feature-figure
+                  +webp-img("/media/images/pupil_page/web/pupil-mobile.webp", "Pupil Mobile on Nexus 5x" , "Pupil Mobile on Nexus 5x")
+
+          div.Feature-video-container-16by9(style="margin-bottom:3em;margin-top:2em;" title="Introduction to Pupil Mobile" alt="Introduction to Pupil Mobile")
+            video(class="plyr--polyfill" poster="/media/videos/pupil-mobile_promovid_1920x1080.jpg" controls playsinline)
+              source(src="/media/videos/pupil-mobile_promovid_1920x1080.mp4" type="video/mp4")
+              source(src="/media/videos/pupil-mobile_promovid_1920x1080.webm" type="video/webm")
 
     //- tech specs and performance
     div.Site-content-container
@@ -150,7 +177,7 @@ block main
                       td.Table--column #[strong Processing Latency]
                       td Depending on CPU typically > 3ms
                     tr
-                      td.Table--column #[strong Slippage compensation]
+                      td.Table--column #[strong Slippage Compensation]
                       td Yes, through 3D eye model
                     tr
                       td.Table--column #[strong Recording]
@@ -158,11 +185,16 @@ block main
                     tr
                       td.Table--column #[strong Realtime Streaming]
                       td Pupil, gaze, user, and video data.
+                    tr
+                      td.Table--column #[strong Mobile Recording Device]
+                      td Pupil Mobile on Android (Supported Devices: Nexus 5x, Nexus 6p, and OnePlus 3)
 
 
             div.Feature.u-padTop--2
               h4 Navigate to the #[a(href='/store#pupil' title='Pupil Store - pupil configurator') store] to check all configurations,  technical specs, and download sample videos.
                   
+    
+      include includes/webp-img
 
     //- open source
     div.Site-gray-bkg
@@ -180,8 +212,7 @@ block main
           div.Grid-cell
             div.Feature
               figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/pupil_source_code.png" title="Pupil Plugin screenshot" alt="Pupil Plugin screenshot")
-
+                +webp-img("/media/images/pupil_page/web/pupil_source_code.png", "Pupil Plugin screenshot" , "Pupil Plugin screenshot")
 
     //- design
     div.Site-content-container
@@ -197,8 +228,7 @@ block main
           div.Grid-cell
             div.Feature
               figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/frame_flex.jpg" title="Pupil Headset" alt="Pupil Headset")
-
+                +webp-img("/media/images/pupil_page/web/frame_flex.jpg", "Pupil Headset" , "Pupil Headset")
 
     //- Modular & Hackable
     div.Site-gray-bkg    
@@ -210,7 +240,8 @@ block main
             div.Feature
               figure.Feature-figure
                 figure.Feature-figure
-                img(class="Feature-image" src="../media/images/pupil_page/web/dev_explo_transp.png" title="DIY Pupil Headset" alt="DIY Pupil Headset")
+                  +webp-img("/media/images/pupil_page/web/dev_explo_transp.png", "DIY Pupil Headset" , "DIY Pupil Headset")
+                  
           div.Grid-cell
             div.Feature
               h1 Modular & Hackable

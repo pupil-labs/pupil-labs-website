@@ -216,6 +216,23 @@
     @media $break-767
       flex 0 0 100%
       max-width 100%
+      
+  &.Customer-desktop
+    
+    @media $break-320
+      display none !important
+      
+  &.Customer-mobile
+    > .Grid-cell
+        display none !important
+
+      @media $break-320
+        .Grid-cell
+          flex 0 0 33.33333%
+          display flex !important
+        
+          > picture > img
+              width 60px 
 
 .Grid-cell--header
   font-weight 700
@@ -317,6 +334,10 @@
   
 .Aligner-item--stretchHeight
   flex-grow 1
+  flex-shrink 0
+
+.Aligner-item--stretchHeight-bottom
+  margin-top auto
   flex-shrink 0
 
 .Aligner-item--top

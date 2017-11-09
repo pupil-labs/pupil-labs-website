@@ -12,6 +12,11 @@ block main
     - var oss_meta = oss_data.metadata
     - var home_newsletter = contents.home['home_newsletter.json']
     - var home_newsletter_meta = home_newsletter.metadata
+    - var customer_data = contents.home['customer_list.json']
+    - var customer_meta = customer_data.metadata
+    - var commercial_meta = customer_meta.commercial
+    - var academic_meta = customer_meta.academic
+    - var customer_meta = commercial_meta.concat(academic_meta)
 
     //- show background image
     div.Background-img-top.Background-img-cover
@@ -23,6 +28,7 @@ block main
         h1.Background-img-caption Open source eye tracking.
         //- h2.Background-img--caption-h2 
 
+    include includes/webp-img
     //- pupil intro row
     div(id="content-top" class="Site-content-container")
       div.Feature-container-column
@@ -39,8 +45,7 @@ block main
                 p All hardware is designed, developed, and assembled in our Berlin office and ships worldwide. Check out products on our #[a(href="/store" title="Pupil Labs store") store]. 
               div.Grid-cell
                 figure.Feature-figure.u-padBottom--1
-                  img(class="Feature-image" src="media/images/home/platform/eye_debug_01_opaque.png" title="Binocular 3D gaze mapper" alt="Binocular 3D gaze mapper")
-
+                  +webp-img("/media/images/home/platform/eye_debug_01_opaque.png", "Binocular 3D gaze mapper", "Binocular 3D gaze mapper")
 
     //- oss motivation row
     div.Site-gray-bkg
@@ -75,27 +80,54 @@ block main
               div(id="Home-activity")
                 ul(id="Home-activity-list" class="Activity")
 
-    
-    //- newsletter row
     div.Site-content-container
       div.Feature-container-column
         div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
-          div.Grid-cell.Grid-cell--full
+          div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--2(style="border-bottom:1px solid grey;")
+            div.Feature.u-padBottom--2
+              h1 Featured companies and universities using Pupil
+
+            - var commercial_filtered = _.filter(commercial_meta, function(obj){return obj.img.length > 0;});
+            - var commercial_sorted = _.sortBy(commercial_filtered, function(obj){return obj.weight;}).reverse();
+            - var company_desktop = _.first(commercial_sorted, 8)
+            - var company_mobile = _.first(commercial_sorted, 6)
+
+            div.Grid.Grid--1of4.Grid--gutters.Customer-desktop
+              each comp_desktop,i in company_desktop
+                div.Grid-cell(style="align-self:center;")
+                  picture(id= comp_desktop.uid)
+                    img(src= comp_desktop.img)
+
+            div.Grid.Grid--1of4.Grid--gutters.Customer-mobile
+              each comp_mobile,i in company_mobile
+                div.Grid-cell.Grid--justifyCenter(style="align-self:center;")
+                  picture(id= comp_mobile.uid)
+                    img(src= comp_mobile.img)
+
+          div.Grid-cell.Grid-cell--full.u-textCenter.u-padBottom--2
+            div.Feature.u-padBottom--2
+              
+            - var academic_filtered = _.filter(academic_meta, function(obj){return obj.img.length > 0;});
+            - var academic_sorted = _.sortBy(academic_filtered, function(obj){return obj.weight;}).reverse();
+            - var edu_desktop = _.first(academic_sorted, 8)
+            - var edu_mobile = _.first(academic_sorted, 6)
+
+            div.Grid.Grid--1of4.Grid--gutters.Customer-desktop
+              each academic_desktop ,i in edu_desktop
+                div.Grid-cell(style="align-self:center;")
+                  picture(id= academic_desktop.uid)
+                    img(src= academic_desktop.img)
+
+            div.Grid.Grid--1of4.Grid--gutters.Customer-mobile
+              each academic_desktop ,i in edu_mobile
+                div.Grid-cell.Grid--justifyCenter(style="align-self:center;")
+                  picture(id= academic_desktop.uid)
+                    img(src= academic_desktop.img)
+
+          div.Grid-cell.Grid-cell--full.u-textCenter.u-padTop--2
             div.Feature
-              h1.u-textCenter #{ home_newsletter_meta.title }
-          div.Grid-cell.Grid-cell--full
-            div.Grid
-              div.Grid-cell.Grid-cell--full
-                h4 #{ home_newsletter_meta.point1 }
-              div(style="flex:1 0;")
-                form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
-                  label(class="Form-hidden" for="mce-EMAIL") email
-                  input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
-                  p(class="Form-error--text" id="news_email_error")
-                  label(class="Form-hidden" for="newsletter-form-submit") submit             
-                  input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
-                  label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
-  
+              h3 Take a look at academic #[a(href="https://docs.google.com/spreadsheets/d/1ZD6HDbjzrtRNB4VB0b7GFMaXVGKZYeI0zBOBEEPwvBI/edit?ts=576a3b27#gid=0" title="publications that cite Pupil") publications that cite Pupil].
+
     div.Site-gray-bkg
       div.Site-content-container
         div.Feature-container-column
@@ -116,6 +148,22 @@ block main
                       p= article.metadata.subtitle
                       a(href=article.url class="Article-link") Read More 
 
-
-
-
+    //- newsletter row
+    div.Site-content-container
+      div.Feature-container-column
+        div.Grid.Grid--justifyCenter.Grid--center.Grid--alignContentCenter.Feature-row
+          div.Grid-cell.Grid-cell--full
+            div.Feature
+              h1.u-textCenter #{ home_newsletter_meta.title }
+          div.Grid-cell.Grid-cell--full
+            div.Grid
+              div.Grid-cell.Grid-cell--full
+                h4 #{ home_newsletter_meta.point1 }
+              div(style="flex:1 0;")
+                form(id="newsletter-form" data-parsley-validate data-parsley-focus="first")
+                  label(class="Form-hidden" for="mce-EMAIL") email
+                  input(class="Form-input Form-input--text-newsletter" id="mce-EMAIL" type="email" placeholder="#{ home_newsletter_meta.input_placeholder }" name="EMAIL" required data-parsley-trigger="focusout" data-parsley-errors-container="#news_email_error")
+                  p(class="Form-error--text" id="news_email_error")
+                  label(class="Form-hidden" for="newsletter-form-submit") submit             
+                  input(type="submit" value="submit" id="newsletter-form-submit" class="Form-input--submit")
+                  label(for="newsletter-form-submit" class="Button Button--cart Button-submit-newsletter") #{ home_newsletter_meta.button }
