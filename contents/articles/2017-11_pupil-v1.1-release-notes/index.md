@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var converter = new showdown.Converter();
         var text = data.data.body;
         var html = converter.makeHtml(text);
-        html += '<a href="https://github.com/pupil-labs/pupil/releases/tag/v1.1">Download v1.1</a>'  
+        html += '<a href="https://github.com/pupil-labs/pupil/releases/tag/v1.1">Download v1.1</a>';  
         $('section[class~="content"]').html(html);
         var _img = document.getElementsByTagName('img')[0];
         var _parent = _img.parentElement;
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         _img.className = "u-padBottom--1";
         _parent.setAttribute('style','text-align:center;');
         _img.setAttribute('style','width:80%;');
-      };
+      }
     });
   });
 });
