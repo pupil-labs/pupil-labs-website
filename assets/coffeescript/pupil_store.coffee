@@ -196,6 +196,7 @@ class PupilStore
 
         $("#w30").removeClass("StoreConfig--state-inactive")
         $("#e120b").removeClass("StoreConfig--state-inactive")
+        $("#e200b").removeClass("StoreConfig--state-inactive")
         $("#enone").removeClass("StoreConfig--state-inactive")
         $("#wnone").removeClass("StoreConfig--state-inactive")   
 
@@ -213,7 +214,8 @@ class PupilStore
 
         if $(@worldConfigActiveClass).attr('id') is "w30"
           $("#e120b").addClass("StoreConfig--state-inactive")
-        if $(@eyeConfigActiveClass).attr('id') is "e120b"
+          $("#e200b").addClass("StoreConfig--state-inactive")
+        if $(@eyeConfigActiveClass).attr('id') is "e120b" or $(@eyeConfigActiveClass).attr('id') is "e200b"
           $("#w30").addClass("StoreConfig--state-inactive")
 
 
