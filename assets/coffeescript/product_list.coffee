@@ -216,7 +216,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_wnone_e120.jpg'].join('/')
     pupil_wnone_e200_edu:
-      cost: 1590
+      cost: 1000
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.wnone
@@ -292,7 +292,7 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w30_e120.jpg'].join('/')
     pupil_w30_e200_edu:
-      cost: 1450
+      cost: 1250
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w30
