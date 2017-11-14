@@ -519,16 +519,16 @@ get_product_database = ->
       img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
     usbcupgrade:
       cost: 210
-      title_product: 'USB-C Clip Upgrade'
-      title_store: 'USB-C Clip Upgrade'
-      description_store: 'Upgrade any existing Pupil headset with the new USB-C clip. Comes with USB-C to USB-A cable.'
-      description_cart: 'USB-C clip upgrade for an existing Pupil Headset. Comes with USB-C to USB-A cable.'
+      title_product: 'USB-C Clip Update'
+      title_store: 'USB-C Clip Update'
+      description_store: 'Update older micro USB Pupil headsets with the new USB-C clip. Comes with USB-C to USB-A cable.'
+      description_cart: 'USB-C clip upgrade older micro USB Pupil headsets. Comes with USB-C to USB-A cable.'
       img: [additional_product_path,'usbcupgrade.jpg'].join('/')         
     e120upgrade:
       cost: 450
       title_product: '120hz Eye Camera'
       title_store: "120hz Eye Camera"
-      description_store: "Upgrade any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
+      description_store: "Update any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
       img: [additional_product_path,'e120upgrade.jpg'].join('/')   
     e200upgrade:
