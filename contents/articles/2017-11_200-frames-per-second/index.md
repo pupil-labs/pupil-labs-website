@@ -15,7 +15,7 @@ We are very excited to announce new eye cameras for Pupil Labs hardware! We desi
 200hz eye camera features:
 
 - Global shutter - Improves pupil detection. 
-- Faster - Capture 200 x 200 pixels at up 200fps. You can also capture at 400x400 @120fps. 
+- Faster - Capture 200 x 200 pixels at 200fps. You can also capture at 400x400 at 120fps. 
 - Smaller - Cameras are much smaller. So small that they are barely visible to the wearer.
 
 <div class="Feature-image-wrapper">
