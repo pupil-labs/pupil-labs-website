@@ -108,7 +108,7 @@ get_eye_cam_data = ->
       title_store: '200hz'
       description_store: 'Eye cameras custom built by Pupil Labs that resolve a wide range of eye movement motifs.'
       tech_specs:
-        sensor: "200x200 @200fps, 400x400 @120fps"
+        sensor: "Global Shutter. 200x200 @200fps, 400x400 @120fps"
         illumination: "IR camera with IR illumination (dark pupil tracking)"
         latency: "4.5ms"
       title_cart: "Eye camera: 200hz eye camera"
@@ -121,7 +121,7 @@ get_eye_cam_data = ->
       title_store: "200hz binocular"
       description_store: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that resolve a wider range of eye movement motifs."
       tech_specs:
-        sensor: "200x200 @200fps, 400x400 @120fps"
+        sensor: "Global Shutter. 200x200 @200fps, 400x400 @120fps"
         illumination: "IR camera with IR illumination (dark pupil tracking)"
         latency: "4.5ms"
       title_cart: "Eye cameras: 200hz binocular eye cameras"
@@ -152,7 +152,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
 
 get_additional_product_ids = ->
-  return ['e120upgrade','usbcupgrade','pm_motoz2','support6','support12']
+  return ['e200upgrade','usbcupgrade','pm_motoz2','support6','support12']
 
 
 get_product_database = ->
