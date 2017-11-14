@@ -7,7 +7,7 @@ featured_img_thumb: '../../../../media/images/store_pupil/web/pupil_w120_e200.jp
 ---
 
 <div class="Feature-image-wrapper">
-	<img src="../../../../media/images/store_pupil/web/pupil_w120_e200.jpg" class='Feature-image--software u-padBottom--2' alt="Pupil headset - World camera high speed, eye camera 200hz"/>
+	<img src="../../../../media/images/store_pupil/web/pupil_w120_e200.jpg" style="width:80%;text-align:center;" class='Feature-image--software u-padBottom--2' alt="Pupil headset - World camera high speed, eye camera 200hz"/>
 </div>
 
 We are very excited to announce new eye cameras for Pupil Labs hardware! We designed and developed this camera from the ground up. This camera is flexible, small, and fast and will become an integral component in the Pupil eye tracking hardware ecosystem. 
