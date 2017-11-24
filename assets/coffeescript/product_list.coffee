@@ -128,7 +128,7 @@ get_eye_cam_data = ->
       description_cart: "2 eye cameras. Resolution: 200x200 @200fps. IR illumination."
       weight: 31
       title_video: "Download sample video"
-      link_video: "#"
+      link_video: "https://drive.google.com/file/d/1lSjtWTm3LTHAm7b3NKZmBOBsqetQkkX-/view?usp=sharing"
 
 get_camera_data = ->
   camera_data = get_eye_cam_data()
