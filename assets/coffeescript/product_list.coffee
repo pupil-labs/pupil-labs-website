@@ -38,7 +38,7 @@ get_world_cam_data = ->
     w3d:
       id: 'w3d'
       title_store: '3d'
-      description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image."
+      description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image. (Note: This sensor is not compatible with Pupil Mobile)."
       tech_specs:
         sensor: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
         fov:"See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
@@ -563,7 +563,7 @@ get_product_database = ->
       cost: 650
       title_product: 'Pupil Mobile Bundle'
       title_store: "Pupil Mobile Bundle"
-      description_store: "Connect your Pupil headset to the Moto Z2 play. Record up to 4 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app."
+      description_store: "Connect your Pupil headset to the Moto Z2 play. Record up to 4 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera are not compatible with Pupil Mobile)."
       description_cart: "Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. Connects to Pupil headset via USBC cable (included)."
       img: [additional_product_path,'pm_nexus5x.jpg'].join('/')   
     support6:
