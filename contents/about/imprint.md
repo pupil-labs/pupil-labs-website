@@ -5,7 +5,7 @@ title: Imprint
 
 <h3 class="u-padBottom--0">Address</h3>
 
-<p>Pupil Labs UG (haftungsbeschränkt) Gustav-Müller-Str. 7 10829 Berlin</p>
+<p>Pupil Labs GmbH Gustav-Müller-Str. 7 10829 Berlin</p>
 
 <h3 class="u-padBottom--0">Contact</h3>E-Mail 
 

@@ -38,7 +38,7 @@ get_world_cam_data = ->
     w3d:
       id: 'w3d'
       title_store: '3d'
-      description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image."
+      description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image. (Note: This sensor is not compatible with Pupil Mobile)."
       tech_specs:
         sensor: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
         fov:"See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
@@ -103,6 +103,32 @@ get_eye_cam_data = ->
       weight: 43
       title_video: "Download sample video"
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-OEVUcVlURFJzdkU/view?usp=sharing"
+    e200:
+      id: 'e200'
+      title_store: '200hz'
+      description_store: 'Eye cameras custom built by Pupil Labs that resolve a wide range of eye movement motifs.'
+      tech_specs:
+        sensor: "Global Shutter. 200x200 @200fps, 400x400 @120fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)"
+        latency: "4.5ms"
+      title_cart: "Eye camera: 200hz eye camera"
+      description_cart: "Resolution: 200x200 @200fps. IR illumination."
+      weight: 31
+      title_video: "Download sample video"
+      link_video: "#"
+    e200b:
+      id: 'e200b'
+      title_store: "200hz binocular"
+      description_store: "Eye cameras custom built by Pupil Labs with binocular frame for binocular eye detection at high speed. Custom made cameras that resolve a wider range of eye movement motifs."
+      tech_specs:
+        sensor: "Global Shutter. 200x200 @200fps, 400x400 @120fps"
+        illumination: "IR camera with IR illumination (dark pupil tracking)"
+        latency: "4.5ms"
+      title_cart: "Eye cameras: 200hz binocular eye cameras"
+      description_cart: "2 eye cameras. Resolution: 200x200 @200fps. IR illumination."
+      weight: 31
+      title_video: "Download sample video"
+      link_video: "https://drive.google.com/file/d/1lSjtWTm3LTHAm7b3NKZmBOBsqetQkkX-/view?usp=sharing"
 
 get_camera_data = ->
   camera_data = get_eye_cam_data()
@@ -114,7 +140,7 @@ get_world_cam_ids = ->
   return (k for k,v of get_world_cam_data())
 
 get_eye_cam_ids = ->
-  return (k for k,v of get_eye_cam_data() when k isnt 'e30')
+  return (k for k,v of get_eye_cam_data() when k isnt 'e30' and k isnt 'e120b')
 
 get_edu_discount_data = ->
   edu_discount_data = 
@@ -123,10 +149,10 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['hololens_w120_e120b','htcviveb','oculusdk2b','oculusdk2m','epsonbt300b','epsonbt200b']
+  return ['hololens_w120_e120b','htcviveb','oculusdk2b','epsonbt300b_e120b']
 
 get_additional_product_ids = ->
-  return ['e120upgrade','usbcupgrade','pm_nexus5x','support6','support12']
+  return ['e200upgrade','usbcupgrade','pm_motoz2','support6','support12']
 
 
 get_product_database = ->
@@ -152,6 +178,13 @@ get_product_database = ->
         world_camera: world_cam_data.wnone
         eye_camera: eye_cam_data.e120
       img: [pupil_img_path,'pupil_wnone_e120.jpg'].join('/')     
+    pupil_wnone_e200:
+      cost: 1590
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wnone
+        eye_camera: eye_cam_data.e200
+      img: [pupil_img_path,'pupil_wnone_e200.jpg'].join('/')     
     pupil_wnone_e120b:
       cost: 2090
       title_product: 'Pupil Headset'
@@ -159,6 +192,13 @@ get_product_database = ->
         world_camera: world_cam_data.wnone
         eye_camera: eye_cam_data.e120b
       img: [pupil_img_path,'pupil_wnone_e120b.jpg'].join('/')     
+    pupil_wnone_e200b:
+      cost: 2490
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wnone
+        eye_camera: eye_cam_data.e200b
+      img: [pupil_img_path,'pupil_wnone_e200b.jpg'].join('/')     
     pupil_wnone_e30_edu:
       cost: 550
       title_product: 'Pupil Headset'
@@ -174,7 +214,14 @@ get_product_database = ->
         world_camera: world_cam_data.wnone
         eye_camera: eye_cam_data.e120
         discount: edu_discount
-      img: [pupil_img_path,'pupil_wnone_e120.jpg'].join('/')        
+      img: [pupil_img_path,'pupil_wnone_e120.jpg'].join('/')
+    pupil_wnone_e200_edu:
+      cost: 1000
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wnone
+        eye_camera: eye_cam_data.e200
+      img: [pupil_img_path,'pupil_wnone_e200.jpg'].join('/')           
     pupil_wnone_e120b_edu:
       cost: 1500
       title_product: 'Pupil Headset'
@@ -183,6 +230,14 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120b
         discount: edu_discount
       img: [pupil_img_path,'pupil_wnone_e120b.jpg'].join('/')        
+    pupil_wnone_e200b_edu:
+      cost: 1900
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wnone
+        eye_camera: eye_cam_data.e200b
+      img: [pupil_img_path,'pupil_wnone_e200b.jpg'].join('/')     
+
     pupil_w30_enone:
       cost: 1190
       title_product: 'Pupil Headset'
@@ -204,6 +259,13 @@ get_product_database = ->
         world_camera: world_cam_data.w30
         eye_camera: eye_cam_data.e120
       img: [pupil_img_path,'pupil_w30_e120.jpg'].join('/')
+    pupil_w30_e200:
+      cost: 1840
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w30
+        eye_camera: eye_cam_data.e200
+      img: [pupil_img_path,'pupil_w30_e200.jpg'].join('/')
     pupil_w30_enone_edu:
       cost: 600
       title_product: 'Pupil Headset'
@@ -229,6 +291,14 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120
         discount: edu_discount
       img: [pupil_img_path,'pupil_w30_e120.jpg'].join('/')
+    pupil_w30_e200_edu:
+      cost: 1250
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w30
+        eye_camera: eye_cam_data.e200
+      img: [pupil_img_path,'pupil_w30_e200.jpg'].join('/')
+
     pupil_w120_enone:
       cost: 1190
       title_product: 'Pupil Headset'
@@ -251,6 +321,13 @@ get_product_database = ->
         world_camera: world_cam_data.w120
         eye_camera: eye_cam_data.e120
       img: [pupil_img_path,'pupil_w120_e120.jpg'].join('/')
+    pupil_w120_e200:
+      cost: 1840
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w120
+        eye_camera: eye_cam_data.e200
+      img: [pupil_img_path,'pupil_w120_e200.jpg'].join('/')
     pupil_w120_e120b:
       cost: 2340
       title_product: 'Pupil Headset'
@@ -258,6 +335,13 @@ get_product_database = ->
         world_camera: world_cam_data.w120
         eye_camera: eye_cam_data.e120b
       img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')        
+    pupil_w120_e200b:
+      cost: 2740
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w120
+        eye_camera: eye_cam_data.e200b
+      img: [pupil_img_path,'pupil_w120_e200b.jpg'].join('/')
     pupil_w120_enone_edu:
       cost: 600
       title_product: 'Pupil Headset'
@@ -282,6 +366,14 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120
         discount: edu_discount
       img: [pupil_img_path,'pupil_w120_e120.jpg'].join('/')        
+    pupil_w120_e200_edu:
+      cost: 1250
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w120
+        eye_camera: eye_cam_data.e200
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w120_e200.jpg'].join('/')        
     pupil_w120_e120b_edu:
       cost: 1750
       title_product: 'Pupil Headset'
@@ -290,31 +382,53 @@ get_product_database = ->
         eye_camera: eye_cam_data.e120b
         discount: edu_discount
       img: [pupil_img_path,'pupil_w120_e120b.jpg'].join('/')
+    pupil_w120_e200b_edu:
+      cost: 2150
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w120
+        eye_camera: eye_cam_data.e200b
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w120_e200b.jpg'].join('/')
 
     pupil_w3d_enone:
-      cost: 1440
+      cost: 1540
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.enone
       img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
     pupil_w3d_e120:
-      cost: 1890
+      cost: 1990
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.e120
       img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
+    pupil_w3d_e200:
+      cost: 2190
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e200
+      img: [pupil_img_path,'pupil_w3d_e200.jpg'].join('/') 
     pupil_w3d_e120b:
-      cost: 2590
+      cost: 2690
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.e120b
       img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')   
+    pupil_w3d_e200b:
+      cost: 3090
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e200b
+      img: [pupil_img_path,'pupil_w3d_e200b.jpg'].join('/')   
 
     pupil_w3d_enone_edu:
-      cost: 850
+      cost: 950
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
@@ -322,21 +436,37 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_enone.jpg'].join('/') 
     pupil_w3d_e120_edu:
-      cost: 1300
+      cost: 1400
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.e120
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e120.jpg'].join('/') 
+    pupil_w3d_e200_edu:
+      cost: 1600
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e200
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e200.jpg'].join('/') 
     pupil_w3d_e120b_edu:
-      cost: 2000
+      cost: 2100
       title_product: 'Pupil Headset'
       sub_products:
         world_camera: world_cam_data.w3d
         eye_camera: eye_cam_data.e120b
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e120b.jpg'].join('/')  
+    pupil_w3d_e200b_edu:
+      cost: 2500
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.w3d
+        eye_camera: eye_cam_data.e200b
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_w3d_e200b.jpg'].join('/')  
 
     oculusdk2m:
       cost: 800
@@ -366,6 +496,13 @@ get_product_database = ->
       description_store: "Binocular camera mounts for Epson Moverio BT-300 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
+    epsonbt300b_e120b:
+      cost: 1400
+      title_product: 'Epson Moverio BT-300 Add-on'
+      title_store: 'Epson Moverio BT-300 Binocular Mount Add-on'
+      description_store: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 120hz eye cameras."
+      description_cart: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 120hz eye cameras."
+      img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
     htcviveb:
       cost: 1400
       title_product: 'HTC Vive Binocular Add-on'
@@ -389,18 +526,25 @@ get_product_database = ->
       img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
     usbcupgrade:
       cost: 210
-      title_product: 'USB-C Clip Upgrade'
-      title_store: 'USB-C Clip Upgrade'
-      description_store: 'Upgrade any existing Pupil headset with the new USB-C clip. Comes with USB-C to USB-A cable.'
-      description_cart: 'USB-C clip upgrade for an existing Pupil Headset. Comes with USB-C to USB-A cable.'
+      title_product: 'USB-C Clip Update'
+      title_store: 'USB-C Clip Update'
+      description_store: 'Update older micro USB Pupil headsets with the new USB-C clip. Comes with USB-C to USB-A cable.'
+      description_cart: 'USB-C clip upgrade older micro USB Pupil headsets. Comes with USB-C to USB-A cable.'
       img: [additional_product_path,'usbcupgrade.jpg'].join('/')         
     e120upgrade:
       cost: 450
       title_product: '120hz Eye Camera'
       title_store: "120hz Eye Camera"
-      description_store: "Upgrade any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
+      description_store: "Update any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
       img: [additional_product_path,'e120upgrade.jpg'].join('/')   
+    e200upgrade:
+      cost: 650
+      title_product: '200hz Eye Camera'
+      title_store: "200hz Eye Camera"
+      description_store: "Upgrade any existing Pupil headset with our custom made 200hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
+      description_cart: "Camera upgrade: 200hz eye camera upgrade"
+      img: [additional_product_path,'e200upgrade.jpg'].join('/')   
     w3dupgrade:
       cost: 550
       title_product: '3d World Camera'
@@ -414,6 +558,13 @@ get_product_database = ->
       title_store: "Pupil Mobile Bundle"
       description_store: "Connect your Pupil headset to the Nexus 5x. Record video locally on the Nexus 5x, or stream video over Wifi. The Nexus 5x comes with a sports arm band, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. "
       description_cart: "Nexus 5x pre-loaded with Pupil Mobile app, sports arm band, and USBC-USBC cable. Connects to Pupil headsets via USBC-USBC cable."
+      img: [additional_product_path,'pm_nexus5x.jpg'].join('/')   
+    pm_motoz2:
+      cost: 650
+      title_product: 'Pupil Mobile Bundle'
+      title_store: "Pupil Mobile Bundle"
+      description_store: "Connect your Pupil headset to the Moto Z2 play. Record up to 4 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera are not compatible with Pupil Mobile)."
+      description_cart: "Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. Connects to Pupil headset via USBC cable (included)."
       img: [additional_product_path,'pm_nexus5x.jpg'].join('/')   
     support6:
       cost: 1000

@@ -1,6 +1,6 @@
 ---
 title: Javascript Developer
-order: 7
+order: -1
 jobTitle: javascript-dev
 ---
 

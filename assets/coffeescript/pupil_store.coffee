@@ -196,6 +196,7 @@ class PupilStore
 
         $("#w30").removeClass("StoreConfig--state-inactive")
         $("#e120b").removeClass("StoreConfig--state-inactive")
+        $("#e200b").removeClass("StoreConfig--state-inactive")
         $("#enone").removeClass("StoreConfig--state-inactive")
         $("#wnone").removeClass("StoreConfig--state-inactive")   
 
@@ -213,7 +214,8 @@ class PupilStore
 
         if $(@worldConfigActiveClass).attr('id') is "w30"
           $("#e120b").addClass("StoreConfig--state-inactive")
-        if $(@eyeConfigActiveClass).attr('id') is "e120b"
+          $("#e200b").addClass("StoreConfig--state-inactive")
+        if $(@eyeConfigActiveClass).attr('id') is "e120b" or $(@eyeConfigActiveClass).attr('id') is "e200b"
           $("#w30").addClass("StoreConfig--state-inactive")
 
 
@@ -454,9 +456,9 @@ class PupilStore
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('_').slice(0,-1).join('_')
+        type = fieldId.split('_').shift()
         try
-          sField = type+"_s"
+          sField = if type is 'address' then type+"_s0" else type+"_s"
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
@@ -528,38 +530,30 @@ class PupilStore
           for k,v of LocalStorage.dict()
             products.push v
           $("textarea[id='cartObject']").val(JSON.stringify(products))
-          formData_json = JSON.stringify(form.serializeArray())
-          # formData = $(form).serialize()
-          
-          formData_formatted = {}
-          for d in form.serializeArray()
-            k = d.name
-            v = d.value;
-            formData_formatted[k] = v;
-            
-          formData_formatted_JSON = JSON.stringify(formData_formatted)
+          formData = $(form).serialize()
 
-          url = "https://p-u-p-i-l.com/order/form_handler"
+          prd_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
+          url = prd_url
 
-          xhr = new XMLHttpRequest()
-          # xhr.withCredentials = true
+          $.ajax
+            type: 'POST'
+            crossDomain: true
+            url: url
+            dataType: "json"
+            data: formData
+            error: (jqXHR, textStatus, errorThrown) ->
+              # console.warn "AJAX Error: #{textStatus}"
+              if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
+                  # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
+                  # We continue anyways to the success page.
+                  console.log "Successful AJAX call with Safari."
+                  $(location).attr('href',location.origin + "/order_success")
+            success: (data, textStatus, jqXHR) ->
+              console.log "Successful AJAX call: #{textStatus}"
+              $(location).attr('href',location.origin + "/order_success")
+            complete: (jqXHR,textStatus) ->
+              $('label[for="form-submit"]').removeClass("loading")    
 
-          xhr.addEventListener "readystatechange", ->
-            # todo disable buttons when loading
-            console.log @readyState
-            if @readyState is 4
-              if @status is 200
-                console.log "status: #{@status}, responseText: #{@responseText}"
-                window.location.replace "#{window.location.origin}/order_success"
-              else
-                console.warn "Request Error: #{@statusText}"
-  
-
-          xhr.open "POST", url
-          xhr.setRequestHeader "content-type", "application/json"
-          xhr.setRequestHeader "cache-control", "no-cache"
-
-          xhr.send formData_formatted_JSON
 
   countryValidator: ->
     if $(@cartPage).length > 0
