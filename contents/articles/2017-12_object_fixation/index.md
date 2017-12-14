@@ -1,5 +1,5 @@
 --- 
-title: A Pupil Plugin to Perceive the Object in Focus
+title: Real-time object recognition using fixations to control prosthetic hand
 date: Fri Dec 15 2017 11:31:00 GMT+0700 (ICT) 
 author: Pupil Dev Team 
 subtitle: "Real-time object recognition with fixations to control grasps of a robotic prosthetic hand..."
