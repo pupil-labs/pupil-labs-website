@@ -17,4 +17,4 @@ featured_img_thumb: "../../../../media/images/blog/thumb/object_detection.jpg"
 
 The object detection plugin publishes the detected object that is closest to the fixation to a rostopic. The Arduino subscribing to the rostopic, then controls the linear actuators of the prosthetic hand to form a predefined grasp associated with that object stored in the Arduino firmware.
 
-For more information on Jesse Weisberg plugin, head over to his [github](https://github.com/jesseweisberg/pupil) project.
+For more information on Jesse Weisberg's plugin, head over to his [github](https://github.com/jesseweisberg/pupil) project.
