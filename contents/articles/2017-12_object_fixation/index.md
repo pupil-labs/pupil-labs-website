@@ -10,7 +10,7 @@ featured_img_thumb: "../../../../media/images/blog/thumb/object_detection.jpg"
 [Jesse Weisberg](https://github.com/jesseweisberg) has made real-time object detection plugin that integrated with Pupil Labs headset to indentify what object the user is currently fixated upon and control a prosthetic hand by forming grasps based on the fixated object.
 
 <div class="Feature-video-container-16by9">
-  <iframe class="Feature-video u-padTop--2" src="https://www.youtube.com/embed/MqqQnCbzryA?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe class="Feature-video u-padTop--2" src="https://www.youtube.com/embed/KYcfLEvbxSc?rel=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>
 
 <div class="small u-padBottom--2">Robotic Prosthetic Hand Controlled with Object Recognition and Eye-Tracking</div>
