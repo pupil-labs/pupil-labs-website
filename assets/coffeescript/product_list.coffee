@@ -149,7 +149,7 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['hololens_w120_e120b','htcviveb','oculusdk2b','epsonbt300b_e120b']
+  return ['hololens_w120_e200b','htcviveb','oculusdk2b','epsonbt300b_e120b']
 
 get_additional_product_ids = ->
   return ['e200upgrade','usbcupgrade','pm_motoz2','support6','support12']
@@ -524,6 +524,20 @@ get_product_database = ->
       description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 120hz eye tracking cameras, clip on attachment mounts, and USB connector clip."
       description_cart: "120hz binocular eye tracking add-on for your Microsoft HoloLens AR headset."
       img: [vr_ar_img_path,'addon_hololens.jpg'].join('/')   
+    hololens_w120_e200b:
+      cost: 1750
+      title_product: 'HoloLens Binocular Add-on'
+      title_store: 'HoloLens Binocular Add-on'
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 200hz eye tracking cameras, high speed world camera, clip on attachment mounts, and USB connector clip."
+      description_cart: "120hz binocular eye tracking add-on with high speed world camera for your Microsoft HoloLens AR headset."
+      img: [vr_ar_img_path,'addon_hololens_e200.jpg'].join('/')   
+    hololens_wnone_e200b:
+      cost: 1400
+      title_product: 'HoloLens Binocular Add-on'
+      title_store: 'HoloLens Binocular Add-on'
+      description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 200hz eye tracking cameras, clip on attachment mounts, and USB connector clip."
+      description_cart: "120hz binocular eye tracking add-on for your Microsoft HoloLens AR headset."
+      img: [vr_ar_img_path,'addon_hololens_e200.jpg'].join('/')   
     usbcupgrade:
       cost: 210
       title_product: 'USB-C Clip Update'
