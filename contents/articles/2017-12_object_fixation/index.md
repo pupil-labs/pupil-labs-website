@@ -9,6 +9,8 @@ featured_img_thumb: "../../../../media/images/blog/thumb/object_detection.jpg"
 
 We are excited to share a project from a Pupil community member, [Jesse Weisberg]((https://github.com/jesseweisberg). Jesse has developed a plugin for Pupil that enables a prosthetic hand to form grasps based on what the wearer is fixating on in the scene in real-time on the CPU (10-15 fps)!
 
+This plugin was developed as part of a project called [Therabotics](https://www.jesseweisberg.com/therabotics/). Therabotics was created by a team of graduate students at Washington University in St. Louis to explore how computer vision can be used to improve prosthetic hand control.
+
 This project is a great demonstration of how to extend Pupil and contribute back to the open source community!
 
 <div class="Feature-video-container-16by9">
@@ -23,4 +25,4 @@ Check out Jesse's Pupil fork on [github](https://github.com/jesseweisberg/pupil)
 
 We hope that others will build on top of Jesse's work and contribute back to his project!
 
-Finally, if you have built something with Pupil, please considering sharing with the community via chat on [DiscordApp](https://pupil-labs.com/chat).
+Finally, if you have built something with Pupil, please consider sharing with the community via chat on [DiscordApp](https://pupil-labs.com/chat).
