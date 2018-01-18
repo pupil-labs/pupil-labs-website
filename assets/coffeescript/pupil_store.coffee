@@ -63,7 +63,7 @@ class PupilStore
       # create eye products in configurator
       for eye_id in get_eye_cam_ids()
         title_store = get_eye_cam_data()[eye_id]['title_store']
-        klass = if eye_id is "e120" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
+        klass = if eye_id is "e200" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
         html = "<li class='Grid-cell u-textCenter'>
                  <button class='#{ klass }' id='#{ eye_id }' href='#{}'>#{title_store}</button> 
                  </li>"
@@ -113,7 +113,7 @@ class PupilStore
 
 
       @_updateSpecTxt('world','w120')
-      @_updateSpecTxt('eye','e120')
+      @_updateSpecTxt('eye','e200')
       @_updateConfigSubTotal()
 
   eventAddToCart: ->
