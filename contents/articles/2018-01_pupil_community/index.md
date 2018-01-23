@@ -52,4 +52,4 @@ Here is a small list of custom tools and projects built with Pupil and still man
 - Custom utilities for experimental control for the Gold Lab
 
 
-Our Open source software is free for you to use and explore. Make a suggestion, fix a bug, improve documentation, or contribute code to a project. Get involved and contribute and be part of Pupil. Submit your project to [Pupil Community](https://github.com/pupil-labs/pupil-community) repository by creating a PR to the readme.
+Our Open source software is free for you to use and explore. Make a suggestion, fix a bug, improve documentation, or contribute code to a project. Get involved and contribute and be part of Pupil. Submit your work to [Pupil Community](https://github.com/pupil-labs/pupil-community) repository by creating a PR to the readme.
