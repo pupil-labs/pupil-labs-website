@@ -62,7 +62,7 @@ You can submit to the [pupil-community repository](https://github.com/pupil-labs
 - Custom utilities for experimental MatLab control
 
 
-[Pupil](https://github.com/pupil-labs/pupil).  is open source and is free for you to use and explore. We encourage you to get involved. Make a suggestion, fix a bug, improve documentation, contribute code, or make a fork and do something entirely your own!
+[Pupil](https://github.com/pupil-labs/pupil) is open source and is free for you to use and explore. We encourage you to get involved. Make a suggestion, fix a bug, improve documentation, contribute code, or make a fork and do something entirely your own!
 
 Get in touch with the community via the [#pupil channel on Discord](https://pupil-labs.com/chat)
 
