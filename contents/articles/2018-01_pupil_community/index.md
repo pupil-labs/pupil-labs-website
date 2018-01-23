@@ -7,7 +7,7 @@ featured_img: ""
 featured_img_thumb: ""
 ---
 
-Happy 2018!
+**Happy 2018!**
 
 Our first blog post of the year focus on the Pupil community. The community is continuing to grow and there are a lot of exciting projects, scripts, and plugins that have been developed using Pupil.
 
