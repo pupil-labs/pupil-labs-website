@@ -9,15 +9,20 @@ featured_img_thumb: ""
 
 Happy 2018!
 
-Our first blog post of the year focus on the Pupil community. The community is continuing to grow and there are a lot of exciting projects, scripts, and plugins that have been developed on top Pupil. It is incredibly exciting to see the ecosystem develop and extend Pupil!
+Our first blog post of the year focus on the Pupil community. The community is continuing to grow and there are a lot of exciting projects, scripts, and plugins that have been developed using Pupil.
+
+It is incredibly exciting to see the ecosystem expand and new projects emerge!
 
 ### pupil-community
 
-While browsing through github, we found a lot of exciting projects, custom plugins, and custom scripts that use Pupil. We thought it would be useful for the community to have a centralized place to share plugins, projects, and scripts. Therefore, we decided to create the `pupil-community` reopsitory! 
+While browsing through github, we found a lot of exciting projects, plugins, and custom scripts that use/extend/build on top of Pupil. 
 
-In the next section we have compiled a _very_ short list of some of the custom plugins, scripts, and projects that we found (that were not already featured on our blog). There are likely many more still out there in the wild (e.g. sitting on your hard drive :).
+We thought it would be useful for the community to have a centralized place to share plugins, projects, and scripts developed by the community. Therefore, we decided to create the `pupil-community` reopsitory! 
 
-Submit your work to the [pupil-community repository](https://github.com/pupil-labs/pupil-community) by making a PR with a link and short description in the README file.
+In the next section we have compiled a _very_ short list of some of the custom plugins, scripts, and projects that we found recently and that were not already feature in this blog. There are likely many more still out there in the wild (e.g. sitting on your hard drive :), so feel free to contribute.
+
+You can submit to the [pupil-community repository](https://github.com/pupil-labs/pupil-community) by making a PR with a link and short description in the README file.
+
 <h2 class="u-padTop--1">Community Projects</h2>
 
 #### [OptiTrack and Pupil Labs Python Recorder](https://github.com/mdfeist/OptiTrack-and-Pupil-Labs-Python-Recorder)
