@@ -2,7 +2,7 @@
 title: Pupil Community
 date: Fri Jan 12 2018 14:08:00 GMT+0700 (ICT) 
 author: Pupil Dev Team 
-subtitle: "Pupil is a community driven development project. Check out what the community has been doing with Pupil..."
+subtitle: "The Pupil Community has been busy! Check out projects, scripts, and plugins developed by the community..."
 featured_img: ""
 featured_img_thumb: ""
 ---
@@ -50,13 +50,15 @@ Submit your work to the [pupil-community repository](https://github.com/pupil-la
 
 #### [Optical Dimension Spatial Thinking - ODST](https://github.com/Ruzzy77/ODST)
 
-- Gaze controlled interface using gaze data and voice recognition.
+- Gaze controlled interface using gaze data from Pupil and voice recognition.
 
-#### [Lab Matlab Control](https://github.com/TheGoldLab/Lab-Matlab-Control/tree/62d56585ef2fda3c17045dfcdc69e159eb317a38)
+#### [Lab MatLab Control](https://github.com/TheGoldLab/Lab-Matlab-Control/tree/62d56585ef2fda3c17045dfcdc69e159eb317a38)
 
-- Custom utilities for experimental control
+- Custom utilities for experimental MatLab control
 
 
 [Pupil](https://github.com/pupil-labs/pupil).  is open source and is free for you to use and explore. We encourage you to get involved. Make a suggestion, fix a bug, improve documentation, contribute code, or make a fork and do something entirely your own!
+
+Get in touch with the community via the [#pupil channel on Discord](https://pupil-labs.com/chat)
 
 We look forward to seeing what you build with Pupil!
