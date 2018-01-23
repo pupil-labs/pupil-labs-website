@@ -17,7 +17,7 @@ Here is a small list of custom tools and projects built with Pupil and still man
 
 #### [OptiTrack and Pupil Labs Python Recorder](https://github.com/mdfeist/OptiTrack-and-Pupil-Labs-Python-Recorder)
 
-- A simple python script that can record data from Pupil Labs and OptiTrack
+- A simple python script that can record data from Pupil Labs and OptiTrack.
 
 #### [Graph viz eye tracker](https://github.com/Saftophobia/graph-viz-eye-tracker)
 
@@ -25,31 +25,31 @@ Here is a small list of custom tools and projects built with Pupil and still man
 
 #### [Gaze-controlled VLC Player - gvlc](https://github.com/MPIK-COMMS/gcvlc)
 
-- Gaze-controlled VLC player used with the Pupil Labs Capture software.
+- Gaze-controlled VLC player used with the Pupil Capture.
 
 #### [Offline Gaze Mapping Tools for Pupil Labs Glasses](https://github.com/jeffmacinnes/pl_gazeMapping_offline)
 
-- Offline Gaze Mapping Tools for Pupil Labs Glasses
+- Offline Gaze Mapping tools for Pupil Labs Glasses.
 
 #### [Pupil Labs usybus Controller](https://github.com/Lahorde/pupil-labs-usybus-controller)
 
-- This plugin exports pupillabs eye tracking gaze to Ivybus
+- This plugin exports Pupil Labs eye tracking gaze to Ivybus.
 
 #### [Pupil progs](https://github.com/SGBon/pupil-progs)
 
-- Small Programs to use with the Eye Tracker by Pupil Labs
+- Small programs to use with the eye tracker by Pupil Labs.
 
 #### [Eye Tracking Research Data Analysis ](https://github.com/qalhata/Eye_Tracking_Research_Data_Analysis)
 
-- Python Scripts to analyse Pupillometrics captured using the Pupil Labs Eye tracking system
+- Python scripts to analyse Pupillometrics captured using the Pupil Labs eye tracking system.
 
 #### [Optical Dimension Spatial Thinking - ODST](https://github.com/Ruzzy77/ODST)
 
-- Computer Controlling System using Eye-Tracking and Voice Recognition
+- Computer controlling system using eye tracking and voice recognition.
 
 #### [Lab Matlab Control](https://github.com/TheGoldLab/Lab-Matlab-Control/tree/62d56585ef2fda3c17045dfcdc69e159eb317a38)
 
-- Custom utilities for experimental control for the Gold Lab
+- Custom utilities for experimental control for the Gold Lab.
 
 
 Our Open source software is free for you to use and explore. Make a suggestion, fix a bug, improve documentation, or contribute code to a project. Get involved and contribute and be part of Pupil. Submit your work to [Pupil Community](https://github.com/pupil-labs/pupil-community) repository by creating a PR to the readme.
