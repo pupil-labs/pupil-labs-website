@@ -500,8 +500,8 @@ get_product_database = ->
       cost: 1400
       title_product: 'Epson Moverio BT-300 Add-on'
       title_store: 'Epson Moverio BT-300 Binocular Mount Add-on'
-      description_store: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 120hz eye cameras."
-      description_cart: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 120hz eye cameras."
+      description_store: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 200hz eye cameras."
+      description_cart: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 200hz eye cameras."
       img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
     htcviveb:
       cost: 1400
