@@ -23,7 +23,8 @@ favicons = require "gulp-favicons"
 runSequence = require "run-sequence"
 plumber = require 'gulp-plumber'
 image_min = require 'gulp-sharp-minimal'
-uncss = require "gulp-uncss"
+postcss = require "gulp-postcss"
+cssnano = require "cssnano"
 clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
@@ -48,6 +49,7 @@ gulp.task "build", (cb)->
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
                       ['css:build','js:build', 'webp:make'],
+                      'css:unused',
                       'build_wintersmith',
                       'css:clean',
                       cb
@@ -368,45 +370,50 @@ gulp.task "newPost", ->
 # experiments
 # =================================================================                      
 
-gulp.task "css:clean", ->
-  return gulp.src('build/css/*.css')
-    .pipe(uncss(
-      html: ['build/*/*.html', 'build/index.html', "!build/blog"]
-      report: true
-      ignore: [
-                new RegExp('^.no-touch.*')
-                new RegExp('^.Header.*')
-                new RegExp('^.js-side-nav*')
-                new RegExp('^.side-nav*')
-                new RegExp('\.logotype*(.)\S+')
-                new RegExp('^.cart-.*')
-                new RegExp('^.Cart--t.*')
-                new RegExp('^.CartItem-.*')
-                new RegExp('^.Cart-r.*')
-                new RegExp('\.no-touch*(.)\S+')
-                new RegExp('\.Wallop.*(.)\S+')
-                new RegExp('^.Wallop.*')
-                new RegExp('^.Store.*')
-                new RegExp('\.Add*(.)\S+')
-                new RegExp('\.Button*(.)\S+')
-                new RegExp('\.Grid-*(.)\S+')
-                new RegExp('^.Aligner-*(.)\S+')
-                new RegExp('^.Aligner-item--stretchHeight-bottom')
-                new RegExp('^.TechSpecs-.*')
-                new RegExp('^.Feature-video.*')
-                new RegExp('^.Grid-cell.*')
-                new RegExp('^.Grid--cart.*')
-                new RegExp('^.LicenseSpecs.*')
-                new RegExp('^.Blog-nav.*')
-                new RegExp('^.loading.*')
-                new RegExp('^.parsley-.*')
-                new RegExp('^.datalist.*')
-                new RegExp('^li.active.*')
-                new RegExp('^.lazyloaded.*')
-                new RegExp('^.img-large--webp.*')
-                new RegExp('^.img-small--webp.*')
-                new RegExp('^.animated.*')
-                new RegExp('^.pulse.*')
-                new RegExp('^.plyr.*')
-               ]))
-    .pipe(gulp.dest('build/css'))
+gulp.task 'css:unused', ->
+    return gulp.src('./contents/css/*.css')
+        .pipe postcss([cssnano])
+        .pipe gulp.dest('./contents/css')
+
+# gulp.task "css:clean", ->
+#   return gulp.src('build/css/*.css')
+#     .pipe(postcss(
+#       html: ['build/*/*.html', 'build/index.html', "!build/blog"]
+#       report: true
+#       ignore: [
+#                 new RegExp('^.no-touch.*')
+#                 new RegExp('^.Header.*')
+#                 new RegExp('^.js-side-nav*')
+#                 new RegExp('^.side-nav*')
+#                 new RegExp('\.logotype*(.)\S+')
+#                 new RegExp('^.cart-.*')
+#                 new RegExp('^.Cart--t.*')
+#                 new RegExp('^.CartItem-.*')
+#                 new RegExp('^.Cart-r.*')
+#                 new RegExp('\.no-touch*(.)\S+')
+#                 new RegExp('\.Wallop.*(.)\S+')
+#                 new RegExp('^.Wallop.*')
+#                 new RegExp('^.Store.*')
+#                 new RegExp('\.Add*(.)\S+')
+#                 new RegExp('\.Button*(.)\S+')
+#                 new RegExp('\.Grid-*(.)\S+')
+#                 new RegExp('^.Aligner-*(.)\S+')
+#                 new RegExp('^.Aligner-item--stretchHeight-bottom')
+#                 new RegExp('^.TechSpecs-.*')
+#                 new RegExp('^.Feature-video.*')
+#                 new RegExp('^.Grid-cell.*')
+#                 new RegExp('^.Grid--cart.*')
+#                 new RegExp('^.LicenseSpecs.*')
+#                 new RegExp('^.Blog-nav.*')
+#                 new RegExp('^.loading.*')
+#                 new RegExp('^.parsley-.*')
+#                 new RegExp('^.datalist.*')
+#                 new RegExp('^li.active.*')
+#                 new RegExp('^.lazyloaded.*')
+#                 new RegExp('^.img-large--webp.*')
+#                 new RegExp('^.img-small--webp.*')
+#                 new RegExp('^.animated.*')
+#                 new RegExp('^.pulse.*')
+#                 new RegExp('^.plyr.*')
+#                ]))
+#     .pipe(gulp.dest('build/css'))
