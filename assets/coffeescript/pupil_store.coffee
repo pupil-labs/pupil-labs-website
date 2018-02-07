@@ -456,9 +456,10 @@ class PupilStore
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('_').shift()
+        type = fieldId.split('_').slice(0,-1)
         try
-          sField = if type is 'address' then type+"_s0" else type+"_s"
+          type.push("s")
+          sField = type.join("_")
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
@@ -543,12 +544,10 @@ class PupilStore
 
           xhr = new XMLHttpRequest()
 
-          xhr.addEventListener "readystatechange", =>
-            console.log @readyState
+          xhr.addEventListener "readystatechange", ->
 
             if @readyState is 4
               if @status is 200
-                console.log "status: #{@status}, responseText: #{@responseText}"
                 window.location.replace "#{window.location.origin}/order_success"
               else
                 console.warn "Request Error: #{@statusText}"
@@ -558,24 +557,6 @@ class PupilStore
           xhr.setRequestHeader "cache-control", "no-cache"
 
           xhr.send formData_formatted_JSON
-          # $.ajax
-          #   type: 'POST'
-          #   crossDomain: true
-          #   url: url
-          #   dataType: "json"
-          #   data: formData
-          #   error: (jqXHR, textStatus, errorThrown) ->
-          #     # console.warn "AJAX Error: #{textStatus}"
-          #     if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
-          #         # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
-          #         # We continue anyways to the success page.
-          #         console.log "Successful AJAX call with Safari."
-          #         $(location).attr('href',location.origin + "/order_success")
-          #   success: (data, textStatus, jqXHR) ->
-          #     console.log "Successful AJAX call: #{textStatus}"
-          #     $(location).attr('href',location.origin + "/order_success")
-          #   complete: (jqXHR,textStatus) ->
-          #     $('label[for="form-submit"]').removeClass("loading")    
 
 
   countryValidator: ->
