@@ -4,7 +4,7 @@ date: Fri Jan 12 2018 14:08:00 GMT+0700 (ICT)
 author: Pupil Dev Team 
 subtitle: "The Pupil Community has been busy! Check out projects, scripts, and plugins developed by the community..."
 featured_img: ""
-featured_img_thumb: ""
+featured_img_thumb: "../../../../media/images/blog/thumb/community.jpg"
 ---
 
 **Happy 2018!**
