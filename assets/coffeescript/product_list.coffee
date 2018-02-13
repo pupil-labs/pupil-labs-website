@@ -496,7 +496,7 @@ get_product_database = ->
       description_store: "Binocular camera mounts for Epson Moverio BT-300 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
-    epsonbt300_e200b:
+    epsonbt300_wnone_e200b:
       cost: 1400
       title_product: 'Epson Moverio BT-300 Add-on'
       title_store: 'Epson Moverio BT-300 Binocular Mount Add-on'
