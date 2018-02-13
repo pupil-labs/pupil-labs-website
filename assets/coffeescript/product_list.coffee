@@ -149,10 +149,10 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['hololens_w120_e200b','htcviveb','oculusdk2b','epsonbt300b_e120b']
+  return ['hololens_w120_e200b','htcvive_e120b','oculusdk2_e120b','epsonbt300_e200b']
 
 get_additional_product_ids = ->
-  return ['e200upgrade','usbcupgrade','pm_motoz2','support6','support12']
+  return ['camera_e200','hub_usbc','pm_motoz2','support_6','support_12']
 
 
 get_product_database = ->
@@ -468,14 +468,14 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e200b.jpg'].join('/')  
 
-    oculusdk2m:
+    oculusdk2_e120:
       cost: 800
       title_product: 'Oculus Rift DK2 Add-on'
       title_store: 'Oculus Rift DK2 Monocular Add-on Cup'
       description_store: "Add eye tracking to your Oculus Rift DK2 with our 120hz monocular eye tracking add-on. Includes one custom lens cup with: IR mirror, IR LEDs, 1 x 120 Hz eye camera, and USB cables."
       description_cart: "Monocular Oculus Rift DK2 add-on cup with 1 x 120hz eye camera."
       img: [vr_ar_img_path,'oculusdk2m.jpg'].join('/')
-    oculusdk2b:
+    oculusdk2_e120b:
       cost: 1400
       title_product: 'Oculus Rift DK2 Add-on'
       title_store: 'Oculus Rift DK2 Binocular Add-on Cup'
@@ -496,14 +496,14 @@ get_product_database = ->
       description_store: "Binocular camera mounts for Epson Moverio BT-300 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
-    epsonbt300b_e120b:
+    epsonbt300_e200b:
       cost: 1400
       title_product: 'Epson Moverio BT-300 Add-on'
       title_store: 'Epson Moverio BT-300 Binocular Mount Add-on'
       description_store: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 200hz eye cameras."
       description_cart: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 200hz eye cameras."
       img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
-    htcviveb:
+    htcvive_e120b:
       cost: 1400
       title_product: 'HTC Vive Binocular Add-on'
       title_store: 'HTC Vive Binocular Add-on'
@@ -538,21 +538,21 @@ get_product_database = ->
       description_store: "Add binocular eye tracking to your Microsoft HoloLens AR headset. Includes binocular 200hz eye tracking cameras, clip on attachment mounts, and USB connector clip."
       description_cart: "200hz binocular eye tracking add-on for your Microsoft HoloLens AR headset."
       img: [vr_ar_img_path,'addon_hololens_e200.jpg'].join('/')   
-    usbcupgrade:
+    hub_usbc:
       cost: 210
       title_product: 'USB-C Clip Update'
       title_store: 'USB-C Clip Update'
       description_store: 'Update older micro USB Pupil headsets with the new USB-C clip. Comes with USB-C to USB-A cable.'
       description_cart: 'USB-C clip upgrade older micro USB Pupil headsets. Comes with USB-C to USB-A cable.'
       img: [additional_product_path,'usbcupgrade.jpg'].join('/')         
-    e120upgrade:
+    camera_e120:
       cost: 450
       title_product: '120hz Eye Camera'
       title_store: "120hz Eye Camera"
       description_store: "Update any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
       img: [additional_product_path,'e120upgrade.jpg'].join('/')   
-    e200upgrade:
+    camera_e200:
       cost: 650
       title_product: '200hz Eye Camera'
       title_store: "200hz Eye Camera"
@@ -580,14 +580,14 @@ get_product_database = ->
       description_store: "Connect your Pupil headset to the Moto Z2 play. Record up to 4 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera are not compatible with Pupil Mobile)."
       description_cart: "Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. Connects to Pupil headset via USBC cable (included)."
       img: [additional_product_path,'pm_nexus5x.jpg'].join('/')   
-    support6:
+    support_6:
       cost: 1000
       title_product: 'Support Contract'
       title_store: '6 Month Support Contract'
       description_store: '6 month support contract. 3 one hour video support sessions and email support.'
       description_cart: '6 month support contract. 3 one hour video support sessions and email support.'
       img: [additional_product_path,'support6.svg'].join('/')   
-    support12:
+    support_12:
       cost: 2000
       title_product: 'Support Contract'
       title_store: '12 Month Support Contract'
@@ -619,6 +619,16 @@ updateLegacyProductIds_ = (ids) ->
     product_usb_c: 'usbcupgrade'
     product_htc_vive_bi: 'htcviveb'
     w3dupgrade: 'w3dupgrade'
+    htcviveb: 'htcvive_e120b'
+    oculusdk2b: 'oculusdks_e120b'
+    oculusdk2m: 'oculusdk2_e120'
+    epsonbt300b_e120b: 'epsonbt300_wnone_e200b'
+    support6: 'support_6'
+    support12: 'support_12'
+    e120upgrade: 'camera_e120'
+    e200upgrade: 'camera_e200'
+    usbcupgrade: 'hub_usbc'
+
   res = []
   i = 0
   while i < ids.length
