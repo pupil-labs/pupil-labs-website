@@ -456,9 +456,10 @@ class PupilStore
         field = $(event.target)
         fieldId = $(field).attr('id')
         bFieldVal = $(field).val()
-        type = fieldId.split('_').shift()
+        type = fieldId.split('_').slice(0,-1)
         try
-          sField = if type is 'address' then type+"_s0" else type+"_s"
+          type.push("s")
+          sField = type.join("_")
           $("[id=#{ sField }]").val(bFieldVal)
         catch e
 
@@ -530,29 +531,32 @@ class PupilStore
           for k,v of LocalStorage.dict()
             products.push v
           $("textarea[id='cartObject']").val(JSON.stringify(products))
-          formData = $(form).serialize()
+          formData_json = JSON.stringify(form.serializeArray())
 
-          prd_url = "https://script.google.com/macros/s/AKfycbx8LH0V-1gd_JSCbQItjtGlTQCNhNpWwFVd7IkW0E_uzmQj1pWP/exec"
-          url = prd_url
+          formData_formatted = {}
+          for d in form.serializeArray()
+            k = d.name
+            v = d.value
+            formData_formatted[k] = v
 
-          $.ajax
-            type: 'POST'
-            crossDomain: true
-            url: url
-            dataType: "json"
-            data: formData
-            error: (jqXHR, textStatus, errorThrown) ->
-              # console.warn "AJAX Error: #{textStatus}"
-              if navigator.userAgent.search "Safari"  >= 0 and navigator.userAgent.search "Chrome" < 0
-                  # Known Safari Error see: https://code.google.com/p/google-apps-script-issues/issues/detail?id=3226
-                  # We continue anyways to the success page.
-                  console.log "Successful AJAX call with Safari."
-                  $(location).attr('href',location.origin + "/order_success")
-            success: (data, textStatus, jqXHR) ->
-              console.log "Successful AJAX call: #{textStatus}"
-              $(location).attr('href',location.origin + "/order_success")
-            complete: (jqXHR,textStatus) ->
-              $('label[for="form-submit"]').removeClass("loading")    
+          formData_formatted_JSON = JSON.stringify(formData_formatted)
+          url = "https://p-u-p-i-l.com/order/form_handler"
+
+          xhr = new XMLHttpRequest()
+
+          xhr.addEventListener "readystatechange", ->
+
+            if @readyState is 4
+              if @status is 200
+                window.location.replace "#{window.location.origin}/order_success"
+              else
+                console.warn "Request Error: #{@statusText}"
+
+          xhr.open "POST", url
+          xhr.setRequestHeader "content-type", "application/json"
+          xhr.setRequestHeader "cache-control", "no-cache"
+
+          xhr.send formData_formatted_JSON
 
 
   countryValidator: ->

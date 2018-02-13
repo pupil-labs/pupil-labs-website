@@ -23,7 +23,6 @@ favicons = require "gulp-favicons"
 runSequence = require "run-sequence"
 plumber = require 'gulp-plumber'
 image_min = require 'gulp-sharp-minimal'
-uncss = require "gulp-uncss"
 clean = require "gulp-clean"
 rev = require 'gulp-rev'
 rev_replace = require 'gulp-rev-replace'
@@ -42,14 +41,12 @@ gulp.task "build", (cb)->
                       ['css:rev','js:rev'],
                       'ref:all',
                       'rev:clean',
-                      'css:clean',
                        cb
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
                       ['css:build','js:build', 'webp:make'],
                       'build_wintersmith',
-                      'css:clean',
                       cb
 
 

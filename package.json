@@ -37,7 +37,6 @@
     "gulp-size": "^2.1.0",
     "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-uncss": "^1.0.6",
     "gulp-util": "^3.0.7",
     "gulp-webp": "^2.3.0",
     "image-size": "^0.5.4",
