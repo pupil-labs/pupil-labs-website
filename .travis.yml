@@ -1,6 +1,6 @@
 branches:
   only:
-    - dev
+    - master
 language: node_js
 node_js:
   - '6'
@@ -20,7 +20,7 @@ before_install:
 script:
   - gulp webp:make
   - echo 'Building Site'
-  - gulp build --staging
+  - gulp build --production
   - gulp image_min
   - gulp generate_sitemap
   - echo 'Done building'
