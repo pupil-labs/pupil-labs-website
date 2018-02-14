@@ -12,4 +12,4 @@ We send about one newsletter per quarter. We will never share your email address
 
 
 
-You can check out some recent updates on our [blog](/blog), get in touch with our community on the [Pupil google group](https://groups.google.com/forum/#!forum/pupil-discuss), or follow us via [twitter](https://twitter.com/pupil_labs). 
+You can check out some recent updates on our [blog](/blog) or follow us via [twitter](https://twitter.com/pupil_labs). 

@@ -74,7 +74,7 @@ class PupilStore
       for vr_ar_id in get_vr_ar_product_ids()
         product = db[vr_ar_id]
 
-        html = "<div class='Aligner-item'>
+        html = "<div class='Aligner-item' id='#{vr_ar_id}'>
                   <div class='Aligner-item--column'>
                     <div class='Feature-image--wrapper'>
                       <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
@@ -94,7 +94,7 @@ class PupilStore
       # create additional products
       for p_id in get_additional_product_ids()
         product = db[p_id]
-        html = "<div class='Aligner-item'>
+        html = "<div class='Aligner-item' id='#{p_id}'>
           <div class='Aligner-item--column'>
             <div class='Feature-image--wrapper'>
               <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
