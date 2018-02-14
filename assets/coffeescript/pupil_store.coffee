@@ -74,19 +74,21 @@ class PupilStore
       for vr_ar_id in get_vr_ar_product_ids()
         product = db[vr_ar_id]
 
-        html = "<div class='Aligner-item'>
-                  <div class='Aligner-item--column'>
-                    <div class='Feature-image--wrapper'>
-                      <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
-                    </div>
-                    <div class='Aligner-item--stretchHeight'>
-                      <p><strong> #{ product.title_store } </strong></p>
-                      <p> #{ product.description_store } </p>
-                    </div>
+        html = "<div class='Aligner-item' id='#{ vr_ar_id }'>
+                  <a href=##{ vr_ar_id }>
+                    <div class='Aligner-item--column'>
+                      <div class='Feature-image--wrapper'>
+                        <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
+                      </div>
+                      <div class='Aligner-item--stretchHeight'>
+                        <p><strong> #{ product.title_store } </strong></p>
+                        <p> #{ product.description_store } </p>
+                      </div>
 
-                    <button id='#{ vr_ar_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
-                
-                  </div>
+                      <button id='#{ vr_ar_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
+                  
+                    </div>
+                  </a>
                 </div>"
         $("div[class~='VR-AR-products']").append(html)
 
@@ -94,19 +96,21 @@ class PupilStore
       # create additional products
       for p_id in get_additional_product_ids()
         product = db[p_id]
-        html = "<div class='Aligner-item'>
-          <div class='Aligner-item--column'>
-            <div class='Feature-image--wrapper'>
-              <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
-            </div>
-            <div class='Aligner-item--stretchHeight-bottom'>
-              <p><strong> #{ product.title_store } </strong></p>
-              <p> #{ product.description_store } </p>
-            </div>
+        html = "<div class='Aligner-item' id='#{ p_id }'>
+          <a href=##{ p_id }>
+            <div class='Aligner-item--column'>
+              <div class='Feature-image--wrapper'>
+                <img class='Feature-image' src='#{ product.img }' title='#{ product.title_product }'>
+              </div>
+              <div class='Aligner-item--stretchHeight-bottom'>
+                <p><strong> #{ product.title_store } </strong></p>
+                <p> #{ product.description_store } </p>
+              </div>
 
-            <button id='#{ p_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
-        
-          </div>
+              <button id='#{ p_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
+          
+            </div>
+          </a>
         </div>"
 
         $("div[class~='Additional-products']").append(html)
