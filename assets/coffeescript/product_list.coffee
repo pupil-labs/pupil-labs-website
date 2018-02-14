@@ -149,7 +149,7 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['hololens_w120_e200b','htcvive_e120b','oculusdk2_e120b','epsonbt300_wnone_e200b']
+  return ['hololens_w120_e200b','htcvive_e120b','oculusdk2_e120b','epsonbt300_w120_e200b']
 
 get_additional_product_ids = ->
   return ['camera_e200','hub_usbc','pm_motoz2','support_6','support_12']
@@ -496,12 +496,12 @@ get_product_database = ->
       description_store: "Binocular camera mounts for Epson Moverio BT-300 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       description_cart: "Binocular camera mounts for Epson Moverio BT-200 with USBC clip. Use with the 120hz eye camera upgrades or existing 120hz eye cameras from a Pupil headset."
       img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
-    epsonbt300_wnone_e200b:
+    epsonbt300_w120_e200b:
       cost: 1400
       title_product: 'Epson Moverio BT-300 Add-on'
       title_store: 'Epson Moverio BT-300 Binocular Mount Add-on'
-      description_store: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 200hz eye cameras."
-      description_cart: "Binocular camera mounts for Epson Moverio BT-300. Ships with USBC clip and 2 x 200hz eye cameras."
+      description_store: "Binocular camera mounts for Epson Moverio BT-300 and world camera mount. Ships with USBC clip, 2 x 200hz eye cameras, and 1 x high speed world camera."
+      description_cart: "Binocular camera mounts for Epson Moverio BT-300 and world camera mount. Ships with USBC clip, 2 x 200hz eye cameras, and 1 x high speed world camera."
       img: [vr_ar_img_path,'addon_epson_bt300b.jpg'].join('/')         
     htcvive_e120b:
       cost: 1400
