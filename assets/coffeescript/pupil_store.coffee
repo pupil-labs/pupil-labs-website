@@ -561,7 +561,7 @@ class PupilStore
 
   countryValidator: ->
     if $(@cartPage).length > 0
-      window.ParsleyValidator.addValidator('countryvalidator', ((value, requirement) ->
+      window.Parsley.addValidator('countryvalidator', ((value, requirement) ->
         validity = value of countryList
         if validity
           requirementIds = requirement.split("-")
@@ -598,7 +598,7 @@ class PupilStore
 
   divisionValidator: ->
     if $(@cartPage).length > 0
-      window.ParsleyValidator.addValidator('divisionvalidator', ((value, requirement) ->
+      window.Parsley.addValidator('divisionvalidator', ((value, requirement) ->
         validity = value in USCADivisions[requirement]
         return validity
       )).addMessage 'en', 'divisionvalidator', 'Must be a valid division abbreviation.'
@@ -606,7 +606,7 @@ class PupilStore
 
   postalCodeValidator: ->
     if $(@cartPage).length > 0
-      window.ParsleyValidator.addValidator('postalcodevalidator', ((value, requirement) ->
+      window.Parsley.addValidator('postalcodevalidator', ((value, requirement) ->
         requirements = requirement.toString().split(',')
         tests = []
         # ideally this should be a function (but can not call/return from fn within this fn)
