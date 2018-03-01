@@ -578,6 +578,12 @@ class PupilStore
             .prop("required", true)
             .attr("data-parsley-maxlength","2")
             .attr("data-parsley-divisionvalidator","#{country.countryISO}")
+          else
+            $("input[id=#{stateId}]")
+              .prop("placeholder", "state/province/division")
+              .prop("required", true)
+              .prop("data-parsley-maxlength", "35")
+
 
           # check if country uses a postalCode and update for pattern
           if country.usesPostalCode
