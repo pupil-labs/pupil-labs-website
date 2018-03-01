@@ -578,6 +578,12 @@ class PupilStore
             .prop("required", true)
             .attr("data-parsley-maxlength","2")
             .attr("data-parsley-divisionvalidator","#{country.countryISO}")
+          else
+            $("input[id=#{stateId}]")
+              .prop("placeholder", "state/province/division")
+              .prop("required", true)
+              .attr("data-parsley-maxlength", "35")
+              .attr("data-parsley-divisionvalidator","0")
 
           # check if country uses a postalCode and update for pattern
           if country.usesPostalCode
@@ -599,7 +605,10 @@ class PupilStore
   divisionValidator: ->
     if $(@cartPage).length > 0
       window.Parsley.addValidator('divisionvalidator', ((value, requirement) ->
-        validity = value in USCADivisions[requirement]
+        if not requirement
+          validity = true
+        else
+          validity = value in USCADivisions[requirement]
         return validity
       )).addMessage 'en', 'divisionvalidator', 'Must be a valid division abbreviation.'
 
