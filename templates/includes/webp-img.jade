@@ -62,7 +62,11 @@ mixin webp-img(src, title, alt, picture_style, img_style)
   picture(style=ratio).ratio-box.lazy-img
     for i in filtered_sources 
       - suffix = i[0]
+      - if (suffix === "jpg") {
+        source(srcset="#{path_nosuffix}.#{suffix}" type="image/jpeg")
+      - } else {
         source(srcset="#{path_nosuffix}.#{suffix}" type="image/#{suffix}")
+      - }
     
     //- add src path and use suffix for images that exists
     img(src="#{path_nosuffix}.#{preferred_src_suffix}" style=img_style).img-small--webp.lazyload
