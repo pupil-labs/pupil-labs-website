@@ -152,7 +152,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e200b','htcvive_e120b','oculusdk2_e120b','epsonbt300_w120_e200b']
 
 get_additional_product_ids = ->
-  return ['camera_e200','hub_usbc','pm_motoz2','support_6','support_12']
+  return ['camera_e200','pm_motoz2','support_6','support_12']
 
 
 get_product_database = ->
