@@ -78,7 +78,22 @@
     "img":"https://placehold.it/400x400"    
   },
   { 
-    "name":"André Nicolai",
+    "name":"Samuel Robinson",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Sara Santos",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Asta Stankeviciene",
+    "role":"Office Manager",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Chayapol Piyaphakdeesakun",
     "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   }
