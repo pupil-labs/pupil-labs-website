@@ -43,11 +43,6 @@
     "img":"https://placehold.it/400x400"    
   },  
   { 
-    "name":"Ines Findewirth",
-    "role":"Office Manager",
-    "img":"https://placehold.it/400x400"    
-  },
-  { 
     "name":"Dr. Kai Dierkes",
     "role":"Research & Development Engineer",
     "img":"https://placehold.it/400x400"    
@@ -78,8 +73,18 @@
     "img":"https://placehold.it/400x400"    
   },
   { 
-    "name":"André Nicolai",
-    "role":"Software Engineer",
+    "name":"Samuel Robinson",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Sara Santos",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Asta Stankeviciene",
+    "role":"Office Manager",
     "img":"https://placehold.it/400x400"    
   }
 ]
