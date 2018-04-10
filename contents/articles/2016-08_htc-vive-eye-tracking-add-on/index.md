@@ -31,7 +31,7 @@ The cameras can be connected to the Vive's built in USB port, or directly to you
 
 The add-on is fully compatible with Pupil Capture and Pupil Service software. As always, you will have raw access to the video streams if you prefer to build your own pipeline. 
 
-We start taking orders today. We will ship in the first week of September. Check it out in the [store](/store#products)
+We start taking orders today. We will ship in the first week of September. Check it out in the [store](/store/#vr-ar)
 
 Coming soon...
 Eye Tracking for Oculus Rift CV1.
