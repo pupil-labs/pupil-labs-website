@@ -8,7 +8,7 @@ featured_img_thumb: "../../../../media/images/blog/thumb/pupil_matlab.jpg"
 ---
 
 <div class="Feature-image-wrapper" style="text-align:center;">
-	<img src="../../../../media/images/blog/pupil_matlab.jpg" class='Feature-image u-padBottom--1' alt="Pupil Matlab Helpers"/>
+	<img src="../../../../media/images/blog/pupil_matlab_feature.jpg" class='Feature-image u-padBottom--1' alt="Pupil Matlab Helpers"/>
 </div>
 <div class="small u-padBottom--2">Tested on MATLAB R2017a</div>
 
