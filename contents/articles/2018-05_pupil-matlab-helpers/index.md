@@ -2,7 +2,7 @@
 title: Pupil Matlab Helpers 
 date: Thu May 03 2018 15:37:31 GMT+0700 (+07) 
 author: Pupil Dev Team 
-subtitle: "Pupil Matlab Helper scripts"
+subtitle: "Connect Pupil to MatLab with new helper scripts..."
 featured_img: "../../../../media/images/blog/pupil_matlab.jpg"
 featured_img_thumb: "../../../../media/images/blog/thumb/pupil_matlab.jpg"
 ---
