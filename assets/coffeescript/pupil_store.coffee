@@ -536,7 +536,10 @@ class PupilStore
           formData_formatted = {}
           for d in form.serializeArray()
             k = d.name
-            v = d.value
+            if k == 'email_c'
+              v = d.value.toLowerCase()
+            else
+              v = d.value
             formData_formatted[k] = v
 
           formData_formatted_JSON = JSON.stringify(formData_formatted)
