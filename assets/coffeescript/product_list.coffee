@@ -149,7 +149,7 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['hololens_w120_e200b','htcvivepro_e120b', 'htcvive_e120b','oculusdk2_e120b','epsonbt300_w120_e200b']
+  return ['hololens_w120_e200b', 'htcvive_e120b','epsonbt300_w120_e200b']
 
 get_additional_product_ids = ->
   return ['camera_e200','pm_motoz2','support_6','support_12']
