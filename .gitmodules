@@ -1,3 +1,3 @@
 [submodule "contents/media"]
 	path = contents/media
-	url = https://github.com/pupil-labs/web-media.git
+	url = git@github.com:pupil-labs/web-media.git
