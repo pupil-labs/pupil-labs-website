@@ -22,7 +22,6 @@ block page_scripts
       });
     }
 
-
 block main
   div(id="Cart")
     //- Title block
@@ -39,41 +38,23 @@ block main
     //-            3/5                 1/5          1/5         1/5
 
     div.Cart-container
-      div.Cart-table-container
-        div.Site-content-container
-          div(class="Grid" id="Cart-table")
-            //- div.Grid-cell--2of3.u-textCenter 
-            //-   h3.Grid-cell--header Item
-            //- div.Grid-cell--1of18.u-textCenter 
-            //-   h3.Grid-cell--header Unit Cost
-            //- div.Grid-cell--1of22.u-textCenter
-            //-   h3.Grid-cell--header 
-            //- div.Grid-cell--1of18.u-textCenter
-            //-   h3.Grid-cell--header Quantity
-            //- div.Grid-cell--1of22.u-textCenter
-            //-   h3.Grid-cell--header 
-            //- div.Grid-cell--1of18.u-textCenter
-            //-   h3.Grid-cell--header Sum Cost
-            //- div.Grid-cell--1of18.u-textCenter 
-            //-   h3.Grid-cell--header #[a(href="#" id="Cart-clearCart") Remove]
-            //- jquery will fill this in
-          div(id="CartSum" class="Grid")
-            div(class="Grid-cell--2of3" id="CartSum-label--container")
-              h3(id=id="CartSum--label")
-            div(class="Grid-cell--1of3 u-textCenter")
-              h3(id="CartSum--total")
-            //- div(class="Grid-cell--1of18 u-textCenter")
-        div.Site-content-container
-          div.Cart-checkout
-            div(class="Grid" id="Cart-checkout--buttons")
-              div.Grid-cell.Grid-cell--1of2
-                input(id="order" class="Form-input--radio Form-checkout" type="radio")
-                label(for="order" id="OrderType-order" class="Button-radio--lg Form-input--radioLabel--lg") Place Order
-                //- a(href="#" id="CheckOut" class="Button Button-checkout") Place Order
-              div.Grid-cell.Grid-cell--1of2
-                input(id="quote" class="Form-input--radio Form-checkout" type="radio")
-                label(for="quote" class="Button-radio--lg Form-input--radioLabel--lg" id="OrderType-quote") Get Quote
-                //- a(href="#" id="CheckOut" class="Button Button-checkout") Request Quote
-            include includes/order-form   
+      div.Cart-table-container(style="padding-bottom:unset;")
+        div.Cart-table.Grid(style="min-height:calc(100vh - (64px + 16px));")
 
+            div.cart.order(
+              ref="CartFixedContainer"
+            )
+              h3(style="border-bottom:1px solid #808080;") Your Order
+              div.Grid.Grid--justifySpaceBetween
+                div(id="Cart-table" style="margin-top:10px;")
+                div.Grid.Grid--justifySpaceBetween(id="CartSum" style="width:100%;")
+                  div(id="CartSum-label--container")
+                    h3(id="CartSum--label" style="padding-bottom:0.5em;")
+                  div.u-textCenter
+                    h3(id="CartSum--total")
 
+            div.cart.form(
+              ref="cartCheckout"
+            )
+              div.Cart-checkout
+                include includes/order-form
