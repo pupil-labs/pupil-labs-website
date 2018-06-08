@@ -12,7 +12,7 @@ $removeSize = .65em
 #Cart-table
   width 100%
   
-  padding-top 2em
+  // padding-top 2em
 
 .Cart-row
   // nothing here - placeholder for JQuery
@@ -20,10 +20,37 @@ $removeSize = .65em
 .Cart-container
   // nothing here - placeholder for Jquery
 
+.cart
+
+  &.order
+    padding-right 30px
+    width 60%
+
+  &.form
+    background-color rgb(91, 139, 238)
+    width 40%
+
+
+  @media $break-767
+    &.order
+      padding-right unset
+      width unset
+
+    &.form
+      background-color unset
+      width unset
+
 .Cart-rowContainer
+  margin-top .8em
   margin-bottom .8em
   border-bottom 1px solid gray
-  
+  padding-bottom 0.8em
+
+  .Feature-figure--config
+      width 60%
+      height auto
+      margin auto
+
 .Cart-items--3of5
   width (3/5)*100%
   text-align left
@@ -44,7 +71,8 @@ $removeSize = .65em
   
 
 #CartSum--total
-  color $link-hover-color
+  // color $link-hover-color
+  color #666
 
 #CartSum--total
 #CartSum--label
@@ -80,7 +108,7 @@ tr.Cart-orderItem td
 .Cart-removeItem
   user-select none
   font-size $removeSize
-  font-variant small-caps
+  // font-variant small-caps
   // transition color .3s ease-in-out, font-size .35s ease-in-out
   transition color .3s ease-in-out, transform .35s ease-in-out
 
@@ -211,4 +239,3 @@ tr.Cart-orderItem td
   vertical-align center
   animation loading steps(12,end) 1500ms infinite
   content "."
-

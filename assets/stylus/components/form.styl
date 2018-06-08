@@ -7,12 +7,12 @@
 .Form-input--text
   padding .75em 0
   background transparent
-  box-shadow rgba(0, 0, 0, 0.2) 0 -1px 0 0 inset
+  box-shadow rgb(255,255,255) 0 -1px 0 0 inset
   border none
   border-radius 0
   display flex
   outline none
-  color #333
+  color #fff
   height 3em 
   
 .Form-error--text
@@ -24,13 +24,21 @@
 .Form-input--textarea
   vertical-align top
   resize vertical !important
-  
+
+textarea::placeholder
+    color white
+
 .Form-fieldset
   // 
-    
+
 .Form-input--radio
   display none
-  visibilty hidden
+  visibility hidden
+
+.Form-input--round-lg
+  border-radius 3px
+  height 70px !important
+  margin-bottom 1em
   
 .Form-input--radioLabel
   font-size .75em 
@@ -38,6 +46,7 @@
   display flex
   height 3em
   align-self flex-start
+  color #222
   
 .Form-input--radioLabel-lg
   display flex
@@ -81,4 +90,65 @@
   width 1px
   height 1px
   overflow hidden
-  
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
+  -webkit-box-shadow 0 0 0 30px rgb(91, 139, 238) inset
+  -webkit-text-fill-color #fff
+  border-bottom 1px solid white
+
+input::placeholder
+  color white
+
+.Form-container
+    display block
+    position relative
+    padding-left 35px
+    margin-bottom 12px
+    cursor pointer
+    font-size 14px
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+/* Hide the browser's default checkbox */
+.Form-container input
+    position absolute
+    opacity 0
+    cursor pointer
+/* Create a custom checkbox */
+.checkmark
+    position absolute
+    top 0
+    left 0
+    height 22px
+    width 22px
+    background-color #eee
+    border-radius 5px
+    box-shadow 2px 4px 20px 1px rgba(0, 0, 0, 0.25)
+    transition .3s cubic-bezier(.4,0,.6,1)
+/* When the checkbox is checked, add a blue background */
+.Form-container .checkmark--active
+    // background-color #2196F3
+    background-color #75F0B4
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark--active:after
+    content ""
+    position absolute
+    display none
+
+/* Show the checkmark when checked */
+.Form-container
+  .checkmark:after
+    display block
+/* Style the checkmark/indicator */
+.Form-container
+  .checkmark:after
+    left 7px
+    top 2px
+    width 8px
+    height 15px
+    border solid #666
+    border-width 0 2px 2px 0
+    -webkit-transform rotate(45deg)
+    -ms-transform rotate(45deg)
+    transform rotate(45deg)
