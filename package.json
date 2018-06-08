@@ -17,7 +17,7 @@
     "babel-plugin-transform-es2015-classes": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
     "browser-sync": "^2.18.5",
-    "coffee-script": "^2.2.1",
+    "coffee-script": "^1.12.2",
     "globby": "^6.1.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
