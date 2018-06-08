@@ -42,7 +42,8 @@ button(display=flex, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,bo
     
 .Button-radio--sm
     cursor pointer
-    button(flex,rgba(255,255,255,.8),.5em,400,.5em .1em,0px,0px)
+    button(flex,rgba(255, 255, 255, 0.25),.5em,400,.5em .1em,0px,0px)
+    // button(flex,rgba(255,255,255,.8),.5em,400,.5em .1em,0px,0px)
 
 .Button-radio--lg
     cursor pointer
@@ -54,7 +55,10 @@ button(display=flex, bkg=transparent,fontSize=1em,fontWeight=700,pad=1em .1em,bo
     border-spacing 0px
 
 .Button--state-active
-    background $link-hover-color
+    // background $link-hover-color
+    background white
+    color #666 !important
+    box-shadow 2px 4px 20px 1px rgba(0, 0, 0, 0.25)
 
 action_button()
     width 100%
@@ -82,8 +86,11 @@ action_button()
 
 .Button-submit 
     action_button()
+    color #666
+    background #fff
     margin-top .75em
-    width 100%  
+    width 100%
+    box-shadow 2px 4px 20px 1px rgba(0, 0, 0, 0.25)
     
 
 .Button-submit-newsletter
