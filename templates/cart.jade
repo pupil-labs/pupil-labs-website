@@ -26,8 +26,8 @@ block main
   div(id="Cart")
     //- Title block
     //- - var page_data = contents.cart['index.json']
-   
-    div(id="Cart-empty" style="display:none;").Background-img-top.Background-img-cover  
+
+    div(id="Cart-empty" style="display:none;").Background-img-top.Background-img-cover
       div(style="top:40%").Site-content-container.Background-img-caption-container.u-textCenter
         h1 Your cart is empty...
         h3 Go to the #[a(href="/store" title="Store") store] to add items.
@@ -39,11 +39,8 @@ block main
 
     div.Cart-container
       div.Cart-table-container(style="padding-bottom:unset;")
-        div.Cart-table.Grid(style="min-height:calc(100vh - (64px + 16px));")
-
-            div.cart.order(
-              ref="CartFixedContainer"
-            )
+        div.Cart-table.Grid
+            div.cart.order(ref="CartFixedContainer")
               h3(style="border-bottom:1px solid #808080;") Your Order
               div.Grid.Grid--justifySpaceBetween
                 div(id="Cart-table" style="margin-top:10px;")
