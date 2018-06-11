@@ -262,7 +262,7 @@ class PupilStore
           specTxtHtml = "<div class='Grid-cell Grid-cell--padright2'>
                           <div class='Grid Grid--justifySpaceBetween'>
                             <h4 style='font-weight:700;'>#{ db[v.product]['title_product'] }</h4>
-                            <btn class='Cart-removeItem Grid-cell u-textRight' style='align-self:start;'>
+                            <btn class='Cart-removeItem'>
                               <i class='material-icons'>close</i>
                             </btn>
                           </div>
