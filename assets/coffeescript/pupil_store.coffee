@@ -259,39 +259,28 @@ class PupilStore
                           </div>
                         </div>"
 
-          specTxtHtml = "<div class='Grid-cell--1of2 Grid-cell--padright2'>
+          specTxtHtml = "<div class='Grid-cell Grid-cell--padright2'>
                           <div class='Grid Grid--justifySpaceBetween'>
                             <h4 style='font-weight:700;'>#{ db[v.product]['title_product'] }</h4>
-
+                            <btn class='Cart-removeItem Grid-cell u-textRight' style='align-self:start;'>
+                              <i class='material-icons'>close</i>
+                            </btn>
                           </div>
-                          #{ cart_spec_html }
-                          <p style='font-size:12px;padding-top:0.4em;padding-bottom:unset;'>unit cost: € #{ Number(db[v.product]['cost']) }</p>
-                        </div>"
-
-          costFormulaHtml = "<div class='Grid-cell Grid-cell--cartFormula'>
-                                <div class='Grid Grid--cartFormula-break'>
-
-                                  <div class='Grid-cell'>
-                                    <div class='Grid Grid--center'>
-                                      <div class='Grid-cell'>
-                                        <div class='Grid Grid-column'>
-                                          <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
-                                          <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-
+                          <div class='Grid Grid--justifySpaceBetween'>
+                            <div>
+                              #{ cart_spec_html }
+                              <p style='font-size:12px;padding-top:0.4em;padding-bottom:unset;'>unit cost: € #{ Number(db[v.product]['cost']) }</p>
                             </div>
-                          </div>"
-
-          costSumHtml = "<div class='Grid-cell Grid-cell--cartSum'>
-                          <div class='Grid Grid--center'>
-
-                            <div class='Grid-cell u-textCenter'>
-                              <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ Number(db[v.product]['cost'] * v.qty) }</p>
+                            <div class='Grid Grid-cell Grid--justifyFlexEnd Grid--center'>
+                              <div class='Grid Grid-column Grid--center Cart-container--increment'>
+                                <div class='material-icons Cart-itemQuant--increment Cart-item-plus'>keyboard_arrow_up</div>
+                                <div class='Cart-itemQuant Cart-costCalc Cart--quantity Grid Grid--justifyCenter Grid--center'>
+                                  #{ v.qty }
+                                </div>
+                                <div class='material-icons Cart-itemQuant--increment Cart-item-minus'>keyboard_arrow_down</div>
+                              </div>
+                              <p class='Cart-costCalc--subTotal u-padLeft--2' style='padding-bottom:unset;width:100px;' id='subTotal'>€ #{ Number(db[v.product]['cost'] * v.qty) }</p>
                             </div>
-
                           </div>
                         </div>"
 
@@ -299,16 +288,7 @@ class PupilStore
                       <div class='Grid Grid--center Cart-row' id='#{ k }'>" +
                         productImg +
                         specTxtHtml +
-                        "<div class='Grid-cell'>" +
-                          "<div class='Grid Grid--center'>" +
-                            costFormulaHtml +
-                            costSumHtml +
-                          "</div>
-                        </div>
-                        <btn class='Cart-removeItem Grid-cell u-textRight' style='align-self:start;'>
-                          <i class='material-icons'>close</i>
-                        </btn>
-                      </div>
+                      "</div>
                     </div>"
 
           $("#Cart-table").append(newRow)
@@ -371,7 +351,7 @@ class PupilStore
         $(numDisplay).text("#{ item.qty }")
 
         # update row sum
-        $(row).find("p[class='Cart--sumRow Cart-costCalc--subTotal']").text("€ " + "#{ Number(get_product_database()[item.product].cost * item.qty) }")
+        $(row).find("p[id='subTotal']").text("€ " + "#{ Number(get_product_database()[item.product].cost * item.qty) }")
 
         # update cart subtotal
         totalPrice = if LocalStorage.length() > 0 then (Number(get_product_database()[v.product].cost * v.qty) for k,v of LocalStorage.dict()) else ""
