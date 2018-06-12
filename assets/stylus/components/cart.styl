@@ -23,22 +23,29 @@ $removeSize = .65em
 .cart
 
   &.order
-    padding-right 30px
     width 60%
 
   &.form
     background-color rgb(91, 139, 238)
     width 40%
 
-
   @media $break-767
     &.order
-      padding-right unset
       width unset
 
     &.form
       background-color unset
       width unset
+
+    .Grid--gutters
+      margin unset
+
+    .Grid--gutters > .Grid-cell
+      padding unset
+
+  @media $break-320
+    .Grid--gutters > .Grid-cell
+      padding unset
 
 .Cart-rowContainer
   margin-top .8em
@@ -50,6 +57,23 @@ $removeSize = .65em
       width 60%
       height auto
       margin auto
+
+  @media $break-767
+    .Grid-cell--1of6
+      flex 0 0 100%
+
+    .Feature-figure--config
+        width 30%
+        margin unset
+        padding-bottom 10px
+
+    .Grid-cell
+      flex 1 0 100%
+
+    .Grid-cell--1of2
+      &.Grid-persist
+        flex 0 0 50%
+
 
 .Cart-items--3of5
   width (3/5)*100%
@@ -93,13 +117,19 @@ tr.Cart-orderItem td
 
 
 .Cart-table-container
-  padding 1em 1.75em 5em 1.75em
+  padding 34px
   background #fff
+
+  @media $break-767
+    padding 20px
 
 .Cart-orderForm-container
   display none
-  padding 3em 4em 5em
+  padding 34px
   background darken(rgba(255,255,255,1),5%)
+
+  @media $break-767
+    padding 20px
   // margin-bottom 1em
 
 .Cart-orderForm--state-active
@@ -191,8 +221,8 @@ tr.Cart-orderItem td
       transform scale($scale)
       border-color complement($link-hover-color) transparent transparent transparent
 
-  @media $break-767
-    margin-left .5em
+  // @media $break-767
+  //   margin-left .5em
 
 
 .no-touch
@@ -220,10 +250,13 @@ tr.Cart-orderItem td
 
 .Cart-costCalc--subTotal
   font-weight 700
+  width 100px
+  padding-bottom unset
 
   @media $break-767
     font-size .9em
     text-align right
+    width 80px
 
 
 #CartItem-unitCost

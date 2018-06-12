@@ -267,11 +267,11 @@ class PupilStore
                             </btn>
                           </div>
                           <div class='Grid Grid--justifySpaceBetween'>
-                            <div>
+                            <div class='Grid-cell--1of2 Grid-persist'>
                               #{ cart_spec_html }
                               <p style='font-size:12px;padding-top:0.4em;padding-bottom:unset;'>unit cost: € #{ Number(db[v.product]['cost']) }</p>
                             </div>
-                            <div class='Grid Grid-cell Grid--justifyFlexEnd Grid--center'>
+                            <div class='Grid Grid-cell--1of2 Grid-persist Grid--justifyFlexEnd Grid--center'>
                               <div class='Grid Grid-column Grid--center Cart-container--increment'>
                                 <div class='material-icons Cart-itemQuant--increment Cart-item-plus'>keyboard_arrow_up</div>
                                 <div class='Cart-itemQuant Cart-costCalc Cart--quantity Grid Grid--justifyCenter Grid--center'>
@@ -279,7 +279,7 @@ class PupilStore
                                 </div>
                                 <div class='material-icons Cart-itemQuant--increment Cart-item-minus'>keyboard_arrow_down</div>
                               </div>
-                              <p class='Cart-costCalc--subTotal u-padLeft--2' style='padding-bottom:unset;width:100px;' id='subTotal'>€ #{ Number(db[v.product]['cost'] * v.qty) }</p>
+                              <p class='Cart-costCalc--subTotal u-padLeft--2' id='subTotal'>€ #{ Number(db[v.product]['cost'] * v.qty) }</p>
                             </div>
                           </div>
                         </div>"
