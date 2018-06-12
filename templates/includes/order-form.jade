@@ -4,14 +4,14 @@
 
 div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE;color:white;")
   form(id="order-form" data-parsley-validate data-parsley-focus="first")
-    
+
     div.u-padBottom--2
       div.Grid
         div.Grid-cell
           h4(style="font-weight:700;") Contact Info
       div.Grid.Grid-column
         div.Grid-cell
-          label(class="Form-hidden" for="email_c") Contact Email 
+          label(class="Form-hidden" for="email_c") Contact Email
           input(class="Form-input Form-input--text" id="email_c" type="email" placeholder="email address" name="email_c" required data-parsley-trigger="focusout" maxlength="50" data-parsley-maxlength="50" data-parsley-errors-container="#c-email--error" autocomplete="email")
           p(class="Form-error--text" id="c-email--error")
         div.Grid-cell
@@ -27,24 +27,24 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
     //- billing & shipping is in the same row
     //- |=== Billing ===|=== Shipping ===|
     div.Grid--justifyCenter
-      
+
       div.Grid-cell.u-padBottom--2
         div.Grid
           div.Grid-cell.Form-header
             h4(style="font-weight:700;") Billing Info
         //- wrapper for billing inputs
         div.Form-billing-container
-          div.Grid.Grid--gutters.Grid--1of2              
+          div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
-              label(class="Form-hidden" for="name_0_b") First Name 
+              label(class="Form-hidden" for="name_0_b") First Name
               input(class="Form-input Form-input--text" id="name_0_b" type="text" placeholder="first name" name="name_0_b" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#b-0-name--error" autocomplete="name")
               p(class="Form-error--text" id="b-0-name--error")
             div.Grid-cell
-              label(class="Form-hidden" for="name_1_b") Last Name 
+              label(class="Form-hidden" for="name_1_b") Last Name
               input(class="Form-input Form-input--text" id="name_1_b" type="text" placeholder="last name" name="name_1_b" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#b-1-name--error" autocomplete="name")
               p(class="Form-error--text" id="b-1-name--error")
           div.Grid-cell
-            label(class="Form-hidden" for="country_b") Country 
+            label(class="Form-hidden" for="country_b") Country
             input(class="Form-input Form-input--text" id="country_b" name="country_b" placeholder='country' list="country_b_datalist" required data-parsley-countryvalidator="postalCode_b-division_b" data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error" autocomplete="country-name")
             p(class="Form-error--text" id="b-country--error")
             datalist(id="country_b_datalist")
@@ -117,38 +117,36 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
             datalist(id="country_s_datalist")
               each val,key in countryObj
                 option(value=key)
+          div.Grid-cell
+            label(class="Form-hidden" for="address_0_s") Address Line 1
+            input(class="Form-input Form-input--text Form-input--text" type="text" id="address_0_s" placeholder="street address line 1" name="address_0_s" maxlength="35" required data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#s-0-address--error" autocomplete="street-address")
+            p(class="Form-error--text" id="s-0-address--error")
+          div.Grid-cell
+            label(class="Form-hidden" for="address_1_s") Address Line 2
+            input(class="Form-input Form-input--text Form-input--text" type="text" id="address_1_s" placeholder="(optional) street address line 2" name="address_1_s" maxlength="35" data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#s-1-address--error" autocomplete="street-address")
+            p(class="Form-error--text" id="s-1-address--error")
+          div.Grid-cell
+            label(class="Form-hidden" for="city_s") City
+            input(class="Form-input Form-input--text" id="city_s" type="text" placeholder="city" name="city_s" required maxlength="30" data-parsley-maxlength="30" data-parsley-trigger="focusout" data-parsley-errors-container="#s-city--error" autocomplete="address-level2")
+            p(class="Form-error--text" id="s-city--error")
+          div.Grid-cell
+            label(class="Form-hidden" for="division_s") State/Province/Division
+            input(class="Form-input Form-input--text" id="division_s" type="text" placeholder="state/province/division" name="division_s" required data-parsley-maxlength="35" data-parsley-divisionvalidator="0" data-parsley-trigger="focusout" data-parsley-errors-container="#s-division--error" autocomplete="address-level1")
+            p(class="Form-error--text" id="s-division--error")
           div.Grid.Grid--gutters.Grid--1of2
-            div.Grid-cell
-              label(class="Form-hidden" for="address_0_s") Address Line 1 
-              input(class="Form-input Form-input--text Form-input--text" type="text" id="address_0_s" placeholder="street address line 1" name="address_0_s" maxlength="35" required data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#s-0-address--error" autocomplete="street-address")
-              p(class="Form-error--text" id="s-0-address--error")
-            div.Grid-cell
-              label(class="Form-hidden" for="address_1_s") Address Line 2 
-              input(class="Form-input Form-input--text Form-input--text" type="text" id="address_1_s" placeholder="(optional) street address line 2" name="address_1_s" maxlength="35" data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#s-1-address--error" autocomplete="street-address")
-              p(class="Form-error--text" id="s-1-address--error")
-          div.Grid.Grid--gutters.Grid--1of2
-            div.Grid-cell
-              label(class="Form-hidden" for="city_s") City
-              input(class="Form-input Form-input--text" id="city_s" type="text" placeholder="city" name="city_s" required maxlength="30" data-parsley-maxlength="30" data-parsley-trigger="focusout" data-parsley-errors-container="#s-city--error" autocomplete="address-level2")
-              p(class="Form-error--text" id="s-city--error")                
-            div.Grid-cell
-              label(class="Form-hidden" for="division_s") State/Province/Division
-              input(class="Form-input Form-input--text" id="division_s" type="text" placeholder="state/province/division" name="division_s" required data-parsley-maxlength="35" data-parsley-divisionvalidator="0" data-parsley-trigger="focusout" data-parsley-errors-container="#s-division--error" autocomplete="address-level1")
-              p(class="Form-error--text" id="s-division--error")
-          div.Grid.Grid--gutters.Grid--1of2
-            div.Grid-cell
-              label(class="Form-hidden" for="postalCode_s") Postal Code
-              input(class="Form-input Form-input--text" id="postalCode_s" type="text" placeholder="postal code" name="postalCode_s" data-parsley-postalcodevalidator=0 data-parsley-trigger="focusout" data-parsley-errors-container="#s-postalCode--error" autocomplete="postal-code")
-              p(class="Form-error--text" id="s-postalCode--error")
             div.Grid-cell
               label(class="Form-hidden" for="phone_s") Phone Number
               input(class="Form-input Form-input--text" id="phone_s" type="text" placeholder="phone number" name="phone_s" required data-parsley-trigger="focusout" data-parsley-errors-container="#s-phone--error" maxlength="20" data-parsley-maxlength="15" autocomplete="tel")
               p(class="Form-error--text" id="s-phone--error")
+            div.Grid-cell
+              label(class="Form-hidden" for="postalCode_s") Postal Code
+              input(class="Form-input Form-input--text" id="postalCode_s" type="text" placeholder="postal code" name="postalCode_s" data-parsley-postalcodevalidator=0 data-parsley-trigger="focusout" data-parsley-errors-container="#s-postalCode--error" autocomplete="postal-code")
+              p(class="Form-error--text" id="s-postalCode--error")
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
               label(class="Form-hidden" for="company_s") Company/Institution
               input(class="Form-input Form-input--text" id="company_s" type="text" placeholder="(optional) company or institution" name="company_s" maxlength="30" data-parsley-maxlength="30" autocomplete="organization" data-parsley-errors-container="#s-company--error")
-              p(class="Form-error--text" id="s-company--error")                
+              p(class="Form-error--text" id="s-company--error")
 
     //- payment | notes
     div.u-padTop--1
