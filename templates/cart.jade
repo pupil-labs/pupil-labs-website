@@ -36,22 +36,20 @@ block main
     //- |---------Item---------|---Quantity---|---Price---|---Remove---|
     //- | Pupil description    |   ##  | +/-  |   xx EUR  |      X     |
     //-            3/5                 1/5          1/5         1/5
-
     div.Cart-container
-      div.Cart-table-container(style="padding-bottom:unset;")
-        div.Cart-table.Grid
-            div.cart.order(ref="CartFixedContainer")
-              h3(style="border-bottom:1px solid #808080;") Your Order
-              div.Grid.Grid--justifySpaceBetween
-                div(id="Cart-table" style="margin-top:10px;")
-                div.Grid.Grid--justifySpaceBetween(id="CartSum" style="width:100%;")
-                  div(id="CartSum-label--container")
-                    h3(id="CartSum--label" style="padding-bottom:0.5em;")
-                  div.u-textCenter
-                    h3(id="CartSum--total")
+      div.Cart-table.Grid
+          div.cart.order.Cart-table-container
+            h3(style="border-bottom:1px solid #808080;") Your Order
+            div.Grid.Grid--justifySpaceBetween
+              div(id="Cart-table" style="margin-top:10px;")
+              div.Grid.Grid--justifySpaceBetween(id="CartSum" style="width:100%;")
+                div(id="CartSum-label--container")
+                  h3(id="CartSum--label" style="padding-bottom:0.5em;")
+                div.u-textCenter
+                  h3(id="CartSum--total")
 
-            div.cart.form(
-              ref="cartCheckout"
-            )
-              div.Cart-checkout
-                include includes/order-form
+          div.cart.form(
+            ref="cartCheckout"
+          )
+            div.Cart-checkout
+              include includes/order-form
