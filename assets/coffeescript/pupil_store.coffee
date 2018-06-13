@@ -253,13 +253,18 @@ class PupilStore
             cart_spec_html += "<p class='LicenseSpecs-txt'>#{ db[v.product]['description_cart'] }</p>"
 
           # product, id, specs, price, quantity
-          productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
-                          <div class='Feature-figure Feature-figure--config'>
-                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] } title='#{ db[v.product]["title_product"] }'>
+          productImg = "<div class='Grid-cell--1of6'>
+                          <div class='Grid Grid--justifySpaceBetween'>
+                            <div class='Feature-figure Feature-figure--config'>
+                              <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] } title='#{ db[v.product]["title_product"] }'>
+                            </div>
+                            <btn class='Cart-removeItem'>
+                              <i class='material-icons'>close</i>
+                            </btn>
                           </div>
                         </div>"
 
-          specTxtHtml = "<div class='Grid-cell Grid-cell--padright2'>
+          specTxtHtml = "<div class='Grid-cell--5of6'>
                           <div class='Grid Grid--justifySpaceBetween'>
                             <h4 style='font-weight:700;'>#{ db[v.product]['title_product'] }</h4>
                             <btn class='Cart-removeItem'>
@@ -285,11 +290,12 @@ class PupilStore
                         </div>"
 
           newRow = "<div class='Cart-rowContainer'>
-                      <div class='Grid Grid--center Cart-row' id='#{ k }'>" +
+                      <div class='Grid Cart-row' id='#{ k }'>" +
                         productImg +
                         specTxtHtml +
                       "</div>
                     </div>"
+
 
           $("#Cart-table").append(newRow)
           # $("#Cart-table").after(newRow)
