@@ -3,7 +3,7 @@ branches:
     - dev
 language: node_js
 node_js:
-  - '9'
+  - '8'
 os:
   - linux
 sudo: false
