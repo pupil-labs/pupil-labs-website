@@ -5,11 +5,11 @@ block append title
 
 block main
   div(id="Blog").Site-transform
-    
+
     - var articles = env.helpers.getArticles(contents)
     - var a0 = articles[0]
     - var a0_img_src = (a0.metadata.featured_img ? a0.metadata.featured_img : "https://placehold.it/800x600")
-    - var a0_inline_style = (a0.metadata.featured_img ? "background-color:#6f7679; background-image: url('"+a0.metadata.featured_img+"');" : "background: linear-gradient(to right, #38EA92 0%, #A1DEF0 100%);")
+    - var a0_inline_style = (a0.metadata.featured_img ? "background-color:#6f7679; background-image: url('"+a0.metadata.featured_img+"');" : "background: linear-gradient(to top right, #536DFE 0%, #75F0B4 100%);")
 
     div.Background-img-top--blog.Background-img-cover.u-padBottom--3
       div(style=a0_inline_style ).Background-img--full-wh
@@ -34,7 +34,7 @@ block main
                 div.Grid-cell.Grid-cell--full
                   h3 Check out the latest news and updates
 
-   
+
     div.Site-content-container
 
       include includes/webp-img
@@ -63,7 +63,7 @@ block main
 
               a(href=article.url)
                 h2.Blog-article-title= article.title
-              p.small= moment.utc(article.date).format('YYYY MMM DD')      
-              if article.metadata.subtitle            
+              p.small= moment.utc(article.date).format('YYYY MMM DD')
+              if article.metadata.subtitle
                 p= article.metadata.subtitle
               a(href=article.url) read more
