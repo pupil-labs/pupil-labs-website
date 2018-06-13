@@ -473,7 +473,6 @@ class PupilStore
           $(p_transfer).val('purchaseorder')
         else
           $(p_transfer).val('banktransfer')
-        # console.log($(p_transfer).val())
 
       else
         $(button).toggleClass('checkmark--active')
@@ -497,10 +496,8 @@ class PupilStore
 
           if $(o_input).val() == 'order'
             $(input_transfer).val('banktransfer')
-            console.log($(input_transfer).val())
           else
             $(input_transfer).val('purchaseorder')
-            console.log($(input_transfer).val())
 
   eventSubmitForm: ->
     if $(@cartPage).length > 0
@@ -542,8 +539,6 @@ class PupilStore
 
           formData_formatted_JSON = JSON.stringify(formData_formatted)
           url = "https://p-u-p-i-l.com/order/form_handler"
-
-          console.log(formData_formatted_JSON)
 
           xhr = new XMLHttpRequest()
 
