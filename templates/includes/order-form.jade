@@ -18,11 +18,11 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
           div.Grid.Grid--1of2.Grid--gutters
             div.Grid-cell
               label(class="Form-hidden" for="name_0_c") First Name
-              input(class="Form-input Form-input--text" id="name_0_c" type="text" placeholder="first name" name="name_0_c" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#c-0-name--error" autocomplete="name")
+              input(class="Form-input Form-input--text" id="name_0_c" type="text" placeholder="first name" name="name_0_c" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#c-0-name--error" autocomplete="given-name")
               p(class="Form-error--text" id="c-0-name--error")
             div.Grid-cell
               label(class="Form-hidden" for="name_1_c") Last Name
-              input(class="Form-input Form-input--text" id="name_1_c" type="text" placeholder="last name" name="name_1_c" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#c-1-name--error" autocomplete="name")
+              input(class="Form-input Form-input--text" id="name_1_c" type="text" placeholder="last name" name="name_1_c" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#c-1-name--error" autocomplete="family-name")
               p(class="Form-error--text" id="c-1-name--error")
     //- billing & shipping is in the same row
     //- |=== Billing ===|=== Shipping ===|
@@ -37,11 +37,11 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
               label(class="Form-hidden" for="name_0_b") First Name
-              input(class="Form-input Form-input--text" id="name_0_b" type="text" placeholder="first name" name="name_0_b" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#b-0-name--error" autocomplete="name")
+              input(class="Form-input Form-input--text" id="name_0_b" type="text" placeholder="first name" name="name_0_b" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#b-0-name--error" autocomplete="given-name")
               p(class="Form-error--text" id="b-0-name--error")
             div.Grid-cell
               label(class="Form-hidden" for="name_1_b") Last Name
-              input(class="Form-input Form-input--text" id="name_1_b" type="text" placeholder="last name" name="name_1_b" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#b-1-name--error" autocomplete="name")
+              input(class="Form-input Form-input--text" id="name_1_b" type="text" placeholder="last name" name="name_1_b" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#b-1-name--error" autocomplete="family-name")
               p(class="Form-error--text" id="b-1-name--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_b") Country
@@ -104,12 +104,12 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
           div.Grid.Grid--gutters.Grid--1of2
             div.Grid-cell
               label(class="Form-hidden" for="name_0_s") First Name
-              input(class="Form-input Form-input--text" id="name_0_s" type="text" placeholder="first name" name="name_0_s" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#s-0-name--error" autocomplete="name")
+              input(class="Form-input Form-input--text" id="name_0_s" type="text" placeholder="first name" name="name_0_s" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#s-0-name--error" autocomplete="given-name")
               p(class="Form-error--text" id="s-0-name--error")
             div.Grid-cell
               label(class="Form-hidden" for="name_1_s") Last Name
-              input(class="Form-input Form-input--text" id="name_1_s" type="text" placeholder="last name" name="name_1_s" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#s-1-name--error" autocomplete="name")
-              p(class="Form-error--text" id="s-name--error")
+              input(class="Form-input Form-input--text" id="name_1_s" type="text" placeholder="last name" name="name_1_s" required data-parsley-trigger="focusout" maxlength="16" data-parsley-maxlength="16" data-parsley-errors-container="#s-1-name--error" autocomplete="family-name")
+              p(class="Form-error--text" id="s-1-name--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_s") Country
             input(class="Form-input Form-input--text" id="country_s" name="country_s" placeholder='country' list="country_s_datalist" required data-parsley-countryvalidator="postalCode_s-division_s" data-parsley-trigger="focusout" data-parsley-errors-container="#s-country--error" autocomplete="country-name")
