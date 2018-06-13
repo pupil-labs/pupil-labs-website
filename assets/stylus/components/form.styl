@@ -12,7 +12,7 @@
   border-radius 0
   display flex
   outline none
-  color #fff
+  color rgba(0,0,0,0.8)
   height 3em
 
 .Form-error--text
@@ -26,7 +26,7 @@
   resize vertical !important
 
 textarea
-  &::placeholde
+  &::placeholder
     color white
   &:-ms-input-placeholder
     color white
@@ -98,16 +98,16 @@ textarea
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
   -webkit-box-shadow 0 0 0 30px rgb(91, 139, 238) inset
-  -webkit-text-fill-color #fff
+  -webkit-text-fill-color rgba(0,0,0,0.8)
   border-bottom 1px solid white
 
 input
   &::placeholder
     color white
-  &::-ms-input-placeholder
+  &:-ms-input-placeholder
     color white
   &::-ms-input-placeholder
-  color white
+    color white
 
 .Form-container
     display block
