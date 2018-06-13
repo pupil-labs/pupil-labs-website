@@ -1,9 +1,9 @@
 .Form-order
   // nothing here
-    
+
 .Form-input
   width 100%
-      
+
 .Form-input--text
   padding .75em 0
   background transparent
@@ -13,8 +13,8 @@
   display flex
   outline none
   color #fff
-  height 3em 
-  
+  height 3em
+
 .Form-error--text
   text-transform lowercase
   font-size .8em
@@ -25,11 +25,16 @@
   vertical-align top
   resize vertical !important
 
-textarea::placeholder
+textarea
+  &::placeholde
+    color white
+  &:-ms-input-placeholder
+    color white
+  &::-ms-input-placeholder
     color white
 
 .Form-fieldset
-  // 
+  //
 
 .Form-input--radio
   display none
@@ -39,36 +44,36 @@ textarea::placeholder
   border-radius 3px
   height 70px !important
   margin-bottom 1em
-  
+
 .Form-input--radioLabel
-  font-size .75em 
+  font-size .75em
   font-family $font-family-sans-serif-alt
   display flex
   height 3em
   align-self flex-start
   color #222
-  
+
 .Form-input--radioLabel-lg
   display flex
-  font-size 1em 
+  font-size 1em
   font-family $font-family-sans-serif
   font-weight 700
   padding 1em
 
 .Form-header
   padding-bottom .65em
-  
+
 .Form-shipping-container
   display none
 
 .Form-input--submit
   display none
-  visibilty hidden 
+  visibilty hidden
 
 .Form-input--hidden
   display none
   visibility hidden
-  
+
 .Form-input--text-newsletter
   padding .75 em 0
   font-size 1em
@@ -81,8 +86,8 @@ textarea::placeholder
   display flex
   outline none
   color #333
-  height 3em   
-  
+  height 3em
+
 .Form-hidden
   position absolute
   left 0
@@ -96,7 +101,12 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
   -webkit-text-fill-color #fff
   border-bottom 1px solid white
 
-input::placeholder
+input
+  &::placeholder
+    color white
+  &::-ms-input-placeholder
+    color white
+  &::-ms-input-placeholder
   color white
 
 .Form-container
