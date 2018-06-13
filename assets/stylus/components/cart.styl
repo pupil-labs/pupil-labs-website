@@ -31,11 +31,11 @@ $removeSize = .65em
 
   @media $break-767
     &.order
-      width unset
+      width 100%
 
     &.form
       background-color unset
-      width unset
+      width 100%
 
     .Grid--gutters
       margin unset
@@ -58,8 +58,22 @@ $removeSize = .65em
       height auto
       margin auto
 
+  .Grid-cell--1of6
+    .Cart-removeItem
+      display none
+
   @media $break-767
+
+    .Cart-removeItem
+      display none
+
     .Grid-cell--1of6
+      flex 0 0 100%
+
+      .Cart-removeItem
+        display block
+
+    .Grid-cell--5of6
       flex 0 0 100%
 
     .Feature-figure--config
@@ -122,6 +136,11 @@ tr.Cart-orderItem td
 
   @media $break-767
     padding 20px
+
+    .Cart--total
+      width 100%
+      display flex
+      justify-content flex-end
 
 .Cart-orderForm-container
   display none
