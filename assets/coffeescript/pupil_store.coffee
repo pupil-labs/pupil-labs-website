@@ -253,8 +253,8 @@ class PupilStore
             cart_spec_html += "<p class='LicenseSpecs-txt'>#{ db[v.product]['description_cart'] }</p>"
 
           # product, id, specs, price, quantity
-          productImg = "<div class='Grid-cell--1of6'>
-                          <div class='Grid Grid--justifySpaceBetween'>
+          productImg = "<div class='Grid Grid--center Grid-cell--1of6'>
+                          <div class='Grid Grid--justifySpaceBetween' style='width:100%;'>
                             <div class='Feature-figure Feature-figure--config'>
                               <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] } title='#{ db[v.product]["title_product"] }'>
                             </div>
