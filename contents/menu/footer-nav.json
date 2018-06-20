@@ -1,8 +1,7 @@
 {
   "Products": {"Mobile Eye Tracking Headset": "/store#pupil",
-              "HTC Vive Eye Tracking Add-on": "/store#vr-ar",
+              "HTC Vive / Vive Pro Eye Tracking Add-on": "/store#vr-ar",
               "HoloLens Eye Tracking Add-on": "/store#vr-ar",
-              "Oculus Eye Tracking Add-on": "/store#vr-ar",
               "Support Contract": "/store#additional-products",
               "200hz Eye Camera": "/store#additional-products",
               "Pupil Mobile Bundle": "/store#additional-products"
