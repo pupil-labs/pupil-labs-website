@@ -1,5 +1,5 @@
 // see Phillip Walton's post: http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-// Grid 
+// Grid
 
 .Grid
   display flex
@@ -18,60 +18,63 @@
   flex-wrap nowrap
   list-style none
   margin 0
-  padding 0 
+  padding 0
   overflow hidden
-  
+
 
 .Grid-noWrap--breakSmall
   @media $break-767
     flex-wrap wrap
-  
+
 .Grid-cell
   flex 1 0 auto
-  
+
 .Grid-cell--noFlex
   flex none
 
 .Grid-cell--auto
   flex 0 0 auto
-  
-.Grid--flexCells 
+
+.Grid--flexCells
   > .Grid-cell
     display flex
-  
+
 .Grid--top
   align-items flex-start
-  
+
 .Grid--bottom
   align-items flex-end
-  
+
 .Grid--center
   align-items center
 
 .Grid--baseline
   align-items baseline
-  
+
 .Grid--stretch
   align-items stretch
-  
+
 .Grid--justifyCenter
   justify-content center
-  
+
 .Grid--justifySpaceAround
   justify-content space-around
-  
+
 .Grid--justifySpaceBetween
   justify-content space-between
+
+.Grid--justifyFlexEnd
+  justify-content flex-end
 
 .Grid--alignContentCenter
   align-content center
 
 .Grid-cell--top
   align-self flex-start
-  
+
 .Grid-cell--bottom
   align-self flex-end
-  
+
 .Grid-cell--center
   align-self center
 
@@ -80,39 +83,42 @@
 
 .Grid-row
   flex-direction row
-  
+
 .Grid-cell--autoSize
   flex none
 
 .Grid-cell--1of2
   flex 0 0 50%
-  
+
   @media $break-767
     flex 0 0 100%
-  
+
 .Grid-cell--1of3
-  flex 0 0 (1/3)*100% 
+  flex 0 0 (1/3)*100%
   @media $break-767
     flex 0 0 100%
 
 .Grid-cell--1of3-no-break
-  flex 0 0 (1/3)*100% 
+  flex 0 0 (1/3)*100%
 
 .Grid-cell--1of6
-  flex 0 0 (1/6)*100% 
+  flex 0 0 (1/6)*100%
+
+.Grid-cell--5of6
+  flex 0 0 (5/6)*100%
 
 .Grid-cell--2of3
   flex 0 0 (2/3)*100%
   @media $break-767
     flex 0 0 100%
-  
+
 .Grid-cell--main
   flex 1 0
 
 .Grid-cell--sidebar
   flex 1 0 20%
   max-width 20%
-  
+
   @media $break-767
     flex 1 0 5%
     max-width 5%
@@ -120,12 +126,12 @@
 .Grid-cell--sidebar-sm
   flex 0 0 8%
   max-width 8%
-  
+
   @media $break-767
     flex 0 0 5%
     max-width 5%
 
-  
+
 .Grid-cell--cartFormula
   @media $break-767
     flex 0 0 100%
@@ -137,7 +143,7 @@
   @media $break-767
     flex-direction column
     align-items stretch
-    
+
 
 .Grid-cell--cartSum
   @media $break-767
@@ -153,7 +159,7 @@
 .Grid-cell--fillHeight
   display flex
 
-.Grid--fit 
+.Grid--fit
   > .Grid-cell
     flex 1
 
@@ -167,13 +173,13 @@
     flex 0 0 100%
     max-width 100%
 
-    
+
 .Grid--1of2
   > .Grid-cell
     flex 0 0 50%
     // firefox fix below
     max-width 50%
-      
+
     @media $break-767
       flex 0 0 100%
       max-width 100%
@@ -183,19 +189,19 @@
     flex 0 0 50%
     // firefox fix below
     max-width 50%
-      
+
     @media $break-767
       flex 0 0 100%
       max-width 100%
-      
-  //NAT_CLASS   
+
+  //NAT_CLASS
 .Grid-pad--1of2
   > .Grid-cell
     flex 0 0 50%
     // firefox fix below
     max-width 50%
     padding 0em 2em 0em 0em
-      
+
     @media $break-767
       flex 0 0 100%
       max-width 100%
@@ -206,26 +212,26 @@
     // firefox fix below
     max-width 33.3333%
 
-    
+
     @media $break-767
       flex 0 0 100%
       max-width 100%
 
-    
+
 .Grid--1of4
   > .Grid-cell
     flex 0 0 25%
     max-width 25%
-    
+
     @media $break-767
       flex 0 0 100%
       max-width 100%
-      
+
   &.Customer-desktop
-    
+
     @media $break-320
       display none !important
-      
+
   &.Customer-mobile
     > .Grid-cell
         display none !important
@@ -234,35 +240,35 @@
         .Grid-cell
           flex 0 0 33.33333%
           display flex !important
-        
+
           > picture > img
-              width 60px 
+              width 60px
 
 .Grid-cell--header
   font-weight 700
-  
+
   @media $break-767
     font-size .8em
 
 .Grid-cell--borderBottom
   border-bottom 1px solid black
-  
+
 .Grid--gutters
   margin -1em 0 0em -1em
   // padding 2em 0em
-    
+
   @media $break-320
     margin 0em
 
-  
+
 .Grid--gutters-noMargin
   margin 0 1em
-  
+
 .Grid--gutters
 .Grid--gutters-noMargin
   > .Grid-cell
     padding 1em 0 0 1em
-    
+
     @media $break-767
       flex 0 0 100%
       max-width 100%
@@ -270,13 +276,13 @@
 .Grid--gutters-lg
   > .Grid-cell
     padding 2em 2em 2em 2em
-    
+
   // > .Aligner-item
   //  padding 2em 4em 4em 4em
-    
+
   //  @media $break-767
   //    padding 2em 0em 2em 0em
-      
+
   > .Aligner-item--1of2
     padding 2em 3em 2em 3em
 
@@ -314,7 +320,7 @@
     flex 0 0 100%
     max-width 100%
     padding 4em 0em 2em 0em
-    
+
 .Aligner-item--sm
   display flex
   flex 0 0 33.33333%
@@ -322,11 +328,11 @@
   padding 0.5em 1.4em 1em 1.4em
 
   @media $break-767
-    padding 0em 
+    padding 0em
     flex 0 0 100%
     max-width 100%
     padding 0.5em 0.5em 1em 0.5em
-    
+
 .Aligner-item--column
   width 100%
   display flex
@@ -335,7 +341,7 @@
 .Aligner-fill-column
   // display flex
   flex-grow 1
-  
+
 .Aligner-item--stretchHeight
   flex-grow 1
   flex-shrink 0

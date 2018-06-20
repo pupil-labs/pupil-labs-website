@@ -47,6 +47,7 @@ class PupilStore
       @postalCodeValidator()
       @divisionValidator()
       @eventLoadCart()
+      @eventToggleQuoteType()
 
   eventStorePageInit: ->
     if $(@storePage).length > 0
@@ -56,7 +57,7 @@ class PupilStore
         title_store = get_world_cam_data()[world_id]['title_store']
         klass = if world_id is "w120" then "StoreConfig-world StoreConfig--state-active" else "StoreConfig-world"
         html = "<li class='Grid-cell u-textCenter'>
-                 <button class='#{ klass }' id='#{ world_id }'>#{title_store}</button> 
+                 <button class='#{ klass }' id='#{ world_id }'>#{title_store}</button>
                  </li>"
         $("ul[class='Grid Grid--justifyCenter ConfigOptions--world']").append(html)
 
@@ -65,10 +66,10 @@ class PupilStore
         title_store = get_eye_cam_data()[eye_id]['title_store']
         klass = if eye_id is "e200" then "StoreConfig-eye StoreConfig--state-active" else "StoreConfig-eye"
         html = "<li class='Grid-cell u-textCenter'>
-                 <button class='#{ klass }' id='#{ eye_id }' href='#{}'>#{title_store}</button> 
+                 <button class='#{ klass }' id='#{ eye_id }' href='#{}'>#{title_store}</button>
                  </li>"
         $("ul[class~='ConfigOptions--eye']").append(html)
-      
+
 
       # create vr/ar products
       for vr_ar_id in get_vr_ar_product_ids()
@@ -85,7 +86,7 @@ class PupilStore
                     </div>
 
                     <button id='#{ vr_ar_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
-                
+
                   </div>
                 </div>"
         $("div[class~='VR-AR-products']").append(html)
@@ -105,7 +106,7 @@ class PupilStore
             </div>
 
             <button id='#{ p_id }' class='AddToCart Button-store' href='#' data-product='product'>€ #{product.cost}</button>
-        
+
           </div>
         </div>"
 
@@ -133,7 +134,7 @@ class PupilStore
                 product_id = ['pupil',worldId,eyeId,licenseId].join("_")
               else
                 product_id = ['pupil',worldId,eyeId].join("_")
-            else 
+            else
               product_id = $(addToCartBtn).attr('id')
 
             # check if the order already exists in the cart
@@ -155,8 +156,8 @@ class PupilStore
                 "qty"   : 1
               }
               LocalStorage.set(key, JSON.stringify(item))
-  
-            # update the nav counter          
+
+            # update the nav counter
             @eventUpdateCartNavCounter()
           else
             return false
@@ -165,15 +166,15 @@ class PupilStore
     @clearCartButton.click (event)=>
       event.preventDefault()
       LocalStorage.clear()
-      $(".Cart-container").hide 800, ->
-        $("#Cart-empty").fadeIn(1000)
+      $(".Cart-container").hide 250, ->
+        $("#Cart-empty").fadeIn(300)
       @eventUpdateCartNavCounter()
 
   eventLoadCart: ->
     if $("#Cart").length > 0
       qty = [v.qty for k,v of LocalStorage.dict()]
       if qty[0].length <= 0
-        $("#Cart-empty").fadeIn(1000)
+        $("#Cart-empty").fadeIn(300)
 
 
   eventUpdateCartNavCounter: ->
@@ -198,7 +199,7 @@ class PupilStore
         $("#e120b").removeClass("StoreConfig--state-inactive")
         $("#e200b").removeClass("StoreConfig--state-inactive")
         $("#enone").removeClass("StoreConfig--state-inactive")
-        $("#wnone").removeClass("StoreConfig--state-inactive")   
+        $("#wnone").removeClass("StoreConfig--state-inactive")
 
         if $(@worldConfigActiveClass).attr('id') is "wnone"
           $("#specs-world").fadeTo(800,0).prop('disabled',true).css('cursor','default')
@@ -206,7 +207,7 @@ class PupilStore
         else
           $("#specs-world").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
         if $(@eyeConfigActiveClass).attr('id') is "enone"
-          $("#specs-eye").fadeTo(800,0).prop('disabled',true).css('cursor','default') 
+          $("#specs-eye").fadeTo(800,0).prop('disabled',true).css('cursor','default')
           $("#wnone").addClass("StoreConfig--state-inactive")
         else
           $("#specs-eye").fadeTo(800,100).prop('disabled',false).css('cursor','pointer')
@@ -247,83 +248,57 @@ class PupilStore
           if title_product is "Pupil Headset"
             sub_products = db[v.product]['sub_products']
             for sub_product_key,sub_product_data of sub_products
-              cart_spec_html += "<h4>#{ sub_product_data['title_cart'] }</h4>
-                                 <p class='LicenseSpecs-txt'>#{ sub_product_data['description_cart'] }</p>"
+              cart_spec_html += "<p style='font-size:12px;padding-bottom:0.4em;font-weight:700;'>#{ sub_product_data['title_cart'] }</p>"
           else
             cart_spec_html += "<p class='LicenseSpecs-txt'>#{ db[v.product]['description_cart'] }</p>"
 
           # product, id, specs, price, quantity
-          productImg = "<div class='Grid-cell--1of6 Grid-cell--top Grid-cell--padright1'>
-                          <div class='Feature-figure Feature-figure--config'>
-                            <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] } title='#{ db[v.product]["title_product"] }'>
+          productImg = "<div class='Grid Grid--center Grid-cell--1of6'>
+                          <div class='Grid Grid--justifySpaceBetween' style='width:100%;'>
+                            <div class='Feature-figure Feature-figure--config'>
+                              <img class='Feature-image Feature-image--configEye' src=#{ db[v.product]['img'] } title='#{ db[v.product]["title_product"] }'>
+                            </div>
+                            <btn class='Cart-removeItem'>
+                              <i class='material-icons'>close</i>
+                            </btn>
                           </div>
-                        </div>"  
-
-          specTxtHtml = "<div class='Grid-cell--1of2 Grid-cell--padright2'>
-                          <h2>#{ db[v.product]['title_product'] }</h2>
-                          #{ cart_spec_html }
                         </div>"
 
-          costFormulaHtml = "<div class='Grid-cell Grid-cell--cartFormula'>
-                                <div class='Grid Grid--cartFormula-break'>
-
-                                  <div id='CartItem-unitCost' class='Grid-cell'>
-                                    <p class='Cart-costCalc'>€ #{ Number(db[v.product]['cost']) }</p>
-                                  </div>              
-                                
-                                  <div class='Grid-cell'>
-                                    <div class='Grid Grid--center'>
-                                      <div class='Grid-cell'>
-                                        <p class='Cart-costCalc'>x</p>
-                                      </div>
-                                      <div id='CartItem-unitQuant' class='Grid-cell'>
-                                        <p class='Cart-itemQuant Cart-costCalc'>#{ v.qty }</p>
-                                      </div>
-                                      <div class='Grid-cell'>
-                                        <div class='Grid Grid-column'>
-                                          <div class='Grid-cell Cart-itemQuant--increment Cart-item-plus'><p class='Cart--triangle-up'></p></div>
-                                          <div class='Grid-cell Cart-itemQuant--increment Cart-item-minus'><p class='Cart--triangle-down'></p></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-
+          specTxtHtml = "<div class='Grid-cell--5of6'>
+                          <div class='Grid Grid--justifySpaceBetween'>
+                            <h4 style='font-weight:700;'>#{ db[v.product]['title_product'] }</h4>
+                            <btn class='Cart-removeItem'>
+                              <i class='material-icons'>close</i>
+                            </btn>
+                          </div>
+                          <div class='Grid Grid--justifySpaceBetween'>
+                            <div class='Grid-cell--1of2 Grid-persist'>
+                              #{ cart_spec_html }
+                              <p style='font-size:12px;padding-top:0.4em;padding-bottom:unset;'>unit cost: € #{ Number(db[v.product]['cost']) }</p>
                             </div>
-                          </div>"
-
-          costSumHtml = "<div class='Grid-cell Grid-cell--cartSum'>
-                          <div class='Grid Grid--center'>
-
-                            <div id='CartItem-equalSign' class='Grid-cell'>
-                              <p class='Cart-costCalc'>=</p>
-                            </div>                                                   
-                                
-                            <div class='Grid-cell u-textCenter'>
-                              <p class='Cart--sumRow Cart-costCalc--subTotal'>€ #{ Number(db[v.product]['cost'] * v.qty) }</p>
-                            </div>  
-                                
-                            <div class='Cart-removeItem Grid-cell u-textRight'>
-                              <p>(remove)</p>
+                            <div class='Grid Grid-cell--1of2 Grid-persist Grid--justifyFlexEnd Grid--center'>
+                              <div class='Grid Grid-column Grid--center Cart-container--increment'>
+                                <div class='material-icons Cart-itemQuant--increment Cart-item-plus'>keyboard_arrow_up</div>
+                                <div class='Cart-itemQuant Cart-costCalc Cart--quantity Grid Grid--justifyCenter Grid--center'>
+                                  #{ v.qty }
+                                </div>
+                                <div class='material-icons Cart-itemQuant--increment Cart-item-minus'>keyboard_arrow_down</div>
+                              </div>
+                              <p class='Cart-costCalc--subTotal u-padLeft--2' id='subTotal'>€ #{ Number(db[v.product]['cost'] * v.qty) }</p>
                             </div>
-
                           </div>
                         </div>"
 
           newRow = "<div class='Cart-rowContainer'>
-                      <div class='Grid Grid--center Cart-row' id='#{ k }'>" +
+                      <div class='Grid Cart-row' id='#{ k }'>" +
                         productImg +
                         specTxtHtml +
-                        "<div class='Grid-cell'>" +
-                          "<div class='Grid Grid--center'>" +
-                            costFormulaHtml +
-                            costSumHtml +
-                          "</div>" +
-                        "</div>" +
+                      "</div>
+                    </div>"
 
-                      "</div>" +
-                    "</div>"
 
-          $("#Cart-table").after(newRow)
+          $("#Cart-table").append(newRow)
+          # $("#Cart-table").after(newRow)
         [totalPrice,label] = if LocalStorage.length() > 0 then [Number(get_product_database()[v.product].cost * v.qty) for k,v of LocalStorage.dict(),"Subtotal"] else ["",""]
         totalPrice = if totalPrice.length > 0 then "€ " + totalPrice.reduce (a,b) -> a + b
         $("h3[id='CartSum--label']").text("#{ label }")
@@ -334,15 +309,15 @@ class PupilStore
 
   eventRemoveCartItem: ->
     if $(@cartPage).length > 0
-      $("div[class~='Cart-removeItem']").click (event)=>
+      $("btn[class~='Cart-removeItem']").click (event)=>
         event.preventDefault()
         item = $(event.currentTarget)
         row = $(item).closest('.Cart-row')
         container = $(row).closest('.Cart-rowContainer')
         LocalStorage.expire($(row).attr('id'))
-        
+
         # remove the row
-        $(container).slideUp 400, ->
+        $(container).slideUp 250, ->
           $(container).remove()
 
         # update total
@@ -356,8 +331,8 @@ class PupilStore
         @eventUpdateCartNavCounter()
         if LocalStorage.length() < 1
           # remove empty cart text
-          $(".Cart-container").hide 600, ->
-            $("#Cart-empty").fadeIn(1000)
+          $(".Cart-container").fadeOut 250, ->
+            $("#Cart-empty").fadeIn(300)
 
   eventUpdateCartQuantity: ->
     if $(@cartPage).length > 0
@@ -372,7 +347,7 @@ class PupilStore
 
         # get object from local storage
         item = JSON.parse(LocalStorage.get(key))
-        # update quantity 
+        # update quantity
         item.qty = if sign is 'plus' then item.qty += 1 else if item.qty > 1 then item.qty -= 1 else 1
 
         # write quantity back to storage
@@ -382,9 +357,9 @@ class PupilStore
         $(numDisplay).text("#{ item.qty }")
 
         # update row sum
-        $(row).find("p[class='Cart--sumRow Cart-costCalc--subTotal']").text("€ " + "#{ Number(get_product_database()[item.product].cost * item.qty) }")
+        $(row).find("p[id='subTotal']").text("€ " + "#{ Number(get_product_database()[item.product].cost * item.qty) }")
 
-        # update cart subtotal 
+        # update cart subtotal
         totalPrice = if LocalStorage.length() > 0 then (Number(get_product_database()[v.product].cost * v.qty) for k,v of LocalStorage.dict()) else ""
         totalPrice = if totalPrice.length > 0 then "€ " + totalPrice.reduce (a,b) -> a + b
         $("#CartSum--total").text("#{ totalPrice }")
@@ -404,15 +379,15 @@ class PupilStore
       $("a[class='TechSpecs']").click (event)=>
         event.preventDefault()
         button = $(event.target)
-        
+
         if not $(button).prop('disabled')
           # eye or world from 'id'
-          type = $(button).attr('id').split('-').pop() 
+          type = $(button).attr('id').split('-').pop()
 
           selection = "button[class='StoreConfig-#{type} #{ @storeConfigActiveClass }']"
           id = $(selection).attr('id')
-          # make append active class to container 
-          element = "div[class='Grid-cell TechSpecs--#{ type }']"       
+          # make append active class to container
+          element = "div[class='Grid-cell TechSpecs--#{ type }']"
 
           if $(button).hasClass("TechSpecs--active")
             $(element).fadeOut(400)
@@ -426,21 +401,26 @@ class PupilStore
 
   eventShowOrderForm: ->
     if $(@cartPage).length > 0
+      orderFormContainer = "Cart-orderForm-container"
+      $('#OrderType-order').addClass("Button--state-active")
+      $("."+orderFormContainer).css("display","block")
+      $('label[for="form-submit"]').text('Submit Order')
+
       $("input[class='Form-input--radio Form-checkout']").click (event)=>
         event.preventDefault()
         button = $(event.target)
         id = $(button).attr('id')
         submitTxt = if id is "order" then "Submit Order" else "Request Quote"
         labelId = '#OrderType-'+id
-        orderFormContainer = "Cart-orderForm-container"
-        orderFormActive = "Cart-orderForm--state-active" 
+
+        orderFormActive = "Cart-orderForm--state-active"
         if not $(labelId).hasClass("Button--state-active")
-          $("label[class^='Button-radio--lg Form-input--radioLabel--lg']").removeClass('Button--state-active') 
+          $("label[class^='Button-radio--lg Form-input--radioLabel--lg']").removeClass('Button--state-active')
           $(labelId).addClass("Button--state-active")
           if not $(orderFormContainer).hasClass(orderFormActive)
             $("."+orderFormContainer).slideDown()
             $("."+orderFormContainer).addClass(orderFormActive)
-          $('label[for="form-submit"]').text(submitTxt)            
+          $('label[for="form-submit"]').text(submitTxt)
 
   eventUpdateFormValues: ->
     if $(@cartPage).length > 0
@@ -465,42 +445,59 @@ class PupilStore
 
   eventToggleShippingInfo: ->
     if $(@cartPage).length > 0
-      $("input[id^='s-toggle-']").click (event)=>
+      $("#s-checkbox").click (event)=>
         event.preventDefault()
         button = $(event.target)
-        buttonId = $(button).attr('id') 
-        type = buttonId.split("-").pop()
-        if type is "alt"
-          # clear all the values of the inputs        
-          $("label[for='#{ buttonId }']").addClass('Button--state-active')
-          $("label[for='s-toggle-copy']").removeClass('Button--state-active')
+
+        if $(button).hasClass('checkmark--active')
+          $(button).toggleClass('checkmark--active')
+          $(".Form-shipping-container").fadeOut(250)
+        else
+          $(button).toggleClass('checkmark--active')
           $("input[id='postalCode_s']")
           .attr("data-parsley-postalcodevalidator","#{$("input[id='postalCode_b']").data('parsley-postalcodevalidator')}")
-          $(".Form-shipping-container").fadeIn()
+          $(".Form-shipping-container").fadeIn(250)
+
+  eventToggleQuoteType: ->
+    $("#q-checkbox").click (event)=>
+      event.preventDefault()
+      button = $(event.target)
+      input = $('#o_type')
+      p_transfer = $("div[for='p-banktransfer']")
+
+      if $(input).val() == 'order'
+        $(button).toggleClass('checkmark--active')
+        $(input).val('quote')
+
+        if $(p_transfer).hasClass('Button--state-active')
+          $(p_transfer).val('purchaseorder')
         else
-          $("label[for='#{ buttonId }']").addClass('Button--state-active')
-          $("label[for='s-toggle-alt']").removeClass('Button--state-active')
-          $(".Form-shipping-container").fadeOut()
+          $(p_transfer).val('banktransfer')
+
+      else
+        $(button).toggleClass('checkmark--active')
+        $(input).val('order')
 
   eventTogglePaymentType: ->
     if $(@cartPage).length > 0
-      radios = "input[name='p-type']:radio"
-      inputPaymentClass = "input[class='Form-input--radio Form-payment-type']"
-      $(inputPaymentClass).click (event)=>
+      paymentButton = $("div[for^='p-']")
+
+      $(paymentButton).click (event)=>
         event.preventDefault()
         button = $(event.target)
-        buttonId = $(button).attr('id') 
-        label = "label[for='#{ buttonId }']"
-        $("label[for^='p-']").not($(buttonId)).removeClass('Button--state-active')
-        $(label).toggleClass("Button--state-active")
+        buttonId = $(button).attr('for')
+        inputSelector = "input[id='#{ buttonId }']"
+        input_transfer = $('#p-banktransfer')
+        o_input = $('#o_type')
 
-        $(button).prop("checked",true)
-        # the checked state is not saved for form submission why? 
+        if !$(button).hasClass('Button--state-active')
+          $(paymentButton).toggleClass('Button--state-active')
+          $(inputSelector).prop("checked",true)
 
-  resetActivePaymentRadio: ->
-    activeId = "#"+$("label[class='Button-radio--sm Form-input--radioLabel Button--state-active'][for^='p-']").attr('for')
-    $(activeId).prop('checked',true)
-
+          if $(o_input).val() == 'order'
+            $(input_transfer).val('banktransfer')
+          else
+            $(input_transfer).val('purchaseorder')
 
   eventSubmitForm: ->
     if $(@cartPage).length > 0
@@ -510,21 +507,19 @@ class PupilStore
         form = $(event.target)
 
         if $(form).parsley().isValid()
-          $('label[for="form-submit"]').addClass("Button--state-inactive")  
-          $('label[for="form-submit"]').text("Submitting Request")    
-          $('label[for="form-submit"]').attr('disabled',true)     
+          $('label[for="form-submit"]').addClass("Button--state-inactive")
+          $('label[for="form-submit"]').text("Submitting Request")
+          $('label[for="form-submit"]').attr('disabled',true)
           # add loading animation
-          $('label[for="form-submit"]').addClass("loading")    
+          $('label[for="form-submit"]').addClass("loading")
 
           # disable the submit button to prevent double submits
           $("#form-submit").attr('disabled',true)
-          @resetActivePaymentRadio()
-          @_setOrderType()
 
           # add countryIso to form data
           $("input[id='countryIso_b']").val(countryList[$("input[id='country_b']").val()].countryISO)
           $("input[id='countryIso_s']").val(countryList[$("input[id='country_s']").val()].countryISO)
-          
+
           # add order object to a hidden form text area
           products = []
           keys = [k for k,v in LocalStorage.dict()]
@@ -622,7 +617,7 @@ class PupilStore
         requirements = requirement.toString().split(',')
         tests = []
         # ideally this should be a function (but can not call/return from fn within this fn)
-        for r in requirements 
+        for r in requirements
           exp = '^('
           for c in r.trim().split("")
             fragment = switch
@@ -640,7 +635,7 @@ class PupilStore
       )).addMessage 'en', 'postalcodevalidator', 'Postal code should follow the pattern: %s'
 
   eventGenerateOrderLink: ->
-    if $(@cartPage).length > 0 
+    if $(@cartPage).length > 0
       $("#Nav-cart").click (event)=>
         event.preventDefault()
         link = $(event.target)
@@ -658,7 +653,7 @@ class PupilStore
       j = 0
       for p,i in pairs by 2
         product_id = decodeURIComponent(decodeURIComponent(pairs.shift().split("=").pop())).split(',')
-        
+
         try
           pid = product_id[0]
         catch e
@@ -670,7 +665,7 @@ class PupilStore
           if pid.length is 0
             LocalStorage.clear()
             return false
-          
+
         # product_id = updateLegacyProductIds_(product_id)
         qty = parseInt(pairs.shift().split("=").pop())
         item = {
@@ -680,7 +675,7 @@ class PupilStore
         LocalStorage.set(j, JSON.stringify(item))
         j += 1
       @eventUpdateCartNavCounter()
-    
+
   eventOrderLinkSuccessPage: =>
     if $("#Success").length > 0
       data = @_getOrderPermalink()
@@ -689,9 +684,9 @@ class PupilStore
       html = "<h3>You can always revisit your order with this #{link}.</h3>"
       $(".Site-content-container.Background-img-caption-container.u-textCenter").append(html)
       # very important - clear LocalStorage after setting the link
-      LocalStorage.clear()  
+      LocalStorage.clear()
       @eventUpdateCartNavCounter()
-    
+
 
   _getOrderPermalink: ->
     data = []
@@ -706,7 +701,7 @@ class PupilStore
 
   _setOrderType: ->
     activeId = $("label[id^='OrderType-'][class~='Button--state-active']").attr('id').split('-').pop()
-    $("input[id='o_type']").val(activeId.toLowerCase())
+    $("input[id='o_type']").val('order')
 
   _setActiveState: (links)->
     for link in links
@@ -725,11 +720,11 @@ class PupilStore
     infoTxt = ""
     videoLink = ""
 
-    for k,v of product.tech_specs 
+    for k,v of product.tech_specs
       tableRows += "<tr><td class='TechSpecs-table--column'><strong>#{ k }</strong></td><td>#{ v }</td></tr>"
 
     if typeof(product.link_video) isnt 'undefined'
-      link = "<a href=#{ product.link_video } target='_blank'>#{ product.title_video }</a>"        
+      link = "<a href=#{ product.link_video } target='_blank'>#{ product.title_video }</a>"
       videoLink = "<tr><td class='TechSpecs-table--column'><strong>sample video(s)</strong></td><td>#{ link }</td></p>"
 
     selector = "div[class='Grid-cell TechSpecs--#{ type }']"
@@ -762,15 +757,15 @@ class PupilStore
     product_id = if $("#license").hasClass(@licenseConfigActive) then ['pupil',activeWorldId,activeEyeId,"edu"].join("_") else ['pupil',activeWorldId,activeEyeId].join("_")
 
     if activeWorldId is "wnone" and activeEyeId is "enone"
-      subTotal = "Not for sale"  
+      subTotal = "Not for sale"
       weight = ""
     else if activeWorldId is "w30" and activeEyeId is "e120b"
-      subTotal = "Not for sale"  
+      subTotal = "Not for sale"
       weight = ""
     else
       db = get_product_database()
       product = db[product_id]
-      sub_products = product.sub_products  
+      sub_products = product.sub_products
 
       subTotal = "€ " + db[product_id]['cost']
       weight = "weight: " + Number(sub_products['world_camera'].weight + sub_products['eye_camera'].weight) + " grams"
@@ -788,7 +783,7 @@ class PupilStore
   _get_key_from_product_id: (id)->
     if LocalStorage.length() > 0
       key = (k for k,v of LocalStorage.dict() when id is v.product)
-      return parseInt(key) 
+      return parseInt(key)
 
 $(document).ready ->
   s = new PupilStore
