@@ -26,6 +26,8 @@ _Hands-on with Pupil Labs - Current features and future directions_
 
 This workshop will provide a brief introduction to the mobile eye-tracking solutions and software ecosystem developed by Pupil Labs. In a hands-on demonstration and live-coding session, we will give a practical guide to leveraging the Pupil Labs open tool chain. Going forward, the team will present current development and research projects at Pupil Labs and in particular discuss how they utilise modern machine learning and computer vision methods.
 
+[Workshop demo code.](https://gist.github.com/papr/92844d060a5e72a47786b55eee25ef37)
+
 <h2 class="u-padTop--1">Exhibition</h2>
 
 We will be exhibiting throughout the duration of the symposium. Please stop by the exhibition area to try out Pupil products and meet with members of our team!
