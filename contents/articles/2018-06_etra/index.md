@@ -3,13 +3,12 @@ title: Pupil Labs @ ETRA
 date: Tue Jun 12 2018 11:42:18 GMT+0700 (+07)
 author: Pupil Dev Team
 subtitle: "Looking forward to seeing you at ETRA from June 14-17..."
-featured_img: "../../../../media/images/blog/pupil_gradient_nologo.jpg"
 featured_img_thumb: "../../../../media/images/blog/pupil_gradient_thumb.jpg"
 ---
 
 From June 14-17 we will be presenting research, conducting a workshop, and exhibiting Pupil Labs products at the [ACM Symposium on Eye Tracking Research & Applications](http://etra.acm.org/2018/) (ETRA) in Warsaw, Poland.
 
-We are proud to sponsor ETRA again this year and are looking forward to listening to talks, participating in workshops, and learning from the community! 
+We are proud to sponsor ETRA again this year and are looking forward to listening to talks, participating in workshops, and learning from the community!
 
 <h2 class="u-padTop--1">Research</h2>
 
@@ -21,11 +20,13 @@ Model-based methods for glint-free gaze estimation typically infer eye pose usin
 
 <h2 class="u-padTop--1">Workshop</h2>
 
-Saturday, June 16 from 10:30-12:30 - Room S227 
+Saturday, June 16 from 10:30-12:30 - Room S227
 
 _Hands-on with Pupil Labs - Current features and future directions_
 
 This workshop will provide a brief introduction to the mobile eye-tracking solutions and software ecosystem developed by Pupil Labs. In a hands-on demonstration and live-coding session, we will give a practical guide to leveraging the Pupil Labs open tool chain. Going forward, the team will present current development and research projects at Pupil Labs and in particular discuss how they utilise modern machine learning and computer vision methods.
+
+[Workshop demo code.](https://gist.github.com/papr/92844d060a5e72a47786b55eee25ef37)
 
 <h2 class="u-padTop--1">Exhibition</h2>
 
