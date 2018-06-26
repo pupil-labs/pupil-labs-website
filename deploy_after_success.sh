@@ -9,5 +9,5 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 	eval `ssh-agent -s`
 	ssh-add ~/.ssh/id_rsa
 	echo 'Pushing to server'
-	rsync -azhv --exclude "*.DS_Store" --exclude "*.git" --exclude "*.gitignore" build/ $SERVER_DEV
+	rsync -azhv --exclude "*.DS_Store" --exclude "*.git" --exclude "*.gitignore" $TRAVIS_BUILD_DIR/build/ $SERVER_DEV
 fi
