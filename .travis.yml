@@ -18,7 +18,7 @@ before_install:
 script:
 - ./deploy_before_install.sh
 - docker exec -t pupil-labs-website-node bash -c "ls -al &&
-  cp -R root/node_modules/ root/pupil-labs-website/ &&
+  cp -R node_modules/ pupil-labs-website/ &&
   cd pupil-labs-website &&
   gulp --version &&
   gulp webp:make &&
