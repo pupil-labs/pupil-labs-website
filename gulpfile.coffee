@@ -397,6 +397,7 @@ gulp.task("build",
   'rev:clean'), 
   (cb)->
     return cb
+)
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
