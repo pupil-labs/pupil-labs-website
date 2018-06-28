@@ -3,6 +3,7 @@
 //- contact
 
 div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE;color:white;")
+  h3.u-padBottom--2 Order Form
   form(id="order-form" data-parsley-validate data-parsley-focus="first")
 
     div.u-padBottom--2
@@ -154,6 +155,7 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
         //- payment method
         div.u-padBottom--2
           h4(style="font-weight:700;") Payment Method
+          p.Cart-disclaimerTxt(id="payment-text") After you submit the request we will follow up via email with a proforma invoice and credit card payment link.
           div.Grid.Grid--justifySpaceBetween.u-padBottom--1.u-padTop--1
             div(style="width:47%;")
               input(id="p-credit" class="Form-input--radio Form-payment-type" type="radio" name="p_type" value="credit" checked)
