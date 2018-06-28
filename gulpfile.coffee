@@ -50,7 +50,7 @@ gulp.task "preview", (cb)->
                       cb
 
 
-gulp.task 'default'
+gulp.task 'default',
   gulp.series 'preview', ->
   # preview with browserSync
   browserSync.init({server: "build", port:3000})
