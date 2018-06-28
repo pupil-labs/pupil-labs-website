@@ -50,7 +50,8 @@ gulp.task "preview", (cb)->
                       cb
 
 
-gulp.task 'default', ['preview'], ->
+gulp.task 'default'
+  gulp.series 'preview', ->
   # preview with browserSync
   browserSync.init({server: "build", port:3000})
   gulp.watch "./assets/**/*.{js,coffee}", ['js:build:preview']
@@ -69,8 +70,10 @@ gulp.task "build:clean", ->
 gulp.task "build_log", ->
   return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
 
-gulp.task 'preview:jade', ['build_wintersmith'], reload
-gulp.task 'preview:md', ['build_wintersmith'], reload
+gulp.task 'preview:jade', 
+  gulp.series 'build_wintersmith', reload
+gulp.task 'preview:md',
+  gulp.series 'build_wintersmith', reload
 
 # =================================================================                      
 # css build tasks
@@ -86,7 +89,8 @@ gulp.task "css:build", ->
             remove: true # remove un-needed prefixes
         .pipe gulp.dest "./contents/css"
 
-gulp.task "css:build:preview", ["css:build"], ->
+gulp.task "css:build:preview", 
+  gulp.series "css:build", ->
   return gulp.src "./contents/css/main.css"
           .pipe gulp.dest "./build/css"
         
@@ -165,7 +169,8 @@ gulp.task "js:build", (cb)->
               "js:coffee:build",
               cb
 
-gulp.task "js:build:preview", ["js:build"], ->
+gulp.task "js:build:preview", 
+  gulp.series "js:build", ->
   return gulp.src "./contents/js/*.js"
           .pipe gulp.dest "./build/js"
 
