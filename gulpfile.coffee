@@ -31,48 +31,6 @@ size = require 'gulp-size'
 rename = require 'gulp-rename'
 imgResize = require 'gulp-image-resize'
 
-# =================================================================                      
-# high level tasks
-# =================================================================                      
-gulp.task "build", (cb)->
-  return runSequence  ['build:clean', 'js:clean'],
-                      ['css:build','js:build'],
-                      'build_wintersmith',
-                      ['css:rev','js:rev'],
-                      'ref:all',
-                      'rev:clean',
-                       cb
-
-gulp.task "preview", (cb)->
-  return runSequence  ['build:clean', 'js:clean'],
-                      ['css:build','js:build', 'webp:make'],
-                      'build_wintersmith',
-                      cb
-
-
-gulp.task 'default', gulp.series('preview'), ->
-  # preview with browserSync
-  browserSync.init({server: "build", port:3000})
-  gulp.watch "./assets/**/*.{js,coffee}", ['js:build:preview']
-  gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
-  gulp.watch "./templates/**/*.jade", ['preview:jade']
-  gulp.watch "./contents/**/*.md", ['preview:md']
-
-
-gulp.task 'browsersync', (cb)->
-  return browserSync.init({server: "build", port:3000})
-
-gulp.task "build:clean", ->
-  return gulp.src('./build',{read:false})
-          .pipe(clean())
-
-gulp.task "build_log", ->
-  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
-
-gulp.task 'preview:jade', 
-  gulp.series('build_wintersmith'), reload
-gulp.task 'preview:md', 
-  gulp.series('build_wintersmith'), reload
 
 # =================================================================                      
 # css build tasks
@@ -216,16 +174,6 @@ gulp.task 'image_min', ->
 # lazyload & webp tasks
 # ================================================================= 
 
-gulp.task "img:make", (cb)->
-  return runSequence  'webp:make',
-                      'img:make:previews'
-                      cb
-
-gulp.task "img:clean", (cb)->
-  return runSequence  'jpeg:format',
-                      'jpeg:clean'
-                      cb
-
 gulp.task "jpeg:clean", ->
   return gulp.src('contents/media/images/**/*.{jpeg}',{read:false})
           .pipe(clean())
@@ -261,6 +209,17 @@ gulp.task 'webp:make', ->
       quality: 80
     .pipe size()
     .pipe gulp.dest('./')
+
+
+gulp.task "img:make", (cb)->
+  return runSequence  'webp:make',
+                      'img:make:previews'
+                      cb
+
+gulp.task "img:clean", (cb)->
+  return runSequence  'jpeg:format',
+                      'jpeg:clean'
+                      cb
 
 # =================================================================                      
 # site compile tasks
@@ -298,7 +257,7 @@ gulp.task "generate_favicons", ->
 
 
 
-gulp.task "build_wintersmith", (cb)->
+gulp.task "build:wintersmith", (cb)->
   knownOpts = 
     boolean: ['dev','staging','production']
 
@@ -409,3 +368,47 @@ gulp.task "css:clean", ->
                 new RegExp('^.plyr.*')
                ]))
     .pipe(gulp.dest('build/css'))
+
+# =================================================================                      
+# high level tasks
+# =================================================================                      
+gulp.task 'browsersync', (cb)->
+  return browserSync.init({server: "build", port:3000})
+
+gulp.task "build:clean", ->
+  return gulp.src('./build',{read:false})
+          .pipe(clean())
+
+gulp.task "build_log", ->
+  return gutil.log gutil.colors.white.bgBlue("Build..."), "Complete"
+
+gulp.task 'preview:jade', 
+  gulp.series('build:wintersmith'), reload
+gulp.task 'preview:md', 
+  gulp.series('build:wintersmith'), reload
+
+
+gulp.task "build", (cb)->
+  return runSequence  ['build:clean', 'js:clean'],
+                      ['css:build','js:build'],
+                      'build:wintersmith',
+                      ['css:rev','js:rev'],
+                      'ref:all',
+                      'rev:clean',
+                       cb
+
+gulp.task "preview", (cb)->
+  return runSequence  ['build:clean', 'js:clean'],
+                      ['css:build','js:build', 'webp:make'],
+                      'build:wintersmith',
+                      cb
+
+
+gulp.task 'default', gulp.series('preview'), ->
+  # preview with browserSync
+  browserSync.init({server: "build", port:3000})
+  gulp.watch "./assets/**/*.{js,coffee}", ['js:build:preview']
+  gulp.watch "./assets/stylus/**/*.styl", ['css:build:preview']
+  gulp.watch "./templates/**/*.jade", ['preview:jade']
+  gulp.watch "./contents/**/*.md", ['preview:md']
+

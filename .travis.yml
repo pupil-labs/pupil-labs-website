@@ -20,7 +20,6 @@ script:
 - docker exec -t pupil-labs-website-node bash -c "ls -al &&
   cp -R node_modules/ pupil-labs-website/ &&
   cd pupil-labs-website &&
-  ls -al &&
   echo 'Generating webp from source images' &&
   gulp webp:make &&
   echo 'Building Site' &&
