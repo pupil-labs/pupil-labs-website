@@ -394,8 +394,7 @@ gulp.task("build", (cb)->
             'build:wintersmith',
             gulp.parallel('css:rev', 'js:rev'),
             'ref:all',
-            'rev:clean'),
-            cb)
+            'rev:clean'), cb)
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
