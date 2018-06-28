@@ -155,7 +155,7 @@ gulp.task "rev:clean", ->
 # image min tasks
 # =================================================================                      
 
-gulp.task 'image_min', ->
+gulp.task 'img:minify', ->
   options = {
     resize: [1440,1440],
     quality: 85,
