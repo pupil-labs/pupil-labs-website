@@ -388,14 +388,15 @@ gulp.task 'preview:md',
   gulp.series('build:wintersmith'), reload
 
 
-gulp.task("build", (cb)->          
-  return gulp.series(gulp.parallel('build:clean', 'js:clean'),
-            gulp.parallel('css:build','js:build'),
-            'build:wintersmith',
-            gulp.parallel('css:rev', 'js:rev'),
-            'ref:all',
-            'rev:clean', 
-            cb()))
+gulp.task("build", 
+  gulp.series(gulp.parallel('build:clean', 'js:clean'),
+  gulp.parallel('css:build','js:build'),
+  'build:wintersmith',
+  gulp.parallel('css:rev', 'js:rev'),
+  'ref:all',
+  'rev:clean'), 
+  (cb)->
+    return cb
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
