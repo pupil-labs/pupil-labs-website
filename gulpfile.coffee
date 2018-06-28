@@ -395,7 +395,7 @@ gulp.task("build", (cb)->
             gulp.parallel('css:rev', 'js:rev'),
             'ref:all',
             'rev:clean', 
-            cb))
+            cb()))
 
 gulp.task "preview", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
