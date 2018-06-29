@@ -404,23 +404,6 @@ class PupilStore
       orderFormContainer = "Cart-orderForm-container"
       $('#OrderType-order').addClass("Button--state-active")
       $("."+orderFormContainer).css("display","block")
-      $('label[for="form-submit"]').text('Submit Order')
-
-      $("input[class='Form-input--radio Form-checkout']").click (event)=>
-        event.preventDefault()
-        button = $(event.target)
-        id = $(button).attr('id')
-        submitTxt = if id is "order" then "Submit Order" else "Request Quote"
-        labelId = '#OrderType-'+id
-
-        orderFormActive = "Cart-orderForm--state-active"
-        if not $(labelId).hasClass("Button--state-active")
-          $("label[class^='Button-radio--lg Form-input--radioLabel--lg']").removeClass('Button--state-active')
-          $(labelId).addClass("Button--state-active")
-          if not $(orderFormContainer).hasClass(orderFormActive)
-            $("."+orderFormContainer).slideDown()
-            $("."+orderFormContainer).addClass(orderFormActive)
-          $('label[for="form-submit"]').text(submitTxt)
 
   eventUpdateFormValues: ->
     if $(@cartPage).length > 0
@@ -464,10 +447,19 @@ class PupilStore
       button = $(event.target)
       input = $('#o_type')
       p_transfer = $("div[for='p-banktransfer']")
+      p_credit = $("div[for='p-credit']")
+
+      paymentText = "After you submit the request we will follow up via email with a "
+      creditCardRequest = "proforma invoice and credit card payment link."
+      bankTransferRequest = "proforma invoice and bank account details for transfer."
+      creditCardQuote = "quote and credit card payment link."
+      bankTransferQuote = "quote and bank account details for transfer."
 
       if $(input).val() == 'order'
         $(button).toggleClass('checkmark--active')
         $(input).val('quote')
+        submitTxt = "Submit Quote Request"
+        $('label[for="form-submit"]').text(submitTxt)
 
         if $(p_transfer).hasClass('Button--state-active')
           $(p_transfer).val('purchaseorder')
@@ -477,10 +469,29 @@ class PupilStore
       else
         $(button).toggleClass('checkmark--active')
         $(input).val('order')
+        submitTxt = "Submit Order Request"
+        $('label[for="form-submit"]').text(submitTxt)
+
+      if $(button).hasClass('checkmark--active')
+        if $(p_transfer).hasClass('Button--state-active')
+          $('#payment-text').text(paymentText + bankTransferQuote)
+        if $(p_credit).hasClass('Button--state-active')
+          $('#payment-text').text(paymentText + creditCardQuote)
+      else
+        if $(p_transfer).hasClass('Button--state-active')
+          $('#payment-text').text(paymentText + bankTransferRequest)
+        if $(p_credit).hasClass('Button--state-active')
+          $('#payment-text').text(paymentText + creditCardRequest)
 
   eventTogglePaymentType: ->
     if $(@cartPage).length > 0
       paymentButton = $("div[for^='p-']")
+
+      paymentText = "After you submit the request we will follow up via email with a "
+      creditCardRequest = "proforma invoice and credit card payment link."
+      bankTransferRequest = "proforma invoice and bank account details for transfer."
+      creditCardQuote = "quote and credit card payment link."
+      bankTransferQuote = "quote and bank account details for transfer."
 
       $(paymentButton).click (event)=>
         event.preventDefault()
@@ -498,6 +509,15 @@ class PupilStore
             $(input_transfer).val('banktransfer')
           else
             $(input_transfer).val('purchaseorder')
+
+          if buttonId == 'p-credit'
+            $('#payment-text').text(paymentText + creditCardRequest)
+            if $("#q-checkbox").hasClass('checkmark--active')
+              $('#payment-text').text(paymentText + creditCardQuote)
+          else
+            $('#payment-text').text(paymentText + bankTransferRequest)
+            if $("#q-checkbox").hasClass('checkmark--active')
+                $('#payment-text').text(paymentText + bankTransferQuote)
 
   eventSubmitForm: ->
     if $(@cartPage).length > 0
