@@ -116,18 +116,6 @@ gulp.task "js:clean", ->
         .pipe clean()
 
 
-gulp.task("build", 
-  gulp.series(gulp.parallel('build:clean', 'js:clean'),
-  gulp.parallel('css:build','js:build'),
-  'build:wintersmith',
-  gulp.parallel('css:rev', 'js:rev'),
-  'ref:all',
-  'rev:clean'), 
-  (cb)->
-    return cb
-)
-
-
 gulp.task("js:build", 
   gulp.series("js:clean",
               "js:sidenav:build",
