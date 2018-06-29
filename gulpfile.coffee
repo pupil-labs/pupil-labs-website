@@ -75,7 +75,7 @@ gulp.task "css:clean", ->
 
 gulp.task "js:sidenav:build", ->
   return gulp.src "./assets/js/sidenav/*.js"
-      .pipe babel(presets: ['es2015'])
+      .pipe babel(plugins: ['transform-es2015-classes'])
       .pipe concat "sidenav.js"
       .pipe uglify()
       .pipe gulp.dest "contents/js"
