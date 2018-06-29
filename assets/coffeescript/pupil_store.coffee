@@ -525,6 +525,21 @@ class PupilStore
       $("#order-form").on "submit", (event)=>
         event.preventDefault()
         form = $(event.target)
+        email = $('#email_c').val()
+        input_transfer = $('#p-banktransfer')
+        input_credit = $('#p-credit')
+        q = ''
+        pType = ''
+
+        if $('#o_type').val() == 'quote'
+              q = 'q'
+            else
+              q = 'o'
+
+            if $('#p-credit').prop("checked")
+              pType = 'cc'
+            else
+              pType = 'bt'
 
         if $(form).parsley().isValid()
           $('label[for="form-submit"]').addClass("Button--state-inactive")
@@ -566,7 +581,7 @@ class PupilStore
 
             if @readyState is 4
               if @status is 200
-                window.location.replace "#{window.location.origin}/order_success"
+                window.location.replace "#{window.location.origin}/order_success/?email=" + email + '&p=' + pType + '&q=' + q
               else
                 console.warn "Request Error: #{@statusText}"
 
@@ -701,7 +716,25 @@ class PupilStore
       data = @_getOrderPermalink()
       url = window.location.origin + "/cart/?" + $.param(data)
       link = "<a href='#{url}'>permalink</a>"
-      html = "<h3>You can always revisit your order with this #{link}.</h3>"
+      urlParams = new URLSearchParams(window.location.search);
+      email = urlParams.get('email')
+      payment = urlParams.get('p')
+      quote = urlParams.get('q')
+
+      if quote == 'o'
+        pi = 'proforma invoice'
+        order_type = 'an order'
+      else
+        pi = 'quote'
+        order_type = 'a quote'
+
+      if payment == 'cc'
+        payment_method = "Use the <strong>credit card payment link</strong> in the #{pi} to complete payment."
+      else
+        payment_method = "Use the <strong>bank account information</strong> in the #{pi} to complete payment."
+
+      html = "<h3><strong>#{email}</strong> will receive a confirmation email with a #{pi}.</h3>
+              <h3>#{payment_method}</h3>"
       $(".Site-content-container.Background-img-caption-container.u-textCenter").append(html)
       # very important - clear LocalStorage after setting the link
       LocalStorage.clear()
