@@ -65,7 +65,7 @@ gulp.task "css:ref", ->
 
 
 gulp.task "css:clean", ->
-  return gulp.src("./contents/css/*.css", {read: false})
+  return gulp.src("./contents/css/*.css", {read: false, allowEmpty: true})
         .pipe clean()
   
 
@@ -112,7 +112,7 @@ gulp.task "js:coffee:build", ->
   
 
 gulp.task "js:clean", ->
-  return gulp.src("./contents/js/*.js", {read: false})
+  return gulp.src("./contents/js/*.js", {read: false, allowEmpty: true})
         .pipe clean()
 
 
@@ -175,7 +175,7 @@ gulp.task 'img:minify', ->
 # ================================================================= 
 
 gulp.task "jpeg:clean", ->
-  return gulp.src('contents/media/images/**/*.{jpeg}',{read:false})
+  return gulp.src('contents/media/images/**/*.{jpeg}',{read:false, allowEmpty: true})
           .pipe(clean())
 
 gulp.task "jpeg:format", ->
@@ -327,7 +327,7 @@ gulp.task "newPost", ->
 # =================================================================                      
 
 gulp.task "css:clean", ->
-  return gulp.src('build/css/*.css')
+  return gulp.src('build/css/*.css', {allowEmpty: true})
     .pipe(uncss(
       html: ['build/*/*.html', 'build/index.html', "!build/blog"]
       report: true
@@ -376,7 +376,7 @@ gulp.task 'browsersync', (cb)->
   return browserSync.init({server: "build", port:3000})
 
 gulp.task "build:clean", ->
-  return gulp.src('./build',{read:false})
+  return gulp.src('./build',{read:false, allowEmpty: true})
           .pipe(clean())
 
 gulp.task "build_log", ->
