@@ -645,97 +645,6 @@ class PupilStore
 
   eventFillORderFormFromQueryString: ->
     query = window.location.search.substring(1)
-    urlParams = new URLSearchParams(window.location.search)
-    testQuery = urlParams.get('test')
-    userQuery = urlParams.get('user')
-
-    name = {
-      us : 'John',
-      uk : 'George'
-      de : 'Christen',
-      jp : 'Takeshi',
-    }
-
-    contact_info = {
-      contact: {
-        email_c : 'test@example.com',
-        name_0_c : name[userQuery] + 'C',
-        name_1_c : name[userQuery] + 'C',
-      },
-      billing: {
-        name_0_b : name[userQuery] + 'B',
-        name_1_b : name[userQuery] + 'B',
-        address_0_b : 'test address line 1 B',
-        address_1_b : 'test address line 2 B',
-        company_b: 'PPL',
-        vatid_b : 'test vat id',
-      },
-      shipping: {
-        name_0_s : name[userQuery] + 'S',
-        name_1_s : name[userQuery] + 'S',
-        address_0_s : 'test address line 1 S',
-        address_1_s : 'test address line 2 S',
-        company_s : 'PPL',
-      },
-      checkbox: {
-        shipping_copy : 'checked',
-        q_request: 'checked',
-      },
-      notes: {
-        x_notes : 'this is a ' + userQuery.toUpperCase() + ' test order...'
-      }
-    }
-
-    test_order_form = {
-      us : {
-        country_b : 'United States Of America',
-        country_s : 'United States Of America',
-        city_b : 'Chicago',
-        city_s : 'Chicago',
-        division_b : 'IL',
-        division_s : 'IL',
-        phone_b : '66909017666',
-        phone_s : '66909017666',
-        postalCode_b : '90210',
-        postalCode_s : '90210',
-        o_type: 'quote',
-      },
-      uk : {
-        country_b : 'United Kingdom',
-        country_s : 'United Kingdom',
-        city_s : 'London',
-        city_b : 'London',
-        division_s : 'London',
-        division_b : 'London',
-        phone_b : '66909017666',
-        phone_s : '66909017666',
-        postalCode_b : '90210',
-        postalCode_s : '90210',
-        o_type: 'quote',
-      },
-      jp : {
-        country_b : 'Japan',
-        country_s : 'Japan',
-        city_s : 'Tokyo',
-        city_b : 'Tokyo',
-        division_s : 'Shinjuku',
-        division_b : 'Shinjuku',
-        phone_b : '66909017666',
-        phone_s : '66909017666',
-        postalCode_b : '90210',
-        postalCode_s : '90210',
-        o_type: 'quote',
-      },
-    }
-
-    country = Object.assign(
-      test_order_form[userQuery],
-      contact_info.contact,
-      contact_info.billing,
-      contact_info.shipping,
-      contact_info.checkbox,
-      contact_info.notes
-    )
 
     if query.length > 0
       if testQuery == '1'
@@ -743,13 +652,13 @@ class PupilStore
         for input in formInput
           if $(input).prop('type') == 'checkbox'
             if $(input).attr('id') == 'q_request'
-              $(input).prop(country[$(input).prop('id')], true)
+              $(input).prop(countryObj[$(input).prop('id')], true)
               $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
             else
               $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
               $(".Form-shipping-container").fadeIn(250)
           else
-            $(input).val(country[$(input).prop('name')])
+            $(input).val(countryObj[$(input).prop('name')])
         console.log('Test Success')
       else
         console.log('Test failed')
