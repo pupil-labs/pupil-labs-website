@@ -25,7 +25,7 @@ script:
   echo 'Building Site' &&
   gulp build --staging &&
   echo 'Minifying images' &&
-  gulp image:minify &&
+  gulp img:minify &&
   echo 'Generating sitemap' &&
   gulp generate_sitemap &&
   echo 'Done building'"
