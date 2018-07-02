@@ -76,9 +76,8 @@ gulp.task "css:clean", ->
 gulp.task "js:sidenav:build", ->
   return gulp.src "./assets/js/sidenav/*.js"
       .pipe babel(presets: ['env', 
-        {"targets" : {
-          { "browsers" : ["last 2 versions"]}
-          }
+        {"targets" : 
+          {"browsers" : ["last 2 versions"]}
         }
       ])
       .pipe concat "sidenav.js"
@@ -88,9 +87,8 @@ gulp.task "js:sidenav:build", ->
 gulp.task "js:cart_animate:build", ->
   return gulp.src "./assets/js/cart_animation/*.js"
       .pipe babel(presets: ['env', 
-        {"targets" : {
-          { "browsers" : ["last 2 versions"]}
-          }
+        {"targets" : 
+          {"browsers" : ["last 2 versions"]}
         }
       ])
       .pipe concat "cart_animate.js"
@@ -100,9 +98,8 @@ gulp.task "js:cart_animate:build", ->
 gulp.task "js:video:build", ->
   return gulp.src "./assets/js/bkg_video/*.js"
       .pipe babel(presets: ['env', 
-        {"targets" : {
-          { "browsers" : ["last 2 versions"]}
-          }
+        {"targets" : 
+          {"browsers" : ["last 2 versions"]}
         }
       ])
       .pipe concat "bkg_video.js"
@@ -112,9 +109,8 @@ gulp.task "js:video:build", ->
 gulp.task "js:plyr:build", ->
   return gulp.src "./assets/js/plyr/*.js"
       .pipe babel(presets: ['env', 
-        {"targets" : {
-          { "browsers" : ["last 2 versions"]}
-          }
+        {"targets" : 
+          {"browsers" : ["last 2 versions"]}
         }
       ])
       .pipe concat "plyr.js"
@@ -127,9 +123,8 @@ gulp.task "js:coffee:build", ->
           bare: true
         )
         .pipe babel(presets: ['env', 
-          {"targets" : {
-            { "browsers" : ["last 2 versions"]}
-            }
+          {"targets" : 
+            {"browsers" : ["last 2 versions"]}
           }
         ])
         .pipe concat "main.js"
