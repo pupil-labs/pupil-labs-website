@@ -7,19 +7,19 @@
 .Form-input--text
   padding .75em 0
   background transparent
-  box-shadow rgb(255,255,255) 0 -1px 0 0 inset
+  box-shadow rgba(255,255,255, 0.5) 0 -1px 0 0 inset
   border none
   border-radius 0
   display flex
   outline none
-  color rgba(0,0,0,0.8)
+  color rgba(255,255,255,0.9)
   height 3em
 
 .Form-error--text
   text-transform lowercase
   font-size .8em
   padding .25em
-  color complement($link-hover-color)
+  color #2b0006
 
 .Form-input--textarea
   vertical-align top
@@ -27,11 +27,11 @@
 
 textarea
   &::placeholder
-    color white
+    color rgba(255,255,255, 0.4)
   &:-ms-input-placeholder
-    color white
+    color rgba(255,255,255, 0.4)
   &::-ms-input-placeholder
-    color white
+    color rgba(255,255,255, 0.4)input
 
 .Form-fieldset
   //
@@ -51,7 +51,7 @@ textarea
   display flex
   height 3em
   align-self flex-start
-  color #222
+  color rgba(0,0,0,0.3)
 
 .Form-input--radioLabel-lg
   display flex
@@ -97,17 +97,21 @@ textarea
   overflow hidden
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
-  -webkit-box-shadow 0 0 0 30px rgb(91, 139, 238) inset
-  -webkit-text-fill-color rgba(0,0,0,0.8)
+  -webkit-box-shadow 0 0 0 30px rgb(70, 98, 251) inset
+  -webkit-text-fill-color rgba(255,255,255,0.9)
   border-bottom 1px solid white
 
 input
   &::placeholder
-    color white
+    color rgba(255,255,255, 0.4)
   &:-ms-input-placeholder
-    color white
+    color rgba(255,255,255, 0.4)
   &::-ms-input-placeholder
-    color white
+    color rgba(255,255,255, 0.4)
+  &::selection
+    background rgba(255,255,255, 0.3)
+  &::-moz-selection
+    background rgba(255,255,255, 0.3)
 
 .Form-container
     display block
@@ -128,7 +132,7 @@ input
 /* Create a custom checkbox */
 .checkmark
     position absolute
-    top 0
+    top -4px
     left 0
     height 22px
     width 22px
