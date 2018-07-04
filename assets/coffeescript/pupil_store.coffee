@@ -634,7 +634,7 @@ class PupilStore
             .prop("disabled",true)
 
         return validity
-      )).addMessage 'en', 'countryvalidator', 'Please select a country from the datalist'
+      )).addMessage 'en', 'countryvalidator', 'Please select a country from the list'
 
   divisionValidator: ->
     if $(@cartPage).length > 0
