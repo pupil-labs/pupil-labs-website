@@ -679,24 +679,29 @@ class PupilStore
         document.location = "?" + $.param(data) + '&user=uk' + '&test=1'
 
   eventFillORderFormFromQueryString: ->
-    query = window.location.search.substring(1)
+    if $(@cartPage).length > 0
+      query = window.location.search.substring(1)
+      urlParams = new URLSearchParams(window.location.search)
+      testQuery = urlParams.get('test')
+      userQuery = urlParams.get('user')
 
-    if query.length > 0
-      if testQuery == '1'
-        formInput = $('#order-form').find(':input')
-        for input in formInput
-          if $(input).prop('type') == 'checkbox'
-            if $(input).attr('id') == 'q_request'
-              $(input).prop(countryObj[$(input).prop('id')], true)
-              $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
+      if query.length > 0
+        testData = getDummyData(userQuery)
+        if testQuery == '1'
+          formInput = $('#order-form').find(':input')
+          for input in formInput
+            if $(input).prop('type') == 'checkbox'
+              if $(input).attr('id') == 'q_request'
+                $(input).prop(testData[$(input).prop('id')], true)
+                $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
+              else
+                $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
+                $(".Form-shipping-container").fadeIn(250)
             else
-              $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
-              $(".Form-shipping-container").fadeIn(250)
-          else
-            $(input).val(countryObj[$(input).prop('name')])
-        console.log('Test Success')
-      else
-        console.log('Test failed')
+              $(input).val(testData[$(input).prop('name')])
+          console.log('Test Success')
+        else
+          console.log('Test failed')
 
   eventFillCartFromQueryString: ->
     query = window.location.search.substring(1)
