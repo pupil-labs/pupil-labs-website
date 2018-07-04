@@ -97,8 +97,8 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
             id="Form-input--s-toggle-copy"
             style="pointer-events:none;"
           ) Use different shipping address
-            input(type="checkbox" id="shipping-copy")
-            span(id="s-checkbox" style="pointer-events:auto;").checkmark
+            input(type="checkbox" id="shipping_copy")
+            span(id="s-checkbox" name="shipping_copy" style="pointer-events:auto;").checkmark
 
         //- This part is shown/hidden based on the toggle
         div.Form-shipping-container(style="padding-top: 0.6em")
@@ -185,8 +185,8 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:#5B8BEE
             id="Form-input--q-toggle-copy"
             style="pointer-events:none;"
           ) Request Quote
-            input(type="checkbox" id="q-request")
-            span(id="q-checkbox" style="pointer-events:auto;").checkmark
+            input(type="checkbox" id="q_request")
+            span(id="q-checkbox" name="q_request" style="pointer-events:auto;").checkmark
 
       //- notes
       div

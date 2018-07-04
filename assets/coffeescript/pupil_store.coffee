@@ -30,6 +30,7 @@ class PupilStore
       @eventUpdateCartNavCounter()
       @eventUpdateConfig()
       @eventSelectLicense()
+      @eventFillORderFormFromQueryString()
       @eventFillCartFromQueryString()
       @eventRenderCart()
       @eventRemoveCartItem()
@@ -675,15 +676,36 @@ class PupilStore
         event.preventDefault()
         link = $(event.target)
         data = @_getOrderPermalink()
-        document.location = "?"+ $.param(data)
+        document.location = "?" + $.param(data) + '&user=uk' + '&test=1'
+
+  eventFillORderFormFromQueryString: ->
+    query = window.location.search.substring(1)
+
+    if query.length > 0
+      if testQuery == '1'
+        formInput = $('#order-form').find(':input')
+        for input in formInput
+          if $(input).prop('type') == 'checkbox'
+            if $(input).attr('id') == 'q_request'
+              $(input).prop(countryObj[$(input).prop('id')], true)
+              $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
+            else
+              $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
+              $(".Form-shipping-container").fadeIn(250)
+          else
+            $(input).val(countryObj[$(input).prop('name')])
+        console.log('Test Success')
+      else
+        console.log('Test failed')
 
   eventFillCartFromQueryString: ->
     query = window.location.search.substring(1)
-    if query.length > 0
+    productQuery = query.replace(/&user.+/g, '')
+    if productQuery.length > 0
       # ?0_order=world_none%2Ceye_120hz_binocular%2Clicense_commercial&0_qty=3&1_order=world_hr%2Ceye_120hz_binocular%2Clicense_commercial&1_qty=2&2_order=product_support_6&2_qty=1
       # ?0_order=world_hr%2CCeye_120hz%2Clicense_academic&0_qty=1
       LocalStorage.clear()
-      pairs = query.split('&')
+      pairs = productQuery.split('&')
       # while pairs.length > 0
       j = 0
       for p,i in pairs by 2
