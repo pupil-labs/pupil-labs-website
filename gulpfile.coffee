@@ -2,11 +2,11 @@
 gulp = require "gulp"
 gutil = require "gulp-util"
 
-# node filesystem 
+# node filesystem
 fs = require('fs')
 
 # parse command line args
-minimist = require 'minimist' 
+minimist = require 'minimist'
 browserSync = require("browser-sync")
 reload = browserSync.reload
 
@@ -31,9 +31,9 @@ size = require 'gulp-size'
 rename = require 'gulp-rename'
 imgResize = require 'gulp-image-resize'
 
-# =================================================================                      
+# =================================================================
 # high level tasks
-# =================================================================                      
+# =================================================================
 gulp.task "build", (cb)->
   return runSequence  ['build:clean', 'js:clean'],
                       ['css:build','js:build'],
@@ -72,9 +72,9 @@ gulp.task "build_log", ->
 gulp.task 'preview:jade', ['build_wintersmith'], reload
 gulp.task 'preview:md', ['build_wintersmith'], reload
 
-# =================================================================                      
+# =================================================================
 # css build tasks
-# =================================================================                      
+# =================================================================
 
 gulp.task "css:build", ->
   return gulp.src "./assets/stylus/main.styl"
@@ -89,7 +89,7 @@ gulp.task "css:build", ->
 gulp.task "css:build:preview", ["css:build"], ->
   return gulp.src "./contents/css/main.css"
           .pipe gulp.dest "./build/css"
-        
+
 gulp.task "css:rev", ->
   return gulp.src "./build/css/main.css"
         .pipe rev()
@@ -107,11 +107,11 @@ gulp.task "css:ref", ->
 gulp.task "css:clean", ->
   return gulp.src("./contents/css/*.css", {read: false})
         .pipe clean()
-  
 
-# =================================================================                      
+
+# =================================================================
 # js build tasks
-# =================================================================                      
+# =================================================================
 
 gulp.task "js:sidenav:build", ->
   return gulp.src "./assets/js/sidenav/*.js"
@@ -126,7 +126,7 @@ gulp.task "js:cart_animate:build", ->
       .pipe concat "cart_animate.js"
       .pipe uglify()
       .pipe gulp.dest "contents/js"
-    
+
 gulp.task "js:video:build", ->
   return gulp.src "./assets/js/bkg_video/*.js"
       .pipe babel(presets: ['es2015'])
@@ -141,6 +141,13 @@ gulp.task "js:plyr:build", ->
       .pipe uglify()
       .pipe gulp.dest "contents/js"
 
+gulp.task "js:autocomplete:build", ->
+  return gulp.src "./assets/js/autocomplete/*.js"
+      .pipe babel(presets: ['es2015'])
+      .pipe concat "autocomplete.js"
+      .pipe uglify()
+      .pipe gulp.dest "contents/js"
+
 gulp.task "js:coffee:build", ->
   return gulp.src "./assets/coffeescript/*.coffee"
         .pipe coffee(
@@ -149,7 +156,7 @@ gulp.task "js:coffee:build", ->
         .pipe concat "main.js"
         .pipe uglify()
         .pipe gulp.dest "contents/js"
-  
+
 
 gulp.task "js:clean", ->
   return gulp.src("./contents/js/*.js", {read: false})
@@ -162,6 +169,7 @@ gulp.task "js:build", (cb)->
               "js:cart_animate:build",
               "js:video:build",
               "js:plyr:build",
+              "js:autocomplete:build",
               "js:coffee:build",
               cb
 
@@ -176,9 +184,9 @@ gulp.task "js:rev", ->
         .pipe rev.manifest({base: "./", merge:true})
         .pipe gulp.dest "assets/rev_manifest"
 
-# =================================================================                      
+# =================================================================
 # update all refs
-# =================================================================                      
+# =================================================================
 
 
 gulp.task "ref:all", ->
@@ -191,9 +199,9 @@ gulp.task "rev:clean", ->
   return gulp.src ["./build/css/main.css","./build/js/main.js","./build/js/bkg_video.js","./build/js/sidenav.js"]
         .pipe clean()
 
-# =================================================================                      
+# =================================================================
 # image min tasks
-# =================================================================                      
+# =================================================================
 
 gulp.task 'image_min', ->
   options = {
@@ -210,9 +218,9 @@ gulp.task 'image_min', ->
     .pipe(image_min(options))
     .pipe(gulp.dest('./'))
 
-# =================================================================                      
+# =================================================================
 # lazyload & webp tasks
-# ================================================================= 
+# =================================================================
 
 gulp.task "img:make", (cb)->
   return runSequence  'webp:make',
@@ -260,9 +268,9 @@ gulp.task 'webp:make', ->
     .pipe size()
     .pipe gulp.dest('./')
 
-# =================================================================                      
+# =================================================================
 # site compile tasks
-# =================================================================                      
+# =================================================================
 
 
 gulp.task "generate_sitemap", ->
@@ -297,11 +305,11 @@ gulp.task "generate_favicons", ->
 
 
 gulp.task "build_wintersmith", (cb)->
-  knownOpts = 
+  knownOpts =
     boolean: ['dev','staging','production']
 
   opts = minimist process.argv.slice(2), knownOpts
-  
+
   if opts.dev
     wintersmith.settings.configFile = 'config.json'
     wintersmith.build ->
@@ -312,7 +320,7 @@ gulp.task "build_wintersmith", (cb)->
     wintersmith.build ->
       gutil.log "Successfully built wintersmith for --> staging."
       cb()
-  if opts.production 
+  if opts.production
     wintersmith.settings.configFile = 'config_production.json'
     wintersmith.build ->
       gutil.log "Successfully built wintersmith for --> production."
@@ -324,13 +332,13 @@ gulp.task "build_wintersmith", (cb)->
       cb()
 
 
-# =================================================================                      
+# =================================================================
 # utils
-# =================================================================                      
+# =================================================================
 
 
 gulp.task "newPost", ->
-  knownOpts = 
+  knownOpts =
     string: ['title','date']
     defaults: {date: folderDate, title: 'untitled'}
   opts = if process.argv.length > 1 then minimist process.argv.slice(2), knownOpts else {'title':null}
@@ -339,12 +347,12 @@ gulp.task "newPost", ->
   date = if not isNaN(Date.parse(opts.date)) then new Date(opts.date) else new Date()
   y = date.getFullYear()
   m = date.getMonth()+1 # yes...js months are 0 based
-  folderDate =  y + "-" + ("0" + m).slice(-2)  
+  folderDate =  y + "-" + ("0" + m).slice(-2)
   postTitle = folderDate + fileTitle
 
-  postDir = "contents/articles/" + "#{ postTitle }" 
+  postDir = "contents/articles/" + "#{ postTitle }"
   try
-    fs.mkdirSync postDir 
+    fs.mkdirSync postDir
   catch e
     if e.code == 'EEXIST'
       gutil.log gutil.colors.white.bgRed("Warning: "), "Directory already exists at path:", gutil.colors.white.bgRed("#{ e.path }"),  "\nTry an alternate title with gulp newPost --title 'my post title'"
@@ -357,13 +365,13 @@ gulp.task "newPost", ->
               \nsubtitle: ''
               \nfeatured_img_thumb: ''
               \n---"
-  fs.writeFile postDir+"/index.md", postHeader 
-  gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")    
+  fs.writeFile postDir+"/index.md", postHeader
+  gutil.log gutil.colors.white.bgBlue("Success! "), "New post created at", gutil.colors.white.bgBlue("#{ postDir }")
 
 
-# =================================================================                      
+# =================================================================
 # experiments
-# =================================================================                      
+# =================================================================
 
 gulp.task "css:clean", ->
   return gulp.src('build/css/*.css')
@@ -405,5 +413,6 @@ gulp.task "css:clean", ->
                 new RegExp('^.animated.*')
                 new RegExp('^.pulse.*')
                 new RegExp('^.plyr.*')
+                new RegExp('^.autocomplete.*')
                ]))
     .pipe(gulp.dest('build/css'))
