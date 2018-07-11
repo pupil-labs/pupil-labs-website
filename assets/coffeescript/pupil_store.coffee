@@ -597,6 +597,7 @@ class PupilStore
     if $(@cartPage).length > 0
       window.Parsley.addValidator('countryvalidator', ((value, requirement) ->
         validity = value of countryList
+        console.log(value)
         if validity
           requirementIds = requirement.split("-")
           postalCodeId = requirementIds[0]
@@ -676,7 +677,7 @@ class PupilStore
         event.preventDefault()
         link = $(event.target)
         data = @_getOrderPermalink()
-        document.location = "?" + $.param(data) + '&user=uk' + '&test=1'
+        document.location = "?" + $.param(data)
 
   eventFillORderFormFromQueryString: ->
     if $(@cartPage).length > 0
@@ -686,8 +687,8 @@ class PupilStore
       userQuery = urlParams.get('user')
 
       if query.length > 0
-        testData = getDummyData(userQuery)
         if testQuery == '1'
+          testData = getDummyData(userQuery)
           formInput = $('#order-form').find(':input')
           for input in formInput
             if $(input).prop('type') == 'checkbox'
@@ -700,8 +701,6 @@ class PupilStore
             else
               $(input).val(testData[$(input).prop('name')])
           console.log('Test Success')
-        else
-          console.log('Test failed')
 
   eventFillCartFromQueryString: ->
     query = window.location.search.substring(1)
