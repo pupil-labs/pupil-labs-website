@@ -30,7 +30,7 @@ class PupilStore
       @eventUpdateCartNavCounter()
       @eventUpdateConfig()
       @eventSelectLicense()
-      @eventFillORderFormFromQueryString()
+      @eventFillOrderFormFromQueryString()
       @eventFillCartFromQueryString()
       @eventRenderCart()
       @eventRemoveCartItem()
@@ -676,9 +676,9 @@ class PupilStore
         event.preventDefault()
         link = $(event.target)
         data = @_getOrderPermalink()
-        document.location = "?" + $.param(data) + '&user=uk' + '&test=1'
+        # document.location = "?" + $.param(data) + '&user=uk' + '&test=1'
 
-  eventFillORderFormFromQueryString: ->
+  eventFillOrderFormFromQueryString: ->
     if $(@cartPage).length > 0
       query = window.location.search.substring(1)
       urlParams = new URLSearchParams(window.location.search)
