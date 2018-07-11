@@ -597,7 +597,6 @@ class PupilStore
     if $(@cartPage).length > 0
       window.Parsley.addValidator('countryvalidator', ((value, requirement) ->
         validity = value of countryList
-        console.log(value)
         if validity
           requirementIds = requirement.split("-")
           postalCodeId = requirementIds[0]
