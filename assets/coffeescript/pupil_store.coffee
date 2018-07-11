@@ -676,7 +676,7 @@ class PupilStore
         event.preventDefault()
         link = $(event.target)
         data = @_getOrderPermalink()
-        # document.location = "?" + $.param(data) + '&user=uk' + '&test=1'
+        document.location = "?" + $.param(data)
 
   eventFillOrderFormFromQueryString: ->
     if $(@cartPage).length > 0
