@@ -495,11 +495,11 @@ class PupilStore
         button = $(event.target)
         buttonId = $(button).attr('for')
         inputSelector = "input[id='#{ buttonId }']"
+        $("#p_type").val($(inputSelector).val())
 
         if !$(button).hasClass('Button--state-active')
           $(paymentButton).toggleClass('Button--state-active')
           $(inputSelector).prop("checked",true)
-          $("#p_type").val($(inputSelector).val())
           @updateOrderTypePaymentText()
 
   eventSubmitForm: ->
