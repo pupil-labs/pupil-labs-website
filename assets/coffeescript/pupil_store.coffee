@@ -490,8 +490,11 @@ class PupilStore
         button = $(event.target)
         buttonId = $(button).attr('for')
         inputSelector = "input[id='#{ buttonId }']"
-        console.log("check inputSelector: #{inputSelector}")
-        $(inputSelector).prop("checked", true)
+
+        # use both attr and prop for coverage across browsers
+        # uncheck all radio buttons, then check the current selection
+        $('input[type="radio"]').attr("checked", false).prop('checked', false)
+        $(inputSelector).attr("checked", true).prop("checked", true)
 
         if !$(button).hasClass('Button--state-active')
           $(paymentButton).toggleClass('Button--state-active')
