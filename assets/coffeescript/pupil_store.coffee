@@ -452,7 +452,6 @@ class PupilStore
       button = $("#q-checkbox")
       input = $('#o_type')
       p_transfer = $("div[for='p-banktransfer']")
-      p_credit = $("div[for='p-credit']")
 
       if $(button).hasClass('checkmark--active')
         # this is a quote request
@@ -461,10 +460,8 @@ class PupilStore
         $('label[for="form-submit"]').text(submitTxt)
 
         if $(p_transfer).hasClass('Button--state-active')
-          $(p_transfer).val('banktransfer')
           $('#payment-text').text(paymentText + bankTransferQuote)
         else
-          $(p_transfer).val('credit')
           $('#payment-text').text(paymentText + creditCardQuote)
       else
         # this is an order request
@@ -473,10 +470,8 @@ class PupilStore
         $('label[for="form-submit"]').text(submitTxt)        
 
         if $(p_transfer).hasClass('Button--state-active')
-          $(p_transfer).val('banktransfer')
           $('#payment-text').text(paymentText + bankTransferRequest)
         else
-          $(p_transfer).val('credit')
           $('#payment-text').text(paymentText + creditCardRequest)
 
   eventToggleQuoteType: ->
@@ -495,12 +490,13 @@ class PupilStore
         button = $(event.target)
         buttonId = $(button).attr('for')
         inputSelector = "input[id='#{ buttonId }']"
-        $("#p_type").val($(inputSelector).val())
+        console.log("check inputSelector: #{inputSelector}")
+        $(inputSelector).prop("checked", true)
 
         if !$(button).hasClass('Button--state-active')
           $(paymentButton).toggleClass('Button--state-active')
-          $(inputSelector).prop("checked",true)
-          @updateOrderTypePaymentText()
+        
+        @updateOrderTypePaymentText()
 
   eventSubmitForm: ->
     if $(@cartPage).length > 0
@@ -509,20 +505,19 @@ class PupilStore
         event.preventDefault()
         form = $(event.target)
         email = $('#email_c').val()
-        input_transfer = $('#p-banktransfer')
         input_credit = $('#p-credit')
         q = ''
         pType = ''
 
         if $('#o_type').val() == 'quote'
-              q = 'q'
-            else
-              q = 'o'
+          q = 'q'
+        else
+          q = 'o'
 
-            if $('#p-credit').prop("checked")
-              pType = 'cc'
-            else
-              pType = 'bt'
+        if $('#p-credit').prop("checked")
+          pType = 'cc'
+        else
+          pType = 'bt'
 
         if $(form).parsley().isValid()
           $('label[for="form-submit"]').addClass("Button--state-inactive")
