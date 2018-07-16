@@ -468,7 +468,6 @@ class PupilStore
           $('#payment-text').text(paymentText + creditCardQuote)
       else
         # this is an order request
-        $(button).toggleClass('checkmark--active')
         $(input).val('order')
         submitTxt = "Submit Order Request"
         $('label[for="form-submit"]').text(submitTxt)        
@@ -483,6 +482,8 @@ class PupilStore
   eventToggleQuoteType: ->
     $("#q-checkbox").click (event)=>
       event.preventDefault()
+      button = $(event.target)
+      $(button).toggleClass('checkmark--active')
       @updateOrderTypePaymentText()
 
   eventTogglePaymentType: ->
