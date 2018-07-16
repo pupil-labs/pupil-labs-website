@@ -8,11 +8,11 @@ $removeSize = .65em
 #Cart
   // nothing here - placeholder for jQuery
 
-    
+
 #Cart-table
   width 100%
-  
-  padding-top 2em
+
+  // padding-top 2em
 
 .Cart-row
   // nothing here - placeholder for JQuery
@@ -20,43 +20,112 @@ $removeSize = .65em
 .Cart-container
   // nothing here - placeholder for Jquery
 
+.cart
+
+  &.order
+    width 60%
+
+  &.form
+    background-color rgb(91, 139, 238)
+    width 40%
+
+  @media $break-767
+    &.order
+      width 100%
+
+    &.form
+      background-color unset
+      width 100%
+
+    .Grid--gutters
+      margin unset
+
+    .Grid--gutters > .Grid-cell
+      padding unset
+
+  @media $break-320
+    .Grid--gutters > .Grid-cell
+      padding unset
+
 .Cart-rowContainer
+  margin-top .8em
   margin-bottom .8em
   border-bottom 1px solid gray
-  
+  padding-bottom 0.8em
+
+  .Feature-figure--config
+      width 70%
+      height auto
+      margin auto
+
+  .Grid-cell--1of6
+    .Cart-removeItem
+      display none
+
+  @media $break-767
+
+    .Cart-removeItem
+      display none
+
+    .Grid-cell--1of6
+      flex 0 0 100%
+
+      .Cart-removeItem
+        display block
+
+    .Grid-cell--5of6
+      flex 0 0 100%
+
+      > .Grid:first-child
+        width 50%
+
+    .Feature-figure--config
+        width 30%
+        margin unset
+        padding-bottom 10px
+
+    .Grid-cell
+      flex 1 0 100%
+
+    .Grid-cell--1of2
+      &.Grid-persist
+        flex 0 0 50%
+
+
 .Cart-items--3of5
   width (3/5)*100%
   text-align left
-  
+
 .Cart-items--1of5
   width (1/5)*100%
   text-align left
 
 #CartSum
   // nothing here - placeholder for jQuery
-    
+
 .Cart-disclaimerTxt
   padding-top .5em
   font-weight 400
   text-transform lowercase
   font-size .8em
   font-style italic
-  
+
 
 #CartSum--total
-  color $link-hover-color
+  // color $link-hover-color
+  color #666
 
 #CartSum--total
 #CartSum--label
 #Cart-clearCart
   font-weight 700
   padding-top 1.5em
-  
+
 
 
 tr.Cart-orderItem td
   border-bottom 1px solid black
-  
+
 
 .Cart-checkout
   // height 100%
@@ -65,30 +134,41 @@ tr.Cart-orderItem td
 
 
 .Cart-table-container
-  padding 1em 1.75em 5em 1.75em
+  padding 34px
   background #fff
+
+  @media $break-767
+    padding 20px
+
+    .Cart--total
+      width 100%
+      display flex
+      justify-content flex-end
 
 .Cart-orderForm-container
   display none
-  padding 1.5em 1.75em 5em
+  padding 34px
   background darken(rgba(255,255,255,1),5%)
+
+  @media $break-767
+    padding 20px
   // margin-bottom 1em
-  
+
 .Cart-orderForm--state-active
-  // this is for JQuery  
+  // this is for JQuery
 
 .Cart-removeItem
   user-select none
   font-size $removeSize
-  font-variant small-caps
+  // font-variant small-caps
   // transition color .3s ease-in-out, font-size .35s ease-in-out
-  transition color .3s ease-in-out, transform .35s ease-in-out
+  transition color .3s ease-in-out
 
   &:active
     cursor pointer
     color complement($link-hover-color)
     // font-size $removeSize*$scaleRemove
-    transform scale($scaleRemove)
+    // transform scale($scaleRemove)
 
   @media $break-767
     margin-right .5em
@@ -99,10 +179,10 @@ tr.Cart-orderItem td
       cursor pointer
       color complement($link-hover-color)
       // font-size $removeSize*$scaleRemove
-      transform scale($scaleRemove)
-        
+      // transform scale($scaleRemove)
 
-        
+
+
 
 .Cart-containerTriangle
   position relative
@@ -118,10 +198,10 @@ tr.Cart-orderItem td
   border-color transparent transparent rgba(0,0,0,.6) transparent
   margin 0.25em
   transition border-color .3s ease-in-out, transform .35s ease-in-out
-  
+
   @media $break-767
     border-width 0px $smw $smw $smw
-  
+
 .Cart--triangle-down
   width 0
   height 0
@@ -130,13 +210,27 @@ tr.Cart-orderItem td
   border-color rgba(0,0,0,.6) transparent transparent transparent
   margin 0.25em
   transition border-color .3s ease-in-out, transform .35s ease-in-out
-  
+
   @media $break-767
     border-width $smw $smw 0px $smw
-  
+
 #Cart-empty
   // nothing here
-    
+
+.Cart-container--increment
+  border 1px solid #888
+  border-radius 5px
+
+  .Cart--quantity
+    background-color #5B8BEE
+    border-radius 3px
+    box-shadow 0px 0px 20px 0px rgba(0,0,0,0.2.5)
+    width 30px
+    height 30px
+    font-size 1em
+    font-weight 700
+    color #F2F2F2
+
 .Cart-itemQuant--increment
   user-select none
 
@@ -149,8 +243,8 @@ tr.Cart-orderItem td
       transform scale($scale)
       border-color complement($link-hover-color) transparent transparent transparent
 
-  @media $break-767
-    margin-left .5em
+  // @media $break-767
+  //   margin-left .5em
 
 
 .no-touch
@@ -172,16 +266,21 @@ tr.Cart-orderItem td
         transform scale($scale)
         border-color $link-hover-color transparent transparent transparent
 
-.Cart-costCalc  
+.Cart-costCalc
   @media $break-767
     font-size .9em
-    
+
 .Cart-costCalc--subTotal
   font-weight 700
-  
+  width 120px
+  padding-bottom unset
+  text-align end
+
   @media $break-767
     font-size .9em
     text-align right
+    padding unset
+    width 90px
 
 
 #CartItem-unitCost
@@ -192,18 +291,18 @@ tr.Cart-orderItem td
 
 #CartItem-equalSign
   text-align center
-  
+
   @media $break-767
     text-align left
-  
+
 #CartItem-unitQuant
   @media $break-767
 
     text-align right
-    
-.loading 
-  // keep font size 
-    
+
+.loading
+  // keep font size
+
 .loading:after
 .loading:before
   overflow hidden
@@ -212,3 +311,10 @@ tr.Cart-orderItem td
   animation loading steps(12,end) 1500ms infinite
   content "."
 
+.Cart-disclaimerTxt
+  a
+    color #cacaca
+
+  a:hover
+    color #fff
+    text-decoration $link-hover-decoration

@@ -1,11 +1,11 @@
-// 
+//
 // Scaffolding
 // - Defines highest level structural elements
 // ---------------------------------------
 
 
 // Base settings for elements
-// - no default margins or padding for html elements 
+// - no default margins or padding for html elements
 a,address,article,aside,audio,body,caption,cite,code,dd,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,img,label,legend,li,nav,ol,p,pre,section,small,span,strong,sup,time,ul,video
   margin 0
   padding 0
@@ -18,7 +18,7 @@ $h5-size = $heading-font-size * 0.3
 
 
 h1
-  // 2.8em 
+  // 2.8em
   font-size $heading-font-size
   line-height $heading-font-size * 0.5
   padding-bottom 1.2em
@@ -34,15 +34,15 @@ h2
   @media $break-767
     font-size $h2-size * 0.8
 
-    
-h3 
+
+h3
   font-size $h3-size
   padding-bottom 1.0em
   font-weight normal
   @media $break-767
     font-size $h3-size * 0.8
 
-  
+
 h4
   font-size $h4-size
   padding-bottom 0.9em
@@ -50,19 +50,19 @@ h4
   font-weight normal
   @media $break-767
     font-size $h4-size * 0.8
-  
+
 h5
   font-size $h5-size
   padding-bottom 0.9em
   font-weight normal
-  
+
 p
   font-size $font-size-base
   line-height 1.5em
   padding-bottom 0.85em
-      
+
 .small
-  font-size $font-size-base * 0.85  
+  font-size $font-size-base * 0.85
 
 // Reset the box-sizing
 
@@ -75,14 +75,14 @@ blockquote
 *:before,
 *:after
   box-sizing border-box
-  
+
 
 html
   height 100%
   -webkit-tap-highlight-color rgba(0, 0, 0, 0)
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  
+
 body
   font-size 100%
   font-family $font-family-sans-serif-alt
@@ -93,14 +93,14 @@ body
   font-feature-settings "liga", "kern"
 
 // Links
-input 
-  font-size .75em
+input
+  font-size .80em
   font-family $font-family-sans-serif-alt
-  
+
 textarea
   font-size .75em
   font-family $font-family-sans-serif-alt
-  
+
 
 a
   color $link-color
@@ -109,30 +109,30 @@ a
   cursor pointer
 
 
-.no-touch a 
+.no-touch a
   &:hover
     color $link-hover-color
     text-decoration $link-hover-decoration
 
-    
+
 // Images
 
 .img-rounded
   border-radius 5px
-  
+
 // Circular image
 .img-circle
   vertical-align middle
   border-radius 50%
-  
+
 // table
 table
   display block
-  overflow auto 
+  overflow auto
   text-overflow ellipsis
 
-  @media $break-767 
-    font-size .85em 
+  @media $break-767
+    font-size .85em
 
 // lists
 ul
@@ -155,8 +155,8 @@ ol
 code
   padding 0.2em
   border-radius 2px
-  background-color #f2f2f2  
-  
+  background-color #f2f2f2
+
 // iOS "clickable elements" fix for role="button"
 //
 // Fixes "clickability" issue (and more generally, the firing of events such as focus as well)

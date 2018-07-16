@@ -36,7 +36,7 @@ headerOpacityHome = ()->
   has_scrolled = ()=>
     if $(window).width() < 768
       return
-      
+
     st = $(this).scrollTop()
     bkg_img_height = $("div[class^='Background-img-top']").height()
     offset = 20
@@ -47,7 +47,7 @@ headerOpacityHome = ()->
       # add transparent class remove opaque class
       # $("#Header").css('background-color', 'rgba(255,255,255,0.0)')
       $("#Header").addClass("Header-bkg-transparent").removeClass("Header-bkg-opaque")
-    else 
+    else
       # remove transparent class add opaque class
       $("#Header").addClass("Header-bkg-opaque").removeClass("Header-bkg-transparent")
 
@@ -66,12 +66,12 @@ set_active_nav_link = ()=>
   current_path = window.location.href
   for link in $(".Header-nav-item")
     $(link).removeClass("Header-nav-active")
-    if current_path.indexOf(link.href) > -1 
+    if current_path.indexOf(link.href) > -1
       $(link).addClass("Header-nav-active")
 
 
 $(document).ready ->
-  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#VR-AR").length > 0 or $("#About").length > 0 or $("#Jobs").length > 0 or $("#Blog").length > 0
+  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#About").length > 0 or $("#Jobs").length > 0 or $("#Blog").length > 0
     # on load make the header transparent
     headerOpacityHome()
   else
