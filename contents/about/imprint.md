@@ -5,7 +5,7 @@ title: Imprint
 
 <h3 class="u-padBottom--0">Address</h3>
 
-<p>Pupil Labs GmbH Sanderstr. 12047 10829 Berlin</p>
+<p>Pupil Labs GmbH, Sanderstr. 28, 12047, Berlin</p>
 
 <h3 class="u-padBottom--0">Contact</h3>E-Mail 
 
