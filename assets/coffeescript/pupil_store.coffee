@@ -467,7 +467,7 @@ class PupilStore
         # this is an order request
         $(input).val('order')
         submitTxt = "Submit Order Request"
-        $('label[for="form-submit"]').text(submitTxt)        
+        $('label[for="form-submit"]').text(submitTxt)
 
         if $(p_transfer).hasClass('Button--state-active')
           $('#payment-text').text(paymentText + bankTransferRequest)
@@ -498,7 +498,7 @@ class PupilStore
 
         if !$(button).hasClass('Button--state-active')
           $(paymentButton).toggleClass('Button--state-active')
-        
+
         @updateOrderTypePaymentText()
 
   eventSubmitForm: ->
@@ -677,7 +677,7 @@ class PupilStore
               else
                 $("span[name='#{$(input).prop('id')}']").addClass('checkmark--active')
                 $(".Form-shipping-container").fadeIn(250)
-            else
+            else if $(input).prop('type') != 'radio'
               $(input).val(testData[$(input).prop('name')])
           console.log('Test Success')
 
