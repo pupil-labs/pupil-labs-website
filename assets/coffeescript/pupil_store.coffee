@@ -442,83 +442,64 @@ class PupilStore
           .attr("data-parsley-postalcodevalidator","#{$("input[id='postalCode_b']").data('parsley-postalcodevalidator')}")
           $(".Form-shipping-container").fadeIn(250)
 
-  eventToggleQuoteType: ->
-    $("#q-checkbox").click (event)=>
-      event.preventDefault()
-      button = $(event.target)
-      input = $('#o_type')
-      p_transfer = $("div[for='p-banktransfer']")
-      p_credit = $("div[for='p-credit']")
-
+  updateOrderTypePaymentText: ->
       paymentText = "After you submit the request we will follow up via email with a "
       creditCardRequest = "proforma invoice and credit card payment link."
       bankTransferRequest = "proforma invoice and bank account details for transfer."
       creditCardQuote = "quote and credit card payment link."
       bankTransferQuote = "quote and bank account details for transfer."
 
-      if $(input).val() == 'order'
-        $(button).toggleClass('checkmark--active')
+      button = $("#q-checkbox")
+      input = $('#o_type')
+      p_transfer = $("div[for='p-banktransfer']")
+      p_credit = $("div[for='p-credit']")
+
+      if $(button).hasClass('checkmark--active')
+        # this is a quote request
         $(input).val('quote')
         submitTxt = "Submit Quote Request"
         $('label[for="form-submit"]').text(submitTxt)
 
         if $(p_transfer).hasClass('Button--state-active')
-          $(p_transfer).val('purchaseorder')
-        else
           $(p_transfer).val('banktransfer')
-
+          $('#payment-text').text(paymentText + bankTransferQuote)
+        else
+          $(p_transfer).val('credit')
+          $('#payment-text').text(paymentText + creditCardQuote)
       else
+        # this is an order request
         $(button).toggleClass('checkmark--active')
         $(input).val('order')
         submitTxt = "Submit Order Request"
-        $('label[for="form-submit"]').text(submitTxt)
+        $('label[for="form-submit"]').text(submitTxt)        
 
-      if $(button).hasClass('checkmark--active')
         if $(p_transfer).hasClass('Button--state-active')
-          $('#payment-text').text(paymentText + bankTransferQuote)
-        if $(p_credit).hasClass('Button--state-active')
-          $('#payment-text').text(paymentText + creditCardQuote)
-      else
-        if $(p_transfer).hasClass('Button--state-active')
+          $(p_transfer).val('banktransfer')
           $('#payment-text').text(paymentText + bankTransferRequest)
-        if $(p_credit).hasClass('Button--state-active')
+        else
+          $(p_transfer).val('credit')
           $('#payment-text').text(paymentText + creditCardRequest)
+
+  eventToggleQuoteType: ->
+    $("#q-checkbox").click (event)=>
+      event.preventDefault()
+      @updateOrderTypePaymentText()
 
   eventTogglePaymentType: ->
     if $(@cartPage).length > 0
       paymentButton = $("div[for^='p-']")
-
-      paymentText = "After you submit the request we will follow up via email with a "
-      creditCardRequest = "proforma invoice and credit card payment link."
-      bankTransferRequest = "proforma invoice and bank account details for transfer."
-      creditCardQuote = "quote and credit card payment link."
-      bankTransferQuote = "quote and bank account details for transfer."
 
       $(paymentButton).click (event)=>
         event.preventDefault()
         button = $(event.target)
         buttonId = $(button).attr('for')
         inputSelector = "input[id='#{ buttonId }']"
-        input_transfer = $('#p-banktransfer')
-        o_input = $('#o_type')
 
         if !$(button).hasClass('Button--state-active')
           $(paymentButton).toggleClass('Button--state-active')
           $(inputSelector).prop("checked",true)
-
-          if $(o_input).val() == 'order'
-            $(input_transfer).val('banktransfer')
-          else
-            $(input_transfer).val('purchaseorder')
-
-          if buttonId == 'p-credit'
-            $('#payment-text').text(paymentText + creditCardRequest)
-            if $("#q-checkbox").hasClass('checkmark--active')
-              $('#payment-text').text(paymentText + creditCardQuote)
-          else
-            $('#payment-text').text(paymentText + bankTransferRequest)
-            if $("#q-checkbox").hasClass('checkmark--active')
-                $('#payment-text').text(paymentText + bankTransferQuote)
+          $("#p_type").val($(inputSelector).val())
+          @updateOrderTypePaymentText()
 
   eventSubmitForm: ->
     if $(@cartPage).length > 0
