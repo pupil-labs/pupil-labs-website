@@ -35,20 +35,20 @@ get_world_cam_data = ->
       weight: 5
       title_video: "Download sample videos"
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-TmJvSFhFeWp1NEk/view?usp=sharing"
-    w3d:
-      id: 'w3d'
-      title_store: '3d'
-      description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image. (Note: This sensor is not compatible with Pupil Mobile)."
-      tech_specs:
-        sensor: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
-        fov:"See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
-        latency: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
-        audio: "Record audio via host device microphone"
-      title_cart: "World Camera: 3d"
-      description_cart: "Intel RealSense R200. Provides stereo RGB images and depth image."
-      weight: 17
-      title_video: "Download sample video"
-      link_video: "https://drive.google.com/file/d/0Byap58sXjMVfRi13ZUo2MkJTWUE/view?usp=sharing"
+    # w3d:
+    #   id: 'w3d'
+    #   title_store: '3d'
+    #   description_store: "Intel RealSense R200 RGBD camera. Provides depth image and monocular RGB color image. (Note: This sensor is not compatible with Pupil Mobile)."
+    #   tech_specs:
+    #     sensor: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
+    #     fov:"See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
+    #     latency: "See <a href='https://software.intel.com/sites/default/files/managed/d7/a9/realsense-camera-r200-product-datasheet.pdf' target='_blank' rel='nofollow'>Intel R200 data sheet</a> for details"
+    #     audio: "Record audio via host device microphone"
+    #   title_cart: "World Camera: 3d"
+    #   description_cart: "Intel RealSense R200. Provides stereo RGB images and depth image."
+    #   weight: 17
+    #   title_video: "Download sample video"
+    #   link_video: "https://drive.google.com/file/d/0Byap58sXjMVfRi13ZUo2MkJTWUE/view?usp=sharing"
 
 
 
