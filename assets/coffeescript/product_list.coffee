@@ -113,7 +113,7 @@ get_eye_cam_data = ->
         latency: "4.5ms"
       title_cart: "Eye camera: 200hz eye camera"
       description_cart: "Resolution: 200x200 @200fps. IR illumination."
-      weight: 31
+      weight: 29
       title_video: "Download sample video"
       link_video: "#"
     e200b:
@@ -126,7 +126,7 @@ get_eye_cam_data = ->
         latency: "4.5ms"
       title_cart: "Eye cameras: 200hz binocular eye cameras"
       description_cart: "2 eye cameras. Resolution: 200x200 @200fps. IR illumination."
-      weight: 31
+      weight: 32
       title_video: "Download sample video"
       link_video: "https://drive.google.com/file/d/1lSjtWTm3LTHAm7b3NKZmBOBsqetQkkX-/view?usp=sharing"
 
