@@ -3,6 +3,7 @@ title: Pupil Labs @ ETRA
 date: Tue Jun 12 2018 11:42:18 GMT+0700 (+07)
 author: Pupil Dev Team
 subtitle: "Looking forward to seeing you at ETRA from June 14-17..."
+featured_img: "../../../../media/images/blog/pupil_gradient_thumb.jpg"
 featured_img_thumb: "../../../../media/images/blog/pupil_gradient_thumb.jpg"
 ---
 
