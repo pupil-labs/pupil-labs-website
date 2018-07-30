@@ -576,13 +576,13 @@ class PupilStore
   countryValidator: ->
     if $(@cartPage).length > 0
       window.Parsley.addValidator('countryvalidator', ((value, requirement) ->
-        validity = value of countryList
-        if validity
+
+        update_country_dependents = (_val)->
           requirementIds = requirement.split("-")
           postalCodeId = requirementIds[0]
           stateId = requirementIds[1]
 
-          country = countryList[value]
+          country = countryList[_val]
 
           # if country US or CA force state abbreviations
           if country.countryISO is 'US' or country.countryISO is 'CA'
@@ -612,6 +612,23 @@ class PupilStore
             .prop("required", false)
             .val("")
             .prop("disabled",true)
+
+        validity = value of countryList
+        if validity
+          update_country_dependents(value)
+        else
+          # check if 'United States' or 'USA' or 'US' or 'United States of America'
+          usa_alternates = ['United States', 'United States of America', 'USA', 'US']
+          if $("input[id='country_b']").val() == value && value in usa_alternates
+            _val = 'United States Of America'
+            $("input[id='country_b']").val(_val)
+            update_country_dependents(_val)
+            validity = true
+          if $("input[id='country_s']").val() == value && value in usa_alternates
+            _val = 'United States Of America'
+            $("input[id='country_b']").val(_val)
+            update_country_dependents(_val)
+            validity = true
 
         return validity
       )).addMessage 'en', 'countryvalidator', 'Please select a country from the list'
