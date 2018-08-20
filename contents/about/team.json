@@ -86,5 +86,10 @@
     "name":"Asta Stankeviciene",
     "role":"Office Manager",
     "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Bilal Bayasut",
+    "role":"Software Engineer",
+    "img":"https://placehold.it/400x400"    
   }
 ]
