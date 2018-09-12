@@ -1,5 +1,5 @@
 //- see http://peric.github.io/GetCountries/
-//- - var countryObj = contents.cart['country_list.json'].metadata
+- var countryObj = contents.cart['country_list.json'].metadata
 //- contact
 
 div.Cart-orderForm-container(ref="cartOrderform" style="background-color:rgb(70, 98, 251);color:white;")
@@ -46,8 +46,22 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:rgb(70,
               p(class="Form-error--text" id="b-1-name--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_b") Country
-            input(class="Form-input Form-input--text" id="country_b" name="country_b" type="text" placeholder="country" required data-parsley-countryvalidator="postalCode_b-division_b" data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error" autocomplete="disabled")
+            input(
+              class="Form-input Form-input--text"
+              id="country_b"
+              name="country_b"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_b-division_b"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#b-country--error"
+              list="country_b_datalist"
+              autocomplete="disabled")
             p(class="Form-error--text" id="b-country--error")
+            datalist(id="country_b_datalist")
+              each val,key in countryObj
+                option(value=key)
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_b") Address Line 1
