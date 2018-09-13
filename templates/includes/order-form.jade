@@ -124,8 +124,23 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
               p(class="Form-error--text" id="s-1-name--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_s") Country
-            input(class="Form-input Form-input--text" id="country_s" name="country_s" type="text" placeholder="country" required data-parsley-countryvalidator="postalCode_s-division_s" data-parsley-trigger="focusout" data-parsley-errors-container="#s-country--error" autocomplete="disabled")
+            input(
+              class="Form-input Form-input--text"
+              id="country_s"
+              name="country_s"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_s-division_s"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#s-country--error"
+              list="country_s_datalist"
+              autocomplete="country-name")
             p(class="Form-error--text" id="s-country--error")
+            datalist(id="country_s_datalist")
+              each val,key in countryObj
+                option(value=key)
+
           div.Grid-cell
             label(class="Form-hidden" for="address_0_s") Address Line 1
             input(class="Form-input Form-input--text Form-input--text" type="text" id="address_0_s" placeholder="street address line 1" name="address_0_s" maxlength="35" required data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#s-0-address--error" autocomplete="address-line1")
