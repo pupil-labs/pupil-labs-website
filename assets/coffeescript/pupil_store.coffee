@@ -498,6 +498,7 @@ class PupilStore
 
         if !$(button).hasClass('Button--state-active')
           $(paymentButton).toggleClass('Button--state-active')
+          $(paymentButton).toggleClass('Button--state-inactive-hover')
 
         @updateOrderTypePaymentText()
 
