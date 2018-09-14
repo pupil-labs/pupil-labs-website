@@ -60,8 +60,9 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
               autocomplete="country-name")
             p(class="Form-error--text" id="b-country--error")
             datalist(id="country_b_datalist")
-              each val,key in countryObj
-                option(value=key)
+              select
+                each val,key in countryObj
+                  option(value=key)
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_b") Address Line 1
