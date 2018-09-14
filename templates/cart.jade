@@ -10,19 +10,20 @@ block append title
 
 block page_scripts
   //- script(src=contents.js['autocomplete.js'].url)
-  script(src=contents.js.vendor['modernizr-custom-2.8.3.min.js'].url)
+  //- script(src=contents.js.vendor['modernizr-custom-2.8.3.min.js'].url)
+  script(src=contents.js.vendor['datalist-polyfill.min.js'].url)
   script(src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js")
 
-  script.
-    if (Modernizr.datalistelem === false){
-      console.warn("This browser does not support html element <datalist>.");
-      $.when(
-        $.getScript('/js/vendor/jquery.relevant-dropdown.min.js'),
-        $.getScript('/js/vendor/datalist-fallback-safari.js')
-      ).done(function(){
-        console.log("Finished loading polyfill to support datalist on this browser.");
-      });
-    }
+  //- script.
+  //-   if (Modernizr.datalistelem === false){
+  //-     console.warn("This browser does not support html element <datalist>.");
+  //-     $.when(
+  //-       $.getScript('/js/vendor/jquery.relevant-dropdown.min.js'),
+  //-       $.getScript('/js/vendor/datalist-fallback-safari.js')
+  //-     ).done(function(){
+  //-       console.log("Finished loading polyfill to support datalist on this browser.");
+  //-     });
+  //-   }
 
 block main
   div(id="Cart")
