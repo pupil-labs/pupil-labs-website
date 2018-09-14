@@ -62,7 +62,7 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
             datalist(id="country_b_datalist")
               select
                 each val,key in countryObj
-                  option(value=key)
+                  option(value=key) #{key}
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_b") Address Line 1
@@ -139,8 +139,9 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
               autocomplete="country-name")
             p(class="Form-error--text" id="s-country--error")
             datalist(id="country_s_datalist")
-              each val,key in countryObj
-                option(value=key)
+              select
+                each val,key in countryObj
+                  option(value=key) #{key}
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_s") Address Line 1
