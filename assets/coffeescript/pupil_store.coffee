@@ -534,8 +534,8 @@ class PupilStore
           $("#form-submit").attr('disabled',true)
 
           # add countryIso to form data
-          $("input[id='countryIso_b']").val(countryList[$("input[id='country_b']").val()].countryISO)
-          $("input[id='countryIso_s']").val(countryList[$("input[id='country_s']").val()].countryISO)
+          $("input[id='countryIso_b']").val(countryList[$("#country_b").val()].countryISO)
+          $("input[id='countryIso_s']").val(countryList[$("#country_s").val()].countryISO)
 
           # add order object to a hidden form text area
           products = []
