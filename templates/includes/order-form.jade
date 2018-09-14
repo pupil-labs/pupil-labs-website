@@ -58,11 +58,30 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
               data-parsley-errors-container="#b-country--error"
               list="country_b_datalist"
               autocomplete="country-name")
-            p(class="Form-error--text" id="b-country--error")
+            p(class="Form-error--text" id="b-country--error" for="country-input-b")
             datalist(id="country_b_datalist")
-              select
-                each val,key in countryObj
-                  option(value=key) #{key}
+              each val,key in countryObj
+                option(value=key)
+            select(
+              class="Form-input Form-input--text"
+              form="order-form"
+              style="display:none;"
+              id="country_b"
+              name="country_b"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_b-division_b"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#b-country--error"
+              list="country_b_datalist")
+              option(
+                class="option-placeholder"
+                value=""
+                selected) country
+              each val,key in countryObj
+                option(value=key) #{key}
+            p(class="Form-error--text" id="b-country--error" for="b-country-select")
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_b") Address Line 1
@@ -137,11 +156,30 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
               data-parsley-errors-container="#s-country--error"
               list="country_s_datalist"
               autocomplete="country-name")
-            p(class="Form-error--text" id="s-country--error")
+            p(class="Form-error--text" id="s-country--error" for="country-input-s")
             datalist(id="country_s_datalist")
-              select
-                each val,key in countryObj
-                  option(value=key) #{key}
+              each val,key in countryObj
+                option(value=key)
+            select(
+              class="Form-input Form-input--text"
+              form="order-form"
+              style="display:none;"
+              id="country_s"
+              name="country_s"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_s-division_s"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#s-country--error"
+              list="country_s_datalist")
+              option(
+                class="option-placeholder"
+                value=""
+                selected) country
+              each val,key in countryObj
+                option(value=key) #{key}
+            p(class="Form-error--text" id="s-country--error" for="s-country-select")
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_s") Address Line 1
