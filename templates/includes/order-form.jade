@@ -1,8 +1,8 @@
 //- see http://peric.github.io/GetCountries/
-//- - var countryObj = contents.cart['country_list.json'].metadata
+- var countryObj = contents.cart['country_list.json'].metadata
 //- contact
 
-div.Cart-orderForm-container(ref="cartOrderform" style="background-color:rgb(70, 98, 251);color:white;")
+div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;color:#424242;")
   h3.u-padBottom--2 Order Form
   form(id="order-form" data-parsley-validate data-parsley-focus="first")
 
@@ -46,8 +46,41 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:rgb(70,
               p(class="Form-error--text" id="b-1-name--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_b") Country
-            input(class="Form-input Form-input--text" id="country_b" name="country_b" type="text" placeholder="country" required data-parsley-countryvalidator="postalCode_b-division_b" data-parsley-trigger="focusout" data-parsley-errors-container="#b-country--error" autocomplete="disabled")
-            p(class="Form-error--text" id="b-country--error")
+            input(
+              class="Form-input Form-input--text"
+              id="country_b"
+              name="country_b"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_b-division_b"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#b-country--error"
+              list="country_b_datalist"
+              autocomplete="country-name")
+            p(class="Form-error--text" id="b-country--error" for="country-input-b")
+            datalist(id="country_b_datalist")
+              each val,key in countryObj
+                option(value=key)
+            select(
+              form="order-form"
+              style="display:none;"
+              id="country_b"
+              name="country_b"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_b-division_b"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#b-country--error"
+              list="country_b_datalist")
+              option(
+                class="option-placeholder"
+                value=""
+                selected) country
+              each val,key in countryObj
+                option(value=key) #{key}
+            p(class="Form-error--text" id="b-country--error" for="b-country-select")
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_b") Address Line 1
@@ -110,8 +143,42 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:rgb(70,
               p(class="Form-error--text" id="s-1-name--error")
           div.Grid-cell
             label(class="Form-hidden" for="country_s") Country
-            input(class="Form-input Form-input--text" id="country_s" name="country_s" type="text" placeholder="country" required data-parsley-countryvalidator="postalCode_s-division_s" data-parsley-trigger="focusout" data-parsley-errors-container="#s-country--error" autocomplete="disabled")
-            p(class="Form-error--text" id="s-country--error")
+            input(
+              class="Form-input Form-input--text"
+              id="country_s"
+              name="country_s"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_s-division_s"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#s-country--error"
+              list="country_s_datalist"
+              autocomplete="country-name")
+            p(class="Form-error--text" id="s-country--error" for="country-input-s")
+            datalist(id="country_s_datalist")
+              each val,key in countryObj
+                option(value=key)
+            select(
+              form="order-form"
+              style="display:none;"
+              id="country_s"
+              name="country_s"
+              type="text"
+              placeholder="country"
+              required
+              data-parsley-countryvalidator="postalCode_s-division_s"
+              data-parsley-trigger="focusout"
+              data-parsley-errors-container="#s-country--error"
+              list="country_s_datalist")
+              option(
+                class="option-placeholder"
+                value=""
+                selected) country
+              each val,key in countryObj
+                option(value=key) #{key}
+            p(class="Form-error--text" id="s-country--error" for="s-country-select")
+
           div.Grid-cell
             label(class="Form-hidden" for="address_0_s") Address Line 1
             input(class="Form-input Form-input--text Form-input--text" type="text" id="address_0_s" placeholder="street address line 1" name="address_0_s" maxlength="35" required data-parsley-maxlength="35" data-parsley-trigger="focusout" data-parsley-errors-container="#s-0-address--error" autocomplete="address-line1")
@@ -167,7 +234,7 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:rgb(70,
               input(id="p-banktransfer" class="Form-input--radio Form-payment-type" type="radio" name="p_type" value="banktransfer")
               div(
                 for="p-banktransfer"
-                class="Button-radio--sm Form-input--radioLabel Form-input--round-lg Grid Grid--justifySpaceBetween Grid-column"
+                class="Button-radio--sm Form-input--radioLabel Form-input--round-lg Grid Grid--justifySpaceBetween Grid-column Button--state-inactive-hover"
               )
                 i.material-icons(style="user-select:none;pointer-events: none") account_balance
                 label(

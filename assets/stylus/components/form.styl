@@ -4,22 +4,36 @@
 .Form-input
   width 100%
 
+select
+  width 100%
+  color rgba(0,0,0,0.8)
+
+select:required:invalid 
+  color rgba(0,0,0, 0.4)
+
+option:first-of-type
+  color rgba(0,0,0, 0.4)
+
+option
+  color rgba(0,0,0,0.8)
+
 .Form-input--text
   padding .75em 0
   background transparent
-  box-shadow rgba(255,255,255, 0.5) 0 -1px 0 0 inset
+  box-shadow rgba(0,0,0,0.3) 0 -1px 0 0 inset
   border none
   border-radius 0
   display flex
   outline none
-  color rgba(255,255,255,0.9)
+  color rgba(0,0,0,0.8)
   height 3em
 
 .Form-error--text
   text-transform lowercase
   font-size .8em
   padding .25em
-  color #2b0006
+  // color #2b0006
+  color salmon
 
 .Form-input--textarea
   vertical-align top
@@ -27,11 +41,11 @@
 
 textarea
   &::placeholder
-    color rgba(255,255,255, 0.4)
+    color rgba(0,0,0, 0.8)
   &:-ms-input-placeholder
-    color rgba(255,255,255, 0.4)
+    color rgba(0,0,0, 0.8)
   &::-ms-input-placeholder
-    color rgba(255,255,255, 0.4)input
+    color rgba(0,0,0, 0.8)input
 
 .Form-fieldset
   //
@@ -97,21 +111,21 @@ textarea
   overflow hidden
 
 input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill
-  -webkit-box-shadow 0 0 0 30px rgb(70, 98, 251) inset
-  -webkit-text-fill-color rgba(255,255,255,0.9)
-  border-bottom 1px solid white
+  // -webkit-box-shadow 0 0 0 30px white inset
+  -webkit-text-fill-color rgba(0,0,0,0.9)
+  border-bottom #424242
 
 input
   &::placeholder
-    color rgba(255,255,255, 0.4)
+    color rgba(0,0,0, 0.4)
   &:-ms-input-placeholder
-    color rgba(255,255,255, 0.4)
+    color rgba(0,0,0, 0.4)
   &::-ms-input-placeholder
-    color rgba(255,255,255, 0.4)
+    color rgba(0,0,0, 0.4)
   &::selection
-    background rgba(255,255,255, 0.3)
+    background rgba(0,0,0, 0.3)
   &::-moz-selection
-    background rgba(255,255,255, 0.3)
+    background rgba(0,0,0, 0.3)
 
 .Form-container
     display block
@@ -138,12 +152,13 @@ input
     width 22px
     background-color #eee
     border-radius 5px
-    box-shadow 2px 4px 20px 1px rgba(0, 0, 0, 0.25)
+    border 1px solid #ccc
+    box-shadow 1px 1px 5px 1px rgba(0,0,0,0.20)
     transition .3s cubic-bezier(.4,0,.6,1)
 /* When the checkbox is checked, add a blue background */
 .Form-container .checkmark--active
     // background-color #2196F3
-    background-color #75F0B4
+    background-color #4285f4
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark--active:after
     content ""
@@ -157,12 +172,12 @@ input
 /* Style the checkmark/indicator */
 .Form-container
   .checkmark:after
-    left 7px
-    top 2px
-    width 8px
-    height 15px
-    border solid #666
-    border-width 0 2px 2px 0
+    left 6px
+    top 1px
+    width 7px
+    height 14px
+    border solid #fff
+    border-width 0 3px 3px 0
     -webkit-transform rotate(45deg)
     -ms-transform rotate(45deg)
     transform rotate(45deg)
