@@ -585,6 +585,7 @@ class PupilStore
 
           country = countryList[_val]
 
+          console.log "country is: #{country}"
           # if country US or CA force state abbreviations
           if country.countryISO is 'US' or country.countryISO is 'CA'
             placeholderTxt = if country.countryISO is 'US' then "state abbreviation (e.g. CA for California)" else "province abbreviation (e.g. QC for Quebec)"
@@ -620,14 +621,14 @@ class PupilStore
         else
           # check if 'United States' or 'USA' or 'US' or 'United States of America'
           usa_alternates = ['United States', 'United States of America', 'USA', 'US']
-          if $("input[id='country_b']").val() == value && value in usa_alternates
+          if $("#country_b").val() == value && value in usa_alternates
             _val = 'United States Of America'
-            $("input[id='country_b']").val(_val)
+            $("#country_b").val(_val)
             update_country_dependents(_val)
             validity = true
-          if $("input[id='country_s']").val() == value && value in usa_alternates
+          if $("#country_s").val() == value && value in usa_alternates
             _val = 'United States Of America'
-            $("input[id='country_b']").val(_val)
+            $("#country_b").val(_val)
             update_country_dependents(_val)
             validity = true
 
