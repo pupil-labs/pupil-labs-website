@@ -15,15 +15,15 @@ block page_scripts
   script(src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js")
 
   script.
+    var countryInput = $("input[id^='country_']");
+    var countrySelect = $("select[id^='country_']");
     if (Modernizr.datalistelem === false){
-      var countryInput = $("input[id^='country_']")
-      var countrySelect = $("select[id^='country_']")
-      var parsleyInput = $("p[for^='country-input-']")
-      $(countryInput).remove()
-      $(parsleyInput).remove()
-      $(countrySelect).css("display", "block")
+      $(countryInput).remove();
+      $(countrySelect).css("display", "block");
 
       console.warn("This browser does not support html element <datalist>.");
+    } else {
+      $(countrySelect).remove();
     }
 
 block main
