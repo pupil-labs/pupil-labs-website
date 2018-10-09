@@ -154,7 +154,6 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
               data-parsley-errors-container="#s-country--error"
               list="country_s_datalist"
               autocomplete="country-name")
-            p(class="Form-error--text" id="s-country--error" for="country-input-s")
             datalist(id="country_s_datalist")
               each val,key in countryObj
                 option(value=key)
@@ -176,7 +175,7 @@ div.Cart-orderForm-container(ref="cartOrderform" style="background-color:white;c
                 selected) country
               each val,key in countryObj
                 option(value=key) #{key}
-            p(class="Form-error--text" id="s-country--error" for="s-country-select")
+            p(class="Form-error--text" id="s-country--error" for="country-input-s")
 
           div.Grid-cell
             label(class="Form-hidden" for="address_0_s") Address Line 1
