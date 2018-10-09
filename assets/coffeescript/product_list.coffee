@@ -152,7 +152,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e200b', 'htcvive_e120b','epsonbt300_w120_e200b']
 
 get_additional_product_ids = ->
-  return ['camera_e200','pm_motoz2','support_6','support_12']
+  return ['camera_e200','pm_motoz3','support_6','support_12']
 
 
 get_product_database = ->
@@ -576,6 +576,13 @@ get_product_database = ->
       description_cart: "Nexus 5x pre-loaded with Pupil Mobile app, sports arm band, and USBC-USBC cable. Connects to Pupil headsets via USBC-USBC cable."
       img: [additional_product_path,'pm_nexus5x.jpg'].join('/')
     pm_motoz2:
+      cost: 650
+      title_product: 'Pupil Mobile Bundle'
+      title_store: "Pupil Mobile Bundle"
+      description_store: "Connect your Pupil headset to the Moto Z2 play. Record up to 4 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera are not compatible with Pupil Mobile)."
+      description_cart: "Moto Z2 Play (black), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. Connects to Pupil headset via USBC cable (included)."
+      img: [additional_product_path,'pm_nexus5x.jpg'].join('/')
+    pm_motoz3:
       cost: 750
       title_product: 'Pupil Mobile Bundle'
       title_store: "Pupil Mobile Bundle"
