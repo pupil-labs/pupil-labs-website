@@ -7,20 +7,20 @@ get_world_cam_data = ->
       title_cart: "World camera: no world camera"
       description_cart: "No world camera"
       weight: 0
-    w30:
-      id: 'w30'
-      title_store: "high resolution"
-      description_store: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed."
-      tech_specs:
-        sensor: "1910x1080 @30fps"
-        fov: "90 degrees diagonal with auto focus lens."
-        latency: "127.7ms"
-        audio: "Record audio with built-in stereo microphone"
-      title_cart: "World camera: high resolution"
-      description_cart: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency."
-      weight: 17
-      title_video: "Download sample videos"
-      link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-QW1ncXpkdS02R1k/view?usp=sharing"
+    # w30:
+    #   id: 'w30'
+    #   title_store: "high resolution"
+    #   description_store: "World camera with beautiful image quality. We recommend this option when you want aesthetically pleasing footage, and are not concerned with size, weight, or speed."
+    #   tech_specs:
+    #     sensor: "1910x1080 @30fps"
+    #     fov: "90 degrees diagonal with auto focus lens."
+    #     latency: "127.7ms"
+    #     audio: "Record audio with built-in stereo microphone"
+    #   title_cart: "World camera: high resolution"
+    #   description_cart: "Max resolution: 1910x1080 @30fps. FOV 90 degrees diagonal with auto focus lens. 120ms latency."
+    #   weight: 17
+    #   title_video: "Download sample videos"
+    #   link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-QW1ncXpkdS02R1k/view?usp=sharing"
     w120:
       id: 'w120'
       title_store: "high speed"
