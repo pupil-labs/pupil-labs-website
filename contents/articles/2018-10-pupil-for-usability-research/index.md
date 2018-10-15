@@ -1,6 +1,6 @@
 ---
 title: Pupil for Usability Research
-date: Tue Jun 12 2018 11:42:18 GMT+0700 (+07)
+date: Monday Oct 15 2018 11:42:18 GMT+0700 (+07)
 author: Pupil Dev Team
 subtitle: "Check out this great article on Pupil used for usability studies on mobile and desktop..."
 featured_img: "../../../../media/images/blog/marc-oliver-ui-ux-article-feature.jpg"
