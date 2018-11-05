@@ -109,7 +109,12 @@
   },
   { 
     "name":"Robert Covington",
-    "role":"Assembly Engineer",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Douglas Mackay",
+    "role":"Hardware Development & Production Manager",
     "img":"https://placehold.it/400x400"    
   }
 ]
