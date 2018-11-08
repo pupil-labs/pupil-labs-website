@@ -1,6 +1,6 @@
 ---
 title: Assembly and Fulfillment
-order: 2
+order: -1
 jobTitle: electrical-engineer
 ---
 
