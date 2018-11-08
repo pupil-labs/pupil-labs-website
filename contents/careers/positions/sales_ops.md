@@ -1,6 +1,6 @@
 ---
 title: Sales and Operations
-order: 6
+order: -1
 jobTitle: sales-ops
 ---
 
