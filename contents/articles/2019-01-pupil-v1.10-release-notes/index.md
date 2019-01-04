@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         var converter = new showdown.Converter();
         var text = data.data.body;
         var html = converter.makeHtml(text);
-        html += '<a href="https://github.com/pupil-labs/pupil/releases/tag/v1.9">Download v1.10</a>';
+        html += '<a href="https://github.com/pupil-labs/pupil/releases/tag/v1.10">Download v1.10</a>';
         $('section[class~="content"]').html(html);
         $('#features').css("padding-top", "28px");
         $('#realsensed400support1409httpsgithubcompupillabspupilpull1409').css("padding-top", "12px");
