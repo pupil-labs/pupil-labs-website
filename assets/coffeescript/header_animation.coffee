@@ -71,7 +71,7 @@ set_active_nav_link = ()=>
 
 
 $(document).ready ->
-  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#About").length > 0 or $("#Jobs").length > 0 or $("#Blog").length > 0
+  if $("#Home").length > 0 or $("#Pupil").length > 0 or $("#About").length > 0 or $("#Jobs").length > 0
     # on load make the header transparent
     headerOpacityHome()
   else
