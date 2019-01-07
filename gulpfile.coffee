@@ -264,7 +264,7 @@ gulp.task 'webp:make', ->
     .pipe plumber()
     .pipe size()
     .pipe webp
-      quality: 80
+      quality: 90
     .pipe size()
     .pipe gulp.dest('./')
 
