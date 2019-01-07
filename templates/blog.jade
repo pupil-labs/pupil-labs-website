@@ -19,16 +19,17 @@ block main
       if article.metadata.tag
         - releaseArticles.push(article)
 
-      if article.metadata.tag
-        if i == 0
-          div.new-release-bar
-            div.Site-content-container.Blog-container
-              div.Grid.Grid--center.Grid--justifySpaceBetween
-                div Latest software release
-                - var githubLink = 'https://github.com/pupil-labs/pupil/releases/tag/' + article.metadata.tag.caption
-                  a.hero-button.mdc-button.mdc-button--raised.mdc-primary(href= githubLink)
-                    - var downloadCaption = 'Download ' + article.metadata.tag.caption
-                    span= downloadCaption
+    each release, i in releaseArticles
+      if i == 0
+        div.new-release-bar
+          div.Site-content-container.Blog-container
+            div.Grid.Grid--center.Grid--justifySpaceBetween
+              div Latest software release
+              - console.log(latestRelease)
+              - var githubLink = 'https://github.com/pupil-labs/pupil/releases/tag/' + release.metadata.tag.caption
+                a.hero-button.mdc-button.mdc-button--raised.mdc-primary(href= githubLink)
+                  - var downloadCaption = 'Download ' + release.metadata.tag.caption
+                  span= downloadCaption
 
     each featured, i in newsArticles
       if i == 0
