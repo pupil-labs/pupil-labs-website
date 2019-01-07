@@ -8,17 +8,17 @@
 
 .Blog-pageTitle
   background transparent
-  
+
 .Blog-articleLink
-  // 
+  //
 
 .Blog-article
   padding 5em
   background transparent
   transition color .3s ease-in-out, background .3s ease-in-out
-  
+
   &:active
-    background $link-hover-color  
+    background $link-hover-color
 
   @media $break-767
     padding 3em .8em 3em .8em
@@ -27,7 +27,7 @@
   padding-left 2em
   @media $break-767
     padding-left 0em
-    
+
 .Blog-article-header
   padding-bottom 5em
   padding-top 1em
@@ -38,14 +38,14 @@
 
 .Blog-article-subtitle
   color $gray
-  
-    
+
+
 .no-touch
   .Blog-article
     &:hover
       background rgba(0,0,0,.5)
-      
-      .Blog-article-title      
+
+      .Blog-article-title
         color darken(#666, 30%)
       .Blog-article-subtitle
         color lighten($gray,70%)
@@ -53,26 +53,26 @@
         color lighten($text-color,70%)
     &:active
       transition none
-      background darken($link-hover-color,25%)  
+      background darken($link-hover-color,25%)
 
 
 .Blog-article-date
   color $text-color
-  
-.Blog-content *  
+
+.Blog-content *
     color invert($text-color)
-  
+
 .Blog-content h2
   color darken(#fff,5%)
-  
+
 .Blog-nav
   padding 3em 3em
-  
+
 .Blog-nav-link
   transition color .4s ease
-  letter-spacing .01em  
-  text-align center 
-  
+  letter-spacing .01em
+  text-align center
+
 
 //- NAT CLASS
 
@@ -83,10 +83,13 @@
   line-height $heading-font-size * 0.5
   font-weight normal
   padding-bottom 20px
-  
+
 .Top-post-header
   color #ffffff
   padding-bottom 1em
+
+.Header-bold
+  font-weight 700
 
 .Background-caption-text-button
   // line-height 1em
@@ -104,26 +107,26 @@
   height 13em
   background #ededed
   border-radius 50%
-  
+
   @media $break-767
     width 8em
     height 8em
-    
+
   @media $break-767-height
     width 8em
     height 8em
-  
+
 .Tag-inner
   text-align center
   margin auto
-  
+
 .Icon-tag
   font-size 3em
   margin .1em
-  
+
   @media $break-767
     font-size 1.5em
-      
+
   @media $break-767-height
     font-size 1.5em
 
@@ -131,6 +134,92 @@
 .Caption-tag
   font-size 1.5em
   margin 0 0 .5em
-  
+
   @media $break-767
     font-size 1.3em
+
+.new-release-bar
+  margin-top 64px
+  // height 60px
+  width 100%
+  padding 0 24px
+  background-color #ECEFF1
+  z-index 999
+  border-bottom 1px solid rgba(0,0,0,.12)
+
+  @media $break-767
+    margin-top unset
+
+    .Grid--justifySpaceBetween
+      justify-content center
+      padding 16px 0
+
+.card
+  box-shadow 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)
+  transition box-shadow .28s cubic-bezier(.4,0,.2,1)
+  will-change box-shadow
+  border-radius 4px
+  flex 0 0 calc(50% - 16px) !important
+
+  @media $break-767
+    flex 0 0 100% !important
+
+.Grid--1of2 > .Grid-cell
+  &.card
+    flex 0 0 45%
+    margin 16px 0
+
+.card:hover
+  box-shadow 0 4px 8px -2px rgba(0,0,0,.2), 0 8px 10px 0 rgba(0,0,0,.14), 0 2px 20px 0 rgba(0,0,0,.12)
+
+.Fill-height
+  height 100%
+
+.Blog-topic-text
+  font-size 14px !important
+  padding-bottom 10px
+  color:#4D8AF0
+
+  @media $break-767
+    padding-bottom  6px
+
+.Blog-header-featured
+  font-size 24px !important
+
+  @media $break-767
+    font-size 18px !important
+
+.Blog-header
+  font-size 18px !important
+
+.Blog-small-text
+  font-size 14px !important
+
+  &.grey
+    color #9E9E9E
+
+.Card-content
+  height 20vh
+
+.Blog-container
+  @media $break-767
+    .ratio-box
+      height 20vh !important
+
+    .u-padA--2
+      padding 1em
+
+    .u-marginY--2
+      margin unset !important
+      margin-top 1.5em !important
+
+    padding 0 20px !important
+
+.Release-tag
+  height 28vh
+  background-color #4D8AF0
+  border-radius 4px 4px 0 0
+
+  @media $break-767
+    height 20vh
+
