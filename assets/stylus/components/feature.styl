@@ -1,40 +1,40 @@
 .Feature
   // nothing here yet
-        
+
 .Feature-100vh
   height 100vh
-  
+
 .Feature--store
   display flex
   flex-direction column
-    
+
 .Feature-figure
   // nothing here yet
-        
+
 .Feature-figure--config
   position relative
   left 0
-  top 0 
+  top 0
 
 .Feature-figure--dev
   position relative
   left 0
-  top 0 
+  top 0
   border 1px solid #ffffff
   border-radius 5px
 
 .Feature--padded2
   padding 2em
-  
+
   @media $break-767
-    padding 3em .8em 3em .8em 
-        
+    padding 3em .8em 3em .8em
+
 .Feature--padded3
-  padding 3em 
-  
+  padding 3em
+
   @media $break-767
-    padding 3em .8em 3em .8em 
-    
+    padding 3em .8em 3em .8em
+
 .Feature-image--wrapper
   flex-shrink 0
 
@@ -45,33 +45,33 @@
   width auto
   align-items center
   justify-content center
-  
+
 .Feature-image
   display block
   width 100%
   height auto
-  
+
 .Feature-video-container-4by3
   position relative
   width 100%
   height 0
   padding-bottom 75%
   margin-bottom 1em
-  
+
 .Feature-video-container-3by5
   position relative
   width 100%
   height 0
   padding-bottom 60%
   margin-bottom 1em
-  
+
 .Feature-video-container-16by9
   position relative
   width 100%
   height 0
   padding-bottom 56.25%
   margin-bottom 1em
-    
+
 .Feature-video
   position absolute
   top 0
@@ -97,7 +97,7 @@
   margin-left auto
   margin-right auto
   height auto
-  
+
   @media $break-767
     max-width 80%
 
@@ -117,30 +117,30 @@
   margin-left auto
   margin-right auto
   width 25%
-  height auto  
+  height auto
 
 .Feature-title--lg
   color $header-color
   font-size $heading-font-size
   font-weight $heading-font-weight
 
-        
+
 .Feature-image--configWorld
   position absolute
   width 59%
   left 0
   top 0
-    
+
 .Feature-image--configEye
   // relative positioning
   position relative
   left 0
-  top 0 
+  top 0
 
 .Feature-image--blog-archive--wrapper
   height 30vh
   padding-bottom 3em
-  
+
   @media $break-767
     height 40vh
 
@@ -166,12 +166,18 @@
   left 0
   right 0
   background-position center center
-  background-repeat no-repeat  
+  background-repeat no-repeat
   background-attachment fixed // set to scroll so content doesn't scroll over top
   @media $break-767
     // don't use vh on mobile due to hiding navbar it make the site jumpy.
     height 400px
 
+.Background-img-featured-blog
+  border-radius 4px 0 0 4px
+
+  @media $break-767
+    border-radius:  4px 4px 0 0
+    height 20vh
 
 .Background-img-top
   margin 0px
@@ -185,7 +191,7 @@
   left 0
   right 0
   background-position center center
-  background-repeat no-repeat  
+  background-repeat no-repeat
   background-attachment fixed // set to scroll so content doesn't scroll over top
   @media $break-767
     // don't use vh on mobile due to hiding navbar it make the site jumpy.
@@ -250,7 +256,7 @@
   position relative
   height 0
   display block
-  
+
 .ratio-box img
 .ratio-box iframe
 .ratio-box video
@@ -273,10 +279,10 @@
     padding-bottom 75%
     height 0
     background-position-y top
-    
+
 .Background-img--full-w
   background-position center center
-  background-repeat no-repeat  
+  background-repeat no-repeat
   background-attachment scroll // set to scroll so content doesn't scroll over top
   width 100vw
   min-height 30em
@@ -285,11 +291,11 @@
     padding 0
     padding-bottom 75%
     height 0
-    background-position-y top  
-    
+    background-position-y top
+
 .Background-img--full-w-fixed
   background-position center center
-  background-repeat no-repeat  
+  background-repeat no-repeat
   background-attachment fixed // set to scroll so content doesn't scroll over top
   width 100vw
   height 80vh
@@ -305,7 +311,7 @@
   background-position-x center
   background-position-y center
   background-attachment scroll
-  background-repeat no-repeat  
+  background-repeat no-repeat
   width 100%
   padding-bottom 75%
 
@@ -316,21 +322,21 @@
   margin 0
   padding 0
   background-color #676668
-  
-  
+
+
 .Background-video
   height 100%
   width 100%
   object-fit contain
   // video
   //   object-fit cover !important
-      
+
 .Background-img-caption-container
   transform translateY(-50%)
   position relative
   top 60%
   z-index 1
-  
+
 .Background-img-button-container
   position absolute
   z-index 1
@@ -340,25 +346,25 @@
 .Background-img-caption
   line-height 1.1em
   color #ffffff
-  
+
 
 .Background-img--caption-h2
   font-size 1.3em
-    
+
 .Feature-specs
   flex 1 0 auto
-    
+
 .Feature-wrapper
   display flex
   flex-direction column
-        
+
 .Feature-grayBkg
   color invert($gray-darker)
   background darken($link-hover-color,30%)
-  
+
 .Feature-container--activityHome
   background rgba(0,0,0,0.1)
-  
+
 .Feature-container-column
   // display flex
   // flex-direction column
@@ -367,12 +373,12 @@
     padding 2.5em 0em
     div[class^="Grid-cell"]
       padding 1em 0em
-  
+
 .Feature-row
   min-height 30em
   @media $break-767
     min-height 0em
-    
+
 .Feature-slide-wrapper
   background-color #828282
   min-height 60vh
