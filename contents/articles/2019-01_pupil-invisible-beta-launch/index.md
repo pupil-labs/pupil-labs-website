@@ -16,6 +16,7 @@ template: pi_article.jade
   <div class="Grid-cell grid-3">
     <h1 style="padding:unset;color:#0D122A;">Pupil Invisible</h1>
   </div>
+</div>
 
 <div class="Grid u-padBottom--2" style="color:#0D122A;">
   <div class="Grid-cell grid-4">
@@ -32,6 +33,7 @@ template: pi_article.jade
       </div>
     </a>
   </div>
+</div>
 
 <div class="Background-img-top--blog Background-img-cover" style="border-radius:4px;">
   <div style="background-image: url('../../../../media/images/blog/pupil_invisible_02.jpg');background-position:center 45%;" class="Background-img--full-wh"></div>
@@ -61,6 +63,7 @@ template: pi_article.jade
   <div style="position:absolute;right:0;bottom:0;padding:2em;color:#ECEFF1;">
     <h1 class="overlay-text">and go.</h1>
   </div>
+</div>
 
 <div id="highlight-bg-container">
   <div style="padding:1em 32px;width:100%;" id="highlight-hr">
@@ -72,51 +75,36 @@ template: pi_article.jade
       <h4 style="font-weight:700;">Easy to use</h4>
       <p>Our approach does not rely on glints or even images of the pupil. There is no adjustment and no calibration required. Just put it on, and go.</p>
     </div>
-    <div style="position:absolute;right:0;bottom:0;padding:2em;color:#ECEFF1;">
-      <h1 style="font-size:80px;padding:unset;">and go.</h1>
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">Sunny outdoor environments</h4>
+      <p>Traditional eye tracking approaches fail in bright sunlight. Pupil Invisible provides robust gaze estimation in any environment!</p>
+    </div>
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">Invisible</h4>
+      <p>We managed to move the cameras completely outside of the field of view and fully integrate them into the frame. The first eye tracker that truly looks and feels like a pair of glasses.</p>
+    </div>
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">Slippage compensation</h4>
+      <p>Our algorithms perfectly and instantaneously compensate for the movement of the glasses, ensuring high quality eye tracking data at all times.</p>
+    </div>
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">Android companion</h4>
+      <p>Pupil Invisible comes with an Android smartphone and companion app. It uses the companion phone for real-time neural network gaze estimation, real-time streaming over wifi, and recording.</p>
+    </div>
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">Detachable scene camera</h4>
+      <p>A wide angle camera records your full field of view. An integrated microphone can capture audio. The entire scene camera module can be quickly detached/re-attached via magnetic connection.</p>
+    </div>
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">IMU</h4>
+      <p>A high resolution Inertial Measurement Unit (IMU) is integrated into the frame.  </p>
+    </div>
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">Swappable Lenses</h4>
+      <p>You can easily pop in/out lenses with different prescriptions and shades.</p>
     </div>
   </div>
-
-  <div style="background-color:#263238;color:#ECEFF1;padding:2em 0 2em 0;" class="sclera-white">
-    <div style="padding:1em 32px;width:100%;">
-      <div style="border-top:2px solid #90A4AE;width:100%;"></div>
-    </div>
-    <h2 style="padding:32px;font-size:48px;font-weight:700;">Highlights</h2>
-    <div class="Grid Grid--1of2 Grid--gutters-sm">
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">Easy to use</h4>
-        <p>Our approach does not rely on glints or even images of the pupil. There is no adjustment and no calibration required. Just put it on, and go.</p>
-      </div>
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">Sunny outdoor environments</h4>
-        <p>Traditional eye tracking approaches fail in bright sunlight. Pupil Invisible provides robust gaze estimation in any environment!</p>
-      </div>
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">Invisible</h4>
-        <p>We managed to move the cameras completely outside of the field of view and fully integrate them into the frame. The first eye tracker that truly looks and feels like a pair of glasses.</p>
-      </div>
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">Slippage compensation</h4>
-        <p>Our algorithms perfectly and instantaneously compensate for the movement of the glasses, ensuring high quality eye tracking data at all times.</p>
-      </div>
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">Android companion</h4>
-        <p>Pupil Invisible comes with an Android smartphone and companion app. It uses the companion phone for real-time neural network gaze estimation, real-time streaming over wifi, and recording.</p>
-      </div>
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">Detachable scene camera</h4>
-        <p>A wide angle camera records your full field of view. An integrated microphone can capture audio. The entire scene camera module can be quickly detached/re-attached via magnetic connection.</p>
-      </div>
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">IMU</h4>
-        <p>A high resolution Inertial Measurement Unit (IMU) is integrated into the frame.  </p>
-      </div>
-      <div class="Grid-cell">
-        <h4 style="font-weight:700;">Swappable Lenses</h4>
-        <p>You can easily pop in/out lenses with different prescriptions and shades.</p>
-      </div>
-    </div>
-  </div>
+</div>
 
 <div style="background-color:#FF9E80;margin:2em -40px;padding:2em 40px;color:#0D122A;" id="sign-up">
   <div id="whats-next-container">
@@ -147,57 +135,45 @@ template: pi_article.jade
                   </div>
                 </div>
               </div>
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ed9736f18028b208205770080_92d4f0b16b"
-                  tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color:#039BE5;"></div>
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="Grid-cell">
-        <p>We have spent 3 years working on Pupil Invisible, and are very excited to get it into your hands!</p>
-        <p>Pupil Invisible is a very new approach to mobile eye tracking. It is does not replace the existing Pupil Headset. We see it as a complementary (and at this point) experimental new product!</p>
-        <p>We are looking for core users to explore new use cases and contribute to the final steps of product development in a closed beta program. The public (non beta program) release is scheduled for mid 2019.</p>
+            <div id="mce-responses" class="clear">
+              <div class="response" id="mce-error-response" style="display:none"></div>
+              <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ed9736f18028b208205770080_92d4f0b16b"
+                tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </div>
+        </form>
       </div>
     </div>
     <div class="Grid-cell">
-      <p>We have spent 3 years working on Pupil Invisible, and are very excited to get it into your hands!</p>
+      <p>We’ve spent 3 years working on Pupil Invisible, and are very excited to get it into your hands!</p>
       <p>Pupil Invisible is a very new approach to mobile eye tracking. It does not replace the existing Pupil Headset. We see it as a complementary (and at this point) experimental new product!</p>
       <p>We are looking for core users to explore new use cases and contribute to the final steps of product development in a closed beta program. The public (non beta program) release is scheduled for mid 2019.</p>
     </div>
   </div>
+</div>
 
-  <div class="Grid Grid--1of2" style="padding:1.5em 0;">
-    <div class="Grid-cell">
-      <div class="Grid">
-        <div class="Header-logo" style="padding-right:1em;position:unset;color:#0D122A;">
-          <a href="/" style="color:#0D122A">pupil labs</a>
-        </div>
-        <div>
-          <p class="small" style="padding:unset;font-weight:700;color:#90A4AE;line-height:1.2em;">Pupil Labs GmbH</p>
-          <p class="small" style="padding:unset;color:#90A4AE;line-height:1.2em;">Sanderstr. 28, 12047, Berlin, Germany</p>
-        </div>
+<div class="Grid Grid--1of2" style="padding:1.5em 0;">
+  <div class="Grid-cell">
+    <div class="Grid">
+      <div class="Header-logo" style="padding-right:1em;position:unset;color::#0D122A;">
+        <a href="/" class="logotype">pupil labs</a>
       </div>
-    </div>
-    <div class="Grid-cell">
-      <div class="Grid Grid--justifySpaceAround" style="padding:0 4em;">
-        <a href="https://pupil-labs.com/chat" title="Pupil community chat">
-          <img src="../../../../media/graphics/web/social_icons/discord.png" height="24">
-        </a>
-        <a href="https://github.com/pupil-labs" title="Pupil Labs Repo">
-          <img src="../../../../media/graphics/web/social_icons/github.png" height="24">
-        </a>
-        <a href="https://twitter.com/pupil_labs" title="Pupil Labs on Twitter">
-          <img src="../../../../media/graphics/web/social_icons/twitter.png" height="24">
-        </a>
-        <a href="https://www.youtube.com/channel/UCO1Dx8T9sym3Dl2grS4fsFA/videos" title="Pupil Labs on YouTube">
-          <img src="../../../../media/graphics/web/social_icons/youtube.png" height="24">
-        </a>
+      <div>
+        <p class="small" style="padding:unset;">Pupil Labs GmbH</p>
+        <p class="small" style="padding:unset;">Sanderstr. 28, 12047, Berlin, Germany</p>
       </div>
     </div>
   </div>
+  <div class="Grid-cell">
+    <div class="Grid Grid--justifySpaceAround" style="padding:0 4em;">
+      <img src="../../../../media/graphics/web/social_icons/discord.png" height="24">
+      <img src="../../../../media/graphics/web/social_icons/github.png" height="24">
+      <img src="../../../../media/graphics/web/social_icons/twitter.png" height="24">
+      <img src="../../../../media/graphics/web/social_icons/youtube.png" height="24">
+    </div>
+  </div>
+</div>
