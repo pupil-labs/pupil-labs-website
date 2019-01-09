@@ -49,7 +49,7 @@ template: pi_article.jade
       <h2 class="ml-header">Learning</h2>
     </div>
     <div class="Grid-cell" id="ml-copy">
-      <p style="font-size:19px;">Leveraging insights we gained working on Pupil, we have created a new gaze estimation pipeline powered by deep neural networks and matching eye tracking hardware.</h4>
+      <p style="font-size:19px;">Leveraging insights we gained working on Pupil, we have created a new gaze estimation pipeline powered by deep neural networks and matching eye tracking hardware.</p>
     </div>
 </div>
 </div>
