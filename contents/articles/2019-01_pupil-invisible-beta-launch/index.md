@@ -2,7 +2,7 @@
 title: Pupil Invisible - Beta Launch
 date: Wed Jan 09 2019 10:44:30 GMT+0700 (+07)
 author: Pupil Dev Team
-subtitle: 'Introducing - Pupil Invisible - the first eye tracking device that truly looks and feels like a normal pair of glasses.'
+subtitle: 'Introducing - Pupil Invisible. The first eye tracking device that truly looks and feels like a normal pair of glasses. Machine learning powered. No setup, no adjustments, no calibration.'
 featured_img: "../../../../media/images/blog/pupil_invisible.jpg"
 featured_img_thumb: "../../../../media/images/blog/pupil_invisible.jpg"
 topic: "Announcement"
@@ -142,7 +142,7 @@ template: pi_article.jade
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ed9736f18028b208205770080_92d4f0b16b"
                   tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              <div class="clear"><input type="submit" value="Sign up" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color:#039BE5;"></div>
             </div>
           </form>
         </div>
@@ -162,8 +162,8 @@ template: pi_article.jade
           <a href="/" class="logotype">pupil labs</a>
         </div>
         <div>
-          <p class="small" style="padding:unset;">Pupil Labs GmbH</p>
-          <p class="small" style="padding:unset;">Sanderstr. 28, 12047, Berlin, Germany</p>
+          <p class="small" style="padding:unset;font-weight:700;color:#90A4AE;line-height:1.2em;">Pupil Labs GmbH</p>
+          <p class="small" style="padding:unset;color:#90A4AE;line-height:1.2em;">Sanderstr. 28, 12047, Berlin, Germany</p>
         </div>
       </div>
     </div>
