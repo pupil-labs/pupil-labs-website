@@ -19,22 +19,17 @@
   },
   {
     "name":"Pablo Prietz",
-    "role":"Software Engineer",
+    "role":"Lead Software Engineer",
     "img":"https://placehold.it/400x400"    
   },
   {
     "name":"Marc Tonsen",
-    "role":"Partner, Research & Development Engineer",
+    "role":"Partner, Lead Research & Development Engineer",
     "img":"https://placehold.it/400x400"
   },
   {
     "name":"Nathakit Sae-Tan",
     "role":"Designer",
-    "img":"https://placehold.it/400x400"    
-  },
-  {
-    "name":"Douglas Mackay",
-    "role":"Hardware Development & Production Manager",
     "img":"https://placehold.it/400x400"    
   },
   {
@@ -44,12 +39,12 @@
   },  
   { 
     "name":"Dr. Kai Dierkes",
-    "role":"Research & Development Engineer",
+    "role":"Lead Research & Development Engineer",
     "img":"https://placehold.it/400x400"    
   },
   { 
     "name":"Niall Oakes",
-    "role":"Hardware & Fulfillment",
+    "role":"Sales & Ops, Hardware & Fulfillment",
     "img":"https://placehold.it/400x400"    
   },
   { 
@@ -83,13 +78,43 @@
     "img":"https://placehold.it/400x400"    
   },
   { 
-    "name":"Asta Stankeviciene",
-    "role":"Office Manager",
+    "name":"Bilal Bayasut",
+    "role":"Software Engineer",
     "img":"https://placehold.it/400x400"    
   },
   { 
-    "name":"Bilal Bayasut",
-    "role":"Software Engineer",
+    "name":"Dr. Emre Doğan",
+    "role":"Research & Development Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Chris-Kay Baumann",
+    "role":"Research & Development Engineer, Software Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Dr. Caspar Goeke",
+    "role":"Cognitive Scientist, Software Engineer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Karit Vichaithanaruks",
+    "role":"Designer",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Swati Sinha",
+    "role":"Sales & Ops",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Robert Covington",
+    "role":"Hardware & Fulfillment",
+    "img":"https://placehold.it/400x400"    
+  },
+  { 
+    "name":"Douglas Mackay",
+    "role":"Hardware Development & Production Manager",
     "img":"https://placehold.it/400x400"    
   }
 ]
