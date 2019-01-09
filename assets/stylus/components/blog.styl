@@ -34,9 +34,7 @@
 
 .Blog-article-title
   padding-bottom 0.1em
-  font-family Roboto, sans-serif
-  font-weight 700
-  color #0D122A
+  color #666
 
 .Blog-article-subtitle
   color $gray
@@ -276,3 +274,70 @@
   vertical-align top
   white-space nowrap
   width 100%
+
+#sign-up-anchor
+  padding-left 1em
+  padding-bottom unset
+#ml-copy
+  padding-right 50px
+#whats-next-header
+  font-size 48px
+  padding-bottom unset
+#whats-next-container
+  padding-bottom 2em
+.ml-header
+  font-size 48px
+  padding unset
+  font-weight 700
+#sign-up-form-cell
+  border-left 2px solid #0D122A
+  padding 0 5em 0 1em
+#highlight-hr
+  padding 1em 32px
+  width 100%
+#highlight-header
+  padding 32px
+.overlay-text
+  font-size 80px
+  padding unset
+#highlight-bg-container
+  background-color #263238
+  color #ECEFF1
+  padding 2em 0 2em 0
+
+@media $break-767
+  &#pi-intro
+    flex-direction column-reverse
+  &#sign-up-arrow
+    display none
+  &#sign-up-anchor
+    font-size 19px
+    padding-left 0
+    padding-top unset
+  &#machine-learning-hr
+    display none
+  &.ml-header
+    font-size 2.1em
+  &#ml-copy
+    padding-right 0
+  &#sign-up-content
+    flex-direction column-reverse
+  &#sign-up-form-cell
+    border-left 0px
+    padding unset
+  &#whats-next-header
+    font-size 2.1em
+  &#whats-next-container
+    padding-bottom unset
+  &#highlight-hr
+    display none
+    padding unset
+  &#highlight-header
+    padding 0em .6em
+    font-size 2.1em
+  &.highlight-items
+    padding 1em
+  &.overlay-text
+    font-size 2.6em
+  &highlight-bg-container
+    padding-top 1em
