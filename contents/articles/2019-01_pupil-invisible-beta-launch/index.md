@@ -100,7 +100,7 @@ template: pi_article.jade
       <p>A high resolution Inertial Measurement Unit (IMU) is integrated into the frame.  </p>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Swappable Lenses</h4>
+      <h4 style="font-weight:700;">Swappable lenses</h4>
       <p>You can easily pop in/out lenses with different prescriptions and shades.</p>
     </div>
   </div>
@@ -170,10 +170,18 @@ template: pi_article.jade
   </div>
   <div class="Grid-cell">
     <div class="Grid Grid--justifySpaceAround" style="padding:0 4em;">
-      <img src="../../../../media/graphics/web/social_icons/discord.png" height="24">
-      <img src="../../../../media/graphics/web/social_icons/github.png" height="24">
-      <img src="../../../../media/graphics/web/social_icons/twitter.png" height="24">
-      <img src="../../../../media/graphics/web/social_icons/youtube.png" height="24">
+        <a href="https://pupil-labs.com/chat" title="Pupil community chat">
+          <img src="../../../../media/graphics/web/social_icons/discord.png" height="24">
+        </a>
+        <a href="https://github.com/pupil-labs" title="Pupil Labs Repo">
+          <img src="../../../../media/graphics/web/social_icons/github.png" height="24">
+        </a>
+        <a href="https://twitter.com/pupil_labs" title="Pupil Labs on Twitter">
+          <img src="../../../../media/graphics/web/social_icons/twitter.png" height="24">
+        </a>
+        <a href="https://www.youtube.com/channel/UCO1Dx8T9sym3Dl2grS4fsFA/videos" title="Pupil Labs on YouTube">
+          <img src="../../../../media/graphics/web/social_icons/youtube.png" height="24">
+        </a>
     </div>
   </div>
 </div>
