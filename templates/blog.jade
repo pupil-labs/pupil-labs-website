@@ -43,7 +43,12 @@ block main
               div.Grid-cell.grid-3-5.u-padA--2
                 div.Grid.Grid--justifySpaceBetween.Grid-column.Fill-height(style="color:#212121;")
                   div
-                    h5.Blog-topic-text News
+                    if featured.metadata.topic == 'Announcement'
+                      h5.Blog-topic-tex Announcement
+                    else if featured.metadata.topic == 'News'
+                      h5.Blog-topic-text News
+                    else
+                      h5.Blog-topic-text News
                     h4.Blog-header-featured.Header-bold= featured.metadata.title
                     p.Blog-small-text= featured.metadata.subtitle
                   div
