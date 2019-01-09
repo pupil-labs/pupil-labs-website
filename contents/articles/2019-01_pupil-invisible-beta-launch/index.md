@@ -111,7 +111,7 @@ template: pi_article.jade
   <div class="Grid Grid--1of2">
     <div class="Grid-cell" style="border-left:2px solid #0D122A;padding:0 5em 0 1em;">
       <h2 style="font-weight:700;">Pupil Invisible closed beta program launches today!</h2>
-      <p>Sign up updates and early access to hardware</p>
+      <p>Sign up for updates and early access to hardware.</p>
       <div id="mc_embed_signup">
         <form action="https://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&amp;id=92d4f0b16b"
           method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
