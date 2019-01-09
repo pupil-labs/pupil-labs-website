@@ -151,6 +151,7 @@ template: pi_article.jade
     <div class="Grid-cell">
       <p>We’ve spent 3 years working on Pupil Invisible, and are very excited to get it into your hands!</p>
       <p>Pupil Invisible is a very new approach to mobile eye tracking. It does not replace the existing Pupil Headset. We see it as a complementary (and at this point) experimental new product!</p>
+      <p>We are looking for core users to explore new use cases and contribute to the final steps of product development in a closed beta program. The public (non beta program) release is scheduled for mid 2019.</p>
     </div>
   </div>
 </div>
