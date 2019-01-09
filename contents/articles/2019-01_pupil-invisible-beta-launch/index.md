@@ -97,7 +97,7 @@ template: pi_article.jade
       </div>
       <div class="Grid-cell">
         <h4 style="font-weight:700;">Slippage compensation</h4>
-        <p>Our algorithms perfectly and instantaneously compensate for the movment of the glasses, ensuring high quality eye tracking data at all times.</p>
+        <p>Our algorithms perfectly and instantaneously compensate for the movement of the glasses, ensuring high quality eye tracking data at all times.</p>
       </div>
       <div class="Grid-cell">
         <h4 style="font-weight:700;">Android companion</h4>
