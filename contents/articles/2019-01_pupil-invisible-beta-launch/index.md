@@ -159,7 +159,7 @@ template: pi_article.jade
     <div class="Grid-cell">
       <div class="Grid">
         <div class="Header-logo" style="padding-right:1em;position:unset;color:#0D122A;">
-          <a href="/" class="logotype">pupil labs</a>
+          <a href="/" style="color:#0D122A">pupil labs</a>
         </div>
         <div>
           <p class="small" style="padding:unset;font-weight:700;color:#90A4AE;line-height:1.2em;">Pupil Labs GmbH</p>
