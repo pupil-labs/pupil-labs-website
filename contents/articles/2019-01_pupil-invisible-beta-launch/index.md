@@ -9,55 +9,68 @@ topic: "Announcement"
 template: pi_article.jade
 ---
 
-<div class="Roboto pupil-black">
-  <div class="Grid" style="padding-bottom:12px;">
-    <div class="Grid-cell grid-7 u-padRight--2" style="display:flex;align-items:center;">
-      <div style="border-top:2px solid #0D122A;width:100%;"></div>
-    </div>
-    <div class="Grid-cell grid-3">
-      <h2 style="padding:unset;font-size:38px;font-weight:700;">Pupil Invisible</h2>
-    </div>
+<div class="Grid" id="pi-intro">
+  <div class="Grid-cell grid-7 u-padRight--2" style="display:flex;align-items:center;">
+    <div style="border-top:2px solid #0D122A;width:100%;"></div>
+  </div>
+  <div class="Grid-cell grid-3">
+    <h1 style="padding:unset;color:#0D122A;">Pupil Invisible</h1>
   </div>
 
-  <div class="Grid u-padBottom--2">
-    <div class="Grid-cell grid-4">
-      <p style="font-size:19px;">We are very excited to announce our newest product - <strong>Pupil Invisible</strong>.</p>
-      <p style="font-size:19px;padding:unset;">The first eye tracking device that truly looks and feels like a normal pair of glasses. No setup, no adjustments, no calibration.</p>
-    </div>
-    <div class="Grid-cell grid-6" style="display:flex;align-items:flex-end;justify-content:flex-end;">
-      <a href="#sign-up" style="color:#283593;">
-        <div class="Grid" style="align-items:center;">
+<div class="Grid u-padBottom--2" style="color:#0D122A;">
+  <div class="Grid-cell grid-4">
+    <p style="font-size:19px;">We are very excited to announce our newest product - <strong>Pupil Invisible</strong>.</p>
+    <p style="font-size:19px;">The first eye tracking device that truly looks and feels like a normal pair of glasses. No setup, no adjustments, no calibration.</p>
+  </div>
+  <div class="Grid-cell grid-6" style="display:flex;align-items:flex-end;justify-content:flex-end;">
+    <a href="#sign-up" style="color:#283593;">
+      <div class="Grid" style="align-items:center;">
+        <div id="sign-up-arrow">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8L14.6 6.6L9 12.2L9 -3.0598e-07L7 -3.93402e-07L7 12.2L1.4 6.6L-3.49691e-07 8L8 16L16 8Z" fill="#283593"/></svg>
-          <p style="padding-left:1em;padding-bottom:unset;color:#283593;">Join the closed beta program today!</p>
         </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="Background-img-top--blog Background-img-cover" style="border-radius:4px;">
-    <div style="background-image: url('../../../../media/images/blog/pupil_invisible_02.jpg');background-position:center 45%;" class="Background-img--full-wh"></div>
-  </div>
-
-  <div style="padding:3em 0;">
-    <div style="padding-bottom:2em;width:100%;">
-      <div style="border-top:2px solid #0D122A;width:100%;;"></div>
-    </div>
-    <div class="Grid Grid--1of2">
-      <div class="Grid-cell">
-        <h2 style="font-size:48px;padding:unset;font-weight:700;">Machine</h2>
-        <h2 style="font-size:48px;padding:unset;font-weight:700;">Learning</h2>
+        <p id="sign-up-anchor">Join the closed beta program today!</p>
       </div>
-      <div class="Grid-cell" style="padding-right:50px;">
-        <p style="font-size:19px;">Leveraging insights we gained working on Pupil, we have created a new gaze estimation pipeline powered by deep neural networks and matching eye tracking hardware.</h4>
-      </div>
-  </div>
+    </a>
   </div>
 
-  <div class="Background-img-top--blog Background-img-cover" style="border-radius:4px;height:80vh">
-    <div style="background-image: url('../../../../media/images/blog/pupil_invisible_03.jpg');background-position:50% 50%;" class="Background-img--full-wh"></div>
-    <div style="position:absolute;left:0;top:0;padding:2em;color:#ECEFF1;">
-      <h1 style="font-size:80px;padding:unset;">Just put</h1>
-      <h1 style="font-size:80px;padding:unset;">it on</h1>
+<div class="Background-img-top--blog Background-img-cover" style="border-radius:4px;">
+  <div style="background-image: url('../../../../media/images/blog/pupil_invisible_02.jpg');background-position:center 45%;" class="Background-img--full-wh"></div>
+</div>
+
+<div style="padding:2em 0;color:#0D122A;">
+  <div style="padding-bottom:2em;width:100%;" id="machine-learning-hr">
+    <div style="border-top:2px solid #0D122A;width:100%;"></div>
+  </div>
+  <div class="Grid Grid--1of2">
+    <div class="Grid-cell">
+      <h2 class="ml-header">Machine</h2>
+      <h2 class="ml-header">Learning</h2>
+    </div>
+    <div class="Grid-cell" id="ml-copy">
+      <p style="font-size:19px;">Leveraging insights we gained working on Pupil, we have created a new gaze estimation pipeline powered by deep neural networks and matching eye tracking hardware.</h4>
+    </div>
+</div>
+</div>
+
+<div class="Background-img-top--blog Background-img-cover" style="border-radius:4px;height:80vh">
+  <div style="background-image: url('../../../../media/images/blog/pupil_invisible_03.jpg');background-position:50% 50%;" class="Background-img--full-wh"></div>
+  <div style="position:absolute;left:0;top:0;padding:2em;color:#ECEFF1;">
+    <h1 class="overlay-text">Just put</h1>
+    <h1 class="overlay-text">it on</h1>
+  </div>
+  <div style="position:absolute;right:0;bottom:0;padding:2em;color:#ECEFF1;">
+    <h1 class="overlay-text">and go.</h1>
+  </div>
+
+<div id="highlight-bg-container">
+  <div style="padding:1em 32px;width:100%;" id="highlight-hr">
+    <div style="border-top:2px solid #90A4AE;width:100%;;"></div>
+  </div>
+  <h1 id="highlight-header">Highlights</h1>
+  <div class="Grid Grid--1of2 Grid--gutters-sm highlight-items">
+    <div class="Grid-cell">
+      <h4 style="font-weight:700;">Easy to use</h4>
+      <p>Our approach does not rely on glints or even images of the pupil. There is no adjustment and no calibration required. Just put it on, and go.</p>
     </div>
     <div style="position:absolute;right:0;bottom:0;padding:2em;color:#ECEFF1;">
       <h1 style="font-size:80px;padding:unset;">and go.</h1>
@@ -105,33 +118,32 @@ template: pi_article.jade
     </div>
   </div>
 
-  <div style="background-color:#FF9E80;margin:2em -40px;padding:2em 40px;" id="sign-up">
-    <div style="padding-bottom:2em;">
-      <h2 style="font-size:48px;padding-bottom:unset;font-weight:700;">What's next?</h2>
-    </div>
-    <div class="Grid Grid--1of2">
-      <div class="Grid-cell" style="border-left:2px solid #0D122A;padding:0 5em 0 1em;">
-        <h2 style="font-weight:700;">Pupil Invisible closed beta program launches today!</h2>
-        <p>Sign up for updates and early access to hardware.</p>
-        <div id="mc_embed_signup">
-          <form action="https://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&amp;id=92d4f0b16b"
-            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
-            novalidate>
-            <div id="mc_embed_signup_scroll">
-              <div class="mc-field-group">
-                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address" style="height:40px;">
-              </div>
-              <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group" style="padding:1em 0;">
-                <div class="content__gdpr">
-                  <div class="Grid" name="interestgroup_field">
-                    <div class="Grid-cell grid-1">
-                      <label class="checkbox subfield" for="gdpr_9533">
-                        <input type="checkbox" id="gdpr_9533" name="gdpr[9533]" value="Y" class="av-checkbox gdpr" style="width:14px;height:14px;">
-                      </label>
-                    </div>
-                    <div class="Grid-cell grid-9">
-                      <p style="font-size:12px;">I agree to receive emails from Pupil Labs about Pupil Invisible. You can unsubscribe at any time, by clicking the link in the footer of emails.</p>
-                    </div>
+<div style="background-color:#FF9E80;margin:2em -40px;padding:2em 40px;color:#0D122A;" id="sign-up">
+  <div id="whats-next-container">
+    <h1 id="whats-next-header">What's next?</h1>
+  </div>
+  <div class="Grid Grid--1of2" id="sign-up-content">
+    <div class="Grid-cell" id="sign-up-form-cell">
+      <h2 style="font-weight:700;">Pupil Invisible closed beta program launches today!</h2>
+      <p>Sign up for updates and early access to hardware.</p>
+      <div id="mc_embed_signup">
+        <form action="https://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&amp;id=92d4f0b16b"
+          method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+          novalidate>
+          <div id="mc_embed_signup_scroll">
+            <div class="mc-field-group">
+              <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address" style="height:40px;">
+            </div>
+            <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group" style="padding:1em 0;">
+              <div class="content__gdpr">
+                <div class="Grid" name="interestgroup_field">
+                  <div class="Grid-cell grid-1">
+                    <label class="checkbox subfield" for="gdpr_9533">
+                      <input type="checkbox" id="gdpr_9533" name="gdpr[9533]" value="Y" class="av-checkbox gdpr" style="width:14px;height:14px;">
+                    </label>
+                  </div>
+                  <div class="Grid-cell grid-9">
+                    <p style="font-size:12px;">I agree to receive emails from Pupil Labs about Pupil Invisible. You can unsubscribe at any time, by clicking the link in the footer of emails.</p>
                   </div>
                 </div>
               </div>
