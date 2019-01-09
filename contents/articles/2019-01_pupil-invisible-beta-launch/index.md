@@ -9,7 +9,7 @@ topic: "Announcement"
 template: pi_article.jade
 ---
 
-<div class="Grid">
+<div class="Grid" id="pi-intro">
   <div class="Grid-cell grid-7 u-padRight--2" style="display:flex;align-items:center;">
     <div style="border-top:2px solid #0D122A;width:100%;"></div>
   </div>
@@ -26,8 +26,10 @@ template: pi_article.jade
   <div class="Grid-cell grid-6" style="display:flex;align-items:flex-end;justify-content:flex-end;">
     <a href="#sign-up" style="color:#283593;">
       <div class="Grid" style="align-items:center;">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8L14.6 6.6L9 12.2L9 -3.0598e-07L7 -3.93402e-07L7 12.2L1.4 6.6L-3.49691e-07 8L8 16L16 8Z" fill="#283593"/></svg>
-        <p style="padding-left:1em;padding-bottom:unset;">Join the closed beta program today!</p>
+        <div id="sign-up-arrow">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8L14.6 6.6L9 12.2L9 -3.0598e-07L7 -3.93402e-07L7 12.2L1.4 6.6L-3.49691e-07 8L8 16L16 8Z" fill="#283593"/></svg>
+        </div>
+        <p id="sign-up-anchor">Join the closed beta program today!</p>
       </div>
     </a>
   </div>
@@ -38,15 +40,15 @@ template: pi_article.jade
 </div>
 
 <div style="padding:2em 0;color:#0D122A;">
-  <div style="padding-bottom:2em;width:100%;">
-    <div style="border-top:2px solid #0D122A;width:100%;;"></div>
+  <div style="padding-bottom:2em;width:100%;" id="machine-learning-hr">
+    <div style="border-top:2px solid #0D122A;width:100%;"></div>
   </div>
   <div class="Grid Grid--1of2">
     <div class="Grid-cell">
-      <h2 style="font-size:48px;padding:unset;font-weight:700;">Machine</h2>
-      <h2 style="font-size:48px;padding:unset;font-weight:700;">Learning</h2>
+      <h2 class="ml-header">Machine</h2>
+      <h2 class="ml-header">Learning</h2>
     </div>
-    <div class="Grid-cell" style="padding-right:50px;">
+    <div class="Grid-cell" id="ml-copy">
       <p style="font-size:19px;">Leveraging insights we gained working on Pupil, we have created a new gaze estimation pipeline powered by deep neural networks and matching eye tracking hardware.</h4>
     </div>
 </div>
@@ -55,20 +57,20 @@ template: pi_article.jade
 <div class="Background-img-top--blog Background-img-cover" style="border-radius:4px;height:80vh">
   <div style="background-image: url('../../../../media/images/blog/pupil_invisible_03.jpg');background-position:50% 50%;" class="Background-img--full-wh"></div>
   <div style="position:absolute;left:0;top:0;padding:2em;color:#ECEFF1;">
-    <h1 style="font-size:80px;padding:unset;">Just put</h1>
-    <h1 style="font-size:80px;padding:unset;">it on</h1>
+    <h1 class="overlay-text">Just put</h1>
+    <h1 class="overlay-text">it on</h1>
   </div>
   <div style="position:absolute;right:0;bottom:0;padding:2em;color:#ECEFF1;">
-    <h1 style="font-size:80px;padding:unset;">and go.</h1>
+    <h1 class="overlay-text">and go.</h1>
   </div>
 </div>
 
-<div style="background-color:#263238;color:#ECEFF1;padding:2em 0 2em 0;">
-  <div style="padding:1em 32px;width:100%;">
+<div id="highlight-bg-container">
+  <div style="padding:1em 32px;width:100%;" id="highlight-hr">
     <div style="border-top:2px solid #90A4AE;width:100%;;"></div>
   </div>
-  <h1 style="padding:32px;">Highlights</h1>
-  <div class="Grid Grid--1of2 Grid--gutters-sm">
+  <h1 id="highlight-header">Highlights</h1>
+  <div class="Grid Grid--1of2 Grid--gutters-sm highlight-items">
     <div class="Grid-cell">
       <h4 style="font-weight:700;">Easy to use</h4>
       <p>Our approach does not rely on glints or even images of the pupil. There is no adjustment and no calibration required. Just put it on, and go.</p>
@@ -105,11 +107,11 @@ template: pi_article.jade
 </div>
 
 <div style="background-color:#FF9E80;margin:2em -40px;padding:2em 40px;color:#0D122A;" id="sign-up">
-  <div style="padding-bottom:2em;">
-    <h1 style="font-size:48px;padding-bottom:unset;">What's next?</h1>
+  <div id="whats-next-container">
+    <h1 id="whats-next-header">What's next?</h1>
   </div>
-  <div class="Grid Grid--1of2">
-    <div class="Grid-cell" style="border-left:2px solid #0D122A;padding:0 5em 0 1em;">
+  <div class="Grid Grid--1of2" id="sign-up-content">
+    <div class="Grid-cell" id="sign-up-form-cell">
       <h2 style="font-weight:700;">Pupil Invisible closed beta program launches today!</h2>
       <p>Sign up for updates and early access to hardware.</p>
       <div id="mc_embed_signup">
