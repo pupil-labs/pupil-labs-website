@@ -585,6 +585,7 @@ class PupilStore
 
           country = countryList[_val]
 
+          console.log "country is: #{JSON.stringify(country)}"
           # if country US or CA force state abbreviations
           if country.countryISO is 'US' or country.countryISO is 'CA'
             placeholderTxt = if country.countryISO is 'US' then "state abbreviation (e.g. CA for California)" else "province abbreviation (e.g. QC for Quebec)"

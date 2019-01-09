@@ -4,7 +4,7 @@ footer.Site-footer
       each category_data, category_title in contents.menu['footer-nav.json'].metadata
         div.Footer--cell
           h4.Footer-heading #{ category_title }
-          ul
+          //- ul
           each val, key in category_data
             - var data = (category_title == "Contact & Address" ? "<p class='u-padBottom--0'>"+val+"</p>" : "<a href='"+val+"' rel='noopener'>"+key+"</a>")
             li.Footer-data !{ data }
