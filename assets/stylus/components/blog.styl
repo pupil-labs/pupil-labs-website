@@ -34,7 +34,9 @@
 
 .Blog-article-title
   padding-bottom 0.1em
-  color #666
+  color #0D122A
+  font-size 48px
+  font-weight 700
 
 .Blog-article-subtitle
   color $gray
@@ -223,23 +225,16 @@
   @media $break-767
     height 20vh
 
+.highlight-items
+  h4
+    font-weight 700
+
+  .bullet-point
+    width 5px
+    height 16px
+    background-color #90A4AE
+
 // mailchimp
-#mc_embed_signup
-  // clear left
-  // font 14px Helvetica,Arial,sans-serif
-
-
-// #mc-embedded-subscribe-form input[type=checkbox]
-//   display inline
-//   width auto
-//   margin-right 10px
-
-// #mergeRow-gdpr
-//   margin-top 20px
-
-// #mergeRow-gdpr fieldset label
-//   font-weight normal
-
 #mc-embedded-subscribe-form .mc_fieldset
   border none
   min-height 0px
@@ -256,7 +251,7 @@
   border-radius 3px
 
 #mc_embed_signup .button
-  background-color #aaa
+  background-color #039BE5
   border 0 none
   border-radius 4px
   transition all 0.23s ease-in-out 0s
@@ -275,6 +270,20 @@
   white-space nowrap
   width 100%
 
+.pi-intro-hr
+  border-top 2px solid #0D122A
+  width 100%
+.pi-product-title
+  padding unset
+  color #0D122A
+  font-weight 700
+  font-size 38px
+
+.bg-img-long
+  border-radius 4px
+  height 80vh
+#sign-up-link
+  color #283593
 #sign-up-anchor
   padding-left 1em
   padding-bottom unset
@@ -283,6 +292,7 @@
 #whats-next-header
   font-size 48px
   padding-bottom unset
+  font-weight 700
 #whats-next-container
   padding-bottom 2em
 .ml-header
@@ -296,6 +306,8 @@
   padding 1em 32px
   width 100%
 #highlight-header
+  font-weight 700
+  font-size 48px
   padding 32px
 .overlay-text
   font-size 80px
@@ -304,18 +316,24 @@
   background-color #263238
   color #ECEFF1
   padding 2em 0 2em 0
+.social-links
+  padding 0 3em
+.pi-footer
+  padding 1.5em 0
 
 @media $break-767
   &#pi-intro
     flex-direction column-reverse
+  #pi-intro
+    .pi-product-title
+      font-size 28px
   &#sign-up-arrow
-    display none
+    // display none
+    padding-right 20px
   &#sign-up-anchor
-    font-size 19px
+    font-size 18px
     padding-left 0
     padding-top unset
-  &#machine-learning-hr
-    display none
   &.ml-header
     font-size 2.1em
   &#ml-copy
@@ -337,7 +355,50 @@
     font-size 2.1em
   &.highlight-items
     padding 1em
+    p
+      padding unset
+    .Grid-cell, .Grid-cell--fillHeight
+      padding-bottom unset !important
+
   &.overlay-text
     font-size 2.6em
   &highlight-bg-container
     padding-top 1em
+  #sign-up-link
+    width 100%
+    .xs-left-align
+      justify-content flex-start
+  .bg-img-long
+    height 60vh
+  .pi-footer
+    flex-direction column-reverse
+    .Header-logo
+      padding unset !important
+    .company-info
+      width 100%
+      padding-top 1em
+      p
+        text-align center
+  .social-links
+    padding 0 1em
+
+@media all and (max-width 930px)
+  .pi-footer
+    flex-direction column-reverse
+    align-items center
+    .Header-logo
+      padding unset !important
+      width 100%
+      a
+        width 100%
+        display flex
+        justify-content center
+    .company-info
+      width 100%
+      padding-top 1em
+      p
+        text-align center
+    .Grid-cell
+      width 100%
+  .social-links
+    padding-bottom 2em

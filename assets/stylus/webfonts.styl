@@ -1,7 +1,7 @@
 font-url(file)
   return '../media/fonts/' + file
 
-webfontWOFF(family, file, weight = 'normal')
+webfont(family, file, weight = 'normal')
   @font-face
     font-family family
     src url(font-url(file + '.woff')) format('woff')
@@ -9,17 +9,8 @@ webfontWOFF(family, file, weight = 'normal')
     font-style normal
     font-stretch normal
 
-webfontTTF(family, file, weight = 'normal')
-  @font-face
-    font-family family
-    src url(font-url(file + '.ttf')) format('truetype')
-    font-weight weight
-    font-style normal
-    font-stretch normal
-
 @import url('//fonts.googleapis.com/css?family=Space+Mono')
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons')
-webfontWOFF("Regular", "Regular-Semibold", "normal")
-webfontWOFF("AtlasGroteskRegular", "AtlasGrotesk-Regular-Web", "normal")
-webfontTTF("Roboto", "Roboto-Regular", "normal")
+webfont("Regular", "Regular-Semibold", "normal")
+webfont("AtlasGroteskRegular", "AtlasGrotesk-Regular-Web", "normal")
 
