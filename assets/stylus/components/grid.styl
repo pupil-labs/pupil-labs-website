@@ -29,13 +29,16 @@
 .Grid-cell
   flex 1 0 auto
 
+  &.grid-0-5
+    flex 0 0 5%
+    max-width 5%
   &.grid-1
     flex 0 0 10%
     max-width 10%
   &.grid-2
     flex 0 0 20%
     max-width 20%
-  &.grid-3-5
+  &.grid-2-5
     flex 0 0 25%
     max-width 25%
   &.grid-3
@@ -62,9 +65,12 @@
   &.grid-9
     flex 0 0 90%
     max-width 90%
+  &.grid-9-5
+    flex 0 0 95%
+    max-width 95%
 
   @media $break-767
-    &.grid-3-5
+    &.grid-2-5
       flex 0 0 100%
       max-width 100%
     &.grid-7-5
