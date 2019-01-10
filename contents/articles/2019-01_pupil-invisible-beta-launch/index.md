@@ -11,10 +11,10 @@ template: pi_article.jade
 
 <div class="Grid" id="pi-intro">
   <div class="Grid-cell grid-7 u-padRight--2" style="display:flex;align-items:center;">
-    <div style="border-top:2px solid #0D122A;width:100%;"></div>
+    <div class="pi-intro-hr"></div>
   </div>
   <div class="Grid-cell grid-3">
-    <h1 style="padding:unset;color:#0D122A;">Pupil Invisible</h1>
+    <h2 class="pi-product-title">Pupil Invisible</h2>
   </div>
 </div>
 
@@ -24,8 +24,8 @@ template: pi_article.jade
     <p style="font-size:19px;">The first eye tracking device that truly looks and feels like a normal pair of glasses. No setup, no adjustments, no calibration.</p>
   </div>
   <div class="Grid-cell grid-6" style="display:flex;align-items:flex-end;justify-content:flex-end;">
-    <a href="#sign-up" style="color:#283593;">
-      <div class="Grid" style="align-items:center;">
+    <a href="#sign-up" id="sign-up-link">
+      <div class="Grid-cell--fillHeight xs-left-align" style="align-items:center;">
         <div id="sign-up-arrow">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 8L14.6 6.6L9 12.2L9 -3.0598e-07L7 -3.93402e-07L7 12.2L1.4 6.6L-3.49691e-07 8L8 16L16 8Z" fill="#283593"/></svg>
         </div>
@@ -54,7 +54,7 @@ template: pi_article.jade
 </div>
 </div>
 
-<div class="Background-img-top--blog Background-img-cover" style="border-radius:4px;height:80vh">
+<div class="Background-img-top--blog Background-img-cover bg-img-long">
   <div style="background-image: url('../../../../media/images/blog/pupil_invisible_03.jpg');background-position:50% 50%;" class="Background-img--full-wh"></div>
   <div style="position:absolute;left:0;top:0;padding:2em;color:#ECEFF1;">
     <h1 class="overlay-text">Just put</h1>
@@ -69,51 +69,107 @@ template: pi_article.jade
   <div style="padding:1em 32px;width:100%;" id="highlight-hr">
     <div style="border-top:2px solid #90A4AE;width:100%;;"></div>
   </div>
-  <h1 id="highlight-header">Highlights</h1>
+  <h2 id="highlight-header">Highlights</h2>
   <div class="Grid Grid--1of2 Grid--gutters-sm highlight-items">
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Easy to use</h4>
-      <p>Our approach does not rely on glints or even images of the pupil. There is no adjustment and no calibration required. Just put it on, and go.</p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>Easy to use</h4>
+          <p>Our approach does not rely on glints or even images of the pupil. There is no adjustment and no calibration required. Just put it on, and go.</p>
+        </div>
+      </div>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Sunny outdoor environments</h4>
-      <p>Traditional eye tracking approaches fail in bright sunlight. Pupil Invisible provides robust gaze estimation in any environment!</p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>Sunny outdoor environments</h4>
+          <p>Traditional eye tracking approaches fail in bright sunlight. Pupil Invisible provides robust gaze estimation in any environment!</p>
+        </div>
+      </div>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Invisible</h4>
-      <p>We managed to move the cameras completely outside of the field of view and fully integrate them into the frame. The first eye tracker that truly looks and feels like a pair of glasses.</p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>Invisible</h4>
+          <p>We managed to move the cameras completely outside of the field of view and fully integrate them into the frame. The first eye tracker that truly looks and feels like a pair of glasses.</p>
+        </div>
+      </div>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Slippage compensation</h4>
-      <p>Our algorithms perfectly and instantaneously compensate for the movement of the glasses, ensuring high quality eye tracking data at all times.</p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>Slippage compensation</h4>
+          <p>Our algorithms perfectly and instantaneously compensate for the movement of the glasses, ensuring high quality eye tracking data at all times.</p>
+        </div>
+      </div>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Android companion</h4>
-      <p>Pupil Invisible comes with an Android smartphone and companion app. It uses the companion phone for real-time neural network gaze estimation, real-time streaming over wifi, and recording.</p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>Android companion</h4>
+          <p>Pupil Invisible comes with an Android smartphone and companion app. It uses the companion phone for real-time neural network gaze estimation, real-time streaming over wifi, and recording.</p>
+        </div>
+      </div>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Detachable scene camera</h4>
-      <p>A wide angle camera records your full field of view. An integrated microphone can capture audio. The entire scene camera module can be quickly detached/re-attached via magnetic connection.</p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>Detachable scene camera</h4>
+          <p>A wide angle camera records your full field of view. An integrated microphone can capture audio. The entire scene camera module can be quickly detached/re-attached via magnetic connection.</p>
+        </div>
+      </div>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">IMU</h4>
-      <p>A high resolution Inertial Measurement Unit (IMU) is integrated into the frame.  </p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>IMU</h4>
+          <p>A high resolution Inertial Measurement Unit (IMU) is integrated into the frame.  </p>
+        </div>
+      </div>
     </div>
     <div class="Grid-cell">
-      <h4 style="font-weight:700;">Swappable lenses</h4>
-      <p>You can easily pop in/out lenses with different prescriptions and shades.</p>
+      <div class="Grid-cell--fillHeight">
+        <div>
+          <div class="bullet-point"></div>
+        </div>
+        <div style="padding-left:16px;">
+          <h4>Swappable lenses</h4>
+          <p>You can easily pop in/out lenses with different prescriptions and shades.</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <div style="background-color:#FF9E80;margin:2em -40px;padding:2em 40px;color:#0D122A;" id="sign-up">
   <div id="whats-next-container">
-    <h1 id="whats-next-header">What's next?</h1>
+    <h2 id="whats-next-header">What's next?</h2>
   </div>
   <div class="Grid Grid--1of2" id="sign-up-content">
     <div class="Grid-cell" id="sign-up-form-cell">
       <h2 style="font-weight:700;">Pupil Invisible closed beta program launches today!</h2>
-      <p>Sign up for updates and early access to hardware.</p>
+      <p style="font-size:14px;">Sign up for updates and early access to hardware.</p>
       <div id="mc_embed_signup">
         <form action="https://pupil-labs.us3.list-manage.com/subscribe/post?u=ed9736f18028b208205770080&amp;id=92d4f0b16b"
           method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
@@ -156,31 +212,31 @@ template: pi_article.jade
   </div>
 </div>
 
-<div class="Grid Grid--1of2" style="padding:1.5em 0;">
+<div class="Grid Grid--1of2 pi-footer">
   <div class="Grid-cell">
     <div class="Grid">
-      <div class="Header-logo" style="padding-right:1em;position:unset;color::#0D122A;">
-        <a href="/" class="logotype">pupil labs</a>
+      <div class="Header-logo" style="padding-right:1em;position:unset;">
+        <a href="/" style="color:#0D122A;font-size:32px;">pupil labs</a>
       </div>
-      <div>
-        <p class="small" style="padding:unset;">Pupil Labs GmbH</p>
-        <p class="small" style="padding:unset;">Sanderstr. 28, 12047, Berlin, Germany</p>
+      <div class="company-info">
+        <p class="small" style="padding:unset;font-weight:700;line-height:1.3em;color:#90A4AE;">Pupil Labs GmbH</p>
+        <p class="small" style="padding:unset;line-height:unset;color:#90A4AE;">Sanderstr. 28, 12047, Berlin, Germany</p>
       </div>
     </div>
   </div>
   <div class="Grid-cell">
-    <div class="Grid Grid--justifySpaceAround" style="padding:0 4em;">
+    <div class="Grid Grid--justifySpaceBetween social-links">
         <a href="https://pupil-labs.com/chat" title="Pupil community chat">
-          <img src="../../../../media/graphics/web/social_icons/discord.png" height="24">
+          <img src="../../../../media/graphics/web/social_icons/discord.svg" style=";height:28px;">
         </a>
         <a href="https://github.com/pupil-labs" title="Pupil Labs Repo">
-          <img src="../../../../media/graphics/web/social_icons/github.png" height="24">
+          <img src="../../../../media/graphics/web/social_icons/github.svg" style="height:28px;">
         </a>
         <a href="https://twitter.com/pupil_labs" title="Pupil Labs on Twitter">
-          <img src="../../../../media/graphics/web/social_icons/twitter.png" height="24">
+          <img src="../../../../media/graphics/web/social_icons/twitter.svg" style="height:28px;">
         </a>
         <a href="https://www.youtube.com/channel/UCO1Dx8T9sym3Dl2grS4fsFA/videos" title="Pupil Labs on YouTube">
-          <img src="../../../../media/graphics/web/social_icons/youtube.png" height="24">
+          <img src="../../../../media/graphics/web/social_icons/youtube.svg" style="height:28px;">
         </a>
     </div>
   </div>

@@ -9,7 +9,7 @@ block main
       div.Feature-container-column
         article.Grid
           header.Grid-cell.Grid-cell--full.u-textCenter(style="padding-top:1em;")
-            h1.Blog-article-title= page.title
+            h2.Blog-article-title= page.title
             if page.metadata.topic
               h4.small= page.metadata.topic + ' - ' + moment.utc(page.date).format('YYYY MMM DD')
             //- h4.small= moment.utc(page.date).format('YYYY MMM DD')
@@ -19,8 +19,9 @@ block main
         article.Grid
           section.Grid-cell.Grid-cell--full.content!= typogr(page.html).typogrify()
 
-    a(href="/blog")
-      div.Blog-nav.u-textCenter
-        h4.Blog-nav-link Back to blog
+     div.Site-content-container
+      div.Blog-nav.Grid.Grid--justifyCenter
+        a(href="/blog")
+          h4.Blog-nav-link Back to blog
 
 
