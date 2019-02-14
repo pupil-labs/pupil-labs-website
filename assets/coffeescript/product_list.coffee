@@ -152,7 +152,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e200b', 'htcvive_e120b', 'epsonbt300_w120_e200b']
 
 get_additional_product_ids = ->
-  return ['camera_e200','pm_motoz3','support_6','support_12']
+  return ['camera_e200l','camera_e200r','pm_motoz3','support_6','support_12']
 
 
 get_product_database = ->
@@ -554,13 +554,20 @@ get_product_database = ->
       description_store: "Update any existing Pupil headset with our custom made 120hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 120hz eye camera upgrade"
       img: [additional_product_path,'e120upgrade.jpg'].join('/')
-    camera_e200:
+    camera_e200r:
       cost: 650
-      title_product: '200hz Eye Camera'
-      title_store: "200hz Eye Camera"
-      description_store: "Upgrade any existing Pupil headset with our custom made 200hz camera. This is a drop-in replacement. No tools needed. For more info, check out the camera specs in the configurator above."
+      title_product: '200hz Eye Camera (Right Eye)'
+      title_store: "200hz Eye Camera (Right Eye)"
+      description_store: "Upgrade any existing Pupil headset with our custom made 200hz camera. This is a drop-in replacement for a right eye camera. No tools needed. For more info, check out the camera specs in the configurator above."
       description_cart: "Camera upgrade: 200hz eye camera upgrade"
       img: [additional_product_path,'e200upgrade.jpg'].join('/')
+    camera_e200l:
+      cost: 650
+      title_product: '200hz Eye Camera (Left Eye)'
+      title_store: "200hz Eye Camera (Left Eye)"
+      description_store: "Upgrade any existing Pupil headset with our custom made 200hz camera. This is a drop-in replacement for a left eye camera. No tools needed. For more info, check out the camera specs in the configurator above."
+      description_cart: "Camera upgrade: 200hz eye camera upgrade"
+      img: [additional_product_path,'e200upgrade_left.jpg'].join('/')
     w3dupgrade:
       cost: 550
       title_product: '3d World Camera'
