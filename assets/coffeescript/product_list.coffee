@@ -35,6 +35,15 @@ get_world_cam_data = ->
       weight: 5
       title_video: "Download sample videos"
       link_video: "https://drive.google.com/file/d/0B4Q4b_aBOfU-TmJvSFhFeWp1NEk/view?usp=sharing"
+    wusbc:
+      id: 'wusbc'
+      title_store: "usb-c mount"
+      description_store: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount for Intel RealSense D400 sensors. (**RealSense sensor not included.)"
+      tech_specs:
+        sensor: "No camera/sensor included."
+      title_cart: "World Camera: USB-C mount"
+      description_cart: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount for Intel RealSense D400 sensors. (**RealSense ensor not included.)"
+      weight: 2
     # w3d:
     #   id: 'w3d'
     #   title_store: '3d'
@@ -470,6 +479,53 @@ get_product_database = ->
         discount: edu_discount
       img: [pupil_img_path,'pupil_w3d_e200b.jpg'].join('/')
 
+    pupil_wusbc_enone:
+      cost: 1540
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wusbc
+        eye_camera: eye_cam_data.enone
+      img: [pupil_img_path,'pupil_wusbc_enone.jpg'].join('/')
+    pupil_wusbc_e200:
+      cost: 2190
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wusbc
+        eye_camera: eye_cam_data.e200
+      img: [pupil_img_path,'pupil_wusbc_e200.jpg'].join('/')
+    pupil_wusbc_e200b:
+      cost: 3090
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wusbc
+        eye_camera: eye_cam_data.e200b
+      img: [pupil_img_path,'pupil_wusbc_e200b.jpg'].join('/')
+
+    pupil_wusbc_enone_edu:
+      cost: 950
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wusbc
+        eye_camera: eye_cam_data.enone
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_wusbc_enone.jpg'].join('/')
+    pupil_wusbc_e200_edu:
+      cost: 1600
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wusbc
+        eye_camera: eye_cam_data.e200
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_wusbc_e200.jpg'].join('/')
+    pupil_wusbc_e200b_edu:
+      cost: 2500
+      title_product: 'Pupil Headset'
+      sub_products:
+        world_camera: world_cam_data.wusbc
+        eye_camera: eye_cam_data.e200b
+        discount: edu_discount
+      img: [pupil_img_path,'pupil_wusbc_e200b.jpg'].join('/')
+
     oculusdk2_e120:
       cost: 800
       title_product: 'Oculus Rift DK2 Add-on'
@@ -511,7 +567,7 @@ get_product_database = ->
       title_store: 'HTC Vive Binocular Add-on'
       description_store: "Add binocular eye tracking to your HTC Vive and Vive PRO VR headset. Includes binocular 120hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
       description_cart: "120hz binocular eye tracking add-on for your HTC Vive and Vive PRO VR headset."
-      img: [vr_ar_img_path,'htcviveb.jpg'].join('/')   
+      img: [vr_ar_img_path,'htcviveb.jpg'].join('/')
     hololens_w120_e120b:
       cost: 1750
       title_product: 'HoloLens Binocular Add-on'
