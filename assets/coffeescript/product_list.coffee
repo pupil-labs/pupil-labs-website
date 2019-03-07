@@ -38,11 +38,11 @@ get_world_cam_data = ->
     wusbc:
       id: 'wusbc'
       title_store: "usb-c mount"
-      description_store: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount for Intel RealSense D400 sensors. (**RealSense sensor not included.)"
+      description_store: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount. Compatible with Intel RealSense D400 series sensors. (*RealSense sensor not included.)"
       tech_specs:
         sensor: "No camera/sensor included."
       title_cart: "World Camera: USB-C mount"
-      description_cart: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount for Intel RealSense D400 sensors. (**RealSense ensor not included.)"
+      description_cart: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount. Compatible with Intel RealSense D400 series sensors. (*RealSense sensor not included.)"
       weight: 2
     # w3d:
     #   id: 'w3d'
