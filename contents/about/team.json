@@ -44,12 +44,12 @@
   },
   { 
     "name":"Niall Oakes",
-    "role":"Sales & Ops, Hardware & Fulfillment",
+    "role":"Sales & Ops Lead",
     "img":"https://placehold.it/400x400"    
   },
   { 
     "name":"Francesco Gennari",
-    "role":"Hardware & Fulfillment",
+    "role":"Assembly & Hardware Manager",
     "img":"https://placehold.it/400x400"    
   },
   { 
@@ -105,16 +105,6 @@
   { 
     "name":"Swati Sinha",
     "role":"Sales & Ops",
-    "img":"https://placehold.it/400x400"    
-  },
-  { 
-    "name":"Robert Covington",
-    "role":"Hardware & Fulfillment",
-    "img":"https://placehold.it/400x400"    
-  },
-  { 
-    "name":"Douglas Mackay",
-    "role":"Hardware Development & Production Manager",
     "img":"https://placehold.it/400x400"    
   }
 ]
