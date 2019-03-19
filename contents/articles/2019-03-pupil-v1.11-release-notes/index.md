@@ -1,6 +1,6 @@
 ---
 title: Pupil Capture, Player, and Service Release v1.11
-date: Thu Jan 03 2019 15:20:12 GMT+0700 (+07)
+date: Tue Mar 19 2019 17:18:10 GMT+0700 (+07)
 author: Pupil Dev Team
 subtitle: "We are pleased to announce the latest release of Pupil software v1.11..."
 tag: {"caption":"v1.11","icon":"local_offer"}
