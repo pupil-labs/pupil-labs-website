@@ -158,7 +158,7 @@ get_edu_discount_data = ->
     description_cart: "For use within an academic (non-commercial) context."
 
 get_vr_ar_product_ids = ->
-  return ['hololens_w120_e200b', 'htcvive_e120b', 'epsonbt300_w120_e200b']
+  return ['hololens_w120_e200b', 'htcvive_e200b', 'epsonbt300_w120_e200b']
 
 get_additional_product_ids = ->
   return ['camera_e200l','camera_e200r','pm_motoz3','support_6','support_12']
@@ -568,6 +568,13 @@ get_product_database = ->
       description_store: "Add binocular eye tracking to your HTC Vive and Vive PRO VR headset. Includes binocular 120hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
       description_cart: "120hz binocular eye tracking add-on for your HTC Vive and Vive PRO VR headset."
       img: [vr_ar_img_path,'htcviveb.jpg'].join('/')
+    htcvive_e200b:
+      cost: 1400
+      title_product: 'HTC Vive Binocular Add-on'
+      title_store: 'HTC Vive Binocular Add-on'
+      description_store: "Add binocular eye tracking to your HTC Vive and Vive PRO VR headset. Includes binocular 200hz eye tracking cameras, clip-on attachment rings with IR illuminators and USB connector clip. No tools required!"
+      description_cart: "200hz binocular eye tracking add-on for your HTC Vive and Vive PRO VR headset."
+      img: [vr_ar_img_path,'htcvive_e200b.jpg'].join('/')
     hololens_w120_e120b:
       cost: 1750
       title_product: 'HoloLens Binocular Add-on'
