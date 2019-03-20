@@ -3,8 +3,8 @@ title: New 200Hz Vive add-on and WorldViz Vizard support
 date: Tue Mar 20 2019 17:25:31 GMT+0700 (DST) 
 author: Pupil Dev Team 
 subtitle: We are pleased to announce WorldViz Vizard 6 support for Pupil and 200Hz eye cameras for our HTC Vive/Vive PRO add-on...
-featured_img: ../../../../media/images/blog/htcvive_e200b.jpg
-featured_img_thumb: ../../../../media/images/blog/htcvive_e200b.jpg
+featured_img: ../../../../media/images/store_vr_ar/htcvive_e200b.jpg
+featured_img_thumb: ../../../../media/images/store_vr_ar/htcvive_e200b.jpg
 ---
 
 We are pleased to announce new 200Hz add-on eye cameras for our HTC Vive/Vive PRO add-on! Now you can track at a much higher framerate in your virtual environment with our new cameras. See our [vr/ar page](https://pupil-labs.com/vr-ar/) to learn more about the new hardware.
@@ -12,7 +12,7 @@ We are pleased to announce new 200Hz add-on eye cameras for our HTC Vive/Vive PR
 Head over to the [store](https://pupil-labs.com/store) to checkout the latest hardware!
 
 <div class="Feature-image-wrapper" style="text-align:center;">
-	<img src="../../../../media/images/blog/htcvive_e200b.jpg" class='Feature-image' alt="Vizard Pupil Labs integration"/>
+	<img src="../../../../media/images/store_vr_ar/htcvive_e200b.jpg" class='Feature-image' alt="Vizard Pupil Labs integration"/>
 </div>
 
 <div class="small u-padBottom--2">HTC Vive 200Hz add-on</div>
