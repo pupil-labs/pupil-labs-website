@@ -9,7 +9,7 @@ featured_img_thumb: ../../../../media/images/store_vr_ar/htcvive_e200b.jpg
 
 We are pleased to announce new 200Hz add-on eye cameras for our HTC Vive/Vive PRO add-on! Now you can track at a much higher framerate in your virtual environment with our new cameras. See our [vr/ar page](https://pupil-labs.com/vr-ar/) to learn more about the new hardware.
 
-Head over to the [store](https://pupil-labs.com/store) to checkout the latest hardware!
+We will be adding the 200hz Vive/Vive Pro Add-on to the store very soon!
 
 <div class="Feature-image-wrapper" style="text-align:center;">
 	<img src="../../../../media/images/store_vr_ar/htcvive_e200b.jpg" class='Feature-image' alt="Vizard Pupil Labs integration"/>
