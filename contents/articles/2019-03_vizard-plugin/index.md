@@ -7,7 +7,7 @@ featured_img: ../../../../media/images/blog/htcvive_e200b.jpg
 featured_img_thumb: ../../../../media/images/blog/htcvive_e200b.jpg
 ---
 
-Firstly we are pleased to announce our new HTC Vive add-on 200Hz eye tracking cameras! Now you can track at a much higher framerate in your virtual environment with our new cameras. See our vr/ar page to learn more about the new hardware.
+Firstly we are pleased to announce our new HTC Vive add-on 200Hz eye tracking cameras! Now you can track at a much higher framerate in your virtual environment with our new cameras. See our [vr/ar page](https://pupil-labs.com/vr-ar/) to learn more about the new hardware.
 
 <div class="Feature-image-wrapper" style="text-align:center;">
 	<img src="../../../../media/images/blog/htcvive_e200b.jpg" class='Feature-image' alt="Vizard Pupil Labs integration"/>
@@ -28,5 +28,7 @@ By integrating eye tracker with Vizard 6, you are able to quickly add eye tracki
 </div>
 
 <div class="small u-padBottom--2">Vizard Pupil Labs integration</div>
+
+Head over to the [store](https://pupil-labs.com/store) to checkout the latest hardware!
 
 Read more on WorldViz [blog post](https://www.worldviz.com/post/eye-tracking-everywhere-why-care) for more information and learn about WorldViz [Vizard 6](https://www.worldviz.com/vizard) platform.
