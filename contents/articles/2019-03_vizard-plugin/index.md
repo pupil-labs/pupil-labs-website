@@ -20,3 +20,5 @@ By integrating eye tracker with Vizard 6, you are able to quickly add eye tracki
 </div>
 
 <div class="small u-padBottom--2">Vizard Pupil Labs integration</div>
+
+Read more on WorldViz [blog post](https://www.worldviz.com/post/eye-tracking-everywhere-why-care) for more information and learn about WorldViz [Vizard 6](https://www.worldviz.com/vizard) platform.
