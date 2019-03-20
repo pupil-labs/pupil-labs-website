@@ -13,7 +13,7 @@ block main
     div.Background-img-top.Background-img-cover
       figure(class="img-placeholder")
         div(class="Background-img--full-wh img-loaded img-small" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wgARCAAXACgDASIAAhEBAxEB/8QAGgABAAIDAQAAAAAAAAAAAAAAAAUHAgMGBP/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAbJ5301mWNhyEUXKhRPxAb9ASwP/xAAeEAACAgMAAwEAAAAAAAAAAAABAwIFBBITABEUFf/aAAgBAQABBQLIcFCVukS/UhrG3STju6i32447ok6njkNiDUbcWr3BrUk/FH0K1IKl6ef/xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/AV//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/AV//xAAeEAABAwUBAQAAAAAAAAAAAAARAAESAxATIXFhQv/aAAgBAQAGPwIuhNzxSnriE3PLVIsXCc6f1T+SUw2/ipyYascdM8QRxUzy3//EAB4QAQACAQUBAQAAAAAAAAAAAAEAESExQVGB0aGx/9oACAEBAAE/IUKUGVnSEH5P0OOk4vyAKNjkYLS5AG81prdQafxq25mntbCDZVtkdoGau53BKeTcvs74FPIJxP/aAAwDAQACAAMAAAAQQE8888//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAEDAQE/EF//xAAUEQEAAAAAAAAAAAAAAAAAAAAg/9oACAECAQE/EF//xAAfEAEAAgICAwEBAAAAAAAAAAABABEhMUFRgaGxYdH/2gAIAQEAAT8QBgDkUQgVWbL5h5nLML4+uu4hQjKF9y8QuwOBcqI3MqGiMtlVhTGoK0erK98xxSPklxqI55UrGmUTYUmiQOq2myR+Gqr/AIqUHa2SWKvTBQGgn//Z');")
-        div(class="Background-img--full-wh img-large" data-src="../media/images/store_vr_ar/htcviveb.png")
+        div(class="Background-img--full-wh img-large" data-src="../media/images/store_vr_ar/htcvive_e200b_hero.jpg")
       div(style="top:55%;").Site-content-container.Background-img-caption-container.u-textCenter
         h1.Background-img-caption Eye tracking for Virtual and Augmented Reality.
 
@@ -55,7 +55,7 @@ block main
               div.Grid-cell
                 div.Feature
                 figure.Feature-figure
-                  +webp-img("/media/images/store_vr_ar/htcviveb.png",
+                  +webp-img("/media/images/store_vr_ar/htcvive_e200b.jpg",
                   "HTC Vive Binocular Add-on",
                   "HTC Vive Binocular Add-on")
                   p #[a(href="/store#vr-ar" title="Pupil Labs Store HTC Vive Binocular Add-on") HTC Vive / Vive Pro Binocular Add-on]
@@ -92,11 +92,11 @@ block main
                 h1 Software
             div.Grid-cell.Grid-cell--full.u-textCenter
               p There is no one size fits all approach - that is why we made Pupil Service.
-              p Pupil Service is based on Pupil Capture and gives you access to all data: eye videos, to pupil data, gaze data, and more. Get the lastest release below.
+              p #[a(href="https://github.com/pupil-labs/pupil/releases/latest" title="Pupil software latest release" rel="noopener") Pupil Service] is based on Pupil Capture, and designed to be used as a "service" to provide your applications access to all data: eye videos, pupil data, gaze data, and more. 
             div.u-padTop--1
-              include vr-ar-svg
+              include includes/svg/pupil_service_integration
             div.Grid-cell.Grid-cell--full
-              p We also maintain and contribute to a community driven repository of tools for eye tracking in head mounted displays in Unity3d called #[a(href="https://github.com/pupil-labs/hmd-eyes" title="HMD-eyes on Github" rel="noopener") HMD-eyes]
+              p Use Pupil Labs eye tracking in your VR/AR project with our #[a(href="https://github.com/pupil-labs/hmd-eyes" title="Unity3D plugin" rel="noopener") Unity3D plugin] or the official #[a(href="https://www.worldviz.com/vizard" title="Unity3D plugin" rel="noopener") Vizard plugin]. Or, develop your own solution using our #[a(href="https://docs.pupil-labs.com/#interprocess-and-network-communication" title="Network based API" rel="noopener") network based API].
 
 
     section.Site-content-container
@@ -119,7 +119,7 @@ block main
                       td Both, depending on desired setup
                     tr
                       td.Table--column Tracking Frequency
-                      td 120Hz
+                      td 200Hz
                     tr
                       td.Table--column Field of View
                       td HTC Vive / Vive Pro: up to HMD limits. Epson BT-200: greater than 100 deg
@@ -191,7 +191,11 @@ block main
                       td #[a(href="http://docs.pupil-labs.com/#interprocess-and-network-communication" title="Pupil Docs - Interprocess and Network Communication" rel="noopener") Through network message based API]
                     tr
                       td.Table--column Plugin for Game Engines
-                      td #[a(href="https://github.com/pupil-labs/hmd-eyes" title="HMD Eyes" rel="noopener") Reference plugin] implementation for Unity3D
+                      td 
+                        #[a(href="https://github.com/pupil-labs/hmd-eyes" title="HMD Eyes" rel="noopener") Reference plugin] implementation for Unity3D
+                        br
+                        br
+                        #[a(href="https://www.worldviz.com/vizard" title="Vizard" rel="noopener") Reference plugin  ] official Vizard 6 plugin
 
 
     //- community
@@ -205,5 +209,5 @@ block main
             div.Grid-cell.Grid-cell--full.u-textCenter
               p Our goal is to work with and support a community of researchers and developers in creating reusable open source software for eye tracking in HMDs.
               p Many researchers and developers have already thought of, or implemented eye tracking software HMDs. Instead of continuing to reinvent the wheel, we have formed a community with the goal of sharing knowledge and tools.
-              p Fork the hmd-eyes code on  #[a(href="https://github.com/pupil-labs/hmd-eyes" title="hmd-eyes on Github" rel="noopener") Github]. Chat with the hmd-eyes community on #[a(href="https://gitter.im/pupil-labs/hmd-eyes" title="HMD-eyes Gitter chat" rel="noopener") Gitter].
+              p Fork the hmd-eyes code on  #[a(href="https://github.com/pupil-labs/hmd-eyes" title="hmd-eyes on Github" rel="noopener") Github]. Chat with the hmd-eyes community on #[a(href="https://pupil-labs.com/chat" title="Discord chat" rel="noopener") Discord].
 
