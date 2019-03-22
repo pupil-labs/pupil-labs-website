@@ -1,5 +1,20 @@
 extends layout
 
+block append head
+  meta(name="twitter:site" content="@pupil_labs")
+  meta(name="twitter:creator" content="@pupil_labs")
+  meta(property="og:url" content="https://pupil-labs.com" + page.url)
+  meta(property="og:title" content=page.title)
+  meta(property="og:description" content=page.metadata.subtitle)
+
+  - var img_path_base = "https://pupil-labs.com/"
+  - if (page.metadata.featured_img){
+  -   var img_path_full = img_path_base + page.metadata.featured_img.replace("../../../../", "")
+  - }
+  
+  meta(property="og:image" content=img_path_full)
+  meta(name="twitter:card" content="summary_large_image")
+
 block append title
   | #{ " - " + page.title}
 
