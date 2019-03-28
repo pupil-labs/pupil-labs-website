@@ -1,6 +1,6 @@
 ---
 title: Computer Vision Engineer
-order: 0
+order: -1
 jobTitle: cv-dev
 ---
 
