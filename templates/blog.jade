@@ -33,7 +33,7 @@ block main
 
     each featured, i in newsArticles
       if i == 0
-        - var featured_inline_style = (featured.metadata.featured_img ? "background-color:#6f7679; background-image: url('"+featured.metadata.featured_img+"');" : "background: linear-gradient(to top right, #536DFE 0%, #75F0B4 100%);")
+        - var featured_inline_style = (featured.metadata.featured_img ? "background-color:#eeeeee; background-image: url('"+featured.metadata.featured_img+"');" : "background: linear-gradient(to top right, #536DFE 0%, #75F0B4 100%);")
         div.Site-content-container.Blog-container
           a(href=featured.url)
             div.Grid.card.Grid-featured-card.u-marginY--2
@@ -87,6 +87,8 @@ block main
                         div.Grid.Grid--justifySpaceBetween.Grid-column.Fill-height(style="color:#212121;")
                           div
                             if article.metadata.tag
+                              h5.Blog-topic-text(style="padding-bottom:6px !important;") Software Release
+                            else if article.metadata.subtag
                               h5.Blog-topic-text(style="padding-bottom:6px !important;") Software Release
                             else
                               h5.Blog-topic-text(style="padding-bottom:6px !important;") News
