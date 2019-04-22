@@ -28,7 +28,7 @@ Our eye-tracking pipeline Pupil is completely open-source. We constantly work on
 - Prior experience in leading a team is preferred, but not required.
 
 **Perks**
-- Location - We are open to discussing semi-remote work. We have two offices! One in Berlin and a satellite office in Bangkok. We are open to discussing travel to/work at either location. 
+- Location - We have two offices! One in Berlin and a satellite office in Bangkok. We are open to discussing travel to/work at either location. 
 - Continue learning and developing professionally - We will sponsor you to attend relevant scientific/developer conferences.
 - Competitive salary
 - Flexible working hours
