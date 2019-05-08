@@ -161,7 +161,7 @@ get_vr_ar_product_ids = ->
   return ['hololens_w120_e200b', 'htcvive_e200b', 'epsonbt300_w120_e200b']
 
 get_additional_product_ids = ->
-  return ['camera_e200l','camera_e200r','pm_motoz3','support_6','support_12']
+  return ['camera_e200l','camera_e200r','pm_oneplus6','support_6','support_12']
 
 
 get_product_database = ->
@@ -658,6 +658,13 @@ get_product_database = ->
       title_store: "Pupil Mobile Bundle"
       description_store: "Connect your Pupil headset to the Moto Z3 play. Record up to 4 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: Moto Z3 Play (blue), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera are not compatible with Pupil Mobile)."
       description_cart: "Moto Z3 Play (blue), hot-swappable Moto power pack, 64gb SD card, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. Connects to Pupil headset via USBC cable (included)."
+      img: [additional_product_path,'pm_nexus5x.jpg'].join('/')
+    pm_oneplus6:
+      cost: 750
+      title_product: 'Pupil Mobile Bundle'
+      title_store: "Pupil Mobile Bundle"
+      description_store: "Connect your Pupil headset to the OnePlus 6. Record up to 2.5 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: OnePlus 6 128gb, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera are not compatible with Pupil Mobile)."
+      description_cart: "OnePlus 6 128gb, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. Connects to Pupil headset via USBC cable (included)."
       img: [additional_product_path,'pm_nexus5x.jpg'].join('/')
     support_6:
       cost: 1000
