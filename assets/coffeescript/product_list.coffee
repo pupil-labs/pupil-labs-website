@@ -38,11 +38,11 @@ get_world_cam_data = ->
     wusbc:
       id: 'wusbc'
       title_store: "usb-c mount"
-      description_store: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount. Compatible with Intel RealSense D400 series sensors. (*RealSense sensor not included.)"
+      description_store: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount. Compatible with Intel RealSense D400 series sensors. (*RealSense sensor not included. Not compatible with Pupil Mobile)"
       tech_specs:
         sensor: "No camera/sensor included."
       title_cart: "World Camera: USB-C mount"
-      description_cart: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount. Compatible with Intel RealSense D400 series sensors. (*RealSense sensor not included.)"
+      description_cart: "USB-C plug to connect to a wide range of cameras/sensors. Ships with standard tripod screw and mount. Compatible with Intel RealSense D400 series sensors. (*RealSense sensor not included. Not compatible with Pupil Mobile)"
       weight: 2
     # w3d:
     #   id: 'w3d'
@@ -663,7 +663,7 @@ get_product_database = ->
       cost: 750
       title_product: 'Pupil Mobile Bundle'
       title_store: "Pupil Mobile Bundle"
-      description_store: "Connect your Pupil headset to the OnePlus 6. Record up to 2.5 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: OnePlus 6 128gb, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera are not compatible with Pupil Mobile)."
+      description_store: "Connect your Pupil headset to the OnePlus 6. Record up to 2.5 hours of video locally on the phone, or stream video and sensor data over Wifi. The bundle comes with: OnePlus 6 128gb, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. (Note: Pupil headsets with 3d world camera/USB-C world mount are not compatible with Pupil Mobile)."
       description_cart: "OnePlus 6 128gb, USBC-USBC cable, and is pre-loaded with the Pupil Mobile app. Connects to Pupil headset via USBC cable (included)."
       img: [additional_product_path,'pm_nexus5x.jpg'].join('/')
     support_6:
