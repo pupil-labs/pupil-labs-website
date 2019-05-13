@@ -1,6 +1,6 @@
 ---
 title: Senior Full Stack Developer
-order: 2
+order: -1
 jobTitle: full-stack-dev
 ---
 
