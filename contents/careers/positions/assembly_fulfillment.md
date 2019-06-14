@@ -1,6 +1,6 @@
 ---
 title: Assembly and Fulfillment
-order: 3
+order: -1
 jobTitle: assembly-fulfillment
 ---
 
